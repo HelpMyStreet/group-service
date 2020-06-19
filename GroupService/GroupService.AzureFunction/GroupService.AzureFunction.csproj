@@ -7,24 +7,27 @@
 		<PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.0.0" />
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
 		<PackageReference Include="MediatR" Version="8.0.1" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.6" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.28" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference ReplaceParameters="true" Include="..\GroupService.Handlers\GroupService.Handlers.csproj">
-			<Name >GroupService.Handlers</Name>
+			<Name>GroupService.Handlers</Name>
 		</ProjectReference>
 		<ProjectReference ReplaceParameters="true" Include="..\GroupService.Mappers\GroupService.Mappers.csproj">
-			<Name >GroupService.Mappers</Name>
+			<Name>GroupService.Mappers</Name>
 		</ProjectReference>
 		<ProjectReference ReplaceParameters="true" Include="..\GroupService.Repo\GroupService.Repo.csproj">
-			<Name >GroupService.Repo</Name>
+			<Name>GroupService.Repo</Name>
 		</ProjectReference>
 	</ItemGroup>
 	<ItemGroup>
+		<None Update="appsettings.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 		<None Update="host.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
