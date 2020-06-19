@@ -1,18 +1,13 @@
 ﻿using AutoMapper;
-using AutoMapper.Configuration.Conventions;
 using GroupService.Core.Config;
 using GroupService.Core.Interfaces.Repositories;
-using GroupService.Handlers;
-using GroupService.Mappers;
 using GroupService.Repo;
-using MediatR;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Azure.WebJobs.Host.Bindings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using System.Reflection;
 
 [assembly: FunctionsStartup(typeof(GroupService.AzureFunction.Startup))]
 namespace GroupService.AzureFunction
@@ -32,15 +27,14 @@ namespace GroupService.AzureFunction
 
             IConfigurationRoot config = configBuilder.Build();
 
-            builder.Services.AddMediatR(typeof(FunctionAHandler).Assembly);
-            builder.Services.AddAutoMapper(typeof(AddressDetailsProfile).Assembly);
+            //builder.Services.AddMediatR(typeof(FunctionAHandler).Assembly);
+            //builder.Services.AddAutoMapper(typeof(AddressDetailsProfile).Assembly);
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                    options.UseInMemoryDatabase(databaseName: "GroupService.AzureFunction"));
             builder.Services.AddTransient<IRepository, Repository>();
 
-            //ConnectionStrings connectionStrings1 = config.GetSection("ConnectionStrings").Get<ConnectionStrings>();
-
+ 
             IConfigurationSection connectionStringSettings = config.GetSection("ConnectionStrings");
             builder.Services.Configure<ConnectionStrings>(connectionStringSettings);
 
@@ -55,9 +49,6 @@ namespace GroupService.AzureFunction
             ApplicationDbContext dbContext = new ApplicationDbContext(dbContextOptionsBuilder.Options);
 
             dbContext.Database.Migrate();
-
-            int i = 1;
-
         }
 
         private void ConfigureDbContextOptionsBuilder(DbContextOptionsBuilder options, string connectionString)

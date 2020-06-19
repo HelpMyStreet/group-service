@@ -15,4 +15,7 @@
 			<Name>GroupService.Core</Name>
 		</ProjectReference>
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="EntityFramework\Entities\" />
+	</ItemGroup>
 </Project>
