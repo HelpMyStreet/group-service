@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupService.Mappers", "Gro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupService.Repo", "GroupService\GroupService.Repo\GroupService.Repo.csproj", "{07F0AD4E-2BF8-4071-86FA-389DEA58A422}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupService.UnitTests", "GroupService\GroupService.UnitTests\GroupService.UnitTests.csproj", "{0B77B377-33E4-4142-B2A8-64DBE5A69BAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupService.UnitTests", "GroupService\GroupService.UnitTests\GroupService.UnitTests.csproj", "{0B77B377-33E4-4142-B2A8-64DBE5A69BAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
