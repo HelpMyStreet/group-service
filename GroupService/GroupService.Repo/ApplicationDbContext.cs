@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HelpMyStreet.Utils.Extensions;
+using Microsoft.EntityFrameworkCore;
+using System.Data.SqlClient;
 
 namespace GroupService.Repo
 {
@@ -11,6 +13,8 @@ namespace GroupService.Repo
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+            SqlConnection conn = (SqlConnection)Database.GetDbConnection();
+            conn.AddAzureToken();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
