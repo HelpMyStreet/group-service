@@ -2,11 +2,15 @@
 using GroupService.Core.Config;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo;
+using HelpMyStreet.Utils.Utils;
+using MediatR;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Azure.WebJobs.Host.Bindings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 [assembly: FunctionsStartup(typeof(GroupService.AzureFunction.Startup))]
@@ -27,14 +31,16 @@ namespace GroupService.AzureFunction
 
             IConfigurationRoot config = configBuilder.Build();
 
-            //builder.Services.AddMediatR(typeof(FunctionAHandler).Assembly);
+            builder.Services.AddMediatR(typeof(PostCreateGroup).Assembly);
             //builder.Services.AddAutoMapper(typeof(AddressDetailsProfile).Assembly);
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                    options.UseInMemoryDatabase(databaseName: "GroupService.AzureFunction"));
             builder.Services.AddTransient<IRepository, Repository>();
 
- 
+            builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILogger<>), typeof(Logger<>)));
+            builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILoggerWrapper<>), typeof(LoggerWrapper<>)));
+
             IConfigurationSection connectionStringSettings = config.GetSection("ConnectionStrings");
             builder.Services.Configure<ConnectionStrings>(connectionStringSettings);
 

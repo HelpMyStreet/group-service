@@ -11,16 +11,22 @@ using HelpMyStreet.Contracts.RequestService.Response;
 using System.Net;
 using AzureFunctions.Extensions.Swashbuckle.Attribute;
 using Microsoft.Azure.WebJobs.Extensions.Http;
+using HelpMyStreet.Utils.Extensions;
+using System.Threading;
+using HelpMyStreet.Utils.Utils;
+using HelpMyStreet.Contracts.GroupService.Response;
 
 namespace GroupService.AzureFunction
 {
     public class PostCreateGroup
     {
         private readonly IMediator _mediator;
+        private readonly ILoggerWrapper<PostCreateGroupRequest> _logger;
 
-        public PostCreateGroup(IMediator mediator)
+        public PostCreateGroup(IMediator mediator,ILoggerWrapper<PostCreateGroupRequest> logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
 
         [FunctionName("PostCreateGroup")]
@@ -28,17 +34,23 @@ namespace GroupService.AzureFunction
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
             [RequestBodyType(typeof(PostCreateGroupRequest), "create group")] PostCreateGroupRequest req,
-            ILogger log)
+            CancellationToken cancellationToken)
         {
             try
             {
-                log.LogInformation("C# HTTP trigger function processed a request.");
-                PostCreateGroupResponse response = await _mediator.Send(req);
-                return new OkObjectResult(ResponseWrapper<PostCreateGroupResponse, GroupServiceErrorCode>.CreateSuccessfulResponse(response));
+                if (req.IsValid(out var validationResults))
+                {
+                    PostCreateGroupResponse response = await _mediator.Send(req, cancellationToken);
+                    return new OkObjectResult(ResponseWrapper<PostCreateGroupResponse, GroupServiceErrorCode>.CreateSuccessfulResponse(response));
+                }
+                else
+                {
+                    return new ObjectResult(ResponseWrapper<PostCreateGroupResponse, GroupServiceErrorCode>.CreateUnsuccessfulResponse(GroupServiceErrorCode.ValidationError, validationResults)) { StatusCode = 422 };
+                }
             }
-            catch (Exception exc)
+            catch (Exception ex)
             {
-                log.LogError("Exception occured in Log Request", exc);
+                _logger.LogErrorAndNotifyNewRelic($"Unhandled error in PostCreateGroup", ex);
                 return new ObjectResult(ResponseWrapper<PostCreateGroupResponse, GroupServiceErrorCode>.CreateUnsuccessfulResponse(GroupServiceErrorCode.InternalServerError, "Internal Error")) { StatusCode = StatusCodes.Status500InternalServerError };
             }
         }

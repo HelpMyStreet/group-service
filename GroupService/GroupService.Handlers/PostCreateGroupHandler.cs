@@ -1,5 +1,6 @@
 ﻿using GroupService.Core.Interfaces.Repositories;
 using HelpMyStreet.Contracts.GroupService.Request;
+using HelpMyStreet.Contracts.GroupService.Response;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,8 +17,11 @@ namespace GroupService.Handlers
 
         public async Task<PostCreateGroupResponse> Handle(PostCreateGroupRequest request, CancellationToken cancellationToken)
         {
-            ///PostCreateGroupResponse response = _repository.GetJobDetails(request.JobID);
-            return new PostCreateGroupResponse();
+            int groupId = await _repository.CreateGroupAsync(request, cancellationToken);
+            return new PostCreateGroupResponse()
+            {
+                GroupId = groupId
+            };
         }
     }
 }
