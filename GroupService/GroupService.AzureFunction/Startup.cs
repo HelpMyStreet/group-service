@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GroupService.Core.Config;
 using GroupService.Core.Interfaces.Repositories;
+using GroupService.Handlers;
 using GroupService.Repo;
 using HelpMyStreet.Utils.Utils;
 using MediatR;
@@ -31,11 +32,12 @@ namespace GroupService.AzureFunction
 
             IConfigurationRoot config = configBuilder.Build();
 
-            builder.Services.AddMediatR(typeof(PostCreateGroup).Assembly);
+            builder.Services.AddMediatR(typeof(PostCreateGroupHandler).Assembly);
             //builder.Services.AddAutoMapper(typeof(AddressDetailsProfile).Assembly);
 
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                   options.UseInMemoryDatabase(databaseName: "GroupService.AzureFunction"));
+            //builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            //       options.UseInMemoryDatabase(databaseName: "GroupService.AzureFunction"));
+
             builder.Services.AddTransient<IRepository, Repository>();
 
             builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILogger<>), typeof(Logger<>)));
@@ -46,6 +48,11 @@ namespace GroupService.AzureFunction
 
             ConnectionStrings connectionStrings = new ConnectionStrings();
             connectionStringSettings.Bind(connectionStrings);
+
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                ConfigureDbContextOptionsBuilder(options, connectionStrings.GroupService),
+                ServiceLifetime.Transient
+            );
 
             // automatically apply EF migrations
             // DbContext is being created manually instead of through DI as it throws an exception and I've not managed to find a way to solve it yet: 

@@ -50,7 +50,7 @@ namespace GroupService.Repo
                 GroupName = request.GroupName,
                 ParentGroupId = parentGroupId
             };
-            _context.Add(request.GroupName);
+            _context.Group.Add(g);
             await _context.SaveChangesAsync(cancellationToken);
             return g.Id;         
         }
