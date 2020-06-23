@@ -2,6 +2,7 @@
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
