@@ -106,5 +106,33 @@ namespace GroupService.Repo
             }
             return response;
         }
+
+        public async Task<bool> RevokeRoleAsync(PostRevokeRoleRequest request, CancellationToken cancellationToken)
+        {
+            bool success = false;
+            Role role = _context.Role.FirstOrDefault(
+                w => w.UserId == request.UserID.Value &&
+                w.GroupId == request.GroupID.Value &&
+                w.RoleId == (int)request.Role.GroupRole
+                );
+
+            if (role != null)
+            {
+                _context.Role.Remove(role);
+
+                _context.Audit.Add(new Audit()
+                {
+                    DateRequested = DateTime.Now.ToUniversalTime(),
+                    GroupId = request.GroupID.Value,
+                    UserId = request.UserID.Value,
+                    RoleId = (int)request.Role.GroupRole,
+                    AuthorisedByUserId = request.AuthorisedByUserID.Value,
+                    ActionId = (int)GroupAction.RevokeMember
+                });
+                await _context.SaveChangesAsync(cancellationToken);
+                success = true;
+            }
+            return success;
+        }
     }
 }

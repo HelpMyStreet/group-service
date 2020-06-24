@@ -18,5 +18,7 @@ namespace GroupService.Core.Interfaces.Repositories
 
         Task<bool> AssignRoleAsync(PostAssignRoleRequest request, CancellationToken cancellationToken);
 
+        Task<bool> RevokeRoleAsync(PostRevokeRoleRequest request, CancellationToken cancellationToken);
+
     }
 }
