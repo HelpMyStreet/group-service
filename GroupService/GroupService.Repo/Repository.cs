@@ -4,6 +4,7 @@ using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading;
@@ -53,6 +54,13 @@ namespace GroupService.Repo
             _context.Group.Add(g);
             await _context.SaveChangesAsync(cancellationToken);
             return g.Id;         
+        }
+
+        public List<int> GetUserGroups(GetUserGroupsRequest request, CancellationToken cancellationToken)
+        {
+            return _context.Role
+                .Where(w => w.UserId == request.UserID)
+                .Select(s => s.GroupId).ToList();
         }
     }
 }

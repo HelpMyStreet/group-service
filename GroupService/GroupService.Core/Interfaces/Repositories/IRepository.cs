@@ -10,6 +10,8 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
-        Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken);    
+        Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken);
+
+        List<int> GetUserGroups(GetUserGroupsRequest request, CancellationToken cancellationToken);
     }
 }
