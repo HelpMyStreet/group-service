@@ -10,6 +10,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using NUnit.Framework;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -59,7 +60,7 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.AreEqual(0, deserialisedResponse.Errors.Count());
             Assert.AreEqual(groupId, deserialisedResponse.Content.GroupId);
 
-            _mediator.Verify(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()));
+            _mediator.Verify(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()),Times.Once);
         }
 
         [Test]
@@ -82,6 +83,59 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.AreEqual(GroupServiceErrorCode.ValidationError, deserialisedResponse.Errors[0].ErrorCode);
 
             _mediator.Verify(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [Test]
+        public async Task ExistingGroupName_ThrowsError()
+        {
+            string groupName = "Group";
+            _mediator.Setup(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new Exception($"{groupName} already exists as a group"));
+
+            PostCreateGroupRequest req = new PostCreateGroupRequest() { GroupName = groupName };
+
+            IActionResult result = await _classUnderTest.Run(req, CancellationToken.None);
+
+            ObjectResult objectResult = result as ObjectResult;
+            Assert.IsNotNull(objectResult);
+            Assert.AreEqual(500, objectResult.StatusCode);
+
+            ResponseWrapper<PostCreateGroupResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostCreateGroupResponse, GroupServiceErrorCode>;
+            Assert.IsNotNull(deserialisedResponse);
+
+            Assert.IsFalse(deserialisedResponse.HasContent);
+            Assert.IsFalse(deserialisedResponse.IsSuccessful);
+            Assert.AreEqual(1, deserialisedResponse.Errors.Count());
+            Assert.AreEqual(GroupServiceErrorCode.InternalServerError, deserialisedResponse.Errors[0].ErrorCode);
+
+            _mediator.Verify(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+        }
+
+        [Test]
+        public async Task UnknownParentGroupName_ThrowsError()
+        {
+            string groupName = "Group";
+            string parentGroupName = "ParentGroup";
+            _mediator.Setup(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()))
+                            .ThrowsAsync(new Exception($"{parentGroupName} does not exists as a group and cannot therefore be linked as a parent group"));
+
+            PostCreateGroupRequest req = new PostCreateGroupRequest() { GroupName = groupName, ParentGroupName= parentGroupName };
+
+            IActionResult result = await _classUnderTest.Run(req, CancellationToken.None);
+
+            ObjectResult objectResult = result as ObjectResult;
+            Assert.IsNotNull(objectResult);
+            Assert.AreEqual(500, objectResult.StatusCode);
+
+            ResponseWrapper<PostCreateGroupResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostCreateGroupResponse, GroupServiceErrorCode>;
+            Assert.IsNotNull(deserialisedResponse);
+
+            Assert.IsFalse(deserialisedResponse.HasContent);
+            Assert.IsFalse(deserialisedResponse.IsSuccessful);
+            Assert.AreEqual(1, deserialisedResponse.Errors.Count());
+            Assert.AreEqual(GroupServiceErrorCode.InternalServerError, deserialisedResponse.Errors[0].ErrorCode);
+
+            _mediator.Verify(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()), Times.Once);
         }
     }
 }
