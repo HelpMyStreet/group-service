@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -61,6 +62,25 @@ namespace GroupService.Repo
             return _context.Role
                 .Where(w => w.UserId == request.UserID)
                 .Select(s => s.GroupId).ToList();
+        }
+
+        public Dictionary<int, List<int>> GetUserRoles(GetUserRolesRequest request, CancellationToken cancellationToken)
+        {
+            Dictionary<int, List<int>> response = new Dictionary<int, List<int>>();
+
+            var roles = _context.Role
+                .Where(w => w.UserId == request.UserID).ToList();
+
+            List<int> distinctGroups = roles
+                .Select(r => r.GroupId)
+                .Distinct()
+                .ToList();
+
+            foreach (int i in distinctGroups)
+            {
+                response.Add(i, roles.Where(w => w.GroupId == i).Select(x=>x.RoleId).ToList());
+            }
+            return response;
         }
     }
 }
