@@ -34,7 +34,7 @@ namespace GroupService.UnitTests.AzureFunctions
         }
 
         [Test]
-        public async Task Test()
+        public async Task HappyPath_ReturnsGroupId()
         {
             int groupId = 1;
             _response = new PostCreateGroupResponse()
@@ -60,6 +60,28 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.AreEqual(groupId, deserialisedResponse.Content.GroupId);
 
             _mediator.Verify(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()));
+        }
+
+        [Test]
+        public async Task MissingGroupName_ThrowsValidationError()
+        {
+            PostCreateGroupRequest req = new PostCreateGroupRequest();
+
+            IActionResult result = await _classUnderTest.Run(req, CancellationToken.None);
+
+            ObjectResult objectResult = result as ObjectResult;
+            Assert.IsNotNull(objectResult);
+            Assert.AreEqual(422, objectResult.StatusCode);
+
+            ResponseWrapper<PostCreateGroupResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostCreateGroupResponse, GroupServiceErrorCode>;
+            Assert.IsNotNull(deserialisedResponse);
+
+            Assert.IsFalse(deserialisedResponse.HasContent);
+            Assert.IsFalse(deserialisedResponse.IsSuccessful);
+            Assert.AreEqual(1, deserialisedResponse.Errors.Count());
+            Assert.AreEqual(GroupServiceErrorCode.ValidationError, deserialisedResponse.Errors[0].ErrorCode);
+
+            _mediator.Verify(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()), Times.Never);
         }
     }
 }
