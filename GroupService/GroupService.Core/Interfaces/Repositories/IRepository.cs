@@ -15,5 +15,8 @@ namespace GroupService.Core.Interfaces.Repositories
         List<int> GetUserGroups(GetUserGroupsRequest request, CancellationToken cancellationToken);
 
         Dictionary<int,List<int>> GetUserRoles(GetUserRolesRequest request, CancellationToken cancellationToken);
+
+        Task<bool> AssignRoleAsync(PostAssignRoleRequest request, CancellationToken cancellationToken);
+
     }
 }

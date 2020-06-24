@@ -3,6 +3,7 @@ using GroupService.Core.Dto;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
+using HelpMyStreet.Utils.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,29 @@ namespace GroupService.Repo
         {
             _context = context;
             _mapper = mapper;
+        }
+
+        public async Task<bool> AssignRoleAsync(PostAssignRoleRequest request, CancellationToken cancellationToken)
+        {
+            bool success = false;
+            _context.Role.Add(new Role()
+            {
+                GroupId = request.GroupID.Value,
+                UserId = request.UserID.Value,
+                RoleId = (int)request.Role.GroupRole
+            });
+            _context.Audit.Add(new Audit()
+            {
+                DateRequested = DateTime.Now.ToUniversalTime(),
+                GroupId = request.GroupID.Value,
+                UserId = request.UserID.Value,
+                RoleId = (int)request.Role.GroupRole,
+                AuthorisedByUserId = request.AuthorisedByUserID.Value,
+                ActionId = (int)GroupAction.AddMember
+            });
+            await _context.SaveChangesAsync(cancellationToken);
+            success = true;
+            return success;
         }
 
         public async Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken)
