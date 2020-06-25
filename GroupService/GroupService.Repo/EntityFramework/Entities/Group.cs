@@ -8,9 +8,9 @@ namespace GroupService.Repo.EntityFramework.Entities
     {
         public Group()
         {
-            Audit = new HashSet<Audit>();
+            Audit = new HashSet<UserRoleAudit>();
             InverseParentGroup = new HashSet<Group>();
-            Role = new HashSet<Role>();
+            Role = new HashSet<UserRole>();
         }
 
         public int Id { get; set; }
@@ -18,8 +18,8 @@ namespace GroupService.Repo.EntityFramework.Entities
         public int? ParentGroupId { get; set; }
 
         public virtual Group ParentGroup { get; set; }
-        public virtual ICollection<Audit> Audit { get; set; }
+        public virtual ICollection<UserRoleAudit> Audit { get; set; }
         public virtual ICollection<Group> InverseParentGroup { get; set; }
-        public virtual ICollection<Role> Role { get; set; }
+        public virtual ICollection<UserRole> Role { get; set; }
     }
 }

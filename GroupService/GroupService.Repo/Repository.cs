@@ -28,13 +28,13 @@ namespace GroupService.Repo
         public async Task<bool> AssignRoleAsync(PostAssignRoleRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
-            _context.Role.Add(new Role()
+            _context.UserRole.Add(new UserRole()
             {
                 GroupId = request.GroupID.Value,
                 UserId = request.UserID.Value,
                 RoleId = (int)request.Role.GroupRole
             });
-            _context.Audit.Add(new Audit()
+            _context.UserRoleAudit.Add(new UserRoleAudit()
             {
                 DateRequested = DateTime.Now.ToUniversalTime(),
                 GroupId = request.GroupID.Value,
@@ -83,7 +83,7 @@ namespace GroupService.Repo
 
         public List<int> GetUserGroups(GetUserGroupsRequest request, CancellationToken cancellationToken)
         {
-            return _context.Role
+            return _context.UserRole
                 .Where(w => w.UserId == request.UserID)
                 .Select(s => s.GroupId).ToList();
         }
@@ -92,7 +92,7 @@ namespace GroupService.Repo
         {
             Dictionary<int, List<int>> response = new Dictionary<int, List<int>>();
 
-            var roles = _context.Role
+            var roles = _context.UserRole
                 .Where(w => w.UserId == request.UserID).ToList();
 
             List<int> distinctGroups = roles
@@ -110,7 +110,7 @@ namespace GroupService.Repo
         public async Task<bool> RevokeRoleAsync(PostRevokeRoleRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
-            Role role = _context.Role.FirstOrDefault(
+            UserRole role = _context.UserRole.FirstOrDefault(
                 w => w.UserId == request.UserID.Value &&
                 w.GroupId == request.GroupID.Value &&
                 w.RoleId == (int)request.Role.GroupRole
@@ -118,9 +118,9 @@ namespace GroupService.Repo
 
             if (role != null)
             {
-                _context.Role.Remove(role);
+                _context.UserRole.Remove(role);
 
-                _context.Audit.Add(new Audit()
+                _context.UserRoleAudit.Add(new UserRoleAudit()
                 {
                     DateRequested = DateTime.Now.ToUniversalTime(),
                     GroupId = request.GroupID.Value,

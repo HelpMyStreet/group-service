@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GroupService.Repo.EntityFramework.Entities
 {
-    public class Audit
+    public class UserRoleAudit
     {
         public int AuthorisedByUserId { get; set; }
         public int UserId { get; set; }

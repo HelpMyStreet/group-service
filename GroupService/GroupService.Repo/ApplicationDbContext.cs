@@ -18,9 +18,8 @@ namespace GroupService.Repo
             conn.AddAzureToken();
         }
 
-        public virtual DbSet<Audit> Audit { get; set; }
+        public virtual DbSet<UserRoleAudit> UserRoleAudit { get; set; }
         public virtual DbSet<Group> Group { get; set; }
-        public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<UserRole> UserRole { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -32,11 +31,11 @@ namespace GroupService.Repo
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Audit>(entity =>
+            modelBuilder.Entity<UserRoleAudit>(entity =>
             {
                 entity.HasKey(e => new { e.AuthorisedByUserId, e.UserId, e.GroupId, e.RoleId });
 
-                entity.ToTable("Audit", "Audit");
+                entity.ToTable("UserRoleAudit", "Audit");
 
                 entity.Property(e => e.AuthorisedByUserId).HasColumnName("AuthorisedByUserID");
 
@@ -76,11 +75,11 @@ namespace GroupService.Repo
                     .HasConstraintName("FK_Group_Group");
             });
 
-            modelBuilder.Entity<Role>(entity =>
+            modelBuilder.Entity<UserRole>(entity =>
             {
                 entity.HasKey(e => new { e.GroupId, e.UserId, e.RoleId });
 
-                entity.ToTable("Role", "Group");
+                entity.ToTable("UserRole", "Group");
 
                 entity.Property(e => e.GroupId).HasColumnName("GroupID");
 
@@ -93,17 +92,6 @@ namespace GroupService.Repo
                     .HasForeignKey(d => d.GroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Role_Group");
-            });
-
-            modelBuilder.Entity<UserRole>(entity =>
-            {
-                entity.HasKey(e => new { e.UserId, e.RoleId });
-
-                entity.ToTable("UserRole", "User");
-
-                entity.Property(e => e.UserId).HasColumnName("UserID");
-
-                entity.Property(e => e.RoleId).HasColumnName("RoleID");
             });
         }
     }
