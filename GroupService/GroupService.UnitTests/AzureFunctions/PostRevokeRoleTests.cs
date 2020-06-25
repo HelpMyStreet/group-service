@@ -18,32 +18,32 @@ using System.Threading.Tasks;
 
 namespace GroupService.UnitTests.AzureFunctions
 {
-    public class PostAssignRoleTests
+    public class PostRevokeRoleTests
     {
         private Mock<IMediator> _mediator;
-        private Mock<ILoggerWrapper<PostAssignRoleRequest>> _logger;
-        private PostAssignRole _classUnderTest;
-        private PostAssignRoleResponse _response;
+        private Mock<ILoggerWrapper<PostRevokeRoleRequest>> _logger;
+        private PostRevokeRole _classUnderTest;
+        private PostRevokeRoleResponse _response;
 
         [SetUp]
         public void Setup()
         {
-            _logger = new Mock<ILoggerWrapper<PostAssignRoleRequest>>();
+            _logger = new Mock<ILoggerWrapper<PostRevokeRoleRequest>>();
             _mediator = new Mock<IMediator>();
-            _mediator.Setup(x => x.Send(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(() => _response);
-            _classUnderTest = new PostAssignRole(_mediator.Object, _logger.Object);
+            _mediator.Setup(x => x.Send(It.IsAny<PostRevokeRoleRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(() => _response);
+            _classUnderTest = new PostRevokeRole(_mediator.Object, _logger.Object);
 
         }
 
         [Test]
         public async Task HappyPath_ReturnsSuccess()
         {
-            _response = new PostAssignRoleResponse()
+            _response = new PostRevokeRoleResponse()
             {
                 Outcome = GroupPermissionOutcome.Success
             };
 
-            IActionResult result = await _classUnderTest.Run(new PostAssignRoleRequest()
+            IActionResult result = await _classUnderTest.Run(new PostRevokeRoleRequest()
             {
                 UserID = 1,
                 GroupID = 1,
@@ -55,7 +55,7 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.IsNotNull(objectResult);
             Assert.AreEqual(200, objectResult.StatusCode);
 
-            ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode>;
+            ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode>;
             Assert.IsNotNull(deserialisedResponse);
 
             Assert.IsTrue(deserialisedResponse.HasContent);
@@ -63,18 +63,18 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.AreEqual(0, deserialisedResponse.Errors.Count());
             Assert.AreEqual(GroupPermissionOutcome.Success, deserialisedResponse.Content.Outcome);
 
-            _mediator.Verify(x => x.Send(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+            _mediator.Verify(x => x.Send(It.IsAny<PostRevokeRoleRequest>(), It.IsAny<CancellationToken>()), Times.Once);
         }
 
         [Test]
         public async Task UnHappyPath_ReturnsUnauthorized()
         {
-            _response = new PostAssignRoleResponse()
+            _response = new PostRevokeRoleResponse()
             {
                 Outcome = GroupPermissionOutcome.Unauthorized
             };
 
-            IActionResult result = await _classUnderTest.Run(new PostAssignRoleRequest()
+            IActionResult result = await _classUnderTest.Run(new PostRevokeRoleRequest()
             {
                 UserID = 1,
                 GroupID = 1,
@@ -86,7 +86,7 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.IsNotNull(objectResult);
             Assert.AreEqual(200, objectResult.StatusCode);
 
-            ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode>;
+            ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode>;
             Assert.IsNotNull(deserialisedResponse);
 
             Assert.IsTrue(deserialisedResponse.HasContent);
@@ -94,13 +94,13 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.AreEqual(0, deserialisedResponse.Errors.Count());
             Assert.AreEqual(GroupPermissionOutcome.Unauthorized, deserialisedResponse.Content.Outcome);
 
-            _mediator.Verify(x => x.Send(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+            _mediator.Verify(x => x.Send(It.IsAny<PostRevokeRoleRequest>(), It.IsAny<CancellationToken>()), Times.Once);
         }
 
         [Test]
         public async Task MissingParameters_ThrowsValidationError()
         {
-            PostAssignRoleRequest req = new PostAssignRoleRequest();
+            PostRevokeRoleRequest req = new PostRevokeRoleRequest();
 
             IActionResult result = await _classUnderTest.Run(req, CancellationToken.None);
 
@@ -108,7 +108,7 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.IsNotNull(objectResult);
             Assert.AreEqual(422, objectResult.StatusCode);
 
-            ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode>;
+            ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode>;
             Assert.IsNotNull(deserialisedResponse);
 
             Assert.IsFalse(deserialisedResponse.HasContent);
@@ -116,13 +116,13 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.AreEqual(4, deserialisedResponse.Errors.Count());
             Assert.AreEqual(GroupServiceErrorCode.ValidationError, deserialisedResponse.Errors[0].ErrorCode);
 
-            _mediator.Verify(x => x.Send(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+            _mediator.Verify(x => x.Send(It.IsAny<PostRevokeRoleRequest>(), It.IsAny<CancellationToken>()), Times.Never);
         }
 
         [Test]
         public async Task MissingUserID_ThrowsValidationError()
         {
-            PostAssignRoleRequest req = new PostAssignRoleRequest()
+            PostRevokeRoleRequest req = new PostRevokeRoleRequest()
             {
                 AuthorisedByUserID = 1,
                 GroupID = 2,
@@ -138,7 +138,7 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.IsNotNull(objectResult);
             Assert.AreEqual(422, objectResult.StatusCode);
 
-            ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode>;
+            ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode>;
             Assert.IsNotNull(deserialisedResponse);
 
             Assert.IsFalse(deserialisedResponse.HasContent);
@@ -146,13 +146,13 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.AreEqual(1, deserialisedResponse.Errors.Count());
             Assert.AreEqual(GroupServiceErrorCode.ValidationError, deserialisedResponse.Errors[0].ErrorCode);
 
-            _mediator.Verify(x => x.Send(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+            _mediator.Verify(x => x.Send(It.IsAny<PostRevokeRoleRequest>(), It.IsAny<CancellationToken>()), Times.Never);
         }
 
         [Test]
         public async Task MissingGroupID_ThrowsValidationError()
         {
-            PostAssignRoleRequest req = new PostAssignRoleRequest()
+            PostRevokeRoleRequest req = new PostRevokeRoleRequest()
             {
                 AuthorisedByUserID = 1,
                 UserID = 1,
@@ -168,7 +168,7 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.IsNotNull(objectResult);
             Assert.AreEqual(422, objectResult.StatusCode);
 
-            ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode>;
+            ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode>;
             Assert.IsNotNull(deserialisedResponse);
 
             Assert.IsFalse(deserialisedResponse.HasContent);
@@ -176,13 +176,13 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.AreEqual(1, deserialisedResponse.Errors.Count());
             Assert.AreEqual(GroupServiceErrorCode.ValidationError, deserialisedResponse.Errors[0].ErrorCode);
 
-            _mediator.Verify(x => x.Send(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+            _mediator.Verify(x => x.Send(It.IsAny<PostRevokeRoleRequest>(), It.IsAny<CancellationToken>()), Times.Never);
         }
 
         [Test]
         public async Task MissingAuthorisedByUserID_ThrowsValidationError()
         {
-            PostAssignRoleRequest req = new PostAssignRoleRequest()
+            PostRevokeRoleRequest req = new PostRevokeRoleRequest()
             {
                 GroupID = 1,
                 UserID = 1,
@@ -198,7 +198,7 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.IsNotNull(objectResult);
             Assert.AreEqual(422, objectResult.StatusCode);
 
-            ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostAssignRoleResponse, GroupServiceErrorCode>;
+            ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<PostRevokeRoleResponse, GroupServiceErrorCode>;
             Assert.IsNotNull(deserialisedResponse);
 
             Assert.IsFalse(deserialisedResponse.HasContent);
@@ -206,7 +206,7 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.AreEqual(1, deserialisedResponse.Errors.Count());
             Assert.AreEqual(GroupServiceErrorCode.ValidationError, deserialisedResponse.Errors[0].ErrorCode);
 
-            _mediator.Verify(x => x.Send(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+            _mediator.Verify(x => x.Send(It.IsAny<PostRevokeRoleRequest>(), It.IsAny<CancellationToken>()), Times.Never);
         }
 
     }
