@@ -34,23 +34,26 @@ namespace GroupService.Repo
             if (group == null)
                 return false;
 
-            _context.UserRole.Add(new UserRole()
+            UserRole role = _context.UserRole.FirstOrDefault(
+                w => w.UserId == request.UserID.Value &&
+                w.GroupId == request.GroupID.Value &&
+                w.RoleId == (int)request.Role.GroupRole
+                );
+
+            if (role == null)
             {
-                GroupId = request.GroupID.Value,
-                UserId = request.UserID.Value,
-                RoleId = (int)request.Role.GroupRole
-            });
-            _context.UserRoleAudit.Add(new UserRoleAudit()
-            {
-                DateRequested = DateTime.Now.ToUniversalTime(),
-                GroupId = request.GroupID.Value,
-                UserId = request.UserID.Value,
-                RoleId = (int)request.Role.GroupRole,
-                AuthorisedByUserId = request.AuthorisedByUserID.Value,
-                ActionId = (int)GroupAction.AddMember
-            });
-            await _context.SaveChangesAsync(cancellationToken);
-            success = true;
+                _context.UserRole.Add(new UserRole()
+                {
+                    GroupId = request.GroupID.Value,
+                    UserId = request.UserID.Value,
+                    RoleId = (int)request.Role.GroupRole
+                });
+                int result = await _context.SaveChangesAsync(cancellationToken);
+                if (result == 1)
+                {
+                    success = true;
+                }
+            }
             return success;
         }
 
@@ -126,19 +129,28 @@ namespace GroupService.Repo
             {
                 _context.UserRole.Remove(role);
 
-                _context.UserRoleAudit.Add(new UserRoleAudit()
+                int result = await _context.SaveChangesAsync(cancellationToken);
+                if (result == 1)
                 {
-                    DateRequested = DateTime.Now.ToUniversalTime(),
-                    GroupId = request.GroupID.Value,
-                    UserId = request.UserID.Value,
-                    RoleId = (int)request.Role.GroupRole,
-                    AuthorisedByUserId = request.AuthorisedByUserID.Value,
-                    ActionId = (int)GroupAction.RevokeMember
-                });
-                await _context.SaveChangesAsync(cancellationToken);
-                success = true;
+                    success = true;
+                }
             }
             return success;
+        }
+
+        public async Task AddUserRoleAuditAsync(int groupId, int userId, GroupRoles groupRole, int authorisedByUserID, GroupAction groupAction, bool success, CancellationToken cancellationToken)
+        {
+            _context.UserRoleAudit.Add(new UserRoleAudit()
+            {
+                DateRequested = DateTime.Now.ToUniversalTime(),
+                GroupId = groupId,
+                UserId = userId,
+                RoleId = (int)groupRole,
+                AuthorisedByUserId = authorisedByUserID,
+                ActionId = (byte) groupAction,
+                Success = success
+            });
+            await _context.SaveChangesAsync(cancellationToken);
         }
     }
 }

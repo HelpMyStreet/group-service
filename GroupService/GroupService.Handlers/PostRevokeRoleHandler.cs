@@ -33,10 +33,10 @@ namespace GroupService.Handlers
                     UserID = request.AuthorisedByUserID.Value
                 }, cancellationToken);
 
-                if (allroles != null)
+                if (allroles != null && allroles.Count>0)
                 {
                     var rolesForGivenGroup = allroles[request.GroupID.Value];
-                    if (rolesForGivenGroup != null)
+                    if (rolesForGivenGroup != null && rolesForGivenGroup.Count>0)
                     {
                         if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && request.GroupID != (int)GroupRoles.Owner)
                         {
@@ -49,7 +49,17 @@ namespace GroupService.Handlers
                     }
                 }
             }
-            
+
+            await _repository.AddUserRoleAuditAsync(
+                       request.GroupID.Value,
+                       request.UserID.Value,
+                       request.Role.GroupRole,
+                       request.AuthorisedByUserID.Value,
+                       GroupAction.RevokeMember,
+                       success,
+                       cancellationToken
+                       );
+
             return new PostRevokeRoleResponse()
             {
                 Outcome = success ? GroupPermissionOutcome.Success : GroupPermissionOutcome.Unauthorized

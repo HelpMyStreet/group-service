@@ -6,9 +6,9 @@ namespace GroupService.Repo.EntityFramework.Entities
 {
     public class UserRole
     {
-        public int GroupId { get; set; }
         public int UserId { get; set; }
         public int RoleId { get; set; }
+        public int GroupId { get; set; }
 
         public virtual Group Group { get; set; }
     }

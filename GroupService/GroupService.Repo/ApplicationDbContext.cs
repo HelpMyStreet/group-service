@@ -31,31 +31,6 @@ namespace GroupService.Repo
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UserRoleAudit>(entity =>
-            {
-                entity.HasKey(e => new { e.AuthorisedByUserId, e.UserId, e.GroupId, e.RoleId });
-
-                entity.ToTable("UserRoleAudit", "Group");
-
-                entity.Property(e => e.AuthorisedByUserId).HasColumnName("AuthorisedByUserID");
-
-                entity.Property(e => e.UserId).HasColumnName("UserID");
-
-                entity.Property(e => e.GroupId).HasColumnName("GroupID");
-
-                entity.Property(e => e.RoleId).HasColumnName("RoleID");
-
-                entity.Property(e => e.ActionId).HasColumnName("ActionID");
-
-                entity.Property(e => e.DateRequested).HasColumnType("datetime");
-
-                entity.HasOne(d => d.Group)
-                    .WithMany(p => p.Audit)
-                    .HasForeignKey(d => d.GroupId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Audit_Group");
-            });
-
             modelBuilder.Entity<Group>(entity =>
             {
                 entity.ToTable("Group", "Group");
@@ -64,6 +39,8 @@ namespace GroupService.Repo
                     .HasName("UC_GroupName")
                     .IsUnique();
 
+                entity.HasIndex(e => e.ParentGroupId);
+
                 entity.Property(e => e.GroupName)
                     .IsRequired()
                     .HasMaxLength(100)
@@ -71,8 +48,7 @@ namespace GroupService.Repo
 
                 entity.HasOne(d => d.ParentGroup)
                     .WithMany(p => p.InverseParentGroup)
-                    .HasForeignKey(d => d.ParentGroupId)
-                    .HasConstraintName("FK_Group_Group");
+                    .HasForeignKey(d => d.ParentGroupId);
             });
 
             modelBuilder.Entity<UserRole>(entity =>
@@ -88,10 +64,29 @@ namespace GroupService.Repo
                 entity.Property(e => e.RoleId).HasColumnName("RoleID");
 
                 entity.HasOne(d => d.Group)
-                    .WithMany(p => p.Role)
+                    .WithMany(p => p.UserRole)
                     .HasForeignKey(d => d.GroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Role_Group");
+            });
+
+            modelBuilder.Entity<UserRoleAudit>(entity =>
+            {
+                entity.ToTable("UserRoleAudit", "Group");
+
+                entity.HasIndex(e => e.GroupId);
+
+                entity.Property(e => e.ActionId).HasColumnName("ActionID");
+
+                entity.Property(e => e.AuthorisedByUserId).HasColumnName("AuthorisedByUserID");
+
+                entity.Property(e => e.DateRequested).HasColumnType("datetime");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.RoleId).HasColumnName("RoleID");
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
             });
         }
     }

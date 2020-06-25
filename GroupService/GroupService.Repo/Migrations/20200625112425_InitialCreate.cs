@@ -9,13 +9,7 @@ namespace GroupService.Repo.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
-                name: "Audit");
-
-            migrationBuilder.EnsureSchema(
                 name: "Group");
-
-            migrationBuilder.EnsureSchema(
-                name: "User");
 
             migrationBuilder.CreateTable(
                 name: "Group",
@@ -31,7 +25,7 @@ namespace GroupService.Repo.Migrations
                 {
                     table.PrimaryKey("PK_Group", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Group_Group",
+                        name: "FK_Group_Group_ParentGroupId",
                         column: x => x.ParentGroupId,
                         principalSchema: "Group",
                         principalTable: "Group",
@@ -40,54 +34,37 @@ namespace GroupService.Repo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserRole",
-                schema: "User",
+                name: "UserRoleAudit",
+                schema: "Group",
                 columns: table => new
                 {
-                    UserID = table.Column<int>(nullable: false),
-                    RoleID = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserRole", x => new { x.UserID, x.RoleID });
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Audit",
-                schema: "Audit",
-                columns: table => new
-                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AuthorisedByUserID = table.Column<int>(nullable: false),
                     UserID = table.Column<int>(nullable: false),
                     GroupID = table.Column<int>(nullable: false),
                     RoleID = table.Column<int>(nullable: false),
                     DateRequested = table.Column<DateTime>(type: "datetime", nullable: false),
-                    ActionID = table.Column<byte>(nullable: false)
+                    ActionID = table.Column<byte>(nullable: false),
+                    Success = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Audit", x => new { x.AuthorisedByUserID, x.UserID, x.GroupID, x.RoleID });
-                    table.ForeignKey(
-                        name: "FK_Audit_Group",
-                        column: x => x.GroupID,
-                        principalSchema: "Group",
-                        principalTable: "Group",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                    table.PrimaryKey("PK_UserRoleAudit", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Role",
+                name: "UserRole",
                 schema: "Group",
                 columns: table => new
                 {
-                    GroupID = table.Column<int>(nullable: false),
                     UserID = table.Column<int>(nullable: false),
-                    RoleID = table.Column<int>(nullable: false)
+                    RoleID = table.Column<int>(nullable: false),
+                    GroupID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Role", x => new { x.GroupID, x.UserID, x.RoleID });
+                    table.PrimaryKey("PK_UserRole", x => new { x.GroupID, x.UserID, x.RoleID });
                     table.ForeignKey(
                         name: "FK_Role_Group",
                         column: x => x.GroupID,
@@ -96,12 +73,6 @@ namespace GroupService.Repo.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Audit_GroupID",
-                schema: "Audit",
-                table: "Audit",
-                column: "GroupID");
 
             migrationBuilder.CreateIndex(
                 name: "UC_GroupName",
@@ -115,21 +86,23 @@ namespace GroupService.Repo.Migrations
                 schema: "Group",
                 table: "Group",
                 column: "ParentGroupId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserRoleAudit_GroupID",
+                schema: "Group",
+                table: "UserRoleAudit",
+                column: "GroupID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Audit",
-                schema: "Audit");
-
-            migrationBuilder.DropTable(
-                name: "Role",
+                name: "UserRole",
                 schema: "Group");
 
             migrationBuilder.DropTable(
-                name: "UserRole",
-                schema: "User");
+                name: "UserRoleAudit",
+                schema: "Group");
 
             migrationBuilder.DropTable(
                 name: "Group",

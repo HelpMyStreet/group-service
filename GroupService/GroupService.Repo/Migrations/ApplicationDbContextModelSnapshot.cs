@@ -61,11 +61,18 @@ namespace GroupService.Repo.Migrations
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.UserRoleAudit", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<byte>("ActionId")
+                        .HasColumnName("ActionID");
+
                     b.Property<int>("AuthorisedByUserId")
                         .HasColumnName("AuthorisedByUserID");
 
-                    b.Property<int>("UserId")
-                        .HasColumnName("UserID");
+                    b.Property<DateTime>("DateRequested")
+                        .HasColumnType("datetime");
 
                     b.Property<int>("GroupId")
                         .HasColumnName("GroupID");
@@ -73,13 +80,12 @@ namespace GroupService.Repo.Migrations
                     b.Property<int>("RoleId")
                         .HasColumnName("RoleID");
 
-                    b.Property<byte>("ActionId")
-                        .HasColumnName("ActionID");
+                    b.Property<bool>("Success");
 
-                    b.Property<DateTime>("DateRequested")
-                        .HasColumnType("datetime");
+                    b.Property<int>("UserId")
+                        .HasColumnName("UserID");
 
-                    b.HasKey("AuthorisedByUserId", "UserId", "GroupId", "RoleId");
+                    b.HasKey("Id");
 
                     b.HasIndex("GroupId");
 
@@ -90,24 +96,15 @@ namespace GroupService.Repo.Migrations
                 {
                     b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "ParentGroup")
                         .WithMany("InverseParentGroup")
-                        .HasForeignKey("ParentGroupId")
-                        .HasConstraintName("FK_Group_Group");
+                        .HasForeignKey("ParentGroupId");
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.UserRole", b =>
                 {
                     b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
-                        .WithMany("Role")
+                        .WithMany("UserRole")
                         .HasForeignKey("GroupId")
                         .HasConstraintName("FK_Role_Group");
-                });
-
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.UserRoleAudit", b =>
-                {
-                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
-                        .WithMany("Audit")
-                        .HasForeignKey("GroupId")
-                        .HasConstraintName("FK_Audit_Group");
                 });
 #pragma warning restore 612, 618
         }
