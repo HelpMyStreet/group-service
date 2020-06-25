@@ -28,6 +28,12 @@ namespace GroupService.Repo
         public async Task<bool> AssignRoleAsync(PostAssignRoleRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
+
+            var group = _context.Group.FirstOrDefault(w => w.Id == request.GroupID);
+
+            if (group == null)
+                return false;
+
             _context.UserRole.Add(new UserRole()
             {
                 GroupId = request.GroupID.Value,

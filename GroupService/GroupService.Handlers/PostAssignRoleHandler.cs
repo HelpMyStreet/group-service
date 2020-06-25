@@ -21,27 +21,34 @@ namespace GroupService.Handlers
         public async Task<PostAssignRoleResponse> Handle(PostAssignRoleRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
-            var allroles =_repository.GetUserRoles(new GetUserRolesRequest()
-            {
-                UserID = request.AuthorisedByUserID.Value
-            },cancellationToken);
 
-            if (allroles != null)
+            if (request.AuthorisedByUserID.Value == -1)
             {
-                var rolesForGivenGroup = allroles[request.GroupID.Value];
-                if(rolesForGivenGroup!=null)
+                success = await _repository.AssignRoleAsync(request, cancellationToken);
+            }
+            else
+            {
+                var allroles = _repository.GetUserRoles(new GetUserRolesRequest()
                 {
-                    if(rolesForGivenGroup.Contains((int)GroupRoles.Owner) && request.GroupID!=(int)GroupRoles.Owner  )
+                    UserID = request.AuthorisedByUserID.Value
+                }, cancellationToken);
+
+                if (allroles != null)
+                {
+                    var rolesForGivenGroup = allroles[request.GroupID.Value];
+                    if (rolesForGivenGroup != null)
                     {
-                        success = await _repository.AssignRoleAsync(request, cancellationToken);
-                    }
-                    else if(rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin))
-                    {
-                        success = await _repository.AssignRoleAsync(request, cancellationToken);
+                        if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && request.GroupID != (int)GroupRoles.Owner)
+                        {
+                            success = await _repository.AssignRoleAsync(request, cancellationToken);
+                        }
+                        else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin))
+                        {
+                            success = await _repository.AssignRoleAsync(request, cancellationToken);
+                        }
                     }
                 }
             }
-
             
             return new PostAssignRoleResponse()
             {

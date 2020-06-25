@@ -35,7 +35,7 @@ namespace GroupService.Repo
             {
                 entity.HasKey(e => new { e.AuthorisedByUserId, e.UserId, e.GroupId, e.RoleId });
 
-                entity.ToTable("UserRoleAudit", "Audit");
+                entity.ToTable("UserRoleAudit", "Group");
 
                 entity.Property(e => e.AuthorisedByUserId).HasColumnName("AuthorisedByUserID");
 

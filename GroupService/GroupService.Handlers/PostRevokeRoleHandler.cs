@@ -21,27 +21,34 @@ namespace GroupService.Handlers
         public async Task<PostRevokeRoleResponse> Handle(PostRevokeRoleRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
-            var allroles =_repository.GetUserRoles(new GetUserRolesRequest()
-            {
-                UserID = request.AuthorisedByUserID.Value
-            },cancellationToken);
 
-            if (allroles != null)
+            if (request.AuthorisedByUserID.Value == -1)
             {
-                var rolesForGivenGroup = allroles[request.GroupID.Value];
-                if(rolesForGivenGroup!=null)
+                success = await _repository.RevokeRoleAsync(request, cancellationToken);
+            }
+            else
+            {
+                var allroles = _repository.GetUserRoles(new GetUserRolesRequest()
                 {
-                    if(rolesForGivenGroup.Contains((int)GroupRoles.Owner) && request.GroupID!=(int)GroupRoles.Owner  )
+                    UserID = request.AuthorisedByUserID.Value
+                }, cancellationToken);
+
+                if (allroles != null)
+                {
+                    var rolesForGivenGroup = allroles[request.GroupID.Value];
+                    if (rolesForGivenGroup != null)
                     {
-                        success = await _repository.RevokeRoleAsync(request, cancellationToken);
-                    }
-                    else if(rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin))
-                    {
-                        success = await _repository.RevokeRoleAsync(request, cancellationToken);
+                        if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && request.GroupID != (int)GroupRoles.Owner)
+                        {
+                            success = await _repository.RevokeRoleAsync(request, cancellationToken);
+                        }
+                        else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin))
+                        {
+                            success = await _repository.RevokeRoleAsync(request, cancellationToken);
+                        }
                     }
                 }
             }
-
             
             return new PostRevokeRoleResponse()
             {
