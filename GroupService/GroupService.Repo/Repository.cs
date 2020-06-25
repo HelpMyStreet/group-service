@@ -34,26 +34,18 @@ namespace GroupService.Repo
             if (group == null)
                 return false;
 
-            UserRole role = _context.UserRole.FirstOrDefault(
-                w => w.UserId == request.UserID.Value &&
-                w.GroupId == request.GroupID.Value &&
-                w.RoleId == (int)request.Role.GroupRole
-                );
-
-            if (role == null)
+            _context.UserRole.Add(new UserRole()
             {
-                _context.UserRole.Add(new UserRole()
-                {
-                    GroupId = request.GroupID.Value,
-                    UserId = request.UserID.Value,
-                    RoleId = (int)request.Role.GroupRole
-                });
-                int result = await _context.SaveChangesAsync(cancellationToken);
-                if (result == 1)
-                {
-                    success = true;
-                }
+                GroupId = request.GroupID.Value,
+                UserId = request.UserID.Value,
+                RoleId = (int)request.Role.GroupRole
+            });
+            int result = await _context.SaveChangesAsync(cancellationToken);
+            if (result == 1)
+            {
+                success = true;
             }
+            
             return success;
         }
 
@@ -119,21 +111,16 @@ namespace GroupService.Repo
         public async Task<bool> RevokeRoleAsync(PostRevokeRoleRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
-            UserRole role = _context.UserRole.FirstOrDefault(
-                w => w.UserId == request.UserID.Value &&
-                w.GroupId == request.GroupID.Value &&
-                w.RoleId == (int)request.Role.GroupRole
-                );
+            
+            _context.UserRole.Remove(_context.UserRole.First(
+            w => w.UserId == request.UserID.Value &&
+            w.GroupId == request.GroupID.Value &&
+            w.RoleId == (int)request.Role.GroupRole));
 
-            if (role != null)
+            int result = await _context.SaveChangesAsync(cancellationToken);
+            if (result == 1)
             {
-                _context.UserRole.Remove(role);
-
-                int result = await _context.SaveChangesAsync(cancellationToken);
-                if (result == 1)
-                {
-                    success = true;
-                }
+                success = true;
             }
             return success;
         }
@@ -151,6 +138,24 @@ namespace GroupService.Repo
                 Success = success
             });
             await _context.SaveChangesAsync(cancellationToken);
+        }
+
+        public bool RoleExists(int userId, int groupId, GroupRoles groupRole, CancellationToken cancellationToken)
+        {
+            UserRole role = _context.UserRole.FirstOrDefault(
+                w => w.UserId == userId &&
+                w.GroupId == groupId &&
+                w.RoleId == (int)groupRole
+                );
+
+            if(role!=null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

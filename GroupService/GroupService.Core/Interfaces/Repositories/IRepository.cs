@@ -22,5 +22,7 @@ namespace GroupService.Core.Interfaces.Repositories
         Task<bool> RevokeRoleAsync(PostRevokeRoleRequest request, CancellationToken cancellationToken);
 
         Task AddUserRoleAuditAsync(int groupId, int userId, GroupRoles groupRole, int authorisedByUserID, GroupAction groupAction, bool success, CancellationToken cancellationToken);
+
+        bool RoleExists(int userId,int groupId, GroupRoles groupRole, CancellationToken cancellationToken);
     }
 }

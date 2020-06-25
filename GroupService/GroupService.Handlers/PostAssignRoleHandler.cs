@@ -22,29 +22,34 @@ namespace GroupService.Handlers
         {
             bool success = false;
 
-            if (request.AuthorisedByUserID.Value == -1)
-            {
-                success = await _repository.AssignRoleAsync(request, cancellationToken);
-            }
-            else
-            {
-                var allroles = _repository.GetUserRoles(new GetUserRolesRequest()
-                {
-                    UserID = request.AuthorisedByUserID.Value
-                }, cancellationToken);
+            bool roleExists = _repository.RoleExists(request.UserID.Value, request.GroupID.Value, request.Role.GroupRole, cancellationToken);
 
-                if (allroles != null && allroles.Count>0)
+            if (!roleExists)
+            {
+                if (request.AuthorisedByUserID.Value == -1)
                 {
-                    var rolesForGivenGroup = allroles[request.GroupID.Value];
-                    if (rolesForGivenGroup != null && rolesForGivenGroup.Count>0)
+                    success = await _repository.AssignRoleAsync(request, cancellationToken);
+                }
+                else
+                {
+                    var allroles = _repository.GetUserRoles(new GetUserRolesRequest()
                     {
-                        if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && request.GroupID != (int)GroupRoles.Owner)
+                        UserID = request.AuthorisedByUserID.Value
+                    }, cancellationToken);
+
+                    if (allroles != null && allroles.Count > 0)
+                    {
+                        var rolesForGivenGroup = allroles[request.GroupID.Value];
+                        if (rolesForGivenGroup != null && rolesForGivenGroup.Count > 0)
                         {
-                            success = await _repository.AssignRoleAsync(request, cancellationToken);
-                        }
-                        else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin))
-                        {
-                            success = await _repository.AssignRoleAsync(request, cancellationToken);
+                            if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && request.GroupID != (int)GroupRoles.Owner)
+                            {
+                                success = await _repository.AssignRoleAsync(request, cancellationToken);
+                            }
+                            else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin))
+                            {
+                                success = await _repository.AssignRoleAsync(request, cancellationToken);
+                            }
                         }
                     }
                 }

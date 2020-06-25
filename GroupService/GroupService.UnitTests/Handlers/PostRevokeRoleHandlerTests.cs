@@ -19,16 +19,20 @@ namespace GroupService.UnitTests
         private Mock<IRepository> _repository;
         private Dictionary<int, List<int>> _allUserRoles;
         private bool _success;
-
+        private bool _roleExists;
         [SetUp]
         public void Setup()
         {
+            _roleExists = true;
             _repository = new Mock<IRepository>();
             _repository.Setup(x => x.GetUserRoles(It.IsAny<GetUserRolesRequest>(), It.IsAny<CancellationToken>()))
                 .Returns(() => _allUserRoles);
 
             _repository.Setup(x => x.RevokeRoleAsync(It.IsAny<PostRevokeRoleRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(() => _success);
+
+            _repository.Setup(x => x.RoleExists(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<CancellationToken>()))
+                .Returns(() => _roleExists);
 
             _repository.Setup(x => x.AddUserRoleAuditAsync(
                 It.IsAny<int>(),
