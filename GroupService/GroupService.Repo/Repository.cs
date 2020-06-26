@@ -140,7 +140,7 @@ namespace GroupService.Repo
             await _context.SaveChangesAsync(cancellationToken);
         }
 
-        public bool RoleExists(int userId, int groupId, GroupRoles groupRole, CancellationToken cancellationToken)
+        public bool RoleAssigned(int userId, int groupId, GroupRoles groupRole, CancellationToken cancellationToken)
         {
             UserRole role = _context.UserRole.FirstOrDefault(
                 w => w.UserId == userId &&

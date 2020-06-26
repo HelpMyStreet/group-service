@@ -22,9 +22,9 @@ namespace GroupService.Handlers
         {
             bool success = false;
 
-            bool roleExists = _repository.RoleExists(request.UserID.Value, request.GroupID.Value, request.Role.GroupRole, cancellationToken);
+            bool roleAssigned = _repository.RoleAssigned(request.UserID.Value, request.GroupID.Value, request.Role.GroupRole, cancellationToken);
 
-            if (!roleExists)
+            if (!roleAssigned)
             {
                 if (request.AuthorisedByUserID.Value == -1)
                 {
@@ -42,11 +42,11 @@ namespace GroupService.Handlers
                         var rolesForGivenGroup = allroles[request.GroupID.Value];
                         if (rolesForGivenGroup != null && rolesForGivenGroup.Count > 0)
                         {
-                            if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && request.GroupID != (int)GroupRoles.Owner)
+                            if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && request.Role.GroupRole != GroupRoles.Owner)
                             {
                                 success = await _repository.AssignRoleAsync(request, cancellationToken);
                             }
-                            else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin))
+                            else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin) && request.Role.GroupRole == GroupRoles.Member)
                             {
                                 success = await _repository.AssignRoleAsync(request, cancellationToken);
                             }
@@ -67,7 +67,7 @@ namespace GroupService.Handlers
 
             return new PostAssignRoleResponse()
             {
-                Outcome = success ? GroupPermissionOutcome.Success : GroupPermissionOutcome.Unauthorized
+                Outcome = success || roleAssigned ? GroupPermissionOutcome.Success : GroupPermissionOutcome.Unauthorized
             };
         }
     }
