@@ -157,5 +157,12 @@ namespace GroupService.Repo
                 return false;
             }
         }
+
+        public List<int> GetGroupMembers(GetGroupMembersRequest request, CancellationToken cancellationToken)
+        {
+            return _context.UserRole
+                .Where(w => w.GroupId == request.GroupID)
+                .Select(s => s.UserId).ToList();
+        }
     }
 }
