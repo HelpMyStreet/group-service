@@ -162,7 +162,8 @@ namespace GroupService.Repo
         {
             return _context.UserRole
                 .Where(w => w.GroupId == request.GroupID)
-                .Select(s => s.UserId).ToList();
+                .Select(s => s.UserId)
+                .Distinct().ToList();
         }
     }
 }

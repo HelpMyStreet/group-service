@@ -33,7 +33,7 @@ namespace GroupService.AzureFunction
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(GetGroupMembersResponse))]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)]
-            [RequestBodyType(typeof(GetGroupMembersRequest), "get user groups")] GetGroupMembersRequest req,
+            [RequestBodyType(typeof(GetGroupMembersRequest), "get group members")] GetGroupMembersRequest req,
             CancellationToken cancellationToken)
         {
             try
