@@ -1,4 +1,5 @@
 ﻿using GroupService.Repo.EntityFramework.Entities;
+using GroupService.Repo.Helpers;
 using HelpMyStreet.Utils.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlClient;
@@ -38,6 +39,8 @@ namespace GroupService.Repo
                 entity.HasIndex(e => e.GroupName)
                     .HasName("UC_GroupName")
                     .IsUnique();
+
+                entity.SetDefaultGroup();
 
                 entity.HasIndex(e => e.ParentGroupId);
 
