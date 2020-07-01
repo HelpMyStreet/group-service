@@ -14,6 +14,7 @@ namespace GroupService.Repo.EntityFramework.Entities
 
         public int Id { get; set; }
         public string GroupName { get; set; }
+        public string GroupKey { get; set; }
         public int? ParentGroupId { get; set; }
 
         public virtual Group ParentGroup { get; set; }

@@ -43,15 +43,16 @@ namespace GroupService.UnitTests
         public void WhenGroupNameIsInValid_ThrowsError()
         {
             string groupName = "Group";
+            string groupKey = "GroupKey";
             _repository.Setup(x => x.CreateGroupAsync(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()))
-                .ThrowsAsync(new Exception($"{groupName} already exists as a group"));
+                .ThrowsAsync(new Exception($"GroupName {groupName} or GroupKey {groupKey} already exists as a group"));
 
             Exception ex = Assert.ThrowsAsync<Exception>(() => _classUnderTest.Handle(new PostCreateGroupRequest()
             {
                 GroupName = groupName
             }, CancellationToken.None));
 
-            Assert.AreEqual($"{groupName} already exists as a group", ex.Message);
+            Assert.AreEqual($"GroupName {groupName} or GroupKey {groupKey} already exists as a group", ex.Message);
         }
 
         [Test]

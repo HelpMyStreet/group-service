@@ -36,6 +36,10 @@ namespace GroupService.Repo
             {
                 entity.ToTable("Group", "Group");
 
+                entity.HasIndex(e => e.GroupKey)
+                    .HasName("UC_GroupKey")
+                    .IsUnique();
+
                 entity.HasIndex(e => e.GroupName)
                     .HasName("UC_GroupName")
                     .IsUnique();
