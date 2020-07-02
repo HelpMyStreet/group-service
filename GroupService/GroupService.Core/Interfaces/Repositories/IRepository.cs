@@ -26,5 +26,7 @@ namespace GroupService.Core.Interfaces.Repositories
         bool RoleAssigned(int userId,int groupId, GroupRoles groupRole, CancellationToken cancellationToken);
 
         List<int> GetGroupMembers(GetGroupMembersRequest request, CancellationToken cancellationToken);
+
+        int GetGroupByKey(GetGroupByKeyRequest request, CancellationToken cancellationToken);
     }
 }

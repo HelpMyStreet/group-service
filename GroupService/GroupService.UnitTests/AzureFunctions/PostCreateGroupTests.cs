@@ -45,7 +45,9 @@ namespace GroupService.UnitTests.AzureFunctions
 
             IActionResult result = await _classUnderTest.Run(new PostCreateGroupRequest()
             {
-                GroupName = "Group"
+                GroupName = "Group",
+                GroupKey = "Key"
+
             },CancellationToken.None);
 
             OkObjectResult objectResult = result as OkObjectResult;
@@ -79,7 +81,7 @@ namespace GroupService.UnitTests.AzureFunctions
 
             Assert.IsFalse(deserialisedResponse.HasContent);
             Assert.IsFalse(deserialisedResponse.IsSuccessful);
-            Assert.AreEqual(1, deserialisedResponse.Errors.Count());
+            Assert.AreEqual(2, deserialisedResponse.Errors.Count());
             Assert.AreEqual(GroupServiceErrorCode.ValidationError, deserialisedResponse.Errors[0].ErrorCode);
 
             _mediator.Verify(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()), Times.Never);
@@ -89,10 +91,11 @@ namespace GroupService.UnitTests.AzureFunctions
         public async Task ExistingGroupName_ThrowsError()
         {
             string groupName = "Group";
+            string groupKey = "GroupKey";
             _mediator.Setup(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()))
                 .ThrowsAsync(new Exception($"{groupName} already exists as a group"));
 
-            PostCreateGroupRequest req = new PostCreateGroupRequest() { GroupName = groupName };
+            PostCreateGroupRequest req = new PostCreateGroupRequest() { GroupName = groupName, GroupKey = groupKey };
 
             IActionResult result = await _classUnderTest.Run(req, CancellationToken.None);
 
@@ -116,10 +119,12 @@ namespace GroupService.UnitTests.AzureFunctions
         {
             string groupName = "Group";
             string parentGroupName = "ParentGroup";
+            string groupKey = "Key";
+
             _mediator.Setup(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>()))
                             .ThrowsAsync(new Exception($"{parentGroupName} does not exists as a group and cannot therefore be linked as a parent group"));
 
-            PostCreateGroupRequest req = new PostCreateGroupRequest() { GroupName = groupName, ParentGroupName= parentGroupName };
+            PostCreateGroupRequest req = new PostCreateGroupRequest() { GroupName = groupName, GroupKey = groupKey, ParentGroupName= parentGroupName };
 
             IActionResult result = await _classUnderTest.Run(req, CancellationToken.None);
 
