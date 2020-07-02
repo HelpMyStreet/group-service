@@ -48,16 +48,15 @@ namespace GroupService.Repo
             
             return success;
         }
-
         public async Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken)
         {
             int? parentGroupId = null;
             
-            var group = _context.Group.FirstOrDefault(x => x.GroupName == request.GroupName);
+            var group = _context.Group.FirstOrDefault(x => x.GroupName == request.GroupName && x.GroupKey == request.GroupKey);
 
             if (group != null)
             {
-                throw new Exception($"{request.GroupName} already exists as a group");
+                throw new Exception($"GroupName {request.GroupName} or GroupKey {request.GroupKey} already exists as a group");
             }
 
             Group parentGroup = null;
@@ -75,6 +74,7 @@ namespace GroupService.Repo
             Group g = new Group()
             {
                 GroupName = request.GroupName,
+                GroupKey = request.GroupKey,
                 ParentGroupId = parentGroupId
             };
             _context.Group.Add(g);
@@ -164,6 +164,19 @@ namespace GroupService.Repo
                 .Where(w => w.GroupId == request.GroupID)
                 .Select(s => s.UserId)
                 .Distinct().ToList();
+        }
+
+        public int GetGroupByKey(GetGroupByKeyRequest request, CancellationToken cancellationToken)
+        {
+            var group = _context.Group.FirstOrDefault(w => w.GroupKey == request.GroupKey);
+            if (group != null)
+            {
+                return group.Id;
+            }
+            else
+            {
+                throw new Exception($"{request.GroupKey} not found");
+            }
         }
     }
 }

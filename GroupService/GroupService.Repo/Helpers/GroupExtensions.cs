@@ -13,7 +13,8 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new Group
             {
                 Id = (int)-1,
-                GroupName = "Generic"
+                GroupName = "Generic",
+                GroupKey = "Generic"
             });
         }
     }
