@@ -3,6 +3,7 @@ using GroupService.Core.Dto;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
+using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
 using System;
 using System.Collections.Generic;
@@ -177,6 +178,13 @@ namespace GroupService.Repo
             {
                 throw new Exception($"{request.GroupKey} not found");
             }
+        }
+
+        public List<int> GetGroupAndChildGroups(int groupId, CancellationToken cancellationToken)
+        {
+            return _context.Group.Where(x => x.Id == groupId || x.ParentGroupId == groupId)
+                .Select(x=>x.Id)
+                .ToList();
         }
     }
 }
