@@ -1,5 +1,6 @@
 ﻿using GroupService.Core.Dto;
 using HelpMyStreet.Contracts.GroupService.Request;
+using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
+        List<int> GetGroupAndChildGroups(int groupId, CancellationToken cancellationToken);
+
         Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken);
 
         List<int> GetUserGroups(GetUserGroupsRequest request, CancellationToken cancellationToken);
