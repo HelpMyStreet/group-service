@@ -3,6 +3,7 @@ using GroupService.Core.Dto;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
+using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
 using System;
 using System.Collections.Generic;
@@ -59,19 +60,19 @@ namespace GroupService.Repo
                 throw new Exception($"GroupName {request.GroupName} or GroupKey {request.GroupKey} already exists as a group");
             }
 
-            Group parentGroup = null;
+            EntityFramework.Entities.Group parentGroup = null;
 
             if(request.ParentGroupName!=null)
             {
                 parentGroup = _context.Group.FirstOrDefault(x => x.GroupName == request.ParentGroupName);
-                if (group == null)
+                if (parentGroup == null)
                 {
                     throw new Exception($"{request.ParentGroupName} does not exists as a group and cannot therefore be linked as a parent group");
                 }
                 parentGroupId = parentGroup.Id;
             }
 
-            Group g = new Group()
+            EntityFramework.Entities.Group g = new EntityFramework.Entities.Group()
             {
                 GroupName = request.GroupName,
                 GroupKey = request.GroupKey,
@@ -176,6 +177,53 @@ namespace GroupService.Repo
             else
             {
                 throw new Exception($"{request.GroupKey} not found");
+            }
+        }
+
+        public List<int> GetGroupAndChildGroups(int groupId, CancellationToken cancellationToken)
+        {
+            return _context.Group.Where(x => x.Id == groupId || x.ParentGroupId == groupId)
+                .Select(x=>x.Id)
+                .ToList();
+        }
+
+        public HelpMyStreet.Utils.Models.Group GetGroupById(int groupId, CancellationToken cancellationToken)
+        {
+            var group = _context.Group.FirstOrDefault(x => x.Id == groupId);
+
+            if (group != null)
+            {
+                return new HelpMyStreet.Utils.Models.Group()
+                {
+                    GroupId = group.Id,
+                    GroupName = group.GroupName,
+                    GroupKey = group.GroupKey,
+                    ParentGroupId = group.ParentGroupId
+                };
+            }
+            else
+            {
+                throw new Exception($"{groupId} not found");
+            }
+        }
+
+        public List<HelpMyStreet.Utils.Models.Group> GetChildGroups(int groupId, CancellationToken cancellationToken)
+        {
+            var groups = _context.Group.Where(x => x.ParentGroupId == groupId);
+
+            if (groups != null)
+            {
+                return groups.Select(x => new HelpMyStreet.Utils.Models.Group()
+                {
+                    GroupId = x.Id,
+                    GroupKey = x.GroupKey,
+                    GroupName = x.GroupName,
+                    ParentGroupId = x.ParentGroupId
+                }).ToList();
+            }
+            else
+            {
+                throw new Exception($"{groupId} not found");
             }
         }
     }
