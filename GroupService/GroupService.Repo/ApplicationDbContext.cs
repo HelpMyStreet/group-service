@@ -22,6 +22,8 @@ namespace GroupService.Repo
         public virtual DbSet<UserRoleAudit> UserRoleAudit { get; set; }
         public virtual DbSet<Group> Group { get; set; }
         public virtual DbSet<UserRole> UserRole { get; set; }
+        public virtual DbSet<RegistrationJourney> RegistrationJourney { get; set; }
+        public virtual DbSet<RequestHelpJourney> RequestHelpJourney { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -94,6 +96,48 @@ namespace GroupService.Repo
                 entity.Property(e => e.RoleId).HasColumnName("RoleID");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
+            });
+
+            modelBuilder.Entity<RegistrationJourney>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId, e.Source });
+
+                entity.ToTable("RegistrationJourney", "Website");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.Source)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RegistrationSourceId).HasColumnName("RegistrationSourceID");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.RegistrationJourney)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_RegistrationJourney_Group");
+            });
+
+            modelBuilder.Entity<RequestHelpJourney>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId, e.Source });
+
+                entity.ToTable("RequestHelpJourney", "Website");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.Source)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RequestHelpSourceId).HasColumnName("RequestHelpSourceID");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.RequestHelpJourney)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_RequestHelpJourney_Group");
             });
         }
     }

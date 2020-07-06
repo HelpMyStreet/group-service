@@ -13,6 +13,10 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
+        GetRegistrationFormVariantResponse GetRegistrationFormVariant(int groupId, string source, CancellationToken cancellationToken);
+
+        GetRequestHelpFormVariantResponse GetRequestHelpFormVariant(int groupId, string source, CancellationToken cancellationToken);
+
         Group GetGroupById(int groupId, CancellationToken cancellationToken);
         List<Group> GetChildGroups(int groupId, CancellationToken cancellationToken);
 

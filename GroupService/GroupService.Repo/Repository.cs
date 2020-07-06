@@ -226,5 +226,39 @@ namespace GroupService.Repo
                 throw new Exception($"{groupId} not found");
             }
         }
+
+        public GetRegistrationFormVariantResponse GetRegistrationFormVariant(int groupId, string source, CancellationToken cancellationToken)
+        {
+            var registrationForm = _context.RegistrationJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == source);
+
+            if(registrationForm!=null)
+            {
+                return new GetRegistrationFormVariantResponse()
+                {
+                    RegistrationSource = (RegistrationSource)registrationForm.RegistrationSourceId
+                };
+            }
+            else
+            {
+                throw new Exception($"GroupId {groupId} Source {source} not found in RegistrationJourney");
+            }
+        }
+
+        public GetRequestHelpFormVariantResponse GetRequestHelpFormVariant(int groupId, string source, CancellationToken cancellationToken)
+        {
+            var requestHelpJourney = _context.RequestHelpJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == source);
+
+            if (requestHelpJourney != null)
+            {
+                return new GetRequestHelpFormVariantResponse()
+                {
+                    RequestHelpSource= (RequestHelpSource) requestHelpJourney.RequestHelpSourceId
+                };
+            }
+            else
+            {
+                throw new Exception($"GroupId {groupId} Source {source} not found in RequestHelpJourney");
+            }
+        }
     }
 }
