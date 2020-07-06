@@ -55,6 +55,24 @@ namespace GroupService.Repo.Migrations
                             Id = -1,
                             GroupKey = "Generic",
                             GroupName = "Generic"
+                        },
+                        new
+                        {
+                            Id = -2,
+                            GroupKey = "ftlos",
+                            GroupName = "For the Love of Scrubs"
+                        },
+                        new
+                        {
+                            Id = -3,
+                            GroupKey = "ageuklsl",
+                            GroupName = "Age UK Lincoln & South Lincolnshire"
+                        },
+                        new
+                        {
+                            Id = -4,
+                            GroupKey = "hlp",
+                            GroupName = "Healthy London Partnership"
                         });
                 });
 
@@ -67,12 +85,38 @@ namespace GroupService.Repo.Migrations
                         .HasMaxLength(100)
                         .IsUnicode(false);
 
-                    b.Property<byte>("RegistrationSourceId")
-                        .HasColumnName("RegistrationSourceID");
+                    b.Property<byte>("RegistrationFormVariant")
+                        .HasColumnName("RegistrationFormVariant");
 
                     b.HasKey("GroupId", "Source");
 
                     b.ToTable("RegistrationJourney","Website");
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = -1,
+                            Source = "",
+                            RegistrationFormVariant = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            Source = "",
+                            RegistrationFormVariant = (byte)2
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            Source = "",
+                            RegistrationFormVariant = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            Source = "",
+                            RegistrationFormVariant = (byte)1
+                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.RequestHelpJourney", b =>
@@ -84,12 +128,44 @@ namespace GroupService.Repo.Migrations
                         .HasMaxLength(100)
                         .IsUnicode(false);
 
-                    b.Property<byte>("RequestHelpSourceId")
-                        .HasColumnName("RequestHelpSourceID");
+                    b.Property<byte>("RequestHelpFormVariant")
+                        .HasColumnName("RequestHelpFormVariant");
 
                     b.HasKey("GroupId", "Source");
 
                     b.ToTable("RequestHelpJourney","Website");
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = -1,
+                            Source = "DIY",
+                            RequestHelpFormVariant = (byte)3
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            Source = "",
+                            RequestHelpFormVariant = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            Source = "",
+                            RequestHelpFormVariant = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            Source = "",
+                            RequestHelpFormVariant = (byte)2
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            Source = "",
+                            RequestHelpFormVariant = (byte)1
+                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.UserRole", b =>

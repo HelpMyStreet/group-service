@@ -8,7 +8,7 @@ namespace GroupService.Repo.EntityFramework.Entities
     {
         public int GroupId { get; set; }
         public string Source { get; set; }
-        public byte RequestHelpSourceId { get; set; }
+        public byte RequestHelpFormVariant { get; set; }
 
         public virtual Group Group { get; set; }
     }

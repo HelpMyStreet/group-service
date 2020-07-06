@@ -106,11 +106,13 @@ namespace GroupService.Repo
 
                 entity.Property(e => e.GroupId).HasColumnName("GroupID");
 
+                entity.RegistrationJourney();
+
                 entity.Property(e => e.Source)
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
-                entity.Property(e => e.RegistrationSourceId).HasColumnName("RegistrationSourceID");
+                entity.Property(e => e.RegistrationFormVariant).HasColumnName("RegistrationFormVariant");
 
                 entity.HasOne(d => d.Group)
                     .WithMany(p => p.RegistrationJourney)
@@ -127,11 +129,13 @@ namespace GroupService.Repo
 
                 entity.Property(e => e.GroupId).HasColumnName("GroupID");
 
+                entity.RequestHelpJourney();
+
                 entity.Property(e => e.Source)
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
-                entity.Property(e => e.RequestHelpSourceId).HasColumnName("RequestHelpSourceID");
+                entity.Property(e => e.RequestHelpFormVariant).HasColumnName("RequestHelpFormVariant");
 
                 entity.HasOne(d => d.Group)
                     .WithMany(p => p.RequestHelpJourney)
