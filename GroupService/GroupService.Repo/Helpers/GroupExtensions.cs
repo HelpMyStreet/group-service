@@ -17,5 +17,14 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "Generic"
             });
         }
+
+        public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
+        {
+            //entity.HasData(new RegistrationJourney
+            //{
+            //    GroupId = -1,
+            //    Source = 
+            //});
+        }
     }
 }

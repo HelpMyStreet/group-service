@@ -84,7 +84,7 @@ namespace GroupService.UnitTests.AzureFunctions
 
             Assert.IsFalse(deserialisedResponse.HasContent);
             Assert.IsFalse(deserialisedResponse.IsSuccessful);
-            Assert.AreEqual(2, deserialisedResponse.Errors.Count());
+            Assert.AreEqual(1, deserialisedResponse.Errors.Count());
             Assert.AreEqual(GroupServiceErrorCode.ValidationError, deserialisedResponse.Errors[0].ErrorCode);
 
             _mediator.Verify(x => x.Send(It.IsAny<GetRequestHelpFormVariantRequest>(), It.IsAny<CancellationToken>()), Times.Never);
