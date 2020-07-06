@@ -2,6 +2,7 @@
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
+using HelpMyStreet.Utils.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +13,9 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
+        Group GetGroupById(int groupId, CancellationToken cancellationToken);
+        List<Group> GetChildGroups(int groupId, CancellationToken cancellationToken);
+
         List<int> GetGroupAndChildGroups(int groupId, CancellationToken cancellationToken);
 
         Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken);
