@@ -36,7 +36,7 @@ namespace GroupService.UnitTests
         {
             _response = new GetRequestHelpFormVariantResponse()
             {
-                RequestHelpSource = RequestHelpSource.Default
+                RequestHelpFormVariant = RequestHelpFormVariant.Default
             };
            
 

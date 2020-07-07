@@ -36,7 +36,7 @@ namespace GroupService.UnitTests
         {
             _response = new GetRegistrationFormVariantResponse()
             {
-                RegistrationSource = RegistrationSource.Default
+                RegistrationFormVariant = RegistrationFormVariant.Default
             };
            
 

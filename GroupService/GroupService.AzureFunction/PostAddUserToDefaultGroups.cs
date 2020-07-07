@@ -30,7 +30,7 @@ namespace GroupService.AzureFunction
         }
 
         [FunctionName("PostAddUserToDefaultGroups")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(PostAssignRoleResponse))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(PostAddUserToDefaultGroupsResponse))]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
             [RequestBodyType(typeof(PostAddUserToDefaultGroupsRequest), "post add user to default groups")] PostAddUserToDefaultGroupsRequest req,

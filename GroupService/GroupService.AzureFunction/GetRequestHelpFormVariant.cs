@@ -30,7 +30,7 @@ namespace GroupService.AzureFunction
         }
 
         [FunctionName("GetRequestHelpFormVariant")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(GetGroupMembersResponse))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(GetRequestHelpFormVariantResponse))]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)]
             [RequestBodyType(typeof(GetRequestHelpFormVariantRequest), "get request help form variant")] GetRequestHelpFormVariantRequest req,

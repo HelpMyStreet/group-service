@@ -46,7 +46,7 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = -1,
                 Source = "",
-                RegistrationFormVariant = (byte) RegistrationSource.Default
+                RegistrationFormVariant = (byte) RegistrationFormVariant.Default
 
             });
 
@@ -54,21 +54,21 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = -2,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationSource.FtLOS
+                RegistrationFormVariant = (byte)RegistrationFormVariant.FtLOS
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = -3,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationSource.Default
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = -4,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationSource.HLP
+                RegistrationFormVariant = (byte)RegistrationFormVariant.HLP
             });
         }
 
@@ -78,35 +78,35 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = -1,
                 Source = "DIY",
-                RequestHelpFormVariant = (byte)RequestHelpSource.DIY
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.DIY
             });
 
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = -1,
                 Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpSource.Default
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default
             });
 
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = -2,
                 Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpSource.FtLOS
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.FtLOS
             });
 
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = -3,
                 Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpSource.VitalsForVeterans
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.VitalsForVeterans
             });
 
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = -4,
                 Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpSource.Default
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default
             });
         }
     }

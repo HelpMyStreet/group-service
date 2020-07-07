@@ -40,11 +40,11 @@ namespace GroupService.UnitTests.AzureFunctions
         [Test]
         public async Task HappyPath_ReturnsRegistrationForm()
         {
-            RegistrationSource registrationSource = RegistrationSource.Default;
+            RegistrationFormVariant registrationFormVariant = RegistrationFormVariant.Default;
 
             _response = new GetRegistrationFormVariantResponse()
             {
-               RegistrationSource = registrationSource
+               RegistrationFormVariant = registrationFormVariant
             };
 
             IActionResult result = await _classUnderTest.Run(new GetRegistrationFormVariantRequest()
@@ -63,7 +63,7 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.IsTrue(deserialisedResponse.HasContent);
             Assert.IsTrue(deserialisedResponse.IsSuccessful);
             Assert.AreEqual(0, deserialisedResponse.Errors.Count());
-            Assert.AreEqual(registrationSource, deserialisedResponse.Content.RegistrationSource);
+            Assert.AreEqual(registrationFormVariant, deserialisedResponse.Content.RegistrationFormVariant);
 
             _mediator.Verify(x => x.Send(It.IsAny<GetRegistrationFormVariantRequest>(), It.IsAny<CancellationToken>()),Times.Once);
         }
