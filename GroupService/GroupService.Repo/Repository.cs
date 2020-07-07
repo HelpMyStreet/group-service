@@ -235,7 +235,7 @@ namespace GroupService.Repo
             {
                 return new GetRegistrationFormVariantResponse()
                 {
-                    RegistrationSource = (RegistrationSource)registrationForm.RegistrationFormVariant
+                    RegistrationFormVariant = (RegistrationFormVariant)registrationForm.RegistrationFormVariant
                 };
             }
             else
@@ -252,7 +252,7 @@ namespace GroupService.Repo
             {
                 return new GetRequestHelpFormVariantResponse()
                 {
-                    RequestHelpSource= (RequestHelpSource) requestHelpJourney.RequestHelpFormVariant
+                    RequestHelpFormVariant= (RequestHelpFormVariant) requestHelpJourney.RequestHelpFormVariant
                 };
             }
             else

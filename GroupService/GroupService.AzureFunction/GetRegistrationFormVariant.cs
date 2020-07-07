@@ -30,7 +30,7 @@ namespace GroupService.AzureFunction
         }
 
         [FunctionName("GetRegistrationFormVariant")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(GetGroupMembersResponse))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(GetRegistrationFormVariantResponse))]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)]
             [RequestBodyType(typeof(GetRegistrationFormVariantRequest), "get registration form variant")] GetRegistrationFormVariantRequest req,

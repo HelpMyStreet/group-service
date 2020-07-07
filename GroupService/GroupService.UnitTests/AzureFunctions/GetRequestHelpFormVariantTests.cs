@@ -40,11 +40,11 @@ namespace GroupService.UnitTests.AzureFunctions
         [Test]
         public async Task HappyPath_ReturnsRequestHelpForm()
         {
-            RequestHelpSource requestHelpSource  = RequestHelpSource.Default;
+            RequestHelpFormVariant requestHelpFormVariant  = RequestHelpFormVariant.Default;
 
             _response = new GetRequestHelpFormVariantResponse()
             {
-               RequestHelpSource = requestHelpSource
+               RequestHelpFormVariant= requestHelpFormVariant
             };
 
             IActionResult result = await _classUnderTest.Run(new GetRequestHelpFormVariantRequest()
@@ -63,7 +63,7 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.IsTrue(deserialisedResponse.HasContent);
             Assert.IsTrue(deserialisedResponse.IsSuccessful);
             Assert.AreEqual(0, deserialisedResponse.Errors.Count());
-            Assert.AreEqual(requestHelpSource, deserialisedResponse.Content.RequestHelpSource);
+            Assert.AreEqual(requestHelpFormVariant, deserialisedResponse.Content.RequestHelpFormVariant);
 
             _mediator.Verify(x => x.Send(It.IsAny<GetRequestHelpFormVariantRequest>(), It.IsAny<CancellationToken>()),Times.Once);
         }

@@ -1,8 +1,12 @@
 ﻿using AutoMapper;
 using GroupService.Core.Config;
 using GroupService.Core.Interfaces.Repositories;
+using GroupService.Core.Interfaces.Services;
+using GroupService.Core.Interfaces.Utils;
+using GroupService.Core.Utils;
 using GroupService.Handlers;
 using GroupService.Repo;
+using HelpMyStreet.Utils.PollyPolicies;
 using HelpMyStreet.Utils.Utils;
 using MediatR;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
@@ -13,6 +17,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Polly;
+using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 [assembly: FunctionsStartup(typeof(GroupService.AzureFunction.Startup))]
 namespace GroupService.AzureFunction
@@ -35,12 +45,40 @@ namespace GroupService.AzureFunction
             builder.Services.AddMediatR(typeof(PostCreateGroupHandler).Assembly);
             //builder.Services.AddAutoMapper(typeof(AddressDetailsProfile).Assembly);
 
-            //builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            //       options.UseInMemoryDatabase(databaseName: "GroupService.AzureFunction"));
+            // DI doesn't work in startup
+            PollyHttpPolicies pollyHttpPolicies = new PollyHttpPolicies(new PollyHttpPoliciesConfig());
 
+            Dictionary<HttpClientConfigName, ApiConfig> httpClientConfigs = config.GetSection("Apis").Get<Dictionary<HttpClientConfigName, ApiConfig>>();
+
+            foreach (KeyValuePair<HttpClientConfigName, ApiConfig> httpClientConfig in httpClientConfigs)
+            {
+                IAsyncPolicy<HttpResponseMessage> retryPolicy = httpClientConfig.Value.IsExternal ? pollyHttpPolicies.ExternalHttpRetryPolicy : pollyHttpPolicies.InternalHttpRetryPolicy;
+
+                builder.Services.AddHttpClient(httpClientConfig.Key.ToString(), c =>
+                {
+                    c.BaseAddress = new Uri(httpClientConfig.Value.BaseAddress);
+
+                    c.Timeout = httpClientConfig.Value.Timeout ?? new TimeSpan(0, 0, 0, 15);
+
+                    foreach (KeyValuePair<string, string> header in httpClientConfig.Value.Headers)
+                    {
+                        c.DefaultRequestHeaders.Add(header.Key, header.Value);
+                    }
+                    c.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
+                    c.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("deflate"));
+
+                }).ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
+                {
+                    MaxConnectionsPerServer = httpClientConfig.Value.MaxConnectionsPerServer ?? int.MaxValue,
+                    AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
+                }).AddPolicyHandler(retryPolicy);
+            }
+
+            builder.Services.AddTransient<IHttpClientWrapper, HttpClientWrapper>();
             builder.Services.AddTransient<IRepository, Repository>();
+            builder.Services.AddTransient<IUserService, Core.Services.UserService>();
 
-            builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILogger<>), typeof(Logger<>)));
+                builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILogger<>), typeof(Logger<>)));
             builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILoggerWrapper<>), typeof(LoggerWrapper<>)));
 
             IConfigurationSection connectionStringSettings = config.GetSection("ConnectionStrings");
