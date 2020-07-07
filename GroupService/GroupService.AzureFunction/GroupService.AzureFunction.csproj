@@ -5,10 +5,10 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="AzureFunctions.Extensions.Swashbuckle" Version="1.4.4" />
-		<PackageReference Include="HelpMyStreet.Cache" Version="1.1.259" />
-		<PackageReference Include="HelpMyStreet.Contracts" Version="1.1.259" />
-		<PackageReference Include="HelpMyStreet.PostcodeCoordinates.EF" Version="1.1.259" />
-		<PackageReference Include="HelpMyStreet.Utils" Version="1.1.259" />
+		<PackageReference Include="HelpMyStreet.Cache" Version="1.1.260" />
+		<PackageReference Include="HelpMyStreet.Contracts" Version="1.1.260" />
+		<PackageReference Include="HelpMyStreet.PostcodeCoordinates.EF" Version="1.1.260" />
+		<PackageReference Include="HelpMyStreet.Utils" Version="1.1.260" />
 		<PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.0.0" />
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
 		<PackageReference Include="MediatR" Version="8.0.1" />
@@ -17,6 +17,7 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.28" />
+		<PackageReference Include="Microsoft.Extensions.Http.Polly" Version="2.2.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference ReplaceParameters="true" Include="..\GroupService.Handlers\GroupService.Handlers.csproj">
