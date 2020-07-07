@@ -5,6 +5,7 @@ using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using MediatR;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -20,41 +21,41 @@ namespace GroupService.Handlers
 
         public async Task<GetNewRequestActionsResponse> Handle(GetNewRequestActionsRequest request, CancellationToken cancellationToken)
         {
+            if (!request.HelpRequest.ReferringGroupId.HasValue) { throw new System.Exception("No ReferringGroupId"); }
+
             Dictionary<int, TaskAction> actions = new Dictionary<int, TaskAction>();
 
-
-            if (request.HelpRequest.Source == "DIY" && request.HelpRequest.VolunteerUserId.HasValue)
+            foreach (Job j in request.NewJobsRequest.Jobs)
             {
-                TaskAction taskAction = new TaskAction();
-                taskAction.TaskActions = new Dictionary<NewTaskAction, List<int>>();
-                taskAction.TaskActions.Add(NewTaskAction.AssignToVolunteer, new List<int>() { request.HelpRequest.VolunteerUserId.Value });
+                TaskAction taskAction = new TaskAction() { TaskActions = new Dictionary<NewTaskAction, List<int>>() };
 
-                foreach (Job j in request.NewJobsRequest.Jobs)
+                bool diyRequest = j.Questions != null && j.Questions.Where(x => x.Id == (int)Questions.WillYouCompleteYourself).FirstOrDefault().Answer == "true";
+                bool faceMaskRequest = j.SupportActivity == SupportActivities.FaceMask;
+
+                int targetGroupId;
+                if (j.SupportActivity == SupportActivities.FaceMask)
                 {
-                    actions.Add(j.JobID, taskAction);
+                    targetGroupId = _repository.GetGroupByKey(new GetGroupByKeyRequest() { GroupKey = "ftlos" }, cancellationToken);
                 }
-            }
-            else if (request.HelpRequest.ReferringGroupId.HasValue)
-            {
-                foreach (Job j in request.NewJobsRequest.Jobs)
+                else
                 {
-                    TaskAction taskAction = new TaskAction();
-                    taskAction.TaskActions = new Dictionary<NewTaskAction, List<int>>();
-                    int targetGroupId = request.HelpRequest.ReferringGroupId.Value;
-                    if (j.SupportActivity == SupportActivities.FaceMask)
-                    {
-                        targetGroupId = _repository.GetGroupByKey(new GetGroupByKeyRequest() { GroupKey = "ftlos" }, cancellationToken);
-                    }
-
-                    var groups = _repository.GetGroupAndChildGroups(targetGroupId, cancellationToken);
-                    if (groups != null)
-                    {
-                        taskAction.TaskActions.Add(NewTaskAction.MakeAvailableToGroups, groups);
-                        taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, groups);
-
-                        actions.Add(j.JobID, taskAction);
-                    }
+                    targetGroupId = request.HelpRequest.ReferringGroupId.Value;
                 }
+                var groups = _repository.GetGroupAndChildGroups(targetGroupId, cancellationToken);
+
+                taskAction.TaskActions.Add(NewTaskAction.MakeAvailableToGroups, groups);
+
+                if (diyRequest)
+                {
+                    if (!request.HelpRequest.VolunteerUserId.HasValue) { throw new System.Exception("Cannot create DIY request without VolunteerUserId"); }
+                    taskAction.TaskActions.Add(NewTaskAction.AssignToVolunteer, new List<int>() { request.HelpRequest.VolunteerUserId.Value });
+                }
+                else
+                {
+                    taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, groups);
+                }
+
+                actions.Add(j.JobID, taskAction);
             }
 
             return new GetNewRequestActionsResponse()
