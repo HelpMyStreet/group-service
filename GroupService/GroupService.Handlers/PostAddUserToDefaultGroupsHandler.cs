@@ -45,7 +45,20 @@ namespace GroupService.Handlers
                     {
                         GroupKey = "ftlos"
                     }, cancellationToken);
-                    AssignRole(groupId, request.UserID, cancellationToken);
+
+                    if (user.User.ReferringGroupId.HasValue)
+                    {
+                        if(groupId!= user.User.ReferringGroupId.Value)
+                        {
+                            //only add ftlos group if referring group is not ftlos
+                            AssignRole(groupId, request.UserID, cancellationToken);
+                        }
+                    }
+                    else
+                    {
+                        //referring group has not been passed in so add ftlos
+                        AssignRole(groupId, request.UserID, cancellationToken);
+                    }
                 }
                 success = true;
             }
