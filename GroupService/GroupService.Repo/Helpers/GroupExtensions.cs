@@ -61,7 +61,7 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = -3,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKLSL
             });
 
             entity.HasData(new RegistrationJourney
