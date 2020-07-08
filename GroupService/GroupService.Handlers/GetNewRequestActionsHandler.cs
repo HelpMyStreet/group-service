@@ -28,8 +28,15 @@ namespace GroupService.Handlers
             foreach (Job j in request.NewJobsRequest.Jobs)
             {
                 TaskAction taskAction = new TaskAction() { TaskActions = new Dictionary<NewTaskAction, List<int>>() };
+                
+                bool diyRequest = false;
 
-                bool diyRequest = j.Questions != null && j.Questions.Where(x => x.Id == (int)Questions.WillYouCompleteYourself).FirstOrDefault().Answer == "true";
+                if (j.Questions != null)
+                {
+                    var willYoucompleteYourselfQuestion = j.Questions.FirstOrDefault(x => x.Id == (int)Questions.WillYouCompleteYourself);
+                    diyRequest = willYoucompleteYourselfQuestion != null && willYoucompleteYourselfQuestion.Answer == "true";
+                 }
+
                 bool faceMaskRequest = j.SupportActivity == SupportActivities.FaceMask;
 
                 int targetGroupId;
