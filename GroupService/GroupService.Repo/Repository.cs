@@ -229,6 +229,10 @@ namespace GroupService.Repo
 
         public GetRegistrationFormVariantResponse GetRegistrationFormVariant(int groupId, string source, CancellationToken cancellationToken)
         {
+            if (source == null)
+            {
+                source = string.Empty;
+            }
             var registrationForm = _context.RegistrationJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == source);
 
             if(registrationForm!=null)
@@ -246,6 +250,10 @@ namespace GroupService.Repo
 
         public GetRequestHelpFormVariantResponse GetRequestHelpFormVariant(int groupId, string source, CancellationToken cancellationToken)
         {
+            if(source==null)
+            {
+                source = string.Empty;
+            }
             var requestHelpJourney = _context.RequestHelpJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == source);
 
             if (requestHelpJourney != null)

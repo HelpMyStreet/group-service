@@ -40,7 +40,7 @@ namespace GroupService.Handlers
 
                 bool faceMaskRequest = j.SupportActivity == SupportActivities.FaceMask;
 
-                GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.HelpRequest.ReferringGroupId.Value, request.HelpRequest.Source, cancellationToken);
+                GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.HelpRequest.ReferringGroupId.Value, request.HelpRequest.Source ?? "", cancellationToken);
 
                 if (requestJourney == null)
                 {
@@ -99,8 +99,7 @@ namespace GroupService.Handlers
 
                 if (diyRequest)
                 {
-                    if (!request.HelpRequest.VolunteerUserId.HasValue) { throw new System.Exception("Cannot create DIY request without VolunteerUserId"); }
-                    taskAction.TaskActions.Add(NewTaskAction.AssignToVolunteer, new List<int>() { request.HelpRequest.VolunteerUserId.Value });
+                    taskAction.TaskActions.Add(NewTaskAction.AssignToVolunteer, new List<int>() { request.HelpRequest.CreatedByUserId });
                 }
                 else
                 {
