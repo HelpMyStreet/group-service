@@ -5,11 +5,12 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="HelpMyStreet.Contracts" Version="1.1.256" />
-		<PackageReference Include="HelpMyStreet.Utils" Version="1.1.256" />
+		<PackageReference Include="HelpMyStreet.Contracts" Version="1.1.264" />
+		<PackageReference Include="HelpMyStreet.Utils" Version="1.1.264" />
 		<PackageReference Include="MediatR" Version="8.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="2.2.0" />
 	</ItemGroup>
 
   <ItemGroup>
