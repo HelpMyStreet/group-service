@@ -40,7 +40,7 @@ namespace GroupService.Handlers
 
                 bool faceMaskRequest = j.SupportActivity == SupportActivities.FaceMask;
 
-                GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.HelpRequest.ReferringGroupId.Value, request.HelpRequest.Source, cancellationToken);
+                GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.HelpRequest.ReferringGroupId.Value, request.HelpRequest.Source ?? "", cancellationToken);
 
                 if (requestJourney == null)
                 {
