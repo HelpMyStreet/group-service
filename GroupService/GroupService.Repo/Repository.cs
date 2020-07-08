@@ -252,7 +252,8 @@ namespace GroupService.Repo
             {
                 return new GetRequestHelpFormVariantResponse()
                 {
-                    RequestHelpFormVariant= (RequestHelpFormVariant) requestHelpJourney.RequestHelpFormVariant
+                    RequestHelpFormVariant = (RequestHelpFormVariant)requestHelpJourney.RequestHelpFormVariant,
+                    TargetGroups = (TargetGroups)requestHelpJourney.TargetGroups,
                 };
             }
             else

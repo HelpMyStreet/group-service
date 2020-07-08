@@ -4,6 +4,7 @@ using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -39,18 +40,57 @@ namespace GroupService.Handlers
 
                 bool faceMaskRequest = j.SupportActivity == SupportActivities.FaceMask;
 
+                GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.HelpRequest.ReferringGroupId.Value, request.HelpRequest.Source, cancellationToken);
+
                 int targetGroupId;
+                bool includeChildGroups;
+
                 if (j.SupportActivity == SupportActivities.FaceMask)
                 {
                     targetGroupId = _repository.GetGroupByKey(new GetGroupByKeyRequest() { GroupKey = "ftlos" }, cancellationToken);
+                    includeChildGroups = true;
                 }
                 else
                 {
-                    targetGroupId = request.HelpRequest.ReferringGroupId.Value;
+                    switch (requestJourney.TargetGroups)
+                    {
+                        case TargetGroups.GenericGroup: 
+                            targetGroupId = -1;
+                            includeChildGroups = false;
+                            break;
+                        case TargetGroups.ParentGroup: 
+                            targetGroupId = _repository.GetGroupById(request.HelpRequest.ReferringGroupId.Value, cancellationToken).ParentGroupId.Value;
+                            includeChildGroups = false;
+                            break;
+                        case TargetGroups.SiblingsAndParentGroup:
+                            targetGroupId = _repository.GetGroupById(request.HelpRequest.ReferringGroupId.Value, cancellationToken).ParentGroupId.Value;
+                            includeChildGroups = true;
+                            break;
+                        case TargetGroups.ThisGroup:
+                            targetGroupId = request.HelpRequest.ReferringGroupId.Value;
+                            includeChildGroups = false;
+                            break;
+                        case TargetGroups.ThisGroupAndChildren:
+                            targetGroupId = request.HelpRequest.ReferringGroupId.Value;
+                            includeChildGroups = true;
+                            break;
+                        default:
+                            throw new Exception($"Unexpected TargetGroups value {requestJourney.TargetGroups}");
+                    }
                 }
-                var groups = _repository.GetGroupAndChildGroups(targetGroupId, cancellationToken);
 
-                taskAction.TaskActions.Add(NewTaskAction.MakeAvailableToGroups, groups);
+                List<int> targetGroups;
+
+                if (includeChildGroups)
+                {
+                    targetGroups = _repository.GetGroupAndChildGroups(targetGroupId, cancellationToken);
+                }
+                else
+                {
+                    targetGroups = new List<int>() { targetGroupId };
+                }
+
+                taskAction.TaskActions.Add(NewTaskAction.MakeAvailableToGroups, targetGroups);
 
                 if (diyRequest)
                 {
@@ -59,7 +99,7 @@ namespace GroupService.Handlers
                 }
                 else
                 {
-                    taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, groups);
+                    taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
                 }
 
                 actions.Add(j.JobID, taskAction);
