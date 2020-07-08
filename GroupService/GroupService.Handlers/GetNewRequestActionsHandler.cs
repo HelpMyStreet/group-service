@@ -1,4 +1,4 @@
-﻿using GroupService.Core.Interfaces.Repositories;
+using GroupService.Core.Interfaces.Repositories;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
@@ -41,6 +41,11 @@ namespace GroupService.Handlers
                 bool faceMaskRequest = j.SupportActivity == SupportActivities.FaceMask;
 
                 GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.HelpRequest.ReferringGroupId.Value, request.HelpRequest.Source, cancellationToken);
+
+                if (requestJourney == null)
+                {
+                    throw new Exception("null response from GetRequestHelpFormVariant");
+                }
 
                 int targetGroupId;
                 bool includeChildGroups;
