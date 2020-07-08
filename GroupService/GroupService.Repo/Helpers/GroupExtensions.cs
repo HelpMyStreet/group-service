@@ -38,6 +38,13 @@ namespace GroupService.Repo.Helpers
                 GroupName = "Healthy London Partnership",
                 GroupKey = "hlp"
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)-5,
+                GroupName = "Tankersley & Pilley",
+                GroupKey = "tankersley"
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -69,6 +76,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = -4,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.HLP
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = -5,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
             });
         }
 
@@ -112,6 +126,14 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = -5,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
             });
         }
     }
