@@ -137,6 +137,8 @@ namespace GroupService.Repo
 
                 entity.Property(e => e.RequestHelpFormVariant).HasColumnName("RequestHelpFormVariant");
 
+                entity.Property(e => e.TargetGroups).HasColumnName("TargetGroups");
+
                 entity.HasOne(d => d.Group)
                     .WithMany(p => p.RequestHelpJourney)
                     .HasForeignKey(d => d.GroupId)
