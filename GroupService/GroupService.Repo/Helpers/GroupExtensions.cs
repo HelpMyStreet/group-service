@@ -78,35 +78,40 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = -1,
                 Source = "DIY",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.DIY
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.DIY,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
             });
 
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = -1,
                 Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
             });
 
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = -2,
                 Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.FtLOS
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.FtLOS,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndChildren,
             });
 
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = -3,
                 Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.VitalsForVeterans
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.VitalsForVeterans,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
             });
 
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = -4,
                 Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
             });
         }
     }
