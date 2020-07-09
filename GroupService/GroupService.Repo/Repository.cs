@@ -48,7 +48,7 @@ namespace GroupService.Repo
                     UserId = request.UserID.Value,
                     RoleId = (int)request.Role.GroupRole
                 });
-                int result = await _context.SaveChangesAsync(cancellationToken);
+                int result = _context.SaveChanges();
                 if (result == 1)
                 {
                     success = true;
