@@ -28,12 +28,12 @@ namespace GroupService.Handlers
         {
             bool success = false;
 
-            AssignRole(GROUPID_GENERIC, request.UserID, cancellationToken);
-
             var user = _userService.GetUserByID(request.UserID).Result;
             if(user!=null)
             {
-                if(user.User.ReferringGroupId.HasValue && user.User.ReferringGroupId.Value!=GROUPID_GENERIC)
+                AssignRole(GROUPID_GENERIC, request.UserID, cancellationToken);
+
+                if (user.User.ReferringGroupId.HasValue)
                 {
                     AssignRole(user.User.ReferringGroupId.Value, request.UserID, cancellationToken);
                 }
@@ -46,19 +46,7 @@ namespace GroupService.Handlers
                         GroupKey = "ftlos"
                     }, cancellationToken);
 
-                    if (user.User.ReferringGroupId.HasValue)
-                    {
-                        if(groupId!= user.User.ReferringGroupId.Value)
-                        {
-                            //only add ftlos group if referring group is not ftlos
-                            AssignRole(groupId, request.UserID, cancellationToken);
-                        }
-                    }
-                    else
-                    {
-                        //referring group has not been passed in so add ftlos
-                        AssignRole(groupId, request.UserID, cancellationToken);
-                    }
+                    AssignRole(groupId, request.UserID, cancellationToken);
                 }
                 success = true;
             }
