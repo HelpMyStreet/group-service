@@ -5,6 +5,7 @@ using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
+using HelpMyStreet.Utils.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,16 +36,23 @@ namespace GroupService.Repo
             if (group == null)
                 return false;
 
-            _context.UserRole.Add(new UserRole()
+            var userRole = _context.UserRole.FirstOrDefault(x => x.GroupId == request.GroupID.Value
+                 && x.UserId == request.UserID.Value
+                 && x.RoleId == (int)request.Role.GroupRole);
+
+            if (userRole == null)
             {
-                GroupId = request.GroupID.Value,
-                UserId = request.UserID.Value,
-                RoleId = (int)request.Role.GroupRole
-            });
-            int result = await _context.SaveChangesAsync(cancellationToken);
-            if (result == 1)
-            {
-                success = true;
+                _context.UserRole.Add(new UserRole()
+                {
+                    GroupId = request.GroupID.Value,
+                    UserId = request.UserID.Value,
+                    RoleId = (int)request.Role.GroupRole
+                });
+                int result = await _context.SaveChangesAsync(cancellationToken);
+                if (result == 1)
+                {
+                    success = true;
+                }
             }
             
             return success;
