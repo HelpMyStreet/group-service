@@ -26,6 +26,7 @@ namespace GroupService.Repo
         public virtual DbSet<RequestHelpJourney> RequestHelpJourney { get; set; }
 
         public virtual DbSet<EnumRole> EnumRole { get; set; }
+        public virtual DbSet<EnumTargetGroup> EnumTargetGroup { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -43,6 +44,15 @@ namespace GroupService.Repo
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.SetEnumRoleData();
+            });
+
+            modelBuilder.Entity<EnumTargetGroup>(entity =>
+            {
+                entity.ToTable("TargetGroup", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumTargetGroupData();
             });
 
             modelBuilder.Entity<Group>(entity =>
