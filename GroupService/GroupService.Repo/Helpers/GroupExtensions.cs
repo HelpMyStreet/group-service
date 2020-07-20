@@ -59,6 +59,14 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RegistrationJourney
             {
+                GroupId = -1,
+                Source = "face-masks",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.FaceMasks
+            });
+
+
+            entity.HasData(new RegistrationJourney
+            {
                 GroupId = -2,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.FtLOS

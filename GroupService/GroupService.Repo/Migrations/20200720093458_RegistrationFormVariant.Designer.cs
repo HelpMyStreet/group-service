@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200720093458_RegistrationFormVariant")]
+    partial class RegistrationFormVariant
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,11 +52,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 3,
                             Name = "AgeUKLSL"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "FaceMasks"
                         });
                 });
 
@@ -257,12 +254,6 @@ namespace GroupService.Repo.Migrations
                             GroupId = -1,
                             Source = "",
                             RegistrationFormVariant = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            Source = "face-masks",
-                            RegistrationFormVariant = (byte)4
                         },
                         new
                         {

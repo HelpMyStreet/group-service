@@ -50,40 +50,32 @@ namespace GroupService.Handlers
                 int targetGroupId;
                 bool includeChildGroups;
 
-                if (j.SupportActivity == SupportActivities.FaceMask)
+                switch (requestJourney.TargetGroups)
                 {
-                    targetGroupId = _repository.GetGroupByKey(new GetGroupByKeyRequest() { GroupKey = "ftlos" }, cancellationToken);
-                    includeChildGroups = true;
+                    case TargetGroups.GenericGroup: 
+                        targetGroupId = -1;
+                        includeChildGroups = false;
+                        break;
+                    case TargetGroups.ParentGroup: 
+                        targetGroupId = _repository.GetGroupById(request.HelpRequest.ReferringGroupId.Value, cancellationToken).ParentGroupId.Value;
+                        includeChildGroups = false;
+                        break;
+                    case TargetGroups.SiblingsAndParentGroup:
+                        targetGroupId = _repository.GetGroupById(request.HelpRequest.ReferringGroupId.Value, cancellationToken).ParentGroupId.Value;
+                        includeChildGroups = true;
+                        break;
+                    case TargetGroups.ThisGroup:
+                        targetGroupId = request.HelpRequest.ReferringGroupId.Value;
+                        includeChildGroups = false;
+                        break;
+                    case TargetGroups.ThisGroupAndChildren:
+                        targetGroupId = request.HelpRequest.ReferringGroupId.Value;
+                        includeChildGroups = true;
+                        break;
+                    default:
+                        throw new Exception($"Unexpected TargetGroups value {requestJourney.TargetGroups}");
                 }
-                else
-                {
-                    switch (requestJourney.TargetGroups)
-                    {
-                        case TargetGroups.GenericGroup: 
-                            targetGroupId = -1;
-                            includeChildGroups = false;
-                            break;
-                        case TargetGroups.ParentGroup: 
-                            targetGroupId = _repository.GetGroupById(request.HelpRequest.ReferringGroupId.Value, cancellationToken).ParentGroupId.Value;
-                            includeChildGroups = false;
-                            break;
-                        case TargetGroups.SiblingsAndParentGroup:
-                            targetGroupId = _repository.GetGroupById(request.HelpRequest.ReferringGroupId.Value, cancellationToken).ParentGroupId.Value;
-                            includeChildGroups = true;
-                            break;
-                        case TargetGroups.ThisGroup:
-                            targetGroupId = request.HelpRequest.ReferringGroupId.Value;
-                            includeChildGroups = false;
-                            break;
-                        case TargetGroups.ThisGroupAndChildren:
-                            targetGroupId = request.HelpRequest.ReferringGroupId.Value;
-                            includeChildGroups = true;
-                            break;
-                        default:
-                            throw new Exception($"Unexpected TargetGroups value {requestJourney.TargetGroups}");
-                    }
-                }
-
+                
                 List<int> targetGroups;
 
                 if (includeChildGroups)

@@ -37,17 +37,6 @@ namespace GroupService.Handlers
                 {
                     AssignRole(user.User.ReferringGroupId.Value, request.UserID, cancellationToken);
                 }
-
-                //If the List<SupportActivities> contains Face Masks, add the user to the FTLOS group
-                if (user.User.SupportActivities.Contains(SupportActivities.FaceMask))
-                {
-                    var groupId = _repository.GetGroupByKey(new GetGroupByKeyRequest()
-                    {
-                        GroupKey = "ftlos"
-                    }, cancellationToken);
-
-                    AssignRole(groupId, request.UserID, cancellationToken);
-                }
                 success = true;
             }
 

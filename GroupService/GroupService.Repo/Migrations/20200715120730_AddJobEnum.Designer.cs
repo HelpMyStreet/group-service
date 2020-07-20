@@ -4,93 +4,22 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200715120730_AddJobEnum")]
+    partial class AddJobEnum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumRegistrationFormVariant", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnName("ID");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RegistrationFormVariant","Lookup");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 0,
-                            Name = "Default"
-                        },
-                        new
-                        {
-                            Id = 1,
-                            Name = "HLP"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "FtLOS"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "AgeUKLSL"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "FaceMasks"
-                        });
-                });
-
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumRequestHelpFormVariant", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnName("ID");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RequestHelpFormVariant","Lookup");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Default"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "VitalsForVeterans"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "DIY"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "FtLOS"
-                        });
-                });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumRole", b =>
                 {
@@ -130,45 +59,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 5,
                             Name = "RequestSubmitter"
-                        });
-                });
-
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumTargetGroup", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnName("ID");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TargetGroup","Lookup");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 0,
-                            Name = "ThisGroup"
-                        },
-                        new
-                        {
-                            Id = 1,
-                            Name = "ThisGroupAndChildren"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "ParentGroup"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "SiblingsAndParentGroup"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "GenericGroup"
                         });
                 });
 
@@ -257,12 +147,6 @@ namespace GroupService.Repo.Migrations
                             GroupId = -1,
                             Source = "",
                             RegistrationFormVariant = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            Source = "face-masks",
-                            RegistrationFormVariant = (byte)4
                         },
                         new
                         {
