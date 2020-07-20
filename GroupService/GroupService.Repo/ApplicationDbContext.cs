@@ -27,6 +27,8 @@ namespace GroupService.Repo
 
         public virtual DbSet<EnumRole> EnumRole { get; set; }
         public virtual DbSet<EnumTargetGroup> EnumTargetGroup { get; set; }
+        public virtual DbSet<EnumRequestHelpFormVariant> EnumRequestHelpFormVariant { get; set; }
+        public virtual DbSet<EnumRegistrationFormVariant> EnumRegistrationFormVariant { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -37,6 +39,24 @@ namespace GroupService.Repo
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<EnumRegistrationFormVariant>(entity =>
+            {
+                entity.ToTable("RegistrationFormVariant", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumRequestHelpFormVariantExtensionsData();
+            });
+
+            modelBuilder.Entity<EnumRequestHelpFormVariant>(entity =>
+            {
+                entity.ToTable("RequestHelpFormVariant", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumRequestHelpFormVariantExtensionsData();
+            });
+
             modelBuilder.Entity<EnumRole>(entity =>
             {
                 entity.ToTable("Role", "Lookup");
