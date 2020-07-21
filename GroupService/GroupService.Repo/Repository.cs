@@ -252,7 +252,23 @@ namespace GroupService.Repo
             }
             else
             {
-                throw new Exception($"GroupId {groupId} Source {source} not found in RegistrationJourney");
+                //check for a registration form without looking at the source
+                registrationForm = _context.RegistrationJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == string.Empty);
+                if (registrationForm != null)
+                {
+                    return new GetRegistrationFormVariantResponse()
+                    {
+                        RegistrationFormVariant = (RegistrationFormVariant)registrationForm.RegistrationFormVariant
+                    };
+                }
+                else
+                {
+                    //use generic group
+                    return new GetRegistrationFormVariantResponse()
+                    {
+                        RegistrationFormVariant = RegistrationFormVariant.Default
+                    };
+                }
             }
         }
 

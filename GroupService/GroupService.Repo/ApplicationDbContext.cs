@@ -25,6 +25,11 @@ namespace GroupService.Repo
         public virtual DbSet<RegistrationJourney> RegistrationJourney { get; set; }
         public virtual DbSet<RequestHelpJourney> RequestHelpJourney { get; set; }
 
+        public virtual DbSet<EnumRole> EnumRole { get; set; }
+        public virtual DbSet<EnumTargetGroup> EnumTargetGroup { get; set; }
+        public virtual DbSet<EnumRequestHelpFormVariant> EnumRequestHelpFormVariant { get; set; }
+        public virtual DbSet<EnumRegistrationFormVariant> EnumRegistrationFormVariant { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -34,6 +39,42 @@ namespace GroupService.Repo
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<EnumRegistrationFormVariant>(entity =>
+            {
+                entity.ToTable("RegistrationFormVariant", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumRequestHelpFormVariantExtensionsData();
+            });
+
+            modelBuilder.Entity<EnumRequestHelpFormVariant>(entity =>
+            {
+                entity.ToTable("RequestHelpFormVariant", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumRequestHelpFormVariantExtensionsData();
+            });
+
+            modelBuilder.Entity<EnumRole>(entity =>
+            {
+                entity.ToTable("Role", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumRoleData();
+            });
+
+            modelBuilder.Entity<EnumTargetGroup>(entity =>
+            {
+                entity.ToTable("TargetGroup", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumTargetGroupData();
+            });
+
             modelBuilder.Entity<Group>(entity =>
             {
                 entity.ToTable("Group", "Group");

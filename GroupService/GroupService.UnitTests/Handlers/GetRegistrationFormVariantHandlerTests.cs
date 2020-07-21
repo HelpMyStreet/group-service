@@ -48,22 +48,5 @@ namespace GroupService.UnitTests
 
             Assert.AreEqual(_response, result);
         }
-
-        [Test]
-        public void WhenGroupIdOrSourceIsInValid_ThrowsError()
-        {
-            int groupId = 1;
-            string source = "Source";
-            _repository.Setup(x => x.GetRegistrationFormVariant(It.IsAny<int>(), It.IsAny<string>(),It.IsAny<CancellationToken>()))
-                .Throws(new Exception($"GroupId {groupId} Source {source} not found in RegistrationJourney"));
-
-            Exception ex = Assert.ThrowsAsync<Exception>(() => _classUnderTest.Handle(new GetRegistrationFormVariantRequest()
-            {
-                GroupID = groupId,
-                Source = source
-            }, CancellationToken.None));
-
-            Assert.AreEqual($"GroupId {groupId} Source {source} not found in RegistrationJourney", ex.Message);
-        }
     }
 }
