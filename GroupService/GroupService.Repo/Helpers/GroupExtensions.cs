@@ -114,6 +114,14 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
+                GroupId = -1,
+                Source = "face-masks",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.FaceMasks,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
                 GroupId = -2,
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.FtLOS,
