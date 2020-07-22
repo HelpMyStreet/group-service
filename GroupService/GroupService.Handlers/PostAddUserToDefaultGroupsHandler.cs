@@ -3,6 +3,7 @@ using GroupService.Core.Interfaces.Services;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
+using HelpMyStreet.Utils.Models;
 using MediatR;
 using System;
 using System.Linq;
@@ -48,7 +49,7 @@ namespace GroupService.Handlers
 
         private async void AssignRole(int groupID, int userID, CancellationToken cancellationToken)
         {
-            await _repository.AssignRoleAsync(new PostAssignRoleRequest()
+            bool success = await _repository.AssignRoleAsync(new PostAssignRoleRequest()
             {
                 GroupID = groupID,
                 AuthorisedByUserID = USERID_ADMINISTRATOR,
@@ -58,6 +59,16 @@ namespace GroupService.Handlers
                     GroupRole = GroupRoles.Member
                 }
             }, cancellationToken);
+
+            await _repository.AddUserRoleAuditAsync(
+                        groupID,
+                        userID,
+                        GroupRoles.Member,
+                        USERID_ADMINISTRATOR,
+                        GroupAction.AddMember,
+                        success,
+                        cancellationToken
+                        );
         }
     }
 }
