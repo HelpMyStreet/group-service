@@ -55,7 +55,7 @@ namespace GroupService.Handlers
                 }
             }
 
-            await _repository.AddUserRoleAuditAsync(
+            _repository.AddUserRoleAudit(
                        request.GroupID.Value,
                        request.UserID.Value,
                        request.Role.GroupRole,

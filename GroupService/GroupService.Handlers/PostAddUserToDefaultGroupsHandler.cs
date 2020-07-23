@@ -60,7 +60,7 @@ namespace GroupService.Handlers
                 }
             }, cancellationToken);
 
-            await _repository.AddUserRoleAuditAsync(
+            _repository.AddUserRoleAudit(
                         groupID,
                         userID,
                         GroupRoles.Member,
