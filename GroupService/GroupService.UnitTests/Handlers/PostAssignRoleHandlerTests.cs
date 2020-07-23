@@ -37,7 +37,7 @@ namespace GroupService.UnitTests
             _repository.Setup(x => x.RoleAssigned(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<CancellationToken>()))
                 .Returns(() => _roleAssigned);
 
-            _repository.Setup(x => x.AddUserRoleAuditAsync(
+            _repository.Setup(x => x.AddUserRoleAudit(
                 It.IsAny<int>(),
                 It.IsAny<int>(),
                 It.IsAny<GroupRoles>(),
@@ -79,7 +79,7 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.AssignRoleAsync(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Once);
             _repository.Verify(x => x.RoleAssigned(It.IsAny<int>(),It.IsAny<int>(),It.IsAny<GroupRoles>(), It.IsAny<CancellationToken>()), Times.Once);
 
-            _repository.Verify(x => x.AddUserRoleAuditAsync(
+            _repository.Verify(x => x.AddUserRoleAudit(
                 It.IsAny<int>(),
                 It.IsAny<int>(),
                 It.IsAny<GroupRoles>(),
@@ -119,7 +119,7 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.AssignRoleAsync(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Never);
             _repository.Verify(x => x.RoleAssigned(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<CancellationToken>()), Times.Once);
 
-            _repository.Verify(x => x.AddUserRoleAuditAsync(
+            _repository.Verify(x => x.AddUserRoleAudit(
                 It.IsAny<int>(),
                 It.IsAny<int>(),
                 It.IsAny<GroupRoles>(),
@@ -157,7 +157,7 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.GetUserRoles(It.IsAny<GetUserRolesRequest>(), It.IsAny<CancellationToken>()), Times.Never);
             _repository.Verify(x => x.AssignRoleAsync(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Once);
             _repository.Verify(x => x.RoleAssigned(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.AddUserRoleAuditAsync(
+            _repository.Verify(x => x.AddUserRoleAudit(
                 It.IsAny<int>(),
                 It.IsAny<int>(),
                 It.IsAny<GroupRoles>(),
@@ -195,7 +195,7 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.GetUserRoles(It.IsAny<GetUserRolesRequest>(), It.IsAny<CancellationToken>()), Times.Once);
             _repository.Verify(x => x.AssignRoleAsync(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Never);
             _repository.Verify(x => x.RoleAssigned(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.AddUserRoleAuditAsync(
+            _repository.Verify(x => x.AddUserRoleAudit(
                 It.IsAny<int>(),
                 It.IsAny<int>(),
                 It.IsAny<GroupRoles>(),
