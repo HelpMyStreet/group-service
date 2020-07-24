@@ -134,7 +134,7 @@ namespace GroupService.Repo
             return success;
         }
 
-        public async Task AddUserRoleAuditAsync(int groupId, int userId, GroupRoles groupRole, int authorisedByUserID, GroupAction groupAction, bool success, CancellationToken cancellationToken)
+        public void AddUserRoleAudit(int groupId, int userId, GroupRoles groupRole, int authorisedByUserID, GroupAction groupAction, bool success, CancellationToken cancellationToken)
         {
             _context.UserRoleAudit.Add(new UserRoleAudit()
             {
@@ -146,7 +146,7 @@ namespace GroupService.Repo
                 ActionId = (byte) groupAction,
                 Success = success
             });
-            await _context.SaveChangesAsync(cancellationToken);
+            _context.SaveChanges();
         }
 
         public bool RoleAssigned(int userId, int groupId, GroupRoles groupRole, CancellationToken cancellationToken)
@@ -252,7 +252,23 @@ namespace GroupService.Repo
             }
             else
             {
-                throw new Exception($"GroupId {groupId} Source {source} not found in RegistrationJourney");
+                //check for a registration form without looking at the source
+                registrationForm = _context.RegistrationJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == string.Empty);
+                if (registrationForm != null)
+                {
+                    return new GetRegistrationFormVariantResponse()
+                    {
+                        RegistrationFormVariant = (RegistrationFormVariant)registrationForm.RegistrationFormVariant
+                    };
+                }
+                else
+                {
+                    //use generic group
+                    return new GetRegistrationFormVariantResponse()
+                    {
+                        RegistrationFormVariant = RegistrationFormVariant.Default
+                    };
+                }
             }
         }
 

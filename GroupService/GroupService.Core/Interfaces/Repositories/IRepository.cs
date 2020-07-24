@@ -32,7 +32,7 @@ namespace GroupService.Core.Interfaces.Repositories
 
         Task<bool> RevokeRoleAsync(PostRevokeRoleRequest request, CancellationToken cancellationToken);
 
-        Task AddUserRoleAuditAsync(int groupId, int userId, GroupRoles groupRole, int authorisedByUserID, GroupAction groupAction, bool success, CancellationToken cancellationToken);
+        void AddUserRoleAudit(int groupId, int userId, GroupRoles groupRole, int authorisedByUserID, GroupAction groupAction, bool success, CancellationToken cancellationToken);
 
         bool RoleAssigned(int userId,int groupId, GroupRoles groupRole, CancellationToken cancellationToken);
 
