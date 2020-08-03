@@ -35,7 +35,7 @@ namespace GroupService.Handlers
                 if (j.Questions != null)
                 {
                     var willYoucompleteYourselfQuestion = j.Questions.FirstOrDefault(x => x.Id == (int)Questions.WillYouCompleteYourself);
-                    diyRequest = willYoucompleteYourselfQuestion != null && willYoucompleteYourselfQuestion.Answer == "true";
+                    diyRequest = willYoucompleteYourselfQuestion != null && willYoucompleteYourselfQuestion.Answer.ToLower() == "yes";
                  }
 
                 bool faceMaskRequest = j.SupportActivity == SupportActivities.FaceMask;
