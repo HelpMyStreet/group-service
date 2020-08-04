@@ -139,8 +139,8 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = -4,
-                Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
+                Source = "connected-together-service-directory",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.HLP_CommunityConnector,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
             });
 
