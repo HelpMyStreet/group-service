@@ -1,11 +1,9 @@
-﻿using AutoMapper;
-using GroupService.Core.Config;
+﻿using GroupService.Core.Config;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Core.Interfaces.Services;
-using GroupService.Core.Interfaces.Utils;
-using GroupService.Core.Utils;
 using GroupService.Handlers;
 using GroupService.Repo;
+using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.PollyPolicies;
 using HelpMyStreet.Utils.Utils;
 using MediatR;
