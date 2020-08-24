@@ -3,13 +3,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
 using MediatR;
 using HelpMyStreet.Contracts.Shared;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.RequestService.Response;
-using System.Net;
-using AzureFunctions.Extensions.Swashbuckle.Attribute;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using HelpMyStreet.Utils.Extensions;
 using System.Threading;
@@ -30,10 +27,9 @@ namespace GroupService.AzureFunction
         }
 
         [FunctionName("PostRevokeRole")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(PostAssignRoleResponse))]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
-            [RequestBodyType(typeof(PostAssignRoleRequest), "post revoke role")] PostRevokeRoleRequest req,
+            PostRevokeRoleRequest req,
             CancellationToken cancellationToken)
         {
             try

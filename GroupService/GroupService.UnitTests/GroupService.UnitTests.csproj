@@ -1,22 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
 
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Moq" Version="4.14.3" />
-    <PackageReference Include="nunit" Version="3.12.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
-	<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Moq" Version="4.14.3" />
+		<PackageReference Include="nunit" Version="3.12.0" />
+		<PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.7" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\GroupService.AzureFunction\GroupService.AzureFunction.csproj" />
-    <ProjectReference Include="..\GroupService.Handlers\GroupService.Handlers.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\GroupService.AzureFunction\GroupService.AzureFunction.csproj" />
+		<ProjectReference Include="..\GroupService.Handlers\GroupService.Handlers.csproj" />
+	</ItemGroup>
 
 </Project>

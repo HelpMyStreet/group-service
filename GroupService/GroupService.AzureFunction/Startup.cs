@@ -41,7 +41,6 @@ namespace GroupService.AzureFunction
             IConfigurationRoot config = configBuilder.Build();
 
             builder.Services.AddMediatR(typeof(PostCreateGroupHandler).Assembly);
-            //builder.Services.AddAutoMapper(typeof(AddressDetailsProfile).Assembly);
 
             // DI doesn't work in startup
             PollyHttpPolicies pollyHttpPolicies = new PollyHttpPolicies(new PollyHttpPoliciesConfig());
