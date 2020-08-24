@@ -12,7 +12,6 @@ namespace GroupService.Repo
         {
         }
 
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
