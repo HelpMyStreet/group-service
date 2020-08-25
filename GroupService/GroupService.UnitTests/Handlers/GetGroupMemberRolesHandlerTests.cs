@@ -118,20 +118,21 @@ namespace GroupService.UnitTests
         }
 
         [Test]
-        public void UserWithoutGroups_ReturnsEmptyDictionary()
+        public void UserWithoutGroups_ReturnsNull()
         {
             int userId = 1;
             int groupId = 1;
-            _roles = new Dictionary<int, List<int>>();
+            _isAdmin = true;
+            _roles = null;
             var result = _classUnderTest.Handle(new GetGroupMemberRolesRequest()
             {
                 GroupId = groupId,
                 UserId = userId
             }, CancellationToken.None).Result;
 
-            Assert.AreEqual(0, result.GroupMemberRoles.Count);
             Assert.AreEqual(_roles, result.GroupMemberRoles);
             _repository.Verify(x => x.GetGroupMemberRoles(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
+            _repository.Verify(x => x.UserIsAdminForGroup(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
         }
     }
 }
