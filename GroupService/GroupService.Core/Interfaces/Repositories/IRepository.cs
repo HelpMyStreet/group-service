@@ -28,6 +28,8 @@ namespace GroupService.Core.Interfaces.Repositories
 
         Dictionary<int,List<int>> GetUserRoles(GetUserRolesRequest request, CancellationToken cancellationToken);
 
+        Dictionary<int, List<int>> GetGroupMemberRoles(int groupId, CancellationToken cancellationToken);
+
         Task<bool> AssignRoleAsync(PostAssignRoleRequest request, CancellationToken cancellationToken);
 
         Task<bool> RevokeRoleAsync(PostRevokeRoleRequest request, CancellationToken cancellationToken);
@@ -39,5 +41,7 @@ namespace GroupService.Core.Interfaces.Repositories
         List<int> GetGroupMembers(GetGroupMembersRequest request, CancellationToken cancellationToken);
 
         int GetGroupByKey(GetGroupByKeyRequest request, CancellationToken cancellationToken);
+
+        bool UserIsAdminForGroup(int userID, int groupId);
     }
 }
