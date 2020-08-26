@@ -1,6 +1,6 @@
-﻿using GroupService.Core.Config;
-using GroupService.Core.Interfaces.Services;
-using GroupService.Core.Interfaces.Utils;
+﻿using GroupService.Core.Interfaces.Services;
+using HelpMyStreet.Utils.Enums;
+using HelpMyStreet.Utils.Utils;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading;

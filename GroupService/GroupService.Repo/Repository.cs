@@ -117,6 +117,26 @@ namespace GroupService.Repo
             return response;
         }
 
+        public Dictionary<int, List<int>> GetGroupMemberRoles(int groupId, CancellationToken cancellationToken)
+        {
+            Dictionary<int, List<int>> response = new Dictionary<int, List<int>>();
+
+            var roles = _context.UserRole
+                .Where(w => w.GroupId == groupId).ToList();
+
+            List<int> distinctUsers = roles
+                .Select(r => r.UserId)
+                .Distinct()
+                .ToList();
+
+            foreach (int i in distinctUsers)
+            {
+                response.Add(i, roles.Where(w => w.UserId == i).Select(x => x.RoleId).ToList());
+            }
+
+            return response;
+        }
+
         public async Task<bool> RevokeRoleAsync(PostRevokeRoleRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
@@ -292,6 +312,23 @@ namespace GroupService.Repo
             {
                 throw new Exception($"GroupId {groupId} Source {source} not found in RequestHelpJourney");
             }
+        }
+
+        public bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole)
+        {
+            bool isAdmin = false;
+
+            var role = _context.UserRole.FirstOrDefault(
+                x => x.RoleId == (int) groupRole && 
+                x.GroupId == groupId && 
+                x.UserId == userID);
+            
+            if(role!=null)
+            {
+                isAdmin = true;
+            }
+
+            return isAdmin;
         }
     }
 }
