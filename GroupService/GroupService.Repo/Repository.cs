@@ -314,12 +314,12 @@ namespace GroupService.Repo
             }
         }
 
-        public bool UserIsAdminForGroup(int userID, int groupId)
+        public bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole)
         {
             bool isAdmin = false;
 
             var role = _context.UserRole.FirstOrDefault(
-                x => x.RoleId == (int)GroupRoles.UserAdmin && 
+                x => x.RoleId == (int) groupRole && 
                 x.GroupId == groupId && 
                 x.UserId == userID);
             

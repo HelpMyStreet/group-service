@@ -1,6 +1,7 @@
 ﻿using GroupService.Core.Interfaces.Repositories;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
+using HelpMyStreet.Utils.Enums;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace GroupService.Handlers
 
             if (request.UserId != ADMIN_USERID)
             {
-                hasPermission = _repository.UserIsAdminForGroup(request.UserId, request.GroupId);
+                hasPermission = _repository.UserIsInRoleForGroup(request.UserId, request.GroupId, GroupRoles.UserAdmin);
             }
 
             if (hasPermission)

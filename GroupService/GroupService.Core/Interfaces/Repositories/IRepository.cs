@@ -42,6 +42,6 @@ namespace GroupService.Core.Interfaces.Repositories
 
         int GetGroupByKey(GetGroupByKeyRequest request, CancellationToken cancellationToken);
 
-        bool UserIsAdminForGroup(int userID, int groupId);
+        bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole);
     }
 }
