@@ -94,8 +94,9 @@ namespace GroupService.Repo
         public List<int> GetUserGroups(GetUserGroupsRequest request, CancellationToken cancellationToken)
         {
             return _context.UserRole
-                .Where(w => w.UserId == request.UserID)
-                .Select(s => s.GroupId).ToList();
+                .Where(w => w.UserId == request.UserID && w.RoleId == (int)GroupRoles.Member)
+                .Select(s => s.GroupId)
+                .Distinct().ToList();
         }
 
         public Dictionary<int, List<int>> GetUserRoles(GetUserRolesRequest request, CancellationToken cancellationToken)
@@ -170,7 +171,7 @@ namespace GroupService.Repo
         public List<int> GetGroupMembers(GetGroupMembersRequest request, CancellationToken cancellationToken)
         {
             return _context.UserRole
-                .Where(w => w.GroupId == request.GroupID)
+                .Where(w => w.GroupId == request.GroupID && w.RoleId == (int) GroupRoles.Member)
                 .Select(s => s.UserId)
                 .Distinct().ToList();
         }
