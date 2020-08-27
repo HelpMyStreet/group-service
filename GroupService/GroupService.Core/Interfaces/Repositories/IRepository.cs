@@ -1,4 +1,5 @@
-﻿using GroupService.Core.Dto;
+﻿using GroupService.Core.Domains.Entities;
+using GroupService.Core.Dto;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
@@ -43,5 +44,7 @@ namespace GroupService.Core.Interfaces.Repositories
         int GetGroupByKey(GetGroupByKeyRequest request, CancellationToken cancellationToken);
 
         bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole);
+
+        List<UserGroup> GetUsersWithRole(GroupRoles groupRoles);
     }
 }

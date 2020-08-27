@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GroupService.Core.Domains.Entities;
 using GroupService.Core.Dto;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
@@ -330,6 +331,16 @@ namespace GroupService.Repo
             }
 
             return isAdmin;
+        }
+
+        public List<UserGroup> GetUsersWithRole(GroupRoles groupRoles)
+        {
+            return _context.UserRole.Where(x => x.RoleId == (int) groupRoles)
+                .Select(s=> new UserGroup()
+                {
+                    GroupID = s.GroupId,
+                    UserID = s.UserId
+                }).ToList();        
         }
     }
 }

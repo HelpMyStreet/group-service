@@ -4,6 +4,7 @@ using GroupService.Core.Interfaces.Services;
 using GroupService.Core.Services;
 using GroupService.Handlers;
 using HelpMyStreet.Contracts.GroupService.Request;
+using HelpMyStreet.Contracts.UserService.Response;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Utils;
 using Moq;

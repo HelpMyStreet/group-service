@@ -14,7 +14,6 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domains\Entities\" />
     <Folder Include="Interfaces\Utils\" />
     <Folder Include="Utils\" />
   </ItemGroup>
