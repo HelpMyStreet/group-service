@@ -15,6 +15,7 @@ using HelpMyStreet.Contracts.GroupService.Response;
 
 namespace GroupService.AzureFunction
 {
+
     public class GetChildGroups
     {
         private readonly IMediator _mediator;
