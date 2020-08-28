@@ -22,7 +22,7 @@ namespace GroupService.AzureFunction
         }
 
         [FunctionName("ExpireVolunteers")]
-        public async Task Run([TimerTrigger("%ExpireVolunteersCronExpression%", RunOnStartup = true)] TimerInfo timerInfo, ILogger log, CancellationToken cancellationToken)
+        public async Task Run([TimerTrigger("%ExpireVolunteersCronExpression%")] TimerInfo timerInfo, ILogger log, CancellationToken cancellationToken)
         {
             log.LogInformation($"ExpireVolunteers started at: {DateTime.Now}");
             int expiredVolunteerDays = _applicationConfig.Value.ExpiredVolunteerDays;
