@@ -73,6 +73,9 @@ namespace GroupService.AzureFunction
                 }).AddPolicyHandler(retryPolicy);
             }
 
+            IConfigurationSection applicationConfigSettings = config.GetSection("ApplicationConfig");
+            builder.Services.Configure<ApplicationConfig>(applicationConfigSettings);
+
             builder.Services.AddTransient<IHttpClientWrapper, HttpClientWrapper>();
             builder.Services.AddTransient<IRepository, Repository>();
             builder.Services.AddTransient<IUserService, Core.Services.UserService>();

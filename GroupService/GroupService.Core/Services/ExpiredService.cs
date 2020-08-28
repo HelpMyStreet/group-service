@@ -23,7 +23,7 @@ namespace GroupService.Core.Services
             _repository = repository;
         }
 
-        public async Task ExpireVolunteers(CancellationToken cancellationToken)
+        public async Task ExpireVolunteers(int expiredDays, CancellationToken cancellationToken)
         {
             var userGroups = _repository.GetUsersWithRole(GroupRoles.Volunteer);
 
@@ -42,7 +42,7 @@ namespace GroupService.Core.Services
                     {
                         var minDays = jobsAllocated.JobSummaries.Min(x => (DateTime.Now - x.DateStatusLastChanged).TotalDays);
 
-                        if (minDays > 30)
+                        if (minDays > expiredDays)
                         {
                             revokeRole = true;
                         }
