@@ -1,4 +1,5 @@
 using GroupService.Core.Interfaces.Services;
+using HelpMyStreet.Contracts.UserService.Response;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Utils;
 using Newtonsoft.Json;

@@ -1,4 +1,5 @@
 using AutoMapper;
+using GroupService.Core.Domains.Entities;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
