@@ -74,8 +74,10 @@ namespace GroupService.AzureFunction
             builder.Services.AddTransient<IHttpClientWrapper, HttpClientWrapper>();
             builder.Services.AddTransient<IRepository, Repository>();
             builder.Services.AddTransient<IUserService, Core.Services.UserService>();
+            builder.Services.AddTransient<IRequestService, Core.Services.RequestService>();
+            builder.Services.AddTransient<IExpiredService, Core.Services.ExpiredService>();
 
-                builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILogger<>), typeof(Logger<>)));
+            builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILogger<>), typeof(Logger<>)));
             builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILoggerWrapper<>), typeof(LoggerWrapper<>)));
 
             IConfigurationSection connectionStringSettings = config.GetSection("ConnectionStrings");
