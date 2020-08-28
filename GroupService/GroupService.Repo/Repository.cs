@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
@@ -90,8 +90,9 @@ namespace GroupService.Repo
         public List<int> GetUserGroups(GetUserGroupsRequest request, CancellationToken cancellationToken)
         {
             return _context.UserRole
-                .Where(w => w.UserId == request.UserID)
-                .Select(s => s.GroupId).ToList();
+                .Where(w => w.UserId == request.UserID && w.RoleId == (int)GroupRoles.Member)
+                .Select(s => s.GroupId)
+                .ToList();
         }
 
         public Dictionary<int, List<int>> GetUserRoles(GetUserRolesRequest request, CancellationToken cancellationToken)
@@ -110,6 +111,26 @@ namespace GroupService.Repo
             {
                 response.Add(i, roles.Where(w => w.GroupId == i).Select(x=>x.RoleId).ToList());
             }
+            return response;
+        }
+
+        public Dictionary<int, List<int>> GetGroupMemberRoles(int groupId, CancellationToken cancellationToken)
+        {
+            Dictionary<int, List<int>> response = new Dictionary<int, List<int>>();
+
+            var roles = _context.UserRole
+                .Where(w => w.GroupId == groupId).ToList();
+
+            List<int> distinctUsers = roles
+                .Select(r => r.UserId)
+                .Distinct()
+                .ToList();
+
+            foreach (int i in distinctUsers)
+            {
+                response.Add(i, roles.Where(w => w.UserId == i).Select(x => x.RoleId).ToList());
+            }
+
             return response;
         }
 
@@ -166,9 +187,9 @@ namespace GroupService.Repo
         public List<int> GetGroupMembers(GetGroupMembersRequest request, CancellationToken cancellationToken)
         {
             return _context.UserRole
-                .Where(w => w.GroupId == request.GroupID)
+                .Where(w => w.GroupId == request.GroupID && w.RoleId == (int) GroupRoles.Member)
                 .Select(s => s.UserId)
-                .Distinct().ToList();
+                .ToList();
         }
 
         public int GetGroupByKey(GetGroupByKeyRequest request, CancellationToken cancellationToken)
@@ -288,6 +309,33 @@ namespace GroupService.Repo
             {
                 throw new Exception($"GroupId {groupId} Source {source} not found in RequestHelpJourney");
             }
+        }
+
+        public bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole)
+        {
+            bool isAdmin = false;
+
+            var role = _context.UserRole.FirstOrDefault(
+                x => x.RoleId == (int) groupRole && 
+                x.GroupId == groupId && 
+                x.UserId == userID);
+            
+            if(role!=null)
+            {
+                isAdmin = true;
+            }
+
+            return isAdmin;
+        }
+
+        public List<UserGroup> GetUsersWithRole(GroupRoles groupRoles)
+        {
+            return _context.UserRole.Where(x => x.RoleId == (int) groupRoles)
+                .Select(s=> new UserGroup()
+                {
+                    GroupID = s.GroupId,
+                    UserID = s.UserId
+                }).ToList();        
         }
     }
 }

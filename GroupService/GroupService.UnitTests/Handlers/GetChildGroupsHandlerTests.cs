@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace GroupService.UnitTests
 {
-    public class GetChildGroupsHandlerTests
+    public class ExpiredServicesTests
     {
         private GetChildGroupsHandler _classUnderTest;
         private Mock<IRepository> _repository;
