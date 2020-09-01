@@ -1,8 +1,8 @@
 ﻿using GroupService.Repo.EntityFramework.Entities;
 using GroupService.Repo.Helpers;
-using HelpMyStreet.Utils.Extensions;
 using Microsoft.EntityFrameworkCore;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
+using GroupService.Repo.Extensions;
 
 namespace GroupService.Repo
 {

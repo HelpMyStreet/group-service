@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupService.Core", "GroupS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupService.Handlers", "GroupService\GroupService.Handlers\GroupService.Handlers.csproj", "{88A7DF9F-9F25-4C30-BEA4-2C05E6E110A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupService.Mappers", "GroupService\GroupService.Mappers\GroupService.Mappers.csproj", "{F63EB30E-2772-486E-BA29-CE3DCE88BCAA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupService.Repo", "GroupService\GroupService.Repo\GroupService.Repo.csproj", "{07F0AD4E-2BF8-4071-86FA-389DEA58A422}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupService.UnitTests", "GroupService\GroupService.UnitTests\GroupService.UnitTests.csproj", "{0B77B377-33E4-4142-B2A8-64DBE5A69BAB}"
@@ -33,10 +31,6 @@ Global
 		{88A7DF9F-9F25-4C30-BEA4-2C05E6E110A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88A7DF9F-9F25-4C30-BEA4-2C05E6E110A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88A7DF9F-9F25-4C30-BEA4-2C05E6E110A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F63EB30E-2772-486E-BA29-CE3DCE88BCAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F63EB30E-2772-486E-BA29-CE3DCE88BCAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F63EB30E-2772-486E-BA29-CE3DCE88BCAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F63EB30E-2772-486E-BA29-CE3DCE88BCAA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07F0AD4E-2BF8-4071-86FA-389DEA58A422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07F0AD4E-2BF8-4071-86FA-389DEA58A422}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07F0AD4E-2BF8-4071-86FA-389DEA58A422}.Release|Any CPU.ActiveCfg = Release|Any CPU
