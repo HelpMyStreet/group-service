@@ -9,7 +9,6 @@
 		<PackageReference Include="HelpMyStreet.CoreV3.Utils" Version="1.1.331" />
 		<PackageReference Include="MediatR" Version="8.1.0" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<Folder Include="Domains\Entities\" />
 		<Folder Include="Dto\" />
