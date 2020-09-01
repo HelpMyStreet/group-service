@@ -1,4 +1,5 @@
-﻿using GroupService.Core.Dto;
+﻿using GroupService.Core.Domains.Entities;
+using GroupService.Core.Dto;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
@@ -28,6 +29,8 @@ namespace GroupService.Core.Interfaces.Repositories
 
         Dictionary<int,List<int>> GetUserRoles(GetUserRolesRequest request, CancellationToken cancellationToken);
 
+        Dictionary<int, List<int>> GetGroupMemberRoles(int groupId, CancellationToken cancellationToken);
+
         Task<bool> AssignRoleAsync(PostAssignRoleRequest request, CancellationToken cancellationToken);
 
         Task<bool> RevokeRoleAsync(PostRevokeRoleRequest request, CancellationToken cancellationToken);
@@ -39,5 +42,9 @@ namespace GroupService.Core.Interfaces.Repositories
         List<int> GetGroupMembers(GetGroupMembersRequest request, CancellationToken cancellationToken);
 
         int GetGroupByKey(GetGroupByKeyRequest request, CancellationToken cancellationToken);
+
+        bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole);
+
+        List<UserGroup> GetUsersWithRole(GroupRoles groupRoles);
     }
 }

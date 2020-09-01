@@ -4,12 +4,13 @@ using HelpMyStreet.Utils.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GroupService.Core.Interfaces.Services
 {
-    public interface IUserService
+    public interface IExpiredService
     {
-        Task<GetUserByIDResponse> GetUserByID(int userID);
+        Task ExpireVolunteers(int expiredDays, CancellationToken cancellationToken);
     }
 }
