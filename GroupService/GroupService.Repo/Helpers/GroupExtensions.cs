@@ -1,4 +1,4 @@
-using GroupService.Repo.EntityFramework.Entities;
+﻿using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Utils.Enums;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -45,6 +45,13 @@ namespace GroupService.Repo.Helpers
                 GroupName = "Tankersley & Pilley",
                 GroupKey = "tankersley"
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.Ruddington,
+                GroupName = "Ruddington",
+                GroupKey = "ruddington"
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -89,6 +96,13 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.Tankersley,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.Ruddington,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.Default
             });
@@ -150,6 +164,14 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.Ruddington,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Ruddington,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
             });
         }
     }
