@@ -342,5 +342,15 @@ namespace GroupService.Repo
                     UserID = s.UserId
                 }).ToList();        
         }
+
+        public Core.Domains.Entities.SecurityConfiguration GetSecurityConfiguration(int groupId)
+        {
+            var securityConfiguration = _context.SecurityConfigurations.Where(x => x.GroupId == groupId).FirstOrDefault();
+
+            return new Core.Domains.Entities.SecurityConfiguration()
+            {
+                AllowAutonomousJoinersAndLeavers = securityConfiguration?.AllowAutonomousJoinersAndLeavers ?? false
+            };
+        }
     }
 }
