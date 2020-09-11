@@ -46,5 +46,7 @@ namespace GroupService.Core.Interfaces.Repositories
         bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole);
 
         List<UserGroup> GetUsersWithRole(GroupRoles groupRoles);
+
+        SecurityConfiguration GetSecurityConfiguration(int groupId);
     }
 }

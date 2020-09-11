@@ -13,37 +13,44 @@ namespace GroupService.Repo.Helpers
         {
             entity.HasData(new Group
             {
-                Id = (int)-1,
+                Id = (int)Groups.Generic,
                 GroupName = "Generic",
                 GroupKey = "Generic"
             });
 
             entity.HasData(new Group
             {
-                Id = (int)-2,
+                Id = (int)Groups.FTLOS,
                 GroupName = "For the Love of Scrubs",
                 GroupKey = "ftlos"
             });
 
             entity.HasData(new Group
             {
-                Id = (int)-3,
+                Id = (int)Groups.AgeUKLSL,
                 GroupName = "Age UK Lincoln & South Lincolnshire",
                 GroupKey = "ageuklsl"
             });
 
             entity.HasData(new Group
             {
-                Id = (int)-4,
+                Id = (int)Groups.HLP,
                 GroupName = "Healthy London Partnership",
                 GroupKey = "hlp"
             });
 
             entity.HasData(new Group
             {
-                Id = (int)-5,
+                Id = (int)Groups.Tankersley,
                 GroupName = "Tankersley & Pilley",
                 GroupKey = "tankersley"
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.Ruddington,
+                GroupName = "Ruddington",
+                GroupKey = "ruddington"
             });
         }
 
@@ -51,7 +58,7 @@ namespace GroupService.Repo.Helpers
         {
             entity.HasData(new RegistrationJourney
             {
-                GroupId = -1,
+                GroupId = (int)Groups.Generic,
                 Source = "",
                 RegistrationFormVariant = (byte) RegistrationFormVariant.Default
 
@@ -59,7 +66,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RegistrationJourney
             {
-                GroupId = -1,
+                GroupId = (int)Groups.Generic,
                 Source = "face-masks",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.FaceMasks
             });
@@ -67,28 +74,35 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RegistrationJourney
             {
-                GroupId = -2,
+                GroupId = (int)Groups.FTLOS,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.FtLOS
             });
 
             entity.HasData(new RegistrationJourney
             {
-                GroupId = -3,
+                GroupId = (int)Groups.AgeUKLSL,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKLSL
             });
 
             entity.HasData(new RegistrationJourney
             {
-                GroupId = -4,
+                GroupId = (int)Groups.HLP,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.HLP
             });
 
             entity.HasData(new RegistrationJourney
             {
-                GroupId = -5,
+                GroupId = (int)Groups.Tankersley,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.Ruddington,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.Default
             });
@@ -98,7 +112,7 @@ namespace GroupService.Repo.Helpers
         {
             entity.HasData(new RequestHelpJourney
             {
-                GroupId = -1,
+                GroupId = (int)Groups.Generic,
                 Source = "DIY",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.DIY,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
@@ -106,7 +120,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
-                GroupId = -1,
+                GroupId = (int)Groups.Generic,
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
@@ -114,7 +128,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
-                GroupId = -1,
+                GroupId = (int)Groups.Generic,
                 Source = "face-masks",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.FaceMasks,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
@@ -122,7 +136,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
-                GroupId = -2,
+                GroupId = (int)Groups.FTLOS,
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.FtLOS,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndChildren,
@@ -130,7 +144,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
-                GroupId = -3,
+                GroupId = (int)Groups.AgeUKLSL,
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.VitalsForVeterans,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
@@ -138,7 +152,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
-                GroupId = -4,
+                GroupId = (int)Groups.HLP,
                 Source = "connected-together-service-directory",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.HLP_CommunityConnector,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
@@ -146,10 +160,18 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
-                GroupId = -5,
+                GroupId = (int)Groups.Tankersley,
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.Ruddington,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Ruddington,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
             });
         }
     }
