@@ -296,24 +296,24 @@ namespace GroupService.Repo
 
         public GetRequestHelpFormVariantResponse GetRequestHelpFormVariant(int groupId, string source, CancellationToken cancellationToken)
         {
-            if(source==null)
-            {
-                source = string.Empty;
-            }
-            var requestHelpJourney = _context.RequestHelpJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == source);
+            var requestHelpJourney = _context.RequestHelpJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == (source ?? string.Empty));
 
-            if (requestHelpJourney != null)
+            if (requestHelpJourney == null)
             {
-                return new GetRequestHelpFormVariantResponse()
-                {
-                    RequestHelpFormVariant = (RequestHelpFormVariant)requestHelpJourney.RequestHelpFormVariant,
-                    TargetGroups = (TargetGroups)requestHelpJourney.TargetGroups,
-                };
+                // Try default source
+                requestHelpJourney = _context.RequestHelpJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == string.Empty);
             }
-            else
+
+            if (requestHelpJourney == null)
             {
                 throw new Exception($"GroupId {groupId} Source {source} not found in RequestHelpJourney");
             }
+
+            return new GetRequestHelpFormVariantResponse()
+            {
+                RequestHelpFormVariant = (RequestHelpFormVariant)requestHelpJourney.RequestHelpFormVariant,
+                TargetGroups = (TargetGroups)requestHelpJourney.TargetGroups,
+            };
         }
 
         public bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole)
