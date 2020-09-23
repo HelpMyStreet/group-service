@@ -84,7 +84,7 @@ namespace GroupService.UnitTests.Services
             };
 
 
-            var result = _classUnderTest.ExpireVolunteers(CancellationToken.None);
+            var result = _classUnderTest.ExpireVolunteers(30,CancellationToken.None);
             _repository.Verify(x => x.GetUsersWithRole(It.IsAny<GroupRoles>()), Times.Once);
             _requestService.Verify(x => x.GetJobsByFilter(It.IsAny<GetJobsByFilterRequest>()), Times.Once);
             _repository.Verify(x => x.RevokeRoleAsync(It.IsAny<PostRevokeRoleRequest>(),It.IsAny<CancellationToken>()), Times.Once);
@@ -120,7 +120,7 @@ namespace GroupService.UnitTests.Services
             };
 
 
-            var result = _classUnderTest.ExpireVolunteers(CancellationToken.None);
+            var result = _classUnderTest.ExpireVolunteers(30,CancellationToken.None);
             _repository.Verify(x => x.GetUsersWithRole(It.IsAny<GroupRoles>()), Times.Once);
             _requestService.Verify(x => x.GetJobsByFilter(It.IsAny<GetJobsByFilterRequest>()), Times.Once);
             _repository.Verify(x => x.RevokeRoleAsync(It.IsAny<PostRevokeRoleRequest>(), It.IsAny<CancellationToken>()), Times.Never);

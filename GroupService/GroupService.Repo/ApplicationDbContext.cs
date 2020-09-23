@@ -24,6 +24,7 @@ namespace GroupService.Repo
         public virtual DbSet<UserRole> UserRole { get; set; }
         public virtual DbSet<RegistrationJourney> RegistrationJourney { get; set; }
         public virtual DbSet<RequestHelpJourney> RequestHelpJourney { get; set; }
+        public virtual DbSet<SecurityConfiguration> SecurityConfigurations { get; set; }
 
         public virtual DbSet<EnumRole> EnumRole { get; set; }
         public virtual DbSet<EnumTargetGroup> EnumTargetGroup { get; set; }
@@ -185,6 +186,26 @@ namespace GroupService.Repo
                     .HasForeignKey(d => d.GroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_RequestHelpJourney_Group");
+            });
+
+            modelBuilder.Entity<SecurityConfiguration>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId });
+
+                entity.ToTable("SecurityConfiguration", "Group");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.AllowAutonomousJoinersAndLeavers).HasColumnName("AllowAutonomousJoinersAndLeavers")
+                                                .HasColumnType("bit").IsRequired(true);
+
+                entity.SetDefaultSecurityConfiguration();
+
+                entity.HasOne(d => d.Group)
+                    .WithOne(p => p.SecurityConfiguration)
+                    .HasForeignKey<SecurityConfiguration>(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_SecurityConfiguration_Group");
             });
         }
     }

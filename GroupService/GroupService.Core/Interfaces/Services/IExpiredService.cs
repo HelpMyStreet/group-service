@@ -11,6 +11,6 @@ namespace GroupService.Core.Interfaces.Services
 {
     public interface IExpiredService
     {
-        Task ExpireVolunteers(CancellationToken cancellationToken);
+        Task ExpireVolunteers(int expiredDays, CancellationToken cancellationToken);
     }
 }
