@@ -24,5 +24,6 @@ namespace GroupService.Repo.EntityFramework.Entities
         public virtual ICollection<RegistrationJourney> RegistrationJourney { get; set; }
         public virtual ICollection<RequestHelpJourney> RequestHelpJourney { get; set; }
         public virtual ICollection<UserRole> UserRole { get; set; }
+        public virtual SecurityConfiguration SecurityConfiguration { get; set; }
     }
 }

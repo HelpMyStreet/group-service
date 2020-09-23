@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200909160126_AddRuddingtonGroup")]
+    partial class AddRuddingtonGroup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -400,27 +402,6 @@ namespace GroupService.Repo.Migrations
                         });
                 });
 
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.SecurityConfiguration", b =>
-                {
-                    b.Property<int>("GroupId")
-                        .HasColumnName("GroupID");
-
-                    b.Property<bool>("AllowAutonomousJoinersAndLeavers")
-                        .HasColumnName("AllowAutonomousJoinersAndLeavers")
-                        .HasColumnType("bit");
-
-                    b.HasKey("GroupId");
-
-                    b.ToTable("SecurityConfiguration","Group");
-
-                    b.HasData(
-                        new
-                        {
-                            GroupId = -6,
-                            AllowAutonomousJoinersAndLeavers = true
-                        });
-                });
-
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.UserRole", b =>
                 {
                     b.Property<int>("GroupId")
@@ -491,14 +472,6 @@ namespace GroupService.Repo.Migrations
                         .WithMany("RequestHelpJourney")
                         .HasForeignKey("GroupId")
                         .HasConstraintName("FK_RequestHelpJourney_Group");
-                });
-
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.SecurityConfiguration", b =>
-                {
-                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
-                        .WithOne("SecurityConfiguration")
-                        .HasForeignKey("GroupService.Repo.EntityFramework.Entities.SecurityConfiguration", "GroupId")
-                        .HasConstraintName("FK_SecurityConfiguration_Group");
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.UserRole", b =>

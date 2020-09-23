@@ -30,6 +30,12 @@ namespace GroupService.Handlers
                 {
                     success = await _repository.AssignRoleAsync(request, cancellationToken);
                 }
+                else if (request.AuthorisedByUserID.Value == request.UserID 
+                            && request.Role.GroupRole == GroupRoles.Member 
+                            && _repository.GetSecurityConfiguration(request.GroupID.Value).AllowAutonomousJoinersAndLeavers)
+                {
+                    success = await _repository.AssignRoleAsync(request, cancellationToken);
+                }
                 else
                 {
                     var allroles = _repository.GetUserRoles(new GetUserRolesRequest()
