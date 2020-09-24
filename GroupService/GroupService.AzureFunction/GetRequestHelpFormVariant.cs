@@ -12,6 +12,8 @@ using HelpMyStreet.Utils.Extensions;
 using System.Threading;
 using HelpMyStreet.Utils.Utils;
 using HelpMyStreet.Contracts.GroupService.Response;
+using System.Net;
+using AzureFunctions.Extensions.Swashbuckle.Attribute;
 
 namespace GroupService.AzureFunction
 {
@@ -27,9 +29,10 @@ namespace GroupService.AzureFunction
         }
 
         [FunctionName("GetRequestHelpFormVariant")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(GetRequestHelpFormVariantResponse))]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)]
-            GetRequestHelpFormVariantRequest req,
+            [RequestBodyType(typeof(GetRequestHelpFormVariantRequest), "get request help form variant")] GetRequestHelpFormVariantRequest req,
             CancellationToken cancellationToken)
         {
             try

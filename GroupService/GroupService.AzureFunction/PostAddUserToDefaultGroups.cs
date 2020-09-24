@@ -12,6 +12,8 @@ using HelpMyStreet.Utils.Extensions;
 using System.Threading;
 using HelpMyStreet.Utils.Utils;
 using HelpMyStreet.Contracts.GroupService.Response;
+using System.Net;
+using AzureFunctions.Extensions.Swashbuckle.Attribute;
 
 namespace GroupService.AzureFunction
 {
@@ -27,9 +29,10 @@ namespace GroupService.AzureFunction
         }
 
         [FunctionName("PostAddUserToDefaultGroups")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(PostAddUserToDefaultGroupsResponse))]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
-            PostAddUserToDefaultGroupsRequest req,
+            [RequestBodyType(typeof(PostAddUserToDefaultGroupsRequest), "post add user to default groups")] PostAddUserToDefaultGroupsRequest req,
             CancellationToken cancellationToken)
         {
             try
