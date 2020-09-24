@@ -12,6 +12,7 @@ using HelpMyStreet.Utils.Extensions;
 using System.Threading;
 using HelpMyStreet.Utils.Utils;
 using HelpMyStreet.Contracts.GroupService.Response;
+using AzureFunctions.Extensions.Swashbuckle.Attribute;
 
 namespace GroupService.AzureFunction
 {
@@ -29,7 +30,7 @@ namespace GroupService.AzureFunction
         [FunctionName("GetNewRequestActions")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)]
-            GetNewRequestActionsRequest req,
+            [RequestBodyType(typeof(GetNewRequestActionsRequest), "get new request actions")] GetNewRequestActionsRequest req,
             CancellationToken cancellationToken)
         {
             try

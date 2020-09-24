@@ -12,6 +12,8 @@ using HelpMyStreet.Utils.Extensions;
 using System.Threading;
 using HelpMyStreet.Utils.Utils;
 using HelpMyStreet.Contracts.GroupService.Response;
+using System.Net;
+using AzureFunctions.Extensions.Swashbuckle.Attribute;
 
 namespace GroupService.AzureFunction
 {
@@ -27,8 +29,10 @@ namespace GroupService.AzureFunction
         }
 
         [FunctionName("PostCreateGroup")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(PostCreateGroupResponse))]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]PostCreateGroupRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
+            [RequestBodyType(typeof(PostCreateGroupRequest), "create group")] PostCreateGroupRequest req,
             CancellationToken cancellationToken)
         {
             try

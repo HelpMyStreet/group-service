@@ -12,6 +12,8 @@ using HelpMyStreet.Utils.Extensions;
 using System.Threading;
 using HelpMyStreet.Utils.Utils;
 using HelpMyStreet.Contracts.GroupService.Response;
+using System.Net;
+using AzureFunctions.Extensions.Swashbuckle.Attribute;
 
 namespace GroupService.AzureFunction
 {
@@ -27,8 +29,10 @@ namespace GroupService.AzureFunction
         }
 
         [FunctionName("GetGroupMembers")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(GetGroupMembersResponse))]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)]GetGroupMembersRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)]
+            [RequestBodyType(typeof(GetGroupMembersRequest), "get group members")] GetGroupMembersRequest req,
             CancellationToken cancellationToken)
         {
             try
