@@ -34,13 +34,13 @@ namespace GroupService.Core.Services
                     bool revokeRole = false;
                     var jobsAllocated = await _requestService.GetJobsByFilter(GetJobsByFilterRequestForUserID(ug.UserID,ug.GroupID));
 
-                    if(jobsAllocated.JobSummaries.Count==0)
+                    if(jobsAllocated.JobHeaders.Count==0)
                     {
                         revokeRole = true;
                     }
                     else
                     {
-                        var minDays = jobsAllocated.JobSummaries.Min(x => (DateTime.Now - x.DateStatusLastChanged).TotalDays);
+                        var minDays = jobsAllocated.JobHeaders.Min(x => (DateTime.Now - x.DateStatusLastChanged).TotalDays);
 
                         if (minDays > expiredDays)
                         {
