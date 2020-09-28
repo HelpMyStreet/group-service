@@ -64,14 +64,14 @@ namespace GroupService.UnitTests.Services
 
             _revoke = true;
 
-            List<JobSummary> jobs = new List<JobSummary>()
+            List<JobHeader> jobs = new List<JobHeader>()
             {
-                new JobSummary()
+                new JobHeader()
                 {
                     DateStatusLastChanged = DateTime.Now.AddDays(-35),
                     ReferringGroupID = -1
                 },
-                new JobSummary()
+                new JobHeader()
                 {
                     DateStatusLastChanged = DateTime.Now.AddDays(-45),
                     ReferringGroupID = -1
@@ -80,7 +80,7 @@ namespace GroupService.UnitTests.Services
 
             _getJobsByFilterResponse = new GetJobsByFilterResponse()
             {
-                JobSummaries = jobs
+                JobHeaders = jobs
             };
 
 
@@ -100,14 +100,14 @@ namespace GroupService.UnitTests.Services
 
             _revoke = true;
 
-            List<JobSummary> jobs = new List<JobSummary>()
+            List<JobHeader> jobs = new List<JobHeader>()
             {
-                new JobSummary()
+                new JobHeader()
                 {
                     DateStatusLastChanged = DateTime.Now.AddDays(-35),
                     ReferringGroupID = -1
                 },
-                new JobSummary()
+                new JobHeader()
                 {
                     DateStatusLastChanged = DateTime.Now.AddDays(-10),
                     ReferringGroupID = -1
@@ -116,7 +116,7 @@ namespace GroupService.UnitTests.Services
 
             _getJobsByFilterResponse = new GetJobsByFilterResponse()
             {
-                JobSummaries = jobs
+                JobHeaders = jobs
             };
 
 

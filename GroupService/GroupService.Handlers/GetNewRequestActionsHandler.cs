@@ -22,8 +22,6 @@ namespace GroupService.Handlers
 
         public async Task<GetNewRequestActionsResponse> Handle(GetNewRequestActionsRequest request, CancellationToken cancellationToken)
         {
-            if (!request.HelpRequest.ReferringGroupId.HasValue) { throw new System.Exception("No ReferringGroupId"); }
-
             Dictionary<int, TaskAction> actions = new Dictionary<int, TaskAction>();
 
             foreach (Job j in request.NewJobsRequest.Jobs)
@@ -40,7 +38,7 @@ namespace GroupService.Handlers
 
                 bool faceMaskRequest = j.SupportActivity == SupportActivities.FaceMask;
 
-                GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.HelpRequest.ReferringGroupId.Value, request.HelpRequest.Source ?? "", cancellationToken);
+                GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.HelpRequest.ReferringGroupId, request.HelpRequest.Source ?? "", cancellationToken);
 
                 if (requestJourney == null)
                 {
@@ -57,19 +55,19 @@ namespace GroupService.Handlers
                         includeChildGroups = false;
                         break;
                     case TargetGroups.ParentGroup: 
-                        targetGroupId = _repository.GetGroupById(request.HelpRequest.ReferringGroupId.Value, cancellationToken).ParentGroupId.Value;
+                        targetGroupId = _repository.GetGroupById(request.HelpRequest.ReferringGroupId, cancellationToken).ParentGroupId.Value;
                         includeChildGroups = false;
                         break;
                     case TargetGroups.SiblingsAndParentGroup:
-                        targetGroupId = _repository.GetGroupById(request.HelpRequest.ReferringGroupId.Value, cancellationToken).ParentGroupId.Value;
+                        targetGroupId = _repository.GetGroupById(request.HelpRequest.ReferringGroupId, cancellationToken).ParentGroupId.Value;
                         includeChildGroups = true;
                         break;
                     case TargetGroups.ThisGroup:
-                        targetGroupId = request.HelpRequest.ReferringGroupId.Value;
+                        targetGroupId = request.HelpRequest.ReferringGroupId;
                         includeChildGroups = false;
                         break;
                     case TargetGroups.ThisGroupAndChildren:
-                        targetGroupId = request.HelpRequest.ReferringGroupId.Value;
+                        targetGroupId = request.HelpRequest.ReferringGroupId;
                         includeChildGroups = true;
                         break;
                     default:
