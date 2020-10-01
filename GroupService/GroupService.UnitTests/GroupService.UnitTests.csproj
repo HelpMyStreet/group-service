@@ -16,6 +16,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\GroupService.AzureFunction\GroupService.AzureFunction.csproj" />
+		<ProjectReference Include="..\GroupService.Core\GroupService.Core.csproj" />
 		<ProjectReference Include="..\GroupService.Handlers\GroupService.Handlers.csproj" />
 	</ItemGroup>
 
