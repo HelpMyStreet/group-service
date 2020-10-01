@@ -71,7 +71,7 @@ namespace GroupService.UnitTests.Services
                     DateStatusLastChanged = DateTime.Now.AddDays(-35),
                     ReferringGroupID = -1
                 },
-                new JobSummary()
+                new JobHeader()
                 {
                     DateStatusLastChanged = DateTime.Now.AddDays(-45),
                     ReferringGroupID = -1

@@ -48,5 +48,7 @@ namespace GroupService.Core.Interfaces.Repositories
         List<UserGroup> GetUsersWithRole(GroupRoles groupRoles);
 
         SecurityConfiguration GetSecurityConfiguration(int groupId);
+
+        List<int> GetGroupMembersForGivenRole(int groupId, GroupRoles roles, CancellationToken cancellationToken);
     }
 }
