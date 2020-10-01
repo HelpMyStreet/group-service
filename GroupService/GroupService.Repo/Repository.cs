@@ -347,5 +347,15 @@ namespace GroupService.Repo
                 AllowAutonomousJoinersAndLeavers = securityConfiguration?.AllowAutonomousJoinersAndLeavers ?? false
             };
         }
+
+        public List<int> GetGroupMembersForGivenRole(int groupId, GroupRoles roles, CancellationToken cancellationToken)
+        {
+            var users = _context.UserRole
+                .Where(w => w.GroupId == groupId && w.RoleId == (int) roles)
+                .Select(x=> x.UserId)
+                .ToList();
+
+            return users;
+        }
     }
 }
