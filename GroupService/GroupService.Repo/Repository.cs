@@ -1,20 +1,15 @@
-﻿using AutoMapper;
+using AutoMapper;
 using GroupService.Core.Domains.Entities;
-using GroupService.Core.Dto;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
-using HelpMyStreet.Utils.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
-
 namespace GroupService.Repo
 {
     public class Repository : IRepository

@@ -34,7 +34,7 @@ namespace GroupService.Core.Services
                     bool revokeRole = false;
                     var jobsAllocated = await _requestService.GetJobsByFilter(GetJobsByFilterRequestForUserID(ug.UserID,ug.GroupID));
 
-                    if(jobsAllocated.JobHeaders.Count==0)
+                    if (jobsAllocated.JobHeaders.Count==0)
                     {
                         revokeRole = true;
                     }
