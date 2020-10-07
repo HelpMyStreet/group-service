@@ -357,5 +357,12 @@ namespace GroupService.Repo
 
             return users;
         }
+
+        public List<HelpMyStreet.Utils.Models.UserCredential> GetGroupActivityCredentials(int groupID, SupportActivities supportActivity)
+        {
+            //_context.ActivityCredentialSet
+            //    .Where(x => x.ActivityId == (int)supportActivity && x.GroupId == groupID);
+            throw new NotImplementedException();
+        }
     }
 }
