@@ -13,6 +13,24 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Ruddington,
                 AllowAutonomousJoinersAndLeavers = true
             });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.AgeUKLSL,
+                AllowAutonomousJoinersAndLeavers = true
+            });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.FTLOS,
+                AllowAutonomousJoinersAndLeavers = true
+            });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.Tankersley,
+                AllowAutonomousJoinersAndLeavers = true
+            });
         }
     }
 }
