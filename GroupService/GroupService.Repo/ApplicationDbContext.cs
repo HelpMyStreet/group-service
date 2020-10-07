@@ -255,6 +255,8 @@ namespace GroupService.Repo
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.SetCredentials();
             });
 
             modelBuilder.Entity<CredentialSet>(entity =>
@@ -318,6 +320,8 @@ namespace GroupService.Repo
                     .HasForeignKey(d => d.GroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_GroupCredential_Group");
+
+                entity.SetGroupCredentials();
             });
 
             modelBuilder.Entity<UserCredential>(entity =>
