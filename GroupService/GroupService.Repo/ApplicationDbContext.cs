@@ -47,6 +47,8 @@ namespace GroupService.Repo
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            CredentialExtensions.InitialiseCredentialSets();
+
             modelBuilder.Entity<EnumCredentialTypes>(entity =>
             {
                 entity.ToTable("CredentialTypes", "Lookup");
@@ -276,6 +278,8 @@ namespace GroupService.Repo
                     .HasForeignKey(d => new { d.GroupId, d.CredentialId })
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CredentialSet_CredentialID");
+
+                entity.SetCredentialSet();
             });
 
             modelBuilder.Entity<GroupCredential>(entity =>
@@ -312,6 +316,8 @@ namespace GroupService.Repo
                     .HasForeignKey(d => d.GroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_GroupCredential_Group");
+
+                entity.SetGroupCredentials();
             });
 
             modelBuilder.Entity<UserCredential>(entity =>
