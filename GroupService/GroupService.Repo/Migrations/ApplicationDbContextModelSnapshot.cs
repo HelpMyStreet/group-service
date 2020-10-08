@@ -1180,6 +1180,21 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -6,
                             AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            AllowAutonomousJoinersAndLeavers = true
                         });
                 });
 
