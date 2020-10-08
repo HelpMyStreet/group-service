@@ -243,6 +243,8 @@ namespace GroupService.Repo
                     .HasForeignKey(d => d.GroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ActivityCredentialSet_GroupID");
+
+                entity.SetActivityCredentialSet();
             });
 
             modelBuilder.Entity<Credential>(entity =>

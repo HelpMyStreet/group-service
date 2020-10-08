@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GroupService.Repo.Migrations
 {
-    public partial class AddEnhacedVolunteeringPre : Migration
+    public partial class NewCredentialsTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,35 +55,6 @@ namespace GroupService.Repo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CredentialSet",
-                schema: "Group",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    GroupID = table.Column<int>(nullable: false),
-                    CredentialID = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CredentialSet", x => new { x.ID, x.GroupID, x.CredentialID });
-                    table.ForeignKey(
-                        name: "FK_CredentialSet_CredentialID",
-                        column: x => x.CredentialID,
-                        principalSchema: "Group",
-                        principalTable: "Credential",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_CredentialSet_GroupID",
-                        column: x => x.GroupID,
-                        principalSchema: "Group",
-                        principalTable: "Group",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "GroupCredential",
                 schema: "Group",
                 columns: table => new
@@ -115,6 +86,27 @@ namespace GroupService.Repo.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CredentialSet",
+                schema: "Group",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false),
+                    GroupID = table.Column<int>(nullable: false),
+                    CredentialID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CredentialSet", x => new { x.ID, x.GroupID, x.CredentialID });
+                    table.ForeignKey(
+                        name: "FK_CredentialSet_CredentialID",
+                        columns: x => new { x.GroupID, x.CredentialID },
+                        principalSchema: "Group",
+                        principalTable: "GroupCredential",
+                        principalColumns: new[] { "GroupID", "CredentialID" },
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserCredential",
                 schema: "Group",
                 columns: table => new
@@ -122,7 +114,7 @@ namespace GroupService.Repo.Migrations
                     GroupID = table.Column<int>(nullable: false),
                     UserID = table.Column<int>(nullable: false),
                     CredentialID = table.Column<int>(nullable: false),
-                    DateAdded = table.Column<DateTime>(type: "datetime", nullable: false),
+                    DateAdded = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     ValidUntil = table.Column<DateTime>(type: "datetime", nullable: true),
                     AuthorisedByUserID = table.Column<int>(nullable: false),
                     Reference = table.Column<string>(unicode: false, maxLength: 100, nullable: true),
@@ -130,20 +122,13 @@ namespace GroupService.Repo.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserCredential", x => new { x.GroupID, x.UserID, x.CredentialID });
+                    table.PrimaryKey("PK_UserCredential", x => new { x.GroupID, x.UserID, x.CredentialID, x.DateAdded });
                     table.ForeignKey(
                         name: "FK_UserCredential_CredentialID",
-                        column: x => x.CredentialID,
+                        columns: x => new { x.GroupID, x.CredentialID },
                         principalSchema: "Group",
-                        principalTable: "Credential",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_UserCredential_GroupID",
-                        column: x => x.GroupID,
-                        principalSchema: "Group",
-                        principalTable: "Group",
-                        principalColumn: "Id",
+                        principalTable: "GroupCredential",
+                        principalColumns: new[] { "GroupID", "CredentialID" },
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -166,16 +151,10 @@ namespace GroupService.Repo.Migrations
                 values: new object[] { 3, "Training" });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CredentialSet_CredentialID",
+                name: "IX_CredentialSet_GroupID_CredentialID",
                 schema: "Group",
                 table: "CredentialSet",
-                column: "CredentialID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CredentialSet_GroupID",
-                schema: "Group",
-                table: "CredentialSet",
-                column: "GroupID");
+                columns: new[] { "GroupID", "CredentialID" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_GroupCredential_CredentialID",
@@ -184,10 +163,10 @@ namespace GroupService.Repo.Migrations
                 column: "CredentialID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserCredential_CredentialID",
+                name: "IX_UserCredential_GroupID_CredentialID",
                 schema: "Group",
                 table: "UserCredential",
-                column: "CredentialID");
+                columns: new[] { "GroupID", "CredentialID" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -201,16 +180,16 @@ namespace GroupService.Repo.Migrations
                 schema: "Group");
 
             migrationBuilder.DropTable(
-                name: "GroupCredential",
-                schema: "Group");
-
-            migrationBuilder.DropTable(
                 name: "UserCredential",
                 schema: "Group");
 
             migrationBuilder.DropTable(
                 name: "CredentialTypes",
                 schema: "Lookup");
+
+            migrationBuilder.DropTable(
+                name: "GroupCredential",
+                schema: "Group");
 
             migrationBuilder.DropTable(
                 name: "Credential",

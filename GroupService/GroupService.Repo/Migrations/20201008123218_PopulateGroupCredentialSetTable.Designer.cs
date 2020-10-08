@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201007104956_AddEnhacedVolunteeringPre")]
-    partial class AddEnhacedVolunteeringPre
+    [Migration("20201008123218_PopulateGroupCredentialSetTable")]
+    partial class PopulateGroupCredentialSetTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,15 +55,30 @@ namespace GroupService.Repo.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Credential","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -1,
+                            Name = "IdentityVerifiedByYoti"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            Name = "ManuallyVerified"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "DBS Check"
+                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.CredentialSet", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnName("ID")
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<int>("GroupId")
                         .HasColumnName("GroupID")
@@ -75,11 +90,47 @@ namespace GroupService.Repo.Migrations
 
                     b.HasKey("Id", "GroupId", "CredentialId");
 
-                    b.HasIndex("CredentialId");
-
-                    b.HasIndex("GroupId");
+                    b.HasIndex("GroupId", "CredentialId");
 
                     b.ToTable("CredentialSet","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 6,
+                            GroupId = -6,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            GroupId = -5,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            GroupId = -4,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            GroupId = -3,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            GroupId = -2,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 1,
+                            GroupId = -1,
+                            CredentialId = -1
+                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumCredentialTypes", b =>
@@ -402,6 +453,62 @@ namespace GroupService.Repo.Migrations
                     b.HasIndex("CredentialId");
 
                     b.ToTable("GroupCredential","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = -6,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.RegistrationJourney", b =>
@@ -586,12 +693,14 @@ namespace GroupService.Repo.Migrations
                         .HasColumnName("CredentialID")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DateAdded")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getdate())");
+
                     b.Property<int>("AuthorisedByUserId")
                         .HasColumnName("AuthorisedByUserID")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("DateAdded")
-                        .HasColumnType("datetime");
 
                     b.Property<string>("Notes")
                         .HasColumnType("varchar(max)")
@@ -605,9 +714,9 @@ namespace GroupService.Repo.Migrations
                     b.Property<DateTime?>("ValidUntil")
                         .HasColumnType("datetime");
 
-                    b.HasKey("GroupId", "UserId", "CredentialId");
+                    b.HasKey("GroupId", "UserId", "CredentialId", "DateAdded");
 
-                    b.HasIndex("CredentialId");
+                    b.HasIndex("GroupId", "CredentialId");
 
                     b.ToTable("UserCredential","Group");
                 });
@@ -682,16 +791,10 @@ namespace GroupService.Repo.Migrations
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.CredentialSet", b =>
                 {
-                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Credential", "Credential")
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.GroupCredential", "GroupCredential")
                         .WithMany("CredentialSet")
-                        .HasForeignKey("CredentialId")
+                        .HasForeignKey("GroupId", "CredentialId")
                         .HasConstraintName("FK_CredentialSet_CredentialID")
-                        .IsRequired();
-
-                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
-                        .WithMany("CredentialSet")
-                        .HasForeignKey("GroupId")
-                        .HasConstraintName("FK_CredentialSet_GroupID")
                         .IsRequired();
                 });
 
@@ -746,16 +849,10 @@ namespace GroupService.Repo.Migrations
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.UserCredential", b =>
                 {
-                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Credential", "Credential")
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.GroupCredential", "GroupCredential")
                         .WithMany("UserCredential")
-                        .HasForeignKey("CredentialId")
+                        .HasForeignKey("GroupId", "CredentialId")
                         .HasConstraintName("FK_UserCredential_CredentialID")
-                        .IsRequired();
-
-                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
-                        .WithMany("UserCredential")
-                        .HasForeignKey("GroupId")
-                        .HasConstraintName("FK_UserCredential_GroupID")
                         .IsRequired();
                 });
 

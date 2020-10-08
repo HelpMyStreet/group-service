@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201007151118_TweakDbDesign")]
-    partial class TweakDbDesign
+    [Migration("20201008122143_NewCredentialsTable")]
+    partial class NewCredentialsTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,27 +55,13 @@ namespace GroupService.Repo.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Credential","Group");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = -1,
-                            Name = "IdentityVerifiedByYoti"
-                        },
-                        new
-                        {
-                            Id = 1,
-                            Name = "ManuallyVerified"
-                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.CredentialSet", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnName("ID")
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<int>("GroupId")
                         .HasColumnName("GroupID")

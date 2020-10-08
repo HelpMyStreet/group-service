@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201008121305_populateCredentials")]
-    partial class populateCredentials
+    [Migration("20201008122745_PopulateGroupCredentialTable")]
+    partial class PopulateGroupCredentialTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,6 +55,23 @@ namespace GroupService.Repo.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Credential","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -1,
+                            Name = "IdentityVerifiedByYoti"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            Name = "ManuallyVerified"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "DBS Check"
+                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.CredentialSet", b =>
@@ -398,6 +415,62 @@ namespace GroupService.Repo.Migrations
                     b.HasIndex("CredentialId");
 
                     b.ToTable("GroupCredential","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = -6,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Yoti App",
+                            Name = "Yoti Identity Verification"
+                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.RegistrationJourney", b =>
