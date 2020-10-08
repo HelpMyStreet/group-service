@@ -265,9 +265,7 @@ namespace GroupService.Repo
 
                 entity.ToTable("CredentialSet", "Group");
 
-                entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.GroupId).HasColumnName("GroupID");
 

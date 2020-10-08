@@ -19,7 +19,7 @@ namespace GroupService.Core.Interfaces.Repositories
         GetGroupMemberDetailsResponse GetGroupMemberDetails(GetGroupMemberDetailsRequest request);
         bool AddGroupMemberCredentials(PutGroupMemberCredentialsRequest request);
         List<GroupCredential> GetGroupCredentials(int groupID);
-        List<UserCredential> GetGroupActivityCredentials(int groupID, SupportActivities supportActivity);
+        List<List<int>> GetGroupActivityCredentialSets(int groupID, SupportActivities supportActivity);
         GetRegistrationFormVariantResponse GetRegistrationFormVariant(int groupId, string source, CancellationToken cancellationToken);
 
         GetRequestHelpFormVariantResponse GetRequestHelpFormVariant(int groupId, string source, CancellationToken cancellationToken);

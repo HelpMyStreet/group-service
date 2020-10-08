@@ -19,10 +19,12 @@ namespace GroupService.Handlers
 
         public async Task<GetGroupActivityCredentialsResponse> Handle(GetGroupActivityCredentialsRequest request, CancellationToken cancellationToken)
         {
-            var result = _repository.GetGroupActivityCredentials(request.GroupId, request.SupportActivityType.SupportActivity);
+            var result = _repository.GetGroupActivityCredentialSets(
+                request.GroupId, 
+                request.SupportActivityType.SupportActivity);
             return new GetGroupActivityCredentialsResponse()
             {
-                UserCredentials = result
+                CredentialSets = result
             };
         }
     }
