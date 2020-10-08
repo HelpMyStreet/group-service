@@ -421,12 +421,12 @@ namespace GroupService.Repo
             return returnValue;
         }
 
-        public GetGroupMemberDetailsResponse GetGroupMemberDetails(GetGroupMemberDetailsRequest request)
+        public GetGroupMemberDetailsResponse GetGroupMemberDetails(int groupId, int userId)
         {
             GetGroupMemberDetailsResponse returnValue = new GetGroupMemberDetailsResponse();
 
             var audits = _context.UserRoleAudit
-                .Where(x => x.UserId == request.UserId && x.GroupId == request.GroupId)
+                .Where(x => x.UserId == userId && x.GroupId == groupId)
                 .Select(x => new HelpMyStreet.Contracts.GroupService.Response.UserRoleAudit()
                 {
                    Action = (GroupAction) x.ActionId,
@@ -436,7 +436,7 @@ namespace GroupService.Repo
                 })
                 .ToList();
 
-            returnValue.UserInGroup = GetGroupMember(request.GroupId, request.UserId);
+            returnValue.UserInGroup = GetGroupMember(groupId, userId);
             returnValue.UserRoleAudits = audits;
 
             return returnValue;
@@ -446,7 +446,7 @@ namespace GroupService.Repo
         {
             var roles = _context.UserRole
                 .Where(x => x.GroupId == groupId && x.UserId == userId)
-                .Select(x => (GroupRoles) x.GroupId)
+                .Select(x => (GroupRoles) x.RoleId)
                 .ToList();
 
             var credentials =_context.UserCredential

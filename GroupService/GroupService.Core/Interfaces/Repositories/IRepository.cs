@@ -16,7 +16,7 @@ namespace GroupService.Core.Interfaces.Repositories
     {
         List<UserInGroup> GetAllGroupMembers(int groupId);
         UserInGroup GetGroupMember(int groupId, int userId);
-        GetGroupMemberDetailsResponse GetGroupMemberDetails(GetGroupMemberDetailsRequest request);
+        GetGroupMemberDetailsResponse GetGroupMemberDetails(int groupId, int userId);
         bool AddGroupMemberCredentials(PutGroupMemberCredentialsRequest request);
         List<GroupCredential> GetGroupCredentials(int groupID);
         List<List<int>> GetGroupActivityCredentialSets(int groupID, SupportActivities supportActivity);

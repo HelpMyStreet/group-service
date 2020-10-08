@@ -22,6 +22,12 @@ namespace GroupService.Handlers
             var result = _repository.GetGroupActivityCredentialSets(
                 request.GroupId, 
                 request.SupportActivityType.SupportActivity);
+
+            if (result == null || result.Count == 0)
+            {
+                throw new Exception($"Unable to retrieve credential set for GroupID={request.GroupId} and supportActivity={request.SupportActivityType.SupportActivity.ToString()}");
+            }
+
             return new GetGroupActivityCredentialsResponse()
             {
                 CredentialSets = result

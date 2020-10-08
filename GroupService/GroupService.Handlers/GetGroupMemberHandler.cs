@@ -1,4 +1,5 @@
-﻿using GroupService.Core.Interfaces.Repositories;
+﻿using GroupService.Core.Exception;
+using GroupService.Core.Interfaces.Repositories;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using MediatR;
@@ -19,12 +20,30 @@ namespace GroupService.Handlers
 
         public async Task<GetGroupMemberResponse> Handle(GetGroupMemberRequest request, CancellationToken cancellationToken)
         {
-            var result = _repository.GetGroupMember(request.GroupId, request.UserId);
+            bool hasPermission = request.UserId == request.AuthorisingUserId;
+            GetGroupMemberResponse response = null;
 
-            return new GetGroupMemberResponse()
+            if(!hasPermission)
             {
-                UserInGroup = result
-            };
+                hasPermission = _repository.UserIsInRoleForGroup(
+                    request.AuthorisingUserId,
+                    request.GroupId,
+                    HelpMyStreet.Utils.Enums.GroupRoles.UserAdmin);
+            }    
+
+            if (hasPermission)
+            {
+                var result = _repository.GetGroupMember(request.GroupId, request.UserId);
+                response = new GetGroupMemberResponse()
+                {
+                    UserInGroup = result
+                };
+            }
+            else
+            {
+                throw new UnauthorisedException();
+            }
+            return response;
         }
     }
 }

@@ -14,6 +14,7 @@ using HelpMyStreet.Utils.Utils;
 using HelpMyStreet.Contracts.GroupService.Response;
 using System.Net;
 using AzureFunctions.Extensions.Swashbuckle.Attribute;
+using GroupService.Core.Exception;
 
 namespace GroupService.AzureFunction
 {
@@ -40,6 +41,10 @@ namespace GroupService.AzureFunction
             {
                 GetGroupMemberDetailsResponse response = await _mediator.Send(req, cancellationToken);
                 return new OkObjectResult(ResponseWrapper<GetGroupMemberDetailsResponse, GroupServiceErrorCode>.CreateSuccessfulResponse(response));
+            }
+            catch (UnauthorisedException ex)
+            {
+                return new ObjectResult(ResponseWrapper<GetGroupMembersResponse, GroupServiceErrorCode>.CreateUnsuccessfulResponse(GroupServiceErrorCode.UnauthorisedError, "Unauthorised Error")) { StatusCode = StatusCodes.Status401Unauthorized };
             }
             catch (Exception ex)
             {
