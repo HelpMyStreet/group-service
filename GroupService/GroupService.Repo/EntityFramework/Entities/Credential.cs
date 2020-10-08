@@ -8,16 +8,12 @@ namespace GroupService.Repo.EntityFramework.Entities
     {
         public Credential()
         {
-            CredentialSet = new HashSet<CredentialSet>();
-            GroupCredential = new HashSet<GroupCredential>();
-            UserCredential = new HashSet<UserCredential>();
+            GroupCredential = new HashSet<GroupCredential>();            
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
-
-        public virtual ICollection<CredentialSet> CredentialSet { get; set; }
-        public virtual ICollection<GroupCredential> GroupCredential { get; set; }
-        public virtual ICollection<UserCredential> UserCredential { get; set; }
+        
+        public virtual ICollection<GroupCredential> GroupCredential { get; set; }        
     }
 }

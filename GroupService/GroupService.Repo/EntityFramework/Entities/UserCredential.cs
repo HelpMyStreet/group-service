@@ -14,8 +14,6 @@ namespace GroupService.Repo.EntityFramework.Entities
         public int AuthorisedByUserId { get; set; }
         public string Reference { get; set; }
         public string Notes { get; set; }
-
-        public virtual Credential Credential { get; set; }
-        public virtual Group Group { get; set; }
+        public virtual GroupCredential GroupCredential { get; set; }        
     }
 }

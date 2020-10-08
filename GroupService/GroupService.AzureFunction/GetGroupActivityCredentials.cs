@@ -43,7 +43,7 @@ namespace GroupService.AzureFunction
             }
             catch (Exception ex)
             {
-                _logger.LogErrorAndNotifyNewRelic($"Unhandled error in GetChildGroups", ex);
+                _logger.LogErrorAndNotifyNewRelic($"Unhandled error in GetGroupActivityCredentials", ex);
                 return new ObjectResult(ResponseWrapper<GetGroupActivityCredentialsResponse, GroupServiceErrorCode>.CreateUnsuccessfulResponse(GroupServiceErrorCode.InternalServerError, "Internal Error")) { StatusCode = StatusCodes.Status500InternalServerError };
             }
         }

@@ -10,7 +10,6 @@ namespace GroupService.Repo.EntityFramework.Entities
         public int GroupId { get; set; }
         public int CredentialId { get; set; }
 
-        public virtual Credential Credential { get; set; }
-        public virtual Group Group { get; set; }
+        public virtual GroupCredential GroupCredential { get; set; }
     }
 }

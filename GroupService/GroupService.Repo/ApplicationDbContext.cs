@@ -273,17 +273,11 @@ namespace GroupService.Repo
 
                 entity.Property(e => e.CredentialId).HasColumnName("CredentialID");
 
-                entity.HasOne(d => d.Credential)
+                entity.HasOne(d => d.GroupCredential)
                     .WithMany(p => p.CredentialSet)
-                    .HasForeignKey(d => d.CredentialId)
+                    .HasForeignKey(d => new { d.GroupId, d.CredentialId })
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CredentialSet_CredentialID");
-
-                entity.HasOne(d => d.Group)
-                    .WithMany(p => p.CredentialSet)
-                    .HasForeignKey(d => d.GroupId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CredentialSet_GroupID");
             });
 
             modelBuilder.Entity<GroupCredential>(entity =>
@@ -320,13 +314,11 @@ namespace GroupService.Repo
                     .HasForeignKey(d => d.GroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_GroupCredential_Group");
-
-                entity.SetGroupCredentials();
             });
 
             modelBuilder.Entity<UserCredential>(entity =>
             {
-                entity.HasKey(e => new { e.GroupId, e.UserId, e.CredentialId });
+                entity.HasKey(e => new { e.GroupId, e.UserId, e.CredentialId, e.DateAdded });
 
                 entity.ToTable("UserCredential", "Group");
 
@@ -336,9 +328,11 @@ namespace GroupService.Repo
 
                 entity.Property(e => e.CredentialId).HasColumnName("CredentialID");
 
-                entity.Property(e => e.AuthorisedByUserId).HasColumnName("AuthorisedByUserID");
+                entity.Property(e => e.DateAdded)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
-                entity.Property(e => e.DateAdded).HasColumnType("datetime");
+                entity.Property(e => e.AuthorisedByUserId).HasColumnName("AuthorisedByUserID");
 
                 entity.Property(e => e.Notes).IsUnicode(false);
 
@@ -348,17 +342,11 @@ namespace GroupService.Repo
 
                 entity.Property(e => e.ValidUntil).HasColumnType("datetime");
 
-                entity.HasOne(d => d.Credential)
+                entity.HasOne(d => d.GroupCredential)
                     .WithMany(p => p.UserCredential)
-                    .HasForeignKey(d => d.CredentialId)
+                    .HasForeignKey(d => new { d.GroupId, d.CredentialId })
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserCredential_CredentialID");
-
-                entity.HasOne(d => d.Group)
-                    .WithMany(p => p.UserCredential)
-                    .HasForeignKey(d => d.GroupId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UserCredential_GroupID");
             });
         }
     }

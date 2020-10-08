@@ -5,6 +5,7 @@ using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
+using HelpMyStreet.Utils.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -153,7 +154,7 @@ namespace GroupService.Repo
 
         public void AddUserRoleAudit(int groupId, int userId, GroupRoles groupRole, int authorisedByUserID, GroupAction groupAction, bool success, CancellationToken cancellationToken)
         {
-            _context.UserRoleAudit.Add(new UserRoleAudit()
+            _context.UserRoleAudit.Add(new EntityFramework.Entities.UserRoleAudit()
             {
                 DateRequested = DateTime.Now.ToUniversalTime(),
                 GroupId = groupId,
@@ -362,6 +363,31 @@ namespace GroupService.Repo
         {
             //_context.ActivityCredentialSet
             //    .Where(x => x.ActivityId == (int)supportActivity && x.GroupId == groupID);
+            throw new NotImplementedException();
+        }
+
+        public List<HelpMyStreet.Contracts.GroupService.Response.GroupCredential> GetGroupCredentials(int groupID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool AddGroupMemberCredentials(PutGroupMemberCredentialsRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public GetGroupMemberDetailsResponse GetGroupMemberDetails(GetGroupMemberDetailsRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public UserInGroup GetGroupMember(int groupId, int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<UserInGroup> GetAllGroupMembers(int groupId)
+        {
             throw new NotImplementedException();
         }
     }
