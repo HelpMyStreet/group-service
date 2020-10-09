@@ -425,6 +425,11 @@ namespace GroupService.Repo
         {
             GetGroupMemberDetailsResponse returnValue = new GetGroupMemberDetailsResponse();
 
+            var roles = _context.UserRole
+                .Where(x => x.GroupId == groupId && x.UserId == userId)
+                .Select(x => (GroupRoles)x.RoleId)
+                .ToList();
+
             var audits = _context.UserRoleAudit
                 .Where(x => x.UserId == userId && x.GroupId == groupId)
                 .Select(x => new HelpMyStreet.Contracts.GroupService.Response.UserRoleAudit()
@@ -436,8 +441,20 @@ namespace GroupService.Repo
                 })
                 .ToList();
 
-            returnValue.UserInGroup = GetGroupMember(groupId, userId);
+            var credentials = _context.UserCredential
+                .Where(x => x.UserId == userId && x.GroupId == groupId)
+                .Select(x => new HelpMyStreet.Utils.Models.UserCredential()
+                {
+                    AuthorisedByUserId = x.AuthorisedByUserId,
+                    CredentialId = x.CredentialId,
+                    ExpiryDate = x.ValidUntil,
+                    Notes = x.Notes,
+                    Reference = x.Notes
+                }).ToList();
+
+            returnValue.GroupRoles = roles;
             returnValue.UserRoleAudits = audits;
+            returnValue.UserCredentials = credentials;
 
             return returnValue;
         }
@@ -449,23 +466,22 @@ namespace GroupService.Repo
                 .Select(x => (GroupRoles) x.RoleId)
                 .ToList();
 
-            var credentials =_context.UserCredential
-                .Where(x => x.UserId == userId && x.GroupId == groupId)
-                .Select(x => new HelpMyStreet.Utils.Models.UserCredential()
-                {
-                    AuthorisedByUserId = x.AuthorisedByUserId,
-                    CredentialId = x.CredentialId,
-                    ExpiryDate = x.ValidUntil,
-                    Notes = x.Notes,
-                    Reference = x.Notes
-                }).ToList();
+            var allCredentials = _context.UserCredential
+                .Where(x => x.UserId == userId 
+                    && x.GroupId == groupId)
+                .Select(x => new { x.CredentialId, x.ValidUntil})
+                .ToList();
+
+            var validCredentials = allCredentials.Where(x => ((x.ValidUntil ?? DateTime.Now.Date) - DateTime.Now.Date).TotalDays>=0)
+                    .Select(x=> x.CredentialId)
+                .ToList();
 
             UserInGroup userInGroup = new UserInGroup()
             {
                 GroupRoles = roles,
                 UserId = userId,
                 GroupId = groupId,
-                UserCredentials = credentials
+                ValidCredentials = validCredentials
             };
             return userInGroup;
         }
