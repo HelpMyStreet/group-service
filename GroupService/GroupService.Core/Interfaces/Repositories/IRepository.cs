@@ -14,6 +14,12 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
+        List<UserInGroup> GetAllGroupMembers(int groupId);
+        UserInGroup GetGroupMember(int groupId, int userId);
+        GetGroupMemberDetailsResponse GetGroupMemberDetails(int groupId, int userId);
+        bool AddGroupMemberCredentials(PutGroupMemberCredentialsRequest request);
+        List<GroupCredential> GetGroupCredentials(int groupID);
+        List<List<int>> GetGroupActivityCredentialSets(int groupID, SupportActivities supportActivity);
         GetRegistrationFormVariantResponse GetRegistrationFormVariant(int groupId, string source, CancellationToken cancellationToken);
 
         GetRequestHelpFormVariantResponse GetRequestHelpFormVariant(int groupId, string source, CancellationToken cancellationToken);

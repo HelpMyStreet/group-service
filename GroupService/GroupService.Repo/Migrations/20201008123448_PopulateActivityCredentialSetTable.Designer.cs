@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201008123448_PopulateActivityCredentialSetTable")]
+    partial class PopulateActivityCredentialSetTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1179,21 +1181,6 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -6,
-                            AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -3,
-                            AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -2,
-                            AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -5,
                             AllowAutonomousJoinersAndLeavers = true
                         });
                 });
