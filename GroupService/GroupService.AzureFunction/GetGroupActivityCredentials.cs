@@ -32,7 +32,7 @@ namespace GroupService.AzureFunction
         [FunctionName("GetGroupActivityCredentials")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(GetGroupActivityCredentialsResponse))]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)]
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
             [RequestBodyType(typeof(GetGroupActivityCredentialsRequest), "Get Group Activity Credentials")] GetGroupActivityCredentialsRequest req,
             CancellationToken cancellationToken)
         {

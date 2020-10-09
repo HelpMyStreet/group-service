@@ -2,6 +2,7 @@ using GroupService.Core.Exception;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Handlers;
 using HelpMyStreet.Contracts.GroupService.Request;
+using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using Moq;
@@ -11,19 +12,19 @@ using System.Threading;
 
 namespace GroupService.UnitTests
 {
-    public class GetGroupMemberHandlerTests
+    public class GetGroupMemberDetailsHandlerTests
     {
-        private GetGroupMemberHandler _classUnderTest;
+        private GetGroupMemberDetailsHandler _classUnderTest;
         private Mock<IRepository> _repository;
-        private UserInGroup _userInGroup;
+        private GetGroupMemberDetailsResponse _groupMemberDetails;
         private bool _hasPermission;
 
         [SetUp]
         public void Setup()
         {
             _repository = new Mock<IRepository>();
-            _repository.Setup(x => x.GetGroupMember(It.IsAny<int>(), It.IsAny<int>()))
-                .Returns(() => _userInGroup);
+            _repository.Setup(x => x.GetGroupMemberDetails(It.IsAny<int>(), It.IsAny<int>()))
+                .Returns(() => _groupMemberDetails);
 
             _repository.Setup(x => x.UserIsInRoleForGroup(
                 It.IsAny<int>(),
@@ -31,76 +32,79 @@ namespace GroupService.UnitTests
                 It.IsAny<GroupRoles>()))
                 .Returns(() => _hasPermission);
 
-            _classUnderTest = new GetGroupMemberHandler(_repository.Object);
+            _classUnderTest = new GetGroupMemberDetailsHandler(_repository.Object);
                
         }
 
         [Test]
-        public void WhenUserIDAndAuthorisingUserIDAreTheSame_ReturnUserDetails()
+        public void WhenUserIDAndAuthorisingUserIDAreTheSame_ReturnGroupMemberDetails()
         {
             int groupId = 1;
             int userId = 1;
 
-            _userInGroup = new UserInGroup()
+            _groupMemberDetails = new GetGroupMemberDetailsResponse()
             {
-                UserId = userId,
-                GroupId = groupId,
-                GroupRoles = new List<GroupRoles>()
-                { GroupRoles.Member},
-                UserCredentials = new List<HelpMyStreet.Utils.Models.UserCredential>()
+                UserInGroup = new UserInGroup()
                 {
-                    new HelpMyStreet.Utils.Models.UserCredential()
+                    UserId = userId,
+                    GroupId = groupId,
+                    GroupRoles = new List<GroupRoles>() { GroupRoles.Member },
+                    UserCredentials = new List<UserCredential>()
                     {
-                        CredentialId = -1
+                        new UserCredential()
+                        {
+                            CredentialId = -1
+                        }
                     }
                 }
             };
-
-            var result = _classUnderTest.Handle(new GetGroupMemberRequest()
+            var result = _classUnderTest.Handle(new GetGroupMemberDetailsRequest()
             {
                 GroupId = groupId,
                 UserId = userId,
                 AuthorisingUserId = userId
             }, CancellationToken.None).Result;
 
-            Assert.AreEqual(_userInGroup, result.UserInGroup);
+            Assert.AreEqual(_groupMemberDetails.UserInGroup, result.UserInGroup);
             _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Never);
-            _repository.Verify(x => x.GetGroupMember(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
+            _repository.Verify(x => x.GetGroupMemberDetails(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
         }
 
         [Test]
-        public void WhenUserIDAndAuthorisingUserIDAreDifferentAndAuthorisingIsAdmin_ReturnUserDetails()
+        public void WhenUserIDAndAuthorisingUserIDAreDifferentAndAuthorisingIsAdmin_ReturnsGroupMemberDetails()
         {
             int groupId = 1;
             int userId = 1;
             int authorisingUserId = 2;
             _hasPermission = true;
 
-            _userInGroup = new UserInGroup()
+            _groupMemberDetails = new GetGroupMemberDetailsResponse()
             {
-                UserId = userId,
-                GroupId = groupId,
-                GroupRoles = new List<GroupRoles>()
-                { GroupRoles.Member},
-                UserCredentials = new List<HelpMyStreet.Utils.Models.UserCredential>()
+                UserInGroup = new UserInGroup()
                 {
-                    new HelpMyStreet.Utils.Models.UserCredential()
+                    UserId = userId,
+                    GroupId = groupId,
+                    GroupRoles = new List<GroupRoles>() { GroupRoles.Member },
+                    UserCredentials = new List<UserCredential>()
                     {
-                        CredentialId = -1
+                        new UserCredential()
+                        {
+                            CredentialId = -1
+                        }
                     }
                 }
             };
 
-            var result = _classUnderTest.Handle(new GetGroupMemberRequest()
+            var result = _classUnderTest.Handle(new GetGroupMemberDetailsRequest()
             {
                 GroupId = groupId,
                 UserId = userId,
                 AuthorisingUserId = authorisingUserId
             }, CancellationToken.None).Result;
 
-            Assert.AreEqual(_userInGroup, result.UserInGroup);
+            Assert.AreEqual(_groupMemberDetails.UserInGroup, result.UserInGroup);
             _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
-            _repository.Verify(x => x.GetGroupMember(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
+            _repository.Verify(x => x.GetGroupMemberDetails(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
         }
 
         [Test]
@@ -111,15 +115,15 @@ namespace GroupService.UnitTests
             int authorisingUserId = 2;
             _hasPermission = false;
 
-            Assert.ThrowsAsync<UnauthorisedException>(() => _classUnderTest.Handle(new GetGroupMemberRequest()
+            Assert.ThrowsAsync<UnauthorisedException>(() => _classUnderTest.Handle(new GetGroupMemberDetailsRequest()
             {
                 GroupId = groupId,
                 UserId = userId,
                 AuthorisingUserId = authorisingUserId
             }, CancellationToken.None));
-;
+            
             _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
-            _repository.Verify(x => x.GetGroupMember(It.IsAny<int>(), It.IsAny<int>()), Times.Never);
+            _repository.Verify(x => x.GetGroupMemberDetails(It.IsAny<int>(), It.IsAny<int>()), Times.Never);
         }
     }
 }

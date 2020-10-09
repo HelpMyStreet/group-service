@@ -44,7 +44,7 @@ namespace GroupService.AzureFunction
             }
             catch (UnauthorisedException ex)
             {
-                return new ObjectResult(ResponseWrapper<GetGroupMembersResponse, GroupServiceErrorCode>.CreateUnsuccessfulResponse(GroupServiceErrorCode.UnauthorisedError, "Unauthorised Error")) { StatusCode = StatusCodes.Status401Unauthorized };
+                return new ObjectResult(ResponseWrapper<GetGroupMemberDetailsResponse, GroupServiceErrorCode>.CreateUnsuccessfulResponse(GroupServiceErrorCode.UnauthorisedError, "Unauthorised Error")) { StatusCode = StatusCodes.Status401Unauthorized };
             }
             catch (Exception ex)
             {
