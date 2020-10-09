@@ -68,5 +68,35 @@ namespace GroupService.UnitTests.AzureFunctions
 
             _mediator.Verify(x => x.Send(It.IsAny<GetGroupActivityCredentialsRequest>(), It.IsAny<CancellationToken>()), Times.Once);
         }
+
+        [Test]
+        public async Task UnHappyPath_ReturnsUnauthorized()
+        {
+            int groupId = 1;
+            SupportActivities activity = SupportActivities.Shopping;
+
+            GetGroupActivityCredentialsRequest req = new GetGroupActivityCredentialsRequest()
+            {
+                GroupId = groupId,
+                SupportActivityType = new SupportActivityType() { SupportActivity = activity }
+            };
+
+            _mediator.Setup(x => x.Send(It.IsAny<GetGroupActivityCredentialsRequest>(), It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new Exception($"Unable to retrieve credential set for GroupID={groupId} and supportActivity={activity.ToString()}"));
+
+            IActionResult result = await _classUnderTest.Run(req, CancellationToken.None);
+            ObjectResult objectResult = result as ObjectResult;
+            Assert.IsNotNull(objectResult);
+            Assert.AreEqual(500, objectResult.StatusCode);
+
+            ResponseWrapper<GetGroupActivityCredentialsResponse, GroupServiceErrorCode> deserialisedResponse = objectResult.Value as ResponseWrapper<GetGroupActivityCredentialsResponse, GroupServiceErrorCode>;
+            Assert.IsNotNull(deserialisedResponse);
+
+            Assert.IsFalse(deserialisedResponse.IsSuccessful);
+            Assert.AreEqual(1, deserialisedResponse.Errors.Count());
+            Assert.AreEqual(GroupServiceErrorCode.InternalServerError, deserialisedResponse.Errors[0].ErrorCode);
+
+            _mediator.Verify(x => x.Send(It.IsAny<GetGroupActivityCredentialsRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+        }
     }
 }
