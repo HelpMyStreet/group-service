@@ -374,7 +374,7 @@ namespace GroupService.Repo
             {
                 foreach(int credentialSet in credentialSets)
                 {
-                   var creds = _context.CredentialSet.Where(x => x.Id == credentialSet).Select(x => x.Id).ToList();
+                   var creds = _context.CredentialSet.Where(x => x.Id == credentialSet).Select(x => x.CredentialId).ToList();
                     returnValue.Add(creds);
                 }
             }
