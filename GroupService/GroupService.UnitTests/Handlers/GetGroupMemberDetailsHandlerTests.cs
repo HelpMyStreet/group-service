@@ -121,7 +121,7 @@ namespace GroupService.UnitTests
                 UserId = userId,
                 AuthorisingUserId = authorisingUserId
             }, CancellationToken.None));
-            ;
+            
             _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
             _repository.Verify(x => x.GetGroupMemberDetails(It.IsAny<int>(), It.IsAny<int>()), Times.Never);
         }
