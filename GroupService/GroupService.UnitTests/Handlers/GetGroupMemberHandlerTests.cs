@@ -47,12 +47,9 @@ namespace GroupService.UnitTests
                 GroupId = groupId,
                 GroupRoles = new List<GroupRoles>()
                 { GroupRoles.Member},
-                UserCredentials = new List<HelpMyStreet.Utils.Models.UserCredential>()
+                ValidCredentials = new List<int>()
                 {
-                    new HelpMyStreet.Utils.Models.UserCredential()
-                    {
-                        CredentialId = -1
-                    }
+                    -1
                 }
             };
 
@@ -82,12 +79,9 @@ namespace GroupService.UnitTests
                 GroupId = groupId,
                 GroupRoles = new List<GroupRoles>()
                 { GroupRoles.Member},
-                UserCredentials = new List<HelpMyStreet.Utils.Models.UserCredential>()
+                ValidCredentials = new List<int>()
                 {
-                    new HelpMyStreet.Utils.Models.UserCredential()
-                    {
-                        CredentialId = -1
-                    }
+                    -1
                 }
             };
 

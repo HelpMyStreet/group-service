@@ -6,6 +6,7 @@ using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Contracts.RequestService.Response;
 using HelpMyStreet.Contracts.Shared;
+using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using HelpMyStreet.Utils.Utils;
 using MediatR;
@@ -41,10 +42,15 @@ namespace GroupService.UnitTests.AzureFunctions
         public async Task HappyPath_ReturnsGroupDetails()
         {
             UserInGroup userInGroup = new UserInGroup();
+            List<GroupRoles> roles = new List<GroupRoles>();
+            List<UserRoleAudit> audits = new List<UserRoleAudit>();
+            List<UserCredential> credentials = new List<UserCredential>();
 
             _response = new GetGroupMemberDetailsResponse()
             {
-                UserInGroup = userInGroup
+                GroupRoles = roles,
+                UserRoleAudits = audits,
+                UserCredentials = credentials
             };
 
             IActionResult result = await _classUnderTest.Run(new GetGroupMemberDetailsRequest()
@@ -64,7 +70,9 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.IsTrue(deserialisedResponse.HasContent);
             Assert.IsTrue(deserialisedResponse.IsSuccessful);
             Assert.AreEqual(0, deserialisedResponse.Errors.Count());
-            Assert.AreEqual(userInGroup, deserialisedResponse.Content.UserInGroup);
+            Assert.AreEqual(roles, deserialisedResponse.Content.GroupRoles);
+            Assert.AreEqual(audits, deserialisedResponse.Content.UserRoleAudits);
+            Assert.AreEqual(credentials, deserialisedResponse.Content.UserCredentials);
 
             _mediator.Verify(x => x.Send(It.IsAny<GetGroupMemberDetailsRequest>(), It.IsAny<CancellationToken>()), Times.Once);
         }

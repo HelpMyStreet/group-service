@@ -44,19 +44,9 @@ namespace GroupService.UnitTests
 
             _groupMemberDetails = new GetGroupMemberDetailsResponse()
             {
-                UserInGroup = new UserInGroup()
-                {
-                    UserId = userId,
-                    GroupId = groupId,
-                    GroupRoles = new List<GroupRoles>() { GroupRoles.Member },
-                    UserCredentials = new List<UserCredential>()
-                    {
-                        new UserCredential()
-                        {
-                            CredentialId = -1
-                        }
-                    }
-                }
+                GroupRoles = new List<GroupRoles>(),
+                UserCredentials = new List<UserCredential>(),
+                UserRoleAudits = new List<UserRoleAudit>()
             };
             var result = _classUnderTest.Handle(new GetGroupMemberDetailsRequest()
             {
@@ -65,7 +55,9 @@ namespace GroupService.UnitTests
                 AuthorisingUserId = userId
             }, CancellationToken.None).Result;
 
-            Assert.AreEqual(_groupMemberDetails.UserInGroup, result.UserInGroup);
+            Assert.AreEqual(_groupMemberDetails.GroupRoles, result.GroupRoles);
+            Assert.AreEqual(_groupMemberDetails.UserCredentials, result.UserCredentials);
+            Assert.AreEqual(_groupMemberDetails.UserRoleAudits, result.UserRoleAudits);
             _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Never);
             _repository.Verify(x => x.GetGroupMemberDetails(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
         }
@@ -79,20 +71,10 @@ namespace GroupService.UnitTests
             _hasPermission = true;
 
             _groupMemberDetails = new GetGroupMemberDetailsResponse()
-            {
-                UserInGroup = new UserInGroup()
-                {
-                    UserId = userId,
-                    GroupId = groupId,
-                    GroupRoles = new List<GroupRoles>() { GroupRoles.Member },
-                    UserCredentials = new List<UserCredential>()
-                    {
-                        new UserCredential()
-                        {
-                            CredentialId = -1
-                        }
-                    }
-                }
+            { 
+                GroupRoles = new List<GroupRoles>(),
+                UserCredentials = new List<UserCredential>(),
+                UserRoleAudits = new List<UserRoleAudit>()
             };
 
             var result = _classUnderTest.Handle(new GetGroupMemberDetailsRequest()
@@ -102,7 +84,9 @@ namespace GroupService.UnitTests
                 AuthorisingUserId = authorisingUserId
             }, CancellationToken.None).Result;
 
-            Assert.AreEqual(_groupMemberDetails.UserInGroup, result.UserInGroup);
+            Assert.AreEqual(_groupMemberDetails.GroupRoles, result.GroupRoles);
+            Assert.AreEqual(_groupMemberDetails.UserCredentials, result.UserCredentials);
+            Assert.AreEqual(_groupMemberDetails.UserRoleAudits, result.UserRoleAudits);
             _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
             _repository.Verify(x => x.GetGroupMemberDetails(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
         }
