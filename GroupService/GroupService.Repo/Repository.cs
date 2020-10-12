@@ -468,12 +468,13 @@ namespace GroupService.Repo
 
             var allCredentials = _context.UserCredential
                 .Where(x => x.UserId == userId 
-                    && x.GroupId == groupId)
+                    && (x.GroupId == groupId || x.GroupId == (int) Groups.Generic) )
                 .Select(x => new { x.CredentialId, x.ValidUntil})
                 .ToList();
 
             var validCredentials = allCredentials.Where(x => ((x.ValidUntil ?? DateTime.Now.Date) - DateTime.Now.Date).TotalDays>=0)
                     .Select(x=> x.CredentialId)
+                    .Distinct()
                 .ToList();
 
             UserInGroup userInGroup = new UserInGroup()
