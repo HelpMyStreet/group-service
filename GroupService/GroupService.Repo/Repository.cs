@@ -506,5 +506,22 @@ namespace GroupService.Repo
 
             return usersInGroups;
         }
+
+        public bool AddYotiVerifiedUsers(PutYotiVerifiedUserRequest request)
+        {
+            int credentialId_IdentityVerifiedByYoti = -1;
+            int adminUserID = 1;
+
+            return AddGroupMemberCredentials(new PutGroupMemberCredentialsRequest()
+            {
+                AuthorisedByUserID = adminUserID,
+                CredentialId = credentialId_IdentityVerifiedByYoti,
+                GroupId = (int)Groups.Generic,
+                Notes = request.Notes,
+                Reference = request.Reference,
+                UserId = request.UserId,
+                ValidUntil = null
+            });
+        }
     }
 }

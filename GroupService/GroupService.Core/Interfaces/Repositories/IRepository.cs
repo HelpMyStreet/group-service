@@ -18,6 +18,7 @@ namespace GroupService.Core.Interfaces.Repositories
         UserInGroup GetGroupMember(int groupId, int userId);
         GetGroupMemberDetailsResponse GetGroupMemberDetails(int groupId, int userId);
         bool AddGroupMemberCredentials(PutGroupMemberCredentialsRequest request);
+        bool AddYotiVerifiedUsers(PutYotiVerifiedUserRequest request);
         List<GroupCredential> GetGroupCredentials(int groupID);
         List<List<int>> GetGroupActivityCredentialSets(int groupID, SupportActivities supportActivity);
         GetRegistrationFormVariantResponse GetRegistrationFormVariant(int groupId, string source, CancellationToken cancellationToken);
