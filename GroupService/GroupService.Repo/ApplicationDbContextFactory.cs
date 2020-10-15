@@ -25,7 +25,7 @@ namespace GroupService.Repo
 
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
             optionsBuilder.UseSqlServer(connectionStrings.GroupService);
-            optionsBuilder.EnableSensitiveDataLogging();
+            //optionsBuilder.EnableSensitiveDataLogging();
 
             Console.WriteLine($"Using following connection string for Entity Framework: {connectionStrings.GroupService}");
             return new ApplicationDbContext(optionsBuilder.Options);
