@@ -49,6 +49,13 @@ namespace GroupService.Repo.Helpers
                 GroupName = "Ruddington",
                 GroupKey = "ruddington"
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.AgeUKWirral,
+                GroupName = "Age UK Wirral",
+                GroupKey = "ageukwirral"
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -102,6 +109,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Ruddington,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.AgeUKWirral,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKWirral
             });
         }
 
@@ -168,6 +182,14 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Ruddington,
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Ruddington,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKWirral,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKWirral,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
             });
         }

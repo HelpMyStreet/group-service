@@ -6,7 +6,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="10.0.0" />
-		<PackageReference Include="HelpMyStreet.CoreV3.Utils" Version="1.1.425" />
+		<PackageReference Include="HelpMyStreet.CoreV3.Utils" Version="1.1.429" />
 		<PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.5.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
@@ -16,7 +16,7 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.3" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.7" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.7" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.7" />		
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference ReplaceParameters="true" Include="..\GroupService.Core\GroupService.Core.csproj">

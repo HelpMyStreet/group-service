@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201015095148_AgeUKWirral_Step1")]
+    partial class AgeUKWirral_Step1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,90 +42,6 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
-                            GroupId = -7,
-                            ActivityId = 1,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 2,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 3,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 4,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 5,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 6,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 7,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 8,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 9,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 10,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 11,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 12,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 13,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 14,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
                             GroupId = -6,
                             ActivityId = 1,
                             CredentialSetId = 6
@@ -625,90 +543,6 @@ namespace GroupService.Repo.Migrations
                             GroupId = -1,
                             ActivityId = 14,
                             CredentialSetId = 1
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 1,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 2,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 3,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 4,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 5,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 6,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 7,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 8,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 9,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 10,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 11,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 12,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 13,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 14,
-                            CredentialSetId = 71
                         });
                 });
 
@@ -769,12 +603,6 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 7,
-                            GroupId = -7,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 6,
                             GroupId = -6,
                             CredentialId = -1
@@ -808,18 +636,6 @@ namespace GroupService.Repo.Migrations
                             Id = 1,
                             GroupId = -1,
                             CredentialId = -1
-                        },
-                        new
-                        {
-                            Id = 7,
-                            GroupId = -7,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 71,
-                            GroupId = -7,
-                            CredentialId = 2
                         });
                 });
 
@@ -1163,15 +979,6 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
-                            GroupId = -7,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Yoti App",
-                            Name = "Yoti Identity Verification"
-                        },
-                        new
-                        {
                             GroupId = -6,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
@@ -1223,24 +1030,6 @@ namespace GroupService.Repo.Migrations
                             DisplayOrder = 1,
                             HowToAchieve = "Yoti App",
                             Name = "Yoti Identity Verification"
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            CredentialId = 2,
-                            CredentialTypeId = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "Email Someone",
-                            Name = "DBS Check"
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            CredentialId = 1,
-                            CredentialTypeId = (byte)1,
-                            DisplayOrder = 2,
-                            HowToAchieve = "Email Someone",
-                            Name = "Manually Verified"
                         });
                 });
 
