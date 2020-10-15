@@ -17,6 +17,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public string Name { get; set; }
         public string HowToAchieve { get; set; }
         public int DisplayOrder { get; set; }
+        public byte CredentialVerifiedById { get; set; }
 
         public virtual Credential Credential { get; set; }
         public virtual Group Group { get; set; }
