@@ -14,6 +14,7 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
+        CredentialVerifiedBy GetCredentialVerifiedBy(int groupId, int credentialId);
         List<UserInGroup> GetAllGroupMembers(int groupId);
         UserInGroup GetGroupMember(int groupId, int userId);
         GetGroupMemberDetailsResponse GetGroupMemberDetails(int groupId, int userId);

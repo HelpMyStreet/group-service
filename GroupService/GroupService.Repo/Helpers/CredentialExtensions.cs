@@ -59,7 +59,8 @@ namespace GroupService.Repo.Helpers
                     CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                     Name = "Yoti Identity Verification",
                     HowToAchieve = "Yoti App",
-                    DisplayOrder = 1
+                    DisplayOrder = 1,
+                    CredentialVerifiedById = (byte) CredentialVerifiedBy.System
                 });
             }
 
@@ -70,7 +71,8 @@ namespace GroupService.Repo.Helpers
                 CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
                 Name = "DBS Check",
                 HowToAchieve = "Email Someone",
-                DisplayOrder = 2
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
             entity.HasData(new GroupCredential
@@ -80,7 +82,8 @@ namespace GroupService.Repo.Helpers
                 CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                 Name = "Manually Verified",
                 HowToAchieve = "Email Someone",
-                DisplayOrder = 2
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
         }
 

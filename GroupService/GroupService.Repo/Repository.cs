@@ -401,6 +401,7 @@ namespace GroupService.Repo
         public bool AddGroupMemberCredentials(PutGroupMemberCredentialsRequest request)
         {
             bool returnValue = false;
+
             _context.UserCredential.Add(new EntityFramework.Entities.UserCredential()
             {
                 GroupId = request.GroupId,
@@ -412,6 +413,7 @@ namespace GroupService.Repo
                 AuthorisedByUserId = request.AuthorisedByUserID,
                 CredentialId = request.CredentialId,
             });
+
             int result = _context.SaveChanges();
 
             if(result==1)
@@ -522,6 +524,13 @@ namespace GroupService.Repo
                 UserId = request.UserId,
                 ValidUntil = null
             });
+        }
+
+        public CredentialVerifiedBy GetCredentialVerifiedBy(int groupId, int credentialId)
+        {
+            return _context.GroupCredential
+                .Where(x => x.GroupId == groupId && x.CredentialId==credentialId)
+                .Select(x => (CredentialVerifiedBy)x.CredentialVerifiedById).FirstOrDefault();
         }
     }
 }

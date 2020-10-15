@@ -22,10 +22,15 @@ namespace GroupService.Handlers
         {
             bool hasPermission = false;
 
-            hasPermission = _repository.UserIsInRoleForGroup(
-                request.AuthorisedByUserID,
-                request.GroupId,
-                HelpMyStreet.Utils.Enums.GroupRoles.UserAdmin);
+            var credentialVerifiedBy = _repository.GetCredentialVerifiedBy(request.GroupId, request.CredentialId);
+
+            if (credentialVerifiedBy == HelpMyStreet.Utils.Enums.CredentialVerifiedBy.GroupAdmin)
+            {
+                hasPermission = _repository.UserIsInRoleForGroup(
+                    request.AuthorisedByUserID,
+                    request.GroupId,
+                    HelpMyStreet.Utils.Enums.GroupRoles.UserAdmin);
+            }
 
             if (hasPermission)
             {
