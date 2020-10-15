@@ -392,7 +392,8 @@ namespace GroupService.Repo
                     HowToAchieve = x.HowToAchieve,
                     Name = x.Name,
                     GroupID = groupID,
-                    CredentialTypes = (CredentialTypes) x.CredentialTypeId
+                    CredentialTypes = (CredentialTypes) x.CredentialTypeId,
+                    CredentialVerifiedBy = (CredentialVerifiedBy) x.CredentialVerifiedById
                 })
                 .ToList();
             return credentials;
