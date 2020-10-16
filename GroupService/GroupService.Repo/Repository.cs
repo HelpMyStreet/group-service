@@ -495,7 +495,7 @@ namespace GroupService.Repo
             List<UserInGroup> usersInGroups = new List<UserInGroup>();
 
             var users = _context.UserRole
-                .Where(x => x.GroupId == groupId)
+                .Where(x => x.GroupId == groupId && x.RoleId == (int) GroupRoles.Member )
                 .Select(x => x.UserId)
                 .ToList();
 
