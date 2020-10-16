@@ -495,7 +495,7 @@ namespace GroupService.Repo
             List<UserInGroup> usersInGroups = new List<UserInGroup>();
 
             var users = _context.UserRole
-                .Where(x => x.GroupId == groupId)
+                .Where(x => x.GroupId == groupId && x.RoleId == (int) GroupRoles.Member )
                 .Select(x => x.UserId)
                 .ToList();
 
@@ -532,6 +532,23 @@ namespace GroupService.Repo
             return _context.GroupCredential
                 .Where(x => x.GroupId == groupId && x.CredentialId==credentialId)
                 .Select(x => (CredentialVerifiedBy)x.CredentialVerifiedById).FirstOrDefault();
+        }
+
+        public bool RoleMemberAssignedForUserInGroup(int userId, int groupId, CancellationToken cancellationToken)
+        {
+            return RoleAssigned(userId, groupId, GroupRoles.Member, cancellationToken);
+        }
+
+        public bool UserHasRolesOtherThanVolunteerAndMember(int groupId, int userId, CancellationToken cancellationToken)
+        {
+            bool result = false;
+            var roles = _context.UserRole.Where(x => x.GroupId == groupId && x.UserId == userId).Select(x => (GroupRoles)x.RoleId).ToList();
+            if(roles!=null)
+            {
+                var roleCount = roles.Count(x => !x.Equals(GroupRoles.Member) && !x.Equals(GroupRoles.Volunteer));
+                result = roleCount > 0 ? true : false;
+            }
+            return result;
         }
     }
 }
