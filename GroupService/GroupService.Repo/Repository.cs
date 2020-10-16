@@ -538,5 +538,17 @@ namespace GroupService.Repo
         {
             return RoleAssigned(userId, groupId, GroupRoles.Member, cancellationToken);
         }
+
+        public bool UserHasRolesOtherThanVolunteerAndMember(int groupId, int userId, CancellationToken cancellationToken)
+        {
+            bool result = false;
+            var roles = _context.UserRole.Where(x => x.GroupId == groupId && x.UserId == userId).Select(x => (GroupRoles)x.RoleId).ToList();
+            if(roles!=null)
+            {
+                var roleCount = roles.Count(x => !x.Equals(GroupRoles.Member) && !x.Equals(GroupRoles.Volunteer));
+                result = roleCount > 0 ? true : false;
+            }
+            return result;
+        }
     }
 }
