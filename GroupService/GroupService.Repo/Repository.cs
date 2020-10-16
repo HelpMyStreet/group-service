@@ -533,5 +533,10 @@ namespace GroupService.Repo
                 .Where(x => x.GroupId == groupId && x.CredentialId==credentialId)
                 .Select(x => (CredentialVerifiedBy)x.CredentialVerifiedById).FirstOrDefault();
         }
+
+        public bool RoleMemberAssignedForUserInGroup(int userId, int groupId, CancellationToken cancellationToken)
+        {
+            return RoleAssigned(userId, groupId, GroupRoles.Member, cancellationToken);
+        }
     }
 }
