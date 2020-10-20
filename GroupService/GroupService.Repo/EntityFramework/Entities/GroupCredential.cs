@@ -16,6 +16,8 @@ namespace GroupService.Repo.EntityFramework.Entities
         public byte CredentialTypeId { get; set; }
         public string Name { get; set; }
         public string HowToAchieve { get; set; }
+        public string HowToAchieve_CTA_Destination { get; set; }
+        public string WhatIsThis { get; set; }
         public int DisplayOrder { get; set; }
         public byte CredentialVerifiedById { get; set; }
 

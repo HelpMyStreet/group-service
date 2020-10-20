@@ -57,8 +57,10 @@ namespace GroupService.Repo.Helpers
                     GroupId = (int)group,
                     CredentialId = -1,
                     CredentialTypeId = (int)CredentialTypes.IdentityVerification,
-                    Name = "Yoti Identity Verification",
-                    HowToAchieve = "Yoti App",
+                    Name = "Yoti ID Verification",
+                    HowToAchieve = "Complete online",
+                    HowToAchieve_CTA_Destination = "/account?action=verify",
+                    WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instruction in their profile to get verified. As an admin you can’t edit this.",
                     DisplayOrder = 1,
                     CredentialVerifiedById = (byte) CredentialVerifiedBy.System
                 });
@@ -70,8 +72,10 @@ namespace GroupService.Repo.Helpers
                 CredentialId = DBS_CHECK,
                 CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
                 Name = "DBS Check",
-                HowToAchieve = "Email Someone",
-                DisplayOrder = 2,
+                HowToAchieve = "Email the AgeUK Wirral team",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = "",
+                DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
@@ -80,8 +84,10 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKWirral,
                 CredentialId = MANUALLY_VERIFIED,
                 CredentialTypeId = (int)CredentialTypes.IdentityVerification,
-                Name = "Manually Verified",
-                HowToAchieve = "Email Someone",
+                Name = "Manual ID Verification",
+                HowToAchieve = "Email the AgeUK Wirral team",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = "",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
