@@ -390,6 +390,8 @@ namespace GroupService.Repo
                     CredentialID = x.CredentialId,
                     DisplayOrder = x.DisplayOrder,
                     HowToAchieve = x.HowToAchieve,
+                    HowToAchieve_CTA_Destination = x.HowToAchieve_CTA_Destination,
+                    WhatIsThis = x.WhatIsThis,
                     Name = x.Name,
                     GroupID = groupID,
                     CredentialTypes = (CredentialTypes) x.CredentialTypeId,
