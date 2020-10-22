@@ -37,6 +37,7 @@ namespace GroupService.Repo
         public virtual DbSet<CredentialSet> CredentialSet { get; set; }
         public virtual DbSet<GroupCredential> GroupCredential { get; set; }
         public virtual DbSet<UserCredential> UserCredential { get; set; }
+        public virtual DbSet<RequestorDetails> RequestorDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -363,6 +364,62 @@ namespace GroupService.Repo
                     .HasForeignKey(d => new { d.GroupId, d.CredentialId })
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserCredential_CredentialID");
+            });
+
+            modelBuilder.Entity<RequestorDetails>(entity =>
+            {
+                entity.HasKey(e => e.GroupId);
+
+                entity.ToTable("RequestorDetails", "Group");
+
+                entity.Property(e => e.GroupId).ValueGeneratedNever();
+
+                entity.Property(e => e.AddressLine1)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.AddressLine2)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.AddressLine3)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.EmailAddress)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FirstName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Locality)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.MobilePhone)
+                    .HasMaxLength(15)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.OtherPhone)
+                    .HasMaxLength(15)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Postcode)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.Group)
+                    .WithOne(p => p.RequestorDetails)
+                    .HasForeignKey<RequestorDetails>(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
+
+                entity.RequestorDetails();
             });
         }
     }

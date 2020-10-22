@@ -22,6 +22,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public int? ParentGroupId { get; set; }
 
         public virtual Group ParentGroup { get; set; }
+        public virtual RequestorDetails RequestorDetails { get; set; }        
         public virtual ICollection<Group> InverseParentGroup { get; set; }
         public virtual ICollection<RegistrationJourney> RegistrationJourney { get; set; }
         public virtual ICollection<RequestHelpJourney> RequestHelpJourney { get; set; }

@@ -4,18 +4,20 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201022075031_NewRequestFormFields")]
+    partial class NewRequestFormFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .HasAnnotation("ProductVersion", "3.1.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -1565,81 +1567,6 @@ namespace GroupService.Repo.Migrations
                         });
                 });
 
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.RequestorDetails", b =>
-                {
-                    b.Property<int>("GroupId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AddressLine1")
-                        .HasColumnType("varchar(100)")
-                        .HasMaxLength(100)
-                        .IsUnicode(false);
-
-                    b.Property<string>("AddressLine2")
-                        .HasColumnType("varchar(100)")
-                        .HasMaxLength(100)
-                        .IsUnicode(false);
-
-                    b.Property<string>("AddressLine3")
-                        .HasColumnType("varchar(100)")
-                        .HasMaxLength(100)
-                        .IsUnicode(false);
-
-                    b.Property<string>("EmailAddress")
-                        .HasColumnType("varchar(50)")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("varchar(50)")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("varchar(50)")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
-
-                    b.Property<string>("Locality")
-                        .HasColumnType("varchar(100)")
-                        .HasMaxLength(100)
-                        .IsUnicode(false);
-
-                    b.Property<string>("MobilePhone")
-                        .HasColumnType("varchar(15)")
-                        .HasMaxLength(15)
-                        .IsUnicode(false);
-
-                    b.Property<string>("OtherPhone")
-                        .HasColumnType("varchar(15)")
-                        .HasMaxLength(15)
-                        .IsUnicode(false);
-
-                    b.Property<string>("Postcode")
-                        .HasColumnType("varchar(10)")
-                        .HasMaxLength(10)
-                        .IsUnicode(false);
-
-                    b.HasKey("GroupId");
-
-                    b.ToTable("RequestorDetails","Group");
-
-                    b.HasData(
-                        new
-                        {
-                            GroupId = -7,
-                            AddressLine1 = "Age UK Wirral",
-                            AddressLine2 = "Devonshire Resource Centre",
-                            AddressLine3 = "141 Park Road",
-                            EmailAddress = "enquiries@ageukwirral.org.uk",
-                            FirstName = "Age UK",
-                            LastName = "Wirral",
-                            Locality = "North Birkenhead",
-                            OtherPhone = "0151 482 3456",
-                            Postcode = "CH41 0DD"
-                        });
-                });
-
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.SecurityConfiguration", b =>
                 {
                     b.Property<int>("GroupId")
@@ -1833,14 +1760,6 @@ namespace GroupService.Repo.Migrations
                         .WithMany("RequestHelpJourney")
                         .HasForeignKey("GroupId")
                         .HasConstraintName("FK_RequestHelpJourney_Group")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.RequestorDetails", b =>
-                {
-                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
-                        .WithOne("RequestorDetails")
-                        .HasForeignKey("GroupService.Repo.EntityFramework.Entities.RequestorDetails", "GroupId")
                         .IsRequired();
                 });
 
