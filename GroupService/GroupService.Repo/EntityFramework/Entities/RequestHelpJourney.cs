@@ -10,6 +10,8 @@ namespace GroupService.Repo.EntityFramework.Entities
         public string Source { get; set; }
         public byte RequestHelpFormVariant { get; set; }
         public byte TargetGroups { get; set; }
+        public bool AccessRestrictedByRole { get; set; }
+        public bool RequestorDefinedByGroup { get; set; }
 
         public virtual Group Group { get; set; }
     }

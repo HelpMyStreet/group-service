@@ -294,7 +294,10 @@ namespace GroupService.Repo
 
         public GetRequestHelpFormVariantResponse GetRequestHelpFormVariant(int groupId, string source, CancellationToken cancellationToken)
         {
-            var requestHelpJourney = _context.RequestHelpJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == (source ?? string.Empty));
+            var requestHelpJourney = _context.RequestHelpJourney
+                                        .Include(x=> x.Group)
+                                        .ThenInclude(x=> x.RequestorDetails)
+                                        .FirstOrDefault(x => x.GroupId == groupId && x.Source == (source ?? string.Empty));
 
             if (requestHelpJourney == null)
             {
@@ -307,11 +310,36 @@ namespace GroupService.Repo
                 throw new Exception($"GroupId {groupId} Source {source} not found in RequestHelpJourney");
             }
 
-            return new GetRequestHelpFormVariantResponse()
+            GetRequestHelpFormVariantResponse result = new GetRequestHelpFormVariantResponse()
             {
                 RequestHelpFormVariant = (RequestHelpFormVariant)requestHelpJourney.RequestHelpFormVariant,
                 TargetGroups = (TargetGroups)requestHelpJourney.TargetGroups,
+                RequestorDefinedByGroup = requestHelpJourney.RequestorDefinedByGroup,
+                AccessRestrictedByRole = requestHelpJourney.AccessRestrictedByRole
             };
+
+            if(requestHelpJourney.RequestorDefinedByGroup == true && requestHelpJourney.Group?.RequestorDetails!=null)
+            {
+                RequestorDetails details = requestHelpJourney.Group.RequestorDetails;
+                result.RequestorPersonalDetails = new RequestPersonalDetails()
+                {
+                    FirstName = details.FirstName,
+                    LastName = details.LastName,
+                    OtherNumber = details.OtherPhone,
+                    MobileNumber = details.MobilePhone,
+                    EmailAddress = details.EmailAddress,
+                    Address = new Address()
+                    {
+                        AddressLine1 = details.AddressLine1,
+                        AddressLine2 = details.AddressLine2,
+                        AddressLine3 = details.AddressLine3,
+                        Locality = details.Locality,
+                        Postcode = details.Postcode
+                    }
+                };
+            }
+
+            return result;
         }
 
         public bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole)
