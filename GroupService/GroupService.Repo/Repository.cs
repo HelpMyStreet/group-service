@@ -5,9 +5,12 @@ using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
+using HelpMyStreet.Utils.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 namespace GroupService.Repo
@@ -153,7 +156,7 @@ namespace GroupService.Repo
 
         public void AddUserRoleAudit(int groupId, int userId, GroupRoles groupRole, int authorisedByUserID, GroupAction groupAction, bool success, CancellationToken cancellationToken)
         {
-            _context.UserRoleAudit.Add(new UserRoleAudit()
+            _context.UserRoleAudit.Add(new EntityFramework.Entities.UserRoleAudit()
             {
                 DateRequested = DateTime.Now.ToUniversalTime(),
                 GroupId = groupId,
@@ -291,7 +294,10 @@ namespace GroupService.Repo
 
         public GetRequestHelpFormVariantResponse GetRequestHelpFormVariant(int groupId, string source, CancellationToken cancellationToken)
         {
-            var requestHelpJourney = _context.RequestHelpJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == (source ?? string.Empty));
+            var requestHelpJourney = _context.RequestHelpJourney
+                                        .Include(x=> x.Group)
+                                        .ThenInclude(x=> x.RequestorDetails)
+                                        .FirstOrDefault(x => x.GroupId == groupId && x.Source == (source ?? string.Empty));
 
             if (requestHelpJourney == null)
             {
@@ -304,11 +310,36 @@ namespace GroupService.Repo
                 throw new Exception($"GroupId {groupId} Source {source} not found in RequestHelpJourney");
             }
 
-            return new GetRequestHelpFormVariantResponse()
+            GetRequestHelpFormVariantResponse result = new GetRequestHelpFormVariantResponse()
             {
                 RequestHelpFormVariant = (RequestHelpFormVariant)requestHelpJourney.RequestHelpFormVariant,
                 TargetGroups = (TargetGroups)requestHelpJourney.TargetGroups,
+                RequestorDefinedByGroup = requestHelpJourney.RequestorDefinedByGroup,
+                AccessRestrictedByRole = requestHelpJourney.AccessRestrictedByRole
             };
+
+            if(requestHelpJourney.RequestorDefinedByGroup == true && requestHelpJourney.Group?.RequestorDetails!=null)
+            {
+                RequestorDetails details = requestHelpJourney.Group.RequestorDetails;
+                result.RequestorPersonalDetails = new RequestPersonalDetails()
+                {
+                    FirstName = details.FirstName,
+                    LastName = details.LastName,
+                    OtherNumber = details.OtherPhone,
+                    MobileNumber = details.MobilePhone,
+                    EmailAddress = details.EmailAddress,
+                    Address = new Address()
+                    {
+                        AddressLine1 = details.AddressLine1,
+                        AddressLine2 = details.AddressLine2,
+                        AddressLine3 = details.AddressLine3,
+                        Locality = details.Locality,
+                        Postcode = details.Postcode
+                    }
+                };
+            }
+
+            return result;
         }
 
         public bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole)
@@ -356,6 +387,198 @@ namespace GroupService.Repo
                 .ToList();
 
             return users;
+        }
+
+        public List<List<int>> GetGroupActivityCredentialSets(int groupID, SupportActivities supportActivity)
+        {
+            List<List<int>> returnValue = new List<List<int>>();
+
+            var credentialSets = _context.ActivityCredentialSet
+                .Where(x => x.GroupId == groupID && x.ActivityId == (int)supportActivity)
+                .Select(x => x.CredentialSetId)
+                .ToList();
+
+            if(credentialSets!=null && credentialSets.Count>0)
+            {
+                foreach(int credentialSet in credentialSets)
+                {
+                   var creds = _context.CredentialSet.Where(x => x.Id == credentialSet).Select(x => x.CredentialId).ToList();
+                    returnValue.Add(creds);
+                }
+            }
+            return returnValue;
+        }
+
+        public List<HelpMyStreet.Contracts.GroupService.Response.GroupCredential> GetGroupCredentials(int groupID)
+        {
+           var credentials = _context.GroupCredential
+                .Where(x => x.GroupId == groupID)
+                .Select(x => new HelpMyStreet.Contracts.GroupService.Response.GroupCredential()
+                {
+                    CredentialID = x.CredentialId,
+                    DisplayOrder = x.DisplayOrder,
+                    HowToAchieve = x.HowToAchieve,
+                    HowToAchieve_CTA_Destination = x.HowToAchieve_CTA_Destination,
+                    WhatIsThis = x.WhatIsThis,
+                    Name = x.Name,
+                    GroupID = groupID,
+                    CredentialTypes = (CredentialTypes) x.CredentialTypeId,
+                    CredentialVerifiedBy = (CredentialVerifiedBy) x.CredentialVerifiedById
+                })
+                .ToList();
+            return credentials;
+        }
+
+        public bool AddGroupMemberCredentials(PutGroupMemberCredentialsRequest request)
+        {
+            bool returnValue = false;
+
+            _context.UserCredential.Add(new EntityFramework.Entities.UserCredential()
+            {
+                GroupId = request.GroupId,
+                UserId = request.UserId,
+                DateAdded = DateTime.Now,
+                Notes = request.Notes,
+                Reference = request.Reference,
+                ValidUntil = request.ValidUntil,
+                AuthorisedByUserId = request.AuthorisedByUserID,
+                CredentialId = request.CredentialId,
+            });
+
+            int result = _context.SaveChanges();
+
+            if(result==1)
+            {
+                returnValue = true;
+            }
+            return returnValue;
+        }
+
+        public GetGroupMemberDetailsResponse GetGroupMemberDetails(int groupId, int userId)
+        {
+            GetGroupMemberDetailsResponse returnValue = new GetGroupMemberDetailsResponse();
+
+            var roles = _context.UserRole
+                .Where(x => x.GroupId == groupId && x.UserId == userId)
+                .Select(x => (GroupRoles)x.RoleId)
+                .ToList();
+
+            var audits = _context.UserRoleAudit
+                .Where(x => x.UserId == userId && x.GroupId == groupId)
+                .Select(x => new HelpMyStreet.Contracts.GroupService.Response.UserRoleAudit()
+                {
+                   Action = (GroupAction) x.ActionId,
+                   DateRequested = x.DateRequested,
+                   Success = x.Success,
+                   Role = (GroupRoles) x.RoleId
+                })
+                .ToList();
+
+            var credentials = _context.UserCredential
+                .Where(x => x.UserId == userId && x.GroupId == groupId)
+                .Select(x => new HelpMyStreet.Utils.Models.UserCredential()
+                {
+                    AuthorisedByUserId = x.AuthorisedByUserId,
+                    CredentialId = x.CredentialId,
+                    ExpiryDate = x.ValidUntil,
+                    Notes = x.Notes,
+                    Reference = x.Notes
+                }).ToList();
+
+            returnValue.GroupRoles = roles;
+            returnValue.UserRoleAudits = audits;
+            returnValue.UserCredentials = credentials;
+
+            return returnValue;
+        }
+
+        public UserInGroup GetGroupMember(int groupId, int userId)
+        {
+            var roles = _context.UserRole
+                .Where(x => x.GroupId == groupId && x.UserId == userId)
+                .Select(x => (GroupRoles) x.RoleId)
+                .ToList();
+
+            var allCredentials = _context.UserCredential
+                .Where(x => x.UserId == userId 
+                    && (x.GroupId == groupId || x.GroupId == (int) Groups.Generic) )
+                .Select(x => new { x.CredentialId, x.ValidUntil})
+                .ToList();
+
+            var validCredentials = allCredentials.Where(x => ((x.ValidUntil ?? DateTime.Now.Date) - DateTime.Now.Date).TotalDays>=0)
+                    .Select(x=> x.CredentialId)
+                    .Distinct()
+                .ToList();
+
+            UserInGroup userInGroup = new UserInGroup()
+            {
+                GroupRoles = roles,
+                UserId = userId,
+                GroupId = groupId,
+                ValidCredentials = validCredentials
+            };
+            return userInGroup;
+        }
+
+        public List<UserInGroup> GetAllGroupMembers(int groupId)
+        {
+            List<UserInGroup> usersInGroups = new List<UserInGroup>();
+
+            var users = _context.UserRole
+                .Where(x => x.GroupId == groupId && x.RoleId == (int) GroupRoles.Member )
+                .Select(x => x.UserId)
+                .ToList();
+
+            if (users != null && users.Count > 0)
+            {
+                foreach (int userId in users)
+                {
+                    usersInGroups.Add(GetGroupMember(groupId, userId));
+                }
+            }
+
+            return usersInGroups;
+        }
+
+        public bool AddYotiVerifiedUsers(PutYotiVerifiedUserRequest request)
+        {
+            int credentialId_IdentityVerifiedByYoti = -1;
+            int adminUserID = 1;
+
+            return AddGroupMemberCredentials(new PutGroupMemberCredentialsRequest()
+            {
+                AuthorisedByUserID = adminUserID,
+                CredentialId = credentialId_IdentityVerifiedByYoti,
+                GroupId = (int)Groups.Generic,
+                Notes = request.Notes,
+                Reference = request.Reference,
+                UserId = request.UserId,
+                ValidUntil = null
+            });
+        }
+
+        public CredentialVerifiedBy GetCredentialVerifiedBy(int groupId, int credentialId)
+        {
+            return _context.GroupCredential
+                .Where(x => x.GroupId == groupId && x.CredentialId==credentialId)
+                .Select(x => (CredentialVerifiedBy)x.CredentialVerifiedById).FirstOrDefault();
+        }
+
+        public bool RoleMemberAssignedForUserInGroup(int userId, int groupId, CancellationToken cancellationToken)
+        {
+            return RoleAssigned(userId, groupId, GroupRoles.Member, cancellationToken);
+        }
+
+        public bool UserHasRolesOtherThanVolunteerAndMember(int groupId, int userId, CancellationToken cancellationToken)
+        {
+            bool result = false;
+            var roles = _context.UserRole.Where(x => x.GroupId == groupId && x.UserId == userId).Select(x => (GroupRoles)x.RoleId).ToList();
+            if(roles!=null)
+            {
+                var roleCount = roles.Count(x => !x.Equals(GroupRoles.Member) && !x.Equals(GroupRoles.Volunteer));
+                result = roleCount > 0 ? true : false;
+            }
+            return result;
         }
     }
 }

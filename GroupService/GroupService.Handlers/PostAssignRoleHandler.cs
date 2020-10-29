@@ -21,10 +21,16 @@ namespace GroupService.Handlers
         public async Task<PostAssignRoleResponse> Handle(PostAssignRoleRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
+            bool passedExistingRoleCheck = true;
+
+            if (request.Role.GroupRole != GroupRoles.Member && request.Role.GroupRole != GroupRoles.Volunteer)
+            {
+                passedExistingRoleCheck = _repository.RoleMemberAssignedForUserInGroup(request.UserID.Value, request.GroupID.Value, cancellationToken);
+            }
 
             bool roleAssigned = _repository.RoleAssigned(request.UserID.Value, request.GroupID.Value, request.Role.GroupRole, cancellationToken);
 
-            if (!roleAssigned)
+            if (!roleAssigned && passedExistingRoleCheck)
             {
                 if (request.AuthorisedByUserID.Value == -1)
                 {

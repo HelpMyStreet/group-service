@@ -49,6 +49,13 @@ namespace GroupService.Repo.Helpers
                 GroupName = "Ruddington",
                 GroupKey = "ruddington"
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.AgeUKWirral,
+                GroupName = "Age UK Wirral",
+                GroupKey = "ageukwirral"
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -103,6 +110,13 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.Default
             });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.AgeUKWirral,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKWirral
+            });
         }
 
         public static void RequestHelpJourney(this EntityTypeBuilder<RequestHelpJourney> entity)
@@ -113,6 +127,8 @@ namespace GroupService.Repo.Helpers
                 Source = "DIY",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.DIY,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -121,6 +137,8 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -129,6 +147,8 @@ namespace GroupService.Repo.Helpers
                 Source = "face-masks",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.FaceMasks,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -137,6 +157,8 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.FtLOS,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndChildren,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -145,6 +167,8 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.VitalsForVeterans,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -153,6 +177,8 @@ namespace GroupService.Repo.Helpers
                 Source = "connected-together-service-directory",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.HLP_CommunityConnector,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -161,6 +187,8 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -169,6 +197,35 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Ruddington,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKWirral,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKWirral,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true
+            });
+        }
+
+        public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
+        {
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.AgeUKWirral,
+                FirstName = "Age UK",
+                LastName = "Wirral",
+                OtherPhone = "0151 482 3456",
+                EmailAddress = "enquiries@ageukwirral.org.uk",
+                AddressLine1 = "Age UK Wirral",
+                AddressLine2 = "Devonshire Resource Centre",
+                AddressLine3 = "141 Park Road",
+                Locality = "North Birkenhead",
+                Postcode = "CH41 0DD"
             });
         }
     }

@@ -30,6 +30,14 @@ namespace GroupService.Repo
         public virtual DbSet<EnumTargetGroup> EnumTargetGroup { get; set; }
         public virtual DbSet<EnumRequestHelpFormVariant> EnumRequestHelpFormVariant { get; set; }
         public virtual DbSet<EnumRegistrationFormVariant> EnumRegistrationFormVariant { get; set; }
+        public virtual DbSet<EnumCredentialTypes> EnumCredentialTypes { get; set; }
+
+        public virtual DbSet<ActivityCredentialSet> ActivityCredentialSet { get; set; }
+        public virtual DbSet<Credential> Credential { get; set; }
+        public virtual DbSet<CredentialSet> CredentialSet { get; set; }
+        public virtual DbSet<GroupCredential> GroupCredential { get; set; }
+        public virtual DbSet<UserCredential> UserCredential { get; set; }
+        public virtual DbSet<RequestorDetails> RequestorDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -40,6 +48,17 @@ namespace GroupService.Repo
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            CredentialExtensions.InitialiseCredentialSets();
+
+            modelBuilder.Entity<EnumCredentialTypes>(entity =>
+            {
+                entity.ToTable("CredentialTypes", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumCredentialTypesExtensionsData();
+            });
+
             modelBuilder.Entity<EnumRegistrationFormVariant>(entity =>
             {
                 entity.ToTable("RegistrationFormVariant", "Lookup");
@@ -206,6 +225,201 @@ namespace GroupService.Repo
                     .HasForeignKey<SecurityConfiguration>(d => d.GroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_SecurityConfiguration_Group");
+            });
+
+            modelBuilder.Entity<ActivityCredentialSet>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId, e.ActivityId, e.CredentialSetId });
+
+                entity.ToTable("ActivityCredentialSet", "Group");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.ActivityId).HasColumnName("ActivityID");
+
+                entity.Property(e => e.CredentialSetId).HasColumnName("CredentialSetID");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.ActivityCredentialSet)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ActivityCredentialSet_GroupID");
+
+                entity.SetActivityCredentialSet();
+            });
+
+            modelBuilder.Entity<Credential>(entity =>
+            {
+                entity.ToTable("Credential", "Group");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.SetCredentials();
+            });
+
+            modelBuilder.Entity<CredentialSet>(entity =>
+            {
+                entity.HasKey(e => new { e.Id, e.GroupId, e.CredentialId });
+
+                entity.ToTable("CredentialSet", "Group");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.CredentialId).HasColumnName("CredentialID");
+
+                entity.HasOne(d => d.GroupCredential)
+                    .WithMany(p => p.CredentialSet)
+                    .HasForeignKey(d => new { d.GroupId, d.CredentialId })
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CredentialSet_CredentialID");
+
+                entity.SetCredentialSet();
+            });
+
+            modelBuilder.Entity<GroupCredential>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId, e.CredentialId })
+                    .HasName("PK_GROUP_CREDENTIAL");
+
+                entity.ToTable("GroupCredential", "Group");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.CredentialId).HasColumnName("CredentialID");
+
+                entity.Property(e => e.CredentialTypeId).HasColumnName("CredentialTypeID");
+
+                entity.Property(e => e.HowToAchieve)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.HowToAchieve_CTA_Destination)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.WhatIsThis)
+                    .IsRequired()
+                    .HasMaxLength(400)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.Credential)
+                    .WithMany(p => p.GroupCredential)
+                    .HasForeignKey(d => d.CredentialId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GroupCredential_CredentialID");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.GroupCredential)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GroupCredential_Group");
+
+                entity.SetGroupCredentials();
+            });
+
+            modelBuilder.Entity<UserCredential>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId, e.UserId, e.CredentialId, e.DateAdded });
+
+                entity.ToTable("UserCredential", "Group");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.Property(e => e.CredentialId).HasColumnName("CredentialID");
+
+                entity.Property(e => e.DateAdded)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.AuthorisedByUserId).HasColumnName("AuthorisedByUserID");
+
+                entity.Property(e => e.Notes).IsUnicode(false);
+
+                entity.Property(e => e.Reference)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ValidUntil).HasColumnType("datetime");
+
+                entity.HasOne(d => d.GroupCredential)
+                    .WithMany(p => p.UserCredential)
+                    .HasForeignKey(d => new { d.GroupId, d.CredentialId })
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_UserCredential_CredentialID");
+            });
+
+            modelBuilder.Entity<RequestorDetails>(entity =>
+            {
+                entity.HasKey(e => e.GroupId);
+
+                entity.ToTable("RequestorDetails", "Group");
+
+                entity.Property(e => e.GroupId).ValueGeneratedNever();
+
+                entity.Property(e => e.AddressLine1)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.AddressLine2)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.AddressLine3)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.EmailAddress)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FirstName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Locality)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.MobilePhone)
+                    .HasMaxLength(15)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.OtherPhone)
+                    .HasMaxLength(15)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Postcode)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.Group)
+                    .WithOne(p => p.RequestorDetails)
+                    .HasForeignKey<RequestorDetails>(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
+
+                entity.RequestorDetails();
             });
         }
     }

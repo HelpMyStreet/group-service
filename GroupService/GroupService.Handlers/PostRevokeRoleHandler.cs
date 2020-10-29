@@ -21,9 +21,16 @@ namespace GroupService.Handlers
         public async Task<PostRevokeRoleResponse> Handle(PostRevokeRoleRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
+            bool userHasOtherRoles = false;
+
+            if(request.Role.GroupRole == GroupRoles.Member)
+            {
+                userHasOtherRoles = _repository.UserHasRolesOtherThanVolunteerAndMember(request.GroupID.Value, request.UserID.Value, cancellationToken);
+            }
+
             bool roleAssigned = _repository.RoleAssigned(request.UserID.Value, request.GroupID.Value, request.Role.GroupRole, cancellationToken);
 
-            if (roleAssigned)
+            if (roleAssigned && !userHasOtherRoles)
             {
                 if (request.AuthorisedByUserID.Value == -1)
                 {

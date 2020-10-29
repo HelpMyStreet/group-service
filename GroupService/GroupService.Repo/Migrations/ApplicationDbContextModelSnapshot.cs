@@ -15,9 +15,940 @@ namespace GroupService.Repo.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.7")
+                .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.ActivityCredentialSet", b =>
+                {
+                    b.Property<int>("GroupId")
+                        .HasColumnName("GroupID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ActivityId")
+                        .HasColumnName("ActivityID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CredentialSetId")
+                        .HasColumnName("CredentialSetID")
+                        .HasColumnType("int");
+
+                    b.HasKey("GroupId", "ActivityId", "CredentialSetId");
+
+                    b.ToTable("ActivityCredentialSet","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 1,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 2,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 3,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 4,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 5,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 6,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 7,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 8,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 9,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 10,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 11,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 12,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 13,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 14,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 15,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 16,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 1,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 2,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 3,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 4,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 5,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 6,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 7,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 8,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 9,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 10,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 11,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 12,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 13,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 14,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 15,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 16,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 1,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 2,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 3,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 4,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 5,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 6,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 7,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 8,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 9,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 10,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 11,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 12,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 13,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 14,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 15,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 16,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 1,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 2,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 3,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 4,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 5,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 6,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 7,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 8,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 9,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 10,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 11,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 12,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 13,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 14,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 15,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 16,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 1,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 2,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 3,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 4,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 5,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 6,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 7,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 8,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 9,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 10,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 11,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 12,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 13,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 14,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 15,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 16,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 1,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 2,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 3,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 4,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 5,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 6,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 7,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 8,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 9,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 10,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 11,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 12,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 13,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 14,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 15,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 16,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 1,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 2,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 3,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 4,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 5,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 6,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 7,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 8,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 9,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 10,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 11,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 12,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 13,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 14,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 15,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 16,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 1,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 2,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 3,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 4,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 5,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 6,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 7,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 8,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 9,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 10,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 11,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 12,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 13,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 14,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 15,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 16,
+                            CredentialSetId = 71
+                        });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.Credential", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnName("ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Credential","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -1,
+                            Name = "IdentityVerifiedByYoti"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            Name = "ManuallyVerified"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "DBS Check"
+                        });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.CredentialSet", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnName("ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GroupId")
+                        .HasColumnName("GroupID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CredentialId")
+                        .HasColumnName("CredentialID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id", "GroupId", "CredentialId");
+
+                    b.HasIndex("GroupId", "CredentialId");
+
+                    b.ToTable("CredentialSet","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 7,
+                            GroupId = -7,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            GroupId = -6,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            GroupId = -5,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            GroupId = -4,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            GroupId = -3,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            GroupId = -2,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 1,
+                            GroupId = -1,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            GroupId = -7,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 71,
+                            GroupId = -7,
+                            CredentialId = 2
+                        });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumCredentialTypes", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnName("ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CredentialTypes","Lookup");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "IdentityVerification"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "ThirdPartyCheck"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Training"
+                        });
+                });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumRegistrationFormVariant", b =>
                 {
@@ -57,6 +988,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 4,
                             Name = "FaceMasks"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "AgeUKWirral"
                         });
                 });
 
@@ -108,6 +1044,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 7,
                             Name = "Ruddington"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "AgeUKWirral"
                         });
                 });
 
@@ -270,6 +1211,183 @@ namespace GroupService.Repo.Migrations
                             Id = -6,
                             GroupKey = "ruddington",
                             GroupName = "Ruddington"
+                        },
+                        new
+                        {
+                            Id = -7,
+                            GroupKey = "ageukwirral",
+                            GroupName = "Age UK Wirral"
+                        });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupCredential", b =>
+                {
+                    b.Property<int>("GroupId")
+                        .HasColumnName("GroupID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CredentialId")
+                        .HasColumnName("CredentialID")
+                        .HasColumnType("int");
+
+                    b.Property<byte>("CredentialTypeId")
+                        .HasColumnName("CredentialTypeID")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("CredentialVerifiedById")
+                        .HasColumnType("tinyint");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("HowToAchieve")
+                        .IsRequired()
+                        .HasColumnType("varchar(200)")
+                        .HasMaxLength(200)
+                        .IsUnicode(false);
+
+                    b.Property<string>("HowToAchieve_CTA_Destination")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("WhatIsThis")
+                        .IsRequired()
+                        .HasColumnType("varchar(400)")
+                        .HasMaxLength(400)
+                        .IsUnicode(false);
+
+                    b.HasKey("GroupId", "CredentialId")
+                        .HasName("PK_GROUP_CREDENTIAL");
+
+                    b.HasIndex("CredentialId");
+
+                    b.ToTable("GroupCredential","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = -7,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?action=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instruction in their profile to get verified.
+Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?action=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instruction in their profile to get verified.
+Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?action=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instruction in their profile to get verified.
+Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?action=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instruction in their profile to get verified.
+Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?action=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instruction in their profile to get verified.
+Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?action=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instruction in their profile to get verified.
+Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?action=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instruction in their profile to get verified.
+Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "Email the AgeUK Wirral team",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
+Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Email the AgeUK Wirral team",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
+Volunteer admins should follow internal processes for manually verifying a volunteers identity."
                         });
                 });
 
@@ -334,6 +1452,12 @@ namespace GroupService.Repo.Migrations
                             GroupId = -6,
                             Source = "",
                             RegistrationFormVariant = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            Source = "",
+                            RegistrationFormVariant = (byte)5
                         });
                 });
 
@@ -348,9 +1472,15 @@ namespace GroupService.Repo.Migrations
                         .HasMaxLength(100)
                         .IsUnicode(false);
 
+                    b.Property<bool>("AccessRestrictedByRole")
+                        .HasColumnType("bit");
+
                     b.Property<byte>("RequestHelpFormVariant")
                         .HasColumnName("RequestHelpFormVariant")
                         .HasColumnType("tinyint");
+
+                    b.Property<bool>("RequestorDefinedByGroup")
+                        .HasColumnType("bit");
 
                     b.Property<byte>("TargetGroups")
                         .HasColumnName("TargetGroups")
@@ -365,57 +1495,157 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -1,
                             Source = "DIY",
+                            AccessRestrictedByRole = false,
                             RequestHelpFormVariant = (byte)3,
+                            RequestorDefinedByGroup = false,
                             TargetGroups = (byte)4
                         },
                         new
                         {
                             GroupId = -1,
                             Source = "",
+                            AccessRestrictedByRole = false,
                             RequestHelpFormVariant = (byte)1,
+                            RequestorDefinedByGroup = false,
                             TargetGroups = (byte)4
                         },
                         new
                         {
                             GroupId = -1,
                             Source = "face-masks",
+                            AccessRestrictedByRole = false,
                             RequestHelpFormVariant = (byte)5,
+                            RequestorDefinedByGroup = false,
                             TargetGroups = (byte)4
                         },
                         new
                         {
                             GroupId = -2,
                             Source = "",
+                            AccessRestrictedByRole = false,
                             RequestHelpFormVariant = (byte)4,
+                            RequestorDefinedByGroup = false,
                             TargetGroups = (byte)1
                         },
                         new
                         {
                             GroupId = -3,
                             Source = "",
+                            AccessRestrictedByRole = false,
                             RequestHelpFormVariant = (byte)2,
+                            RequestorDefinedByGroup = false,
                             TargetGroups = (byte)4
                         },
                         new
                         {
                             GroupId = -4,
                             Source = "connected-together-service-directory",
+                            AccessRestrictedByRole = false,
                             RequestHelpFormVariant = (byte)6,
+                            RequestorDefinedByGroup = false,
                             TargetGroups = (byte)0
                         },
                         new
                         {
                             GroupId = -5,
                             Source = "",
+                            AccessRestrictedByRole = false,
                             RequestHelpFormVariant = (byte)1,
+                            RequestorDefinedByGroup = false,
                             TargetGroups = (byte)4
                         },
                         new
                         {
                             GroupId = -6,
                             Source = "",
+                            AccessRestrictedByRole = false,
                             RequestHelpFormVariant = (byte)7,
+                            RequestorDefinedByGroup = false,
                             TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            Source = "",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)8,
+                            RequestorDefinedByGroup = true,
+                            TargetGroups = (byte)0
+                        });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.RequestorDetails", b =>
+                {
+                    b.Property<int>("GroupId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AddressLine1")
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100)
+                        .IsUnicode(false);
+
+                    b.Property<string>("AddressLine2")
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100)
+                        .IsUnicode(false);
+
+                    b.Property<string>("AddressLine3")
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100)
+                        .IsUnicode(false);
+
+                    b.Property<string>("EmailAddress")
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("Locality")
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100)
+                        .IsUnicode(false);
+
+                    b.Property<string>("MobilePhone")
+                        .HasColumnType("varchar(15)")
+                        .HasMaxLength(15)
+                        .IsUnicode(false);
+
+                    b.Property<string>("OtherPhone")
+                        .HasColumnType("varchar(15)")
+                        .HasMaxLength(15)
+                        .IsUnicode(false);
+
+                    b.Property<string>("Postcode")
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10)
+                        .IsUnicode(false);
+
+                    b.HasKey("GroupId");
+
+                    b.ToTable("RequestorDetails","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = -7,
+                            AddressLine1 = "Age UK Wirral",
+                            AddressLine2 = "Devonshire Resource Centre",
+                            AddressLine3 = "141 Park Road",
+                            EmailAddress = "enquiries@ageukwirral.org.uk",
+                            FirstName = "Age UK",
+                            LastName = "Wirral",
+                            Locality = "North Birkenhead",
+                            OtherPhone = "0151 482 3456",
+                            Postcode = "CH41 0DD"
                         });
                 });
 
@@ -454,6 +1684,48 @@ namespace GroupService.Repo.Migrations
                             GroupId = -5,
                             AllowAutonomousJoinersAndLeavers = true
                         });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.UserCredential", b =>
+                {
+                    b.Property<int>("GroupId")
+                        .HasColumnName("GroupID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnName("UserID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CredentialId")
+                        .HasColumnName("CredentialID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateAdded")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getdate())");
+
+                    b.Property<int>("AuthorisedByUserId")
+                        .HasColumnName("AuthorisedByUserID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("varchar(max)")
+                        .IsUnicode(false);
+
+                    b.Property<string>("Reference")
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100)
+                        .IsUnicode(false);
+
+                    b.Property<DateTime?>("ValidUntil")
+                        .HasColumnType("datetime");
+
+                    b.HasKey("GroupId", "UserId", "CredentialId", "DateAdded");
+
+                    b.HasIndex("GroupId", "CredentialId");
+
+                    b.ToTable("UserCredential","Group");
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.UserRole", b =>
@@ -515,11 +1787,44 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("UserRoleAudit","Group");
                 });
 
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.ActivityCredentialSet", b =>
+                {
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
+                        .WithMany("ActivityCredentialSet")
+                        .HasForeignKey("GroupId")
+                        .HasConstraintName("FK_ActivityCredentialSet_GroupID")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.CredentialSet", b =>
+                {
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.GroupCredential", "GroupCredential")
+                        .WithMany("CredentialSet")
+                        .HasForeignKey("GroupId", "CredentialId")
+                        .HasConstraintName("FK_CredentialSet_CredentialID")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.Group", b =>
                 {
                     b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "ParentGroup")
                         .WithMany("InverseParentGroup")
                         .HasForeignKey("ParentGroupId");
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupCredential", b =>
+                {
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Credential", "Credential")
+                        .WithMany("GroupCredential")
+                        .HasForeignKey("CredentialId")
+                        .HasConstraintName("FK_GroupCredential_CredentialID")
+                        .IsRequired();
+
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
+                        .WithMany("GroupCredential")
+                        .HasForeignKey("GroupId")
+                        .HasConstraintName("FK_GroupCredential_Group")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.RegistrationJourney", b =>
@@ -540,12 +1845,29 @@ namespace GroupService.Repo.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.RequestorDetails", b =>
+                {
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
+                        .WithOne("RequestorDetails")
+                        .HasForeignKey("GroupService.Repo.EntityFramework.Entities.RequestorDetails", "GroupId")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.SecurityConfiguration", b =>
                 {
                     b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
                         .WithOne("SecurityConfiguration")
                         .HasForeignKey("GroupService.Repo.EntityFramework.Entities.SecurityConfiguration", "GroupId")
                         .HasConstraintName("FK_SecurityConfiguration_Group")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.UserCredential", b =>
+                {
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.GroupCredential", "GroupCredential")
+                        .WithMany("UserCredential")
+                        .HasForeignKey("GroupId", "CredentialId")
+                        .HasConstraintName("FK_UserCredential_CredentialID")
                         .IsRequired();
                 });
 
