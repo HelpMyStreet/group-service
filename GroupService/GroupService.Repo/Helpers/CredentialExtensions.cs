@@ -60,7 +60,7 @@ namespace GroupService.Repo.Helpers
                     Name = "Yoti ID Verification",
                     HowToAchieve = "Complete online",
                     HowToAchieve_CTA_Destination = "/account?action=verify",
-                    WhatIsThis = $"Yoti is our trusted digital identity verification provider. Volunteers can follow the instruction in their profile to get verified.\r\n" +
+                    WhatIsThis = $"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.\r\n" +
                     $"Volunteer admins cannot edit this credential.",
                     DisplayOrder = 1,
                     CredentialVerifiedById = (byte) CredentialVerifiedBy.System
