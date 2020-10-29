@@ -310,7 +310,7 @@ namespace GroupService.Repo
 
                 entity.Property(e => e.WhatIsThis)
                     .IsRequired()
-                    .HasMaxLength(200)
+                    .HasMaxLength(400)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Name)
