@@ -94,6 +94,20 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKLSL,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Lincoln & South Lincolnshire to find out how they can check your ID at volunteering@ageuklsl.org.uk",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+               $"Volunteer admins should follow internal processes for manually verifying a volunteers identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -122,6 +136,13 @@ namespace GroupService.Repo.Helpers
                 Id = AGEUKWIRRAL_DBS_CHECK_CREDENTIAL_SET,
                 GroupId = (int)Groups.AgeUKWirral,
                 CredentialId = DBS_CHECK
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = CredentialSets[Groups.AgeUKLSL],
+                GroupId = (int)Groups.AgeUKLSL,
+                CredentialId = MANUALLY_VERIFIED
             });
         }
 
