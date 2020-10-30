@@ -60,7 +60,7 @@ namespace GroupService.Repo.Helpers
                     Name = "Yoti ID Verification",
                     HowToAchieve = "Complete online",
                     HowToAchieve_CTA_Destination = "/account?action=verify",
-                    WhatIsThis = $"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.\r\n" +
+                    WhatIsThis = $"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.\r\n\r\n" +
                     $"Volunteer admins cannot edit this credential.",
                     DisplayOrder = 1,
                     CredentialVerifiedById = (byte) CredentialVerifiedBy.System
@@ -73,9 +73,9 @@ namespace GroupService.Repo.Helpers
                 CredentialId = DBS_CHECK,
                 CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
                 Name = "DBS Check",
-                HowToAchieve = "Email the AgeUK Wirral team",
+                HowToAchieve = "Email Age UK Wirral to request or register your DBS check at volunteers@ageukwirral.org.uk",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n" +
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
                 $"Volunteer admins should follow internal processes for logging a DBS check.",
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
@@ -87,9 +87,9 @@ namespace GroupService.Repo.Helpers
                 CredentialId = MANUALLY_VERIFIED,
                 CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                 Name = "Manual ID Verification",
-                HowToAchieve = "Email the AgeUK Wirral team",
+                HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Wirral to find out how they can check your ID at volunteers@ageukwirral.org.uk",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n" +
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
                 $"Volunteer admins should follow internal processes for manually verifying a volunteers identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin

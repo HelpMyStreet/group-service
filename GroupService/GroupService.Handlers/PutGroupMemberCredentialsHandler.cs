@@ -26,10 +26,11 @@ namespace GroupService.Handlers
 
             if (credentialVerifiedBy == HelpMyStreet.Utils.Enums.CredentialVerifiedBy.GroupAdmin)
             {
-                hasPermission = _repository.UserIsInRoleForGroup(
-                    request.AuthorisedByUserID,
-                    request.GroupId,
-                    HelpMyStreet.Utils.Enums.GroupRoles.UserAdmin);
+                hasPermission = request.AuthorisedByUserID != request.UserId 
+                    && _repository.UserIsInRoleForGroup(
+                            request.AuthorisedByUserID,
+                            request.GroupId,
+                            HelpMyStreet.Utils.Enums.GroupRoles.UserAdmin);
             }
 
             if (hasPermission)

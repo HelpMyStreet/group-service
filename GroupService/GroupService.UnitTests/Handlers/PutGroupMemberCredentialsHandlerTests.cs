@@ -108,5 +108,28 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
             _repository.Verify(x => x.AddGroupMemberCredentials(It.IsAny<PutGroupMemberCredentialsRequest>()), Times.Never);
         }
+
+        [Test]
+        public void WhenAuthorisedByUserIDEqualsUserId_ThrowException()
+        {
+            _hasPermission = true;
+            _success = false;
+            _credentialVerifiedBy = CredentialVerifiedBy.GroupAdmin;
+
+            Assert.ThrowsAsync<UnauthorisedException>(() => _classUnderTest.Handle(new PutGroupMemberCredentialsRequest()
+            {
+                AuthorisedByUserID = 1,
+                CredentialId = -1,
+                UserId = 1,
+                GroupId = -1,
+                Notes = "",
+                Reference = "",
+                ValidUntil = DateTime.Now.AddDays(30)
+            }, CancellationToken.None));
+
+            _repository.Verify(x => x.GetCredentialVerifiedBy(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
+            _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Never);
+            _repository.Verify(x => x.AddGroupMemberCredentials(It.IsAny<PutGroupMemberCredentialsRequest>()), Times.Never);
+        }
     }
 }

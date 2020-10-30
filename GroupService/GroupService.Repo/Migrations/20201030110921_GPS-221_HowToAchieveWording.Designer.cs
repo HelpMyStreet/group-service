@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201030110921_GPS-221_HowToAchieveWording")]
+    partial class GPS221_HowToAchieveWording
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1283,7 +1285,6 @@ namespace GroupService.Repo.Migrations
                             HowToAchieve_CTA_Destination = "/account?action=verify",
                             Name = "Yoti ID Verification",
                             WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
 Volunteer admins cannot edit this credential."
                         },
                         new
@@ -1297,7 +1298,6 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve_CTA_Destination = "/account?action=verify",
                             Name = "Yoti ID Verification",
                             WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
 Volunteer admins cannot edit this credential."
                         },
                         new
@@ -1311,7 +1311,6 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve_CTA_Destination = "/account?action=verify",
                             Name = "Yoti ID Verification",
                             WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
 Volunteer admins cannot edit this credential."
                         },
                         new
@@ -1325,7 +1324,6 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve_CTA_Destination = "/account?action=verify",
                             Name = "Yoti ID Verification",
                             WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
 Volunteer admins cannot edit this credential."
                         },
                         new
@@ -1339,7 +1337,6 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve_CTA_Destination = "/account?action=verify",
                             Name = "Yoti ID Verification",
                             WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
 Volunteer admins cannot edit this credential."
                         },
                         new
@@ -1353,7 +1350,6 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve_CTA_Destination = "/account?action=verify",
                             Name = "Yoti ID Verification",
                             WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
 Volunteer admins cannot edit this credential."
                         },
                         new
@@ -1367,7 +1363,6 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve_CTA_Destination = "/account?action=verify",
                             Name = "Yoti ID Verification",
                             WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
 Volunteer admins cannot edit this credential."
                         },
                         new
@@ -1381,7 +1376,6 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
 Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
@@ -1395,7 +1389,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
 Volunteer admins should follow internal processes for manually verifying a volunteers identity."
                         });
                 });
