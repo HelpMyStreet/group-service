@@ -31,6 +31,12 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Tankersley,
                 AllowAutonomousJoinersAndLeavers = true
             });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.AgeUKWirral,
+                AllowAutonomousJoinersAndLeavers = true
+            });
         }
     }
 }
