@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201030155351_AddAgeUKLSLCredentials_Step1")]
+    partial class AddAgeUKLSLCredentials_Step1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -916,12 +918,6 @@ namespace GroupService.Repo.Migrations
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            GroupId = -3,
-                            CredentialId = 1
                         });
                 });
 
@@ -1402,7 +1398,7 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             Name = "Manual ID Verification",
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
 
-Volunteer admins should follow internal processes for manually verifying a volunteer's identity."
+Volunteer admins should follow internal processes for manually verifying a volunteers identity."
                         },
                         new
                         {
@@ -1416,7 +1412,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             Name = "Manual ID Verification",
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
 
-Volunteer admins should follow internal processes for manually verifying a volunteer's identity."
+Volunteer admins should follow internal processes for manually verifying a volunteers identity."
                         });
                 });
 
