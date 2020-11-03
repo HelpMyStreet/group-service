@@ -90,7 +90,7 @@ namespace GroupService.Repo.Helpers
                 HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Wirral to find out how they can check your ID at volunteers@ageukwirral.org.uk",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteers identity.",
+                $"Volunteer admins should follow internal processes for manually verifying a volunteer's identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -104,7 +104,7 @@ namespace GroupService.Repo.Helpers
                 HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Lincoln & South Lincolnshire to find out how they can check your ID at volunteering@ageuklsl.org.uk",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-               $"Volunteer admins should follow internal processes for manually verifying a volunteers identity.",
+               $"Volunteer admins should follow internal processes for manually verifying a volunteer's identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
