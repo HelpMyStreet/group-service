@@ -13,7 +13,8 @@ namespace GroupService.Repo.EntityFramework.Entities
             InverseParentGroup = new HashSet<Group>();
             UserRole = new HashSet<UserRole>();
             RegistrationJourney = new HashSet<RegistrationJourney>();
-            RequestHelpJourney = new HashSet<RequestHelpJourney>();            
+            RequestHelpJourney = new HashSet<RequestHelpJourney>();
+            GroupSupportActivityInstructions = new HashSet<GroupSupportActivityInstructions>();
         }
 
         public int Id { get; set; }
@@ -30,6 +31,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public virtual SecurityConfiguration SecurityConfiguration { get; set; }
 
         public virtual ICollection<ActivityCredentialSet> ActivityCredentialSet { get; set; }        
-        public virtual ICollection<GroupCredential> GroupCredential { get; set; }        
+        public virtual ICollection<GroupCredential> GroupCredential { get; set; }
+        public virtual ICollection<GroupSupportActivityInstructions> GroupSupportActivityInstructions { get; set; }
     }
 }
