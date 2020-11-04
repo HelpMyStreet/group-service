@@ -31,7 +31,7 @@ namespace GroupService.AzureFunction
         [FunctionName("GetGroupSupportActivityInstructions")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(GetGroupSupportActivityInstructionsResponse))]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)]
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
             [RequestBodyType(typeof(GetGroupSupportActivityInstructionsRequest), "get group support activity instructions")] GetGroupSupportActivityInstructionsRequest req,
             CancellationToken cancellationToken)
         {
