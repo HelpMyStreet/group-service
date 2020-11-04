@@ -31,13 +31,17 @@ namespace GroupService.Repo
         public virtual DbSet<EnumRequestHelpFormVariant> EnumRequestHelpFormVariant { get; set; }
         public virtual DbSet<EnumRegistrationFormVariant> EnumRegistrationFormVariant { get; set; }
         public virtual DbSet<EnumCredentialTypes> EnumCredentialTypes { get; set; }
-
+        public virtual DbSet<EnumSupportActivity> EnumSupportActivity { get; set; }
+        public virtual DbSet<EnumSupportActivityInstructions> EnumSupportActivityInstructions { get; set; }
         public virtual DbSet<ActivityCredentialSet> ActivityCredentialSet { get; set; }
         public virtual DbSet<Credential> Credential { get; set; }
         public virtual DbSet<CredentialSet> CredentialSet { get; set; }
         public virtual DbSet<GroupCredential> GroupCredential { get; set; }
         public virtual DbSet<UserCredential> UserCredential { get; set; }
         public virtual DbSet<RequestorDetails> RequestorDetails { get; set; }
+        public virtual DbSet<SupportActivityInstructions> SupportActivityInstructions { get; set; }
+        public virtual DbSet<GroupSupportActivityInstructions> GroupSupportActivityInstructions { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -93,6 +97,24 @@ namespace GroupService.Repo
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.SetEnumTargetGroupData();
+            });
+
+            modelBuilder.Entity<EnumSupportActivity>(entity =>
+            {
+                entity.ToTable("SupportActivity", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumSupportActivityExtensionsData();
+            });
+
+            modelBuilder.Entity<EnumSupportActivityInstructions>(entity =>
+            {
+                entity.ToTable("SupportActivityInstructions", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumSupportActivityInstructionsExtensionsData();
             });
 
             modelBuilder.Entity<Group>(entity =>
@@ -420,6 +442,47 @@ namespace GroupService.Repo
                     .OnDelete(DeleteBehavior.ClientSetNull);
 
                 entity.RequestorDetails();
+            });
+
+            modelBuilder.Entity<GroupSupportActivityInstructions>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId, e.SupportActivityId });
+
+                entity.ToTable("GroupSupportActivityInstructions", "Group");
+
+                entity.Property(e => e.GroupId)
+                    .HasColumnName("GroupID")
+                    .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.SupportActivityId).HasColumnName("SupportActivityID");
+
+                entity.Property(e => e.SupportActivityInstructionsId).HasColumnName("SupportActivityInstructionsID");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.GroupSupportActivityInstructions)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GroupSupportActivityInstructions_GroupID");
+
+                entity.HasOne(d => d.SupportActivityInstructions)
+                    .WithMany(p => p.GroupSupportActivityInstructions)
+                    .HasForeignKey(d => d.SupportActivityInstructionsId)
+                    .HasConstraintName("FK_GroupSupportActivityInstructions_SupportActivityInstructionsID");
+
+                entity.PopulateGroupSupportActivityInstructions();
+            });
+
+            modelBuilder.Entity<SupportActivityInstructions>(entity =>
+            {
+                entity.ToTable("SupportActivityInstructions", "Group");
+
+                entity.Property(e => e.SupportActivityInstructionsId).HasColumnName("SupportActivityInstructionsID");
+
+                entity.Property(e => e.Instructions)
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                entity.PopulateSupportActivityInstructions();
             });
         }
     }
