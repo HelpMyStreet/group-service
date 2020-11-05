@@ -223,8 +223,8 @@ namespace GroupService.Repo.Helpers
                 EmailAddress = "enquiries@ageukwirral.org.uk",
                 AddressLine1 = "Age UK Wirral",
                 AddressLine2 = "Devonshire Resource Centre",
-                AddressLine3 = "141 Park Road",
-                Locality = "North Birkenhead",
+                AddressLine3 = "141 Park Road North",
+                Locality = "Birkenhead",
                 Postcode = "CH41 0DD"
             });
         }
