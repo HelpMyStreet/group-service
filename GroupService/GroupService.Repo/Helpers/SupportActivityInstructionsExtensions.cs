@@ -221,7 +221,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.FTLOS_FaceCovering,
-                Intro = "This is a request for the For the Love of Scrubs team. Please read the following instructions for completing the request.",
+                Intro = "This is a request for the *For the Love of Scrubs* team. Please read the following instructions for completing the request.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
@@ -254,7 +254,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLincoln_V4V,
-                Intro = "This request has been created by Age UK Lincoln & South Lincolnshire. Please read the following instructions for completing the request.",
+                Intro = "This request has been created by *Age UK Lincoln & South Lincolnshire*. Please read the following instructions for completing the request.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
@@ -282,7 +282,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_Shopping,
-                Intro = "This request has been created by Age UK Wirral. Please read the following instructions for completing the request.",
+                Intro = "This request has been created by *Age UK Wirral*. Please read the following instructions for completing the request.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
@@ -293,7 +293,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Send us a copy of the receipt",
-                        Detail = "Write the name of the client on the receipt and email us a photograph to emergencyvols@ageukwirral.org.uk. We’ll transfer the money as soon as possible via bank transfer.",
+                        Detail = "Write the name of the client on the receipt and email us a photograph to mailto:emergencyvols@ageukwirral.org.uk. We’ll transfer the money as soon as possible via bank transfer.",
                     },
                     new Step()
                     {
@@ -303,7 +303,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing H&Cadminteam@ageukwirral.org.uk.",
+                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:H&Cadminteam@ageukwirral.org.uk.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -315,7 +315,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_General,
-                Intro = "This request has been created by Age UK Wirral. Please read the following instructions for completing the request.",
+                Intro = "This request has been created by *Age UK Wirral*. Please read the following instructions for completing the request.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
@@ -338,7 +338,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_Prescriptions,
-                Intro = "This request has been created by Age UK Wirral. Please read the following instructions for completing the request.",
+                Intro = "This request has been created by *Age UK Wirral*. Please read the following instructions for completing the request.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
@@ -349,7 +349,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Send us a copy of the receipt (if you paid)",
-                        Detail = "If you paid for the prescription, write the name of the client on the receipt and email us a photograph to emergencyvols@ageukwirral.org.uk. We’ll transfer the money as soon as possible via bank transfer.",
+                        Detail = "If you paid for the prescription, write the name of the client on the receipt and email us a photograph to mailto:emergencyvols@ageukwirral.org.uk. We’ll transfer the money as soon as possible via bank transfer.",
                     },
                     new Step()
                     {
@@ -359,7 +359,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing H&Cadminteam@ageukwirral.org.uk.",
+                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:H&Cadminteam@ageukwirral.org.uk.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
