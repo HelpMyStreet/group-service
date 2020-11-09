@@ -56,6 +56,13 @@ namespace GroupService.Repo.Helpers
                 GroupName = "Age UK Wirral",
                 GroupKey = "ageukwirral"
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.AgeUKNottsBalderton,
+                GroupName = "Age UK Notts (Balderton)",
+                GroupKey = "ageuknottsbalderton"
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -116,6 +123,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKWirral,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKWirral
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNottsBalderton
             });
         }
 
@@ -209,6 +223,16 @@ namespace GroupService.Repo.Helpers
                 TargetGroups = (byte)TargetGroups.ThisGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKNottsBalderton,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false
             });
         }
 
