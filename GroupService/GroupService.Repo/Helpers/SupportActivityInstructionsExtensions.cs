@@ -454,6 +454,13 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupSupportActivityInstructions()
             {
                 SupportActivityId = (int)SupportActivities.Shopping,
+                GroupId = (int)Groups.AgeUKLSL,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Shopping
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.Shopping,
                 GroupId = (int)Groups.Tankersley,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Shopping
             });
@@ -485,6 +492,13 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupSupportActivityInstructions()
             {
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                GroupId = (int)Groups.AgeUKLSL,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
                 GroupId = (int)Groups.Tankersley,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
             });
@@ -510,6 +524,13 @@ namespace GroupService.Repo.Helpers
             {
                 SupportActivityId = (int)SupportActivities.Errands,
                 GroupId = (int)Groups.Generic,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.Errands,
+                GroupId = (int)Groups.AgeUKLSL,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
             });
 
@@ -550,6 +571,13 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupSupportActivityInstructions()
             {
                 SupportActivityId = (int)SupportActivities.MealPreparation,
+                GroupId = (int)Groups.AgeUKLSL,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_General
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.MealPreparation,
                 GroupId = (int)Groups.Tankersley,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_General
             });
@@ -568,6 +596,13 @@ namespace GroupService.Repo.Helpers
             {
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
                 GroupId = (int)Groups.Generic,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FriendlyChat
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                GroupId = (int)Groups.AgeUKLSL,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FriendlyChat
             });
 
@@ -598,6 +633,13 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupSupportActivityInstructions()
             {
                 SupportActivityId = (int)SupportActivities.HomeworkSupport,
+                GroupId = (int)Groups.AgeUKLSL,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Homework
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.HomeworkSupport,
                 GroupId = (int)Groups.Tankersley,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Homework
             });
@@ -609,6 +651,13 @@ namespace GroupService.Repo.Helpers
             {
                 SupportActivityId = (int)SupportActivities.CheckingIn,
                 GroupId = (int)Groups.Generic,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_CheckIn
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.CheckingIn,
+                GroupId = (int)Groups.AgeUKLSL,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_CheckIn
             });
 
@@ -639,6 +688,13 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupSupportActivityInstructions()
             {
                 SupportActivityId = (int)SupportActivities.Other,
+                GroupId = (int)Groups.AgeUKLSL,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.Other,
                 GroupId = (int)Groups.Tankersley,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
             });
@@ -657,6 +713,13 @@ namespace GroupService.Repo.Helpers
             {
                 SupportActivityId = (int)SupportActivities.FaceMask,
                 GroupId = (int)Groups.Generic,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FaceCovering
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.FaceMask,
+                GroupId = (int)Groups.AgeUKLSL,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FaceCovering
             });
 
