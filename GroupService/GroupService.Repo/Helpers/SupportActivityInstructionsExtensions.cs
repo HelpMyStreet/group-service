@@ -31,7 +31,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Contact the requester",
-                        Detail = "Confirm what they need and agree how they will pay you back. You can find out more about secure payment methods in our [FAQs](https://www.helpmystreet.org/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                        Detail = "Confirm what they need and agree how they will pay you back. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
                     },
                     new Step()
                     {
@@ -59,7 +59,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Contact the requester",
-                        Detail = "Confirm what they need. Check if they’ll be a charge for anything, and if needed agree how they will pay you back.You can find out more about secure payment methods in our [FAQs](https://www.helpmystreet.org/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                        Detail = "Confirm what they need. Check if they’ll be a charge for anything, and if needed agree how they will pay you back.You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
                     },
                     new Step()
                     {
@@ -194,7 +194,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Contact the requester",
-                        Detail = "Confirm what they need and agree how they will pay you back (£2 - £3 per face covering to cover the cost of materials plus the cost of postage if required). You can find out more about secure payment methods in our [FAQs](https://www.helpmystreet.org/questions#5).",
+                        Detail = "Confirm what they need and agree how they will pay you back (£2 - £3 per face covering to cover the cost of materials plus the cost of postage if required). You can find out more about secure payment methods in our [FAQs](/questions#5).",
                     },
                     new Step()
                     {
@@ -227,7 +227,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Contact the requester",
-                        Detail = "Confirm what they need. Let them know that they can make a donation [here](https://www.gofundme.com/f/for-the-love-of-scrubs-face-coverings?utm_source=widget&utm_medium=referral&utm_campaign=p_cp+share-sheet) (suggested £3 - £4 per face covering). If you need to post the face coverings let them know if you’ll need them to cover the cost of postage on top of the donation and agree how they will pay you back. You can find out more about secure payment methods in our [FAQs](https://www.helpmystreet.org/questions#5).",
+                        Detail = "Confirm what they need. Let them know that they can make a donation [here](https://www.gofundme.com/f/for-the-love-of-scrubs-face-coverings?utm_source=widget&utm_medium=referral&utm_campaign=p_cp+share-sheet) (suggested £3 - £4 per face covering). If you need to post the face coverings let them know if you’ll need them to cover the cost of postage on top of the donation and agree how they will pay you back. You can find out more about secure payment methods in our [FAQs](/questions#5).",
                     },
                     new Step()
                     {
