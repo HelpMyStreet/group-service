@@ -221,7 +221,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.FTLOS_FaceCovering,
-                Intro = "This is a request for the *For the Love of Scrubs* team. Please read the following instructions for completing the request.",
+                Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
@@ -254,7 +254,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLincoln_V4V,
-                Intro = "This request has been created by *Age UK Lincoln & South Lincolnshire*. Please read the following instructions for completing the request.",
+                Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
@@ -282,7 +282,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_Shopping,
-                Intro = "This request has been created by *Age UK Wirral*. Please read the following instructions for completing the request.",
+                Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
@@ -315,7 +315,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_General,
-                Intro = "This request has been created by *Age UK Wirral*. Please read the following instructions for completing the request.",
+                Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
@@ -338,7 +338,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_Prescriptions,
-                Intro = "This request has been created by *Age UK Wirral*. Please read the following instructions for completing the request.",
+                Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
