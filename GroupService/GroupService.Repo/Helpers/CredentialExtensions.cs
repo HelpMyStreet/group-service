@@ -23,6 +23,7 @@ namespace GroupService.Repo.Helpers
             CredentialSets.Add(Groups.Tankersley, 5);
             CredentialSets.Add(Groups.Ruddington, 6);
             CredentialSets.Add(Groups.AgeUKWirral, 7);
+            CredentialSets.Add(Groups.AgeUKNottsBalderton, 8);
         }
 
         public static void SetCredentials(this EntityTypeBuilder<Credential> entity)
