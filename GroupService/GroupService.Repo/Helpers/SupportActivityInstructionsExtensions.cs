@@ -31,12 +31,12 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Contact the requester",
-                        Detail = "Confirm what they need and agree how they will pay you back. You can find out more about secure payment methods in our FAQs. If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                        Detail = "Confirm what they need and agree how they will pay you back. You can find out more about secure payment methods in our [FAQs](https://www.helpmystreet.org/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
                     },
                     new Step()
                     {
                         Heading = "Provide help",
-                        Detail = "Pick up their shopping and drop it off at their door. Don’t forget to keep a copy of the receipt and give them the original."
+                        Detail = "Pick up their shopping and drop it off at their door. Make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their shopping."
                     },
                     new Step()
                     {
@@ -59,17 +59,17 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Contact the requester",
-                        Detail = "Confirm what they need. Check if they’ll be a charge for anything, and if needed agree how they will pay you back.You can find out more about secure payment methods in our FAQs. If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                        Detail = "Confirm what they need. Check if they’ll be a charge for anything, and if needed agree how they will pay you back.You can find out more about secure payment methods in our [FAQs](https://www.helpmystreet.org/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
                     },
                     new Step()
                     {
                         Heading = "Provide help",
-                        Detail = "Provide the help they need. If you do have to pay for something on their behalf, don’t forget to keep a copy of the receipt and give them the original."
+                        Detail = "Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase."
                     },
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests” -this will let us(and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch."
+                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -97,7 +97,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests” -this will let us(and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch.",
+                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -194,7 +194,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Contact the requester",
-                        Detail = "Confirm what they need and agree how they will pay you back (£2 - £3 per face covering to cover the cost of materials plus the cost of postage if required). You can find out more about secure payment methods in our FAQs.",
+                        Detail = "Confirm what they need and agree how they will pay you back (£2 - £3 per face covering to cover the cost of materials plus the cost of postage if required). You can find out more about secure payment methods in our [FAQs](https://www.helpmystreet.org/questions#5).",
                     },
                     new Step()
                     {
@@ -227,7 +227,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Contact the requester",
-                        Detail = "Confirm what they need. Let them know that they can make a donation here (suggested £3 - £4 per face covering). If you need to post the face coverings let them know if you’ll need them to cover the cost of postage on top of the donation and agree how they will pay you back. You can find out more about secure payment methods in our FAQs.",
+                        Detail = "Confirm what they need. Let them know that they can make a donation [here](https://www.gofundme.com/f/for-the-love-of-scrubs-face-coverings?utm_source=widget&utm_medium=referral&utm_campaign=p_cp+share-sheet) (suggested £3 - £4 per face covering). If you need to post the face coverings let them know if you’ll need them to cover the cost of postage on top of the donation and agree how they will pay you back. You can find out more about secure payment methods in our [FAQs](https://www.helpmystreet.org/questions#5).",
                     },
                     new Step()
                     {
@@ -237,7 +237,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Let them know they’re on the way",
-                        Detail = "Drop the recipient a note to let them know they’re on the way and share a link to our fundraising page.",
+                        Detail = "Drop the recipient a note to let them know they’re on the way and share a link to [our fundraising page](https://www.gofundme.com/f/for-the-love-of-scrubs-face-coverings?utm_source=widget&utm_medium=referral&utm_campaign=p_cp+share-sheet).",
                     },
                     new Step()
                     {
@@ -366,6 +366,90 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_AgeUKLSL_Shopping()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_Shopping,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact us (Age UK Lincoln & South Lincolnshire)",
+                        Detail = "Please contact mailto:volunteering@ageuklsl.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Purchase the shopping items",
+                        Detail = "Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.",
+                    },  
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.",
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKLSL_Prescriptions()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_Prescriptions,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact us (Age UK Lincoln & South Lincolnshire)",
+                        Detail = "Please contact mailto:volunteering@ageuklsl.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Collecting the prescription",
+                        Detail = "Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.",
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKLSL_General()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_General,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact us (Age UK Lincoln & South Lincolnshire)",
+                        Detail = "Please contact mailto:volunteering@ageuklsl.org.uk to receive further information about this request.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide the help that is needed",
+                        Detail = "Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.",
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -439,6 +523,24 @@ namespace GroupService.Repo.Helpers
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_General,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKWirral_General())
             });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_Shopping,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKLSL_Shopping())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_Prescriptions,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKLSL_Prescriptions())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_General,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKLSL_General())
+            });
         }
 
 
@@ -450,14 +552,7 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Generic,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Shopping
             });
-
-            entity.HasData(new GroupSupportActivityInstructions()
-            {
-                SupportActivityId = (int)SupportActivities.Shopping,
-                GroupId = (int)Groups.AgeUKLSL,
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Shopping
-            });
-
+            
             entity.HasData(new GroupSupportActivityInstructions()
             {
                 SupportActivityId = (int)SupportActivities.Shopping,
@@ -478,6 +573,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKWirral,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_Shopping
             });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.Shopping,
+                GroupId = (int)Groups.AgeUKLSL,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_Shopping
+            });
         }
 
         private static void PopulateGroupPrescriptionInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
@@ -493,7 +595,7 @@ namespace GroupService.Repo.Helpers
             {
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
                 GroupId = (int)Groups.AgeUKLSL,
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_Prescriptions
             });
 
             entity.HasData(new GroupSupportActivityInstructions()
@@ -531,7 +633,7 @@ namespace GroupService.Repo.Helpers
             {
                 SupportActivityId = (int)SupportActivities.Errands,
                 GroupId = (int)Groups.AgeUKLSL,
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_General
             });
 
             entity.HasData(new GroupSupportActivityInstructions()
@@ -567,14 +669,7 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Generic,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_General
             });
-
-            entity.HasData(new GroupSupportActivityInstructions()
-            {
-                SupportActivityId = (int)SupportActivities.MealPreparation,
-                GroupId = (int)Groups.AgeUKLSL,
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_General
-            });
-
+            
             entity.HasData(new GroupSupportActivityInstructions()
             {
                 SupportActivityId = (int)SupportActivities.MealPreparation,
@@ -598,14 +693,7 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Generic,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FriendlyChat
             });
-
-            entity.HasData(new GroupSupportActivityInstructions()
-            {
-                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
-                GroupId = (int)Groups.AgeUKLSL,
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FriendlyChat
-            });
-
+            
             entity.HasData(new GroupSupportActivityInstructions()
             {
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
@@ -629,14 +717,7 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Generic,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Homework
             });
-
-            entity.HasData(new GroupSupportActivityInstructions()
-            {
-                SupportActivityId = (int)SupportActivities.HomeworkSupport,
-                GroupId = (int)Groups.AgeUKLSL,
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Homework
-            });
-
+            
             entity.HasData(new GroupSupportActivityInstructions()
             {
                 SupportActivityId = (int)SupportActivities.HomeworkSupport,
@@ -652,14 +733,7 @@ namespace GroupService.Repo.Helpers
                 SupportActivityId = (int)SupportActivities.CheckingIn,
                 GroupId = (int)Groups.Generic,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_CheckIn
-            });
-
-            entity.HasData(new GroupSupportActivityInstructions()
-            {
-                SupportActivityId = (int)SupportActivities.CheckingIn,
-                GroupId = (int)Groups.AgeUKLSL,
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_CheckIn
-            });
+            });            
 
             entity.HasData(new GroupSupportActivityInstructions()
             {
@@ -689,7 +763,7 @@ namespace GroupService.Repo.Helpers
             {
                 SupportActivityId = (int)SupportActivities.Other,
                 GroupId = (int)Groups.AgeUKLSL,
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_General
             });
 
             entity.HasData(new GroupSupportActivityInstructions()
@@ -715,14 +789,7 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Generic,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FaceCovering
             });
-
-            entity.HasData(new GroupSupportActivityInstructions()
-            {
-                SupportActivityId = (int)SupportActivities.FaceMask,
-                GroupId = (int)Groups.AgeUKLSL,
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FaceCovering
-            });
-
+            
             entity.HasData(new GroupSupportActivityInstructions()
             {
                 SupportActivityId = (int)SupportActivities.FaceMask,
