@@ -89,18 +89,6 @@ namespace GroupService.Repo.Migrations
 
             migrationBuilder.InsertData(
                 schema: "Lookup",
-                table: "RegistrationFormVariant",
-                columns: new[] { "ID", "Name" },
-                values: new object[] { 6, "AgeUKNottsBalderton" });
-
-            migrationBuilder.InsertData(
-                schema: "Lookup",
-                table: "RequestHelpFormVariant",
-                columns: new[] { "ID", "Name" },
-                values: new object[] { 9, "AgeUKNottsBalderton" });
-
-            migrationBuilder.InsertData(
-                schema: "Lookup",
                 table: "SupportActivityInstructions",
                 columns: new[] { "ID", "Name" },
                 values: new object[,]
@@ -168,18 +156,6 @@ namespace GroupService.Repo.Migrations
                 table: "GroupSupportActivityInstructions",
                 keyColumns: new[] { "GroupID", "SupportActivityID" },
                 keyValues: new object[] { -3, 11 });
-
-            migrationBuilder.DeleteData(
-                schema: "Lookup",
-                table: "RegistrationFormVariant",
-                keyColumn: "ID",
-                keyValue: 6);
-
-            migrationBuilder.DeleteData(
-                schema: "Lookup",
-                table: "RequestHelpFormVariant",
-                keyColumn: "ID",
-                keyValue: 9);
 
             migrationBuilder.DeleteData(
                 schema: "Lookup",

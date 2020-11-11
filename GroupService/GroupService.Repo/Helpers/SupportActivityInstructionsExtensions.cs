@@ -59,7 +59,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Contact the requester",
-                        Detail = "Confirm what they need. Check if they’ll be a charge for anything, and if needed agree how they will pay you back.You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                        Detail = "Confirm what they need. Check if there will be a charge for anything, and if needed agree how they will pay you back. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
                     },
                     new Step()
                     {
@@ -779,6 +779,15 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Ruddington,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
             });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.Other,
+                GroupId = (int)Groups.AgeUKWirral,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_General
+            });
+
+
         }
 
         private static void PopulateGroupFaceCoveringInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
