@@ -598,7 +598,7 @@ namespace GroupService.Repo
             {
                 return new Instructions()
                 {
-                    Intro = "Please email contact@helpmystreet.org if you need any more information"
+                    Intro = "Please email mailto:contact@helpmystreet.org if you need any more information"
                 };                
             }
            
