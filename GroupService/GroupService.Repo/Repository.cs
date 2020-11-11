@@ -596,7 +596,10 @@ namespace GroupService.Repo
             }
             else
             {
-                throw new Exception($"Unable to find support activity instructions for GroupId={groupId} and SupportActivity={supportActivities}");
+                return new Instructions()
+                {
+                    Intro = "Please email contact@helpmystreet.org if you need any more information"
+                };                
             }
            
         }
