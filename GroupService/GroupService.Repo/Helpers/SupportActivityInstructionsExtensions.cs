@@ -232,7 +232,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Provide help",
-                        Detail = "Make the face coverings and deliver them (or pop them in the post). If you need to claim back the cost of postage don’t forget to keep a copy of the receipt. If you need more materials email requestmaterials.ftlos@outlook.com.",
+                        Detail = "Make the face coverings and deliver them (or pop them in the post). If you need to claim back the cost of postage don’t forget to keep a copy of the receipt. If you need more materials email mailto:requestmaterials.ftlos@outlook.com.",
                     },
                     new Step()
                     {
