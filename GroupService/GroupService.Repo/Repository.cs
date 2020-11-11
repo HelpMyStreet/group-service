@@ -7,6 +7,7 @@ using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -579,6 +580,28 @@ namespace GroupService.Repo
                 result = roleCount > 0 ? true : false;
             }
             return result;
+        }
+
+        public Instructions GetGroupSupportActivityInstructions(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken)
+        {
+            string instruction = _context.GroupSupportActivityInstructions
+                .Include(i => i.SupportActivityInstructions)
+                .Where(x => x.GroupId == groupId && x.SupportActivityId == (int)supportActivities)
+                .Select(x => x.SupportActivityInstructions.Instructions)
+                .FirstOrDefault();
+
+            if(!String.IsNullOrEmpty(instruction))
+            {
+                return JsonConvert.DeserializeObject<Instructions>(instruction);
+            }
+            else
+            {
+                return new Instructions()
+                {
+                    Intro = "Please email mailto:contact@helpmystreet.org if you need any more information"
+                };                
+            }
+           
         }
     }
 }
