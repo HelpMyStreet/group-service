@@ -30,19 +30,19 @@ namespace GroupService.Repo.Helpers
         {
             entity.HasData(new Credential
             {
-                Id = -1,
+                Id = IDENTITY_VERIFIED_BY_YOTI,
                 Name = "IdentityVerifiedByYoti"
             });
 
             entity.HasData(new Credential
             {
-                Id = 1,
+                Id = MANUALLY_VERIFIED,
                 Name = "ManuallyVerified"
             });
 
             entity.HasData(new Credential
             {
-                Id = 2,
+                Id = DBS_CHECK,
                 Name = "DBS Check"
             });
         }
@@ -56,7 +56,7 @@ namespace GroupService.Repo.Helpers
                 entity.HasData(new GroupCredential
                 {
                     GroupId = (int)group,
-                    CredentialId = -1,
+                    CredentialId = IDENTITY_VERIFIED_BY_YOTI,
                     CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                     Name = "Yoti ID Verification",
                     HowToAchieve = "Complete online",
@@ -115,13 +115,13 @@ namespace GroupService.Repo.Helpers
         {
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
 
-            foreach (var group in groups.Where(x => !x.Equals(Groups.AgeUKNottsBalderton)))
+            foreach (var group in groups)
             {                
                 entity.HasData(new CredentialSet
                 {
                     Id = CredentialSets[group],
                     GroupId = (int)group,
-                    CredentialId = -1
+                    CredentialId = IDENTITY_VERIFIED_BY_YOTI
                 });                
             }
 
@@ -145,6 +145,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKLSL,
                 CredentialId = MANUALLY_VERIFIED
             });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = CredentialSets[Groups.AgeUKNottsBalderton],
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                CredentialId = MANUALLY_VERIFIED
+            });
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
@@ -152,7 +159,7 @@ namespace GroupService.Repo.Helpers
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
             var activities = Enum.GetValues(typeof(SupportActivities)).Cast<SupportActivities>();
 
-            foreach (var group in groups.Where(x => !x.Equals(Groups.AgeUKNottsBalderton)))
+            foreach (var group in groups)
             {
                 foreach (var activity in activities)
                 {
