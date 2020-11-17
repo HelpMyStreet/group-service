@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201117141315_AddUKNottsBalderton_AddGroupCredential")]
+    partial class AddUKNottsBalderton_AddGroupCredential
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,102 +40,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("ActivityCredentialSet","Group");
 
                     b.HasData(
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 1,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 2,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 3,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 4,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 5,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 6,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 7,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 8,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 9,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 10,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 11,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 12,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 13,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 14,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 15,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 16,
-                            CredentialSetId = 8
-                        },
                         new
                         {
                             GroupId = -7,
@@ -961,12 +867,6 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 8,
-                            GroupId = -8,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 7,
                             GroupId = -7,
                             CredentialId = -1
@@ -1023,12 +923,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 3,
                             GroupId = -3,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 8,
-                            GroupId = -8,
                             CredentialId = 1
                         });
                 });

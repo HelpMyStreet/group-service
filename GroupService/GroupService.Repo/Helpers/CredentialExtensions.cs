@@ -30,19 +30,19 @@ namespace GroupService.Repo.Helpers
         {
             entity.HasData(new Credential
             {
-                Id = -1,
+                Id = IDENTITY_VERIFIED_BY_YOTI,
                 Name = "IdentityVerifiedByYoti"
             });
 
             entity.HasData(new Credential
             {
-                Id = 1,
+                Id = MANUALLY_VERIFIED,
                 Name = "ManuallyVerified"
             });
 
             entity.HasData(new Credential
             {
-                Id = 2,
+                Id = DBS_CHECK,
                 Name = "DBS Check"
             });
         }
@@ -51,12 +51,12 @@ namespace GroupService.Repo.Helpers
         {
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
 
-            foreach (var group in groups.Where(x => !x.Equals(Groups.AgeUKNottsBalderton)))
+            foreach (var group in groups)
             {
                 entity.HasData(new GroupCredential
                 {
                     GroupId = (int)group,
-                    CredentialId = -1,
+                    CredentialId = IDENTITY_VERIFIED_BY_YOTI,
                     CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                     Name = "Yoti ID Verification",
                     HowToAchieve = "Complete online",
@@ -109,19 +109,33 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Notts Balderton to find out how they can check your ID at baldertoncs@helpmystreet.org",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+               $"Volunteer admins should follow internal processes for manually verifying a volunteer's identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
         {
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
 
-            foreach (var group in groups.Where(x => !x.Equals(Groups.AgeUKNottsBalderton)))
+            foreach (var group in groups)
             {                
                 entity.HasData(new CredentialSet
                 {
                     Id = CredentialSets[group],
                     GroupId = (int)group,
-                    CredentialId = -1
+                    CredentialId = IDENTITY_VERIFIED_BY_YOTI
                 });                
             }
 
@@ -145,6 +159,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKLSL,
                 CredentialId = MANUALLY_VERIFIED
             });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = CredentialSets[Groups.AgeUKNottsBalderton],
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                CredentialId = MANUALLY_VERIFIED
+            });
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
@@ -152,7 +173,7 @@ namespace GroupService.Repo.Helpers
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
             var activities = Enum.GetValues(typeof(SupportActivities)).Cast<SupportActivities>();
 
-            foreach (var group in groups.Where(x => !x.Equals(Groups.AgeUKNottsBalderton)))
+            foreach (var group in groups)
             {
                 foreach (var activity in activities)
                 {
