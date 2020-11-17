@@ -2,7 +2,7 @@
 
 namespace GroupService.Repo.Migrations
 {
-    public partial class AddAgeUKNottsBalderton_Step2 : Migration
+    public partial class AddUKNottsBalderton_SetCredentialSet : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

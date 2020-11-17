@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201116150758_AddAgeUKNottsBalderton_Step2")]
-    partial class AddAgeUKNottsBalderton_Step2
+    [Migration("20201117141315_AddUKNottsBalderton_AddGroupCredential")]
+    partial class AddUKNottsBalderton_AddGroupCredential
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -867,12 +867,6 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 8,
-                            GroupId = -8,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 7,
                             GroupId = -7,
                             CredentialId = -1
@@ -929,12 +923,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 3,
                             GroupId = -3,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 8,
-                            GroupId = -8,
                             CredentialId = 1
                         });
                 });
@@ -1497,6 +1485,20 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
+                            GroupId = -8,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
+
+Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
                             GroupId = -7,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
@@ -1629,6 +1631,20 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 2,
                             HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Lincoln & South Lincolnshire to find out how they can check your ID at volunteering@ageuklsl.org.uk",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
+
+Volunteer admins should follow internal processes for manually verifying a volunteer's identity."
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Notts Balderton to find out how they can check your ID at baldertoncs@helpmystreet.org",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
