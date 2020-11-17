@@ -51,7 +51,7 @@ namespace GroupService.Repo.Helpers
         {
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
 
-            foreach (var group in groups.Where(x => !x.Equals(Groups.AgeUKNottsBalderton)))
+            foreach (var group in groups)
             {
                 entity.HasData(new GroupCredential
                 {
@@ -103,6 +103,20 @@ namespace GroupService.Repo.Helpers
                 CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                 Name = "Manual ID Verification",
                 HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Lincoln & South Lincolnshire to find out how they can check your ID at volunteering@ageuklsl.org.uk",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+               $"Volunteer admins should follow internal processes for manually verifying a volunteer's identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Notts Balderton to find out how they can check your ID at baldertoncs@helpmystreet.org",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
                $"Volunteer admins should follow internal processes for manually verifying a volunteer's identity.",
