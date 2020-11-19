@@ -580,6 +580,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKLSL,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_Shopping
             });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.Shopping,
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Shopping
+            });
         }
 
         private static void PopulateGroupPrescriptionInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
@@ -617,6 +624,13 @@ namespace GroupService.Repo.Helpers
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
                 GroupId = (int)Groups.AgeUKWirral,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_Prescriptions
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
             });
         }
 
@@ -707,6 +721,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Ruddington,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FriendlyChat
             });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FriendlyChat
+            });
         }
 
         private static void PopulateGroupHomeworkInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
@@ -787,7 +808,12 @@ namespace GroupService.Repo.Helpers
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_General
             });
 
-
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.Other,
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
+            });
         }
 
         private static void PopulateGroupFaceCoveringInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
