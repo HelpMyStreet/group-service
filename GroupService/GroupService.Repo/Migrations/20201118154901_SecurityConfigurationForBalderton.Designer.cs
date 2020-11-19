@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201118154901_SecurityConfigurationForBalderton")]
+    partial class SecurityConfigurationForBalderton
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1533,7 +1535,7 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = -8,
                             GroupKey = "ageuknottsbalderton",
-                            GroupName = "Balderton Community Support"
+                            GroupName = "Age UK Notts (Balderton)"
                         });
                 });
 
@@ -1750,7 +1752,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 2,
-                            HowToAchieve = "If you’re unable to verify with Yoti, please email us to find out more about our manual ID at baldertoncs@helpmystreet.org",
+                            HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Notts Balderton to find out how they can check your ID at baldertoncs@helpmystreet.org",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 

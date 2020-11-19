@@ -37,6 +37,12 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKWirral,
                 AllowAutonomousJoinersAndLeavers = true
             });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                AllowAutonomousJoinersAndLeavers = true
+            });
         }
     }
 }
