@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201118170408_TweakBaldertonConfiguration")]
+    partial class TweakBaldertonConfiguration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1814,12 +1816,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
-                            GroupId = -8,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
                             GroupId = -1,
                             SupportActivityId = 2,
                             SupportActivityInstructionsId = (short)2
@@ -1847,12 +1843,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -7,
                             SupportActivityId = 2,
                             SupportActivityInstructionsId = (short)11
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
                         },
                         new
                         {
@@ -1922,12 +1912,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
-                            GroupId = -8,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
                             GroupId = -1,
                             SupportActivityId = 9,
                             SupportActivityInstructionsId = (short)5
@@ -1985,12 +1969,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -7,
                             SupportActivityId = 11,
                             SupportActivityInstructionsId = (short)12
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
                         },
                         new
                         {

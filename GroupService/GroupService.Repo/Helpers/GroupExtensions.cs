@@ -60,7 +60,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new Group
             {
                 Id = (int)Groups.AgeUKNottsBalderton,
-                GroupName = "Age UK Notts (Balderton)",
+                GroupName = "Balderton Community Support",
                 GroupKey = "ageuknottsbalderton"
             });
         }
