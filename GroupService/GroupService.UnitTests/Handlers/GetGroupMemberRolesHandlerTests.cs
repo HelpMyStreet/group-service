@@ -27,7 +27,7 @@ namespace GroupService.UnitTests
             _repository.Setup(x => x.GetGroupMemberRoles(It.IsAny<int>(), It.IsAny<CancellationToken>()))
                 .Returns(() => _roles);
 
-            _repository.Setup(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()))
+            _repository.Setup(x => x.UserIsInRolesForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<List<GroupRoles>>(), It.IsAny<bool>()))
                 .Returns(() => _isAdmin);
 
 
@@ -63,7 +63,7 @@ namespace GroupService.UnitTests
             Assert.AreEqual(_roles.Count, result.GroupMemberRoles.Count);
             Assert.AreEqual(_roles, result.GroupMemberRoles);
             _repository.Verify(x => x.GetGroupMemberRoles(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
+            _repository.Verify(x => x.UserIsInRolesForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<List<GroupRoles>>(), It.IsAny<bool>()), Times.Once);
         }
 
         [Test]
@@ -94,7 +94,7 @@ namespace GroupService.UnitTests
             Assert.AreEqual(_roles.Count, result.GroupMemberRoles.Count);
             Assert.AreEqual(_roles, result.GroupMemberRoles);
             _repository.Verify(x => x.GetGroupMemberRoles(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Never);
+            _repository.Verify(x => x.UserIsInRolesForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<List<GroupRoles>>(), It.IsAny<bool>()), Times.Never);
         }
 
         [Test]
@@ -115,7 +115,7 @@ namespace GroupService.UnitTests
 
             Assert.AreEqual(_roles, result);
             _repository.Verify(x => x.GetGroupMemberRoles(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Never);
-            _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
+            _repository.Verify(x => x.UserIsInRolesForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<List<GroupRoles>>(), It.IsAny<bool>()), Times.Once);
         }
 
         [Test]
@@ -133,7 +133,7 @@ namespace GroupService.UnitTests
 
             Assert.AreEqual(_roles, result.GroupMemberRoles);
             _repository.Verify(x => x.GetGroupMemberRoles(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
+            _repository.Verify(x => x.UserIsInRolesForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<List<GroupRoles>>(), It.IsAny<bool>()), Times.Once);
         }
     }
 }

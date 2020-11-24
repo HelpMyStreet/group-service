@@ -25,10 +25,11 @@ namespace GroupService.UnitTests
             _repository.Setup(x => x.GetGroupMember(It.IsAny<int>(), It.IsAny<int>()))
                 .Returns(() => _userInGroup);
 
-            _repository.Setup(x => x.UserIsInRoleForGroup(
+            _repository.Setup(x => x.UserIsInRolesForGroup(
                 It.IsAny<int>(),
                 It.IsAny<int>(),
-                It.IsAny<GroupRoles>()))
+                It.IsAny<List<GroupRoles>>(),
+                It.IsAny<bool>()))
                 .Returns(() => _hasPermission);
 
             _classUnderTest = new GetGroupMemberHandler(_repository.Object);
@@ -93,7 +94,7 @@ namespace GroupService.UnitTests
             }, CancellationToken.None).Result;
 
             Assert.AreEqual(_userInGroup, result.UserInGroup);
-            _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
+            _repository.Verify(x => x.UserIsInRolesForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<List<GroupRoles>>(), It.IsAny<bool>()), Times.Once);
             _repository.Verify(x => x.GetGroupMember(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
         }
 
@@ -112,7 +113,7 @@ namespace GroupService.UnitTests
                 AuthorisingUserId = authorisingUserId
             }, CancellationToken.None));
 ;
-            _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
+            _repository.Verify(x => x.UserIsInRolesForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<List<GroupRoles>>(), It.IsAny<bool>()), Times.Once);
             _repository.Verify(x => x.GetGroupMember(It.IsAny<int>(), It.IsAny<int>()), Times.Never);
         }
     }
