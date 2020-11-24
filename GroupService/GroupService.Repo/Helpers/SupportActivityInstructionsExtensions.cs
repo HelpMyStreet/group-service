@@ -31,7 +31,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Contact the requester",
-                        Detail = "Confirm what they need and agree how they will pay you back. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                        Detail = "Confirm what they need and agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
                     },
                     new Step()
                     {
@@ -40,8 +40,8 @@ namespace GroupService.Repo.Helpers
                     },
                     new Step()
                     {
-                        Heading = "Mark the request as complete",
-                        Detail = "Once you’ve done, mark the request as complete in “My Accepted Requests” - this will let us and anyone else involved with the request know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch."
+                        Heading = "Mark the request as complete",                        
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests” - this will let us and anyone else involved with the request know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -58,8 +58,8 @@ namespace GroupService.Repo.Helpers
                 {
                     new Step()
                     {
-                        Heading = "Contact the requester",
-                        Detail = "Confirm what they need. Check if there will be a charge for anything, and if needed agree how they will pay you back. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                        Heading = "Contact the requester",                        
+                        Detail = "Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
                     },
                     new Step()
                     {
@@ -115,7 +115,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Give them a call",
-                        Detail = "Be a friendly voice at the end of the phone and have a good natter.",
+                        Detail = "Be a friendly voice at the end of the phone and have a good chat.",
                     },
                     new Step()
                     {
