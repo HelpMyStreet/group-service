@@ -360,6 +360,19 @@ namespace GroupService.Repo
             return isAdmin;
         }
 
+        public bool UserIsInRolesForGroup(int userID, int groupId, List<GroupRoles> groupRoles, bool mustBeInAll)
+        {
+
+            var roles = groupRoles.Where(groupRole => _context.UserRole.FirstOrDefault(
+                x => x.RoleId == (int)groupRole &&
+                x.GroupId == groupId &&
+                x.UserId == userID) != null);
+
+            bool isAdmin = mustBeInAll ? roles.Count() == groupRoles.Count() : roles.Count() > 0;   
+
+            return isAdmin;
+        }
+
         public List<UserGroup> GetUsersWithRole(GroupRoles groupRoles)
         {
             return _context.UserRole.Where(x => x.RoleId == (int) groupRoles)

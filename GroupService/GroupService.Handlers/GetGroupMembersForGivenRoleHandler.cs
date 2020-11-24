@@ -26,7 +26,7 @@ namespace GroupService.Handlers
 
             if (request.AuthorisingUserID != ADMIN_USERID)
             {
-                hasPermission = _repository.UserIsInRoleForGroup(request.AuthorisingUserID, request.GroupId, GroupRoles.UserAdmin);
+                hasPermission = _repository.UserIsInRolesForGroup(request.AuthorisingUserID, request.GroupId, new List<GroupRoles>() { GroupRoles.UserAdmin, GroupRoles.UserAdmin_ReadOnly }, false);
             }
 
             if (hasPermission)
