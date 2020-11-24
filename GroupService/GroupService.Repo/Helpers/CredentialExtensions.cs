@@ -116,7 +116,7 @@ namespace GroupService.Repo.Helpers
                 CredentialId = MANUALLY_VERIFIED,
                 CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                 Name = "Manual ID Verification",
-                HowToAchieve = "If you’re unable to verify with Yoti, please email us to find out more about our manual ID at baldertoncs@helpmystreet.org",
+                HowToAchieve = "If you’re unable to verify with Yoti, please email us to find out more about our manual ID check at baldertoncs@helpmystreet.org",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
                $"Volunteer admins should follow internal processes for manually verifying a volunteer's identity.",

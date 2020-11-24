@@ -40,6 +40,7 @@ namespace GroupService.Core.Interfaces.Repositories
         List<int> GetGroupMembers(GetGroupMembersRequest request, CancellationToken cancellationToken);
         int GetGroupByKey(GetGroupByKeyRequest request, CancellationToken cancellationToken);
         bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole);
+        bool UserIsInRolesForGroup(int userID, int groupId, List<GroupRoles> groupRoles, bool mustBeInAll);
         List<UserGroup> GetUsersWithRole(GroupRoles groupRoles);
         SecurityConfiguration GetSecurityConfiguration(int groupId);
         List<int> GetGroupMembersForGivenRole(int groupId, GroupRoles roles, CancellationToken cancellationToken);
