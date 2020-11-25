@@ -14,6 +14,7 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
+        GetGroupNewRequestNotificationStrategyResponse GetGroupNewRequestNotificationStrategy(int groupId, CancellationToken cancellationToken);
         Instructions GetGroupSupportActivityInstructions(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken);
         CredentialVerifiedBy GetCredentialVerifiedBy(int groupId, int credentialId);
         List<UserInGroup> GetAllGroupMembers(int groupId);
