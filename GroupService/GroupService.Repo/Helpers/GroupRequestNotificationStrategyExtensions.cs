@@ -1,0 +1,61 @@
+﻿using GroupService.Repo.EntityFramework.Entities;
+using HelpMyStreet.Utils.Enums;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace GroupService.Repo.Helpers
+{
+    public static class GroupRequestNotificationStrategyExtensions
+    {
+        public static void SetGroupRequestNotificationStrategyExtensions(this EntityTypeBuilder<GroupNewRequestNotificationStrategy> entity)
+        {
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.Ruddington,
+                NewRequestNotificationStrategyId = (int) NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.AgeUKLSL,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.FTLOS,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.Tankersley,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.AgeUKWirral,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = 10
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.Generic,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = 100
+            });
+        }
+    }
+}
