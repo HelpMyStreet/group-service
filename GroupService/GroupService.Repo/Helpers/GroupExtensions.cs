@@ -61,7 +61,7 @@ namespace GroupService.Repo.Helpers
             {
                 Id = (int)Groups.AgeUKNottsBalderton,
                 GroupName = "Balderton Community Support",
-                GroupKey = "ageuknottsbalderton"
+                GroupKey = "balderton"
             });
         }
 
