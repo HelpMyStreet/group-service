@@ -1,7 +1,9 @@
 using GroupService.AzureFunction;
 using GroupService.Core.Exception;
 using GroupService.Core.Interfaces.Repositories;
+using GroupService.Core.Interfaces.Services;
 using GroupService.Handlers;
+using HelpMyStreet.Contracts.CommunicationService.Request;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Utils;
@@ -18,16 +20,28 @@ namespace GroupService.UnitTests
     {
         private PutGroupMemberCredentialsHandler _classUnderTest;
         private Mock<IRepository> _repository;
+        private Mock<ICommunicationService> _communicationService;
         private bool _success;
         private bool _hasPermission = false;
         private CredentialVerifiedBy _credentialVerifiedBy;
 
-        public bool RoleAssigned { get; set; }
+        private bool _roleAssigned { get; set; }
+        private bool _communicationSet { get; set; }
 
         [SetUp]
         public void Setup()
         {
-            RoleAssigned = false;
+            _roleAssigned = false;
+            _communicationSet = true;
+            SetupRepository();
+            SetupCommunicationService();
+
+            _classUnderTest = new PutGroupMemberCredentialsHandler(_repository.Object, _communicationService.Object);
+               
+        }
+
+        private void SetupRepository()
+        {
             _repository = new Mock<IRepository>();
             _repository.Setup(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()))
                 .Returns(() => _hasPermission);
@@ -37,9 +51,15 @@ namespace GroupService.UnitTests
 
             _repository.Setup(x => x.GetCredentialVerifiedBy(It.IsAny<int>(), It.IsAny<int>()))
                  .Returns(() => _credentialVerifiedBy);
+        }
 
-            _classUnderTest = new PutGroupMemberCredentialsHandler(_repository.Object);
-               
+        private void SetupCommunicationService()
+        {
+            _communicationService = new Mock<ICommunicationService>();
+
+            _communicationService.Setup(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(() => _communicationSet);
+
         }
 
         [Test]
@@ -62,6 +82,7 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.GetCredentialVerifiedBy(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
             _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
             _repository.Verify(x => x.AddGroupMemberCredentials(It.IsAny<PutGroupMemberCredentialsRequest>()), Times.Once);
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Once);
             Assert.AreEqual(_success, result.Result);
         }
 
@@ -85,6 +106,7 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.GetCredentialVerifiedBy(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
             _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Never);
             _repository.Verify(x => x.AddGroupMemberCredentials(It.IsAny<PutGroupMemberCredentialsRequest>()), Times.Never);
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Never);
         }
 
         [Test]
@@ -107,6 +129,7 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.GetCredentialVerifiedBy(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
             _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Once);
             _repository.Verify(x => x.AddGroupMemberCredentials(It.IsAny<PutGroupMemberCredentialsRequest>()), Times.Never);
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Never);
         }
 
         [Test]
@@ -130,6 +153,7 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.GetCredentialVerifiedBy(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
             _repository.Verify(x => x.UserIsInRoleForGroup(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>()), Times.Never);
             _repository.Verify(x => x.AddGroupMemberCredentials(It.IsAny<PutGroupMemberCredentialsRequest>()), Times.Never);
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Never);
         }
     }
 }
