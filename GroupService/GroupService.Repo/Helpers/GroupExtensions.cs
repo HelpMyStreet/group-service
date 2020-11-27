@@ -12,7 +12,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new Group
             {
                 Id = (int)Groups.Generic,
-                GroupName = "Generic",
+                GroupName = "HelpMyStreet",
                 GroupKey = "Generic",
             });
 
