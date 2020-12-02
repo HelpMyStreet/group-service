@@ -6,6 +6,8 @@ namespace GroupService.Repo.Helpers
 {
     public static class GroupExtensions
     {
+        private const string REQUEST_SUBMITTER_SOURCE = "a";
+
         public static void SetDefaultGroup(this EntityTypeBuilder<Group> entity)
         {
             entity.HasData(new Group
@@ -178,7 +180,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = (int)Groups.AgeUKLSL,
-                Source = "a",
+                Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.VitalsForVeterans,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
@@ -218,7 +220,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = (int)Groups.AgeUKWirral,
-                Source = "a",
+                Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKWirral,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
                 AccessRestrictedByRole = true,
