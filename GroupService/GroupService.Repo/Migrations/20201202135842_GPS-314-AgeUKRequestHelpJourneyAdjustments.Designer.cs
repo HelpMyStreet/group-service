@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201202135842_GPS-314-AgeUKRequestHelpJourneyAdjustments")]
+    partial class GPS314AgeUKRequestHelpJourneyAdjustments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2180,7 +2182,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -3,
-                            Source = "a",
+                            Source = "",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)2,
                             RequestorDefinedByGroup = true,
@@ -2216,7 +2218,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -7,
-                            Source = "a",
+                            Source = "",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)8,
                             RequestorDefinedByGroup = true,
