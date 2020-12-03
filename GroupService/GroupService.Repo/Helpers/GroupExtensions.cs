@@ -7,6 +7,8 @@ namespace GroupService.Repo.Helpers
 {
     public static class GroupExtensions
     {
+        private const string REQUEST_SUBMITTER_SOURCE = "a";
+
         public static void SetDefaultGroup(this EntityTypeBuilder<Group> entity)
         {
             entity.HasData(new Group
@@ -180,11 +182,11 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = (int)Groups.AgeUKLSL,
-                Source = "",
+                Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.VitalsForVeterans,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true
             });
 
             entity.HasData(new RequestHelpJourney
@@ -220,7 +222,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = (int)Groups.AgeUKWirral,
-                Source = "",
+                Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKWirral,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
                 AccessRestrictedByRole = true,
@@ -252,6 +254,19 @@ namespace GroupService.Repo.Helpers
                 AddressLine3 = "141 Park Road North",
                 Locality = "Birkenhead",
                 Postcode = "CH41 0DD"
+            });
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.AgeUKLSL,
+                FirstName = "Age UK",
+                LastName = "Lincoln & South Lincolnshire",
+                OtherPhone = "03455 564 144",
+                EmailAddress = "volunteering@ageuklsl.org.uk",
+                AddressLine1 = "Age UK Lincoln & South Lincolnshire",
+                AddressLine2 = "36 Park Street",
+                AddressLine3 = "",
+                Locality = "Lincoln",
+                Postcode = "LN1 1UQ"
             });
         }
     }
