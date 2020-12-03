@@ -154,17 +154,6 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = (int)Groups.Generic,
-                Source = "DIY",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.DIY,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false,
-                RequestsRequireApproval = false,
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.Generic,
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
