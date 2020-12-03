@@ -78,6 +78,7 @@ namespace GroupService.Handlers
                 }
 
                 taskAction.TaskActions.Add(NewTaskAction.MakeAvailableToGroups, targetGroups);
+                taskAction.TaskActions.Add(NewTaskAction.SendRequestorConfirmation, null);
 
                 if (requestJourney.RequestsRequireApproval)
                 {
