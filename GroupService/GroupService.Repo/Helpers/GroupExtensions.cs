@@ -1,6 +1,7 @@
 ﻿using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Utils.Enums;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 
 namespace GroupService.Repo.Helpers
 {
@@ -13,50 +14,50 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new Group
             {
                 Id = (int)Groups.Generic,
-                GroupName = "Generic",
-                GroupKey = "Generic"
+                GroupName = "HelpMyStreet",
+                GroupKey = "Generic",
             });
 
             entity.HasData(new Group
             {
                 Id = (int)Groups.FTLOS,
                 GroupName = "For the Love of Scrubs",
-                GroupKey = "ftlos"
+                GroupKey = "ftlos",
             });
 
             entity.HasData(new Group
             {
                 Id = (int)Groups.AgeUKLSL,
                 GroupName = "Age UK Lincoln & South Lincolnshire",
-                GroupKey = "ageuklsl"
+                GroupKey = "ageuklsl",
             });
 
             entity.HasData(new Group
             {
                 Id = (int)Groups.HLP,
                 GroupName = "Healthy London Partnership",
-                GroupKey = "hlp"
+                GroupKey = "hlp",
             });
 
             entity.HasData(new Group
             {
                 Id = (int)Groups.Tankersley,
                 GroupName = "Tankersley & Pilley",
-                GroupKey = "tankersley"
+                GroupKey = "tankersley",
             });
 
             entity.HasData(new Group
             {
                 Id = (int)Groups.Ruddington,
                 GroupName = "Ruddington",
-                GroupKey = "ruddington"
+                GroupKey = "ruddington",
             });
 
             entity.HasData(new Group
             {
                 Id = (int)Groups.AgeUKWirral,
                 GroupName = "Age UK Wirral",
-                GroupKey = "ageukwirral"
+                GroupKey = "ageukwirral",
             });
 
             entity.HasData(new Group
@@ -85,6 +86,7 @@ namespace GroupService.Repo.Helpers
             });
 
             entity.HasData(new RegistrationJourney
+
             {
                 GroupId = (int)Groups.Generic,
                 Source = "face-masks",
