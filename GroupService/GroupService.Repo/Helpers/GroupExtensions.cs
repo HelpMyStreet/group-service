@@ -144,7 +144,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.DIY,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -154,7 +155,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -164,7 +166,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.FaceMasks,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -174,7 +177,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.FtLOS,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndChildren,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -184,7 +188,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.VitalsForVeterans,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -194,7 +199,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.HLP_CommunityConnector,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -204,7 +210,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -214,7 +221,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Ruddington,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -224,7 +232,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKWirral,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -234,7 +243,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKNottsBalderton,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
         }
 
