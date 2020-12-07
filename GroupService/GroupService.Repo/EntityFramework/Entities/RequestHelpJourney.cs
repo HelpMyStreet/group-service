@@ -12,6 +12,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public byte TargetGroups { get; set; }
         public bool AccessRestrictedByRole { get; set; }
         public bool RequestorDefinedByGroup { get; set; }
+        public bool RequestsRequireApproval { get; set; }
 
         public virtual Group Group { get; set; }
     }

@@ -129,7 +129,7 @@ namespace GroupService.Repo.Helpers
         {
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
 
-            foreach (var group in groups)
+            foreach (var group in groups.Where(g => g != Groups.AgeUKNorthWestKent))
             {                
                 entity.HasData(new CredentialSet
                 {
@@ -173,7 +173,7 @@ namespace GroupService.Repo.Helpers
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
             var activities = Enum.GetValues(typeof(SupportActivities)).Cast<SupportActivities>();
 
-            foreach (var group in groups)
+            foreach (var group in groups.Where(g => g != Groups.AgeUKNorthWestKent))
             {
                 foreach (var activity in activities)
                 {

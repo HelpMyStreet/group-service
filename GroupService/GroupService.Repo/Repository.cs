@@ -316,7 +316,8 @@ namespace GroupService.Repo
                 RequestHelpFormVariant = (RequestHelpFormVariant)requestHelpJourney.RequestHelpFormVariant,
                 TargetGroups = (TargetGroups)requestHelpJourney.TargetGroups,
                 RequestorDefinedByGroup = requestHelpJourney.RequestorDefinedByGroup,
-                AccessRestrictedByRole = requestHelpJourney.AccessRestrictedByRole
+                AccessRestrictedByRole = requestHelpJourney.AccessRestrictedByRole,
+                RequestsRequireApproval = requestHelpJourney.RequestsRequireApproval,
             };
 
             if(requestHelpJourney.RequestorDefinedByGroup == true && requestHelpJourney.Group?.RequestorDetails!=null)

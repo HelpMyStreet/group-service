@@ -66,6 +66,13 @@ namespace GroupService.Repo.Helpers
                 GroupName = "Balderton Community Support",
                 GroupKey = "balderton"
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.AgeUKNorthWestKent,
+                GroupName = "AgeUK North West Kent",
+                GroupKey = "ageuknwkent"
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -135,6 +142,13 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNottsBalderton
             });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+            });
         }
 
         public static void RequestHelpJourney(this EntityTypeBuilder<RequestHelpJourney> entity)
@@ -142,21 +156,12 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = (int)Groups.Generic,
-                Source = "DIY",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.DIY,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.Generic,
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -166,7 +171,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.FaceMasks,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -176,7 +182,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.FtLOS,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndChildren,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -186,7 +193,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.VitalsForVeterans,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -196,7 +204,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.HLP_CommunityConnector,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -206,7 +215,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Default,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -216,7 +226,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Ruddington,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -226,7 +237,8 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKWirral,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
             });
 
             entity.HasData(new RequestHelpJourney
@@ -236,7 +248,30 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKNottsBalderton,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKNorthWestKent_Public,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = true,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKNorthWestKent_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
             });
         }
 

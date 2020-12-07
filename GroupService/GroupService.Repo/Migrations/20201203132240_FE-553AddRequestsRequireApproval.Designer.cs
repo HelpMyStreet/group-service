@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201203132240_FE-553AddRequestsRequireApproval")]
+    partial class FE553AddRequestsRequireApproval
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1064,27 +1066,6 @@ namespace GroupService.Repo.Migrations
                         });
                 });
 
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumNewRequestNotificationStrategy", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnName("ID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("NewRequestNotificationStrategy","Lookup");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "ClosestNEligibleVolunteers"
-                        });
-                });
-
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumRegistrationFormVariant", b =>
                 {
                     b.Property<int>("Id")
@@ -1194,16 +1175,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 9,
                             Name = "AgeUKNottsBalderton"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Name = "AgeUKNorthWestKent_Public"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Name = "AgeUKNorthWestKent_RequestSubmitter"
                         });
                 });
 
@@ -1527,7 +1498,7 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = -1,
                             GroupKey = "Generic",
-                            GroupName = "HelpMyStreet"
+                            GroupName = "Generic"
                         },
                         new
                         {
@@ -1570,12 +1541,6 @@ namespace GroupService.Repo.Migrations
                             Id = -8,
                             GroupKey = "balderton",
                             GroupName = "Balderton Community Support"
-                        },
-                        new
-                        {
-                            Id = -9,
-                            GroupKey = "ageuknwkent",
-                            GroupName = "AgeUK North West Kent"
                         });
                 });
 
@@ -1631,20 +1596,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("GroupCredential","Group");
 
                     b.HasData(
-                        new
-                        {
-                            GroupId = -9,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
-                        },
                         new
                         {
                             GroupId = -8,
@@ -1812,67 +1763,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
 
 Volunteer admins should follow internal processes for manually verifying a volunteer's identity."
-                        });
-                });
-
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupNewRequestNotificationStrategy", b =>
-                {
-                    b.Property<int>("GroupId")
-                        .HasColumnName("GroupID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MaxVolunteer")
-                        .HasColumnType("int");
-
-                    b.Property<byte>("NewRequestNotificationStrategyId")
-                        .HasColumnType("tinyint");
-
-                    b.HasKey("GroupId");
-
-                    b.ToTable("NewRequestNotificationStrategy","Group");
-
-                    b.HasData(
-                        new
-                        {
-                            GroupId = -6,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -3,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -2,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            MaxVolunteer = 10,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            MaxVolunteer = 100,
-                            NewRequestNotificationStrategyId = (byte)1
                         });
                 });
 
@@ -2220,12 +2110,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -8,
                             Source = "",
                             RegistrationFormVariant = (byte)6
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            Source = "",
-                            RegistrationFormVariant = (byte)0
                         });
                 });
 
@@ -2262,6 +2146,16 @@ Volunteer admins should follow internal processes for manually verifying a volun
                     b.ToTable("RequestHelpJourney","Website");
 
                     b.HasData(
+                        new
+                        {
+                            GroupId = -1,
+                            Source = "DIY",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)3,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
                         new
                         {
                             GroupId = -1,
@@ -2348,26 +2242,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             Source = "",
                             AccessRestrictedByRole = false,
                             RequestHelpFormVariant = (byte)9,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            Source = "",
-                            AccessRestrictedByRole = false,
-                            RequestHelpFormVariant = (byte)10,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = true,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)11,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             TargetGroups = (byte)4
@@ -2742,15 +2616,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         .WithMany("GroupCredential")
                         .HasForeignKey("GroupId")
                         .HasConstraintName("FK_GroupCredential_Group")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupNewRequestNotificationStrategy", b =>
-                {
-                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
-                        .WithOne("NewRequestNotificationStrategy")
-                        .HasForeignKey("GroupService.Repo.EntityFramework.Entities.GroupNewRequestNotificationStrategy", "GroupId")
-                        .HasConstraintName("FK_NewRequestNotificationStrategy_Group")
                         .IsRequired();
                 });
 
