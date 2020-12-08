@@ -73,6 +73,13 @@ namespace GroupService.Repo.Helpers
                 GroupName = "AgeUK North West Kent",
                 GroupKey = "ageuknwkent"
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.AgeUKNottsNorthMuskham,
+                GroupName = "North Muskham Community Support",
+                GroupKey = "northmuskham"
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -148,6 +155,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKNorthWestKent,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNottsBalderton
             });
         }
 
@@ -270,6 +284,17 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKNorthWestKent_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKNottsNorthMuskham,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
             });
