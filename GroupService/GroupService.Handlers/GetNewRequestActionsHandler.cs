@@ -86,7 +86,7 @@ namespace GroupService.Handlers
                 } 
                 else
                 {
-                    taskAction.TaskActions.Add(NewTaskAction.SetStatusToOpen, null);
+                    taskAction.TaskActions.Add(NewTaskAction.SetStatusToOpen, new List<int>());
                     taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
                 }
 
