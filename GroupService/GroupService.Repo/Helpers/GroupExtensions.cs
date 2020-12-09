@@ -78,7 +78,7 @@ namespace GroupService.Repo.Helpers
             {
                 Id = (int)Groups.AgeUKNottsNorthMuskham,
                 GroupName = "North Muskham Community Support",
-                GroupKey = "northmuskham"
+                GroupKey = "north-muskham"
             });
         }
 
