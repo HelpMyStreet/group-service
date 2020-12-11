@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201208155626_HLFR-138AddingMoreNorthMuskham3")]
+    partial class HLFR138AddingMoreNorthMuskham3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,102 +40,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("ActivityCredentialSet","Group");
 
                     b.HasData(
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 1,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 2,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 3,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 4,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 5,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 6,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 7,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 8,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 9,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 10,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 11,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 12,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 13,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 14,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 15,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 16,
-                            CredentialSetId = 10
-                        },
                         new
                         {
                             GroupId = -9,
@@ -1153,12 +1059,6 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 10,
-                            GroupId = -10,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 9,
                             GroupId = -9,
                             CredentialId = -1
@@ -1233,12 +1133,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 8,
                             GroupId = -8,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 10,
-                            GroupId = -10,
                             CredentialId = 1
                         });
                 });
@@ -1795,7 +1689,7 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -10,
-                            GroupKey = "north-muskham",
+                            GroupKey = "northmuskham",
                             GroupName = "North Muskham Community Support"
                         });
                 });
