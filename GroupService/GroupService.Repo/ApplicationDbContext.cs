@@ -25,7 +25,7 @@ namespace GroupService.Repo
         public virtual DbSet<RegistrationJourney> RegistrationJourney { get; set; }
         public virtual DbSet<RequestHelpJourney> RequestHelpJourney { get; set; }
         public virtual DbSet<SecurityConfiguration> SecurityConfigurations { get; set; }
-
+        public virtual DbSet<GroupNewRequestNotificationStrategy> GroupNewRequestNotificationStrategy { get; set; }
         public virtual DbSet<EnumRole> EnumRole { get; set; }
         public virtual DbSet<EnumTargetGroup> EnumTargetGroup { get; set; }
         public virtual DbSet<EnumRequestHelpFormVariant> EnumRequestHelpFormVariant { get; set; }
@@ -33,6 +33,7 @@ namespace GroupService.Repo
         public virtual DbSet<EnumCredentialTypes> EnumCredentialTypes { get; set; }
         public virtual DbSet<EnumSupportActivity> EnumSupportActivity { get; set; }
         public virtual DbSet<EnumSupportActivityInstructions> EnumSupportActivityInstructions { get; set; }
+        public virtual DbSet<EnumNewRequestNotificationStrategy> EnumNewRequestNotificationStrategy { get; set; }
         public virtual DbSet<ActivityCredentialSet> ActivityCredentialSet { get; set; }
         public virtual DbSet<Credential> Credential { get; set; }
         public virtual DbSet<CredentialSet> CredentialSet { get; set; }
@@ -115,6 +116,15 @@ namespace GroupService.Repo
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.SetEnumSupportActivityInstructionsExtensionsData();
+            });
+
+            modelBuilder.Entity<EnumNewRequestNotificationStrategy>(entity =>
+            {
+                entity.ToTable("NewRequestNotificationStrategy", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumStrategyData();
             });
 
             modelBuilder.Entity<Group>(entity =>
@@ -247,6 +257,23 @@ namespace GroupService.Repo
                     .HasForeignKey<SecurityConfiguration>(d => d.GroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_SecurityConfiguration_Group");
+            });
+
+            modelBuilder.Entity<GroupNewRequestNotificationStrategy>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId });
+
+                entity.ToTable("NewRequestNotificationStrategy", "Group");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.SetGroupRequestNotificationStrategyExtensions();
+
+                entity.HasOne(d => d.Group)
+                    .WithOne(p => p.NewRequestNotificationStrategy)
+                    .HasForeignKey<GroupNewRequestNotificationStrategy>(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_NewRequestNotificationStrategy_Group");
             });
 
             modelBuilder.Entity<ActivityCredentialSet>(entity =>

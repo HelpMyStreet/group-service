@@ -29,7 +29,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public virtual ICollection<RequestHelpJourney> RequestHelpJourney { get; set; }
         public virtual ICollection<UserRole> UserRole { get; set; }
         public virtual SecurityConfiguration SecurityConfiguration { get; set; }
-
+        public virtual GroupNewRequestNotificationStrategy NewRequestNotificationStrategy { get; set; }
         public virtual ICollection<ActivityCredentialSet> ActivityCredentialSet { get; set; }        
         public virtual ICollection<GroupCredential> GroupCredential { get; set; }
         public virtual ICollection<GroupSupportActivityInstructions> GroupSupportActivityInstructions { get; set; }

@@ -316,7 +316,8 @@ namespace GroupService.Repo
                 RequestHelpFormVariant = (RequestHelpFormVariant)requestHelpJourney.RequestHelpFormVariant,
                 TargetGroups = (TargetGroups)requestHelpJourney.TargetGroups,
                 RequestorDefinedByGroup = requestHelpJourney.RequestorDefinedByGroup,
-                AccessRestrictedByRole = requestHelpJourney.AccessRestrictedByRole
+                AccessRestrictedByRole = requestHelpJourney.AccessRestrictedByRole,
+                RequestsRequireApproval = requestHelpJourney.RequestsRequireApproval,
             };
 
             if(requestHelpJourney.RequestorDefinedByGroup == true && requestHelpJourney.Group?.RequestorDetails!=null)
@@ -615,6 +616,24 @@ namespace GroupService.Repo
                 };                
             }
            
+        }
+
+        public GetGroupNewRequestNotificationStrategyResponse GetGroupNewRequestNotificationStrategy(int groupId, CancellationToken cancellationToken)
+        {
+            var strategy = _context.GroupNewRequestNotificationStrategy.Where(x => x.GroupId == groupId).FirstOrDefault();
+            
+            if(strategy!=null)
+            {
+                return new GetGroupNewRequestNotificationStrategyResponse()
+                {
+                    NewRequestNotificationStrategy = (NewRequestNotificationStrategy)strategy.NewRequestNotificationStrategyId,
+                    MaxVolunteer = strategy.MaxVolunteer
+                };
+            }
+            else
+            {
+                throw new Exception($"Unable to find new request notification strategy for {groupId}");
+            }            
         }
     }
 }

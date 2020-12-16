@@ -24,6 +24,8 @@ namespace GroupService.Repo.Helpers
             CredentialSets.Add(Groups.Ruddington, 6);
             CredentialSets.Add(Groups.AgeUKWirral, 7);
             CredentialSets.Add(Groups.AgeUKNottsBalderton, 8);
+            CredentialSets.Add(Groups.AgeUKNorthWestKent, 9);
+            CredentialSets.Add(Groups.AgeUKNottsNorthMuskham, 10);
         }
 
         public static void SetCredentials(this EntityTypeBuilder<Credential> entity)
@@ -91,7 +93,7 @@ namespace GroupService.Repo.Helpers
                 HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Wirral to find out how they can check your ID at mailto:volunteers@ageukwirral.org.uk",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteer's identity.",
+                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -102,10 +104,10 @@ namespace GroupService.Repo.Helpers
                 CredentialId = MANUALLY_VERIFIED,
                 CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                 Name = "Manual ID Verification",
-                HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Lincoln & South Lincolnshire to find out how they can check your ID at volunteering@ageuklsl.org.uk",
+                HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Lincoln & South Lincolnshire to find out how they can check your ID at mailto:volunteering@ageuklsl.org.uk",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-               $"Volunteer admins should follow internal processes for manually verifying a volunteer's identity.",
+               $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -116,10 +118,24 @@ namespace GroupService.Repo.Helpers
                 CredentialId = MANUALLY_VERIFIED,
                 CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                 Name = "Manual ID Verification",
-                HowToAchieve = "If you’re unable to verify with Yoti, please email us to find out more about our manual ID check at baldertoncs@helpmystreet.org",
+                HowToAchieve = "If you’re unable to verify with Yoti, please email us to find out more about our manual ID check at mailto:baldertoncs@helpmystreet.org",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-               $"Volunteer admins should follow internal processes for manually verifying a volunteer's identity.",
+               $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = "Please contact North Muskham Community Support to find out more about our manual ID check by emailing mailto:northmuskham@helpmystreet.org",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+               $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -164,6 +180,13 @@ namespace GroupService.Repo.Helpers
             {
                 Id = CredentialSets[Groups.AgeUKNottsBalderton],
                 GroupId = (int)Groups.AgeUKNottsBalderton,
+                CredentialId = MANUALLY_VERIFIED
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = CredentialSets[Groups.AgeUKNottsNorthMuskham],
+                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
                 CredentialId = MANUALLY_VERIFIED
             });
         }

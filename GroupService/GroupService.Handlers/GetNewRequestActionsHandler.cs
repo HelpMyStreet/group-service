@@ -28,14 +28,6 @@ namespace GroupService.Handlers
             {
                 TaskAction taskAction = new TaskAction() { TaskActions = new Dictionary<NewTaskAction, List<int>>() };
                 
-                bool diyRequest = false;
-
-                if (j.Questions != null)
-                {
-                    var willYoucompleteYourselfQuestion = j.Questions.FirstOrDefault(x => x.Id == (int)Questions.WillYouCompleteYourself);
-                    diyRequest = willYoucompleteYourselfQuestion != null && willYoucompleteYourselfQuestion.Answer.ToLower() == "yes";
-                 }
-
                 bool faceMaskRequest = j.SupportActivity == SupportActivities.FaceMask;
 
                 GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.HelpRequest.ReferringGroupId, request.HelpRequest.Source ?? "", cancellationToken);
@@ -86,13 +78,15 @@ namespace GroupService.Handlers
                 }
 
                 taskAction.TaskActions.Add(NewTaskAction.MakeAvailableToGroups, targetGroups);
+                taskAction.TaskActions.Add(NewTaskAction.SendRequestorConfirmation, null);
 
-                if (diyRequest)
+                if (requestJourney.RequestsRequireApproval)
                 {
-                    taskAction.TaskActions.Add(NewTaskAction.AssignToVolunteer, new List<int>() { request.HelpRequest.CreatedByUserId });
-                }
+                    taskAction.TaskActions.Add(NewTaskAction.NotifyGroupAdmins, new List<int> { request.HelpRequest.ReferringGroupId });
+                } 
                 else
                 {
+                    taskAction.TaskActions.Add(NewTaskAction.SetStatusToOpen, new List<int>());
                     taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
                 }
 

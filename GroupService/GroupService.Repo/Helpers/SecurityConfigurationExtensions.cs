@@ -43,6 +43,12 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKNottsBalderton,
                 AllowAutonomousJoinersAndLeavers = true
             });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
+                AllowAutonomousJoinersAndLeavers = true
+            });
         }
     }
 }
