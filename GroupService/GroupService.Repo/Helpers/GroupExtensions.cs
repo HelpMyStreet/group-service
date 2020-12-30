@@ -80,6 +80,20 @@ namespace GroupService.Repo.Helpers
                 GroupName = "North Muskham Community Support",
                 GroupKey = "north-muskham"
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.AgeUKSouthKentCoast,
+                GroupName = "Age UK South Kent Coast",
+                GroupKey = "southkentcoast"
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.AgeUKFavershamAndSittingbourne,
+                GroupName = "Age UK Faversham & Sittingbourne",
+                GroupKey = "favershamandsittingbourne"
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -162,6 +176,20 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKNottsNorthMuskham,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNottsBalderton
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
             });
         }
 
@@ -298,6 +326,51 @@ namespace GroupService.Repo.Helpers
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
             });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKSouthKentCoast_Public,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = true,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKSouthKentCoast_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKFavershamAndSittingbourne_Public,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = true,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKFavershamAndSittingbourne_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+            });
+
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)

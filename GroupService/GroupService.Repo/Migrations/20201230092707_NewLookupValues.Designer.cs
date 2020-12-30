@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201230092707_NewLookupValues")]
+    partial class NewLookupValues
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2555,18 +2557,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -10,
                             Source = "",
                             RegistrationFormVariant = (byte)6
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            Source = "",
-                            RegistrationFormVariant = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            Source = "",
-                            RegistrationFormVariant = (byte)0
                         });
                 });
 
@@ -2719,46 +2709,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             Source = "",
                             AccessRestrictedByRole = false,
                             RequestHelpFormVariant = (byte)12,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            Source = "",
-                            AccessRestrictedByRole = false,
-                            RequestHelpFormVariant = (byte)13,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = true,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)14,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            Source = "",
-                            AccessRestrictedByRole = false,
-                            RequestHelpFormVariant = (byte)15,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = true,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)16,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             TargetGroups = (byte)4
