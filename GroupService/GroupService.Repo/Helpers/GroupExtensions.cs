@@ -168,7 +168,7 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.AgeUKNorthWestKent,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNWK
             });
 
             entity.HasData(new RegistrationJourney
@@ -182,14 +182,14 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.AgeUKSouthKentCoast,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKSKC
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKFandS
             });
         }
 
