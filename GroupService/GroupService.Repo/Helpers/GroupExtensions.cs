@@ -312,7 +312,7 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKNorthWestKent_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = false,
+                RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
             });
 
@@ -345,7 +345,7 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKSouthKentCoast_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = false,
+                RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
             });
 
@@ -400,6 +400,32 @@ namespace GroupService.Repo.Helpers
                 AddressLine3 = "",
                 Locality = "Lincoln",
                 Postcode = "LN1 1UQ"
+            });
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                FirstName = "Mark",
+                LastName = "Colley",
+                OtherPhone = "01304 372608",
+                EmailAddress = "volunteering@ageukskc.org.uk",
+                AddressLine1 = "Age UK South Kent Coast",
+                AddressLine2 = "3 Park Street",
+                AddressLine3 = "Deal",
+                Locality = "Kent",
+                Postcode = "CT14 6AG"
+            });
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                FirstName = "Age UK",
+                LastName = "North West Kent",
+                OtherPhone = "01474 564898",
+                EmailAddress = "contactus@ageuknorthwestkent.org.uk",
+                AddressLine1 = "Age UK North West Kent",
+                AddressLine2 = "The Fleming Resource Centre",
+                AddressLine3 = "Gravesend",
+                Locality = "Kent",
+                Postcode = "DA12 1HJ"
             });
         }
     }
