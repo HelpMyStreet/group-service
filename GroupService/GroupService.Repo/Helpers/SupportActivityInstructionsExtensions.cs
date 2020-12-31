@@ -450,6 +450,174 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_AgeUKSKC_MealtimeCompanion()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealtimeCompanion,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact us (Age UK South Kent Coast)",
+                        Detail = "Please contact Marigold Centre for the  Folkestone area on 01303 279031 or for the Deal Area contact the Deal Centre on 01304 372608 to book your meal (you provide the company, we’ll provide the food!).",
+                    },
+                    new Step()
+                    {
+                        Heading = "Enjoy your dinner together",
+                        Detail = "Use the details given to you to meet up at the person’s chosen mealtime ( usually between 12 noon and 1pm). Have a chat and provide some company for the person you’re joining.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk. If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.",                        
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKSKC_MealOnWheels()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsOnWheels,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact us (Age UK South Kent Coast)",
+                        Detail = "Please contact mailto:volunteering@ageukskc.org.uk to arrange for the collection of hot meals and the delivery details.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Deliver the meals",
+                        Detail = "Use the details given to you to deliver the meals. It would be great if you could also stop to say hello and see how they’re getting on.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk. If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."                        
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_HMS_VolunteerSupport()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsOnWheels,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Find out what help is needed",
+                        Detail = "Make sure you’ve seen all the details by clicking the ‘View more info link’. If you’re able to help, click to accept the request.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide the help that is needed",
+                        Detail = "Use the details given to you to carry out the request.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”",
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKSKC_Other()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Other,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact us (Age UK South Kent Coast)",
+                        Detail = "Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide the help that is needed",
+                        Detail = "Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+                   }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKSKC_Prescriptions()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Prescriptions,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact us Age UK South Kent Coast",
+                        Detail = "Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Collecting the prescription",
+                        Detail = "Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by mailto:emailingvolunteering@ageukskc.org.uk  If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKSKC_Shopping()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Shopping,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact us Age UK South Kent Coast",
+                        Detail = "Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Purchase the shopping items",
+                        Detail = "Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -541,8 +709,43 @@ namespace GroupService.Repo.Helpers
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_General,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKLSL_General())
             });
-        }
 
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealtimeCompanion,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_MealtimeCompanion())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsOnWheels,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_MealOnWheels())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_VolunteerSupport,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_HMS_VolunteerSupport())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Other,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_Other())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Prescriptions,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_Prescriptions())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Shopping,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_Shopping())
+            });            
+        }
 
         private static void PopulateGroupShoppingInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
         {
@@ -586,6 +789,13 @@ namespace GroupService.Repo.Helpers
                 SupportActivityId = (int)SupportActivities.Shopping,
                 GroupId = (int)Groups.AgeUKNottsBalderton,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Shopping
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.Shopping,
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Shopping
             });
         }
 
@@ -631,6 +841,13 @@ namespace GroupService.Repo.Helpers
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
                 GroupId = (int)Groups.AgeUKNottsBalderton,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Prescriptions
             });
         }
 
@@ -728,6 +945,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKNottsBalderton,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FriendlyChat
             });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FriendlyChat
+            });
         }
 
         private static void PopulateGroupHomeworkInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
@@ -814,6 +1038,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKNottsBalderton,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase
             });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.Other,
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Other
+            });
         }
 
         private static void PopulateGroupFaceCoveringInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
@@ -867,6 +1098,36 @@ namespace GroupService.Repo.Helpers
             });
         }
 
+        private static void PopulateGroupVolunteerSupportInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
+        {
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_VolunteerSupport
+            });
+        }
+
+        private static void PopulateGroupMealsOnWheelsInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
+        {
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.MealsOnWheels,
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsOnWheels
+            });
+        }
+
+        private static void PopulateGroupMealtimeCompanionInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
+        {
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.MealtimeCompanion,
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealtimeCompanion
+            });
+        }
+
         public static void PopulateGroupSupportActivityInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
         {
             PopulateGroupShoppingInstructions(entity);
@@ -881,6 +1142,9 @@ namespace GroupService.Repo.Helpers
             PopulateGroupFaceCoveringInstructions(entity);
             PopulateGroupWellbeingPackageInstructions(entity);
             PopulateGroupColdWeatherArmyInstructions(entity);
+            PopulateGroupVolunteerSupportInstructions(entity);
+            PopulateGroupMealsOnWheelsInstructions(entity);
+            PopulateGroupMealtimeCompanionInstructions(entity);
         }
     }
 }
