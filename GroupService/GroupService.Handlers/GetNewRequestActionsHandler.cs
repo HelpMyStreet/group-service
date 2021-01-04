@@ -22,7 +22,7 @@ namespace GroupService.Handlers
 
         public async Task<GetNewRequestActionsResponse> Handle(GetNewRequestActionsRequest request, CancellationToken cancellationToken)
         {
-            Dictionary<int, TaskAction> actions = new Dictionary<int, TaskAction>();
+            Dictionary<Guid, TaskAction> actions = new Dictionary<Guid, TaskAction>();
 
             foreach (Job j in request.NewJobsRequest.Jobs)
             {
@@ -90,7 +90,7 @@ namespace GroupService.Handlers
                     taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
                 }
 
-                actions.Add(j.JobID, taskAction);
+                actions.Add(j.Guid, taskAction);
             }
 
             return new GetNewRequestActionsResponse()
