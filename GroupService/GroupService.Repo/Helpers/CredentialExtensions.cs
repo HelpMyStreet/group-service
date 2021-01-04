@@ -26,6 +26,8 @@ namespace GroupService.Repo.Helpers
             CredentialSets.Add(Groups.AgeUKNottsBalderton, 8);
             CredentialSets.Add(Groups.AgeUKNorthWestKent, 9);
             CredentialSets.Add(Groups.AgeUKNottsNorthMuskham, 10);
+            CredentialSets.Add(Groups.AgeUKFavershamAndSittingbourne, 13);
+            CredentialSets.Add(Groups.AgeUKSouthKentCoast, 11);
         }
 
         public static void SetCredentials(this EntityTypeBuilder<Credential> entity)

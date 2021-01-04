@@ -40,11 +40,13 @@ namespace GroupService.UnitTests.AzureFunctions
         public async Task HappyPath_ReturnsGroup()
         {
             List<int> groups = new List<int>() { 1 };
-            Dictionary<int, TaskAction> actions = new Dictionary<int, TaskAction>();
+            Dictionary<Guid, TaskAction> actions = new Dictionary<Guid, TaskAction>();
             Dictionary<NewTaskAction, List<int>> taskActions = new Dictionary<NewTaskAction, List<int>>();
             taskActions.Add(NewTaskAction.MakeAvailableToGroups, groups);
 
-            actions.Add(1, new TaskAction() { TaskActions = taskActions });
+            Guid guid = Guid.NewGuid();
+
+            actions.Add(guid, new TaskAction() { TaskActions = taskActions });
             
             _response = new GetNewRequestActionsResponse()
             {
@@ -63,7 +65,7 @@ namespace GroupService.UnitTests.AzureFunctions
             Assert.IsTrue(deserialisedResponse.HasContent);
             Assert.IsTrue(deserialisedResponse.IsSuccessful);
             Assert.AreEqual(0, deserialisedResponse.Errors.Count());
-            Assert.AreEqual(groups, deserialisedResponse.Content.Actions[1].TaskActions[NewTaskAction.MakeAvailableToGroups]);
+            Assert.AreEqual(groups, deserialisedResponse.Content.Actions[guid].TaskActions[NewTaskAction.MakeAvailableToGroups]);
 
             _mediator.Verify(x => x.Send(It.IsAny<GetNewRequestActionsRequest>(), It.IsAny<CancellationToken>()),Times.Once);
         }
