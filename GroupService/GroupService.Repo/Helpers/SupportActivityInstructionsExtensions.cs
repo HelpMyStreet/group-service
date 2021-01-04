@@ -461,17 +461,17 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Contact us (Age UK South Kent Coast)",
-                        Detail = "Please contact Marigold Centre for the  Folkestone area on 01303 279031 or for the Deal Area contact the Deal Centre on 01304 372608 to book your meal (you provide the company, we’ll provide the food!).",
+                        Detail = "For the Folkestone area please contact the Marigold Centre on 01303 279031, or for the Deal area contact the Deal Centre on 01304 372608 to book your meal. (You provide the company; we’ll provide the food!).",
                     },
                     new Step()
                     {
                         Heading = "Enjoy your dinner together",
-                        Detail = "Use the details given to you to meet up at the person’s chosen mealtime ( usually between 12 noon and 1pm). Have a chat and provide some company for the person you’re joining.",
+                        Detail = "Use the details given to you to meet up at the person’s chosen mealtime (usually between 12 noon and 1pm). Have a chat and provide some company for the person you’re joining.",
                     },
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk. If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.",                        
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.",                        
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -499,7 +499,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk. If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."                        
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk."                        
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -517,7 +517,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Find out what help is needed",
-                        Detail = "Make sure you’ve seen all the details by clicking the ‘View more info link’. If you’re able to help, click to accept the request.",
+                        Detail = "Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.",
                     },
                     new Step()
                     {
@@ -527,7 +527,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”",
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -555,7 +555,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk ."
                    }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -572,7 +572,7 @@ namespace GroupService.Repo.Helpers
                 {
                     new Step()
                     {
-                        Heading = "Contact us Age UK South Kent Coast",
+                        Heading = "Contact us (Age UK South Kent Coast)",
                         Detail = "Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.",
                     },
                     new Step()
@@ -583,7 +583,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by mailto:emailingvolunteering@ageukskc.org.uk  If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by mailto:emailingvolunteering@ageukskc.org.uk."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -600,7 +600,7 @@ namespace GroupService.Repo.Helpers
                 {
                     new Step()
                     {
-                        Heading = "Contact us Age UK South Kent Coast",
+                        Heading = "Contact us (Age UK South Kent Coast)",
                         Detail = "Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.",
                     },
                     new Step()
@@ -611,7 +611,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."

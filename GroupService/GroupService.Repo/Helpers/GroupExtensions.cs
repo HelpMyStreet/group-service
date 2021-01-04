@@ -404,8 +404,8 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestorDetails
             {
                 GroupId = (int)Groups.AgeUKSouthKentCoast,
-                FirstName = "Mark",
-                LastName = "Colley",
+                FirstName = "Age UK",
+                LastName = "South Kent Coast",
                 OtherPhone = "01304 372608",
                 EmailAddress = "volunteering@ageukskc.org.uk",
                 AddressLine1 = "Age UK South Kent Coast",
