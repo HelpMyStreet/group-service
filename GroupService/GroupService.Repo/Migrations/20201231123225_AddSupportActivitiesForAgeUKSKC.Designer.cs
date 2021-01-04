@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201231123225_AddSupportActivitiesForAgeUKSKC")]
+    partial class AddSupportActivitiesForAgeUKSKC
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1343,21 +1345,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 6,
                             Name = "AgeUKNottsBalderton"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "AgeUKNWK"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "AgeUKSKC"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "AgeUKFandS"
                         });
                 });
 
@@ -2640,7 +2627,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -9,
                             Source = "",
-                            RegistrationFormVariant = (byte)7
+                            RegistrationFormVariant = (byte)0
                         },
                         new
                         {
@@ -2652,13 +2639,13 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -11,
                             Source = "",
-                            RegistrationFormVariant = (byte)8
+                            RegistrationFormVariant = (byte)0
                         },
                         new
                         {
                             GroupId = -13,
                             Source = "",
-                            RegistrationFormVariant = (byte)9
+                            RegistrationFormVariant = (byte)0
                         });
                 });
 
@@ -2950,8 +2937,8 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             AddressLine2 = "3 Park Street",
                             AddressLine3 = "Deal",
                             EmailAddress = "volunteering@ageukskc.org.uk",
-                            FirstName = "Age UK",
-                            LastName = "South Kent Coast",
+                            FirstName = "Mark",
+                            LastName = "Colley",
                             Locality = "Kent",
                             OtherPhone = "01304 372608",
                             Postcode = "CT14 6AG"
@@ -3119,32 +3106,32 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             SupportActivityInstructionsId = (short)16,
-                            Instructions = "{\"SupportActivityInstructions\":16,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"For the Folkestone area please contact the Marigold Centre on 01303 279031, or for the Deal area contact the Deal Centre on 01304 372608 to book your meal. (You provide the company; we’ll provide the food!).\"},{\"Heading\":\"Enjoy your dinner together\",\"Detail\":\"Use the details given to you to meet up at the person’s chosen mealtime (usually between 12 noon and 1pm). Have a chat and provide some company for the person you’re joining.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":16,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact Marigold Centre for the  Folkestone area on 01303 279031 or for the Deal Area contact the Deal Centre on 01304 372608 to book your meal (you provide the company, we’ll provide the food!).\"},{\"Heading\":\"Enjoy your dinner together\",\"Detail\":\"Use the details given to you to meet up at the person’s chosen mealtime ( usually between 12 noon and 1pm). Have a chat and provide some company for the person you’re joining.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk. If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)17,
-                            Instructions = "{\"SupportActivityInstructions\":17,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to arrange for the collection of hot meals and the delivery details.\"},{\"Heading\":\"Deliver the meals\",\"Detail\":\"Use the details given to you to deliver the meals. It would be great if you could also stop to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":17,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to arrange for the collection of hot meals and the delivery details.\"},{\"Heading\":\"Deliver the meals\",\"Detail\":\"Use the details given to you to deliver the meals. It would be great if you could also stop to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk. If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)18,
-                            Instructions = "{\"SupportActivityInstructions\":17,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":17,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info link’. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)19,
-                            Instructions = "{\"SupportActivityInstructions\":19,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk .\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":19,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)20,
-                            Instructions = "{\"SupportActivityInstructions\":20,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.\"},{\"Heading\":\"Collecting the prescription\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by mailto:emailingvolunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":20,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us Age UK South Kent Coast\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.\"},{\"Heading\":\"Collecting the prescription\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by mailto:emailingvolunteering@ageukskc.org.uk  If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)21,
-                            Instructions = "{\"SupportActivityInstructions\":21,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":21,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us Age UK South Kent Coast\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         });
                 });
 

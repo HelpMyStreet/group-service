@@ -80,6 +80,20 @@ namespace GroupService.Repo.Helpers
                 GroupName = "North Muskham Community Support",
                 GroupKey = "north-muskham"
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.AgeUKSouthKentCoast,
+                GroupName = "Age UK South Kent Coast",
+                GroupKey = "southkentcoast"
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.AgeUKFavershamAndSittingbourne,
+                GroupName = "Age UK Faversham & Sittingbourne",
+                GroupKey = "favershamandsittingbourne"
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -154,7 +168,7 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.AgeUKNorthWestKent,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNWK
             });
 
             entity.HasData(new RegistrationJourney
@@ -162,6 +176,20 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKNottsNorthMuskham,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNottsBalderton
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKSKC
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKFandS
             });
         }
 
@@ -284,7 +312,7 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKNorthWestKent_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = false,
+                RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
             });
 
@@ -298,6 +326,51 @@ namespace GroupService.Repo.Helpers
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
             });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKSouthKentCoast_Public,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = true,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKSouthKentCoast_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKFavershamAndSittingbourne_Public,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = true,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKFavershamAndSittingbourne_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+            });
+
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
@@ -327,6 +400,32 @@ namespace GroupService.Repo.Helpers
                 AddressLine3 = "",
                 Locality = "Lincoln",
                 Postcode = "LN1 1UQ"
+            });
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                FirstName = "Age UK",
+                LastName = "South Kent Coast",
+                OtherPhone = "01304 372608",
+                EmailAddress = "volunteering@ageukskc.org.uk",
+                AddressLine1 = "Age UK South Kent Coast",
+                AddressLine2 = "3 Park Street",
+                AddressLine3 = "Deal",
+                Locality = "Kent",
+                Postcode = "CT14 6AG"
+            });
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                FirstName = "Age UK",
+                LastName = "North West Kent",
+                OtherPhone = "01474 564898",
+                EmailAddress = "contactus@ageuknorthwestkent.org.uk",
+                AddressLine1 = "Age UK North West Kent",
+                AddressLine2 = "The Fleming Resource Centre",
+                AddressLine3 = "Gravesend",
+                Locality = "Kent",
+                Postcode = "DA12 1HJ"
             });
         }
     }
