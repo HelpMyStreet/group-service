@@ -85,14 +85,14 @@ namespace GroupService.Repo.Helpers
             {
                 Id = (int)Groups.AgeUKSouthKentCoast,
                 GroupName = "Age UK South Kent Coast",
-                GroupKey = "southkentcoast"
+                GroupKey = "ageuk-southkentcoast"
             });
 
             entity.HasData(new Group
             {
                 Id = (int)Groups.AgeUKFavershamAndSittingbourne,
                 GroupName = "Age UK Faversham & Sittingbourne",
-                GroupKey = "favershamandsittingbourne"
+                GroupKey = "ageuk-favershamandsittingbourne"
             });
         }
 
