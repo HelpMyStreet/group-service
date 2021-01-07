@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210107103555_KentGroupCredentialSets")]
+    partial class KentGroupCredentialSets
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,198 +42,6 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
-                            GroupId = -13,
-                            ActivityId = 1,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 2,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 3,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 4,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 5,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 6,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 7,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 8,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 9,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 10,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 11,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 12,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 13,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 14,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 15,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 16,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 1,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 2,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 3,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 4,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 5,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 6,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 7,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 8,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 9,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 10,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 11,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 12,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 13,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 14,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 15,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 16,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
                             GroupId = -10,
                             ActivityId = 1,
                             CredentialSetId = 10
@@ -1198,45 +1008,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 1,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 1,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 1,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 2,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 2,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 2,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 2,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1246,45 +1020,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 3,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 3,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 3,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 4,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 4,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 4,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 4,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1294,45 +1032,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 5,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 5,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 5,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 6,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 6,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 6,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 6,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1342,45 +1044,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 7,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 7,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 7,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 8,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 8,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 8,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 8,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1390,45 +1056,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 9,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 9,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 9,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 10,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 10,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 10,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 10,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1438,45 +1068,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 11,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 11,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 11,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 12,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 12,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 12,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 12,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1486,45 +1080,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 13,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 13,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 13,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 14,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 14,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 14,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 14,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1534,45 +1092,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 15,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 15,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 15,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 16,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 16,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 16,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 16,
-                            CredentialSetId = 131
                         });
                 });
 

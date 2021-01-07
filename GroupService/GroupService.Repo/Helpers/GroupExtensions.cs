@@ -367,7 +367,7 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKFavershamAndSittingbourne_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = false,
+                RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
             });
 
@@ -426,6 +426,19 @@ namespace GroupService.Repo.Helpers
                 AddressLine3 = "Gravesend",
                 Locality = "Kent",
                 Postcode = "DA12 1HJ"
+            });
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                FirstName = "Age UK",
+                LastName = "Faversham and Sittingbourne",
+                OtherPhone = "01795 532766",
+                EmailAddress = "volunteering@ageukfaversham.org.uk",
+                AddressLine1 = "Age UK Faversham and Sittingbourne",
+                AddressLine2 = "The Old Fire Station",
+                AddressLine3 = "Crescent Rd",
+                Locality = "Faversham",
+                Postcode = "ME13 7GU"
             });
         }
     }
