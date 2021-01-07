@@ -330,7 +330,7 @@ namespace GroupService.Repo.Helpers
             foreach (var group in groups)
             {
                 //foreach (var activity in activities)
-                foreach (var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward) && !x.Equals(SupportActivities.MealsOnWheels) && !x.Equals(SupportActivities.VolunteerSupport) && !x.Equals(SupportActivities.MealtimeCompanion)))
+                foreach (var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
                 {
                     entity.HasData(new ActivityCredentialSet
                     {
@@ -342,7 +342,7 @@ namespace GroupService.Repo.Helpers
             }
 
             //foreach (var activity in activities)
-            foreach(var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward) && !x.Equals(SupportActivities.MealsOnWheels) && !x.Equals(SupportActivities.VolunteerSupport) && !x.Equals(SupportActivities.MealtimeCompanion)))
+            foreach(var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
             {
                 entity.HasData(new ActivityCredentialSet
                 {
