@@ -14,6 +14,9 @@ namespace GroupService.Repo.Helpers
         private const int MANUALLY_VERIFIED = 1;
         private const int DBS_CHECK = 2;
         private const int AGEUKWIRRAL_DBS_CHECK_CREDENTIAL_SET = 71;
+        private const int AGEUKNWK_DBS_CHECK_CREDENTIAL_SET = 91;
+        private const int AGEUKSKC_DBS_CHECK_CREDENTIAL_SET = 111;
+        private const int AGEFANDS_DBS_CHECK_CREDENTIAL_SET = 131;
         public static void InitialiseCredentialSets()
         {
             CredentialSets.Add(Groups.Generic, 1);
@@ -26,8 +29,8 @@ namespace GroupService.Repo.Helpers
             CredentialSets.Add(Groups.AgeUKNottsBalderton, 8);
             CredentialSets.Add(Groups.AgeUKNorthWestKent, 9);
             CredentialSets.Add(Groups.AgeUKNottsNorthMuskham, 10);
-            CredentialSets.Add(Groups.AgeUKFavershamAndSittingbourne, 13);
             CredentialSets.Add(Groups.AgeUKSouthKentCoast, 11);
+            CredentialSets.Add(Groups.AgeUKFavershamAndSittingbourne, 13);
         }
 
         public static void SetCredentials(this EntityTypeBuilder<Credential> entity)
@@ -141,6 +144,90 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                CredentialId = DBS_CHECK,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "DBS Check",
+                HowToAchieve = "Email Age UK North West Kent to request or register your DBS check at mailto:contactus@ageuknorthwestkent.org.uk",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
+                $"Volunteer admins should follow internal processes for logging a DBS check.",
+                DisplayOrder = 3,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = "If you’re unable to verify with Yoti, email Age UK North West Kent to find out how they can check your ID at mailto:contactus@ageuknorthwestkent.org.uk",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                CredentialId = DBS_CHECK,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "DBS Check",
+                HowToAchieve = "Email Age UK South Kent Coast to request or register your DBS check at mailto:volunteering@ageukskc.org.uk",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
+                $"Volunteer admins should follow internal processes for logging a DBS check.",
+                DisplayOrder = 3,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = "If you’re unable to verify with Yoti, email Age UK South Kent Coast to find out how they can check your ID at mailto:volunteering@ageukskc.org.uk",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                CredentialId = DBS_CHECK,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "DBS Check",
+                HowToAchieve = "Email Age UK Faversham and Sittingbourne to request or register your DBS check at mailto:volunteering@ageukfaversham.org.uk",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
+                $"Volunteer admins should follow internal processes for logging a DBS check.",
+                DisplayOrder = 3,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Faversham and Sittingbourne to find out how they can check your ID at mailto:volunteering@ageukfaversham.org.uk",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -191,6 +278,48 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKNottsNorthMuskham,
                 CredentialId = MANUALLY_VERIFIED
             });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = CredentialSets[Groups.AgeUKNorthWestKent],
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                CredentialId = MANUALLY_VERIFIED
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = AGEUKNWK_DBS_CHECK_CREDENTIAL_SET,
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                CredentialId = DBS_CHECK
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = CredentialSets[Groups.AgeUKSouthKentCoast],
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                CredentialId = MANUALLY_VERIFIED
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = AGEUKSKC_DBS_CHECK_CREDENTIAL_SET,
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                CredentialId = DBS_CHECK
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = CredentialSets[Groups.AgeUKFavershamAndSittingbourne],
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                CredentialId = MANUALLY_VERIFIED
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = AGEFANDS_DBS_CHECK_CREDENTIAL_SET,
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                CredentialId = DBS_CHECK
+            });
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
@@ -200,7 +329,8 @@ namespace GroupService.Repo.Helpers
 
             foreach (var group in groups)
             {
-                foreach (var activity in activities)
+                //foreach (var activity in activities)
+                foreach (var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
                 {
                     entity.HasData(new ActivityCredentialSet
                     {
@@ -211,13 +341,35 @@ namespace GroupService.Repo.Helpers
                 }
             }
 
-            foreach (var activity in activities)
+            //foreach (var activity in activities)
+            foreach(var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
             {
                 entity.HasData(new ActivityCredentialSet
                 {
                     GroupId = (int)Groups.AgeUKWirral,
                     ActivityId = (int)activity,
                     CredentialSetId = AGEUKWIRRAL_DBS_CHECK_CREDENTIAL_SET
+                });
+
+                entity.HasData(new ActivityCredentialSet
+                {
+                    GroupId = (int)Groups.AgeUKNorthWestKent,
+                    ActivityId = (int)activity,
+                    CredentialSetId = AGEUKNWK_DBS_CHECK_CREDENTIAL_SET
+                });
+
+                entity.HasData(new ActivityCredentialSet
+                {
+                    GroupId = (int)Groups.AgeUKSouthKentCoast,
+                    ActivityId = (int)activity,
+                    CredentialSetId = AGEUKSKC_DBS_CHECK_CREDENTIAL_SET
+                });
+
+                entity.HasData(new ActivityCredentialSet
+                {
+                    GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                    ActivityId = (int)activity,
+                    CredentialSetId = AGEFANDS_DBS_CHECK_CREDENTIAL_SET
                 });
             }
         }

@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201230092707_NewLookupValues")]
+    partial class NewLookupValues
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,234 +42,6 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
-                            GroupId = -13,
-                            ActivityId = 1,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 2,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 3,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 4,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 5,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 6,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 7,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 8,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 9,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 10,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 11,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 12,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 13,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 14,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 15,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 16,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 21,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 22,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 23,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 1,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 2,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 3,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 4,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 5,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 6,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 7,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 8,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 9,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 10,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 11,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 12,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 13,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 14,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 15,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 16,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 21,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 22,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 23,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
                             GroupId = -10,
                             ActivityId = 1,
                             CredentialSetId = 10
@@ -360,24 +134,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -10,
                             ActivityId = 16,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 21,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 22,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            ActivityId = 23,
                             CredentialSetId = 10
                         },
                         new
@@ -478,24 +234,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 21,
-                            CredentialSetId = 9
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 22,
-                            CredentialSetId = 9
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 23,
-                            CredentialSetId = 9
-                        },
-                        new
-                        {
                             GroupId = -8,
                             ActivityId = 1,
                             CredentialSetId = 8
@@ -588,24 +326,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -8,
                             ActivityId = 16,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 21,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 22,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 23,
                             CredentialSetId = 8
                         },
                         new
@@ -706,24 +426,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -7,
-                            ActivityId = 21,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 22,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 23,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
                             GroupId = -6,
                             ActivityId = 1,
                             CredentialSetId = 6
@@ -816,24 +518,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -6,
                             ActivityId = 16,
-                            CredentialSetId = 6
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            ActivityId = 21,
-                            CredentialSetId = 6
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            ActivityId = 22,
-                            CredentialSetId = 6
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            ActivityId = 23,
                             CredentialSetId = 6
                         },
                         new
@@ -934,24 +618,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -5,
-                            ActivityId = 21,
-                            CredentialSetId = 5
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            ActivityId = 22,
-                            CredentialSetId = 5
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            ActivityId = 23,
-                            CredentialSetId = 5
-                        },
-                        new
-                        {
                             GroupId = -4,
                             ActivityId = 1,
                             CredentialSetId = 4
@@ -1044,24 +710,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -4,
                             ActivityId = 16,
-                            CredentialSetId = 4
-                        },
-                        new
-                        {
-                            GroupId = -4,
-                            ActivityId = 21,
-                            CredentialSetId = 4
-                        },
-                        new
-                        {
-                            GroupId = -4,
-                            ActivityId = 22,
-                            CredentialSetId = 4
-                        },
-                        new
-                        {
-                            GroupId = -4,
-                            ActivityId = 23,
                             CredentialSetId = 4
                         },
                         new
@@ -1162,24 +810,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -3,
-                            ActivityId = 21,
-                            CredentialSetId = 3
-                        },
-                        new
-                        {
-                            GroupId = -3,
-                            ActivityId = 22,
-                            CredentialSetId = 3
-                        },
-                        new
-                        {
-                            GroupId = -3,
-                            ActivityId = 23,
-                            CredentialSetId = 3
-                        },
-                        new
-                        {
                             GroupId = -2,
                             ActivityId = 1,
                             CredentialSetId = 2
@@ -1272,24 +902,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -2,
                             ActivityId = 16,
-                            CredentialSetId = 2
-                        },
-                        new
-                        {
-                            GroupId = -2,
-                            ActivityId = 21,
-                            CredentialSetId = 2
-                        },
-                        new
-                        {
-                            GroupId = -2,
-                            ActivityId = 22,
-                            CredentialSetId = 2
-                        },
-                        new
-                        {
-                            GroupId = -2,
-                            ActivityId = 23,
                             CredentialSetId = 2
                         },
                         new
@@ -1390,45 +1002,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -1,
-                            ActivityId = 21,
-                            CredentialSetId = 1
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            ActivityId = 22,
-                            CredentialSetId = 1
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            ActivityId = 23,
-                            CredentialSetId = 1
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 1,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 1,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 1,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 1,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1438,45 +1014,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 2,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 2,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 2,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 3,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 3,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 3,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 3,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1486,45 +1026,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 4,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 4,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 4,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 5,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 5,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 5,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 5,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1534,45 +1038,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 6,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 6,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 6,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 7,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 7,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 7,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 7,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1582,45 +1050,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 8,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 8,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 8,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 9,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 9,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 9,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 9,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1630,45 +1062,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 10,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 10,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 10,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 11,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 11,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 11,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 11,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1678,45 +1074,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 12,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 12,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 12,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 13,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 13,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 13,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 13,
-                            CredentialSetId = 131
                         },
                         new
                         {
@@ -1726,141 +1086,15 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 14,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 14,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 14,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 15,
                             CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -9,
-                            ActivityId = 15,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 15,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 15,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 16,
                             CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 16,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 16,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 16,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 21,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 21,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 21,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 21,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 22,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 22,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 22,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 22,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 23,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 23,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 23,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 23,
-                            CredentialSetId = 131
                         });
                 });
 
@@ -1919,18 +1153,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("CredentialSet","Group");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 13,
-                            GroupId = -13,
-                            CredentialId = -1
-                        },
-                        new
-                        {
-                            Id = 11,
-                            GroupId = -11,
-                            CredentialId = -1
-                        },
                         new
                         {
                             Id = 10,
@@ -2020,42 +1242,6 @@ namespace GroupService.Repo.Migrations
                             Id = 10,
                             GroupId = -10,
                             CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 9,
-                            GroupId = -9,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 91,
-                            GroupId = -9,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 11,
-                            GroupId = -11,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 111,
-                            GroupId = -11,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 13,
-                            GroupId = -13,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 131,
-                            GroupId = -13,
-                            CredentialId = 2
                         });
                 });
 
@@ -2159,21 +1345,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 6,
                             Name = "AgeUKNottsBalderton"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "AgeUKNWK"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "AgeUKSKC"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "AgeUKFandS"
                         });
                 });
 
@@ -2449,11 +1620,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 22,
                             Name = "VolunteerSupport"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Name = "MealtimeCompanion"
                         });
                 });
 
@@ -2545,36 +1711,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 15,
                             Name = "AgeUKLSL_General"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Name = "AgeUKSKC_MealtimeCompanion"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Name = "AgeUKSKC_MealsOnWheels"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Name = "HMS_VolunteerSupport"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Name = "AgeUKSKC_Other"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Name = "AgeUKSKC_Prescriptions"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Name = "AgeUKSKC_Shopping"
                         });
                 });
 
@@ -2717,13 +1853,13 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -11,
-                            GroupKey = "ageuk-southkentcoast",
+                            GroupKey = "southkentcoast",
                             GroupName = "Age UK South Kent Coast"
                         },
                         new
                         {
                             Id = -13,
-                            GroupKey = "ageuk-favershamandsittingbourne",
+                            GroupKey = "favershamandsittingbourne",
                             GroupName = "Age UK Faversham & Sittingbourne"
                         });
                 });
@@ -2780,34 +1916,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("GroupCredential","Group");
 
                     b.HasData(
-                        new
-                        {
-                            GroupId = -13,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
-                        },
                         new
                         {
                             GroupId = -10,
@@ -3017,90 +2125,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
 
 Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            CredentialId = 2,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "Email Age UK North West Kent to request or register your DBS check at mailto:contactus@ageuknorthwestkent.org.uk",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            CredentialId = 1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "If you’re unable to verify with Yoti, email Age UK North West Kent to find out how they can check your ID at mailto:contactus@ageuknorthwestkent.org.uk",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            CredentialId = 2,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "Email Age UK South Kent Coast to request or register your DBS check at mailto:volunteering@ageukskc.org.uk",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            CredentialId = 1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "If you’re unable to verify with Yoti, email Age UK South Kent Coast to find out how they can check your ID at mailto:volunteering@ageukskc.org.uk",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            CredentialId = 2,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "Email Age UK Faversham and Sittingbourne to request or register your DBS check at mailto:volunteering@ageukfaversham.org.uk",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            CredentialId = 1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Faversham and Sittingbourne to find out how they can check your ID at mailto:volunteering@ageukfaversham.org.uk",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         });
                 });
 
@@ -3238,18 +2262,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
-                            GroupId = -10,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)21
-                        },
-                        new
-                        {
                             GroupId = -1,
                             SupportActivityId = 2,
                             SupportActivityInstructionsId = (short)2
@@ -3286,18 +2298,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
-                            GroupId = -10,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)20
-                        },
-                        new
-                        {
                             GroupId = -1,
                             SupportActivityId = 3,
                             SupportActivityInstructionsId = (short)2
@@ -3317,12 +2317,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -6,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -10,
                             SupportActivityId = 3,
                             SupportActivityInstructionsId = (short)2
                         },
@@ -3376,18 +2370,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
-                            GroupId = -10,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
                             GroupId = -1,
                             SupportActivityId = 9,
                             SupportActivityInstructionsId = (short)5
@@ -3454,18 +2436,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
-                            GroupId = -10,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)19
-                        },
-                        new
-                        {
                             GroupId = -1,
                             SupportActivityId = 12,
                             SupportActivityInstructionsId = (short)7
@@ -3499,24 +2469,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -7,
                             SupportActivityId = 15,
                             SupportActivityInstructionsId = (short)12
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 21,
-                            SupportActivityInstructionsId = (short)17
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 23,
-                            SupportActivityInstructionsId = (short)16
                         });
                 });
 
@@ -3598,25 +2550,13 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -9,
                             Source = "",
-                            RegistrationFormVariant = (byte)7
+                            RegistrationFormVariant = (byte)0
                         },
                         new
                         {
                             GroupId = -10,
                             Source = "",
                             RegistrationFormVariant = (byte)6
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            Source = "",
-                            RegistrationFormVariant = (byte)8
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            Source = "",
-                            RegistrationFormVariant = (byte)9
                         });
                 });
 
@@ -3759,7 +2699,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             Source = "a",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)11,
-                            RequestorDefinedByGroup = true,
+                            RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             TargetGroups = (byte)4
                         },
@@ -3770,46 +2710,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             AccessRestrictedByRole = false,
                             RequestHelpFormVariant = (byte)12,
                             RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            Source = "",
-                            AccessRestrictedByRole = false,
-                            RequestHelpFormVariant = (byte)13,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = true,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)14,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            Source = "",
-                            AccessRestrictedByRole = false,
-                            RequestHelpFormVariant = (byte)15,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = true,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)16,
-                            RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
                             TargetGroups = (byte)4
                         });
@@ -3900,45 +2800,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             Locality = "Lincoln",
                             OtherPhone = "03455 564 144",
                             Postcode = "LN1 1UQ"
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            AddressLine1 = "Age UK South Kent Coast",
-                            AddressLine2 = "3 Park Street",
-                            AddressLine3 = "Deal",
-                            EmailAddress = "volunteering@ageukskc.org.uk",
-                            FirstName = "Age UK",
-                            LastName = "South Kent Coast",
-                            Locality = "Kent",
-                            OtherPhone = "01304 372608",
-                            Postcode = "CT14 6AG"
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            AddressLine1 = "Age UK North West Kent",
-                            AddressLine2 = "The Fleming Resource Centre",
-                            AddressLine3 = "Gravesend",
-                            EmailAddress = "contactus@ageuknorthwestkent.org.uk",
-                            FirstName = "Age UK",
-                            LastName = "North West Kent",
-                            Locality = "Kent",
-                            OtherPhone = "01474 564898",
-                            Postcode = "DA12 1HJ"
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            AddressLine1 = "Age UK Faversham and Sittingbourne",
-                            AddressLine2 = "The Old Fire Station",
-                            AddressLine3 = "Crescent Rd",
-                            EmailAddress = "volunteering@ageukfaversham.org.uk",
-                            FirstName = "Age UK",
-                            LastName = "Faversham and Sittingbourne",
-                            Locality = "Faversham",
-                            OtherPhone = "01795 532766",
-                            Postcode = "ME13 7GU"
                         });
                 });
 
@@ -4086,36 +2947,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             SupportActivityInstructionsId = (short)15,
                             Instructions = "{\"SupportActivityInstructions\":15,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Lincoln & South Lincolnshire)\",\"Detail\":\"Please contact mailto:volunteering@ageuklsl.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)16,
-                            Instructions = "{\"SupportActivityInstructions\":16,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"For the Folkestone area please contact the Marigold Centre on 01303 279031, or for the Deal area contact the Deal Centre on 01304 372608 to book your meal. (You provide the company; we’ll provide the food!).\"},{\"Heading\":\"Enjoy your dinner together\",\"Detail\":\"Use the details given to you to meet up at the person’s chosen mealtime (usually between 12 noon and 1pm). Have a chat and provide some company for the person you’re joining.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)17,
-                            Instructions = "{\"SupportActivityInstructions\":17,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to arrange for the collection of hot meals and the delivery details.\"},{\"Heading\":\"Deliver the meals\",\"Detail\":\"Use the details given to you to deliver the meals. It would be great if you could also stop to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)18,
-                            Instructions = "{\"SupportActivityInstructions\":17,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)19,
-                            Instructions = "{\"SupportActivityInstructions\":19,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk .\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)20,
-                            Instructions = "{\"SupportActivityInstructions\":20,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.\"},{\"Heading\":\"Collecting the prescription\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by mailto:emailingvolunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)21,
-                            Instructions = "{\"SupportActivityInstructions\":21,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         });
                 });
 
