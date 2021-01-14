@@ -482,7 +482,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsOnWheels,
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsToYourDoor,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -510,7 +510,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsOnWheels,
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsToYourDoor,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -718,7 +718,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsOnWheels,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsToYourDoor,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_MealOnWheels())
             });
 
@@ -1147,9 +1147,9 @@ namespace GroupService.Repo.Helpers
         {
             entity.HasData(new GroupSupportActivityInstructions()
             {
-                SupportActivityId = (int)SupportActivities.MealsOnWheels,
+                SupportActivityId = (int)SupportActivities.MealsToYourDoor,
                 GroupId = (int)Groups.AgeUKSouthKentCoast,
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsOnWheels
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsToYourDoor
             });
         }
 
