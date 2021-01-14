@@ -72,10 +72,8 @@ namespace GroupService.Handlers
 
         public async Task<GetNewShiftActionsResponse> Handle(GetNewShiftActionsRequest request, CancellationToken cancellationToken)
         {
-            List<TaskAction> taskActions = new List<TaskAction>();
-
-            TaskAction taskAction = new TaskAction() { TaskActions = new Dictionary<NewTaskAction, List<int>>() };
-
+            Dictionary<NewTaskAction,List<int>> taskActions = new Dictionary<NewTaskAction, List<int>>();
+            
             GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.ReferringGroupId, request.Source ?? "", cancellationToken);
 
             if (requestJourney == null)
@@ -84,20 +82,18 @@ namespace GroupService.Handlers
             }
 
             List<int> targetGroups = GetAvailableGroups(requestJourney, request.ReferringGroupId, request.Source, cancellationToken);
-            taskAction.TaskActions.Add(NewTaskAction.MakeAvailableToGroups, targetGroups);
-            taskAction.TaskActions.Add(NewTaskAction.SendRequestorConfirmation, null);
+            taskActions.Add(NewTaskAction.MakeAvailableToGroups, targetGroups);
+            taskActions.Add(NewTaskAction.SendRequestorConfirmation, null);
 
             if (requestJourney.RequestsRequireApproval)
             {
-                taskAction.TaskActions.Add(NewTaskAction.NotifyGroupAdmins, new List<int> { request.ReferringGroupId });
+                taskActions.Add(NewTaskAction.NotifyGroupAdmins, new List<int> { request.ReferringGroupId });
             }
             else
             {
-                taskAction.TaskActions.Add(NewTaskAction.SetStatusToOpen, null);
-                taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
+                taskActions.Add(NewTaskAction.SetStatusToOpen, null);
+                taskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
             }
-
-            taskActions.Add(taskAction);
 
             return new GetNewShiftActionsResponse()
             {
