@@ -49,6 +49,24 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKNottsNorthMuskham,
                 AllowAutonomousJoinersAndLeavers = true
             });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                AllowAutonomousJoinersAndLeavers = true
+            });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                AllowAutonomousJoinersAndLeavers = true
+            });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                AllowAutonomousJoinersAndLeavers = true
+            });
         }
     }
 }

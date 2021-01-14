@@ -71,6 +71,11 @@ namespace GroupService.Handlers
                 if (includeChildGroups)
                 {
                     targetGroups = _repository.GetGroupAndChildGroups(targetGroupId, cancellationToken);
+
+                    if (targetGroups == null)
+                    {
+                        throw new Exception("Null response from GetGroupAndChildGroups");
+                    }
                 }
                 else
                 {
@@ -86,7 +91,7 @@ namespace GroupService.Handlers
                 } 
                 else
                 {
-                    taskAction.TaskActions.Add(NewTaskAction.SetStatusToOpen, new List<int>());
+                    taskAction.TaskActions.Add(NewTaskAction.SetStatusToOpen, null);
                     taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
                 }
 
