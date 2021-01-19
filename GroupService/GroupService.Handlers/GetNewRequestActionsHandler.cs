@@ -36,6 +36,10 @@ namespace GroupService.Handlers
             {
                 requestTaskActions.Add(NewTaskAction.NotifyGroupAdmins, new List<int> { request.HelpRequest.ReferringGroupId });
             }
+            else
+            {
+                requestTaskActions.Add(NewTaskAction.SetStatusToOpen, null);
+            }
             requestTaskActions.Add(NewTaskAction.SendRequestorConfirmation, null);
 
             foreach (Job j in request.NewJobsRequest.Jobs)
@@ -93,7 +97,6 @@ namespace GroupService.Handlers
 
                 if (!requestJourney.RequestsRequireApproval)
                 {
-                    taskAction.TaskActions.Add(NewTaskAction.SetStatusToOpen, null);
                     taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
                 }
 
