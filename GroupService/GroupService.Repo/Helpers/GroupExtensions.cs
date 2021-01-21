@@ -94,6 +94,29 @@ namespace GroupService.Repo.Helpers
                 GroupName = "Age UK Faversham & Sittingbourne",
                 GroupKey = "ageuk-favershamandsittingbourne"
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.LincolnshireVolunteers,
+                GroupName = "Lincolnshire Volunteers",
+                GroupKey = "linc-volunteers"
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.PilgramHospitalBolton,
+                GroupName = "Pilgram Hospital Boston",
+                GroupKey = "boston-pilgramhospital",
+                ParentGroupId = (int)Groups.LincolnshireVolunteers
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.LincolnCountyHospital,
+                GroupName = "Lincoln County Hospital",
+                GroupKey = "linc-countyhospital",
+                ParentGroupId = (int)Groups.LincolnshireVolunteers
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -190,6 +213,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKFandS
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.LincolnshireVolunteers,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.LincolnshireVolunteers
             });
         }
 
@@ -371,6 +401,28 @@ namespace GroupService.Repo.Helpers
                 RequestsRequireApproval = false,
             });
 
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.PilgramHospitalBolton,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.LincolnCountyHospital,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+            });
+
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
@@ -439,6 +491,32 @@ namespace GroupService.Repo.Helpers
                 AddressLine3 = "Crescent Rd",
                 Locality = "Faversham",
                 Postcode = "ME13 7GU"
+            });
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.LincolnCountyHospital,
+                FirstName = "Lincoln County", //TODO Need to pass the correct details in
+                LastName = "Hospital",//TODO Need to pass the correct details in
+                OtherPhone = "",//TODO Need to pass the correct details in
+                EmailAddress = "jawwad@factor-50.co.uk",//TODO Need to pass the correct details in
+                AddressLine1 = "Lincoln County Hospital",
+                AddressLine2 = "Greetwell Road",
+                AddressLine3 = "Lincoln",
+                Locality = "Lincolnshire",
+                Postcode = "LN2 5QY"
+            });
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.PilgramHospitalBolton,
+                FirstName = "Pilgram Hospital",//TODO Need to pass the correct details in
+                LastName = "Boston",//TODO Need to pass the correct details in
+                OtherPhone = "",//TODO Need to pass the correct details in
+                EmailAddress = "jawwad@factor-50.co.uk",//TODO Need to pass the correct details in
+                AddressLine1 = "Pilgram Hospital",
+                AddressLine2 = "Sibsey Road",
+                AddressLine3 = "Boston",
+                Locality = "Lincolnshire",
+                Postcode = "PE21 9QS"
             });
         }
     }
