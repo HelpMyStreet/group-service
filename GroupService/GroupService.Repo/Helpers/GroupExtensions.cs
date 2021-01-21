@@ -498,7 +498,7 @@ namespace GroupService.Repo.Helpers
                 FirstName = "Lincoln County", //TODO Need to pass the correct details in
                 LastName = "Hospital",//TODO Need to pass the correct details in
                 OtherPhone = "",//TODO Need to pass the correct details in
-                EmailAddress = "jawwad@factor-50.co.uk",//TODO Need to pass the correct details in
+                EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
                 AddressLine1 = "Lincoln County Hospital",
                 AddressLine2 = "Greetwell Road",
                 AddressLine3 = "Lincoln",
@@ -511,7 +511,7 @@ namespace GroupService.Repo.Helpers
                 FirstName = "Pilgram Hospital",//TODO Need to pass the correct details in
                 LastName = "Boston",//TODO Need to pass the correct details in
                 OtherPhone = "",//TODO Need to pass the correct details in
-                EmailAddress = "jawwad@factor-50.co.uk",//TODO Need to pass the correct details in
+                EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
                 AddressLine1 = "Pilgram Hospital",
                 AddressLine2 = "Sibsey Road",
                 AddressLine3 = "Boston",
