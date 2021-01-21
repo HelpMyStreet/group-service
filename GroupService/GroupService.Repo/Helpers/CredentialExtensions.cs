@@ -17,6 +17,9 @@ namespace GroupService.Repo.Helpers
         private const int AGEUKNWK_DBS_CHECK_CREDENTIAL_SET = 91;
         private const int AGEUKSKC_DBS_CHECK_CREDENTIAL_SET = 111;
         private const int AGEFANDS_DBS_CHECK_CREDENTIAL_SET = 131;
+
+        private static List<Groups> EXCLUDE_GROUPS = new List<Groups>();
+
         public static void InitialiseCredentialSets()
         {
             CredentialSets.Add(Groups.Generic, 1);
@@ -31,6 +34,11 @@ namespace GroupService.Repo.Helpers
             CredentialSets.Add(Groups.AgeUKNottsNorthMuskham, 10);
             CredentialSets.Add(Groups.AgeUKSouthKentCoast, 11);
             CredentialSets.Add(Groups.AgeUKFavershamAndSittingbourne, 13);
+
+            EXCLUDE_GROUPS.Add(Groups.LincolnshireVolunteers);
+            EXCLUDE_GROUPS.Add(Groups.LincolnCountyHospital);
+            EXCLUDE_GROUPS.Add(Groups.PilgramHospitalBolton);
+
         }
 
         public static void SetCredentials(this EntityTypeBuilder<Credential> entity)
@@ -58,7 +66,7 @@ namespace GroupService.Repo.Helpers
         {
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
 
-            foreach (var group in groups)
+            foreach (var group in groups.Where(x => !EXCLUDE_GROUPS.Contains(x)))
             {
                 entity.HasData(new GroupCredential
                 {
@@ -234,7 +242,7 @@ namespace GroupService.Repo.Helpers
         {
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
 
-            foreach (var group in groups)
+            foreach (var group in groups.Where(x => !EXCLUDE_GROUPS.Contains(x)))
             {                
                 entity.HasData(new CredentialSet
                 {
@@ -327,7 +335,7 @@ namespace GroupService.Repo.Helpers
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
             var activities = Enum.GetValues(typeof(SupportActivities)).Cast<SupportActivities>();
 
-            foreach (var group in groups)
+            foreach (var group in groups.Where(x=> !EXCLUDE_GROUPS.Contains(x)))
             {
                 //foreach (var activity in activities)
                 foreach (var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
