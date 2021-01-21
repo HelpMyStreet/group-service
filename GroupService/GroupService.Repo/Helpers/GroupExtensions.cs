@@ -99,7 +99,7 @@ namespace GroupService.Repo.Helpers
             {
                 Id = (int)Groups.LincolnshireVolunteers,
                 GroupName = "Lincolnshire Volunteers",
-                GroupKey = "linc-volunteers"
+                GroupKey = "lincs-volunteers"
             });
 
             entity.HasData(new Group
@@ -114,7 +114,7 @@ namespace GroupService.Repo.Helpers
             {
                 Id = (int)Groups.LincolnCountyHospital,
                 GroupName = "Lincoln County Hospital",
-                GroupKey = "linc-countyhospital",
+                GroupKey = "lincs-countyhospital",
                 ParentGroupId = (int)Groups.LincolnshireVolunteers
             });
         }
