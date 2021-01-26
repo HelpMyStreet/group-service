@@ -399,6 +399,8 @@ namespace GroupService.Repo
                     .HasForeignKey(d => d.GroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_GroupLocation_Group");
+
+                entity.SetGroupLocationsConfiguration();
             });
 
             modelBuilder.Entity<UserCredential>(entity =>

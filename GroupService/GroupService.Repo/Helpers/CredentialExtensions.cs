@@ -37,8 +37,14 @@ namespace GroupService.Repo.Helpers
             CredentialSets.Add(Groups.AgeUKFavershamAndSittingbourne, 13);
 
             EXCLUDE_GROUPS.Add(Groups.LincolnshireVolunteers);
-            EXCLUDE_GROUPS.Add(Groups.LincolnCountyHospital);
-            EXCLUDE_GROUPS.Add(Groups.PilgramHospitalBolton);
+            EXCLUDE_GROUPS.Add(Groups.LouthPCN);
+            EXCLUDE_GROUPS.Add(Groups.GranthamPCN);
+            EXCLUDE_GROUPS.Add(Groups.SouthLincolnPCN);
+            EXCLUDE_GROUPS.Add(Groups.StamfordPCN);
+            EXCLUDE_GROUPS.Add(Groups.SpilsbyPCN);
+            EXCLUDE_GROUPS.Add(Groups.BostonPCN);
+            EXCLUDE_GROUPS.Add(Groups.LincolnPCN);
+            EXCLUDE_GROUPS.Add(Groups.LincolnPortlandPCN);
 
             EXCLUDE_ACTIVITIES.Add(SupportActivities.Steward);
             EXCLUDE_ACTIVITIES.Add(SupportActivities.BackOfficeAdmin);

@@ -618,6 +618,18 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_LincolnVaccineSupport()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport,
+                ActivityDetails = "Activity details for vaccine support",
+                Intro = null,
+                Steps = null,
+                Close = null
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -1163,6 +1175,65 @@ namespace GroupService.Repo.Helpers
             });
         }
 
+        private static void PopulateGroupVaccineSupportInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
+        {
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VaccineSupport,
+                GroupId = (int)Groups.LouthPCN,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VaccineSupport,
+                GroupId = (int)Groups.GranthamPCN,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VaccineSupport,
+                GroupId = (int)Groups.SouthLincolnPCN,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VaccineSupport,
+                GroupId = (int)Groups.StamfordPCN,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VaccineSupport,
+                GroupId = (int)Groups.SpilsbyPCN,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VaccineSupport,
+                GroupId = (int)Groups.BostonPCN,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VaccineSupport,
+                GroupId = (int)Groups.LincolnPCN,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VaccineSupport,
+                GroupId = (int)Groups.LincolnPortlandPCN,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport
+            });
+        }
+
         public static void PopulateGroupSupportActivityInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
         {
             PopulateGroupShoppingInstructions(entity);
@@ -1180,6 +1251,7 @@ namespace GroupService.Repo.Helpers
             PopulateGroupVolunteerSupportInstructions(entity);
             PopulateGroupMealsOnWheelsInstructions(entity);
             PopulateGroupMealtimeCompanionInstructions(entity);
+            PopulateGroupVaccineSupportInstructions(entity);
         }
     }
 }
