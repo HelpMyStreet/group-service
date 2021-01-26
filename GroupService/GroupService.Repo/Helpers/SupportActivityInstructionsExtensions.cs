@@ -756,7 +756,13 @@ namespace GroupService.Repo.Helpers
             {
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Shopping,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_Shopping())
-            });            
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_LincolnVaccineSupport())
+            });
         }
 
         private static void PopulateGroupShoppingInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)

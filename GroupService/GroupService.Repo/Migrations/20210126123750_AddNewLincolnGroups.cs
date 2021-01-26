@@ -46,16 +46,6 @@ namespace GroupService.Repo.Migrations
                     { -15, 4 }
                 });
 
-            migrationBuilder.InsertData(
-                schema: "Group",
-                table: "GroupSupportActivityInstructions",
-                columns: new[] { "GroupID", "SupportActivityID", "SupportActivityInstructionsID" },
-                values: new object[,]
-                {
-                    { -14, 24, (short)22 },
-                    { -15, 24, (short)22 }
-                });
-
             migrationBuilder.UpdateData(
                 schema: "Group",
                 table: "RequestorDetails",
@@ -73,6 +63,12 @@ namespace GroupService.Repo.Migrations
                 values: new object[] { "Louth County Hospital", "High Holme Rd", "Louth", "Louth Community", "LN11 0EU" });
 
             migrationBuilder.InsertData(
+                schema: "Group",
+                table: "SupportActivityInstructions",
+                columns: new[] { "SupportActivityInstructionsID", "Instructions" },
+                values: new object[] { (short)22, "{\"SupportActivityInstructions\":22,\"ActivityDetails\":\"Activity details for vaccine support\",\"Intro\":null,\"Steps\":null,\"Close\":null}" });
+
+            migrationBuilder.InsertData(
                 schema: "Lookup",
                 table: "SupportActivityInstructions",
                 columns: new[] { "ID", "Name" },
@@ -86,10 +82,10 @@ namespace GroupService.Repo.Migrations
                 {
                     { -16, 5 },
                     { -21, 10 },
-                    { -17, 6 },
+                    { -19, 8 },
                     { -18, 7 },
                     { -20, 9 },
-                    { -19, 8 }
+                    { -17, 6 }
                 });
 
             migrationBuilder.InsertData(
@@ -98,12 +94,14 @@ namespace GroupService.Repo.Migrations
                 columns: new[] { "GroupID", "SupportActivityID", "SupportActivityInstructionsID" },
                 values: new object[,]
                 {
-                    { -16, 24, (short)22 },
                     { -21, 24, (short)22 },
-                    { -17, 24, (short)22 },
-                    { -20, 24, (short)22 },
+                    { -19, 24, (short)22 },
                     { -18, 24, (short)22 },
-                    { -19, 24, (short)22 }
+                    { -17, 24, (short)22 },
+                    { -16, 24, (short)22 },
+                    { -15, 24, (short)22 },
+                    { -20, 24, (short)22 },
+                    { -14, 24, (short)22 }
                 });
 
             migrationBuilder.InsertData(
@@ -112,12 +110,12 @@ namespace GroupService.Repo.Migrations
                 columns: new[] { "GroupId", "AddressLine1", "AddressLine2", "AddressLine3", "EmailAddress", "FirstName", "LastName", "Locality", "MobilePhone", "OtherPhone", "Postcode" },
                 values: new object[,]
                 {
+                    { -21, "Portland Medical Practice", "60 Portland St", "Lincoln", "laura@factor-50.co.uk", "Lincoln Portland", "PCN", "", null, "", "LN5 7LB" },
+                    { -17, "Lakeside Healthcare at Stamford", "Wharf Rd", "Stamford", "laura@factor-50.co.uk", "Stamford", "PCN", "", null, "", "PE9 2DH" },
                     { -20, "Ruston Sports & Social Club", "Newark Road", "Lincoln", "laura@factor-50.co.uk", "Lincoln", "PCN", "", null, "", "LN6 8RN" },
                     { -19, "Sidings Medical Practice", "14 Sleaford Rd", "Boston", "laura@factor-50.co.uk", "Boston", "PCN", "", null, "", "PE21 8EG" },
-                    { -18, "Franklin Hall", "Halton Rd", "Spilsby", "laura@factor-50.co.uk", "Spilsby", "PCN", "", null, "", "PE23 5LA" },
-                    { -17, "Lakeside Healthcare at Stamford", "Wharf Rd", "Stamford", "laura@factor-50.co.uk", "Stamford", "PCN", "", null, "", "PE9 2DH" },
                     { -16, "Cliff Villages Medical Practice", "Mere Rd", "Waddington", "laura@factor-50.co.uk", "South Lincoln", "PCN", "Lincoln", null, "", "LN5 9NX" },
-                    { -21, "Portland Medical Practice", "60 Portland St", "Lincoln", "laura@factor-50.co.uk", "Lincoln Portland", "PCN", "", null, "", "LN5 7LB" }
+                    { -18, "Franklin Hall", "Halton Rd", "Spilsby", "laura@factor-50.co.uk", "Spilsby", "PCN", "", null, "", "PE23 5LA" }
                 });
 
             migrationBuilder.InsertData(
@@ -127,11 +125,11 @@ namespace GroupService.Repo.Migrations
                 values: new object[,]
                 {
                     { -21, "a", true, (byte)17, true, false, (byte)4 },
-                    { -18, "a", true, (byte)17, true, false, (byte)4 },
                     { -20, "a", true, (byte)17, true, false, (byte)4 },
+                    { -19, "a", true, (byte)17, true, false, (byte)4 },
+                    { -18, "a", true, (byte)17, true, false, (byte)4 },
                     { -17, "a", true, (byte)17, true, false, (byte)4 },
-                    { -16, "a", true, (byte)17, true, false, (byte)4 },
-                    { -19, "a", true, (byte)17, true, false, (byte)4 }
+                    { -16, "a", true, (byte)17, true, false, (byte)4 }
                 });
         }
 
@@ -346,6 +344,12 @@ namespace GroupService.Repo.Migrations
                 table: "Group",
                 keyColumn: "Id",
                 keyValue: -16);
+
+            migrationBuilder.DeleteData(
+                schema: "Group",
+                table: "SupportActivityInstructions",
+                keyColumn: "SupportActivityInstructionsID",
+                keyValue: (short)22);
 
             migrationBuilder.UpdateData(
                 schema: "Group",

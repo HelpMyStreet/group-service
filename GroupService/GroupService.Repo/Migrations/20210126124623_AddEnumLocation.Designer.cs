@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210126122916_AddNewLincolnGroups")]
-    partial class AddNewLincolnGroups
+    [Migration("20210126124623_AddEnumLocation")]
+    partial class AddEnumLocation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -2089,6 +2089,74 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 3,
                             Name = "Training"
+                        });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumLocation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("ID")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Location","Lookup");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "LincolnCountyHospital"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "PilgramHospitalBolton"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "LouthCommunityHospital"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "TableTennisClubGrantham"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "WaddingtonBranchSurgerySouthLincoln"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "StMarysMedicalPracticeStamford"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "FranklinHallSpilsby"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "SidingsMedicalPracticeBoston"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "RustonsSportsAndSocialClubLincoln"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "PortlandMedicalPracticeLincoln"
                         });
                 });
 
@@ -4511,6 +4579,11 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             SupportActivityInstructionsId = (short)21,
                             Instructions = "{\"SupportActivityInstructions\":21,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)22,
+                            Instructions = "{\"SupportActivityInstructions\":22,\"ActivityDetails\":\"Activity details for vaccine support\",\"Intro\":null,\"Steps\":null,\"Close\":null}"
                         });
                 });
 

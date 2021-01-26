@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210126123750_AddNewLincolnGroups")]
+    partial class AddNewLincolnGroups
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2087,74 +2089,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 3,
                             Name = "Training"
-                        });
-                });
-
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumLocation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("ID")
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Location","Lookup");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "LincolnCountyHospital"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "PilgramHospitalBolton"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "LouthCommunityHospital"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "TableTennisClubGrantham"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "WaddingtonBranchSurgerySouthLincoln"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "StMarysMedicalPracticeStamford"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "FranklinHallSpilsby"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "SidingsMedicalPracticeBoston"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "RustonsSportsAndSocialClubLincoln"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Name = "PortlandMedicalPracticeLincoln"
                         });
                 });
 

@@ -27,6 +27,7 @@ namespace GroupService.Repo
         public virtual DbSet<SecurityConfiguration> SecurityConfigurations { get; set; }
         public virtual DbSet<GroupNewRequestNotificationStrategy> GroupNewRequestNotificationStrategy { get; set; }
         public virtual DbSet<EnumRole> EnumRole { get; set; }
+        public virtual DbSet<EnumLocation> EnumLocation { get; set; }
         public virtual DbSet<EnumTargetGroup> EnumTargetGroup { get; set; }
         public virtual DbSet<EnumRequestHelpFormVariant> EnumRequestHelpFormVariant { get; set; }
         public virtual DbSet<EnumRegistrationFormVariant> EnumRegistrationFormVariant { get; set; }
@@ -90,6 +91,15 @@ namespace GroupService.Repo
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.SetEnumRoleData();
+            });
+
+            modelBuilder.Entity<EnumLocation>(entity =>
+            {
+                entity.ToTable("Location", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumLocationData();
             });
 
             modelBuilder.Entity<EnumTargetGroup>(entity =>
