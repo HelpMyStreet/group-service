@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210126114452_GroupLocations")]
+    partial class GroupLocations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2090,74 +2092,6 @@ namespace GroupService.Repo.Migrations
                         });
                 });
 
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumLocation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("ID")
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Location","Lookup");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "LincolnCountyHospital"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "PilgramHospitalBolton"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "LouthCommunityHospital"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "TableTennisClubGrantham"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "WaddingtonBranchSurgerySouthLincoln"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "StMarysMedicalPracticeStamford"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "FranklinHallSpilsby"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "SidingsMedicalPracticeBoston"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "RustonsSportsAndSocialClubLincoln"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Name = "PortlandMedicalPracticeLincoln"
-                        });
-                });
-
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumNewRequestNotificationStrategy", b =>
                 {
                     b.Property<int>("Id")
@@ -2658,11 +2592,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 21,
                             Name = "AgeUKSKC_Shopping"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Name = "Lincoln_VaccineSupport"
                         });
                 });
 
@@ -2822,58 +2751,16 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = -14,
-                            GroupKey = "pcn-louth",
-                            GroupName = "PCN Louth",
-                            ParentGroupId = -12
-                        },
-                        new
-                        {
                             Id = -15,
-                            GroupKey = "pcn-grantham",
-                            GroupName = "PCN Grantham",
+                            GroupKey = "boston-pilgramhospital",
+                            GroupName = "Pilgram Hospital Boston",
                             ParentGroupId = -12
                         },
                         new
                         {
-                            Id = -16,
-                            GroupKey = "pcn-southlincoln",
-                            GroupName = "PCN South Lincoln",
-                            ParentGroupId = -12
-                        },
-                        new
-                        {
-                            Id = -17,
-                            GroupKey = "pcn-stamford",
-                            GroupName = "PCN Stamford",
-                            ParentGroupId = -12
-                        },
-                        new
-                        {
-                            Id = -18,
-                            GroupKey = "pcn-spilsby",
-                            GroupName = "PCN Spilsby",
-                            ParentGroupId = -12
-                        },
-                        new
-                        {
-                            Id = -19,
-                            GroupKey = "pcn-boston",
-                            GroupName = "PCN Boston",
-                            ParentGroupId = -12
-                        },
-                        new
-                        {
-                            Id = -20,
-                            GroupKey = "pcn-lincoln",
-                            GroupName = "PCN Lincoln",
-                            ParentGroupId = -12
-                        },
-                        new
-                        {
-                            Id = -21,
-                            GroupKey = "pcn-lincoln-portland",
-                            GroupName = "PCN Lincoln Portland",
+                            Id = -14,
+                            GroupKey = "lincs-countyhospital",
+                            GroupName = "Lincoln County Hospital",
                             ParentGroupId = -12
                         });
                 });
@@ -3268,48 +3155,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         .HasName("PK_GROUP_LOCATION");
 
                     b.ToTable("GroupLocation","Group");
-
-                    b.HasData(
-                        new
-                        {
-                            GroupId = -14,
-                            LocationId = 3
-                        },
-                        new
-                        {
-                            GroupId = -15,
-                            LocationId = 4
-                        },
-                        new
-                        {
-                            GroupId = -16,
-                            LocationId = 5
-                        },
-                        new
-                        {
-                            GroupId = -17,
-                            LocationId = 6
-                        },
-                        new
-                        {
-                            GroupId = -18,
-                            LocationId = 7
-                        },
-                        new
-                        {
-                            GroupId = -19,
-                            LocationId = 8
-                        },
-                        new
-                        {
-                            GroupId = -20,
-                            LocationId = 9
-                        },
-                        new
-                        {
-                            GroupId = -21,
-                            LocationId = 10
-                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupNewRequestNotificationStrategy", b =>
@@ -3725,54 +3570,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -11,
                             SupportActivityId = 23,
                             SupportActivityInstructionsId = (short)16
-                        },
-                        new
-                        {
-                            GroupId = -14,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -15,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -16,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -17,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -18,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -19,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -20,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -21,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
                         });
                 });
 
@@ -4077,16 +3874,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
-                            GroupId = -14,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)17,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
                             GroupId = -15,
                             Source = "a",
                             AccessRestrictedByRole = true,
@@ -4097,57 +3884,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
-                            GroupId = -16,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)17,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -17,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)17,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -18,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)17,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -19,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)17,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -20,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)17,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -21,
+                            GroupId = -14,
                             Source = "a",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)17,
@@ -4285,106 +4022,28 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -14,
-                            AddressLine1 = "Louth County Hospital",
-                            AddressLine2 = "High Holme Rd",
-                            AddressLine3 = "Louth",
+                            AddressLine1 = "Lincoln County Hospital",
+                            AddressLine2 = "Greetwell Road",
+                            AddressLine3 = "Lincoln",
                             EmailAddress = "laura@factor-50.co.uk",
-                            FirstName = "Louth Community",
+                            FirstName = "Lincoln County",
                             LastName = "Hospital",
                             Locality = "Lincolnshire",
                             OtherPhone = "",
-                            Postcode = "LN11 0EU"
+                            Postcode = "LN2 5QY"
                         },
                         new
                         {
                             GroupId = -15,
-                            AddressLine1 = "Grantham Meres Leisure Centre Table Tennis Club",
-                            AddressLine2 = "Trent Road",
-                            AddressLine3 = "Grantham",
-                            EmailAddress = "laura@factor-50.co.uk",
-                            FirstName = "Grantham",
-                            LastName = "PCN",
-                            Locality = "",
-                            OtherPhone = "",
-                            Postcode = "NG31 7XQ"
-                        },
-                        new
-                        {
-                            GroupId = -16,
-                            AddressLine1 = "Cliff Villages Medical Practice",
-                            AddressLine2 = "Mere Rd",
-                            AddressLine3 = "Waddington",
-                            EmailAddress = "laura@factor-50.co.uk",
-                            FirstName = "South Lincoln",
-                            LastName = "PCN",
-                            Locality = "Lincoln",
-                            OtherPhone = "",
-                            Postcode = "LN5 9NX"
-                        },
-                        new
-                        {
-                            GroupId = -17,
-                            AddressLine1 = "Lakeside Healthcare at Stamford",
-                            AddressLine2 = "Wharf Rd",
-                            AddressLine3 = "Stamford",
-                            EmailAddress = "laura@factor-50.co.uk",
-                            FirstName = "Stamford",
-                            LastName = "PCN",
-                            Locality = "",
-                            OtherPhone = "",
-                            Postcode = "PE9 2DH"
-                        },
-                        new
-                        {
-                            GroupId = -18,
-                            AddressLine1 = "Franklin Hall",
-                            AddressLine2 = "Halton Rd",
-                            AddressLine3 = "Spilsby",
-                            EmailAddress = "laura@factor-50.co.uk",
-                            FirstName = "Spilsby",
-                            LastName = "PCN",
-                            Locality = "",
-                            OtherPhone = "",
-                            Postcode = "PE23 5LA"
-                        },
-                        new
-                        {
-                            GroupId = -19,
-                            AddressLine1 = "Sidings Medical Practice",
-                            AddressLine2 = "14 Sleaford Rd",
+                            AddressLine1 = "Pilgram Hospital",
+                            AddressLine2 = "Sibsey Road",
                             AddressLine3 = "Boston",
                             EmailAddress = "laura@factor-50.co.uk",
-                            FirstName = "Boston",
-                            LastName = "PCN",
-                            Locality = "",
+                            FirstName = "Pilgram Hospital",
+                            LastName = "Boston",
+                            Locality = "Lincolnshire",
                             OtherPhone = "",
-                            Postcode = "PE21 8EG"
-                        },
-                        new
-                        {
-                            GroupId = -20,
-                            AddressLine1 = "Ruston Sports & Social Club",
-                            AddressLine2 = "Newark Road",
-                            AddressLine3 = "Lincoln",
-                            EmailAddress = "laura@factor-50.co.uk",
-                            FirstName = "Lincoln",
-                            LastName = "PCN",
-                            Locality = "",
-                            OtherPhone = "",
-                            Postcode = "LN6 8RN"
-                        },
-                        new
-                        {
-                            GroupId = -21,
-                            AddressLine1 = "Portland Medical Practice",
-                            AddressLine2 = "60 Portland St",
-                            AddressLine3 = "Lincoln",
-                            EmailAddress = "laura@factor-50.co.uk",
-                            FirstName = "Lincoln Portland",
-                            LastName = "PCN",
-                            Locality = "",
-                            OtherPhone = "",
-                            Postcode = "LN5 7LB"
+                            Postcode = "PE21 9QS"
                         });
                 });
 
@@ -4577,11 +4236,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             SupportActivityInstructionsId = (short)21,
                             Instructions = "{\"SupportActivityInstructions\":21,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)22,
-                            Instructions = "{\"SupportActivityInstructions\":22,\"ActivityDetails\":\"Activity details for vaccine support\",\"Intro\":null,\"Steps\":null,\"Close\":null}"
                         });
                 });
 
