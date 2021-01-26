@@ -636,10 +636,10 @@ namespace GroupService.Repo
             }            
         }
 
-        public List<Location> GetLocations(int groupId, CancellationToken cancellationToken)
+        public List<Location> GetLocations(List<int> groups, CancellationToken cancellationToken)
         {
             return _context.GroupLocation
-                .Where(x => x.GroupId == groupId)
+                .Where(x => groups.Contains(x.GroupId))
                 .Select(x => (Location)x.LocationId)
                 .ToList();
         }
