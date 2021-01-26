@@ -635,5 +635,13 @@ namespace GroupService.Repo
                 throw new Exception($"Unable to find new request notification strategy for {groupId}");
             }            
         }
+
+        public List<Location> GetLocations(int groupId, CancellationToken cancellationToken)
+        {
+            return _context.GroupLocation
+                .Where(x => x.GroupId == groupId)
+                .Select(x => (Location)x.LocationId)
+                .ToList();
+        }
     }
 }
