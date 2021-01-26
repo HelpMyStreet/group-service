@@ -351,7 +351,6 @@ namespace GroupService.Repo.Helpers
             foreach (var group in groups.Where(x=> !EXCLUDE_GROUPS.Contains(x)))
             {
                 foreach (var activity in activities.Where(x => !EXCLUDE_ACTIVITIES.Contains(x)))
-                //foreach (var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
                 {
                     entity.HasData(new ActivityCredentialSet
                     {
@@ -363,7 +362,6 @@ namespace GroupService.Repo.Helpers
             }
 
             foreach (var activity in activities.Where(x => !EXCLUDE_ACTIVITIES.Contains(x)))
-            //foreach(var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
             {
                 entity.HasData(new ActivityCredentialSet
                 {
