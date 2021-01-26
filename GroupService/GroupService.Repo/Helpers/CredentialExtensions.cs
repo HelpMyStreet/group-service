@@ -19,6 +19,7 @@ namespace GroupService.Repo.Helpers
         private const int AGEFANDS_DBS_CHECK_CREDENTIAL_SET = 131;
 
         private static List<Groups> EXCLUDE_GROUPS = new List<Groups>();
+        private static List<SupportActivities> EXCLUDE_ACTIVITIES = new List<SupportActivities>();
 
         public static void InitialiseCredentialSets()
         {
@@ -39,6 +40,12 @@ namespace GroupService.Repo.Helpers
             EXCLUDE_GROUPS.Add(Groups.LincolnCountyHospital);
             EXCLUDE_GROUPS.Add(Groups.PilgramHospitalBolton);
 
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.Steward);
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.BackOfficeAdmin);
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.FrontOfHouseAdmin);
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.HealthcareAssistant);
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.HealthcareAssistant);
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.VaccineSupport);
         }
 
         public static void SetCredentials(this EntityTypeBuilder<Credential> entity)
@@ -337,8 +344,8 @@ namespace GroupService.Repo.Helpers
 
             foreach (var group in groups.Where(x=> !EXCLUDE_GROUPS.Contains(x)))
             {
-                //foreach (var activity in activities)
-                foreach (var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
+                foreach (var activity in activities.Where(x => !EXCLUDE_ACTIVITIES.Contains(x)))
+                //foreach (var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
                 {
                     entity.HasData(new ActivityCredentialSet
                     {
@@ -349,8 +356,8 @@ namespace GroupService.Repo.Helpers
                 }
             }
 
-            //foreach (var activity in activities)
-            foreach(var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
+            foreach (var activity in activities.Where(x => !EXCLUDE_ACTIVITIES.Contains(x)))
+            //foreach(var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
             {
                 entity.HasData(new ActivityCredentialSet
                 {
