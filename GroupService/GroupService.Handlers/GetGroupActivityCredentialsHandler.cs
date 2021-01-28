@@ -25,6 +25,12 @@ namespace GroupService.Handlers
                 request.GroupId, 
                 request.SupportActivityType.SupportActivity);
 
+            if(credentials == null)
+            {
+                throw new Exception($"Unexpected null value returned for GroupID={request.GroupId} and supportActivity={request.SupportActivityType.SupportActivity.ToString()}");
+
+            }
+
             return new GetGroupActivityCredentialsResponse()
             {
                 CredentialSets = credentials
