@@ -17,6 +17,9 @@ namespace GroupService.Repo.Helpers
         private const int AGEUKNWK_DBS_CHECK_CREDENTIAL_SET = 91;
         private const int AGEUKSKC_DBS_CHECK_CREDENTIAL_SET = 111;
         private const int AGEFANDS_DBS_CHECK_CREDENTIAL_SET = 131;
+
+        private static List<Groups> EXCLUDE_GROUPS = new List<Groups>();
+        private static List<SupportActivities> EXCLUDE_ACTIVITIES = new List<SupportActivities>();
         public static void InitialiseCredentialSets()
         {
             CredentialSets.Add(Groups.Generic, 1);
@@ -31,6 +34,23 @@ namespace GroupService.Repo.Helpers
             CredentialSets.Add(Groups.AgeUKNottsNorthMuskham, 10);
             CredentialSets.Add(Groups.AgeUKSouthKentCoast, 11);
             CredentialSets.Add(Groups.AgeUKFavershamAndSittingbourne, 13);
+
+            EXCLUDE_GROUPS.Add(Groups.LincolnshireVolunteers);
+            EXCLUDE_GROUPS.Add(Groups.LouthPCN);
+            EXCLUDE_GROUPS.Add(Groups.GranthamPCN);
+            EXCLUDE_GROUPS.Add(Groups.SouthLincolnPCN);
+            EXCLUDE_GROUPS.Add(Groups.StamfordPCN);
+            EXCLUDE_GROUPS.Add(Groups.SpilsbyPCN);
+            EXCLUDE_GROUPS.Add(Groups.BostonPCN);
+            EXCLUDE_GROUPS.Add(Groups.LincolnPCN);
+            EXCLUDE_GROUPS.Add(Groups.LincolnPortlandPCN);
+
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.Steward);
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.BackOfficeAdmin);
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.FrontOfHouseAdmin);
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.HealthcareAssistant);
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.HealthcareAssistant);
+            EXCLUDE_ACTIVITIES.Add(SupportActivities.VaccineSupport);
         }
 
         public static void SetCredentials(this EntityTypeBuilder<Credential> entity)
@@ -58,7 +78,7 @@ namespace GroupService.Repo.Helpers
         {
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
 
-            foreach (var group in groups)
+            foreach (var group in groups.Where(x=> !EXCLUDE_GROUPS.Contains(x)))
             {
                 entity.HasData(new GroupCredential
                 {
@@ -234,7 +254,7 @@ namespace GroupService.Repo.Helpers
         {
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
 
-            foreach (var group in groups)
+            foreach (var group in groups.Where(x => !EXCLUDE_GROUPS.Contains(x)))
             {                
                 entity.HasData(new CredentialSet
                 {
@@ -327,10 +347,9 @@ namespace GroupService.Repo.Helpers
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
             var activities = Enum.GetValues(typeof(SupportActivities)).Cast<SupportActivities>();
 
-            foreach (var group in groups)
+            foreach (var group in groups.Where(x => !EXCLUDE_GROUPS.Contains(x)))
             {
-                //foreach (var activity in activities)
-                foreach (var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
+                foreach (var activity in activities.Where(x => !EXCLUDE_ACTIVITIES.Contains(x)))
                 {
                     entity.HasData(new ActivityCredentialSet
                     {
@@ -341,8 +360,7 @@ namespace GroupService.Repo.Helpers
                 }
             }
 
-            //foreach (var activity in activities)
-            foreach(var activity in activities.Where(x => !x.Equals(SupportActivities.BackOfficeAdmin) && !x.Equals(SupportActivities.FrontOfHouseAdmin) && !x.Equals(SupportActivities.HealthcareAssistant) && !x.Equals(SupportActivities.Steward)))
+            foreach (var activity in activities.Where(x => !EXCLUDE_ACTIVITIES.Contains(x)))
             {
                 entity.HasData(new ActivityCredentialSet
                 {
