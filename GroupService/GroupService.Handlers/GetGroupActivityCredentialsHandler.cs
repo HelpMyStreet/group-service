@@ -19,18 +19,15 @@ namespace GroupService.Handlers
 
         public async Task<GetGroupActivityCredentialsResponse> Handle(GetGroupActivityCredentialsRequest request, CancellationToken cancellationToken)
         {
-            var result = _repository.GetGroupActivityCredentialSets(
+            List<List<int>> credentials;
+
+            credentials = _repository.GetGroupActivityCredentialSets(
                 request.GroupId, 
                 request.SupportActivityType.SupportActivity);
 
-            if (result == null || result.Count == 0)
-            {
-                throw new Exception($"Unable to retrieve credential set for GroupID={request.GroupId} and supportActivity={request.SupportActivityType.SupportActivity.ToString()}");
-            }
-
             return new GetGroupActivityCredentialsResponse()
             {
-                CredentialSets = result
+                CredentialSets = credentials
             };
         }
     }

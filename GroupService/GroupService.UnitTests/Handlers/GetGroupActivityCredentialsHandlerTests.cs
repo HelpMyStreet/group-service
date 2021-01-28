@@ -54,21 +54,5 @@ namespace GroupService.UnitTests
             Assert.AreEqual(_credentialSets, result.CredentialSets);
             _repository.Verify(x => x.GetGroupActivityCredentialSets(It.IsAny<int>(), It.IsAny<SupportActivities>()), Times.Once);
         }
-
-        [Test]
-        public void UnHappyPath_ThrowsException()
-        {
-            int groupId = 1;
-            SupportActivities activity = SupportActivities.Shopping;
-
-            _credentialSets = null;
-
-            Assert.ThrowsAsync<Exception>(() => _classUnderTest.Handle(new GetGroupActivityCredentialsRequest()
-            {
-                GroupId = groupId,
-                SupportActivityType = new SupportActivityType() { SupportActivity = activity }
-            }, CancellationToken.None));
-            _repository.Verify(x => x.GetGroupActivityCredentialSets(It.IsAny<int>(), It.IsAny<SupportActivities>()), Times.Once);
-        }
     }
 }
