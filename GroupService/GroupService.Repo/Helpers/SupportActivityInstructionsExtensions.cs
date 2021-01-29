@@ -623,11 +623,12 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport,
-                ActivityDetails = "Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. " +
-                "Duties may vary by location and could include a range of indoor or outdoor activities, such as: helping patients find their way around the " +
-                "vaccination centre, providing assistance and reassurance to patients while they are on site, general domestic duties (e.g. wiping down furniture and " +
-                "restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept this role and basic training will be provided " +
-                "on the day",
+                ActivityDetails = $"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. " +
+                $"Duties may vary by location and could include a range of indoor or outdoor activities, " +
+                $"such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site," +
+                $" general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept " +
+                $"this role and basic training will be provided on the day. For a fuller description please see the volunteer instructions which are available when you click to accept the " +
+                $"shift or by clicking ‘View more info’ on accepted shifts in the “My Shifts” tab.",
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
