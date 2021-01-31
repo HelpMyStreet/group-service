@@ -227,7 +227,8 @@ namespace GroupService.Repo
                     GroupId = group.Id,
                     GroupName = group.GroupName,
                     GroupKey = group.GroupKey,
-                    ParentGroupId = group.ParentGroupId
+                    ParentGroupId = group.ParentGroupId,
+                    ShiftsEnabled = group.ShiftsEnabled
                 };
             }
             else
@@ -247,7 +248,8 @@ namespace GroupService.Repo
                     GroupId = x.Id,
                     GroupKey = x.GroupKey,
                     GroupName = x.GroupName,
-                    ParentGroupId = x.ParentGroupId
+                    ParentGroupId = x.ParentGroupId,
+                    ShiftsEnabled = x.ShiftsEnabled
                 }).ToList();
             }
             else
