@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210131124334_AddShiftsEnabled")]
+    partial class AddShiftsEnabled
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2663,56 +2665,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 22,
                             Name = "Lincoln_VaccineSupport"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Name = "AgeUKNWK_MealsToYourDoor"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Name = "AgeUKNWK_Other"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Name = "AgeUKNWK_Prescriptions"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Name = "AgeUKNWK_Shopping"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            Name = "AgeUKFANDS_FriendlyChat"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            Name = "AgeUKFANDS_MealsToYourDoor"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Name = "AgeUKFANDS_MealtimeCompanion"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Name = "AgeUKFANDS_Transport"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Name = "AgeUKFANDS_VolunteerSupport"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Name = "AgeUKFANDS_Other"
                         });
                 });
 
@@ -2884,7 +2836,7 @@ namespace GroupService.Repo.Migrations
                             Id = -12,
                             GroupKey = "lincs-volunteers",
                             GroupName = "Lincolnshire Volunteers",
-                            ShiftsEnabled = true
+                            ShiftsEnabled = false
                         },
                         new
                         {
@@ -2892,7 +2844,7 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-louth",
                             GroupName = "PCN Louth",
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = false
                         },
                         new
                         {
@@ -2900,7 +2852,7 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-grantham",
                             GroupName = "PCN Grantham",
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = false
                         },
                         new
                         {
@@ -2908,7 +2860,7 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-southlincoln",
                             GroupName = "PCN South Lincoln",
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = false
                         },
                         new
                         {
@@ -2916,7 +2868,7 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-stamford",
                             GroupName = "PCN Stamford",
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = false
                         },
                         new
                         {
@@ -2924,7 +2876,7 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-spilsby",
                             GroupName = "PCN Spilsby",
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = false
                         },
                         new
                         {
@@ -2932,7 +2884,7 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-boston",
                             GroupName = "PCN Boston",
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = false
                         },
                         new
                         {
@@ -2940,7 +2892,7 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-lincoln",
                             GroupName = "PCN Lincoln",
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = false
                         },
                         new
                         {
@@ -2948,7 +2900,7 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-lincoln-portland",
                             GroupName = "PCN Lincoln Portland",
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = false
                         });
                 });
 
@@ -4525,11 +4477,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -11,
-                            AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -12,
                             AllowAutonomousJoinersAndLeavers = true
                         });
                 });
