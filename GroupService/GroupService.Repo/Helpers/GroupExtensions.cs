@@ -172,8 +172,8 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new Group
             {
                 Id = (int)Groups.LincolnPCN,
-                GroupName = "PCN Lincoln",
-                GroupKey = "pcn-lincoln",
+                GroupName = "APEX PCN",
+                GroupKey = "apex-pcn-lincoln",
                 ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true
             });
@@ -713,9 +713,9 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestorDetails
             {
                 GroupId = (int)Groups.LincolnPCN,
-                FirstName = "Lincoln",//TODO Need to pass the correct details in
-                LastName = "PCN",//TODO Need to pass the correct details in
-                OtherPhone = "",//TODO Need to pass the correct details in
+                FirstName = "Practice",//TODO Need to pass the correct details in
+                LastName = "Manager",//TODO Need to pass the correct details in
+                OtherPhone = "07340 066491",//TODO Need to pass the correct details in
                 EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
                 AddressLine1 = "Ruston Sports & Social Club",
                 AddressLine2 = "Newark Road",
