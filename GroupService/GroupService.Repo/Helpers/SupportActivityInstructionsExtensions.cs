@@ -636,7 +636,8 @@ namespace GroupService.Repo.Helpers
                     {
                         Heading = "Check the request details",
                         Detail = $"Make sure you’ve read all of the information available to you and are happy to provide the help" +
-                        $" that is needed. You’ll find a brief summary of the role by clicking the ‘View more info’ link on the request, and more detail in our role description and useful information attachment (link to attached PDF)."
+                        $" that is needed. You’ll find a brief summary of the role by clicking the ‘View more info’ link on the request, " +
+                        $"and more detail in our [role description and useful information](/pdf/lincs-vaccination-support/lincs-vaccination-support-role-description.pdf) attachment."
                     },
                     new Step()
                     {
