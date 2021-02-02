@@ -22,6 +22,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public string GroupName { get; set; }
         public string GroupKey { get; set; }
         public int? ParentGroupId { get; set; }
+        public bool ShiftsEnabled { get; set; }
 
         public virtual Group ParentGroup { get; set; }
         public virtual RequestorDetails RequestorDetails { get; set; }        

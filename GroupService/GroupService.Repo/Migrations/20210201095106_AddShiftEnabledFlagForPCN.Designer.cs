@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210201095106_AddShiftEnabledFlagForPCN")]
+    partial class AddShiftEnabledFlagForPCN
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2937,8 +2939,8 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -20,
-                            GroupKey = "apex-pcn-lincoln",
-                            GroupName = "APEX PCN",
+                            GroupKey = "pcn-lincoln",
+                            GroupName = "PCN Lincoln",
                             ParentGroupId = -12,
                             ShiftsEnabled = true
                         },
@@ -4441,10 +4443,10 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             AddressLine2 = "Newark Road",
                             AddressLine3 = "Lincoln",
                             EmailAddress = "laura@factor-50.co.uk",
-                            FirstName = "Practice",
-                            LastName = "Manager",
+                            FirstName = "Lincoln",
+                            LastName = "PCN",
                             Locality = "",
-                            OtherPhone = "07340 066491",
+                            OtherPhone = "",
                             Postcode = "LN6 8RN"
                         },
                         new
@@ -4525,11 +4527,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -11,
-                            AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -12,
                             AllowAutonomousJoinersAndLeavers = true
                         });
                 });
@@ -4660,7 +4657,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             SupportActivityInstructionsId = (short)22,
-                            Instructions = "{\"SupportActivityInstructions\":22,\"ActivityDetails\":\"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. Duties may vary by location and could include a range of indoor or outdoor activities, such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site, general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept this role and basic training will be provided on the day. For a fuller description please see the volunteer instructions which are available when you click to accept the shift or by clicking ‘View more info’ on accepted shifts in the “My Shifts” tab.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Make sure you’ve read all of the information available to you and are happy to provide the help that is needed. You’ll find a brief summary of the role by clicking the ‘View more info’ link on the request, and more detail in our role description and useful information attachment (link to attached PDF).\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"Once you've accepted a shift you will get a confirmation email straight away and a reminder email the day before your shift. Please arrive 15 minutes before the start of your shift to receive an induction and basic training for the role. Please also bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat). If for any reason you need to cancel you shift, let us know as soon as possible by updating the request in the “My Shifts” tab and clicking “Can’t Do”.\"},{\"Heading\":\"Feedback\",\"Detail\":\"Once you’ve completed a shift it was be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab, as well as links to submit feedback to the organisation(s) who requested and received your help.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":22,\"ActivityDetails\":\"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. Duties may vary by location and could include a range of indoor or outdoor activities, such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site, general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept this role and basic training will be provided on the day\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Make sure you’ve read all the request details and are happy you can provide the help that is needed. You’ll find a brief summary of the role by clicking the ‘View more info’ link on the request, and more detail in our role description and useful information attachment (link to attached PDF).\"},{\"Heading\":\"Turn up and help (should be 2 but can’t make the numbering work)\",\"Detail\":\"When the help is needed, turn up to complete your shift. Make sure you arrive 15 minutes to receive an induction and basic training for the role. Please also bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat).\"},{\"Heading\":\"Feedback\",\"Detail\":\"Once you’ve completed a shift it was be marked as complete automatically. You’ll still be able to find the details of completed activity in “My Shifts”, as well as links to submit feedback to the organisation(s) who requested and received your help.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         });
                 });
 

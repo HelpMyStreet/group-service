@@ -67,6 +67,12 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKSouthKentCoast,
                 AllowAutonomousJoinersAndLeavers = true
             });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.LincolnshireVolunteers,
+                AllowAutonomousJoinersAndLeavers = true
+            });
         }
     }
 }
