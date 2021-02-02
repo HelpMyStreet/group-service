@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210129163429_UpdateLincolnVaccInstructions")]
+    partial class UpdateLincolnVaccInstructions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2663,56 +2665,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 22,
                             Name = "Lincoln_VaccineSupport"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Name = "AgeUKNWK_MealsToYourDoor"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Name = "AgeUKNWK_Other"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Name = "AgeUKNWK_Prescriptions"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Name = "AgeUKNWK_Shopping"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            Name = "AgeUKFANDS_FriendlyChat"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            Name = "AgeUKFANDS_MealsToYourDoor"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Name = "AgeUKFANDS_MealtimeCompanion"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Name = "AgeUKFANDS_Transport"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Name = "AgeUKFANDS_VolunteerSupport"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Name = "AgeUKFANDS_Other"
                         });
                 });
 
@@ -2776,9 +2728,6 @@ namespace GroupService.Repo.Migrations
                     b.Property<int?>("ParentGroupId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("ShiftsEnabled")
-                        .HasColumnType("bit");
-
                     b.HasKey("Id");
 
                     b.HasIndex("GroupKey")
@@ -2799,156 +2748,135 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = -1,
                             GroupKey = "Generic",
-                            GroupName = "HelpMyStreet",
-                            ShiftsEnabled = false
+                            GroupName = "HelpMyStreet"
                         },
                         new
                         {
                             Id = -2,
                             GroupKey = "ftlos",
-                            GroupName = "For the Love of Scrubs",
-                            ShiftsEnabled = false
+                            GroupName = "For the Love of Scrubs"
                         },
                         new
                         {
                             Id = -3,
                             GroupKey = "ageuklsl",
-                            GroupName = "Age UK Lincoln & South Lincolnshire",
-                            ShiftsEnabled = false
+                            GroupName = "Age UK Lincoln & South Lincolnshire"
                         },
                         new
                         {
                             Id = -4,
                             GroupKey = "hlp",
-                            GroupName = "Healthy London Partnership",
-                            ShiftsEnabled = false
+                            GroupName = "Healthy London Partnership"
                         },
                         new
                         {
                             Id = -5,
                             GroupKey = "tankersley",
-                            GroupName = "Tankersley & Pilley",
-                            ShiftsEnabled = false
+                            GroupName = "Tankersley & Pilley"
                         },
                         new
                         {
                             Id = -6,
                             GroupKey = "ruddington",
-                            GroupName = "Ruddington",
-                            ShiftsEnabled = false
+                            GroupName = "Ruddington"
                         },
                         new
                         {
                             Id = -7,
                             GroupKey = "ageukwirral",
-                            GroupName = "Age UK Wirral",
-                            ShiftsEnabled = false
+                            GroupName = "Age UK Wirral"
                         },
                         new
                         {
                             Id = -8,
                             GroupKey = "balderton",
-                            GroupName = "Balderton Community Support",
-                            ShiftsEnabled = false
+                            GroupName = "Balderton Community Support"
                         },
                         new
                         {
                             Id = -9,
                             GroupKey = "ageuknwkent",
-                            GroupName = "AgeUK North West Kent",
-                            ShiftsEnabled = false
+                            GroupName = "AgeUK North West Kent"
                         },
                         new
                         {
                             Id = -10,
                             GroupKey = "north-muskham",
-                            GroupName = "North Muskham Community Support",
-                            ShiftsEnabled = false
+                            GroupName = "North Muskham Community Support"
                         },
                         new
                         {
                             Id = -11,
                             GroupKey = "ageuk-southkentcoast",
-                            GroupName = "Age UK South Kent Coast",
-                            ShiftsEnabled = false
+                            GroupName = "Age UK South Kent Coast"
                         },
                         new
                         {
                             Id = -13,
                             GroupKey = "ageuk-favershamandsittingbourne",
-                            GroupName = "Age UK Faversham & Sittingbourne",
-                            ShiftsEnabled = false
+                            GroupName = "Age UK Faversham & Sittingbourne"
                         },
                         new
                         {
                             Id = -12,
                             GroupKey = "lincs-volunteers",
-                            GroupName = "Lincolnshire Volunteers",
-                            ShiftsEnabled = true
+                            GroupName = "Lincolnshire Volunteers"
                         },
                         new
                         {
                             Id = -14,
                             GroupKey = "pcn-louth",
                             GroupName = "PCN Louth",
-                            ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ParentGroupId = -12
                         },
                         new
                         {
                             Id = -15,
                             GroupKey = "pcn-grantham",
                             GroupName = "PCN Grantham",
-                            ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ParentGroupId = -12
                         },
                         new
                         {
                             Id = -16,
                             GroupKey = "pcn-southlincoln",
                             GroupName = "PCN South Lincoln",
-                            ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ParentGroupId = -12
                         },
                         new
                         {
                             Id = -17,
                             GroupKey = "pcn-stamford",
                             GroupName = "PCN Stamford",
-                            ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ParentGroupId = -12
                         },
                         new
                         {
                             Id = -18,
                             GroupKey = "pcn-spilsby",
                             GroupName = "PCN Spilsby",
-                            ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ParentGroupId = -12
                         },
                         new
                         {
                             Id = -19,
                             GroupKey = "pcn-boston",
                             GroupName = "PCN Boston",
-                            ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ParentGroupId = -12
                         },
                         new
                         {
                             Id = -20,
-                            GroupKey = "apex-pcn-lincoln",
-                            GroupName = "APEX PCN",
-                            ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            GroupKey = "pcn-lincoln",
+                            GroupName = "PCN Lincoln",
+                            ParentGroupId = -12
                         },
                         new
                         {
                             Id = -21,
                             GroupKey = "pcn-lincoln-portland",
                             GroupName = "PCN Lincoln Portland",
-                            ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ParentGroupId = -12
                         });
                 });
 
@@ -4441,10 +4369,10 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             AddressLine2 = "Newark Road",
                             AddressLine3 = "Lincoln",
                             EmailAddress = "laura@factor-50.co.uk",
-                            FirstName = "Practice",
-                            LastName = "Manager",
+                            FirstName = "Lincoln",
+                            LastName = "PCN",
                             Locality = "",
-                            OtherPhone = "07340 066491",
+                            OtherPhone = "",
                             Postcode = "LN6 8RN"
                         },
                         new
@@ -4525,11 +4453,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -11,
-                            AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -12,
                             AllowAutonomousJoinersAndLeavers = true
                         });
                 });
@@ -4660,7 +4583,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             SupportActivityInstructionsId = (short)22,
-                            Instructions = "{\"SupportActivityInstructions\":22,\"ActivityDetails\":\"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. Duties may vary by location and could include a range of indoor or outdoor activities, such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site, general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept this role and basic training will be provided on the day. For a fuller description please see the volunteer instructions which are available when you click to accept the shift or by clicking ‘View more info’ on accepted shifts in the “My Shifts” tab.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Make sure you’ve read all of the information available to you and are happy to provide the help that is needed. You’ll find a brief summary of the role by clicking the ‘View more info’ link on the request, and more detail in our role description and useful information attachment (link to attached PDF).\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"Once you've accepted a shift you will get a confirmation email straight away and a reminder email the day before your shift. Please arrive 15 minutes before the start of your shift to receive an induction and basic training for the role. Please also bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat). If for any reason you need to cancel you shift, let us know as soon as possible by updating the request in the “My Shifts” tab and clicking “Can’t Do”.\"},{\"Heading\":\"Feedback\",\"Detail\":\"Once you’ve completed a shift it was be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab, as well as links to submit feedback to the organisation(s) who requested and received your help.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":22,\"ActivityDetails\":\"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. Duties may vary by location and could include a range of indoor or outdoor activities, such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site, general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept this role and basic training will be provided on the day\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Make sure you’ve read all of the information available to you and are happy to provide the help that is needed. You’ll find a brief summary of the role by clicking the ‘View more info’ link on the request, and more detail in our role description and useful information attachment (link to attached PDF).\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"Once you've accepted a shift you will get a confirmation email straight away and a reminder email the day before your shift. Please arrive 15 minutes before the start of your shift to receive an induction and basic training for the role. Please also bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat). If for any reason you need to cancel you shift, let us know as soon as possible by updating the request in the “My Shifts” tab and clicking “Can’t Do”.\"},{\"Heading\":\"Feedback\",\"Detail\":\"Once you’ve completed a shift it was be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab, as well as links to submit feedback to the organisation(s) who requested and received your help.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         });
                 });
 
