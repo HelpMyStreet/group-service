@@ -2348,6 +2348,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 17,
                             Name = "LincolnshireVolunteers"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Name = "ChildGroupSelector"
                         });
                 });
 
@@ -4145,6 +4150,16 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             Source = "a",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)16,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)18,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
                             TargetGroups = (byte)4

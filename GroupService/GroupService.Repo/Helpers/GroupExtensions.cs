@@ -472,6 +472,17 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
+                GroupId = (int)Groups.LincolnshireVolunteers,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.ChildGroupSelector,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
                 GroupId = (int)Groups.LouthPCN,
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
