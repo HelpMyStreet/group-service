@@ -20,6 +20,7 @@ namespace GroupService.Repo.Helpers
 
         private static List<Groups> EXCLUDE_GROUPS = new List<Groups>();
         private static List<SupportActivities> EXCLUDE_ACTIVITIES = new List<SupportActivities>();
+
         public static void InitialiseCredentialSets()
         {
             CredentialSets.Add(Groups.Generic, 1);
@@ -78,7 +79,7 @@ namespace GroupService.Repo.Helpers
         {
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
 
-            foreach (var group in groups.Where(x=> !EXCLUDE_GROUPS.Contains(x)))
+            foreach (var group in groups.Where(x => !EXCLUDE_GROUPS.Contains(x)))
             {
                 entity.HasData(new GroupCredential
                 {
@@ -347,7 +348,7 @@ namespace GroupService.Repo.Helpers
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
             var activities = Enum.GetValues(typeof(SupportActivities)).Cast<SupportActivities>();
 
-            foreach (var group in groups.Where(x => !EXCLUDE_GROUPS.Contains(x)))
+            foreach (var group in groups.Where(x=> !EXCLUDE_GROUPS.Contains(x)))
             {
                 foreach (var activity in activities.Where(x => !EXCLUDE_ACTIVITIES.Contains(x)))
                 {

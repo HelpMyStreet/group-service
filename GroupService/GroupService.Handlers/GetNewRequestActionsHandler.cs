@@ -23,20 +23,31 @@ namespace GroupService.Handlers
         public async Task<GetNewRequestActionsResponse> Handle(GetNewRequestActionsRequest request, CancellationToken cancellationToken)
         {
             Dictionary<Guid, TaskAction> actions = new Dictionary<Guid, TaskAction>();
+            Dictionary<NewTaskAction, List<int>> requestTaskActions = new Dictionary<NewTaskAction, List<int>>();
+
+            GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.HelpRequest.ReferringGroupId, request.HelpRequest.Source ?? "", cancellationToken);
+
+            if (requestJourney == null)
+            {
+                throw new Exception("null response from GetRequestHelpFormVariant");
+            }
+
+            if (requestJourney.RequestsRequireApproval)
+            {
+                requestTaskActions.Add(NewTaskAction.NotifyGroupAdmins, new List<int> { request.HelpRequest.ReferringGroupId });
+            }
+            else
+            {
+                requestTaskActions.Add(NewTaskAction.SetStatusToOpen, null);
+            }
+            requestTaskActions.Add(NewTaskAction.SendRequestorConfirmation, null);
 
             foreach (Job j in request.NewJobsRequest.Jobs)
             {
                 TaskAction taskAction = new TaskAction() { TaskActions = new Dictionary<NewTaskAction, List<int>>() };
                 
                 bool faceMaskRequest = j.SupportActivity == SupportActivities.FaceMask;
-
-                GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(request.HelpRequest.ReferringGroupId, request.HelpRequest.Source ?? "", cancellationToken);
-
-                if (requestJourney == null)
-                {
-                    throw new Exception("null response from GetRequestHelpFormVariant");
-                }
-
+               
                 int targetGroupId;
                 bool includeChildGroups;
 
@@ -82,16 +93,10 @@ namespace GroupService.Handlers
                     targetGroups = new List<int>() { targetGroupId };
                 }
 
-                taskAction.TaskActions.Add(NewTaskAction.MakeAvailableToGroups, targetGroups);
-                taskAction.TaskActions.Add(NewTaskAction.SendRequestorConfirmation, null);
+                taskAction.TaskActions.Add(NewTaskAction.MakeAvailableToGroups, targetGroups);                
 
-                if (requestJourney.RequestsRequireApproval)
+                if (!requestJourney.RequestsRequireApproval)
                 {
-                    taskAction.TaskActions.Add(NewTaskAction.NotifyGroupAdmins, new List<int> { request.HelpRequest.ReferringGroupId });
-                } 
-                else
-                {
-                    taskAction.TaskActions.Add(NewTaskAction.SetStatusToOpen, null);
                     taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
                 }
 
@@ -100,7 +105,8 @@ namespace GroupService.Handlers
 
             return new GetNewRequestActionsResponse()
             {
-                Actions = actions
+                Actions = actions,
+                RequestTaskActions = requestTaskActions
             };
         }
     }

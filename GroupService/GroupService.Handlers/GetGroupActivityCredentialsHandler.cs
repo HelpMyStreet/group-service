@@ -19,18 +19,21 @@ namespace GroupService.Handlers
 
         public async Task<GetGroupActivityCredentialsResponse> Handle(GetGroupActivityCredentialsRequest request, CancellationToken cancellationToken)
         {
-            var result = _repository.GetGroupActivityCredentialSets(
+            List<List<int>> credentials;
+
+            credentials = _repository.GetGroupActivityCredentialSets(
                 request.GroupId, 
                 request.SupportActivityType.SupportActivity);
 
-            if (result == null || result.Count == 0)
+            if(credentials == null)
             {
-                throw new Exception($"Unable to retrieve credential set for GroupID={request.GroupId} and supportActivity={request.SupportActivityType.SupportActivity.ToString()}");
+                throw new Exception($"Unexpected null value returned for GroupID={request.GroupId} and supportActivity={request.SupportActivityType.SupportActivity.ToString()}");
+
             }
 
             return new GetGroupActivityCredentialsResponse()
             {
-                CredentialSets = result
+                CredentialSets = credentials
             };
         }
     }

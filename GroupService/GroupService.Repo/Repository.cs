@@ -227,7 +227,8 @@ namespace GroupService.Repo
                     GroupId = group.Id,
                     GroupName = group.GroupName,
                     GroupKey = group.GroupKey,
-                    ParentGroupId = group.ParentGroupId
+                    ParentGroupId = group.ParentGroupId,
+                    ShiftsEnabled = group.ShiftsEnabled
                 };
             }
             else
@@ -247,7 +248,8 @@ namespace GroupService.Repo
                     GroupId = x.Id,
                     GroupKey = x.GroupKey,
                     GroupName = x.GroupName,
-                    ParentGroupId = x.ParentGroupId
+                    ParentGroupId = x.ParentGroupId,
+                    ShiftsEnabled = x.ShiftsEnabled
                 }).ToList();
             }
             else
@@ -634,6 +636,14 @@ namespace GroupService.Repo
             {
                 throw new Exception($"Unable to find new request notification strategy for {groupId}");
             }            
+        }
+
+        public List<Location> GetLocations(List<int> groups, CancellationToken cancellationToken)
+        {
+            return _context.GroupLocation
+                .Where(x => groups.Contains(x.GroupId))
+                .Select(x => (Location)x.LocationId)
+                .ToList();
         }
     }
 }

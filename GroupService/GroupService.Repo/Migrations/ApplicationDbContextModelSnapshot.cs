@@ -2090,6 +2090,74 @@ namespace GroupService.Repo.Migrations
                         });
                 });
 
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumLocation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("ID")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Location","Lookup");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "LincolnCountyHospital"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "PilgramHospitalBolton"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "LouthCommunityHospital"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "TableTennisClubGrantham"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "WaddingtonBranchSurgerySouthLincoln"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "StMarysMedicalPracticeStamford"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "FranklinHallSpilsby"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "SidingsMedicalPracticeBoston"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "RustonsSportsAndSocialClubLincoln"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "PortlandMedicalPracticeLincoln"
+                        });
+                });
+
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumNewRequestNotificationStrategy", b =>
                 {
                     b.Property<int>("Id")
@@ -2280,6 +2348,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 17,
                             Name = "LincolnshireVolunteers"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Name = "ChildGroupSelector"
                         });
                 });
 
@@ -2708,6 +2781,9 @@ namespace GroupService.Repo.Migrations
                     b.Property<int?>("ParentGroupId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("ShiftsEnabled")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("GroupKey")
@@ -2728,73 +2804,156 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = -1,
                             GroupKey = "Generic",
-                            GroupName = "HelpMyStreet"
+                            GroupName = "HelpMyStreet",
+                            ShiftsEnabled = false
                         },
                         new
                         {
                             Id = -2,
                             GroupKey = "ftlos",
-                            GroupName = "For the Love of Scrubs"
+                            GroupName = "For the Love of Scrubs",
+                            ShiftsEnabled = false
                         },
                         new
                         {
                             Id = -3,
                             GroupKey = "ageuklsl",
-                            GroupName = "Age UK Lincoln & South Lincolnshire"
+                            GroupName = "Age UK Lincoln & South Lincolnshire",
+                            ShiftsEnabled = false
                         },
                         new
                         {
                             Id = -4,
                             GroupKey = "hlp",
-                            GroupName = "Healthy London Partnership"
+                            GroupName = "Healthy London Partnership",
+                            ShiftsEnabled = false
                         },
                         new
                         {
                             Id = -5,
                             GroupKey = "tankersley",
-                            GroupName = "Tankersley & Pilley"
+                            GroupName = "Tankersley & Pilley",
+                            ShiftsEnabled = false
                         },
                         new
                         {
                             Id = -6,
                             GroupKey = "ruddington",
-                            GroupName = "Ruddington"
+                            GroupName = "Ruddington",
+                            ShiftsEnabled = false
                         },
                         new
                         {
                             Id = -7,
                             GroupKey = "ageukwirral",
-                            GroupName = "Age UK Wirral"
+                            GroupName = "Age UK Wirral",
+                            ShiftsEnabled = false
                         },
                         new
                         {
                             Id = -8,
                             GroupKey = "balderton",
-                            GroupName = "Balderton Community Support"
+                            GroupName = "Balderton Community Support",
+                            ShiftsEnabled = false
                         },
                         new
                         {
                             Id = -9,
                             GroupKey = "ageuknwkent",
-                            GroupName = "AgeUK North West Kent"
+                            GroupName = "AgeUK North West Kent",
+                            ShiftsEnabled = false
                         },
                         new
                         {
                             Id = -10,
                             GroupKey = "north-muskham",
-                            GroupName = "North Muskham Community Support"
+                            GroupName = "North Muskham Community Support",
+                            ShiftsEnabled = false
                         },
                         new
                         {
                             Id = -11,
                             GroupKey = "ageuk-southkentcoast",
-                            GroupName = "Age UK South Kent Coast"
+                            GroupName = "Age UK South Kent Coast",
+                            ShiftsEnabled = false
                         },
                         new
                         {
                             Id = -13,
                             GroupKey = "ageuk-favershamandsittingbourne",
-                            GroupName = "Age UK Faversham & Sittingbourne"
+                            GroupName = "Age UK Faversham & Sittingbourne",
+                            ShiftsEnabled = false
+                        },
+                        new
+                        {
+                            Id = -12,
+                            GroupKey = "lincs-volunteers",
+                            GroupName = "Lincolnshire Volunteers",
+                            ShiftsEnabled = true
+                        },
+                        new
+                        {
+                            Id = -14,
+                            GroupKey = "pcn-louth",
+                            GroupName = "PCN Louth",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = true
+                        },
+                        new
+                        {
+                            Id = -15,
+                            GroupKey = "pcn-grantham",
+                            GroupName = "PCN Grantham",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = true
+                        },
+                        new
+                        {
+                            Id = -16,
+                            GroupKey = "pcn-southlincoln",
+                            GroupName = "PCN South Lincoln",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = true
+                        },
+                        new
+                        {
+                            Id = -17,
+                            GroupKey = "pcn-stamford",
+                            GroupName = "PCN Stamford",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = true
+                        },
+                        new
+                        {
+                            Id = -18,
+                            GroupKey = "pcn-spilsby",
+                            GroupName = "PCN Spilsby",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = true
+                        },
+                        new
+                        {
+                            Id = -19,
+                            GroupKey = "pcn-boston",
+                            GroupName = "PCN Boston",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = true
+                        },
+                        new
+                        {
+                            Id = -20,
+                            GroupKey = "apex-pcn-lincoln",
+                            GroupName = "APEX PCN",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = true
+                        },
+                        new
+                        {
+                            Id = -21,
+                            GroupKey = "pcn-lincoln-portland",
+                            GroupName = "PCN Lincoln Portland",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = true
                         });
                 });
 
@@ -3171,6 +3330,64 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
 
 Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupLocation", b =>
+                {
+                    b.Property<int>("GroupId")
+                        .HasColumnName("GroupID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LocationId")
+                        .HasColumnName("LocationID")
+                        .HasColumnType("int");
+
+                    b.HasKey("GroupId", "LocationId")
+                        .HasName("PK_GROUP_LOCATION");
+
+                    b.ToTable("GroupLocation","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = -14,
+                            LocationId = 3
+                        },
+                        new
+                        {
+                            GroupId = -15,
+                            LocationId = 4
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            LocationId = 5
+                        },
+                        new
+                        {
+                            GroupId = -17,
+                            LocationId = 6
+                        },
+                        new
+                        {
+                            GroupId = -18,
+                            LocationId = 7
+                        },
+                        new
+                        {
+                            GroupId = -19,
+                            LocationId = 8
+                        },
+                        new
+                        {
+                            GroupId = -20,
+                            LocationId = 9
+                        },
+                        new
+                        {
+                            GroupId = -21,
+                            LocationId = 10
                         });
                 });
 
@@ -3650,15 +3867,51 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
-                            GroupId = -13,
-                            SupportActivityId = 23,
-                            SupportActivityInstructionsId = (short)29
+                            GroupId = -14,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
                         },
                         new
                         {
-                            GroupId = -13,
-                            SupportActivityId = 16,
-                            SupportActivityInstructionsId = (short)30
+                            GroupId = -15,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -17,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -18,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -19,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -20,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -21,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
                         });
                 });
 
@@ -3759,6 +4012,12 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -13,
                             Source = "",
                             RegistrationFormVariant = (byte)9
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            Source = "",
+                            RegistrationFormVariant = (byte)10
                         });
                 });
 
@@ -3954,6 +4213,96 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
                             TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)18,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -14,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -15,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -17,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -18,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -19,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -20,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -21,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
                         });
                 });
 
@@ -4081,6 +4430,110 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             Locality = "Faversham",
                             OtherPhone = "01795 532766",
                             Postcode = "ME13 7GU"
+                        },
+                        new
+                        {
+                            GroupId = -14,
+                            AddressLine1 = "Louth County Hospital",
+                            AddressLine2 = "High Holme Rd",
+                            AddressLine3 = "Louth",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "Louth Community",
+                            LastName = "Hospital",
+                            Locality = "Lincolnshire",
+                            OtherPhone = "",
+                            Postcode = "LN11 0EU"
+                        },
+                        new
+                        {
+                            GroupId = -15,
+                            AddressLine1 = "Grantham Meres Leisure Centre Table Tennis Club",
+                            AddressLine2 = "Trent Road",
+                            AddressLine3 = "Grantham",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "Grantham",
+                            LastName = "PCN",
+                            Locality = "",
+                            OtherPhone = "",
+                            Postcode = "NG31 7XQ"
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            AddressLine1 = "Cliff Villages Medical Practice",
+                            AddressLine2 = "Mere Rd",
+                            AddressLine3 = "Waddington",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "South Lincoln",
+                            LastName = "PCN",
+                            Locality = "Lincoln",
+                            OtherPhone = "",
+                            Postcode = "LN5 9NX"
+                        },
+                        new
+                        {
+                            GroupId = -17,
+                            AddressLine1 = "Lakeside Healthcare at Stamford",
+                            AddressLine2 = "Wharf Rd",
+                            AddressLine3 = "Stamford",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "Stamford",
+                            LastName = "PCN",
+                            Locality = "",
+                            OtherPhone = "",
+                            Postcode = "PE9 2DH"
+                        },
+                        new
+                        {
+                            GroupId = -18,
+                            AddressLine1 = "Franklin Hall",
+                            AddressLine2 = "Halton Rd",
+                            AddressLine3 = "Spilsby",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "Spilsby",
+                            LastName = "PCN",
+                            Locality = "",
+                            OtherPhone = "",
+                            Postcode = "PE23 5LA"
+                        },
+                        new
+                        {
+                            GroupId = -19,
+                            AddressLine1 = "Sidings Medical Practice",
+                            AddressLine2 = "14 Sleaford Rd",
+                            AddressLine3 = "Boston",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "Boston",
+                            LastName = "PCN",
+                            Locality = "",
+                            OtherPhone = "",
+                            Postcode = "PE21 8EG"
+                        },
+                        new
+                        {
+                            GroupId = -20,
+                            AddressLine1 = "Ruston Sports & Social Club",
+                            AddressLine2 = "Newark Road",
+                            AddressLine3 = "Lincoln",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "Apex PCN",
+                            LastName = "Practice Manager",
+                            Locality = "",
+                            OtherPhone = "07340 066491",
+                            Postcode = "LN6 8RN"
+                        },
+                        new
+                        {
+                            GroupId = -21,
+                            AddressLine1 = "Portland Medical Practice",
+                            AddressLine2 = "60 Portland St",
+                            AddressLine3 = "Lincoln",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "Lincoln Portland",
+                            LastName = "PCN",
+                            Locality = "",
+                            OtherPhone = "",
+                            Postcode = "LN5 7LB"
                         });
                 });
 
@@ -4147,6 +4600,11 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -11,
+                            AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -12,
                             AllowAutonomousJoinersAndLeavers = true
                         });
                 });
@@ -4464,6 +4922,15 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         .WithMany("GroupCredential")
                         .HasForeignKey("GroupId")
                         .HasConstraintName("FK_GroupCredential_Group")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupLocation", b =>
+                {
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
+                        .WithMany("GroupLocation")
+                        .HasForeignKey("GroupId")
+                        .HasConstraintName("FK_GroupLocation_Group")
                         .IsRequired();
                 });
 

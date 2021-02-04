@@ -27,6 +27,7 @@ namespace GroupService.Repo
         public virtual DbSet<SecurityConfiguration> SecurityConfigurations { get; set; }
         public virtual DbSet<GroupNewRequestNotificationStrategy> GroupNewRequestNotificationStrategy { get; set; }
         public virtual DbSet<EnumRole> EnumRole { get; set; }
+        public virtual DbSet<EnumLocation> EnumLocation { get; set; }
         public virtual DbSet<EnumTargetGroup> EnumTargetGroup { get; set; }
         public virtual DbSet<EnumRequestHelpFormVariant> EnumRequestHelpFormVariant { get; set; }
         public virtual DbSet<EnumRegistrationFormVariant> EnumRegistrationFormVariant { get; set; }
@@ -38,6 +39,7 @@ namespace GroupService.Repo
         public virtual DbSet<Credential> Credential { get; set; }
         public virtual DbSet<CredentialSet> CredentialSet { get; set; }
         public virtual DbSet<GroupCredential> GroupCredential { get; set; }
+        public virtual DbSet<GroupLocation> GroupLocation { get; set; }
         public virtual DbSet<UserCredential> UserCredential { get; set; }
         public virtual DbSet<RequestorDetails> RequestorDetails { get; set; }
         public virtual DbSet<SupportActivityInstructions> SupportActivityInstructions { get; set; }
@@ -89,6 +91,15 @@ namespace GroupService.Repo
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.SetEnumRoleData();
+            });
+
+            modelBuilder.Entity<EnumLocation>(entity =>
+            {
+                entity.ToTable("Location", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumLocationData();
             });
 
             modelBuilder.Entity<EnumTargetGroup>(entity =>
@@ -380,6 +391,26 @@ namespace GroupService.Repo
                     .HasConstraintName("FK_GroupCredential_Group");
 
                 entity.SetGroupCredentials();
+            });
+
+            modelBuilder.Entity<GroupLocation>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId, e.LocationId })
+                    .HasName("PK_GROUP_LOCATION");
+
+                entity.ToTable("GroupLocation", "Group");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.LocationId).HasColumnName("LocationID");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.GroupLocation)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GroupLocation_Group");
+
+                entity.SetGroupLocationsConfiguration();
             });
 
             modelBuilder.Entity<UserCredential>(entity =>
