@@ -208,13 +208,7 @@ namespace GroupService.Repo.Migrations
                 keyColumn: "SupportActivityInstructionsID",
                 keyValue: (short)21,
                 column: "Instructions",
-                value: "{\"SupportActivityInstructions\":21,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}");
-
-            migrationBuilder.InsertData(
-                schema: "Lookup",
-                table: "SupportActivity",
-                columns: new[] { "ID", "Name" },
-                values: new object[] { 24, "VaccineSupport" });
+                value: "{\"SupportActivityInstructions\":21,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}");            
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -222,13 +216,7 @@ namespace GroupService.Repo.Migrations
             migrationBuilder.DropTable(
                 name: "GroupLocation",
                 schema: "Group");
-
-            migrationBuilder.DeleteData(
-                schema: "Lookup",
-                table: "SupportActivity",
-                keyColumn: "ID",
-                keyValue: 24);
-
+            
             migrationBuilder.UpdateData(
                 schema: "Group",
                 table: "RequestorDetails",
