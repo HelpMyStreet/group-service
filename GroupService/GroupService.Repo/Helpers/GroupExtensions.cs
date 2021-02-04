@@ -724,8 +724,8 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestorDetails
             {
                 GroupId = (int)Groups.LincolnPCN,
-                FirstName = "Practice",
-                LastName = "Manager",
+                FirstName = "Apex PCN",
+                LastName = "Practice Manager",
                 OtherPhone = "07340 066491",
                 EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
                 AddressLine1 = "Ruston Sports & Social Club",
