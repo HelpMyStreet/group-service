@@ -13,18 +13,6 @@ namespace GroupService.Repo.Migrations
                 values: new object[] { -12, "linc-volunteers", "Lincolnshire Volunteers", null });
 
             migrationBuilder.InsertData(
-                schema: "Lookup",
-                table: "RegistrationFormVariant",
-                columns: new[] { "ID", "Name" },
-                values: new object[] { 10, "LincolnshireVolunteers" });
-
-            migrationBuilder.InsertData(
-                schema: "Lookup",
-                table: "RequestHelpFormVariant",
-                columns: new[] { "ID", "Name" },
-                values: new object[] { 17, "LincolnshireVolunteers" });
-
-            migrationBuilder.InsertData(
                 schema: "Group",
                 table: "Group",
                 columns: new[] { "Id", "GroupKey", "GroupName", "ParentGroupId" },
@@ -76,18 +64,6 @@ namespace GroupService.Repo.Migrations
                 table: "RequestorDetails",
                 keyColumn: "GroupId",
                 keyValue: -14);
-
-            migrationBuilder.DeleteData(
-                schema: "Lookup",
-                table: "RegistrationFormVariant",
-                keyColumn: "ID",
-                keyValue: 10);
-
-            migrationBuilder.DeleteData(
-                schema: "Lookup",
-                table: "RequestHelpFormVariant",
-                keyColumn: "ID",
-                keyValue: 17);
 
             migrationBuilder.DeleteData(
                 schema: "Website",
