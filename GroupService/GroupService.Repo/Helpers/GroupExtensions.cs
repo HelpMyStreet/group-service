@@ -769,7 +769,7 @@ namespace GroupService.Repo.Helpers
                 FirstName = "Apex PCN",
                 LastName = "Practice Manager",
                 OtherPhone = "07340 066491",
-                EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
+                EmailAddress = "g.burroughs@nhs.net",
                 AddressLine1 = "Ruston Sports & Social Club",
                 AddressLine2 = "Newark Road",
                 AddressLine3 = "Lincoln",

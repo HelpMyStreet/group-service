@@ -4569,7 +4569,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             AddressLine1 = "Ruston Sports & Social Club",
                             AddressLine2 = "Newark Road",
                             AddressLine3 = "Lincoln",
-                            EmailAddress = "laura@factor-50.co.uk",
+                            EmailAddress = "g.burroughs@nhs.net",
                             FirstName = "Apex PCN",
                             LastName = "Practice Manager",
                             Locality = "",
