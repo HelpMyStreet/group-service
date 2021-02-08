@@ -16,7 +16,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.Generic,
                 GroupName = "HelpMyStreet",
                 GroupKey = "Generic",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = false
             });
 
             entity.HasData(new Group
@@ -24,7 +26,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.FTLOS,
                 GroupName = "For the Love of Scrubs",
                 GroupKey = "ftlos",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -32,7 +36,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.AgeUKLSL,
                 GroupName = "Age UK Lincoln & South Lincolnshire",
                 GroupKey = "ageuklsl",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -40,7 +46,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.HLP,
                 GroupName = "Healthy London Partnership",
                 GroupKey = "hlp",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -48,7 +56,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.Tankersley,
                 GroupName = "Tankersley & Pilley",
                 GroupKey = "tankersley",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -56,7 +66,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.Ruddington,
                 GroupName = "Ruddington",
                 GroupKey = "ruddington",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -64,7 +76,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.AgeUKWirral,
                 GroupName = "Age UK Wirral",
                 GroupKey = "ageukwirral",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -72,7 +86,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.AgeUKNottsBalderton,
                 GroupName = "Balderton Community Support",
                 GroupKey = "balderton",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -80,7 +96,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.AgeUKNorthWestKent,
                 GroupName = "AgeUK North West Kent",
                 GroupKey = "ageuknwkent",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -88,7 +106,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.AgeUKNottsNorthMuskham,
                 GroupName = "North Muskham Community Support",
                 GroupKey = "north-muskham",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -96,7 +116,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.AgeUKSouthKentCoast,
                 GroupName = "Age UK South Kent Coast",
                 GroupKey = "ageuk-southkentcoast",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -104,7 +126,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.AgeUKFavershamAndSittingbourne,
                 GroupName = "Age UK Faversham & Sittingbourne",
                 GroupKey = "ageuk-favershamandsittingbourne",
-                ShiftsEnabled = false
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -112,7 +136,9 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.LincolnshireVolunteers,
                 GroupName = "Lincolnshire Volunteers",
                 GroupKey = "lincs-volunteers",
-                ShiftsEnabled = true
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = true
             });
 
             entity.HasData(new Group
@@ -121,7 +147,9 @@ namespace GroupService.Repo.Helpers
                 GroupName = "PCN Louth",
                 GroupKey = "pcn-louth",
                 ParentGroupId = (int)Groups.LincolnshireVolunteers,
-                ShiftsEnabled = true
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = false
             });
 
             entity.HasData(new Group
@@ -130,7 +158,9 @@ namespace GroupService.Repo.Helpers
                 GroupName = "PCN Grantham",
                 GroupKey = "pcn-grantham",
                 ParentGroupId = (int)Groups.LincolnshireVolunteers,
-                ShiftsEnabled = true
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = false
             });
 
             entity.HasData(new Group
@@ -139,7 +169,9 @@ namespace GroupService.Repo.Helpers
                 GroupName = "PCN South Lincoln",
                 GroupKey = "pcn-southlincoln",
                 ParentGroupId = (int)Groups.LincolnshireVolunteers,
-                ShiftsEnabled = true
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = false
             });
 
             entity.HasData(new Group
@@ -148,7 +180,9 @@ namespace GroupService.Repo.Helpers
                 GroupName = "PCN Stamford",
                 GroupKey = "pcn-stamford",
                 ParentGroupId = (int)Groups.LincolnshireVolunteers,
-                ShiftsEnabled = true
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = false
             });
 
             entity.HasData(new Group
@@ -157,7 +191,9 @@ namespace GroupService.Repo.Helpers
                 GroupName = "PCN Spilsby",
                 GroupKey = "pcn-spilsby",
                 ParentGroupId = (int)Groups.LincolnshireVolunteers,
-                ShiftsEnabled = true
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = false
             });
 
             entity.HasData(new Group
@@ -166,7 +202,9 @@ namespace GroupService.Repo.Helpers
                 GroupName = "PCN Boston",
                 GroupKey = "pcn-boston",
                 ParentGroupId = (int)Groups.LincolnshireVolunteers,
-                ShiftsEnabled = true
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = false
             });
 
             entity.HasData(new Group
@@ -175,7 +213,9 @@ namespace GroupService.Repo.Helpers
                 GroupName = "APEX PCN",
                 GroupKey = "apex-pcn-lincoln",
                 ParentGroupId = (int)Groups.LincolnshireVolunteers,
-                ShiftsEnabled = true
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = false
             });
 
             entity.HasData(new Group
@@ -184,7 +224,9 @@ namespace GroupService.Repo.Helpers
                 GroupName = "PCN Lincoln Portland",
                 GroupKey = "pcn-lincoln-portland",
                 ParentGroupId = (int)Groups.LincolnshireVolunteers,
-                ShiftsEnabled = true
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = false
             });
         }
 

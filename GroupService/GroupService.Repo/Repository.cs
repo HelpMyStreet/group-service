@@ -228,7 +228,10 @@ namespace GroupService.Repo
                     GroupName = group.GroupName,
                     GroupKey = group.GroupKey,
                     ParentGroupId = group.ParentGroupId,
-                    ShiftsEnabled = group.ShiftsEnabled
+                    ShiftsEnabled = group.ShiftsEnabled,
+                    TasksEnabled = group.TasksEnabled,
+                    HomepageEnabled = group.HomepageEnabled
+                    
                 };
             }
             else
@@ -249,7 +252,9 @@ namespace GroupService.Repo
                     GroupKey = x.GroupKey,
                     GroupName = x.GroupName,
                     ParentGroupId = x.ParentGroupId,
-                    ShiftsEnabled = x.ShiftsEnabled
+                    ShiftsEnabled = x.ShiftsEnabled,
+                    TasksEnabled = x.TasksEnabled,
+                    HomepageEnabled = x.HomepageEnabled
                 }).ToList();
             }
             else

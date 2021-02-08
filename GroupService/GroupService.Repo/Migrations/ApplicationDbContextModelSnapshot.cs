@@ -2778,10 +2778,16 @@ namespace GroupService.Repo.Migrations
                         .HasMaxLength(100)
                         .IsUnicode(false);
 
+                    b.Property<bool>("HomepageEnabled")
+                        .HasColumnType("bit");
+
                     b.Property<int?>("ParentGroupId")
                         .HasColumnType("int");
 
                     b.Property<bool>("ShiftsEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("TasksEnabled")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
@@ -2805,155 +2811,197 @@ namespace GroupService.Repo.Migrations
                             Id = -1,
                             GroupKey = "Generic",
                             GroupName = "HelpMyStreet",
-                            ShiftsEnabled = false
+                            HomepageEnabled = false,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -2,
                             GroupKey = "ftlos",
                             GroupName = "For the Love of Scrubs",
-                            ShiftsEnabled = false
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -3,
                             GroupKey = "ageuklsl",
                             GroupName = "Age UK Lincoln & South Lincolnshire",
-                            ShiftsEnabled = false
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -4,
                             GroupKey = "hlp",
                             GroupName = "Healthy London Partnership",
-                            ShiftsEnabled = false
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -5,
                             GroupKey = "tankersley",
                             GroupName = "Tankersley & Pilley",
-                            ShiftsEnabled = false
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -6,
                             GroupKey = "ruddington",
                             GroupName = "Ruddington",
-                            ShiftsEnabled = false
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -7,
                             GroupKey = "ageukwirral",
                             GroupName = "Age UK Wirral",
-                            ShiftsEnabled = false
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -8,
                             GroupKey = "balderton",
                             GroupName = "Balderton Community Support",
-                            ShiftsEnabled = false
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -9,
                             GroupKey = "ageuknwkent",
                             GroupName = "AgeUK North West Kent",
-                            ShiftsEnabled = false
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -10,
                             GroupKey = "north-muskham",
                             GroupName = "North Muskham Community Support",
-                            ShiftsEnabled = false
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -11,
                             GroupKey = "ageuk-southkentcoast",
                             GroupName = "Age UK South Kent Coast",
-                            ShiftsEnabled = false
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -13,
                             GroupKey = "ageuk-favershamandsittingbourne",
                             GroupName = "Age UK Faversham & Sittingbourne",
-                            ShiftsEnabled = false
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            TasksEnabled = true
                         },
                         new
                         {
                             Id = -12,
                             GroupKey = "lincs-volunteers",
                             GroupName = "Lincolnshire Volunteers",
-                            ShiftsEnabled = true
+                            HomepageEnabled = true,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {
                             Id = -14,
                             GroupKey = "pcn-louth",
                             GroupName = "PCN Louth",
+                            HomepageEnabled = false,
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {
                             Id = -15,
                             GroupKey = "pcn-grantham",
                             GroupName = "PCN Grantham",
+                            HomepageEnabled = false,
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {
                             Id = -16,
                             GroupKey = "pcn-southlincoln",
                             GroupName = "PCN South Lincoln",
+                            HomepageEnabled = false,
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {
                             Id = -17,
                             GroupKey = "pcn-stamford",
                             GroupName = "PCN Stamford",
+                            HomepageEnabled = false,
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {
                             Id = -18,
                             GroupKey = "pcn-spilsby",
                             GroupName = "PCN Spilsby",
+                            HomepageEnabled = false,
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {
                             Id = -19,
                             GroupKey = "pcn-boston",
                             GroupName = "PCN Boston",
+                            HomepageEnabled = false,
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {
                             Id = -20,
                             GroupKey = "apex-pcn-lincoln",
                             GroupName = "APEX PCN",
+                            HomepageEnabled = false,
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {
                             Id = -21,
                             GroupKey = "pcn-lincoln-portland",
                             GroupName = "PCN Lincoln Portland",
+                            HomepageEnabled = false,
                             ParentGroupId = -12,
-                            ShiftsEnabled = true
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         });
                 });
 
@@ -3864,6 +3912,12 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -11,
                             SupportActivityId = 23,
                             SupportActivityInstructionsId = (short)16
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            SupportActivityId = 16,
+                            SupportActivityInstructionsId = (short)30
                         },
                         new
                         {
