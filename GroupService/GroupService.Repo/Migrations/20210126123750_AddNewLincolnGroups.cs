@@ -67,13 +67,7 @@ namespace GroupService.Repo.Migrations
                 table: "SupportActivityInstructions",
                 columns: new[] { "SupportActivityInstructionsID", "Instructions" },
                 values: new object[] { (short)22, "{\"SupportActivityInstructions\":22,\"ActivityDetails\":\"Activity details for vaccine support\",\"Intro\":null,\"Steps\":null,\"Close\":null}" });
-
-            migrationBuilder.InsertData(
-                schema: "Lookup",
-                table: "SupportActivityInstructions",
-                columns: new[] { "ID", "Name" },
-                values: new object[] { 22, "Lincoln_VaccineSupport" });
-
+            
             migrationBuilder.InsertData(
                 schema: "Group",
                 table: "GroupLocation",
@@ -266,12 +260,6 @@ namespace GroupService.Repo.Migrations
                 table: "RequestorDetails",
                 keyColumn: "GroupId",
                 keyValue: -16);
-
-            migrationBuilder.DeleteData(
-                schema: "Lookup",
-                table: "SupportActivityInstructions",
-                keyColumn: "ID",
-                keyValue: 22);
 
             migrationBuilder.DeleteData(
                 schema: "Website",
