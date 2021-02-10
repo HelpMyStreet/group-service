@@ -21,7 +21,7 @@ namespace GroupService.Handlers
             _repository = repository;
         }
 
-        private List<int> GetAvailableGroups(GetRequestHelpFormVariantResponse requestJourney, int referringGroupId, string source, CancellationToken cancellationToken)
+        private List<int> GetTargetGroups(GetRequestHelpFormVariantResponse requestJourney, int referringGroupId, string source, CancellationToken cancellationToken)
         {
             int targetGroupId;
             bool includeChildGroups;
@@ -83,7 +83,7 @@ namespace GroupService.Handlers
                 throw new Exception("null response from GetRequestHelpFormVariant");
             }
 
-            List<int> targetGroups = GetAvailableGroups(requestJourney, request.HelpRequest.ReferringGroupId, request.HelpRequest.Source, cancellationToken);
+            List<int> targetGroups = GetTargetGroups(requestJourney, request.HelpRequest.ReferringGroupId, request.HelpRequest.Source, cancellationToken);
 
             if (requestJourney.RequestsRequireApproval)
             {
