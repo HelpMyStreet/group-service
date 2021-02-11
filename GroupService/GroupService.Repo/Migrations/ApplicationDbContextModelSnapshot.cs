@@ -2929,7 +2929,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-louth",
                             GroupName = "PCN Louth",
                             HomepageEnabled = false,
-                            ParentGroupId = -12,
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2939,7 +2938,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-grantham",
                             GroupName = "PCN Grantham",
                             HomepageEnabled = false,
-                            ParentGroupId = -12,
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2949,7 +2947,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-southlincoln",
                             GroupName = "PCN South Lincoln",
                             HomepageEnabled = false,
-                            ParentGroupId = -12,
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2959,7 +2956,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-stamford",
                             GroupName = "PCN Stamford",
                             HomepageEnabled = false,
-                            ParentGroupId = -12,
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2969,7 +2965,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-spilsby",
                             GroupName = "PCN Spilsby",
                             HomepageEnabled = false,
-                            ParentGroupId = -12,
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2979,7 +2974,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-boston",
                             GroupName = "PCN Boston",
                             HomepageEnabled = false,
-                            ParentGroupId = -12,
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2999,7 +2993,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-lincoln-portland",
                             GroupName = "PCN Lincoln Portland",
                             HomepageEnabled = false,
-                            ParentGroupId = -12,
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         });
