@@ -146,7 +146,6 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.LouthPCN,
                 GroupName = "PCN Louth",
                 GroupKey = "pcn-louth",
-                ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = false
@@ -157,7 +156,6 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.GranthamPCN,
                 GroupName = "PCN Grantham",
                 GroupKey = "pcn-grantham",
-                ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = false
@@ -168,7 +166,6 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.SouthLincolnPCN,
                 GroupName = "PCN South Lincoln",
                 GroupKey = "pcn-southlincoln",
-                ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = false
@@ -179,7 +176,6 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.StamfordPCN,
                 GroupName = "PCN Stamford",
                 GroupKey = "pcn-stamford",
-                ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = false
@@ -190,7 +186,6 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.SpilsbyPCN,
                 GroupName = "PCN Spilsby",
                 GroupKey = "pcn-spilsby",
-                ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = false
@@ -201,7 +196,6 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.BostonPCN,
                 GroupName = "PCN Boston",
                 GroupKey = "pcn-boston",
-                ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = false
@@ -223,7 +217,6 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.LincolnPortlandPCN,
                 GroupName = "PCN Lincoln Portland",
                 GroupKey = "pcn-lincoln-portland",
-                ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = false
