@@ -57,6 +57,7 @@ namespace GroupService.Repo
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             CredentialExtensions.InitialiseCredentialSets();
+            SupportActivityConfigurationExtensions.InitialiseData();
 
             modelBuilder.Entity<RegistrationFormSupportActivity>(entity =>
             {
@@ -72,15 +73,20 @@ namespace GroupService.Repo
                     .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);
+
+                entity.SetRegistrationFormSupportActivitiesExtensionsData();
             });
 
             modelBuilder.Entity<SupportActivityConfiguration>(entity =>
             {
+                entity.HasKey(e => new { e.SupportActivityId });
                 entity.ToTable("SupportActivity", "Configuration");
 
                 entity.Property(e => e.SupportActivityId)
                     .HasColumnName("SupportActivityID")
                     .ValueGeneratedNever();
+
+                entity.SetSupportActivityConfigurationExtensionsData();
             });
 
             modelBuilder.Entity<EnumCredentialTypes>(entity =>

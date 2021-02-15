@@ -2505,26 +2505,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 17,
-                            Name = "FrontOfHouseAdmin"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Name = "BackOfficeAdmin"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Name = "HealthcareAssistant"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Name = "Steward"
-                        },
-                        new
-                        {
                             Id = 21,
                             Name = "MealsToYourDoor"
                         },
@@ -3962,6 +3942,787 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         });
                 });
 
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.RegistrationFormSupportActivity", b =>
+                {
+                    b.Property<byte>("RequestHelpFormVariantId")
+                        .HasColumnName("RequestHelpFormVariantID")
+                        .HasColumnType("tinyint");
+
+                    b.Property<int>("SupportActivityId")
+                        .HasColumnName("SupportActivityID")
+                        .HasColumnType("int");
+
+                    b.Property<byte>("DisplayOrder")
+                        .HasColumnType("tinyint");
+
+                    b.Property<bool>("IsPreSelected")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Label")
+                        .IsRequired()
+                        .HasColumnType("varchar(200)")
+                        .HasMaxLength(200)
+                        .IsUnicode(false);
+
+                    b.HasKey("RequestHelpFormVariantId", "SupportActivityId");
+
+                    b.ToTable("RegistrationFormSupportActivity","Website");
+
+                    b.HasData(
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 14,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Being a **COMMUNITY CONNECTOR**"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 12,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Supplying homemade face coverings"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 13,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Collecting and delivering a pre-prepared wellbeing package"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 8,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 9,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "Providing remote support for parents and carers home-schooling their children"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)12,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)1,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)13,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 12,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Supplying reusable homemade face coverings through For the Love of Scrubs"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 13,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Collecting and delivering a pre-prepared wellbeing package"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 8,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 9,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Providing remote support for parents and carers home-schooling their children"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)12,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 12,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Supplying homemade face coverings"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 13,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Collecting and delivering a pre-prepared wellbeing package"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 8,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 9,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Providing remote support for parents and carers home-schooling their children"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)12,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 13,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Collecting and delivering a pre-prepared wellbeing package"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 12,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Supplying homemade face coverings"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 8,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 9,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Providing remote support for parents and carers home-schooling their children"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)12,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)5,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)5,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)5,
+                            SupportActivityId = 15,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Providing help in emergency situations during a cold snap"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)5,
+                            SupportActivityId = 16,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Providing transport for essential appointments"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)5,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)5,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)5,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)5,
+                            SupportActivityId = 8,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)5,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Walking a calm dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "A friendly chat on the phone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 21,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Delivering freshly prepared meal straight to someone’s door"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 16,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Providing transport for essential appointments"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "A friendly chat on the phone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "A friendly chat on the phone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 23,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Providing company over a mealtime for someone who lives alone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 21,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Delivering a freshly prepared meal straight to someone’s door"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "A friendly chat on the phone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 23,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Providing company over a mealtime for someone who lives alone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 21,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Delivering a freshly prepared meal straight to someone’s door"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 16,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Providing transport for essential appointments"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 24,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Volunteering to support the COVID-19 vaccination programme (e.g. support staff for local vaccination centres)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "A friendly chat on the phone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 16,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Providing transport for essential appointments"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        });
+                });
+
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.RegistrationJourney", b =>
                 {
                     b.Property<int>("GroupId")
@@ -4653,6 +5414,87 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -12,
                             AllowAutonomousJoinersAndLeavers = true
+                        });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.SupportActivityConfiguration", b =>
+                {
+                    b.Property<int>("SupportActivityId")
+                        .HasColumnName("SupportActivityID")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("AutoSignUpWhenOtherSelected")
+                        .HasColumnType("bit");
+
+                    b.HasKey("SupportActivityId");
+
+                    b.ToTable("SupportActivity","Configuration");
+
+                    b.HasData(
+                        new
+                        {
+                            SupportActivityId = 1,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 2,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 3,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 5,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 6,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 7,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 10,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 13,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 15,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 21,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 22,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 23,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 24,
+                            AutoSignUpWhenOtherSelected = true
                         });
                 });
 

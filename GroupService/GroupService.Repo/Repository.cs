@@ -650,5 +650,31 @@ namespace GroupService.Repo
                 .Select(x => (Location)x.LocationId)
                 .ToList();
         }
+
+        public List<SupportActivityDetail> GetSupportActivityDetails(RegistrationFormVariant registrationFormVariant, CancellationToken cancellationToken)
+        {
+            byte formVariant = (byte)registrationFormVariant;
+            return _context.RegistrationFormSupportActivity
+                .Where(x => x.RequestHelpFormVariantId == formVariant)
+                .Select(x => new SupportActivityDetail()
+                {
+                    DisplayOrder = x.DisplayOrder,
+                    IsPreSelected = x.IsPreSelected,
+                    Label = x.Label,
+                    SupportActivity = (SupportActivities) x.SupportActivityId
+                }).ToList();
+
+        }
+
+        public List<HelpMyStreet.Utils.Models.SupportActivityConfiguration> GetSupportActivitiesConfiguration(CancellationToken cancellationToken)
+        {
+            return _context.SupportActivityConfiguration
+                .Select(x => new HelpMyStreet.Utils.Models.SupportActivityConfiguration()
+                {
+                    SupportActivity = (SupportActivities)x.SupportActivityId,
+                    AutoSignUpWhenOtherSelected = x.AutoSignUpWhenOtherSelected
+                }).ToList();
+
+        }
     }
 }
