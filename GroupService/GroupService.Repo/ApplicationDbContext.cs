@@ -44,7 +44,8 @@ namespace GroupService.Repo
         public virtual DbSet<RequestorDetails> RequestorDetails { get; set; }
         public virtual DbSet<SupportActivityInstructions> SupportActivityInstructions { get; set; }
         public virtual DbSet<GroupSupportActivityInstructions> GroupSupportActivityInstructions { get; set; }
-
+        public virtual DbSet<RegistrationFormSupportActivity> RegistrationFormSupportActivity { get; set; }
+        public virtual DbSet<SupportActivityConfiguration> SupportActivityConfiguration { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -56,6 +57,31 @@ namespace GroupService.Repo
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             CredentialExtensions.InitialiseCredentialSets();
+
+            modelBuilder.Entity<RegistrationFormSupportActivity>(entity =>
+            {
+                entity.HasKey(e => new { e.RequestHelpFormVariantId, e.SupportActivityId });
+
+                entity.ToTable("RegistrationFormSupportActivity", "Website");
+
+                entity.Property(e => e.RequestHelpFormVariantId).HasColumnName("RequestHelpFormVariantID");
+
+                entity.Property(e => e.SupportActivityId).HasColumnName("SupportActivityID");
+
+                entity.Property(e => e.Label)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<SupportActivityConfiguration>(entity =>
+            {
+                entity.ToTable("SupportActivity", "Configuration");
+
+                entity.Property(e => e.SupportActivityId)
+                    .HasColumnName("SupportActivityID")
+                    .ValueGeneratedNever();
+            });
 
             modelBuilder.Entity<EnumCredentialTypes>(entity =>
             {
