@@ -29,7 +29,7 @@ namespace GroupService.Handlers
                 hasPermission = _repository.UserIsInRolesForGroup(
                     request.AuthorisingUserId,
                     request.GroupId,
-                    new List<GroupRoles>() { GroupRoles.UserAdmin, GroupRoles.UserAdmin_ReadOnly }, 
+                    new List<GroupRoles>() { GroupRoles.TaskAdmin, GroupRoles.UserAdmin, GroupRoles.UserAdmin_ReadOnly }, 
                     false);
             }    
 
