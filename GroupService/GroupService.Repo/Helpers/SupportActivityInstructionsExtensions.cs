@@ -925,15 +925,9 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Attending your shift",
-                        Detail = $"You'll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather" +
-                        $" (e.g. a warm / waterproof coat). If for any reason you need to cancel your shift, let us know as soon as possible by updating the request in the " +
-                        $"“My Shifts” tab and clicking “Can’t Do”."
-                    },
-                    new Step()
-                    {
-                        Heading = "Feedback",
-                        Detail = $"Once you’ve completed a shift it was be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab " +
-                        $"but searching for shifts with the status “Done”."
+                        Detail = $"You'll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather " +
+                        $"(e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the " +
+                        $"details in the “My Shifts” tab but searching for shifts with the status “Done”."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
