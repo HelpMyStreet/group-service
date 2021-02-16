@@ -45,12 +45,6 @@ namespace GroupService.Repo.Helpers
             EXCLUDE_GROUPS.Add(Groups.BostonPCN);
             EXCLUDE_GROUPS.Add(Groups.LincolnPCN);
             EXCLUDE_GROUPS.Add(Groups.LincolnPortlandPCN);
-
-            EXCLUDE_ACTIVITIES.Add(SupportActivities.Steward);
-            EXCLUDE_ACTIVITIES.Add(SupportActivities.BackOfficeAdmin);
-            EXCLUDE_ACTIVITIES.Add(SupportActivities.FrontOfHouseAdmin);
-            EXCLUDE_ACTIVITIES.Add(SupportActivities.HealthcareAssistant);
-            EXCLUDE_ACTIVITIES.Add(SupportActivities.HealthcareAssistant);
             EXCLUDE_ACTIVITIES.Add(SupportActivities.VaccineSupport);
         }
 
