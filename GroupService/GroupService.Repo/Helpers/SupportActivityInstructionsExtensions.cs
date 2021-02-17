@@ -510,7 +510,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsToYourDoor,
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_VolunteerSupport,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -1580,6 +1580,27 @@ namespace GroupService.Repo.Helpers
                 SupportActivityId = (int)SupportActivities.VolunteerSupport,
                 GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_VolunteerSupport
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                GroupId = (int)Groups.AgeUKLSL,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_VolunteerSupport
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                GroupId = (int)Groups.Ruddington,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_VolunteerSupport
+            });
+
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                GroupId = (int)Groups.LincolnshireVolunteers,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_VolunteerSupport
             });
         }
 
