@@ -534,6 +534,34 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_HMS_EmergencySupport()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_EmergencySupport,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Find out what help is needed",
+                        Detail = "Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide the help that is needed",
+                        Detail = "Use the details given to you to carry out the request.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you're finished, mark the request as complete in “My Accepted Requests”.",
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
         private static Instructions GetInstructions_AgeUKNWK_Other()
         {
             return new Instructions()
@@ -1043,6 +1071,12 @@ namespace GroupService.Repo.Helpers
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_VolunteerSupport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HMS_VolunteerSupport())
             });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_EmergencySupport,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_HMS_EmergencySupport())
+            }); 
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
@@ -1604,6 +1638,16 @@ namespace GroupService.Repo.Helpers
             });
         }
 
+        private static void PopulateGroupEmergencySupportInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
+        {
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)SupportActivities.EmergencySupport,
+                GroupId = (int)Groups.LincolnshireVolunteers,
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_EmergencySupport
+            });
+        }
+
         private static void PopulateGroupMealsOnWheelsInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
         {
             entity.HasData(new GroupSupportActivityInstructions()
@@ -1723,6 +1767,7 @@ namespace GroupService.Repo.Helpers
             PopulateGroupWellbeingPackageInstructions(entity);
             PopulateGroupColdWeatherArmyInstructions(entity);
             PopulateGroupVolunteerSupportInstructions(entity);
+            PopulateGroupEmergencySupportInstructions(entity);
             PopulateGroupMealsOnWheelsInstructions(entity);
             PopulateGroupMealtimeCompanionInstructions(entity);
             PopulateTransportInstructions(entity);

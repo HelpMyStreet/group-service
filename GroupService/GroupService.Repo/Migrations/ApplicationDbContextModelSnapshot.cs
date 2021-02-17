@@ -2799,6 +2799,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 32,
                             Name = "AgeUKFANDS_Other"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Name = "HMS_EmergencySupport"
                         });
                 });
 
@@ -3962,6 +3967,30 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -13,
                             SupportActivityId = 22,
                             SupportActivityInstructionsId = (short)31
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            SupportActivityId = 25,
+                            SupportActivityInstructionsId = (short)33
                         },
                         new
                         {
@@ -5710,7 +5739,12 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             SupportActivityInstructionsId = (short)18,
-                            Instructions = "{\"SupportActivityInstructions\":17,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":18,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)33,
+                            Instructions = "{\"SupportActivityInstructions\":33,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
