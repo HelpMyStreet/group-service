@@ -154,6 +154,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -13,
+                            ActivityId = 25,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
                             GroupId = -11,
                             ActivityId = 1,
                             CredentialSetId = 11
@@ -268,6 +274,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -11,
+                            ActivityId = 25,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
                             GroupId = -10,
                             ActivityId = 1,
                             CredentialSetId = 10
@@ -382,6 +394,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -10,
+                            ActivityId = 25,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
                             GroupId = -9,
                             ActivityId = 1,
                             CredentialSetId = 9
@@ -496,6 +514,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -9,
+                            ActivityId = 25,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
                             GroupId = -8,
                             ActivityId = 1,
                             CredentialSetId = 8
@@ -610,6 +634,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -8,
+                            ActivityId = 25,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
                             GroupId = -7,
                             ActivityId = 1,
                             CredentialSetId = 7
@@ -724,6 +754,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -7,
+                            ActivityId = 25,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
                             GroupId = -6,
                             ActivityId = 1,
                             CredentialSetId = 6
@@ -838,6 +874,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -6,
+                            ActivityId = 25,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
                             GroupId = -5,
                             ActivityId = 1,
                             CredentialSetId = 5
@@ -952,6 +994,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -5,
+                            ActivityId = 25,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
                             GroupId = -4,
                             ActivityId = 1,
                             CredentialSetId = 4
@@ -1066,6 +1114,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -4,
+                            ActivityId = 25,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
                             GroupId = -3,
                             ActivityId = 1,
                             CredentialSetId = 3
@@ -1180,6 +1234,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -3,
+                            ActivityId = 25,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
                             GroupId = -2,
                             ActivityId = 1,
                             CredentialSetId = 2
@@ -1294,6 +1354,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -2,
+                            ActivityId = 25,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
                             GroupId = -1,
                             ActivityId = 1,
                             CredentialSetId = 1
@@ -1408,6 +1474,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -1,
+                            ActivityId = 25,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
                             GroupId = -7,
                             ActivityId = 1,
                             CredentialSetId = 71
@@ -1860,6 +1932,30 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -13,
                             ActivityId = 23,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 25,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 25,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 25,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 25,
                             CredentialSetId = 131
                         });
                 });
@@ -2522,6 +2618,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 24,
                             Name = "VaccineSupport"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Name = "EmergencySupport"
                         });
                 });
 
@@ -5494,6 +5595,11 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             SupportActivityId = 24,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 25,
                             AutoSignUpWhenOtherSelected = true
                         });
                 });
