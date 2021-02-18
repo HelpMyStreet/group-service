@@ -2343,6 +2343,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 10,
                             Name = "LincolnshireVolunteers"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Ruddington"
                         });
                 });
 
@@ -4101,6 +4106,102 @@ Volunteer admins should follow internal processes for manually verifying a volun
                     b.HasData(
                         new
                         {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 12,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Supplying homemade face coverings"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 13,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Collecting and delivering a pre-prepared wellbeing package"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 8,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 9,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Providing remote support for parents and carers home-schooling their children"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)0,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)12,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
                             RequestHelpFormVariantId = (byte)1,
                             SupportActivityId = 14,
                             DisplayOrder = (byte)1,
@@ -4486,8 +4587,16 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             RequestHelpFormVariantId = (byte)3,
-                            SupportActivityId = 11,
+                            SupportActivityId = 22,
                             DisplayOrder = (byte)12,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)13,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
                         },
@@ -4846,8 +4955,128 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             RequestHelpFormVariantId = (byte)10,
-                            SupportActivityId = 11,
+                            SupportActivityId = 22,
                             DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 25,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Providing help in emergency situations (e.g. extreme weather)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 12,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Supplying homemade face coverings"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 13,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Collecting and delivering a pre-prepared wellbeing package"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 8,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 9,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Providing remote support for parents and carers home-schooling their children"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)12,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)11,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)13,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
                         });
@@ -4913,7 +5142,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -6,
                             Source = "",
-                            RegistrationFormVariant = (byte)0
+                            RegistrationFormVariant = (byte)11
                         },
                         new
                         {

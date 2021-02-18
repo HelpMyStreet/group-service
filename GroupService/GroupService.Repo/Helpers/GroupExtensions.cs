@@ -274,7 +274,7 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.Ruddington,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Ruddington
             });
 
             entity.HasData(new RegistrationJourney

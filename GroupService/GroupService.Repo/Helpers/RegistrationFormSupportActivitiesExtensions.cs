@@ -30,10 +30,123 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.Transport => "Providing transport for essential appointments",
                 // SupportActivities.MealsToYourDoor => "Meals To Your Door",
                 //SupportActivities.MealtimeCompanion => "Mealtime Companion",
-                //SupportActivities.VolunteerSupport => "Volunteer Support",
+                SupportActivities.VolunteerSupport => "Helping with events, admin duties or not-for-profit activities",
+                SupportActivities.EmergencySupport => "Providing help in emergency situations (e.g. extreme weather)",
                 //SupportActivities.VaccineSupport => "Vaccine Support",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
+        }
+
+        private static void SetDefaultSupportActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.Shopping,
+                Label = GetLabel(SupportActivities.Shopping),
+                IsPreSelected = true,
+                DisplayOrder = 1
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.FaceMask,
+                Label = GetLabel(SupportActivities.FaceMask),
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                Label = GetLabel(SupportActivities.CollectingPrescriptions),
+                IsPreSelected = false,
+                DisplayOrder = 3
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.Errands,
+                Label = GetLabel(SupportActivities.Errands),
+                IsPreSelected = false,
+                DisplayOrder = 4
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.WellbeingPackage,
+                Label = GetLabel(SupportActivities.WellbeingPackage),
+                IsPreSelected = false,
+                DisplayOrder = 5
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.DogWalking,
+                Label = GetLabel(SupportActivities.DogWalking),
+                IsPreSelected = false,
+                DisplayOrder = 6
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.MealPreparation,
+                Label = GetLabel(SupportActivities.MealPreparation),
+                IsPreSelected = false,
+                DisplayOrder = 7
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                Label = GetLabel(SupportActivities.PhoneCalls_Friendly),
+                IsPreSelected = false,
+                DisplayOrder = 8
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Anxious,
+                Label = GetLabel(SupportActivities.PhoneCalls_Anxious),
+                IsPreSelected = false,
+                DisplayOrder = 9
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.HomeworkSupport,
+                Label = GetLabel(SupportActivities.HomeworkSupport),
+                IsPreSelected = false,
+                DisplayOrder = 10
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.CheckingIn,
+                Label = GetLabel(SupportActivities.CheckingIn),
+                IsPreSelected = false,
+                DisplayOrder = 11
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = GetLabel(SupportActivities.Other),
+                IsPreSelected = false,
+                DisplayOrder = 12
+            });           
         }
 
         private static void SetHLPSupportActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
@@ -484,10 +597,19 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RegistrationFormSupportActivity
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                Label = GetLabel(SupportActivities.VolunteerSupport),
+                IsPreSelected = false,
+                DisplayOrder = 12
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.Other,
                 Label = GetLabel(SupportActivities.Other),
                 IsPreSelected = false,
-                DisplayOrder = 12
+                DisplayOrder = 13
             });
         }
 
@@ -674,7 +796,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKNWK,
                 SupportActivityId = (int)SupportActivities.VolunteerSupport,
-                Label = "Helping with events, admin duties or not-for-profit activities",
+                Label = GetLabel(SupportActivities.VolunteerSupport),
                 IsPreSelected = false,
                 DisplayOrder = 3
             });
@@ -758,7 +880,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKSKC,
                 SupportActivityId = (int)SupportActivities.VolunteerSupport,
-                Label = "Helping with events, admin duties or not-for-profit activities",
+                Label = GetLabel(SupportActivities.VolunteerSupport),
                 IsPreSelected = false,
                 DisplayOrder = 6
             });
@@ -816,7 +938,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKFandS,
                 SupportActivityId = (int)SupportActivities.VolunteerSupport,
-                Label = "Helping with events, admin duties or not-for-profit activities",
+                Label = GetLabel(SupportActivities.VolunteerSupport),
                 IsPreSelected = false,
                 DisplayOrder = 5
             });
@@ -908,15 +1030,156 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RegistrationFormSupportActivity
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                Label = GetLabel(SupportActivities.VolunteerSupport),
+                IsPreSelected = false,
+                DisplayOrder = 9
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
+                SupportActivityId = (int)SupportActivities.EmergencySupport,
+                Label = GetLabel(SupportActivities.EmergencySupport),
+                IsPreSelected = false,
+                DisplayOrder = 10
+            });
+
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
                 SupportActivityId = (int)SupportActivities.Other,
                 Label = GetLabel(SupportActivities.Other),
                 IsPreSelected = false,
+                DisplayOrder = 11
+            });
+        }
+
+        private static void SetRuddingtonSupportActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.Shopping,
+                Label = GetLabel(SupportActivities.Shopping),
+                IsPreSelected = true,
+                DisplayOrder = 1
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.FaceMask,
+                Label = GetLabel(SupportActivities.FaceMask),
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                Label = GetLabel(SupportActivities.CollectingPrescriptions),
+                IsPreSelected = false,
+                DisplayOrder = 3
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.Errands,
+                Label = GetLabel(SupportActivities.Errands),
+                IsPreSelected = false,
+                DisplayOrder = 4
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.WellbeingPackage,
+                Label = GetLabel(SupportActivities.WellbeingPackage),
+                IsPreSelected = false,
+                DisplayOrder = 5
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.DogWalking,
+                Label = GetLabel(SupportActivities.DogWalking),
+                IsPreSelected = false,
+                DisplayOrder = 6
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.MealPreparation,
+                Label = GetLabel(SupportActivities.MealPreparation),
+                IsPreSelected = false,
+                DisplayOrder = 7
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                Label = GetLabel(SupportActivities.PhoneCalls_Friendly),
+                IsPreSelected = false,
+                DisplayOrder = 8
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Anxious,
+                Label = GetLabel(SupportActivities.PhoneCalls_Anxious),
+                IsPreSelected = false,
                 DisplayOrder = 9
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.HomeworkSupport,
+                Label = GetLabel(SupportActivities.HomeworkSupport),
+                IsPreSelected = false,
+                DisplayOrder = 10
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.CheckingIn,
+                Label = GetLabel(SupportActivities.CheckingIn),
+                IsPreSelected = false,
+                DisplayOrder = 11
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                Label = GetLabel(SupportActivities.VolunteerSupport),
+                IsPreSelected = false,
+                DisplayOrder = 12
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = GetLabel(SupportActivities.Other),
+                IsPreSelected = false,
+                DisplayOrder = 13
             });
         }
 
         public static void SetRegistrationFormSupportActivitiesExtensionsData(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
+            SetDefaultSupportActivities(entity);
             SetHLPSupportActivities(entity);
             SetFtLOSSupportActivities(entity);
             SetFaceMasksSupportActivities(entity);
@@ -927,8 +1190,8 @@ namespace GroupService.Repo.Helpers
             SetAgeUKSKCSupportActivities(entity);
             SetAgeUKFandSSupportActivities(entity);
             SetLincolnshireVolunteersSupportActivities(entity);
-        }
+            SetRuddingtonSupportActivities(entity);
+        }        
 
-        
     }
 }
