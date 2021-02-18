@@ -8,7 +8,7 @@ namespace GroupService.Repo.Helpers
 {
     public static class RegistrationFormSupportActivitiesExtensions
     {
-        private static string GetLabel(SupportActivities activity)
+        private static string GetLabel(this SupportActivities activity)
         {
             return activity switch
             {
@@ -30,10 +30,123 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.Transport => "Providing transport for essential appointments",
                 // SupportActivities.MealsToYourDoor => "Meals To Your Door",
                 //SupportActivities.MealtimeCompanion => "Mealtime Companion",
-                //SupportActivities.VolunteerSupport => "Volunteer Support",
+                SupportActivities.VolunteerSupport => "Helping with events, admin duties or not-for-profit activities",
+                SupportActivities.EmergencySupport => "Providing help in emergency situations (e.g. extreme weather)",
                 //SupportActivities.VaccineSupport => "Vaccine Support",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
+        }
+
+        private static void SetDefaultSupportActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.Shopping,
+                Label = SupportActivities.Shopping.GetLabel(),
+                IsPreSelected = true,
+                DisplayOrder = 1
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.FaceMask,
+                Label = SupportActivities.FaceMask.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 3
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.Errands,
+                Label = SupportActivities.Errands.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 4
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.WellbeingPackage,
+                Label = SupportActivities.WellbeingPackage.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 5
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.DogWalking,
+                Label = SupportActivities.DogWalking.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 6
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.MealPreparation,
+                Label = SupportActivities.MealPreparation.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 7
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 8
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Anxious,
+                Label = SupportActivities.PhoneCalls_Anxious.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 9
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.HomeworkSupport,
+                Label = SupportActivities.HomeworkSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 10
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.CheckingIn,
+                Label = SupportActivities.CheckingIn.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 11
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = SupportActivities.Other.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 12
+            });           
         }
 
         private static void SetHLPSupportActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
@@ -43,7 +156,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.CommunityConnector,
-                Label = GetLabel(SupportActivities.CommunityConnector),
+                Label = SupportActivities.CommunityConnector.GetLabel(),
                 IsPreSelected = true,
                 DisplayOrder = 1
             });
@@ -52,7 +165,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.Shopping,
-                Label = GetLabel(SupportActivities.Shopping),
+                Label = SupportActivities.Shopping.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 2
             });
@@ -61,7 +174,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.FaceMask,
-                Label = GetLabel(SupportActivities.FaceMask),
+                Label = SupportActivities.FaceMask.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 3
             });
@@ -70,7 +183,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
-                Label = GetLabel(SupportActivities.CollectingPrescriptions),
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 4
             });
@@ -79,7 +192,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.Errands,
-                Label = GetLabel(SupportActivities.Errands),
+                Label = SupportActivities.Errands.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 5
             });
@@ -88,7 +201,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.WellbeingPackage,
-                Label = GetLabel(SupportActivities.WellbeingPackage),
+                Label = SupportActivities.WellbeingPackage.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 6
             });
@@ -97,7 +210,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.DogWalking,
-                Label = GetLabel(SupportActivities.DogWalking),
+                Label = SupportActivities.DogWalking.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 7
             });
@@ -106,7 +219,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.MealPreparation,
-                Label = GetLabel(SupportActivities.MealPreparation),
+                Label = SupportActivities.MealPreparation.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 8
             });
@@ -115,7 +228,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
-                Label = GetLabel(SupportActivities.PhoneCalls_Friendly),
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 9
             });
@@ -124,7 +237,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Anxious,
-                Label = GetLabel(SupportActivities.PhoneCalls_Anxious),
+                Label = SupportActivities.PhoneCalls_Anxious.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 10
             });
@@ -133,7 +246,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.HomeworkSupport,
-                Label = GetLabel(SupportActivities.HomeworkSupport),
+                Label = SupportActivities.HomeworkSupport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 11
             });
@@ -142,7 +255,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.CheckingIn,
-                Label = GetLabel(SupportActivities.CheckingIn),
+                Label = SupportActivities.CheckingIn.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 12
             });
@@ -151,7 +264,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
                 SupportActivityId = (int)SupportActivities.Other,
-                Label = GetLabel(SupportActivities.Other),
+                Label = SupportActivities.Other.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 13
             });
@@ -173,7 +286,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FtLOS,
                 SupportActivityId = (int)SupportActivities.Shopping,
-                Label = GetLabel(SupportActivities.Shopping),
+                Label = SupportActivities.Shopping.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 2
             });
@@ -182,7 +295,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FtLOS,
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
-                Label = GetLabel(SupportActivities.CollectingPrescriptions),
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 3
             });
@@ -191,7 +304,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FtLOS,
                 SupportActivityId = (int)SupportActivities.Errands,
-                Label = GetLabel(SupportActivities.Errands),
+                Label = SupportActivities.Errands.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 4
             });
@@ -200,7 +313,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FtLOS,
                 SupportActivityId = (int)SupportActivities.WellbeingPackage,
-                Label = GetLabel(SupportActivities.WellbeingPackage),
+                Label = SupportActivities.WellbeingPackage.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 5
             });
@@ -209,7 +322,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FtLOS,
                 SupportActivityId = (int)SupportActivities.DogWalking,
-                Label = GetLabel(SupportActivities.DogWalking),
+                Label = SupportActivities.DogWalking.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 6
             });
@@ -218,7 +331,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FtLOS,
                 SupportActivityId = (int)SupportActivities.MealPreparation,
-                Label = GetLabel(SupportActivities.MealPreparation),
+                Label = SupportActivities.MealPreparation.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 7
             });
@@ -227,7 +340,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FtLOS,
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
-                Label = GetLabel(SupportActivities.PhoneCalls_Friendly),
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 8
             });
@@ -236,7 +349,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FtLOS,
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Anxious,
-                Label = GetLabel(SupportActivities.PhoneCalls_Anxious),
+                Label = SupportActivities.PhoneCalls_Anxious.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 9
             });
@@ -245,7 +358,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FtLOS,
                 SupportActivityId = (int)SupportActivities.HomeworkSupport,
-                Label = GetLabel(SupportActivities.HomeworkSupport),
+                Label = SupportActivities.HomeworkSupport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 10
             });
@@ -254,7 +367,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FtLOS,
                 SupportActivityId = (int)SupportActivities.CheckingIn,
-                Label = GetLabel(SupportActivities.CheckingIn),
+                Label = SupportActivities.CheckingIn.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 11
             });
@@ -263,7 +376,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FtLOS,
                 SupportActivityId = (int)SupportActivities.Other,
-                Label = GetLabel(SupportActivities.Other),
+                Label = SupportActivities.Other.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 12
             });
@@ -284,7 +397,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FaceMasks,
                 SupportActivityId = (int)SupportActivities.Shopping,
-                Label = GetLabel(SupportActivities.Shopping),
+                Label = SupportActivities.Shopping.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 2
             });
@@ -293,7 +406,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FaceMasks,
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
-                Label = GetLabel(SupportActivities.CollectingPrescriptions),
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 3
             });
@@ -302,7 +415,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FaceMasks,
                 SupportActivityId = (int)SupportActivities.Errands,
-                Label = GetLabel(SupportActivities.Errands),
+                Label = SupportActivities.Errands.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 4
             });
@@ -311,7 +424,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FaceMasks,
                 SupportActivityId = (int)SupportActivities.WellbeingPackage,
-                Label = GetLabel(SupportActivities.WellbeingPackage),
+                Label = SupportActivities.WellbeingPackage.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 5
             });
@@ -320,7 +433,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FaceMasks,
                 SupportActivityId = (int)SupportActivities.DogWalking,
-                Label = GetLabel(SupportActivities.DogWalking),
+                Label = SupportActivities.DogWalking.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 6
             });
@@ -329,7 +442,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FaceMasks,
                 SupportActivityId = (int)SupportActivities.MealPreparation,
-                Label = GetLabel(SupportActivities.MealPreparation),
+                Label = SupportActivities.MealPreparation.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 7
             });
@@ -338,7 +451,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FaceMasks,
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
-                Label = GetLabel(SupportActivities.PhoneCalls_Friendly),
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 8
             });
@@ -347,7 +460,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FaceMasks,
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Anxious,
-                Label = GetLabel(SupportActivities.PhoneCalls_Anxious),
+                Label = SupportActivities.PhoneCalls_Anxious.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 9
             });
@@ -356,7 +469,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FaceMasks,
                 SupportActivityId = (int)SupportActivities.HomeworkSupport,
-                Label = GetLabel(SupportActivities.HomeworkSupport),
+                Label = SupportActivities.HomeworkSupport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 10
             });
@@ -365,7 +478,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FaceMasks,
                 SupportActivityId = (int)SupportActivities.CheckingIn,
-                Label = GetLabel(SupportActivities.CheckingIn),
+                Label = SupportActivities.CheckingIn.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 11
             });
@@ -374,7 +487,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.FaceMasks,
                 SupportActivityId = (int)SupportActivities.Other,
-                Label = GetLabel(SupportActivities.Other),
+                Label = SupportActivities.Other.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 12
             });
@@ -386,7 +499,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.WellbeingPackage,
-                Label = GetLabel(SupportActivities.WellbeingPackage),
+                Label = SupportActivities.WellbeingPackage.GetLabel(),
                 IsPreSelected = true,
                 DisplayOrder = 1
             });
@@ -395,7 +508,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.Shopping,
-                Label = GetLabel(SupportActivities.Shopping),
+                Label = SupportActivities.Shopping.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 2
             });
@@ -404,7 +517,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.FaceMask,
-                Label = GetLabel(SupportActivities.FaceMask),
+                Label = SupportActivities.FaceMask.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 3
             });
@@ -413,7 +526,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
-                Label = GetLabel(SupportActivities.CollectingPrescriptions),
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 4
             });
@@ -422,7 +535,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.Errands,
-                Label = GetLabel(SupportActivities.Errands),
+                Label = SupportActivities.Errands.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 5
             });
@@ -431,7 +544,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.DogWalking,
-                Label = GetLabel(SupportActivities.DogWalking),
+                Label = SupportActivities.DogWalking.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 6
             });
@@ -440,7 +553,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.MealPreparation,
-                Label = GetLabel(SupportActivities.MealPreparation),
+                Label = SupportActivities.MealPreparation.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 7
             });
@@ -449,7 +562,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
-                Label = GetLabel(SupportActivities.PhoneCalls_Friendly),
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 8
             });
@@ -458,7 +571,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Anxious,
-                Label = GetLabel(SupportActivities.PhoneCalls_Anxious),
+                Label = SupportActivities.PhoneCalls_Anxious.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 9
             });
@@ -467,7 +580,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.HomeworkSupport,
-                Label = GetLabel(SupportActivities.HomeworkSupport),
+                Label = SupportActivities.HomeworkSupport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 10
             });
@@ -476,7 +589,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
                 SupportActivityId = (int)SupportActivities.CheckingIn,
-                Label = GetLabel(SupportActivities.CheckingIn),
+                Label = SupportActivities.CheckingIn.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 11
             });
@@ -484,10 +597,19 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RegistrationFormSupportActivity
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
-                SupportActivityId = (int)SupportActivities.Other,
-                Label = GetLabel(SupportActivities.Other),
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                Label = SupportActivities.VolunteerSupport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 12
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKLSL,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = SupportActivities.Other.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 13
             });
         }
 
@@ -497,7 +619,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKWirral,
                 SupportActivityId = (int)SupportActivities.Shopping,
-                Label = GetLabel(SupportActivities.Shopping),
+                Label = SupportActivities.Shopping.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 1
             });
@@ -506,7 +628,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKWirral,
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
-                Label = GetLabel(SupportActivities.CollectingPrescriptions),
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 2
             });
@@ -515,7 +637,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKWirral,
                 SupportActivityId = (int)SupportActivities.ColdWeatherArmy,
-                Label = GetLabel(SupportActivities.ColdWeatherArmy),
+                Label = SupportActivities.ColdWeatherArmy.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 3
             });
@@ -524,7 +646,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKWirral,
                 SupportActivityId = (int)SupportActivities.Transport,
-                Label = GetLabel(SupportActivities.Transport),
+                Label = SupportActivities.Transport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 4
             });
@@ -533,7 +655,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKWirral,
                 SupportActivityId = (int)SupportActivities.Errands,
-                Label = GetLabel(SupportActivities.Errands),
+                Label = SupportActivities.Errands.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 5
             });
@@ -542,7 +664,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKWirral,
                 SupportActivityId = (int)SupportActivities.DogWalking,
-                Label = GetLabel(SupportActivities.DogWalking),
+                Label = SupportActivities.DogWalking.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 6
             });
@@ -551,7 +673,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKWirral,
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
-                Label = GetLabel(SupportActivities.PhoneCalls_Friendly),
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 7
             });
@@ -560,7 +682,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKWirral,
                 SupportActivityId = (int)SupportActivities.PhoneCalls_Anxious,
-                Label = GetLabel(SupportActivities.PhoneCalls_Anxious),
+                Label = SupportActivities.PhoneCalls_Anxious.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 8
             });
@@ -569,7 +691,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKWirral,
                 SupportActivityId = (int)SupportActivities.Other,
-                Label = GetLabel(SupportActivities.Other),
+                Label = SupportActivities.Other.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 9
             });
@@ -590,7 +712,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKNottsBalderton,
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
-                Label = GetLabel(SupportActivities.CollectingPrescriptions),
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 2
             });
@@ -599,7 +721,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKNottsBalderton,
                 SupportActivityId = (int)SupportActivities.Errands,
-                Label = GetLabel(SupportActivities.Errands),
+                Label = SupportActivities.Errands.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 3
             });
@@ -617,7 +739,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKNottsBalderton,
                 SupportActivityId = (int)SupportActivities.MealPreparation,
-                Label = GetLabel(SupportActivities.MealPreparation),
+                Label = SupportActivities.MealPreparation.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 5
             });
@@ -635,7 +757,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKNottsBalderton,
                 SupportActivityId = (int)SupportActivities.CheckingIn,
-                Label = GetLabel(SupportActivities.CheckingIn),
+                Label = SupportActivities.CheckingIn.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 7
             });
@@ -644,7 +766,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKNottsBalderton,
                 SupportActivityId = (int)SupportActivities.Other,
-                Label = GetLabel(SupportActivities.Other),
+                Label = SupportActivities.Other.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 8
             });
@@ -665,7 +787,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKNWK,
                 SupportActivityId = (int)SupportActivities.Transport,
-                Label = GetLabel(SupportActivities.Transport),
+                Label = SupportActivities.Transport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 2
             });
@@ -674,7 +796,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKNWK,
                 SupportActivityId = (int)SupportActivities.VolunteerSupport,
-                Label = "Helping with events, admin duties or not-for-profit activities",
+                Label = SupportActivities.VolunteerSupport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 3
             });
@@ -683,7 +805,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKNWK,
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
-                Label = GetLabel(SupportActivities.CollectingPrescriptions),
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 4
             });
@@ -701,7 +823,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKNWK,
                 SupportActivityId = (int)SupportActivities.Other,
-                Label = GetLabel(SupportActivities.Other),
+                Label = SupportActivities.Other.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 6
             });
@@ -722,7 +844,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKSKC,
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
-                Label = GetLabel(SupportActivities.CollectingPrescriptions),
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 2
             });
@@ -758,7 +880,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKSKC,
                 SupportActivityId = (int)SupportActivities.VolunteerSupport,
-                Label = "Helping with events, admin duties or not-for-profit activities",
+                Label = SupportActivities.VolunteerSupport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 6
             });
@@ -768,7 +890,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKSKC,
                 SupportActivityId = (int)SupportActivities.Other,
-                Label = GetLabel(SupportActivities.Other),
+                Label = SupportActivities.Other.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 7
             });
@@ -807,7 +929,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKFandS,
                 SupportActivityId = (int)SupportActivities.Transport,
-                Label = GetLabel(SupportActivities.Transport),
+                Label = SupportActivities.Transport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 4
             });
@@ -816,7 +938,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKFandS,
                 SupportActivityId = (int)SupportActivities.VolunteerSupport,
-                Label = "Helping with events, admin duties or not-for-profit activities",
+                Label = SupportActivities.VolunteerSupport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 5
             });
@@ -825,7 +947,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKFandS,
                 SupportActivityId = (int)SupportActivities.Other,
-                Label = GetLabel(SupportActivities.Other),
+                Label = SupportActivities.Other.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 6
             });
@@ -855,7 +977,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
                 SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
-                Label = GetLabel(SupportActivities.CollectingPrescriptions),
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 3
             });
@@ -864,7 +986,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
                 SupportActivityId = (int)SupportActivities.Errands,
-                Label = GetLabel(SupportActivities.Errands),
+                Label = SupportActivities.Errands.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 4
             });
@@ -873,7 +995,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
                 SupportActivityId = (int)SupportActivities.MealPreparation,
-                Label = GetLabel(SupportActivities.MealPreparation),
+                Label = SupportActivities.MealPreparation.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 5
             });
@@ -891,7 +1013,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
                 SupportActivityId = (int)SupportActivities.CheckingIn,
-                Label = GetLabel(SupportActivities.CheckingIn),
+                Label = SupportActivities.CheckingIn.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 7
             });
@@ -900,7 +1022,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
                 SupportActivityId = (int)SupportActivities.Transport,
-                Label = GetLabel(SupportActivities.Transport),
+                Label = SupportActivities.Transport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 8
             });
@@ -908,15 +1030,156 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RegistrationFormSupportActivity
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
-                SupportActivityId = (int)SupportActivities.Other,
-                Label = GetLabel(SupportActivities.Other),
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                Label = SupportActivities.VolunteerSupport.GetLabel(),
                 IsPreSelected = false,
                 DisplayOrder = 9
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
+                SupportActivityId = (int)SupportActivities.EmergencySupport,
+                Label = SupportActivities.EmergencySupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 10
+            });
+
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = SupportActivities.Other.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 11
+            });
+        }
+
+        private static void SetRuddingtonSupportActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.Shopping,
+                Label = SupportActivities.Shopping.GetLabel(),
+                IsPreSelected = true,
+                DisplayOrder = 1
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.FaceMask,
+                Label = SupportActivities.FaceMask.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 3
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.Errands,
+                Label = SupportActivities.Errands.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 4
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.WellbeingPackage,
+                Label = SupportActivities.WellbeingPackage.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 5
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.DogWalking,
+                Label = SupportActivities.DogWalking.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 6
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.MealPreparation,
+                Label = SupportActivities.MealPreparation.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 7
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 8
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Anxious,
+                Label = SupportActivities.PhoneCalls_Anxious.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 9
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.HomeworkSupport,
+                Label = SupportActivities.HomeworkSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 10
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.CheckingIn,
+                Label = SupportActivities.CheckingIn.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 11
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                Label = SupportActivities.VolunteerSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 12
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Ruddington,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = SupportActivities.Other.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 13
             });
         }
 
         public static void SetRegistrationFormSupportActivitiesExtensionsData(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
+            SetDefaultSupportActivities(entity);
             SetHLPSupportActivities(entity);
             SetFtLOSSupportActivities(entity);
             SetFaceMasksSupportActivities(entity);
@@ -927,8 +1190,8 @@ namespace GroupService.Repo.Helpers
             SetAgeUKSKCSupportActivities(entity);
             SetAgeUKFandSSupportActivities(entity);
             SetLincolnshireVolunteersSupportActivities(entity);
-        }
+            SetRuddingtonSupportActivities(entity);
+        }        
 
-        
     }
 }
