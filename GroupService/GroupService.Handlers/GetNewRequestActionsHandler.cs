@@ -98,16 +98,9 @@ namespace GroupService.Handlers
 
             RequestType requestType = request.NewJobsRequest.Jobs.First().SupportActivity.RequestType();
 
-            foreach (Job j in request.NewJobsRequest.Jobs)
+            if (!requestJourney.RequestsRequireApproval && requestType == RequestType.Task)
             {
-                TaskAction taskAction = new TaskAction() { TaskActions = new Dictionary<NewTaskAction, List<int>>() };
-
-                if (!requestJourney.RequestsRequireApproval && requestType == RequestType.Task)
-                {
-                    taskAction.TaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
-                }
-
-                actions.Add(j.Guid, taskAction);
+                requestTaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
             }
 
             return new GetNewRequestActionsResponse()
