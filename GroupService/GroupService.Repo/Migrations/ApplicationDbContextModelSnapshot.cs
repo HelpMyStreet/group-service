@@ -4963,14 +4963,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             RequestHelpFormVariantId = (byte)10,
-                            SupportActivityId = 25,
-                            DisplayOrder = (byte)10,
-                            IsPreSelected = false,
-                            Label = "Providing help in emergency situations (e.g. extreme weather)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)10,
                             SupportActivityId = 11,
                             DisplayOrder = (byte)11,
                             IsPreSelected = false,
