@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210222154347_TweakMyRequestsWording")]
+    partial class TweakMyRequestsWording
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -154,12 +156,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -13,
-                            ActivityId = 25,
-                            CredentialSetId = 13
-                        },
-                        new
-                        {
                             GroupId = -11,
                             ActivityId = 1,
                             CredentialSetId = 11
@@ -270,12 +266,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -11,
                             ActivityId = 23,
-                            CredentialSetId = 11
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 25,
                             CredentialSetId = 11
                         },
                         new
@@ -394,12 +384,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -10,
-                            ActivityId = 25,
-                            CredentialSetId = 10
-                        },
-                        new
-                        {
                             GroupId = -9,
                             ActivityId = 1,
                             CredentialSetId = 9
@@ -510,12 +494,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -9,
                             ActivityId = 23,
-                            CredentialSetId = 9
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 25,
                             CredentialSetId = 9
                         },
                         new
@@ -634,12 +612,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -8,
-                            ActivityId = 25,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
                             GroupId = -7,
                             ActivityId = 1,
                             CredentialSetId = 7
@@ -750,12 +722,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -7,
                             ActivityId = 23,
-                            CredentialSetId = 7
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 25,
                             CredentialSetId = 7
                         },
                         new
@@ -874,12 +840,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -6,
-                            ActivityId = 25,
-                            CredentialSetId = 6
-                        },
-                        new
-                        {
                             GroupId = -5,
                             ActivityId = 1,
                             CredentialSetId = 5
@@ -990,12 +950,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -5,
                             ActivityId = 23,
-                            CredentialSetId = 5
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            ActivityId = 25,
                             CredentialSetId = 5
                         },
                         new
@@ -1114,12 +1068,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -4,
-                            ActivityId = 25,
-                            CredentialSetId = 4
-                        },
-                        new
-                        {
                             GroupId = -3,
                             ActivityId = 1,
                             CredentialSetId = 3
@@ -1230,12 +1178,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -3,
                             ActivityId = 23,
-                            CredentialSetId = 3
-                        },
-                        new
-                        {
-                            GroupId = -3,
-                            ActivityId = 25,
                             CredentialSetId = 3
                         },
                         new
@@ -1354,12 +1296,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -2,
-                            ActivityId = 25,
-                            CredentialSetId = 2
-                        },
-                        new
-                        {
                             GroupId = -1,
                             ActivityId = 1,
                             CredentialSetId = 1
@@ -1470,12 +1406,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -1,
                             ActivityId = 23,
-                            CredentialSetId = 1
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            ActivityId = 25,
                             CredentialSetId = 1
                         },
                         new
@@ -1932,30 +1862,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -13,
                             ActivityId = 23,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 25,
-                            CredentialSetId = 71
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            ActivityId = 25,
-                            CredentialSetId = 91
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 25,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 25,
                             CredentialSetId = 131
                         });
                 });
@@ -2343,11 +2249,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 10,
                             Name = "LincolnshireVolunteers"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Name = "Ruddington"
                         });
                 });
 
@@ -2623,11 +2524,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 24,
                             Name = "VaccineSupport"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Name = "EmergencySupport"
                         });
                 });
 
@@ -2804,11 +2700,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 32,
                             Name = "AgeUKFANDS_Other"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Name = "HMS_EmergencySupport"
                         });
                 });
 
@@ -3975,30 +3866,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
-                            GroupId = -3,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -12,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -12,
-                            SupportActivityId = 25,
-                            SupportActivityInstructionsId = (short)33
-                        },
-                        new
-                        {
                             GroupId = -11,
                             SupportActivityId = 21,
                             SupportActivityInstructionsId = (short)17
@@ -4104,102 +3971,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                     b.ToTable("RegistrationFormSupportActivity","Website");
 
                     b.HasData(
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 1,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = true,
-                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 12,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Supplying homemade face coverings"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 2,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Collecting prescriptions from a local pharmacy"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 3,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "Running essential local errands (e.g. posting mail)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 13,
-                            DisplayOrder = (byte)5,
-                            IsPreSelected = false,
-                            Label = "Collecting and delivering a pre-prepared wellbeing package"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 5,
-                            DisplayOrder = (byte)6,
-                            IsPreSelected = false,
-                            Label = "Walking the dog"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 6,
-                            DisplayOrder = (byte)7,
-                            IsPreSelected = false,
-                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 7,
-                            DisplayOrder = (byte)8,
-                            IsPreSelected = false,
-                            Label = "Calling someone in need of a friendly chat"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 8,
-                            DisplayOrder = (byte)9,
-                            IsPreSelected = false,
-                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 9,
-                            DisplayOrder = (byte)10,
-                            IsPreSelected = false,
-                            Label = "Providing remote support for parents and carers home-schooling their children"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 10,
-                            DisplayOrder = (byte)11,
-                            IsPreSelected = false,
-                            Label = "Reaching out to people in my area to check-in"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)0,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)12,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
-                        },
                         new
                         {
                             RequestHelpFormVariantId = (byte)1,
@@ -4587,16 +4358,8 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             RequestHelpFormVariantId = (byte)3,
-                            SupportActivityId = 22,
-                            DisplayOrder = (byte)12,
-                            IsPreSelected = false,
-                            Label = "Helping with events, admin duties or not-for-profit activities"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)3,
                             SupportActivityId = 11,
-                            DisplayOrder = (byte)13,
+                            DisplayOrder = (byte)12,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
                         },
@@ -4955,120 +4718,8 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             RequestHelpFormVariantId = (byte)10,
-                            SupportActivityId = 22,
-                            DisplayOrder = (byte)9,
-                            IsPreSelected = false,
-                            Label = "Helping with events, admin duties or not-for-profit activities"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)10,
                             SupportActivityId = 11,
-                            DisplayOrder = (byte)11,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 1,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = true,
-                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 12,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Supplying homemade face coverings"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 2,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Collecting prescriptions from a local pharmacy"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 3,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "Running essential local errands (e.g. posting mail)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 13,
-                            DisplayOrder = (byte)5,
-                            IsPreSelected = false,
-                            Label = "Collecting and delivering a pre-prepared wellbeing package"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 5,
-                            DisplayOrder = (byte)6,
-                            IsPreSelected = false,
-                            Label = "Walking the dog"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 6,
-                            DisplayOrder = (byte)7,
-                            IsPreSelected = false,
-                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 7,
-                            DisplayOrder = (byte)8,
-                            IsPreSelected = false,
-                            Label = "Calling someone in need of a friendly chat"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 8,
                             DisplayOrder = (byte)9,
-                            IsPreSelected = false,
-                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 9,
-                            DisplayOrder = (byte)10,
-                            IsPreSelected = false,
-                            Label = "Providing remote support for parents and carers home-schooling their children"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 10,
-                            DisplayOrder = (byte)11,
-                            IsPreSelected = false,
-                            Label = "Reaching out to people in my area to check-in"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 22,
-                            DisplayOrder = (byte)12,
-                            IsPreSelected = false,
-                            Label = "Helping with events, admin duties or not-for-profit activities"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)11,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)13,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
                         });
@@ -5134,7 +4785,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -6,
                             Source = "",
-                            RegistrationFormVariant = (byte)11
+                            RegistrationFormVariant = (byte)0
                         },
                         new
                         {
@@ -5846,11 +5497,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             SupportActivityId = 24,
                             AutoSignUpWhenOtherSelected = true
-                        },
-                        new
-                        {
-                            SupportActivityId = 25,
-                            AutoSignUpWhenOtherSelected = true
                         });
                 });
 
@@ -5960,12 +5606,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             SupportActivityInstructionsId = (short)18,
-                            Instructions = "{\"SupportActivityInstructions\":18,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)33,
-                            Instructions = "{\"SupportActivityInstructions\":33,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":17,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
