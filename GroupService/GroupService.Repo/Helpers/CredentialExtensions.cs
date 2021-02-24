@@ -403,6 +403,10 @@ namespace GroupService.Repo.Helpers
 
             SetActivityCredentialSet(entity, Groups.FTLOS, new List<SupportActivities> { SupportActivities.FaceMask }, IDENTITY_CREDENTIAL_SETS[Groups.FTLOS]);
 
+            SetActivityCredentialSet(entity, Groups.Sandbox, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.VaccineSupport }, IDENTITY_CREDENTIAL_SETS[Groups.Sandbox]);
+            SetActivityCredentialSet(entity, Groups.Sandbox, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly }, DBS_CREDENTIAL_SETS[Groups.Sandbox]);
+            SetActivityCredentialSet(entity, Groups.Sandbox, new List<SupportActivities> { SupportActivities.PhoneCalls_Friendly }, SANDBOX_BEFRIENDER_TRAINING_CREDENTIAL_SET);
+
             var defaultActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.MealPreparation, SupportActivities.PhoneCalls_Friendly, SupportActivities.HomeworkSupport, SupportActivities.CheckingIn, SupportActivities.Other, SupportActivities.FaceMask };
             SetActivityCredentialSet(entity, Groups.Generic, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Generic]);
             SetActivityCredentialSet(entity, Groups.Tankersley, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Tankersley]);
