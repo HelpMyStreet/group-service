@@ -74,7 +74,7 @@ namespace GroupService.Repo.Helpers
         {
             var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
 
-            foreach (var group in groups.Where(x => !EXCLUDE_GROUPS.Contains(x)))
+            foreach (var group in groups)
             {
                 entity.HasData(new GroupCredential
                 {
