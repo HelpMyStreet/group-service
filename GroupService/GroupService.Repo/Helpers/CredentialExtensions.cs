@@ -13,6 +13,7 @@ namespace GroupService.Repo.Helpers
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
         private const int MANUALLY_VERIFIED = 1;
         private const int DBS_CHECK = 2;
+        private const int SANDBOX_BEFRIENDER_TRAINING = 3;
         private const int AGEUKWIRRAL_DBS_CHECK_CREDENTIAL_SET = 71;
         private const int AGEUKNWK_DBS_CHECK_CREDENTIAL_SET = 91;
         private const int AGEUKSKC_DBS_CHECK_CREDENTIAL_SET = 111;
@@ -242,6 +243,47 @@ namespace GroupService.Repo.Helpers
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
                 $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.Sandbox,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = "If you’re unable to verify with Yoti, email your group admins to find out how they can check your ID",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.Sandbox,
+                CredentialId = DBS_CHECK,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "DBS Check",
+                HowToAchieve = "Email your group admins to request or register your DBS check",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
+                $"Volunteer admins should follow internal processes for logging a DBS check.",
+                DisplayOrder = 3,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.Sandbox,
+                CredentialId = SANDBOX_BEFRIENDER_TRAINING,
+                CredentialTypeId = (int)CredentialTypes.Training,
+                Name = "Befriender Training",
+                HowToAchieve = "Email your group admins to book onto the next course",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record that a volunteer has completed the Befriender traning course.",
+                DisplayOrder = 4,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
         }
