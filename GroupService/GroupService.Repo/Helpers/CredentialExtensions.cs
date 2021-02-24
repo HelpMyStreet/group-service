@@ -9,35 +9,41 @@ namespace GroupService.Repo.Helpers
 {
     public static class CredentialExtensions
     {
-        public static Dictionary<Groups, int> CredentialSets = new Dictionary<Groups, int>();
-        private const int IDENTITY_VERIFIED_BY_YOTI = -1;
-        private const int MANUALLY_VERIFIED = 1;
-        private const int DBS_CHECK = 2;
-        private const int SANDBOX_BEFRIENDER_TRAINING = 3;
+        private static List<Groups> GROUPS_USING_YOTI;
+        private static List<Groups> EXCLUDE_GROUPS = new List<Groups>();
+        private static List<SupportActivities> EXCLUDE_ACTIVITIES = new List<SupportActivities>();
+
+        // Credential Set IDs
+        private static Dictionary<Groups, int> IDENTITY_CREDENTIAL_SETS;
         private const int AGEUKWIRRAL_DBS_CHECK_CREDENTIAL_SET = 71;
         private const int AGEUKNWK_DBS_CHECK_CREDENTIAL_SET = 91;
         private const int AGEUKSKC_DBS_CHECK_CREDENTIAL_SET = 111;
         private const int AGEFANDS_DBS_CHECK_CREDENTIAL_SET = 131;
 
-        private static List<Groups> GROUPS_USING_YOTI;
-        private static List<Groups> EXCLUDE_GROUPS = new List<Groups>();
-        private static List<SupportActivities> EXCLUDE_ACTIVITIES = new List<SupportActivities>();
+        // Credential IDs
+        private const int IDENTITY_VERIFIED_BY_YOTI = -1;
+        private const int MANUALLY_VERIFIED = 1;
+        private const int DBS_CHECK = 2;
+        private const int SANDBOX_BEFRIENDER_TRAINING = 3;
 
         public static void InitialiseCredentialSets()
         {
-            CredentialSets.Add(Groups.Generic, 1);
-            CredentialSets.Add(Groups.FTLOS, 2);
-            CredentialSets.Add(Groups.AgeUKLSL, 3);
-            CredentialSets.Add(Groups.HLP, 4);
-            CredentialSets.Add(Groups.Tankersley, 5);
-            CredentialSets.Add(Groups.Ruddington, 6);
-            CredentialSets.Add(Groups.AgeUKWirral, 7);
-            CredentialSets.Add(Groups.AgeUKNottsBalderton, 8);
-            CredentialSets.Add(Groups.AgeUKNorthWestKent, 9);
-            CredentialSets.Add(Groups.AgeUKNottsNorthMuskham, 10);
-            CredentialSets.Add(Groups.AgeUKSouthKentCoast, 11);
-            CredentialSets.Add(Groups.AgeUKFavershamAndSittingbourne, 13);
-            CredentialSets.Add(Groups.Sandbox, 14);
+            IDENTITY_CREDENTIAL_SETS = new Dictionary<Groups, int>
+            {
+                { Groups.Generic, 1 },
+                { Groups.FTLOS, 2 },
+                { Groups.AgeUKLSL, 3 },
+                { Groups.HLP, 4 },
+                { Groups.Tankersley, 5 },
+                { Groups.Ruddington, 6 },
+                { Groups.AgeUKWirral, 7 },
+                { Groups.AgeUKNottsBalderton, 8 },
+                { Groups.AgeUKNorthWestKent, 9 },
+                { Groups.AgeUKNottsNorthMuskham, 10 },
+                { Groups.AgeUKSouthKentCoast, 11 },
+                { Groups.AgeUKFavershamAndSittingbourne, 13 },
+                { Groups.Sandbox, 14 }
+            };
 
             EXCLUDE_GROUPS.Add(Groups.LincolnshireVolunteers);
             EXCLUDE_GROUPS.Add(Groups.LouthPCN);
@@ -306,13 +312,11 @@ namespace GroupService.Repo.Helpers
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
         {
-            var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
-
             foreach (var group in GROUPS_USING_YOTI)
             {                
                 entity.HasData(new CredentialSet
                 {
-                    Id = CredentialSets[group],
+                    Id = IDENTITY_CREDENTIAL_SETS[group],
                     GroupId = (int)group,
                     CredentialId = IDENTITY_VERIFIED_BY_YOTI
                 });                
@@ -320,7 +324,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new CredentialSet
             {
-                Id = CredentialSets[Groups.AgeUKWirral],
+                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKWirral],
                 GroupId = (int)Groups.AgeUKWirral,
                 CredentialId = MANUALLY_VERIFIED
             });
@@ -334,28 +338,28 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new CredentialSet
             {
-                Id = CredentialSets[Groups.AgeUKLSL],
+                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKLSL],
                 GroupId = (int)Groups.AgeUKLSL,
                 CredentialId = MANUALLY_VERIFIED
             });
 
             entity.HasData(new CredentialSet
             {
-                Id = CredentialSets[Groups.AgeUKNottsBalderton],
+                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNottsBalderton],
                 GroupId = (int)Groups.AgeUKNottsBalderton,
                 CredentialId = MANUALLY_VERIFIED
             });
 
             entity.HasData(new CredentialSet
             {
-                Id = CredentialSets[Groups.AgeUKNottsNorthMuskham],
+                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNottsNorthMuskham],
                 GroupId = (int)Groups.AgeUKNottsNorthMuskham,
                 CredentialId = MANUALLY_VERIFIED
             });
 
             entity.HasData(new CredentialSet
             {
-                Id = CredentialSets[Groups.AgeUKNorthWestKent],
+                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNorthWestKent],
                 GroupId = (int)Groups.AgeUKNorthWestKent,
                 CredentialId = MANUALLY_VERIFIED
             });
@@ -369,7 +373,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new CredentialSet
             {
-                Id = CredentialSets[Groups.AgeUKSouthKentCoast],
+                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKSouthKentCoast],
                 GroupId = (int)Groups.AgeUKSouthKentCoast,
                 CredentialId = MANUALLY_VERIFIED
             });
@@ -383,7 +387,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new CredentialSet
             {
-                Id = CredentialSets[Groups.AgeUKFavershamAndSittingbourne],
+                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKFavershamAndSittingbourne],
                 GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
                 CredentialId = MANUALLY_VERIFIED
             });
@@ -410,7 +414,7 @@ namespace GroupService.Repo.Helpers
                     {
                         GroupId = (int)group,
                         ActivityId = (int)activity,
-                        CredentialSetId = CredentialSets[group]
+                        CredentialSetId = IDENTITY_CREDENTIAL_SETS[group]
                     });
                 }
             }
