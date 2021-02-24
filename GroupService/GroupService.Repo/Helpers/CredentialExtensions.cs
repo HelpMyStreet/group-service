@@ -371,50 +371,52 @@ namespace GroupService.Repo.Helpers
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
         {
-            var groups = Enum.GetValues(typeof(Groups)).Cast<Groups>();
-            var activities = Enum.GetValues(typeof(SupportActivities)).Cast<SupportActivities>();
+            var ageUKFavershamAndSittingbourneActivities = new List<SupportActivities> { SupportActivities.PhoneCalls_Friendly, SupportActivities.Other, SupportActivities.MealsToYourDoor, SupportActivities.VolunteerSupport, SupportActivities.MealtimeCompanion };
+            SetActivityCredentialSet(entity, Groups.AgeUKFavershamAndSittingbourne, ageUKFavershamAndSittingbourneActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKFavershamAndSittingbourne]);
+            SetActivityCredentialSet(entity, Groups.AgeUKFavershamAndSittingbourne, ageUKFavershamAndSittingbourneActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKFavershamAndSittingbourne]);
 
-            foreach (var group in groups.Where(x=> !EXCLUDE_GROUPS.Contains(x)))
+            var ageUKSouthKentCoastActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Other, SupportActivities.PhoneCalls_Friendly, SupportActivities.MealsToYourDoor, SupportActivities.VolunteerSupport, SupportActivities.MealtimeCompanion };
+            SetActivityCredentialSet(entity, Groups.AgeUKSouthKentCoast, ageUKSouthKentCoastActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKSouthKentCoast]);
+            SetActivityCredentialSet(entity, Groups.AgeUKSouthKentCoast, ageUKSouthKentCoastActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKSouthKentCoast]);
+
+            var ageUKNottsNorthMuskhamActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.PhoneCalls_Friendly, SupportActivities.Other };
+            SetActivityCredentialSet(entity, Groups.AgeUKNottsNorthMuskham, ageUKNottsNorthMuskhamActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNottsNorthMuskham]);
+
+            var ageUKNorthWestKentActivities = new List<SupportActivities> { SupportActivities.CollectingPrescriptions, SupportActivities.PhoneCalls_Friendly, SupportActivities.Other, SupportActivities.MealsToYourDoor, SupportActivities.VolunteerSupport };
+            SetActivityCredentialSet(entity, Groups.AgeUKNorthWestKent, ageUKNorthWestKentActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNorthWestKent]);
+            SetActivityCredentialSet(entity, Groups.AgeUKNorthWestKent, ageUKNorthWestKentActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKNorthWestKent]);
+
+            var ageUKNottsBaldertonActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.PhoneCalls_Friendly, SupportActivities.Other };
+            SetActivityCredentialSet(entity, Groups.AgeUKNottsBalderton, ageUKNottsBaldertonActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNottsBalderton]);
+
+            var ageUKWirralActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Other, SupportActivities.ColdWeatherArmy };
+            SetActivityCredentialSet(entity, Groups.AgeUKWirral, ageUKWirralActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKWirral]);
+            SetActivityCredentialSet(entity, Groups.AgeUKWirral, ageUKWirralActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKWirral]);
+
+            var ruddingtonActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.DogWalking, SupportActivities.MealPreparation, SupportActivities.PhoneCalls_Friendly, SupportActivities.CheckingIn, SupportActivities.Other, SupportActivities.FaceMask };
+            SetActivityCredentialSet(entity, Groups.Ruddington, ruddingtonActivities, IDENTITY_CREDENTIAL_SETS[Groups.Ruddington]);
+
+            SetActivityCredentialSet(entity, Groups.HLP, new List<SupportActivities> { SupportActivities.CommunityConnector }, IDENTITY_CREDENTIAL_SETS[Groups.HLP]);
+
+            var ageUKLSLActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.Other, SupportActivities.WellbeingPackage };
+            SetActivityCredentialSet(entity, Groups.AgeUKLSL, ageUKLSLActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKLSL]);
+
+            SetActivityCredentialSet(entity, Groups.FTLOS, new List<SupportActivities> { SupportActivities.FaceMask }, IDENTITY_CREDENTIAL_SETS[Groups.FTLOS]);
+
+            var defaultActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.MealPreparation, SupportActivities.PhoneCalls_Friendly, SupportActivities.HomeworkSupport, SupportActivities.CheckingIn, SupportActivities.Other, SupportActivities.FaceMask };
+            SetActivityCredentialSet(entity, Groups.Generic, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Generic]);
+            SetActivityCredentialSet(entity, Groups.Tankersley, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Tankersley]);
+        }
+
+        private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId)
+        {
+            foreach (var activity in activities)
             {
-                foreach (var activity in activities.Where(x => !EXCLUDE_ACTIVITIES.Contains(x)))
-                {
-                    entity.HasData(new ActivityCredentialSet
-                    {
-                        GroupId = (int)group,
-                        ActivityId = (int)activity,
-                        CredentialSetId = IDENTITY_CREDENTIAL_SETS[group]
-                    });
-                }
-            }
-
-            foreach (var activity in activities.Where(x => !EXCLUDE_ACTIVITIES.Contains(x)))
-            {
                 entity.HasData(new ActivityCredentialSet
                 {
-                    GroupId = (int)Groups.AgeUKWirral,
+                    GroupId = (int)group,
                     ActivityId = (int)activity,
-                    CredentialSetId = DBS_CREDENTIAL_SETS[Groups.AgeUKWirral]
-                });
-
-                entity.HasData(new ActivityCredentialSet
-                {
-                    GroupId = (int)Groups.AgeUKNorthWestKent,
-                    ActivityId = (int)activity,
-                    CredentialSetId = DBS_CREDENTIAL_SETS[Groups.AgeUKNorthWestKent]
-                });
-
-                entity.HasData(new ActivityCredentialSet
-                {
-                    GroupId = (int)Groups.AgeUKSouthKentCoast,
-                    ActivityId = (int)activity,
-                    CredentialSetId = DBS_CREDENTIAL_SETS[Groups.AgeUKSouthKentCoast]
-                });
-
-                entity.HasData(new ActivityCredentialSet
-                {
-                    GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
-                    ActivityId = (int)activity,
-                    CredentialSetId = DBS_CREDENTIAL_SETS[Groups.AgeUKFavershamAndSittingbourne]
+                    CredentialSetId = credentialSetId,
                 });
             }
         }
