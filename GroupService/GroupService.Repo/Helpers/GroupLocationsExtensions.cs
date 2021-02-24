@@ -57,7 +57,11 @@ namespace GroupService.Repo.Helpers
                 LocationId = (int)Location.PortlandMedicalPracticeLincoln
             });
 
-
+            entity.HasData(new GroupLocation
+            {
+                GroupId = (int)Groups.Sandbox,
+                LocationId = (int)Location.RustonsSportsAndSocialClubLincoln
+            });
         }
     }
 }
