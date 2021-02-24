@@ -15,10 +15,7 @@ namespace GroupService.Repo.Helpers
 
         // Credential Set IDs
         private static Dictionary<Groups, int> IDENTITY_CREDENTIAL_SETS;
-        private const int AGEUKWIRRAL_DBS_CHECK_CREDENTIAL_SET = 71;
-        private const int AGEUKNWK_DBS_CHECK_CREDENTIAL_SET = 91;
-        private const int AGEUKSKC_DBS_CHECK_CREDENTIAL_SET = 111;
-        private const int AGEFANDS_DBS_CHECK_CREDENTIAL_SET = 131;
+        private static Dictionary<Groups, int> DBS_CREDENTIAL_SETS;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -43,6 +40,13 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKSouthKentCoast, 11 },
                 { Groups.AgeUKFavershamAndSittingbourne, 13 },
                 { Groups.Sandbox, 14 }
+            };
+            DBS_CREDENTIAL_SETS = new Dictionary<Groups, int> 
+            {
+                { Groups.AgeUKWirral, 71 },
+                { Groups.AgeUKNorthWestKent, 91 },
+                { Groups.AgeUKSouthKentCoast, 111 },
+                { Groups.AgeUKFavershamAndSittingbourne, 131 },
             };
 
             EXCLUDE_GROUPS.Add(Groups.LincolnshireVolunteers);
@@ -322,18 +326,22 @@ namespace GroupService.Repo.Helpers
                 });                
             }
 
+            foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS)
+            {
+                entity.HasData(new CredentialSet
+                {
+                    Id = dbsCredentialSet.Value,
+                    GroupId = (int)dbsCredentialSet.Key,
+                    CredentialId = DBS_CHECK
+                });
+
+            }
+
             entity.HasData(new CredentialSet
             {
                 Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKWirral],
                 GroupId = (int)Groups.AgeUKWirral,
                 CredentialId = MANUALLY_VERIFIED
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = AGEUKWIRRAL_DBS_CHECK_CREDENTIAL_SET,
-                GroupId = (int)Groups.AgeUKWirral,
-                CredentialId = DBS_CHECK
             });
 
             entity.HasData(new CredentialSet
@@ -366,23 +374,9 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new CredentialSet
             {
-                Id = AGEUKNWK_DBS_CHECK_CREDENTIAL_SET,
-                GroupId = (int)Groups.AgeUKNorthWestKent,
-                CredentialId = DBS_CHECK
-            });
-
-            entity.HasData(new CredentialSet
-            {
                 Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKSouthKentCoast],
                 GroupId = (int)Groups.AgeUKSouthKentCoast,
                 CredentialId = MANUALLY_VERIFIED
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = AGEUKSKC_DBS_CHECK_CREDENTIAL_SET,
-                GroupId = (int)Groups.AgeUKSouthKentCoast,
-                CredentialId = DBS_CHECK
             });
 
             entity.HasData(new CredentialSet
@@ -391,14 +385,6 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
                 CredentialId = MANUALLY_VERIFIED
             });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = AGEFANDS_DBS_CHECK_CREDENTIAL_SET,
-                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
-                CredentialId = DBS_CHECK
-            });
-
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
@@ -425,28 +411,28 @@ namespace GroupService.Repo.Helpers
                 {
                     GroupId = (int)Groups.AgeUKWirral,
                     ActivityId = (int)activity,
-                    CredentialSetId = AGEUKWIRRAL_DBS_CHECK_CREDENTIAL_SET
+                    CredentialSetId = DBS_CREDENTIAL_SETS[Groups.AgeUKWirral]
                 });
 
                 entity.HasData(new ActivityCredentialSet
                 {
                     GroupId = (int)Groups.AgeUKNorthWestKent,
                     ActivityId = (int)activity,
-                    CredentialSetId = AGEUKNWK_DBS_CHECK_CREDENTIAL_SET
+                    CredentialSetId = DBS_CREDENTIAL_SETS[Groups.AgeUKNorthWestKent]
                 });
 
                 entity.HasData(new ActivityCredentialSet
                 {
                     GroupId = (int)Groups.AgeUKSouthKentCoast,
                     ActivityId = (int)activity,
-                    CredentialSetId = AGEUKSKC_DBS_CHECK_CREDENTIAL_SET
+                    CredentialSetId = DBS_CREDENTIAL_SETS[Groups.AgeUKSouthKentCoast]
                 });
 
                 entity.HasData(new ActivityCredentialSet
                 {
                     GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
                     ActivityId = (int)activity,
-                    CredentialSetId = AGEFANDS_DBS_CHECK_CREDENTIAL_SET
+                    CredentialSetId = DBS_CREDENTIAL_SETS[Groups.AgeUKFavershamAndSittingbourne]
                 });
             }
         }
