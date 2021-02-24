@@ -17,6 +17,7 @@ namespace GroupService.Repo.Helpers
         // Credential Set IDs
         private static Dictionary<Groups, int> IDENTITY_CREDENTIAL_SETS;
         private static Dictionary<Groups, int> DBS_CREDENTIAL_SETS;
+        private const int SANDBOX_BEFRIENDER_TRAINING_CREDENTIAL_SET = 142;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -48,6 +49,7 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKNorthWestKent, 91 },
                 { Groups.AgeUKSouthKentCoast, 111 },
                 { Groups.AgeUKFavershamAndSittingbourne, 131 },
+                { Groups.Sandbox, 141 },
             };
 
             EXCLUDE_GROUPS.Add(Groups.LincolnshireVolunteers);
@@ -86,7 +88,8 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKNottsNorthMuskham,
                 Groups.AgeUKNorthWestKent,
                 Groups.AgeUKSouthKentCoast,
-                Groups.AgeUKFavershamAndSittingbourne
+                Groups.AgeUKFavershamAndSittingbourne,
+                Groups.Sandbox
             };
         }
 
@@ -357,6 +360,13 @@ namespace GroupService.Repo.Helpers
                     CredentialId = MANUALLY_VERIFIED,
                 });
             }
+
+            entity.HasData(new CredentialSet
+            {
+                Id = SANDBOX_BEFRIENDER_TRAINING_CREDENTIAL_SET,
+                GroupId = (int)Groups.Sandbox,
+                CredentialId = SANDBOX_BEFRIENDER_TRAINING,
+            });
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
