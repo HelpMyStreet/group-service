@@ -10,6 +10,7 @@ namespace GroupService.Repo.Helpers
     public static class CredentialExtensions
     {
         private static List<Groups> GROUPS_USING_YOTI;
+        private static List<Groups> GROUPS_USING_MANUAL_ID;
         private static List<Groups> EXCLUDE_GROUPS = new List<Groups>();
         private static List<SupportActivities> EXCLUDE_ACTIVITIES = new List<SupportActivities>();
 
@@ -75,6 +76,17 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKLSL,
                 Groups.FTLOS,
                 Groups.Generic,
+            };
+
+            GROUPS_USING_MANUAL_ID = new List<Groups>
+            {
+                Groups.AgeUKWirral,
+                Groups.AgeUKLSL,
+                Groups.AgeUKNottsBalderton,
+                Groups.AgeUKNottsNorthMuskham,
+                Groups.AgeUKNorthWestKent,
+                Groups.AgeUKSouthKentCoast,
+                Groups.AgeUKFavershamAndSittingbourne
             };
         }
 
@@ -334,57 +346,17 @@ namespace GroupService.Repo.Helpers
                     GroupId = (int)dbsCredentialSet.Key,
                     CredentialId = DBS_CHECK
                 });
-
             }
 
-            entity.HasData(new CredentialSet
+            foreach (var group in GROUPS_USING_MANUAL_ID)
             {
-                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKWirral],
-                GroupId = (int)Groups.AgeUKWirral,
-                CredentialId = MANUALLY_VERIFIED
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKLSL],
-                GroupId = (int)Groups.AgeUKLSL,
-                CredentialId = MANUALLY_VERIFIED
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNottsBalderton],
-                GroupId = (int)Groups.AgeUKNottsBalderton,
-                CredentialId = MANUALLY_VERIFIED
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNottsNorthMuskham],
-                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
-                CredentialId = MANUALLY_VERIFIED
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNorthWestKent],
-                GroupId = (int)Groups.AgeUKNorthWestKent,
-                CredentialId = MANUALLY_VERIFIED
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKSouthKentCoast],
-                GroupId = (int)Groups.AgeUKSouthKentCoast,
-                CredentialId = MANUALLY_VERIFIED
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = IDENTITY_CREDENTIAL_SETS[Groups.AgeUKFavershamAndSittingbourne],
-                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
-                CredentialId = MANUALLY_VERIFIED
-            });
+                entity.HasData(new CredentialSet
+                {
+                    Id = IDENTITY_CREDENTIAL_SETS[group],
+                    GroupId = (int)group,
+                    CredentialId = MANUALLY_VERIFIED,
+                });
+            }
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
