@@ -45,6 +45,7 @@ namespace GroupService.Repo.Helpers
             EXCLUDE_GROUPS.Add(Groups.BostonPCN);
             EXCLUDE_GROUPS.Add(Groups.LincolnPCN);
             EXCLUDE_GROUPS.Add(Groups.LincolnPortlandPCN);
+            EXCLUDE_GROUPS.Add(Groups.Sandbox);
             EXCLUDE_ACTIVITIES.Add(SupportActivities.VaccineSupport);
         }
 
