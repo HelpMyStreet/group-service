@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
+using SupportActivityInstructionsEnum = HelpMyStreet.Utils.Enums.SupportActivityInstructions;
 
 namespace GroupService.Repo.Helpers
 {
@@ -1752,6 +1753,16 @@ namespace GroupService.Repo.Helpers
             });
         }
 
+        private static void Populate(EntityTypeBuilder<GroupSupportActivityInstructions> entity, Groups group, SupportActivities activity, SupportActivityInstructionsEnum instructions)
+        {
+            entity.HasData(new GroupSupportActivityInstructions()
+            {
+                SupportActivityId = (int)activity,
+                GroupId = (int)group,
+                SupportActivityInstructionsId = (short)instructions
+            });
+        }
+
         public static void PopulateGroupSupportActivityInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
         {
             PopulateGroupShoppingInstructions(entity);
@@ -1772,6 +1783,15 @@ namespace GroupService.Repo.Helpers
             PopulateGroupMealtimeCompanionInstructions(entity);
             PopulateTransportInstructions(entity);
             PopulateGroupVaccineSupportInstructions(entity);
+
+            Populate(entity, Groups.Sandbox, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
+            Populate(entity, Groups.Sandbox, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+            Populate(entity, Groups.Sandbox, SupportActivities.Errands, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+            Populate(entity, Groups.Sandbox, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
+            Populate(entity, Groups.Sandbox, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
+            Populate(entity, Groups.Sandbox, SupportActivities.EmergencySupport, SupportActivityInstructionsEnum.HMS_EmergencySupport);
+            Populate(entity, Groups.Sandbox, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
+            Populate(entity, Groups.Sandbox, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
         }
     }
 }
