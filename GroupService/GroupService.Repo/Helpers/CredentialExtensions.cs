@@ -24,10 +24,6 @@ namespace GroupService.Repo.Helpers
         private const int MANUALLY_VERIFIED = 1;
         private const int DBS_CHECK = 2;
         private const int SANDBOX_BEFRIENDER_TRAINING = 3;
-        private const int AGEUKWIRRAL_DBS_CHECK_CREDENTIAL_SET = 71;
-        private const int AGEUKNWK_DBS_CHECK_CREDENTIAL_SET = 91;
-        private const int AGEUKSKC_DBS_CHECK_CREDENTIAL_SET = 111;
-        private const int AGEFANDS_DBS_CHECK_CREDENTIAL_SET = 131;
 
         public static void InitialiseCredentialSets()
         {
