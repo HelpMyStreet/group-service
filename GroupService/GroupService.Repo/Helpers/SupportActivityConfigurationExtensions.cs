@@ -9,29 +9,31 @@ namespace GroupService.Repo.Helpers
 {
     public static class SupportActivityConfigurationExtensions
     {
-        private static List<SupportActivities> _supportActivitiesExclude;
+        private static List<SupportActivities> _supportActivities_excludeFromAutoSignUp;
 
         public static void InitialiseData()
         {
-            _supportActivitiesExclude = new List<SupportActivities>();
-            _supportActivitiesExclude.Add(SupportActivities.MedicalAppointmentTransport);            
-            _supportActivitiesExclude.Add(SupportActivities.PhoneCalls_Anxious);
-            _supportActivitiesExclude.Add(SupportActivities.HomeworkSupport);          
-            _supportActivitiesExclude.Add(SupportActivities.FaceMask);
-            _supportActivitiesExclude.Add(SupportActivities.CommunityConnector);
-            _supportActivitiesExclude.Add(SupportActivities.Transport);
-            _supportActivitiesExclude.Add(SupportActivities.Other);
+            _supportActivities_excludeFromAutoSignUp = new List<SupportActivities>
+            {
+                SupportActivities.MedicalAppointmentTransport,
+                SupportActivities.PhoneCalls_Anxious,
+                SupportActivities.HomeworkSupport,
+                SupportActivities.FaceMask,
+                SupportActivities.CommunityConnector,
+                SupportActivities.Transport,
+                SupportActivities.Other
+            };
         }
         public static void SetSupportActivityConfigurationExtensionsData(this EntityTypeBuilder<SupportActivityConfiguration> entity)
         {
             var activities = Enum.GetValues(typeof(SupportActivities)).Cast<SupportActivities>();
 
-            foreach (var activity in activities.Where(x => !_supportActivitiesExclude.Contains(x)))
+            foreach (var activity in activities)
             {
                 entity.HasData(new SupportActivityConfiguration
                 {
-                    SupportActivityId = (int) activity,
-                    AutoSignUpWhenOtherSelected = true
+                    SupportActivityId = (int)activity,
+                    AutoSignUpWhenOtherSelected = !_supportActivities_excludeFromAutoSignUp.Contains(activity)
                 });
             }
         }

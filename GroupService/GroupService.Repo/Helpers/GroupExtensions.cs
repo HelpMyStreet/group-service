@@ -604,6 +604,16 @@ namespace GroupService.Repo.Helpers
                 RequestsRequireApproval = false,
             });
 
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.Sandbox,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Sandbox_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+            });
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
