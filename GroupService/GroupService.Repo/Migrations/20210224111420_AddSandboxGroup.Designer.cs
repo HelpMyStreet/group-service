@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210225121333_AddSandboxGroup")]
+    [Migration("20210224111420_AddSandboxGroup")]
     partial class AddSandboxGroup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

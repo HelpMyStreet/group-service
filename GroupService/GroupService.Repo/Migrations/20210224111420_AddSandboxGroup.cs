@@ -11,12 +11,6 @@ namespace GroupService.Repo.Migrations
                 table: "Group",
                 columns: new[] { "Id", "GroupKey", "GroupName", "HomepageEnabled", "ParentGroupId", "ShiftsEnabled", "TasksEnabled" },
                 values: new object[] { -22, "hms-sandbox", "Sandbox", false, null, true, true });
-
-            migrationBuilder.InsertData(
-                schema: "Lookup",
-                table: "RequestHelpFormVariant",
-                columns: new[] { "ID", "Name" },
-                values: new object[] { 19, "Sandbox_RequestSubmitter" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -26,12 +20,6 @@ namespace GroupService.Repo.Migrations
                 table: "Group",
                 keyColumn: "Id",
                 keyValue: -22);
-
-            migrationBuilder.DeleteData(
-                schema: "Lookup",
-                table: "RequestHelpFormVariant",
-                keyColumn: "ID",
-                keyValue: 19);
         }
     }
 }
