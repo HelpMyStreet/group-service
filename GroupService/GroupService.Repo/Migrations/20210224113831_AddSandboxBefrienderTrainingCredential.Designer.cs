@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210225140149_AddSandboxBefrienderTrainingCredential")]
+    [Migration("20210224113831_AddSandboxBefrienderTrainingCredential")]
     partial class AddSandboxBefrienderTrainingCredential
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
