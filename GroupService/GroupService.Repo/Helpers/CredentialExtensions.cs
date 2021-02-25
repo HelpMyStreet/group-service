@@ -112,6 +112,12 @@ namespace GroupService.Repo.Helpers
                 Id = DBS_CHECK,
                 Name = "DBS Check"
             });
+
+            entity.HasData(new Credential
+            {
+                Id = SANDBOX_BEFRIENDER_TRAINING,
+                Name = "Sandbox - Befriender Training"
+            });
         }
 
         public static void SetGroupCredentials(this EntityTypeBuilder<GroupCredential> entity)
