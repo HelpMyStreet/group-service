@@ -221,6 +221,16 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = false,
                 HomepageEnabled = false
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.Sandbox,
+                GroupName = "Sandbox",
+                GroupKey = "hms-sandbox",
+                ShiftsEnabled = true,
+                TasksEnabled = true,
+                HomepageEnabled = false
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
