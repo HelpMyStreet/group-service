@@ -13,6 +13,7 @@ namespace GroupService.Repo.Helpers
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
         private const int MANUALLY_VERIFIED = 1;
         private const int DBS_CHECK = 2;
+        private const int SANDBOX_BEFRIENDER_TRAINING = 3;
         private const int AGEUKWIRRAL_DBS_CHECK_CREDENTIAL_SET = 71;
         private const int AGEUKNWK_DBS_CHECK_CREDENTIAL_SET = 91;
         private const int AGEUKSKC_DBS_CHECK_CREDENTIAL_SET = 111;
@@ -67,6 +68,12 @@ namespace GroupService.Repo.Helpers
             {
                 Id = DBS_CHECK,
                 Name = "DBS Check"
+            });
+
+            entity.HasData(new Credential
+            {
+                Id = SANDBOX_BEFRIENDER_TRAINING,
+                Name = "Sandbox - Befriender Training"
             });
         }
 
