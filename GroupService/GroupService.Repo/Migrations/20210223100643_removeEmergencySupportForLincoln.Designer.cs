@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210223100643_removeEmergencySupportForLincoln")]
+    partial class removeEmergencySupportForLincoln
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,13 +43,97 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -13,
+                            ActivityId = 1,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 2,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 3,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 4,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 5,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 6,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
                             ActivityId = 7,
                             CredentialSetId = 13
                         },
                         new
                         {
                             GroupId = -13,
+                            ActivityId = 8,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 9,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 10,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
                             ActivityId = 11,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 12,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 13,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 14,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 15,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 16,
                             CredentialSetId = 13
                         },
                         new
@@ -71,32 +157,8 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -13,
-                            ActivityId = 7,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 11,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 21,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 22,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 23,
-                            CredentialSetId = 131
+                            ActivityId = 25,
+                            CredentialSetId = 13
                         },
                         new
                         {
@@ -113,13 +175,85 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -11,
-                            ActivityId = 11,
+                            ActivityId = 3,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 4,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 5,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 6,
                             CredentialSetId = 11
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 7,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 8,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 9,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 10,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 11,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 12,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 13,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 14,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 15,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 16,
                             CredentialSetId = 11
                         },
                         new
@@ -143,44 +277,8 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -11,
-                            ActivityId = 1,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 2,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 11,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 7,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 21,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 22,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 23,
-                            CredentialSetId = 111
+                            ActivityId = 25,
+                            CredentialSetId = 11
                         },
                         new
                         {
@@ -203,7 +301,43 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -10,
+                            ActivityId = 4,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 5,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 6,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
                             ActivityId = 7,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 8,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 9,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 10,
                             CredentialSetId = 10
                         },
                         new
@@ -214,8 +348,92 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -10,
+                            ActivityId = 12,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 13,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 14,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 15,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 16,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 21,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 22,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 23,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 25,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 1,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
                             GroupId = -9,
                             ActivityId = 2,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 3,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 4,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 5,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 6,
                             CredentialSetId = 9
                         },
                         new
@@ -227,7 +445,55 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -9,
+                            ActivityId = 8,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 9,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 10,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
                             ActivityId = 11,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 12,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 13,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 14,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 15,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 16,
                             CredentialSetId = 9
                         },
                         new
@@ -245,73 +511,217 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -9,
+                            ActivityId = 23,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 25,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 1,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
                             ActivityId = 2,
-                            CredentialSetId = 91
+                            CredentialSetId = 8
                         },
                         new
                         {
-                            GroupId = -9,
+                            GroupId = -8,
+                            ActivityId = 3,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 4,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 5,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 6,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
                             ActivityId = 7,
-                            CredentialSetId = 91
+                            CredentialSetId = 8
                         },
                         new
                         {
-                            GroupId = -9,
+                            GroupId = -8,
+                            ActivityId = 8,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 9,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 10,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
                             ActivityId = 11,
-                            CredentialSetId = 91
+                            CredentialSetId = 8
                         },
                         new
                         {
-                            GroupId = -9,
+                            GroupId = -8,
+                            ActivityId = 12,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 13,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 14,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 15,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 16,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
                             ActivityId = 21,
-                            CredentialSetId = 91
+                            CredentialSetId = 8
                         },
                         new
                         {
-                            GroupId = -9,
+                            GroupId = -8,
                             ActivityId = 22,
-                            CredentialSetId = 91
+                            CredentialSetId = 8
                         },
                         new
                         {
                             GroupId = -8,
+                            ActivityId = 23,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 25,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 1,
-                            CredentialSetId = 8
+                            CredentialSetId = 7
                         },
                         new
                         {
-                            GroupId = -8,
+                            GroupId = -7,
                             ActivityId = 2,
-                            CredentialSetId = 8
+                            CredentialSetId = 7
                         },
                         new
                         {
-                            GroupId = -8,
+                            GroupId = -7,
+                            ActivityId = 3,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 4,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 5,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 6,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 7,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 11,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 1,
                             CredentialSetId = 7
                         },
                         new
                         {
                             GroupId = -7,
-                            ActivityId = 2,
+                            ActivityId = 8,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 9,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 10,
                             CredentialSetId = 7
                         },
                         new
                         {
                             GroupId = -7,
                             ActivityId = 11,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 12,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 13,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 14,
                             CredentialSetId = 7
                         },
                         new
@@ -323,26 +733,32 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -7,
-                            ActivityId = 1,
-                            CredentialSetId = 71
+                            ActivityId = 16,
+                            CredentialSetId = 7
                         },
                         new
                         {
                             GroupId = -7,
-                            ActivityId = 2,
-                            CredentialSetId = 71
+                            ActivityId = 21,
+                            CredentialSetId = 7
                         },
                         new
                         {
                             GroupId = -7,
-                            ActivityId = 11,
-                            CredentialSetId = 71
+                            ActivityId = 22,
+                            CredentialSetId = 7
                         },
                         new
                         {
                             GroupId = -7,
-                            ActivityId = 15,
-                            CredentialSetId = 71
+                            ActivityId = 23,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 25,
+                            CredentialSetId = 7
                         },
                         new
                         {
@@ -360,6 +776,12 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -6,
                             ActivityId = 3,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 4,
                             CredentialSetId = 6
                         },
                         new
@@ -383,6 +805,18 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -6,
+                            ActivityId = 8,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 9,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
                             ActivityId = 10,
                             CredentialSetId = 6
                         },
@@ -400,8 +834,290 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -6,
+                            ActivityId = 13,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 14,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 15,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 16,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 21,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 22,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 23,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 25,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 1,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 2,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 3,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 4,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 5,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 6,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 7,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 8,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 9,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 10,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 11,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 12,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 13,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 14,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 15,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 16,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 21,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 22,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 23,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 25,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 1,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 2,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 3,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 4,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 5,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 6,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 7,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 8,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 9,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 10,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 11,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 12,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 13,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
                             GroupId = -4,
                             ActivityId = 14,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 15,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 16,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 21,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 22,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 23,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 25,
                             CredentialSetId = 4
                         },
                         new
@@ -425,7 +1141,55 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -3,
+                            ActivityId = 4,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 5,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 6,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 7,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 8,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 9,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 10,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
                             ActivityId = 11,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 12,
                             CredentialSetId = 3
                         },
                         new
@@ -436,45 +1200,165 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -3,
+                            ActivityId = 14,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 15,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 16,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 21,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 22,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 23,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 25,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 1,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 2,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 3,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 4,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 5,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 6,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 7,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 8,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 9,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 10,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 11,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
                             GroupId = -2,
                             ActivityId = 12,
                             CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 1,
-                            CredentialSetId = 14
+                            GroupId = -2,
+                            ActivityId = 13,
+                            CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 7,
-                            CredentialSetId = 14
+                            GroupId = -2,
+                            ActivityId = 14,
+                            CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 24,
-                            CredentialSetId = 14
+                            GroupId = -2,
+                            ActivityId = 15,
+                            CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 1,
-                            CredentialSetId = 141
+                            GroupId = -2,
+                            ActivityId = 16,
+                            CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 7,
-                            CredentialSetId = 141
+                            GroupId = -2,
+                            ActivityId = 21,
+                            CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 7,
-                            CredentialSetId = 142
+                            GroupId = -2,
+                            ActivityId = 22,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 23,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 25,
+                            CredentialSetId = 2
                         },
                         new
                         {
@@ -497,6 +1381,18 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -1,
+                            ActivityId = 4,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 5,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
                             ActivityId = 6,
                             CredentialSetId = 1
                         },
@@ -504,6 +1400,12 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -1,
                             ActivityId = 7,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 8,
                             CredentialSetId = 1
                         },
                         new
@@ -532,57 +1434,531 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -1,
+                            ActivityId = 13,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 14,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 15,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 16,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 21,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 22,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 23,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 25,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 1,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 1,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 1,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 1,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 2,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 2,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 2,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 2,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 3,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 3,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 3,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 3,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 4,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 4,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 4,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 4,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 5,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 5,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 5,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 5,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 6,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 6,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 6,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 6,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 7,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 7,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 7,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 7,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 8,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 8,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 8,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 8,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 9,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 9,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 9,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 9,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 10,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 10,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 10,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 10,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 11,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 11,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 11,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 11,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 12,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 12,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 12,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 12,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 13,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 13,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 13,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 13,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 14,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 14,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 14,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 14,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 15,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 15,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 15,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 15,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 16,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 16,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 16,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 16,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 21,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 21,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 21,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 21,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 22,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 22,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 22,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 22,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 23,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 23,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 23,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 23,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 25,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 25,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 25,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 25,
+                            CredentialSetId = 131
                         });
                 });
 
@@ -617,11 +1993,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 2,
                             Name = "DBS Check"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Sandbox - Befriender Training"
                         });
                 });
 
@@ -646,12 +2017,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("CredentialSet","Group");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 14,
-                            GroupId = -22,
-                            CredentialId = -1
-                        },
                         new
                         {
                             Id = 13,
@@ -726,39 +2091,15 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 71,
-                            GroupId = -7,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 91,
-                            GroupId = -9,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 111,
-                            GroupId = -11,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 131,
-                            GroupId = -13,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 141,
-                            GroupId = -22,
-                            CredentialId = 2
-                        },
-                        new
-                        {
                             Id = 7,
                             GroupId = -7,
                             CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 71,
+                            GroupId = -7,
+                            CredentialId = 2
                         },
                         new
                         {
@@ -786,9 +2127,21 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 91,
+                            GroupId = -9,
+                            CredentialId = 2
+                        },
+                        new
+                        {
                             Id = 11,
                             GroupId = -11,
                             CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 111,
+                            GroupId = -11,
+                            CredentialId = 2
                         },
                         new
                         {
@@ -798,15 +2151,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 14,
-                            GroupId = -22,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 142,
-                            GroupId = -22,
-                            CredentialId = 3
+                            Id = 131,
+                            GroupId = -13,
+                            CredentialId = 2
                         });
                 });
 
@@ -859,53 +2206,53 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
-                            Id = -10,
-                            Name = "PortlandMedicalPracticeLincoln"
+                            Id = 1,
+                            Name = "LincolnCountyHospital"
                         },
                         new
                         {
-                            Id = -9,
-                            Name = "RustonsSportsAndSocialClubLincoln"
-                        },
-                        new
-                        {
-                            Id = -8,
-                            Name = "SidingsMedicalPracticeBoston"
-                        },
-                        new
-                        {
-                            Id = -7,
-                            Name = "FranklinHallSpilsby"
-                        },
-                        new
-                        {
-                            Id = -6,
-                            Name = "StMarysMedicalPracticeStamford"
-                        },
-                        new
-                        {
-                            Id = -5,
-                            Name = "WaddingtonBranchSurgerySouthLincoln"
-                        },
-                        new
-                        {
-                            Id = -4,
-                            Name = "TableTennisClubGrantham"
-                        },
-                        new
-                        {
-                            Id = -3,
-                            Name = "LouthCommunityHospital"
-                        },
-                        new
-                        {
-                            Id = -2,
+                            Id = 2,
                             Name = "PilgramHospitalBolton"
                         },
                         new
                         {
-                            Id = -1,
-                            Name = "LincolnCountyHospital"
+                            Id = 3,
+                            Name = "LouthCommunityHospital"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "TableTennisClubGrantham"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "WaddingtonBranchSurgerySouthLincoln"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "StMarysMedicalPracticeStamford"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "FranklinHallSpilsby"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "SidingsMedicalPracticeBoston"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "RustonsSportsAndSocialClubLincoln"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "PortlandMedicalPracticeLincoln"
                         });
                 });
 
@@ -1109,11 +2456,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "ChildGroupSelector"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Name = "Sandbox_RequestSubmitter"
                         });
                 });
 
@@ -1746,15 +3088,6 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
-                        },
-                        new
-                        {
-                            Id = -22,
-                            GroupKey = "hms-sandbox",
-                            GroupName = "Sandbox",
-                            HomepageEnabled = false,
-                            ShiftsEnabled = true,
-                            TasksEnabled = true
                         });
                 });
 
@@ -1810,20 +3143,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("GroupCredential","Group");
 
                     b.HasData(
-                        new
-                        {
-                            GroupId = -22,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
-                        },
                         new
                         {
                             GroupId = -13,
@@ -2145,46 +3464,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
 
 Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            CredentialId = 1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "If you’re unable to verify with Yoti, email your group admins to find out how they can check your ID",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            CredentialId = 2,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "Email your group admins to request or register your DBS check",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            CredentialId = 3,
-                            CredentialTypeId = (byte)3,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 4,
-                            HowToAchieve = "Email your group admins to book onto the next course",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Befriender Training",
-                            WhatIsThis = "Use this credential to record that a volunteer has completed the Befriender traning course."
                         });
                 });
 
@@ -2207,47 +3486,42 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         new
                         {
                             GroupId = -14,
-                            LocationId = -3
+                            LocationId = 3
                         },
                         new
                         {
                             GroupId = -15,
-                            LocationId = -4
+                            LocationId = 4
                         },
                         new
                         {
                             GroupId = -16,
-                            LocationId = -5
+                            LocationId = 5
                         },
                         new
                         {
                             GroupId = -17,
-                            LocationId = -6
+                            LocationId = 6
                         },
                         new
                         {
                             GroupId = -18,
-                            LocationId = -7
+                            LocationId = 7
                         },
                         new
                         {
                             GroupId = -19,
-                            LocationId = -8
+                            LocationId = 8
                         },
                         new
                         {
                             GroupId = -20,
-                            LocationId = -9
+                            LocationId = 9
                         },
                         new
                         {
                             GroupId = -21,
-                            LocationId = -10
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            LocationId = -9
+                            LocationId = 10
                         });
                 });
 
@@ -2321,12 +3595,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             GroupId = -10,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
                         });
                 });
 
@@ -2356,74 +3624,26 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         new
                         {
                             GroupId = -1,
-                            SupportActivityId = 10,
-                            SupportActivityInstructionsId = (short)6
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)7
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 9,
-                            SupportActivityInstructionsId = (short)5
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 6,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -1,
                             SupportActivityId = 1,
                             SupportActivityInstructionsId = (short)1
                         },
                         new
                         {
-                            GroupId = -3,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)14
+                            GroupId = -5,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
                         },
                         new
                         {
-                            GroupId = -3,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)15
+                            GroupId = -6,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
                         },
                         new
                         {
-                            GroupId = -3,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)15
+                            GroupId = -7,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)10
                         },
                         new
                         {
@@ -2433,9 +3653,297 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
+                            GroupId = -8,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)21
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)26
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
                             GroupId = -3,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)14
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)11
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)20
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)25
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)15
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 5,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 6,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 6,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 6,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)27
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 9,
+                            SupportActivityInstructionsId = (short)5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 9,
+                            SupportActivityInstructionsId = (short)5
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 10,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 10,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 10,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)15
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)12
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)19
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)24
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)32
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)7
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)8
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)7
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)7
                         },
                         new
                         {
@@ -2451,165 +3959,15 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            GroupId = -7,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)11
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)12
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)10
-                        },
-                        new
-                        {
-                            GroupId = -2,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)8
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 10,
-                            SupportActivityInstructionsId = (short)6
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 5,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)7
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 6,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -6,
+                            GroupId = -11,
                             SupportActivityId = 22,
                             SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -5,
-                            SupportActivityId = 10,
-                            SupportActivityInstructionsId = (short)6
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)7
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 9,
-                            SupportActivityInstructionsId = (short)5
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 6,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 21,
-                            SupportActivityInstructionsId = (short)28
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)32
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)27
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 16,
-                            SupportActivityInstructionsId = (short)30
+                            GroupId = -9,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
@@ -2619,99 +3977,27 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            GroupId = -9,
-                            SupportActivityId = 21,
-                            SupportActivityInstructionsId = (short)23
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)24
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)26
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)25
-                        },
-                        new
-                        {
-                            GroupId = -9,
+                            GroupId = -3,
                             SupportActivityId = 22,
                             SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -8,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
+                            GroupId = -6,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -8,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
+                            GroupId = -12,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -8,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)20
+                            GroupId = -12,
+                            SupportActivityId = 25,
+                            SupportActivityInstructionsId = (short)33
                         },
                         new
                         {
@@ -2721,43 +4007,61 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
+                            GroupId = -9,
+                            SupportActivityId = 21,
+                            SupportActivityInstructionsId = (short)23
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            SupportActivityId = 21,
+                            SupportActivityInstructionsId = (short)28
+                        },
+                        new
+                        {
                             GroupId = -11,
                             SupportActivityId = 23,
                             SupportActivityInstructionsId = (short)16
                         },
                         new
                         {
-                            GroupId = -11,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)19
+                            GroupId = -13,
+                            SupportActivityId = 16,
+                            SupportActivityInstructionsId = (short)30
                         },
                         new
                         {
-                            GroupId = -11,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)21
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -19,
+                            GroupId = -14,
                             SupportActivityId = 24,
                             SupportActivityInstructionsId = (short)22
                         },
                         new
                         {
                             GroupId = -15,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -17,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -18,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -19,
                             SupportActivityId = 24,
                             SupportActivityInstructionsId = (short)22
                         },
@@ -2772,90 +4076,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             GroupId = -21,
                             SupportActivityId = 24,
                             SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -14,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -16,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -18,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -17,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -12,
-                            SupportActivityId = 25,
-                            SupportActivityInstructionsId = (short)33
-                        },
-                        new
-                        {
-                            GroupId = -12,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 25,
-                            SupportActivityInstructionsId = (short)33
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
                         });
                 });
 
@@ -2891,7 +4111,7 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             RequestHelpFormVariantId = (byte)0,
                             SupportActivityId = 1,
                             DisplayOrder = (byte)1,
-                            IsPreSelected = false,
+                            IsPreSelected = true,
                             Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
                         },
                         new
@@ -4244,16 +5464,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
                             TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)19,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)0
                         });
                 });
 
@@ -4591,11 +5801,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            SupportActivityId = 4,
-                            AutoSignUpWhenOtherSelected = false
-                        },
-                        new
-                        {
                             SupportActivityId = 5,
                             AutoSignUpWhenOtherSelected = true
                         },
@@ -4611,28 +5816,8 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            SupportActivityId = 8,
-                            AutoSignUpWhenOtherSelected = false
-                        },
-                        new
-                        {
-                            SupportActivityId = 9,
-                            AutoSignUpWhenOtherSelected = false
-                        },
-                        new
-                        {
                             SupportActivityId = 10,
                             AutoSignUpWhenOtherSelected = true
-                        },
-                        new
-                        {
-                            SupportActivityId = 11,
-                            AutoSignUpWhenOtherSelected = false
-                        },
-                        new
-                        {
-                            SupportActivityId = 12,
-                            AutoSignUpWhenOtherSelected = false
                         },
                         new
                         {
@@ -4641,18 +5826,8 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            SupportActivityId = 14,
-                            AutoSignUpWhenOtherSelected = false
-                        },
-                        new
-                        {
                             SupportActivityId = 15,
                             AutoSignUpWhenOtherSelected = true
-                        },
-                        new
-                        {
-                            SupportActivityId = 16,
-                            AutoSignUpWhenOtherSelected = false
                         },
                         new
                         {
@@ -4702,162 +5877,162 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         new
                         {
                             SupportActivityInstructionsId = (short)1,
-                            Instructions = "{\"SupportActivityInstructions\":1,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need and agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Pick up their shopping and drop it off at their door. Make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their shopping.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":1,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need and agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Pick up their shopping and drop it off at their door. Make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their shopping.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us and anyone else involved with the request know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)2,
-                            Instructions = "{\"SupportActivityInstructions\":2,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":2,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)3,
-                            Instructions = "{\"SupportActivityInstructions\":3,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Get in touch with the person who needs the help to confirm what they need. If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help that’s needed.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":3,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Get in touch with the person who needs the help to confirm what they need. If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help that’s needed.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)4,
-                            Instructions = "{\"SupportActivityInstructions\":4,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":4,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)5,
-                            Instructions = "{\"SupportActivityInstructions\":5,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Get in touch to find out how you can help.\"},{\"Heading\":\"Solve the problem… hopefully!\",\"Detail\":\"If you’re able, give them the support they need.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due (including if you don’t know the answer!), let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":5,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Get in touch to find out how you can help.\"},{\"Heading\":\"Solve the problem… hopefully!\",\"Detail\":\"If you’re able, give them the support they need.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due (including if you don’t know the answer!), let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)6,
-                            Instructions = "{\"SupportActivityInstructions\":6,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Check in\",\"Detail\":\"Give them a call or knock on the door to find out if they’re OK. You can also see if they need anything and let them know someone’s asking after them.\"},{\"Heading\":\"Contact the requester\",\"Detail\":\"A check in is usually requested by someone else for a friend, neighbour or loved one. Give the person who requested the help a call to let them know how it went.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":6,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Check in\",\"Detail\":\"Give them a call or knock on the door to find out if they’re OK. You can also see if they need anything and let them know someone’s asking after them.\"},{\"Heading\":\"Contact the requester\",\"Detail\":\"A check in is usually requested by someone else for a friend, neighbour or loved one. Give the person who requested the help a call to let them know how it went.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)7,
-                            Instructions = "{\"SupportActivityInstructions\":7,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need and agree how they will pay you back (£2 - £3 per face covering to cover the cost of materials plus the cost of postage if required). You can find out more about secure payment methods in our [FAQs](/questions#5).\"},{\"Heading\":\"Provide help\",\"Detail\":\"Make the face coverings and deliver them (or pop them in the post). If you need to claim back the cost of postage don’t forget to keep a copy of the receipt.\"},{\"Heading\":\"Let them know they’re on the way\",\"Detail\":\"Drop the recipient a note to let them know they’re on the way.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":7,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need and agree how they will pay you back (£2 - £3 per face covering to cover the cost of materials plus the cost of postage if required). You can find out more about secure payment methods in our [FAQs](/questions#5).\"},{\"Heading\":\"Provide help\",\"Detail\":\"Make the face coverings and deliver them (or pop them in the post). If you need to claim back the cost of postage don’t forget to keep a copy of the receipt.\"},{\"Heading\":\"Let them know they’re on the way\",\"Detail\":\"Drop the recipient a note to let them know they’re on the way.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)8,
-                            Instructions = "{\"SupportActivityInstructions\":8,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need. Let them know that they can make a donation [here](https://www.gofundme.com/f/for-the-love-of-scrubs-face-coverings?utm_source=widget&utm_medium=referral&utm_campaign=p_cp+share-sheet) (suggested £3 - £4 per face covering). If you need to post the face coverings let them know if you’ll need them to cover the cost of postage on top of the donation and agree how they will pay you back. You can find out more about secure payment methods in our [FAQs](/questions#5).\"},{\"Heading\":\"Provide help\",\"Detail\":\"Make the face coverings and deliver them (or pop them in the post). If you need to claim back the cost of postage don’t forget to keep a copy of the receipt. If you need more materials email mailto:requestmaterials.ftlos@outlook.com.\"},{\"Heading\":\"Let them know they’re on the way\",\"Detail\":\"Drop the recipient a note to let them know they’re on the way and share a link to [our fundraising page](https://www.gofundme.com/f/for-the-love-of-scrubs-face-coverings?utm_source=widget&utm_medium=referral&utm_campaign=p_cp+share-sheet).\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":8,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need. Let them know that they can make a donation [here](https://www.gofundme.com/f/for-the-love-of-scrubs-face-coverings?utm_source=widget&utm_medium=referral&utm_campaign=p_cp+share-sheet) (suggested £3 - £4 per face covering). If you need to post the face coverings let them know if you’ll need them to cover the cost of postage on top of the donation and agree how they will pay you back. You can find out more about secure payment methods in our [FAQs](/questions#5).\"},{\"Heading\":\"Provide help\",\"Detail\":\"Make the face coverings and deliver them (or pop them in the post). If you need to claim back the cost of postage don’t forget to keep a copy of the receipt. If you need more materials email mailto:requestmaterials.ftlos@outlook.com.\"},{\"Heading\":\"Let them know they’re on the way\",\"Detail\":\"Drop the recipient a note to let them know they’re on the way and share a link to [our fundraising page](https://www.gofundme.com/f/for-the-love-of-scrubs-face-coverings?utm_source=widget&utm_medium=referral&utm_campaign=p_cp+share-sheet).\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)9,
-                            Instructions = "{\"SupportActivityInstructions\":9,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Lincoln & South Lincolnshire)\",\"Detail\":\"Please contact volunteering@ageuklsl.org.uk to arrange collection of a pre-made wellbeing package from one of our sites. We’ll also give you all the details you need for the delivery.\"},{\"Heading\":\"Deliver the package\",\"Detail\":\"Use the details provided to deliver the package. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing volunteering@ageuklsl.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":9,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Lincoln & South Lincolnshire)\",\"Detail\":\"Please contact volunteering@ageuklsl.org.uk to arrange collection of a pre-made wellbeing package from one of our sites. We’ll also give you all the details you need for the delivery.\"},{\"Heading\":\"Deliver the package\",\"Detail\":\"Use the details provided to deliver the package. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing volunteering@ageuklsl.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)10,
-                            Instructions = "{\"SupportActivityInstructions\":10,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Go shopping\",\"Detail\":\"Pick up their shopping, you will find their shopping list and any specific instructions in “My Requests”. You’ll need to pay for the shopping on your own card before claiming the money back.\"},{\"Heading\":\"Send us a copy of the receipt\",\"Detail\":\"Write the name of the client on the receipt and email us a photograph to mailto:emergencyvols@ageukwirral.org.uk. We’ll transfer the money as soon as possible via bank transfer.\"},{\"Heading\":\"Drop off the shopping\",\"Detail\":\"Drop off the shopping along with the original copy of the receipt. You’ll find their details in “My Requests”.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:H&Cadminteam@ageukwirral.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":10,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Go shopping\",\"Detail\":\"Pick up their shopping, you will find their shopping list and any specific instructions in “My Accepted Requests”. You’ll need to pay for the shopping on your own card before claiming the money back.\"},{\"Heading\":\"Send us a copy of the receipt\",\"Detail\":\"Write the name of the client on the receipt and email us a photograph to mailto:emergencyvols@ageukwirral.org.uk. We’ll transfer the money as soon as possible via bank transfer.\"},{\"Heading\":\"Drop off the shopping\",\"Detail\":\"Drop off the shopping along with the original copy of the receipt. You’ll find their details in “My Accepted Requests”.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:H&Cadminteam@ageukwirral.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)11,
-                            Instructions = "{\"SupportActivityInstructions\":11,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Collect the prescription\",\"Detail\":\"Collect the prescription from the pharmacy, you will find details of the pharmacy in “My Requests”. If the prescription needs paying for, you’ll need to pay for it on your own card before claiming the money back.\"},{\"Heading\":\"Send us a copy of the receipt (if you paid)\",\"Detail\":\"If you paid for the prescription, write the name of the client on the receipt and email us a photograph to mailto:emergencyvols@ageukwirral.org.uk. We’ll transfer the money as soon as possible via bank transfer.\"},{\"Heading\":\"Drop off the medication\",\"Detail\":\"Drop off the medication (along with the original copy of the receipt if you paid for it). You’ll find their details in “My Requests”\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:H&Cadminteam@ageukwirral.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":11,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Collect the prescription\",\"Detail\":\"Collect the prescription from the pharmacy, you will find details of the pharmacy in “My Accepted Requests”. If the prescription needs paying for, you’ll need to pay for it on your own card before claiming the money back.\"},{\"Heading\":\"Send us a copy of the receipt (if you paid)\",\"Detail\":\"If you paid for the prescription, write the name of the client on the receipt and email us a photograph to mailto:emergencyvols@ageukwirral.org.uk. We’ll transfer the money as soon as possible via bank transfer.\"},{\"Heading\":\"Drop off the medication\",\"Detail\":\"Drop off the medication (along with the original copy of the receipt if you paid for it). You’ll find their details in “My Accepted Requests”\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:H&Cadminteam@ageukwirral.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)12,
-                            Instructions = "{\"SupportActivityInstructions\":12,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help that’s needed.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":12,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help that’s needed.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)13,
-                            Instructions = "{\"SupportActivityInstructions\":13,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Lincoln & South Lincolnshire)\",\"Detail\":\"Please contact mailto:volunteering@ageuklsl.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":13,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Lincoln & South Lincolnshire)\",\"Detail\":\"Please contact mailto:volunteering@ageuklsl.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)14,
-                            Instructions = "{\"SupportActivityInstructions\":14,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Lincoln & South Lincolnshire)\",\"Detail\":\"Please contact mailto:volunteering@ageuklsl.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.\"},{\"Heading\":\"Collecting the prescription\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":14,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Lincoln & South Lincolnshire)\",\"Detail\":\"Please contact mailto:volunteering@ageuklsl.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.\"},{\"Heading\":\"Collecting the prescription\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)15,
-                            Instructions = "{\"SupportActivityInstructions\":15,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Lincoln & South Lincolnshire)\",\"Detail\":\"Please contact mailto:volunteering@ageuklsl.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":15,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Lincoln & South Lincolnshire)\",\"Detail\":\"Please contact mailto:volunteering@ageuklsl.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)16,
-                            Instructions = "{\"SupportActivityInstructions\":16,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"For the Folkestone area please contact the Marigold Centre on 01303 279031, or for the Deal area contact the Deal Centre on 01304 372608 to book your meal. (You provide the company; we’ll provide the food!).\"},{\"Heading\":\"Enjoy your dinner together\",\"Detail\":\"Use the details given to you to meet up at the person’s chosen mealtime (usually between 12 noon and 1pm). Have a chat and provide some company for the person you’re joining.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":16,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"For the Folkestone area please contact the Marigold Centre on 01303 279031, or for the Deal area contact the Deal Centre on 01304 372608 to book your meal. (You provide the company; we’ll provide the food!).\"},{\"Heading\":\"Enjoy your dinner together\",\"Detail\":\"Use the details given to you to meet up at the person’s chosen mealtime (usually between 12 noon and 1pm). Have a chat and provide some company for the person you’re joining.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)17,
-                            Instructions = "{\"SupportActivityInstructions\":17,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to arrange for the collection of hot meals and the delivery details.\"},{\"Heading\":\"Deliver the meals\",\"Detail\":\"Use the details given to you to deliver the meals. It would be great if you could also stop to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":17,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to arrange for the collection of hot meals and the delivery details.\"},{\"Heading\":\"Deliver the meals\",\"Detail\":\"Use the details given to you to deliver the meals. It would be great if you could also stop to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)18,
-                            Instructions = "{\"SupportActivityInstructions\":18,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":18,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)33,
-                            Instructions = "{\"SupportActivityInstructions\":33,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":33,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)19,
-                            Instructions = "{\"SupportActivityInstructions\":19,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk .\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":19,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk .\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)20,
-                            Instructions = "{\"SupportActivityInstructions\":20,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.\"},{\"Heading\":\"Collecting the prescription\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":20,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.\"},{\"Heading\":\"Collecting the prescription\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)21,
-                            Instructions = "{\"SupportActivityInstructions\":21,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":21,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK South Kent Coast)\",\"Detail\":\"Please contact mailto:volunteering@ageukskc.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)24,
-                            Instructions = "{\"SupportActivityInstructions\":24,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK North West Kent)\",\"Detail\":\"Please contact mailto:contactus@ageuknorthwestkent.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:contactus@ageuknorthwestkent.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":24,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK North West Kent)\",\"Detail\":\"Please contact mailto:contactus@ageuknorthwestkent.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:contactus@ageuknorthwestkent.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)23,
-                            Instructions = "{\"SupportActivityInstructions\":23,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK North West Kent)\",\"Detail\":\"Please contact mailto:kirsty.groves@ageuknorthwestkent.org.uk to arrange for the collection of hot meals and the delivery details.\"},{\"Heading\":\"Deliver the meals\",\"Detail\":\"Use the details given to you to deliver the meals. It would be great if you could also stop to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:kirsty.groves@ageuknorthwestkent.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":23,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK North West Kent)\",\"Detail\":\"Please contact mailto:kirsty.groves@ageuknorthwestkent.org.uk to arrange for the collection of hot meals and the delivery details.\"},{\"Heading\":\"Deliver the meals\",\"Detail\":\"Use the details given to you to deliver the meals. It would be great if you could also stop to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:kirsty.groves@ageuknorthwestkent.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)25,
-                            Instructions = "{\"SupportActivityInstructions\":25,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK North West Kent)\",\"Detail\":\"Please contact mailto:contactus@ageuknorthwestkent.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.\"},{\"Heading\":\"Collecting the prescription\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:contactus@ageuknorthwestkent.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":25,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK North West Kent)\",\"Detail\":\"Please contact mailto:contactus@ageuknorthwestkent.org.uk to receive further information about this request. We’ll also give you all the details you need for the prescription collection and delivering the medication.\"},{\"Heading\":\"Collecting the prescription\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:contactus@ageuknorthwestkent.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)26,
-                            Instructions = "{\"SupportActivityInstructions\":26,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK North West Kent)\",\"Detail\":\"Please contact mailto:contactus@ageuknorthwestkent.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:kirsty.groves@ageuknorthwestkent.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":26,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK North West Kent)\",\"Detail\":\"Please contact mailto:contactus@ageuknorthwestkent.org.uk to receive further information about this request. We’ll also give you all the details you need for the delivering the items.\"},{\"Heading\":\"Purchase the shopping items\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:kirsty.groves@ageuknorthwestkent.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)27,
-                            Instructions = "{\"SupportActivityInstructions\":27,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":27,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)29,
-                            Instructions = "{\"SupportActivityInstructions\":29,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Faversham & Sittingbourne)\",\"Detail\":\"Please contact mailto:volunteering@ageukfaversham.org.uk to book your meal (you provide the company, we’ll provide the food!).\"},{\"Heading\":\"Enjoy your dinner together\",\"Detail\":\"Use the details given to you to meet up at your chosen mealtime. Have a chat and provide some company for the person you’re joining.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're home, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukfaversham.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":29,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Faversham & Sittingbourne)\",\"Detail\":\"Please contact mailto:volunteering@ageukfaversham.org.uk to book your meal (you provide the company, we’ll provide the food!).\"},{\"Heading\":\"Enjoy your dinner together\",\"Detail\":\"Use the details given to you to meet up at your chosen mealtime. Have a chat and provide some company for the person you’re joining.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're home, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukfaversham.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)28,
-                            Instructions = "{\"SupportActivityInstructions\":28,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Faversham & Sittingbourne)\",\"Detail\":\"Please contact mailto:volunteering@ageukfaversham.org.uk to arrange for the collection of hot meals and the delivery details.\"},{\"Heading\":\"Deliver the meals\",\"Detail\":\"Use the details given to you to deliver the meals. It would be great if you could also stop to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukfaversham.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":28,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Faversham & Sittingbourne)\",\"Detail\":\"Please contact mailto:volunteering@ageukfaversham.org.uk to arrange for the collection of hot meals and the delivery details.\"},{\"Heading\":\"Deliver the meals\",\"Detail\":\"Use the details given to you to deliver the meals. It would be great if you could also stop to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukfaversham.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)30,
-                            Instructions = "{\"SupportActivityInstructions\":30,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info link’. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the transport\",\"Detail\":\"Use the details given to you to pick up and drop off as required.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":30,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info link’. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the transport\",\"Detail\":\"Use the details given to you to pick up and drop off as required.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)31,
-                            Instructions = "{\"SupportActivityInstructions\":31,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info link’. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":31,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the ‘View more info link’. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)32,
-                            Instructions = "{\"SupportActivityInstructions\":32,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Faversham & Sittingbourne)\",\"Detail\":\"Please contact mailto:volunteering@ageukfaversham.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukfaversham.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":32,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Faversham & Sittingbourne)\",\"Detail\":\"Please contact mailto:volunteering@ageukfaversham.org.uk to receive further information about this request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukfaversham.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {

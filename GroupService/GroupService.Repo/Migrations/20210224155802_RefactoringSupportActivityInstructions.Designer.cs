@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210224155802_RefactoringSupportActivityInstructions")]
+    partial class RefactoringSupportActivityInstructions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -617,11 +619,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 2,
                             Name = "DBS Check"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Sandbox - Befriender Training"
                         });
                 });
 
@@ -1746,15 +1743,6 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
-                        },
-                        new
-                        {
-                            Id = -22,
-                            GroupKey = "hms-sandbox",
-                            GroupName = "Sandbox",
-                            HomepageEnabled = false,
-                            ShiftsEnabled = true,
-                            TasksEnabled = true
                         });
                 });
 
@@ -2319,12 +2307,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         new
                         {
                             GroupId = -10,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -22,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         });

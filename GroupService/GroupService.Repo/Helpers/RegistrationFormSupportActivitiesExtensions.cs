@@ -45,7 +45,7 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.Default,
                 SupportActivityId = (int)SupportActivities.Shopping,
                 Label = SupportActivities.Shopping.GetLabel(),
-                IsPreSelected = true,
+                IsPreSelected = false,
                 DisplayOrder = 1
             });
 
@@ -1036,14 +1036,14 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 9
             });
 
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
-                SupportActivityId = (int)SupportActivities.EmergencySupport,
-                Label = SupportActivities.EmergencySupport.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 10
-            });
+            //entity.HasData(new RegistrationFormSupportActivity
+            //{
+            //    RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
+            //    SupportActivityId = (int)SupportActivities.EmergencySupport,
+            //    Label = SupportActivities.EmergencySupport.GetLabel(),
+            //    IsPreSelected = false,
+            //    DisplayOrder = 10
+            //});
 
 
             entity.HasData(new RegistrationFormSupportActivity

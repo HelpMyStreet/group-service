@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210224111421_AddingRequestHelpFormVariant.Sandbox_RequestSubmitter")]
+    partial class AddingRequestHelpFormVariantSandbox_RequestSubmitter
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,13 +43,97 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -13,
+                            ActivityId = 1,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 2,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 3,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 4,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 5,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 6,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
                             ActivityId = 7,
                             CredentialSetId = 13
                         },
                         new
                         {
                             GroupId = -13,
+                            ActivityId = 8,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 9,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 10,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
                             ActivityId = 11,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 12,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 13,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 14,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 15,
+                            CredentialSetId = 13
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 16,
                             CredentialSetId = 13
                         },
                         new
@@ -71,32 +157,8 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -13,
-                            ActivityId = 7,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 11,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 21,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 22,
-                            CredentialSetId = 131
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            ActivityId = 23,
-                            CredentialSetId = 131
+                            ActivityId = 25,
+                            CredentialSetId = 13
                         },
                         new
                         {
@@ -113,13 +175,85 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -11,
-                            ActivityId = 11,
+                            ActivityId = 3,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 4,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 5,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 6,
                             CredentialSetId = 11
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 7,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 8,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 9,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 10,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 11,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 12,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 13,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 14,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 15,
+                            CredentialSetId = 11
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 16,
                             CredentialSetId = 11
                         },
                         new
@@ -143,44 +277,8 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -11,
-                            ActivityId = 1,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 2,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 11,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 7,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 21,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 22,
-                            CredentialSetId = 111
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            ActivityId = 23,
-                            CredentialSetId = 111
+                            ActivityId = 25,
+                            CredentialSetId = 11
                         },
                         new
                         {
@@ -203,7 +301,43 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -10,
+                            ActivityId = 4,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 5,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 6,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
                             ActivityId = 7,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 8,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 9,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 10,
                             CredentialSetId = 10
                         },
                         new
@@ -214,8 +348,92 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -10,
+                            ActivityId = 12,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 13,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 14,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 15,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 16,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 21,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 22,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 23,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            ActivityId = 25,
+                            CredentialSetId = 10
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 1,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
                             GroupId = -9,
                             ActivityId = 2,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 3,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 4,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 5,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 6,
                             CredentialSetId = 9
                         },
                         new
@@ -227,7 +445,55 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -9,
+                            ActivityId = 8,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 9,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 10,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
                             ActivityId = 11,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 12,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 13,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 14,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 15,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 16,
                             CredentialSetId = 9
                         },
                         new
@@ -245,73 +511,217 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -9,
+                            ActivityId = 23,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 25,
+                            CredentialSetId = 9
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 1,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
                             ActivityId = 2,
-                            CredentialSetId = 91
+                            CredentialSetId = 8
                         },
                         new
                         {
-                            GroupId = -9,
+                            GroupId = -8,
+                            ActivityId = 3,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 4,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 5,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 6,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
                             ActivityId = 7,
-                            CredentialSetId = 91
+                            CredentialSetId = 8
                         },
                         new
                         {
-                            GroupId = -9,
+                            GroupId = -8,
+                            ActivityId = 8,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 9,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 10,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
                             ActivityId = 11,
-                            CredentialSetId = 91
+                            CredentialSetId = 8
                         },
                         new
                         {
-                            GroupId = -9,
+                            GroupId = -8,
+                            ActivityId = 12,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 13,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 14,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 15,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 16,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
                             ActivityId = 21,
-                            CredentialSetId = 91
+                            CredentialSetId = 8
                         },
                         new
                         {
-                            GroupId = -9,
+                            GroupId = -8,
                             ActivityId = 22,
-                            CredentialSetId = 91
+                            CredentialSetId = 8
                         },
                         new
                         {
                             GroupId = -8,
+                            ActivityId = 23,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            ActivityId = 25,
+                            CredentialSetId = 8
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 1,
-                            CredentialSetId = 8
+                            CredentialSetId = 7
                         },
                         new
                         {
-                            GroupId = -8,
+                            GroupId = -7,
                             ActivityId = 2,
-                            CredentialSetId = 8
+                            CredentialSetId = 7
                         },
                         new
                         {
-                            GroupId = -8,
+                            GroupId = -7,
+                            ActivityId = 3,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 4,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 5,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 6,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 7,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            ActivityId = 11,
-                            CredentialSetId = 8
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            ActivityId = 1,
                             CredentialSetId = 7
                         },
                         new
                         {
                             GroupId = -7,
-                            ActivityId = 2,
+                            ActivityId = 8,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 9,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 10,
                             CredentialSetId = 7
                         },
                         new
                         {
                             GroupId = -7,
                             ActivityId = 11,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 12,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 13,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 14,
                             CredentialSetId = 7
                         },
                         new
@@ -323,26 +733,32 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -7,
-                            ActivityId = 1,
-                            CredentialSetId = 71
+                            ActivityId = 16,
+                            CredentialSetId = 7
                         },
                         new
                         {
                             GroupId = -7,
-                            ActivityId = 2,
-                            CredentialSetId = 71
+                            ActivityId = 21,
+                            CredentialSetId = 7
                         },
                         new
                         {
                             GroupId = -7,
-                            ActivityId = 11,
-                            CredentialSetId = 71
+                            ActivityId = 22,
+                            CredentialSetId = 7
                         },
                         new
                         {
                             GroupId = -7,
-                            ActivityId = 15,
-                            CredentialSetId = 71
+                            ActivityId = 23,
+                            CredentialSetId = 7
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 25,
+                            CredentialSetId = 7
                         },
                         new
                         {
@@ -360,6 +776,12 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -6,
                             ActivityId = 3,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 4,
                             CredentialSetId = 6
                         },
                         new
@@ -383,6 +805,18 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -6,
+                            ActivityId = 8,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 9,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
                             ActivityId = 10,
                             CredentialSetId = 6
                         },
@@ -400,8 +834,290 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -6,
+                            ActivityId = 13,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 14,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 15,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 16,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 21,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 22,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 23,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            ActivityId = 25,
+                            CredentialSetId = 6
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 1,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 2,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 3,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 4,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 5,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 6,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 7,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 8,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 9,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 10,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 11,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 12,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 13,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 14,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 15,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 16,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 21,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 22,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 23,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            ActivityId = 25,
+                            CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 1,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 2,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 3,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 4,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 5,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 6,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 7,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 8,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 9,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 10,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 11,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 12,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 13,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
                             GroupId = -4,
                             ActivityId = 14,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 15,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 16,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 21,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 22,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 23,
+                            CredentialSetId = 4
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            ActivityId = 25,
                             CredentialSetId = 4
                         },
                         new
@@ -425,7 +1141,55 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -3,
+                            ActivityId = 4,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 5,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 6,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 7,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 8,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 9,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 10,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
                             ActivityId = 11,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 12,
                             CredentialSetId = 3
                         },
                         new
@@ -436,45 +1200,165 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -3,
+                            ActivityId = 14,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 15,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 16,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 21,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 22,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 23,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            ActivityId = 25,
+                            CredentialSetId = 3
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 1,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 2,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 3,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 4,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 5,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 6,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 7,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 8,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 9,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 10,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 11,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
                             GroupId = -2,
                             ActivityId = 12,
                             CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 1,
-                            CredentialSetId = 14
+                            GroupId = -2,
+                            ActivityId = 13,
+                            CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 7,
-                            CredentialSetId = 14
+                            GroupId = -2,
+                            ActivityId = 14,
+                            CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 24,
-                            CredentialSetId = 14
+                            GroupId = -2,
+                            ActivityId = 15,
+                            CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 1,
-                            CredentialSetId = 141
+                            GroupId = -2,
+                            ActivityId = 16,
+                            CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 7,
-                            CredentialSetId = 141
+                            GroupId = -2,
+                            ActivityId = 21,
+                            CredentialSetId = 2
                         },
                         new
                         {
-                            GroupId = -22,
-                            ActivityId = 7,
-                            CredentialSetId = 142
+                            GroupId = -2,
+                            ActivityId = 22,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 23,
+                            CredentialSetId = 2
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            ActivityId = 25,
+                            CredentialSetId = 2
                         },
                         new
                         {
@@ -497,6 +1381,18 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -1,
+                            ActivityId = 4,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 5,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
                             ActivityId = 6,
                             CredentialSetId = 1
                         },
@@ -504,6 +1400,12 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -1,
                             ActivityId = 7,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 8,
                             CredentialSetId = 1
                         },
                         new
@@ -532,57 +1434,531 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -1,
+                            ActivityId = 13,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 14,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 15,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 16,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 21,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 22,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 23,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            ActivityId = 25,
+                            CredentialSetId = 1
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 1,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 1,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 1,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 1,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 2,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 2,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 2,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 2,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 3,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 3,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 3,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 3,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 4,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 4,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 4,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 4,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 5,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 5,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 5,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 5,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 6,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 6,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 6,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 6,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 7,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 7,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 7,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 7,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 8,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 8,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 8,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 8,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 9,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 9,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 9,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 9,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 10,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 10,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 10,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 10,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 11,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
                         },
                         new
                         {
-                            GroupId = -5,
+                            GroupId = -9,
+                            ActivityId = 11,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 11,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 11,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
                             ActivityId = 12,
-                            CredentialSetId = 5
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 12,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 12,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 12,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 13,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 13,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 13,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 13,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 14,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 14,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 14,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 14,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 15,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 15,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 15,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 15,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 16,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 16,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 16,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 16,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 21,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 21,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 21,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 21,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 22,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 22,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 22,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 22,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 23,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 23,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 23,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 23,
+                            CredentialSetId = 131
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            ActivityId = 25,
+                            CredentialSetId = 71
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            ActivityId = 25,
+                            CredentialSetId = 91
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            ActivityId = 25,
+                            CredentialSetId = 111
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            ActivityId = 25,
+                            CredentialSetId = 131
                         });
                 });
 
@@ -617,11 +1993,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 2,
                             Name = "DBS Check"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Sandbox - Befriender Training"
                         });
                 });
 
@@ -646,12 +2017,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("CredentialSet","Group");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 14,
-                            GroupId = -22,
-                            CredentialId = -1
-                        },
                         new
                         {
                             Id = 13,
@@ -726,39 +2091,15 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 71,
-                            GroupId = -7,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 91,
-                            GroupId = -9,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 111,
-                            GroupId = -11,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 131,
-                            GroupId = -13,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 141,
-                            GroupId = -22,
-                            CredentialId = 2
-                        },
-                        new
-                        {
                             Id = 7,
                             GroupId = -7,
                             CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 71,
+                            GroupId = -7,
+                            CredentialId = 2
                         },
                         new
                         {
@@ -786,9 +2127,21 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 91,
+                            GroupId = -9,
+                            CredentialId = 2
+                        },
+                        new
+                        {
                             Id = 11,
                             GroupId = -11,
                             CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 111,
+                            GroupId = -11,
+                            CredentialId = 2
                         },
                         new
                         {
@@ -798,15 +2151,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 14,
-                            GroupId = -22,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 142,
-                            GroupId = -22,
-                            CredentialId = 3
+                            Id = 131,
+                            GroupId = -13,
+                            CredentialId = 2
                         });
                 });
 
@@ -1746,15 +3093,6 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
-                        },
-                        new
-                        {
-                            Id = -22,
-                            GroupKey = "hms-sandbox",
-                            GroupName = "Sandbox",
-                            HomepageEnabled = false,
-                            ShiftsEnabled = true,
-                            TasksEnabled = true
                         });
                 });
 
@@ -1810,20 +3148,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("GroupCredential","Group");
 
                     b.HasData(
-                        new
-                        {
-                            GroupId = -22,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
-                        },
                         new
                         {
                             GroupId = -13,
@@ -2145,46 +3469,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
 
 Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            CredentialId = 1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "If you’re unable to verify with Yoti, email your group admins to find out how they can check your ID",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            CredentialId = 2,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "Email your group admins to request or register your DBS check",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            CredentialId = 3,
-                            CredentialTypeId = (byte)3,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 4,
-                            HowToAchieve = "Email your group admins to book onto the next course",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Befriender Training",
-                            WhatIsThis = "Use this credential to record that a volunteer has completed the Befriender traning course."
                         });
                 });
 
@@ -2243,11 +3527,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         {
                             GroupId = -21,
                             LocationId = -10
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            LocationId = -9
                         });
                 });
 
@@ -2321,12 +3600,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             GroupId = -10,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
                         });
                 });
 
@@ -2356,74 +3629,26 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         new
                         {
                             GroupId = -1,
-                            SupportActivityId = 10,
-                            SupportActivityInstructionsId = (short)6
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)7
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 9,
-                            SupportActivityInstructionsId = (short)5
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 6,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -1,
                             SupportActivityId = 1,
                             SupportActivityInstructionsId = (short)1
                         },
                         new
                         {
-                            GroupId = -3,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)14
+                            GroupId = -5,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
                         },
                         new
                         {
-                            GroupId = -3,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)15
+                            GroupId = -6,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
                         },
                         new
                         {
-                            GroupId = -3,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)15
+                            GroupId = -7,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)10
                         },
                         new
                         {
@@ -2433,9 +3658,297 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
+                            GroupId = -8,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)21
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)26
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
                             GroupId = -3,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)14
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)11
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)20
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)25
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)15
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 5,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 6,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 6,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 6,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)27
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 9,
+                            SupportActivityInstructionsId = (short)5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 9,
+                            SupportActivityInstructionsId = (short)5
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 10,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 10,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 10,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)15
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)12
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)19
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)24
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)32
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)7
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)8
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)7
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)7
                         },
                         new
                         {
@@ -2451,165 +3964,15 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            GroupId = -7,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)11
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)12
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)10
-                        },
-                        new
-                        {
-                            GroupId = -2,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)8
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 10,
-                            SupportActivityInstructionsId = (short)6
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 5,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)7
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 6,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -6,
+                            GroupId = -11,
                             SupportActivityId = 22,
                             SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -5,
-                            SupportActivityId = 10,
-                            SupportActivityInstructionsId = (short)6
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)7
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 9,
-                            SupportActivityInstructionsId = (short)5
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 6,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 21,
-                            SupportActivityInstructionsId = (short)28
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)32
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)27
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 16,
-                            SupportActivityInstructionsId = (short)30
+                            GroupId = -9,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
@@ -2619,99 +3982,27 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            GroupId = -9,
-                            SupportActivityId = 21,
-                            SupportActivityInstructionsId = (short)23
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)24
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)26
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)25
-                        },
-                        new
-                        {
-                            GroupId = -9,
+                            GroupId = -3,
                             SupportActivityId = 22,
                             SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -8,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
+                            GroupId = -6,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -8,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
+                            GroupId = -12,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -8,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)20
+                            GroupId = -12,
+                            SupportActivityId = 25,
+                            SupportActivityInstructionsId = (short)33
                         },
                         new
                         {
@@ -2721,43 +4012,61 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
+                            GroupId = -9,
+                            SupportActivityId = 21,
+                            SupportActivityInstructionsId = (short)23
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            SupportActivityId = 21,
+                            SupportActivityInstructionsId = (short)28
+                        },
+                        new
+                        {
                             GroupId = -11,
                             SupportActivityId = 23,
                             SupportActivityInstructionsId = (short)16
                         },
                         new
                         {
-                            GroupId = -11,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)19
+                            GroupId = -13,
+                            SupportActivityId = 16,
+                            SupportActivityInstructionsId = (short)30
                         },
                         new
                         {
-                            GroupId = -11,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)21
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -19,
+                            GroupId = -14,
                             SupportActivityId = 24,
                             SupportActivityInstructionsId = (short)22
                         },
                         new
                         {
                             GroupId = -15,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -17,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -18,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -19,
                             SupportActivityId = 24,
                             SupportActivityInstructionsId = (short)22
                         },
@@ -2772,90 +4081,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             GroupId = -21,
                             SupportActivityId = 24,
                             SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -14,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -16,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -18,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -17,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -12,
-                            SupportActivityId = 25,
-                            SupportActivityInstructionsId = (short)33
-                        },
-                        new
-                        {
-                            GroupId = -12,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 25,
-                            SupportActivityInstructionsId = (short)33
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
                         });
                 });
 
@@ -4591,11 +5816,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            SupportActivityId = 4,
-                            AutoSignUpWhenOtherSelected = false
-                        },
-                        new
-                        {
                             SupportActivityId = 5,
                             AutoSignUpWhenOtherSelected = true
                         },
@@ -4611,28 +5831,8 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            SupportActivityId = 8,
-                            AutoSignUpWhenOtherSelected = false
-                        },
-                        new
-                        {
-                            SupportActivityId = 9,
-                            AutoSignUpWhenOtherSelected = false
-                        },
-                        new
-                        {
                             SupportActivityId = 10,
                             AutoSignUpWhenOtherSelected = true
-                        },
-                        new
-                        {
-                            SupportActivityId = 11,
-                            AutoSignUpWhenOtherSelected = false
-                        },
-                        new
-                        {
-                            SupportActivityId = 12,
-                            AutoSignUpWhenOtherSelected = false
                         },
                         new
                         {
@@ -4641,18 +5841,8 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            SupportActivityId = 14,
-                            AutoSignUpWhenOtherSelected = false
-                        },
-                        new
-                        {
                             SupportActivityId = 15,
                             AutoSignUpWhenOtherSelected = true
-                        },
-                        new
-                        {
-                            SupportActivityId = 16,
-                            AutoSignUpWhenOtherSelected = false
                         },
                         new
                         {

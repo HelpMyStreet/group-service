@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210224150912_VRRM-208-ActivityCredentialSetsForSandbox")]
+    partial class VRRM208ActivityCredentialSetsForSandbox
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -617,11 +619,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 2,
                             Name = "DBS Check"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Sandbox - Befriender Training"
                         });
                 });
 
@@ -1746,15 +1743,6 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
-                        },
-                        new
-                        {
-                            Id = -22,
-                            GroupKey = "hms-sandbox",
-                            GroupName = "Sandbox",
-                            HomepageEnabled = false,
-                            ShiftsEnabled = true,
-                            TasksEnabled = true
                         });
                 });
 
@@ -2243,11 +2231,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         {
                             GroupId = -21,
                             LocationId = -10
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            LocationId = -9
                         });
                 });
 
@@ -2321,12 +2304,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             GroupId = -10,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
                         });
                 });
 
@@ -2356,74 +2333,26 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         new
                         {
                             GroupId = -1,
-                            SupportActivityId = 10,
-                            SupportActivityInstructionsId = (short)6
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)7
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 9,
-                            SupportActivityInstructionsId = (short)5
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 6,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -1,
                             SupportActivityId = 1,
                             SupportActivityInstructionsId = (short)1
                         },
                         new
                         {
-                            GroupId = -3,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)14
+                            GroupId = -5,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
                         },
                         new
                         {
-                            GroupId = -3,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)15
+                            GroupId = -6,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
                         },
                         new
                         {
-                            GroupId = -3,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)15
+                            GroupId = -7,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)10
                         },
                         new
                         {
@@ -2433,9 +2362,297 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
+                            GroupId = -8,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)21
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)26
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
                             GroupId = -3,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)14
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)11
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)20
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)25
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)15
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 3,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 5,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 6,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 6,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 6,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            SupportActivityId = 7,
+                            SupportActivityInstructionsId = (short)27
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 9,
+                            SupportActivityInstructionsId = (short)5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 9,
+                            SupportActivityInstructionsId = (short)5
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 10,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 10,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 10,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)15
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)12
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)19
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)24
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)32
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)7
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)8
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)7
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            SupportActivityId = 12,
+                            SupportActivityInstructionsId = (short)7
                         },
                         new
                         {
@@ -2451,165 +2668,15 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            GroupId = -7,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)11
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)12
-                        },
-                        new
-                        {
-                            GroupId = -7,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)10
-                        },
-                        new
-                        {
-                            GroupId = -2,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)8
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 10,
-                            SupportActivityInstructionsId = (short)6
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 5,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)7
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 6,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -6,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -6,
+                            GroupId = -11,
                             SupportActivityId = 22,
                             SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -5,
-                            SupportActivityId = 10,
-                            SupportActivityInstructionsId = (short)6
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)7
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 9,
-                            SupportActivityInstructionsId = (short)5
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 6,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -5,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 21,
-                            SupportActivityInstructionsId = (short)28
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)32
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)27
-                        },
-                        new
-                        {
-                            GroupId = -13,
-                            SupportActivityId = 16,
-                            SupportActivityInstructionsId = (short)30
+                            GroupId = -9,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
@@ -2619,99 +2686,27 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
-                            GroupId = -9,
-                            SupportActivityId = 21,
-                            SupportActivityInstructionsId = (short)23
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)24
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)26
-                        },
-                        new
-                        {
-                            GroupId = -9,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)25
-                        },
-                        new
-                        {
-                            GroupId = -9,
+                            GroupId = -3,
                             SupportActivityId = 22,
                             SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -8,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
+                            GroupId = -6,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -8,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
+                            GroupId = -12,
+                            SupportActivityId = 22,
+                            SupportActivityInstructionsId = (short)18
                         },
                         new
                         {
-                            GroupId = -8,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)20
+                            GroupId = -12,
+                            SupportActivityId = 25,
+                            SupportActivityInstructionsId = (short)33
                         },
                         new
                         {
@@ -2721,43 +2716,61 @@ Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
+                            GroupId = -9,
+                            SupportActivityId = 21,
+                            SupportActivityInstructionsId = (short)23
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            SupportActivityId = 21,
+                            SupportActivityInstructionsId = (short)28
+                        },
+                        new
+                        {
                             GroupId = -11,
                             SupportActivityId = 23,
                             SupportActivityInstructionsId = (short)16
                         },
                         new
                         {
-                            GroupId = -11,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)19
+                            GroupId = -13,
+                            SupportActivityId = 16,
+                            SupportActivityInstructionsId = (short)30
                         },
                         new
                         {
-                            GroupId = -11,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)21
-                        },
-                        new
-                        {
-                            GroupId = -11,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -19,
+                            GroupId = -14,
                             SupportActivityId = 24,
                             SupportActivityInstructionsId = (short)22
                         },
                         new
                         {
                             GroupId = -15,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -17,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -18,
+                            SupportActivityId = 24,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -19,
                             SupportActivityId = 24,
                             SupportActivityInstructionsId = (short)22
                         },
@@ -2772,90 +2785,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             GroupId = -21,
                             SupportActivityId = 24,
                             SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -14,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -16,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -18,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -17,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -12,
-                            SupportActivityId = 25,
-                            SupportActivityInstructionsId = (short)33
-                        },
-                        new
-                        {
-                            GroupId = -12,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 25,
-                            SupportActivityInstructionsId = (short)33
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
                         });
                 });
 
