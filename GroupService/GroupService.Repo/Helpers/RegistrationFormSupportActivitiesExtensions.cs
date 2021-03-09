@@ -33,6 +33,8 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.VolunteerSupport => "Helping with events, admin duties or not-for-profit activities",
                 SupportActivities.EmergencySupport => "Providing help in emergency situations (e.g. extreme weather)",
                 //SupportActivities.VaccineSupport => "Vaccine Support",
+                SupportActivities.InPersonBefriending => "In-person befriending (when restrictions allow)",
+                SupportActivities.PracticalSupport => "Providing help with everyday practical tasks (e.g. changing a lightbulb, filling in forms etc.)",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
         }
@@ -1177,6 +1179,100 @@ namespace GroupService.Repo.Helpers
             });
         }
 
+        private static void SetCardiffSupportActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeConnectsCardiff,
+                SupportActivityId = (int)SupportActivities.Shopping,
+                Label = SupportActivities.Shopping.GetLabel(),
+                IsPreSelected = true,
+                DisplayOrder = 1
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeConnectsCardiff,
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeConnectsCardiff,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 3
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeConnectsCardiff,
+                SupportActivityId = (int)SupportActivities.InPersonBefriending,
+                Label = SupportActivities.InPersonBefriending.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 4
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeConnectsCardiff,
+                SupportActivityId = (int)SupportActivities.CheckingIn,
+                Label = SupportActivities.CheckingIn.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 5
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeConnectsCardiff,
+                SupportActivityId = (int)SupportActivities.EmergencySupport,
+                Label = SupportActivities.EmergencySupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 6
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeConnectsCardiff,
+                SupportActivityId = (int)SupportActivities.Transport,
+                Label = SupportActivities.Transport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 7
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeConnectsCardiff,
+                SupportActivityId = (int)SupportActivities.PracticalSupport,
+                Label = SupportActivities.PracticalSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 8
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeConnectsCardiff,
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                Label = SupportActivities.VolunteerSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 9
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeConnectsCardiff,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = SupportActivities.Other.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 10
+            });            
+        }
+
         public static void SetRegistrationFormSupportActivitiesExtensionsData(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
             SetDefaultSupportActivities(entity);
@@ -1191,6 +1287,7 @@ namespace GroupService.Repo.Helpers
             SetAgeUKFandSSupportActivities(entity);
             SetLincolnshireVolunteersSupportActivities(entity);
             SetRuddingtonSupportActivities(entity);
+            SetCardiffSupportActivities(entity);
         }        
 
     }

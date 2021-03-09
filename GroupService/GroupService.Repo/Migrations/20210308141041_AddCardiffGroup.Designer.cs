@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210308141041_AddCardiffGroup")]
+    partial class AddCardiffGroup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -622,21 +624,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 3,
                             Name = "Sandbox - Befriender Training"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Volunteer Training"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Reference 1"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Reference 2"
                         });
                 });
 
@@ -853,11 +840,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 3,
                             Name = "Training"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "References"
                         });
                 });
 
@@ -3905,86 +3887,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             RequestHelpFormVariantId = (byte)11,
                             SupportActivityId = 11,
                             DisplayOrder = (byte)13,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 1,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = true,
-                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 2,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Collecting prescriptions from a local pharmacy"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 7,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Calling someone in need of a friendly chat"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 26,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "In-person befriending (when restrictions allow)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 10,
-                            DisplayOrder = (byte)5,
-                            IsPreSelected = false,
-                            Label = "Reaching out to people in my area to check-in"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 25,
-                            DisplayOrder = (byte)6,
-                            IsPreSelected = false,
-                            Label = "Providing help in emergency situations (e.g. extreme weather)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 16,
-                            DisplayOrder = (byte)7,
-                            IsPreSelected = false,
-                            Label = "Providing transport for essential appointments"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 27,
-                            DisplayOrder = (byte)8,
-                            IsPreSelected = false,
-                            Label = "Providing help with everyday practical tasks (e.g. changing a lightbulb, filling in forms etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 22,
-                            DisplayOrder = (byte)9,
-                            IsPreSelected = false,
-                            Label = "Helping with events, admin duties or not-for-profit activities"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)10,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
                         });

@@ -73,6 +73,12 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.LincolnshireVolunteers,
                 AllowAutonomousJoinersAndLeavers = true
             });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                AllowAutonomousJoinersAndLeavers = true
+            });
         }
     }
 }

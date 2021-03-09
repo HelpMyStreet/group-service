@@ -18,12 +18,19 @@ namespace GroupService.Repo.Helpers
         private static Dictionary<Groups, int> IDENTITY_CREDENTIAL_SETS;
         private static Dictionary<Groups, int> DBS_CREDENTIAL_SETS;
         private const int SANDBOX_BEFRIENDER_TRAINING_CREDENTIAL_SET = 142;
+        private const int AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET = 234;
+        private const int AGECONNECT_CARDIFF_REFERENCES_1_CREDENTIAL_SET = 235;
+        private const int AGECONNECT_CARDIFF_REFERENCES_2_CREDENTIAL_SET = 236;
+
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
         private const int MANUALLY_VERIFIED = 1;
         private const int DBS_CHECK = 2;
         private const int SANDBOX_BEFRIENDER_TRAINING = 3;
+        private const int VOLUNTEER_INDUCTION = 4;
+        private const int REFERENCES_1 = 5;
+        private const int REFERENCES_2 = 6;
 
         public static void InitialiseCredentialSets()
         {
@@ -41,7 +48,8 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKNottsNorthMuskham, 10 },
                 { Groups.AgeUKSouthKentCoast, 11 },
                 { Groups.AgeUKFavershamAndSittingbourne, 13 },
-                { Groups.Sandbox, 14 }
+                { Groups.Sandbox, 14 },
+                { Groups.AgeConnectsCardiff, 23}
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int> 
             {
@@ -49,7 +57,8 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKNorthWestKent, 91 },
                 { Groups.AgeUKSouthKentCoast, 111 },
                 { Groups.AgeUKFavershamAndSittingbourne, 131 },
-                { Groups.Sandbox, 141 },
+                //{ Groups.Sandbox, 141 },
+                { Groups.AgeConnectsCardiff, 231 }
             };
 
             EXCLUDE_GROUPS.Add(Groups.LincolnshireVolunteers);
@@ -65,7 +74,8 @@ namespace GroupService.Repo.Helpers
             EXCLUDE_ACTIVITIES.Add(SupportActivities.VaccineSupport);
 
             GROUPS_USING_YOTI = new List<Groups> {
-                Groups.Sandbox,
+                Groups.AgeConnectsCardiff,
+                //Groups.Sandbox,
                 Groups.AgeUKFavershamAndSittingbourne,
                 Groups.AgeUKSouthKentCoast,
                 Groups.AgeUKNottsNorthMuskham,
@@ -89,7 +99,8 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKNorthWestKent,
                 Groups.AgeUKSouthKentCoast,
                 Groups.AgeUKFavershamAndSittingbourne,
-                Groups.Sandbox
+                //Groups.Sandbox,
+                Groups.AgeConnectsCardiff
             };
         }
 
@@ -118,10 +129,29 @@ namespace GroupService.Repo.Helpers
                 Id = SANDBOX_BEFRIENDER_TRAINING,
                 Name = "Sandbox - Befriender Training"
             });
+
+            entity.HasData(new Credential
+            {
+                Id = VOLUNTEER_INDUCTION,
+                Name = "Volunteer Training"
+            });
+
+            entity.HasData(new Credential
+            {
+                Id = REFERENCES_1,
+                Name = "Reference 1"
+            });
+
+            entity.HasData(new Credential
+            {
+                Id = REFERENCES_2,
+                Name = "Reference 2"
+            });
         }
 
         public static void SetGroupCredentials(this EntityTypeBuilder<GroupCredential> entity)
         {
+            /*
             foreach (var group in GROUPS_USING_YOTI)
             {
                 entity.HasData(new GroupCredential
@@ -333,6 +363,74 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 4,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = "If you’re unable to verify with Yoti, email your group admins to find out how they can check your ID",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                CredentialId = DBS_CHECK,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "DBS Check",
+                HowToAchieve = "Email your group admins to request or register your DBS check",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
+                $"Volunteer admins should follow internal processes for logging a DBS check.",
+                DisplayOrder = 3,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                CredentialId = VOLUNTEER_INDUCTION,
+                CredentialTypeId = (int)CredentialTypes.Training,
+                Name = "Volunteer Induction",
+                HowToAchieve = "Email your group admins to book onto the next course",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record that a volunteer has completed the volunteer induction.",
+                DisplayOrder = 4,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                CredentialId = REFERENCES_1,
+                CredentialTypeId = (int)CredentialTypes.References,
+                Name = "Reference 1",
+                HowToAchieve = "Email your group admins reference details",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record that a reference has been supplied.",
+                DisplayOrder = 4,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                CredentialId = REFERENCES_2,
+                CredentialTypeId = (int)CredentialTypes.References,
+                Name = "Reference 2",
+                HowToAchieve = "Email your group admins reference details",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record that a reference has been supplied.",
+                DisplayOrder = 4,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+            */
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -372,6 +470,27 @@ namespace GroupService.Repo.Helpers
                 Id = SANDBOX_BEFRIENDER_TRAINING_CREDENTIAL_SET,
                 GroupId = (int)Groups.Sandbox,
                 CredentialId = SANDBOX_BEFRIENDER_TRAINING,
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET,
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                CredentialId = VOLUNTEER_INDUCTION,
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = AGECONNECT_CARDIFF_REFERENCES_1_CREDENTIAL_SET,
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                CredentialId = AGECONNECT_CARDIFF_REFERENCES_1_CREDENTIAL_SET,
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = AGECONNECT_CARDIFF_REFERENCES_2_CREDENTIAL_SET,
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                CredentialId = AGECONNECT_CARDIFF_REFERENCES_2_CREDENTIAL_SET,
             });
         }
 
