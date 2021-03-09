@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210309085810_AddCardiffGroupStep1")]
+    partial class AddCardiffGroupStep1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -478,180 +480,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 7,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 26,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 2,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 22,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 11,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 26,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 11,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 7,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 26,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 2,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 22,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 11,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 7,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 26,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 2,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 22,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 11,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
                             GroupId = -1,
                             ActivityId = 1,
                             CredentialSetId = 1
@@ -796,21 +624,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 3,
                             Name = "Sandbox - Befriender Training"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Volunteer Training"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Reference 1"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Reference 2"
                         });
                 });
 
@@ -835,12 +648,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("CredentialSet","Group");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 23,
-                            GroupId = -23,
-                            CredentialId = -1
-                        },
                         new
                         {
                             Id = 14,
@@ -951,12 +758,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 231,
-                            GroupId = -23,
-                            CredentialId = 2
-                        },
-                        new
-                        {
                             Id = 7,
                             GroupId = -7,
                             CredentialId = 1
@@ -1005,33 +806,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 23,
-                            GroupId = -23,
-                            CredentialId = 1
-                        },
-                        new
-                        {
                             Id = 142,
                             GroupId = -22,
                             CredentialId = 3
-                        },
-                        new
-                        {
-                            Id = 234,
-                            GroupId = -23,
-                            CredentialId = 4
-                        },
-                        new
-                        {
-                            Id = 235,
-                            GroupId = -23,
-                            CredentialId = 5
-                        },
-                        new
-                        {
-                            Id = 236,
-                            GroupId = -23,
-                            CredentialId = 6
                         });
                 });
 
@@ -2076,20 +1853,6 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
-                            GroupId = -23,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
-                        },
-                        new
-                        {
                             GroupId = -22,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
@@ -2463,70 +2226,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             HowToAchieve_CTA_Destination = "",
                             Name = "Befriender Training",
                             WhatIsThis = "Use this credential to record that a volunteer has completed the Befriender traning course."
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            CredentialId = 1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "Email our volunteer recruiter at helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            CredentialId = 5,
-                            CredentialTypeId = (byte)4,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Reference 1",
-                            WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            CredentialId = 6,
-                            CredentialTypeId = (byte)4,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 4,
-                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Reference 2",
-                            WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            CredentialId = 2,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 5,
-                            HowToAchieve = "Email our volunteer recruiter at helen.prior@ageconnectscardiff.org.uk to request a DBS check.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            CredentialId = 4,
-                            CredentialTypeId = (byte)3,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 6,
-                            HowToAchieve = "Please contact our volunteer recruiter at helen.prior@ageconnectscardiff.org.uk to arrange your volunteer inductione",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Volunteer Induction",
-                            WhatIsThis = "Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training."
                         });
                 });
 
@@ -4301,12 +4000,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             GroupId = -12,
                             Source = "",
                             RegistrationFormVariant = (byte)10
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            Source = "",
-                            RegistrationFormVariant = (byte)12
                         });
                 });
 
@@ -4602,26 +4295,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            Source = "",
-                            AccessRestrictedByRole = false,
-                            RequestHelpFormVariant = (byte)21,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = true,
-                            TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)20,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            TargetGroups = (byte)4
                         });
                 });
 
