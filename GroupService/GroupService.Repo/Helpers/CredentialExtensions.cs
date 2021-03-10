@@ -132,7 +132,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new Credential
             {
                 Id = VOLUNTEER_INDUCTION,
-                Name = "Volunteer Training"
+                Name = "Volunteer Induction"
             });
 
             entity.HasData(new Credential
@@ -368,7 +368,7 @@ namespace GroupService.Repo.Helpers
                 CredentialId = MANUALLY_VERIFIED,
                 CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                 Name = "Manual ID Verification",
-                HowToAchieve = "Email our volunteer recruiter at helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
+                HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
                 $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
@@ -382,7 +382,7 @@ namespace GroupService.Repo.Helpers
                 CredentialId = REFERENCES_1,
                 CredentialTypeId = (int)CredentialTypes.References,
                 Name = "Reference 1",
-                HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
+                HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference.",
                 DisplayOrder = 3,
@@ -395,7 +395,7 @@ namespace GroupService.Repo.Helpers
                 CredentialId = REFERENCES_2,
                 CredentialTypeId = (int)CredentialTypes.References,
                 Name = "Reference 2",
-                HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
+                HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference.",
                 DisplayOrder = 4,
@@ -408,7 +408,7 @@ namespace GroupService.Repo.Helpers
                 CredentialId = DBS_CHECK,
                 CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
                 Name = "DBS Check",
-                HowToAchieve = "Email our volunteer recruiter at helen.prior@ageconnectscardiff.org.uk to request a DBS check.",
+                HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a DBS check.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
                 $"Volunteer admins should follow internal processes for logging a DBS check.",
@@ -422,7 +422,7 @@ namespace GroupService.Repo.Helpers
                 CredentialId = VOLUNTEER_INDUCTION,
                 CredentialTypeId = (int)CredentialTypes.Training,
                 Name = "Volunteer Induction",
-                HowToAchieve = "Please contact our volunteer recruiter at helen.prior@ageconnectscardiff.org.uk to arrange your volunteer inductione",
+                HowToAchieve = "Please contact our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to arrange your volunteer inductione",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training.",
                 DisplayOrder = 6,
@@ -531,10 +531,12 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.Sandbox, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly }, DBS_CREDENTIAL_SETS[Groups.Sandbox]);
             SetActivityCredentialSet(entity, Groups.Sandbox, new List<SupportActivities> { SupportActivities.PhoneCalls_Friendly }, SANDBOX_BEFRIENDER_TRAINING_CREDENTIAL_SET);
 
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.InPersonBefriending, SupportActivities.CollectingPrescriptions, SupportActivities.Transport, SupportActivities.PracticalSupport, SupportActivities.VolunteerSupport, SupportActivities.Other }, IDENTITY_CREDENTIAL_SETS[Groups.AgeConnectsCardiff]);
+            var ageConnectsCardiffIdentifyReferencesActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.InPersonBefriending, SupportActivities.CollectingPrescriptions, SupportActivities.Transport, SupportActivities.PracticalSupport, SupportActivities.VolunteerSupport, SupportActivities.Other };
+
+            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeConnectsCardiff]);
             SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.InPersonBefriending, SupportActivities.Transport, SupportActivities.PracticalSupport, SupportActivities.Other }, DBS_CREDENTIAL_SETS[Groups.AgeConnectsCardiff]);
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.InPersonBefriending, SupportActivities.CollectingPrescriptions, SupportActivities.Transport, SupportActivities.PracticalSupport, SupportActivities.VolunteerSupport, SupportActivities.Other }, AGECONNECT_CARDIFF_REFERENCES_1_CREDENTIAL_SET);
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.InPersonBefriending, SupportActivities.CollectingPrescriptions, SupportActivities.Transport, SupportActivities.PracticalSupport, SupportActivities.VolunteerSupport, SupportActivities.Other }, AGECONNECT_CARDIFF_REFERENCES_2_CREDENTIAL_SET);
+            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesActivities, AGECONNECT_CARDIFF_REFERENCES_1_CREDENTIAL_SET);
+            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesActivities, AGECONNECT_CARDIFF_REFERENCES_2_CREDENTIAL_SET);
 
             var defaultActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.MealPreparation, SupportActivities.PhoneCalls_Friendly, SupportActivities.HomeworkSupport, SupportActivities.CheckingIn, SupportActivities.Other, SupportActivities.FaceMask };
             SetActivityCredentialSet(entity, Groups.Generic, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Generic]);
