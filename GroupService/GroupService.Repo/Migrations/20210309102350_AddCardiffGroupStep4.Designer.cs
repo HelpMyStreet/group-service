@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210309102350_AddCardiffGroupStep4")]
+    partial class AddCardiffGroupStep4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -478,180 +480,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 7,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 26,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 2,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 22,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 11,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 26,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 11,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 7,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 26,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 2,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 22,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 11,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 7,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 26,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 2,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 22,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 11,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
                             GroupId = -1,
                             ActivityId = 1,
                             CredentialSetId = 1
@@ -800,7 +628,7 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 4,
-                            Name = "Volunteer Induction"
+                            Name = "Volunteer Training"
                         },
                         new
                         {
@@ -835,12 +663,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("CredentialSet","Group");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 23,
-                            GroupId = -23,
-                            CredentialId = -1
-                        },
                         new
                         {
                             Id = 14,
@@ -951,12 +773,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 231,
-                            GroupId = -23,
-                            CredentialId = 2
-                        },
-                        new
-                        {
                             Id = 7,
                             GroupId = -7,
                             CredentialId = 1
@@ -1005,33 +821,9 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 23,
-                            GroupId = -23,
-                            CredentialId = 1
-                        },
-                        new
-                        {
                             Id = 142,
                             GroupId = -22,
                             CredentialId = 3
-                        },
-                        new
-                        {
-                            Id = 234,
-                            GroupId = -23,
-                            CredentialId = 4
-                        },
-                        new
-                        {
-                            Id = 235,
-                            GroupId = -23,
-                            CredentialId = 5
-                        },
-                        new
-                        {
-                            Id = 236,
-                            GroupId = -23,
-                            CredentialId = 6
                         });
                 });
 
@@ -2471,7 +2263,7 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 2,
-                            HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
+                            HowToAchieve = "Email our volunteer recruiter at helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
@@ -2485,7 +2277,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             CredentialTypeId = (byte)4,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 3,
-                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
+                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Reference 1",
                             WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
@@ -2497,7 +2289,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             CredentialTypeId = (byte)4,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 4,
-                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
+                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Reference 2",
                             WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
@@ -2509,7 +2301,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             CredentialTypeId = (byte)2,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 5,
-                            HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a DBS check.",
+                            HowToAchieve = "Email our volunteer recruiter at helen.prior@ageconnectscardiff.org.uk to request a DBS check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
@@ -2523,7 +2315,7 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             CredentialTypeId = (byte)3,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 6,
-                            HowToAchieve = "Please contact our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to arrange your volunteer inductione",
+                            HowToAchieve = "Please contact our volunteer recruiter at helen.prior@ageconnectscardiff.org.uk to arrange your volunteer inductione",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Volunteer Induction",
                             WhatIsThis = "Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training."
@@ -4193,86 +3985,6 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             RequestHelpFormVariantId = (byte)11,
                             SupportActivityId = 11,
                             DisplayOrder = (byte)13,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 1,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = true,
-                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 2,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Collecting prescriptions from a local pharmacy"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 7,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Calling someone in need of a friendly chat"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 26,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "In-person befriending (when restrictions allow)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 10,
-                            DisplayOrder = (byte)5,
-                            IsPreSelected = false,
-                            Label = "Reaching out to people in my area to check-in"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 25,
-                            DisplayOrder = (byte)6,
-                            IsPreSelected = false,
-                            Label = "Providing help in emergency situations (e.g. extreme weather)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 16,
-                            DisplayOrder = (byte)7,
-                            IsPreSelected = false,
-                            Label = "Providing transport for essential appointments"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 27,
-                            DisplayOrder = (byte)8,
-                            IsPreSelected = false,
-                            Label = "Providing help with everyday practical tasks (e.g. changing a lightbulb, filling in forms etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 22,
-                            DisplayOrder = (byte)9,
-                            IsPreSelected = false,
-                            Label = "Helping with events, admin duties or not-for-profit activities"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)12,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)10,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
                         });
