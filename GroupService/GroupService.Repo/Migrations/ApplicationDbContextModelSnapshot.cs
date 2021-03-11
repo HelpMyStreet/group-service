@@ -2079,8 +2079,8 @@ namespace GroupService.Repo.Migrations
 
                     b.Property<string>("HowToAchieve")
                         .IsRequired()
-                        .HasColumnType("varchar(200)")
-                        .HasMaxLength(200)
+                        .HasColumnType("varchar(300)")
+                        .HasMaxLength(300)
                         .IsUnicode(false);
 
                     b.Property<string>("HowToAchieve_CTA_Destination")
