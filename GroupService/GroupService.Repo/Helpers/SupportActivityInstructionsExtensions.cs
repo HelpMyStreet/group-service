@@ -1147,6 +1147,36 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_HMS_BinDayAssistance()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_BinDayAssistance,
+                ActivityDetails = null,
+                Intro = "We are working on some changes which will make it easier to manage repeat requests, but for now please follow these instructions for providing help and marking a request as complete.",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Check how long the help is needed for",
+                        Detail = $"You can find out more in the ‘More details’ section of the request. Some requests may be for one-off help, while others are for ongoing support."
+                    },
+                    new Step()
+                    {
+                        Heading = "Take out the bins",
+                        Detail = $"When the help is needed, take out the bins. Make sure you take them out first thing " +
+                        $"(or the night before) and bring them back in if required."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = $"When the help is no longer needed, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed."
+                    }
+                },
+                Close = "If for any reason you can’t attend the training you’ve selected, let us know by updating your shift and clicking “Can’t Do”. You can re-book onto any available training at any time."
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -1382,6 +1412,12 @@ namespace GroupService.Repo.Helpers
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_VolunteerInduction,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_VolunteerInduction())
             });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_BinDayAssistance,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_HMS_BinDayAssistance())
+            });
         }
 
 
@@ -1504,6 +1540,18 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.VolunteerInduction, SupportActivityInstructionsEnum.AgeConnectCardiff_VolunteerInduction);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.AgeConnectCardiff_VolunteerSupport);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.Transport, SupportActivityInstructionsEnum.AgeConnectCardiff_Transport);
+
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.FaceMask, SupportActivityInstructionsEnum.HMS_FaceCovering);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Errands, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.DigitalSupport, SupportActivityInstructionsEnum.HMS_General);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.BinDayAssistance, SupportActivityInstructionsEnum.HMS_BinDayAssistance);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Covid19Help, SupportActivityInstructionsEnum.HMS_General);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
         }
     }
 }
