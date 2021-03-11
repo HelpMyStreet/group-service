@@ -35,6 +35,9 @@ namespace GroupService.Repo.Helpers
                 //SupportActivities.VaccineSupport => "Vaccine Support",
                 SupportActivities.InPersonBefriending => "In-person befriending (when restrictions allow)",
                 SupportActivities.PracticalSupport => "Providing help with everyday practical tasks (e.g. changing a lightbulb, filling in forms etc.)",
+                SupportActivities.BinDayAssistance => "Taking out the bins on bin day",
+                SupportActivities.Covid19Help => "Providing help booking COVID-19 tests or vaccination appointments",
+                SupportActivities.DigitalSupport => "Providing digital support for people struggling with technology",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
         }
@@ -1273,6 +1276,109 @@ namespace GroupService.Repo.Helpers
             });
         }
 
+        private static void SetMeadowCommunityHelpersActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                SupportActivityId = (int)SupportActivities.Shopping,
+                Label = SupportActivities.Shopping.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 1
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                SupportActivityId = (int)SupportActivities.FaceMask,
+                Label = SupportActivities.FaceMask.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                SupportActivityId = (int)SupportActivities.CheckingIn,
+                Label = SupportActivities.CheckingIn.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 3
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 4
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                SupportActivityId = (int)SupportActivities.Errands,
+                Label = SupportActivities.Errands.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 5
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                SupportActivityId = (int)SupportActivities.DigitalSupport,
+                Label = SupportActivities.DigitalSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 6
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 7
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                SupportActivityId = (int)SupportActivities.BinDayAssistance,
+                Label = SupportActivities.BinDayAssistance.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 8
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                SupportActivityId = (int)SupportActivities.Covid19Help,
+                Label = SupportActivities.Covid19Help.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 9
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                Label = SupportActivities.VolunteerSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 10
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = SupportActivities.Other.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 11
+            });
+        }
+
         public static void SetRegistrationFormSupportActivitiesExtensionsData(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
             SetDefaultSupportActivities(entity);
@@ -1288,6 +1394,7 @@ namespace GroupService.Repo.Helpers
             SetLincolnshireVolunteersSupportActivities(entity);
             SetRuddingtonSupportActivities(entity);
             SetCardiffSupportActivities(entity);
+            SetMeadowCommunityHelpersActivities(entity);
         }        
 
     }

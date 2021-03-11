@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210311140803_AddMeadowGroupStep4")]
+    partial class AddMeadowGroupStep4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -649,72 +651,6 @@ namespace GroupService.Repo.Migrations
                             GroupId = -23,
                             ActivityId = 11,
                             CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            ActivityId = 1,
-                            CredentialSetId = 24
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            ActivityId = 12,
-                            CredentialSetId = 24
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            ActivityId = 10,
-                            CredentialSetId = 24
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            ActivityId = 2,
-                            CredentialSetId = 24
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            ActivityId = 3,
-                            CredentialSetId = 24
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            ActivityId = 29,
-                            CredentialSetId = 24
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            ActivityId = 7,
-                            CredentialSetId = 24
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            ActivityId = 30,
-                            CredentialSetId = 24
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            ActivityId = 31,
-                            CredentialSetId = 24
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            ActivityId = 22,
-                            CredentialSetId = 24
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            ActivityId = 11,
-                            CredentialSetId = 24
                         },
                         new
                         {
@@ -4512,94 +4448,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariantId = (byte)12,
                             SupportActivityId = 11,
                             DisplayOrder = (byte)10,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)13,
-                            SupportActivityId = 1,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = false,
-                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)13,
-                            SupportActivityId = 12,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Supplying homemade face coverings"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)13,
-                            SupportActivityId = 10,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Reaching out to people in my area to check-in"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)13,
-                            SupportActivityId = 2,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "Collecting prescriptions from a local pharmacy"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)13,
-                            SupportActivityId = 3,
-                            DisplayOrder = (byte)5,
-                            IsPreSelected = false,
-                            Label = "Running essential local errands (e.g. posting mail)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)13,
-                            SupportActivityId = 29,
-                            DisplayOrder = (byte)6,
-                            IsPreSelected = false,
-                            Label = "Providing digital support for people struggling with technology"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)13,
-                            SupportActivityId = 7,
-                            DisplayOrder = (byte)7,
-                            IsPreSelected = false,
-                            Label = "Calling someone in need of a friendly chat"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)13,
-                            SupportActivityId = 30,
-                            DisplayOrder = (byte)8,
-                            IsPreSelected = false,
-                            Label = "Taking out the bins on bin day"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)13,
-                            SupportActivityId = 31,
-                            DisplayOrder = (byte)9,
-                            IsPreSelected = false,
-                            Label = "Providing help booking COVID-19 tests or vaccination appointments"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)13,
-                            SupportActivityId = 22,
-                            DisplayOrder = (byte)10,
-                            IsPreSelected = false,
-                            Label = "Helping with events, admin duties or not-for-profit activities"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)13,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)11,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
                         });
