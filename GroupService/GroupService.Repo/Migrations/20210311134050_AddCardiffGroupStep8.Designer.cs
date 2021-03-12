@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210310103847_AddCardiffInstructions")]
-    partial class AddCardiffInstructions
+    [Migration("20210311134050_AddCardiffGroupStep8")]
+    partial class AddCardiffGroupStep8
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -2081,8 +2081,8 @@ namespace GroupService.Repo.Migrations
 
                     b.Property<string>("HowToAchieve")
                         .IsRequired()
-                        .HasColumnType("varchar(200)")
-                        .HasMaxLength(200)
+                        .HasColumnType("varchar(300)")
+                        .HasMaxLength(300)
                         .IsUnicode(false);
 
                     b.Property<string>("HowToAchieve_CTA_Destination")
