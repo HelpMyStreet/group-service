@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210311144338_AddMeadowGroupStep7")]
+    partial class AddMeadowGroupStep7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2171,8 +2173,8 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -24,
-                            GroupKey = "meadows-community-helpers",
-                            GroupName = "Meadows Community Helpers",
+                            GroupKey = "meadow-community-helpers",
+                            GroupName = "Meadow Community Helpers",
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -5424,16 +5426,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -12,
                             AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            AllowAutonomousJoinersAndLeavers = true
                         });
                 });
 
@@ -5804,7 +5796,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             SupportActivityInstructionsId = (short)40,
-                            Instructions = "{\"SupportActivityInstructions\":40,\"ActivityDetails\":null,\"Intro\":\"We are working on some changes which will make it easier to manage repeat requests, but for now please follow these instructions for providing help and marking a request as complete.\",\"Steps\":[{\"Heading\":\"Check how long the help is needed for\",\"Detail\":\"You can find out more in the ‘More details’ section of the request. Some requests may be for one-off help, while others are for ongoing support.\"},{\"Heading\":\"Take out the bins\",\"Detail\":\"When the help is needed, take out the bins. Make sure you take them out first thing (or the night before) and bring them back in if required.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When the help is no longer needed, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":40,\"ActivityDetails\":null,\"Intro\":\"We are working on some changes which will make it easier to manage repeat requests, but for now please follow these instructions for providing help and marking a request as complete.\",\"Steps\":[{\"Heading\":\"Check how long the help is needed for\",\"Detail\":\"You can find out more in the ‘More details’ section of the request. Some requests may be for one-off help, while others are for ongoing support.\"},{\"Heading\":\"Take out the bins\",\"Detail\":\"When the help is needed, take out the bins. Make sure you take them out first thing (or the night before) and bring them back in if required.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When the help is no longer needed, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed.\"}],\"Close\":\"If for any reason you can’t attend the training you’ve selected, let us know by updating your shift and clicking “Can’t Do”. You can re-book onto any available training at any time.\"}"
                         });
                 });
 

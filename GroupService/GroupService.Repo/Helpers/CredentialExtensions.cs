@@ -48,7 +48,9 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKSouthKentCoast, 11 },
                 { Groups.AgeUKFavershamAndSittingbourne, 13 },
                 { Groups.Sandbox, 14 },
-                { Groups.AgeConnectsCardiff, 23 }
+                { Groups.AgeConnectsCardiff, 23 },
+                { Groups.MeadowsCommunityHelpers, 24 }
+
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int> 
             {
@@ -73,6 +75,7 @@ namespace GroupService.Repo.Helpers
             EXCLUDE_ACTIVITIES.Add(SupportActivities.VaccineSupport);
 
             GROUPS_USING_YOTI = new List<Groups> {
+                Groups.MeadowsCommunityHelpers,
                 Groups.AgeConnectsCardiff,
                 Groups.Sandbox,
                 Groups.AgeUKFavershamAndSittingbourne,
@@ -99,7 +102,8 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKSouthKentCoast,
                 Groups.AgeUKFavershamAndSittingbourne,
                 Groups.Sandbox,
-                Groups.AgeConnectsCardiff
+                Groups.AgeConnectsCardiff,
+                Groups.MeadowsCommunityHelpers
             };
         }
 
@@ -429,7 +433,21 @@ namespace GroupService.Repo.Helpers
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
-            
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.MeadowsCommunityHelpers,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = "Email the Oh My Nottz team at mailto:guy@mynottz.com to arrange a manual ID check at The One Stop Shop.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -537,6 +555,11 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.InPersonBefriending, SupportActivities.Transport, SupportActivities.PracticalSupport, SupportActivities.Other }, DBS_CREDENTIAL_SETS[Groups.AgeConnectsCardiff]);
             SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesActivities, AGECONNECT_CARDIFF_REFERENCES_1_CREDENTIAL_SET);
             SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesActivities, AGECONNECT_CARDIFF_REFERENCES_2_CREDENTIAL_SET);
+
+            var meadowCommunityHelpersActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.FaceMask, SupportActivities.CheckingIn, SupportActivities.CollectingPrescriptions, 
+                SupportActivities.Errands, SupportActivities.DigitalSupport, SupportActivities.PhoneCalls_Friendly, SupportActivities.BinDayAssistance, SupportActivities.Covid19Help, 
+                SupportActivities.VolunteerSupport, SupportActivities.Other };
+            SetActivityCredentialSet(entity, Groups.MeadowsCommunityHelpers, meadowCommunityHelpersActivities, IDENTITY_CREDENTIAL_SETS[Groups.MeadowsCommunityHelpers]);
 
             var defaultActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.MealPreparation, SupportActivities.PhoneCalls_Friendly, SupportActivities.HomeworkSupport, SupportActivities.CheckingIn, SupportActivities.Other, SupportActivities.FaceMask };
             SetActivityCredentialSet(entity, Groups.Generic, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Generic]);
