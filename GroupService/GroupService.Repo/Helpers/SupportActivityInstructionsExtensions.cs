@@ -1173,7 +1173,7 @@ namespace GroupService.Repo.Helpers
                         Detail = $"When the help is no longer needed, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed."
                     }
                 },
-                Close = "If for any reason you can’t attend the training you’ve selected, let us know by updating your shift and clicking “Can’t Do”. You can re-book onto any available training at any time."
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
             };
         }
 

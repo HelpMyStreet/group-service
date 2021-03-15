@@ -245,8 +245,8 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new Group
             {
                 Id = (int)Groups.MeadowsCommunityHelpers,
-                GroupName = "Meadow Community Helpers",
-                GroupKey = "meadow-community-helpers",
+                GroupName = "Meadows Community Helpers",
+                GroupKey = "meadows-community-helpers",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
                 HomepageEnabled = true
