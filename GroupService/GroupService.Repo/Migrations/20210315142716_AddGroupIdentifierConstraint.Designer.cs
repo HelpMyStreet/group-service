@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210315142716_AddGroupIdentifierConstraint")]
+    partial class AddGroupIdentifierConstraint
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1974,7 +1976,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "Generic",
                             GroupName = "HelpMyStreet",
                             HomepageEnabled = false,
-                            Identifier = "HMS",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -1984,7 +1985,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "ftlos",
                             GroupName = "For the Love of Scrubs",
                             HomepageEnabled = true,
-                            Identifier = "FTL",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -1994,7 +1994,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "ageuklsl",
                             GroupName = "Age UK Lincoln & South Lincolnshire",
                             HomepageEnabled = true,
-                            Identifier = "LSL",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2004,7 +2003,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "hlp",
                             GroupName = "Healthy London Partnership",
                             HomepageEnabled = true,
-                            Identifier = "HLP",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2014,7 +2012,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "tankersley",
                             GroupName = "Tankersley & Pilley",
                             HomepageEnabled = true,
-                            Identifier = "TAP",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2024,7 +2021,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "ruddington",
                             GroupName = "Ruddington",
                             HomepageEnabled = true,
-                            Identifier = "RUD",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2034,7 +2030,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "ageukwirral",
                             GroupName = "Age UK Wirral",
                             HomepageEnabled = true,
-                            Identifier = "WIR",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2044,7 +2039,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "balderton",
                             GroupName = "Balderton Community Support",
                             HomepageEnabled = true,
-                            Identifier = "BAL",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2054,7 +2048,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "ageuknwkent",
                             GroupName = "AgeUK North West Kent",
                             HomepageEnabled = true,
-                            Identifier = "NWK",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2064,7 +2057,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "north-muskham",
                             GroupName = "North Muskham Community Support",
                             HomepageEnabled = true,
-                            Identifier = "NMK",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2074,7 +2066,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "ageuk-southkentcoast",
                             GroupName = "Age UK South Kent Coast",
                             HomepageEnabled = true,
-                            Identifier = "SKC",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2084,7 +2075,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "ageuk-favershamandsittingbourne",
                             GroupName = "Age UK Faversham & Sittingbourne",
                             HomepageEnabled = true,
-                            Identifier = "LCN",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2094,7 +2084,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "lincs-volunteers",
                             GroupName = "Lincolnshire Volunteers",
                             HomepageEnabled = true,
-                            Identifier = "FAS",
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2104,7 +2093,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-louth",
                             GroupName = "PCN Louth",
                             HomepageEnabled = false,
-                            Identifier = "LTH",
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2114,7 +2102,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-grantham",
                             GroupName = "PCN Grantham",
                             HomepageEnabled = false,
-                            Identifier = "GRA",
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2124,7 +2111,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-southlincoln",
                             GroupName = "PCN South Lincoln",
                             HomepageEnabled = false,
-                            Identifier = "SLN",
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2134,7 +2120,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-stamford",
                             GroupName = "PCN Stamford",
                             HomepageEnabled = false,
-                            Identifier = "SFD",
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2144,7 +2129,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-spilsby",
                             GroupName = "PCN Spilsby",
                             HomepageEnabled = false,
-                            Identifier = "SBY",
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2154,7 +2138,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-boston",
                             GroupName = "PCN Boston",
                             HomepageEnabled = false,
-                            Identifier = "BTN",
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2164,7 +2147,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "apex-pcn-lincoln",
                             GroupName = "APEX PCN",
                             HomepageEnabled = false,
-                            Identifier = "APX",
                             ParentGroupId = -12,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2175,7 +2157,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "pcn-lincoln-portland",
                             GroupName = "PCN Lincoln Portland",
                             HomepageEnabled = false,
-                            Identifier = "LPL",
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2185,7 +2166,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "hms-sandbox",
                             GroupName = "Sandbox",
                             HomepageEnabled = false,
-                            Identifier = "TEST",
                             ShiftsEnabled = true,
                             TasksEnabled = true
                         },
@@ -2195,7 +2175,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "ageconnects-cardiff",
                             GroupName = "Age Connects Cardiff & the Vale",
                             HomepageEnabled = true,
-                            Identifier = "CAR",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2205,7 +2184,6 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "meadows-community-helpers",
                             GroupName = "Meadows Community Helpers",
                             HomepageEnabled = true,
-                            Identifier = "MED",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         });

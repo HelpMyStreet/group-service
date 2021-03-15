@@ -182,6 +182,10 @@ namespace GroupService.Repo
                     .HasName("UC_GroupName")
                     .IsUnique();
 
+                entity.HasIndex(e => e.Identifier)
+                    .HasName("UC_GroupIdentified")
+                    .IsUnique();
+
                 entity.SetDefaultGroup();
 
                 entity.HasIndex(e => e.ParentGroupId);

@@ -18,7 +18,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "Generic",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = false
+                HomepageEnabled = false,
+                Identifier = "HMS",
             });
 
             entity.HasData(new Group
@@ -28,7 +29,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ftlos",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "FTL",
             });
 
             entity.HasData(new Group
@@ -38,7 +40,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ageuklsl",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "LSL",
             });
 
             entity.HasData(new Group
@@ -48,7 +51,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "hlp",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "HLP",
             });
 
             entity.HasData(new Group
@@ -58,7 +62,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "tankersley",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "TAP",
             });
 
             entity.HasData(new Group
@@ -68,7 +73,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ruddington",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "RUD",
             });
 
             entity.HasData(new Group
@@ -78,7 +84,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ageukwirral",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "WIR",
             });
 
             entity.HasData(new Group
@@ -88,7 +95,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "balderton",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "BAL",
             });
 
             entity.HasData(new Group
@@ -98,7 +106,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ageuknwkent",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "NWK",
             });
 
             entity.HasData(new Group
@@ -108,7 +117,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "north-muskham",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "NMK",
             });
 
             entity.HasData(new Group
@@ -118,7 +128,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ageuk-southkentcoast",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "SKC",
             });
 
             entity.HasData(new Group
@@ -128,7 +139,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ageuk-favershamandsittingbourne",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "LCN",
             });
 
             entity.HasData(new Group
@@ -138,7 +150,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "lincs-volunteers",
                 ShiftsEnabled = true,
                 TasksEnabled = false,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "FAS",
             });
 
             entity.HasData(new Group
@@ -148,7 +161,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "pcn-louth",
                 ShiftsEnabled = true,
                 TasksEnabled = false,
-                HomepageEnabled = false
+                HomepageEnabled = false,
+                Identifier = "LTH",
             });
 
             entity.HasData(new Group
@@ -158,7 +172,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "pcn-grantham",
                 ShiftsEnabled = true,
                 TasksEnabled = false,
-                HomepageEnabled = false
+                HomepageEnabled = false,
+                Identifier = "GRA",
             });
 
             entity.HasData(new Group
@@ -168,7 +183,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "pcn-southlincoln",
                 ShiftsEnabled = true,
                 TasksEnabled = false,
-                HomepageEnabled = false
+                HomepageEnabled = false,
+                Identifier = "SLN",
             });
 
             entity.HasData(new Group
@@ -178,7 +194,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "pcn-stamford",
                 ShiftsEnabled = true,
                 TasksEnabled = false,
-                HomepageEnabled = false
+                HomepageEnabled = false,
+                Identifier = "SFD",
             });
 
             entity.HasData(new Group
@@ -188,7 +205,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "pcn-spilsby",
                 ShiftsEnabled = true,
                 TasksEnabled = false,
-                HomepageEnabled = false
+                HomepageEnabled = false,
+                Identifier = "SBY",
             });
 
             entity.HasData(new Group
@@ -198,7 +216,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "pcn-boston",
                 ShiftsEnabled = true,
                 TasksEnabled = false,
-                HomepageEnabled = false
+                HomepageEnabled = false,
+                Identifier = "BTN",
             });
 
             entity.HasData(new Group
@@ -209,7 +228,8 @@ namespace GroupService.Repo.Helpers
                 ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true,
                 TasksEnabled = false,
-                HomepageEnabled = false
+                HomepageEnabled = false,
+                Identifier = "APX",
             });
 
             entity.HasData(new Group
@@ -219,7 +239,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "pcn-lincoln-portland",
                 ShiftsEnabled = true,
                 TasksEnabled = false,
-                HomepageEnabled = false
+                HomepageEnabled = false,
+                Identifier = "LPL",
             });
 
             entity.HasData(new Group
@@ -229,7 +250,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "hms-sandbox",
                 ShiftsEnabled = true,
                 TasksEnabled = true,
-                HomepageEnabled = false
+                HomepageEnabled = false,
+                Identifier = "TEST",
             });
 
             entity.HasData(new Group
@@ -239,7 +261,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ageconnects-cardiff",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "CAR",
             });
 
             entity.HasData(new Group
@@ -249,7 +272,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "meadows-community-helpers",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                Identifier = "MED",
             });
         }
 
@@ -382,6 +406,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -393,6 +418,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -404,6 +430,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -415,6 +442,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
             });
 
             entity.HasData(new RequestHelpJourney
@@ -426,6 +454,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
             });
 
             entity.HasData(new RequestHelpJourney
@@ -437,6 +466,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -448,6 +478,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -459,6 +490,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -470,6 +502,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -481,6 +514,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = true,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -492,6 +526,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -503,6 +538,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -514,6 +550,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = true,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -525,6 +562,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -536,6 +574,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = true,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -547,6 +586,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -558,6 +598,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -569,6 +610,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -580,6 +622,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -591,6 +634,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -602,6 +646,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -613,6 +658,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -624,6 +670,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -635,6 +682,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -646,6 +694,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -657,6 +706,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -668,6 +718,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = true,
+                SuppressRecipientPersonalDetails = true
             });
 
             entity.HasData(new RequestHelpJourney
@@ -679,6 +730,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
             });
 
             entity.HasData(new RequestHelpJourney
@@ -690,6 +742,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = true,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -701,6 +754,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
         }
 
