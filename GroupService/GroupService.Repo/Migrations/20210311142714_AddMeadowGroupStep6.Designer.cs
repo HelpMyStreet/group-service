@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210311142714_AddMeadowGroupStep6")]
+    partial class AddMeadowGroupStep6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2171,8 +2173,8 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -24,
-                            GroupKey = "meadows-community-helpers",
-                            GroupName = "Meadows Community Helpers",
+                            GroupKey = "meadow-community-helpers",
+                            GroupName = "Meadow Community Helpers",
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -3437,72 +3439,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -23,
                             SupportActivityId = 16,
                             SupportActivityInstructionsId = (short)38
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            SupportActivityId = 12,
-                            SupportActivityInstructionsId = (short)7
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            SupportActivityId = 10,
-                            SupportActivityInstructionsId = (short)6
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            SupportActivityId = 3,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            SupportActivityId = 29,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            SupportActivityId = 30,
-                            SupportActivityInstructionsId = (short)40
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            SupportActivityId = 31,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            SupportActivityId = 22,
-                            SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            SupportActivityId = 11,
-                            SupportActivityInstructionsId = (short)2
                         });
                 });
 
@@ -5424,16 +5360,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -12,
                             AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -24,
-                            AllowAutonomousJoinersAndLeavers = true
                         });
                 });
 
@@ -5800,11 +5726,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             SupportActivityInstructionsId = (short)39,
                             Instructions = "{\"SupportActivityInstructions\":39,\"ActivityDetails\":null,\"Intro\":\"If you need to complete your volunteer induction training you can book on to this course.\",\"Steps\":[{\"Heading\":\"Book your place\",\"Detail\":\"Accept this shift to book your place.\"},{\"Heading\":\"Attend the training\",\"Detail\":\"Use the details provided to attend your training.\"},{\"Heading\":\"We’ll update your record\",\"Detail\":\"Once you’ve completed your training we’ll update your record.\"}],\"Close\":\"If for any reason you can’t attend the training you’ve selected, let us know by updating your shift and clicking “Can’t Do”. You can re-book onto any available training at any time.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)40,
-                            Instructions = "{\"SupportActivityInstructions\":40,\"ActivityDetails\":null,\"Intro\":\"We are working on some changes which will make it easier to manage repeat requests, but for now please follow these instructions for providing help and marking a request as complete.\",\"Steps\":[{\"Heading\":\"Check how long the help is needed for\",\"Detail\":\"You can find out more in the ‘More details’ section of the request. Some requests may be for one-off help, while others are for ongoing support.\"},{\"Heading\":\"Take out the bins\",\"Detail\":\"When the help is needed, take out the bins. Make sure you take them out first thing (or the night before) and bring them back in if required.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When the help is no longer needed, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         });
                 });
 

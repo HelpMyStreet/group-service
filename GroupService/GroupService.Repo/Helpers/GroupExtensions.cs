@@ -231,6 +231,26 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = false
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.AgeConnectsCardiff,
+                GroupName = "Age Connects Cardiff & the Vale",
+                GroupKey = "ageconnects-cardiff",
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.MeadowsCommunityHelpers,
+                GroupName = "Meadows Community Helpers",
+                GroupKey = "meadows-community-helpers",
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -334,6 +354,20 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.LincolnshireVolunteers,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.LincolnshireVolunteers
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeConnectsCardiff
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.MeadowsCommunityHelpers,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.MeadowsCommunityHelpers
             });
         }
 
@@ -622,6 +656,50 @@ namespace GroupService.Repo.Helpers
                 TargetGroups = (byte)TargetGroups.ThisGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeConnectsCardiff_Public,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = true,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeConnectsCardiff_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.MeadowsCommunityHelpers,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.MeadowsCommunityHelpers_Public,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = true,
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.MeadowsCommunityHelpers,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.MeadowsCommunityHelpers_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
             });
         }

@@ -356,27 +356,6 @@ namespace GroupService.Repo
                 entity.SetCredentials();
             });
 
-            modelBuilder.Entity<CredentialSet>(entity =>
-            {
-                entity.HasKey(e => new { e.Id, e.GroupId, e.CredentialId });
-
-                entity.ToTable("CredentialSet", "Group");
-
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.GroupId).HasColumnName("GroupID");
-
-                entity.Property(e => e.CredentialId).HasColumnName("CredentialID");
-
-                entity.HasOne(d => d.GroupCredential)
-                    .WithMany(p => p.CredentialSet)
-                    .HasForeignKey(d => new { d.GroupId, d.CredentialId })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CredentialSet_CredentialID");
-
-                entity.SetCredentialSet();
-            });
-
             modelBuilder.Entity<GroupCredential>(entity =>
             {
                 entity.HasKey(e => new { e.GroupId, e.CredentialId })
@@ -392,7 +371,7 @@ namespace GroupService.Repo
 
                 entity.Property(e => e.HowToAchieve)
                     .IsRequired()
-                    .HasMaxLength(200)
+                    .HasMaxLength(300)
                     .IsUnicode(false);
 
                 entity.Property(e => e.HowToAchieve_CTA_Destination)
@@ -423,6 +402,27 @@ namespace GroupService.Repo
                     .HasConstraintName("FK_GroupCredential_Group");
 
                 entity.SetGroupCredentials();
+            });
+
+            modelBuilder.Entity<CredentialSet>(entity =>
+            {
+                entity.HasKey(e => new { e.Id, e.GroupId, e.CredentialId });
+
+                entity.ToTable("CredentialSet", "Group");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.CredentialId).HasColumnName("CredentialID");
+
+                entity.HasOne(d => d.GroupCredential)
+                    .WithMany(p => p.CredentialSet)
+                    .HasForeignKey(d => new { d.GroupId, d.CredentialId })
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CredentialSet_CredentialID");
+
+                entity.SetCredentialSet();
             });
 
             modelBuilder.Entity<GroupLocation>(entity =>
