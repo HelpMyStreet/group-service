@@ -1,4 +1,4 @@
-using GroupService.Repo.EntityFramework.Entities;
+﻿using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -42,7 +42,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",                        
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch."
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -70,7 +70,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch."
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -98,7 +98,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -121,7 +121,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -149,7 +149,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due (including if you don’t know the answer!), let us know by updating the accepted request and clicking “Can’t Do”."
@@ -177,7 +177,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -210,7 +210,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -243,7 +243,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -271,7 +271,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing volunteering@ageuklsl.org.uk.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. If you have any concerns about the person you visited let us know immediately by emailing volunteering@ageuklsl.org.uk.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -304,7 +304,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:H&Cadminteam@ageukwirral.org.uk.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:H&Cadminteam@ageukwirral.org.uk.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -355,7 +355,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -388,7 +388,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:H&Cadminteam@ageukwirral.org.uk.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:H&Cadminteam@ageukwirral.org.uk.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -416,7 +416,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -444,7 +444,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -472,7 +472,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageuklsl.org.uk.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -500,7 +500,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.",                        
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk.",                        
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -528,7 +528,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk."                        
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk."                        
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -546,7 +546,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Find out what help is needed",
-                        Detail = "Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.",
+                        Detail = "Make sure you’ve seen all the details by clicking the “View more info” link. If you’re able to help, click to accept the request.",
                     },
                     new Step()
                     {
@@ -556,7 +556,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -574,7 +574,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Find out what help is needed",
-                        Detail = "Make sure you’ve seen all the details by clicking the ‘View more info' link. If you’re able to help, click to accept the request.",
+                        Detail = "Make sure you’ve seen all the details by clicking the “View more info” link. If you’re able to help, click to accept the request.",
                     },
                     new Step()
                     {
@@ -584,7 +584,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -612,7 +612,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:contactus@ageuknorthwestkent.org.uk.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:contactus@ageuknorthwestkent.org.uk.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -640,7 +640,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk ."
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk ."
                    }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -668,7 +668,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk."
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -696,7 +696,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk."
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:volunteering@ageukskc.org.uk."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -724,7 +724,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:kirsty.groves@ageuknorthwestkent.org.uk."
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:kirsty.groves@ageuknorthwestkent.org.uk."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -752,7 +752,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:contactus@ageuknorthwestkent.org.uk."
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:contactus@ageuknorthwestkent.org.uk."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -780,7 +780,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:kirsty.groves@ageuknorthwestkent.org.uk."
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately by emailing mailto:kirsty.groves@ageuknorthwestkent.org.uk."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -803,8 +803,8 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us " +
-                        "(and anyone else involved with the request) know it's been completed. You’ll still be able to find their " +
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us " +
+                        "(and anyone else involved with the request) know it’s been completed. You’ll still be able to find their " +
                         "contact details in “My Requests” in case you need to get back in touch. If someone else has requested " +
                         "the help on their behalf it may be useful to give them a call to let them know how it went.",
                     }
@@ -835,7 +835,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're home, mark the request as complete in “My Requests”. If you have any concerns " +
+                        Detail = "When you’re home, mark the request as complete in “My Requests”. If you have any concerns " +
                         "about the person you visited let us know immediately by emailing mailto:volunteering@ageukfaversham.org.uk.",
                     }
                 },
@@ -865,7 +865,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the " +
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the " +
                         "person you visited let us know immediately by emailing mailto:volunteering@ageukfaversham.org.uk.",
                     }
                 },
@@ -884,7 +884,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Find out what help is needed",
-                        Detail = "Make sure you’ve seen all the details by clicking the ‘View more info link’. If you’re able to help, click to accept the request.",
+                        Detail = "Make sure you’ve seen all the details by clicking the “View more info” link. If you’re able to help, click to accept the request.",
                     },
                     new Step()
                     {
@@ -894,7 +894,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -912,7 +912,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Find out what help is needed",
-                        Detail = "Make sure you’ve seen all the details by clicking the ‘View more info link’. If you’re able to help, click to accept the request.",
+                        Detail = "Make sure you’ve seen all the details by clicking the “View more info” link. If you’re able to help, click to accept the request.",
                     },
                     new Step()
                     {
@@ -922,7 +922,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”.",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”.",
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -951,7 +951,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = "When you're finished, mark the request as complete in “My Requests”. If you have any concerns about the person " +
+                        Detail = "When you’re finished, mark the request as complete in “My Requests”. If you have any concerns about the person " +
                         "you visited let us know immediately by emailing mailto:volunteering@ageukfaversham.org.uk.",
                     }
                 },
@@ -969,7 +969,7 @@ namespace GroupService.Repo.Helpers
                 $"such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site," +
                 $" general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept " +
                 $"this role and basic training will be provided on the day. For a fuller description please see the volunteer instructions which are available when you click to accept the " +
-                $"shift or by clicking ‘View more info’ on accepted shifts in the “My Shifts” tab.",
+                $"shift or by clicking “View more info” on accepted shifts in the “My Shifts” tab.",
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -982,7 +982,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Attending your shift",
-                        Detail = $"You'll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather " +
+                        Detail = $"You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather " +
                         $"(e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the " +
                         $"details in the “My Shifts” tab but searching for shifts with the status “Done”."
                     }
@@ -1013,8 +1013,8 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = $"When you're finished, mark the request as complete in “My Requests” - this will let us and " +
-                        $"anyone else involved with the request know it's been completed. You’ll still be able to find their contact " +
+                        Detail = $"When you’re finished, mark the request as complete in “My Requests” - this will let us and " +
+                        $"anyone else involved with the request know it’s been completed. You’ll still be able to find their contact " +
                         $"details in “My Requests” in case you need to get back in touch."
                     }
                 },
@@ -1034,7 +1034,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Find out what help is needed",
-                        Detail = $"Make sure you’ve seen all the details by clicking the ‘View more info link’. If you’re able to help, click to accept the request."
+                        Detail = $"Make sure you’ve seen all the details by clicking the “View more info” link. If you’re able to help, click to accept the request."
                     },
                     new Step()
                     {
@@ -1044,8 +1044,8 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = $"When you're finished, mark the request as complete in “My Requests” - this will let us and " +
-                        $"anyone else involved with the request know it's been completed. You’ll still be able to find their contact " +
+                        Detail = $"When you’re finished, mark the request as complete in “My Requests” - this will let us and " +
+                        $"anyone else involved with the request know it’s been completed. You’ll still be able to find their contact " +
                         $"details in “My Requests” in case you need to get back in touch."
                     }
                 },
@@ -1075,8 +1075,8 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = $"When you're finished, mark the request as complete in “My Requests” - this will let us and " +
-                        $"anyone else involved with the request know it's been completed. You’ll still be able to find their contact " +
+                        Detail = $"When you’re finished, mark the request as complete in “My Requests” - this will let us and " +
+                        $"anyone else involved with the request know it’s been completed. You’ll still be able to find their contact " +
                         $"details in “My Requests” in case you need to get back in touch."
                     }
                 },
@@ -1106,8 +1106,8 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = $"When you're finished, mark the request as complete in “My Requests” - this will let us and " +
-                        $"anyone else involved with the request know it's been completed. You’ll still be able to find their contact " +
+                        Detail = $"When you’re finished, mark the request as complete in “My Requests” - this will let us and " +
+                        $"anyone else involved with the request know it’s been completed. You’ll still be able to find their contact " +
                         $"details in “My Requests” in case you need to get back in touch."
                     }
                 },
@@ -1127,7 +1127,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Find out what help is needed",
-                        Detail = $"Make sure you’ve seen all the details by clicking the ‘View more info link’. If you’re able to help, click to accept the request."
+                        Detail = $"Make sure you’ve seen all the details by clicking the “View more info” link. If you’re able to help, click to accept the request."
                     },
                     new Step()
                     {
@@ -1137,8 +1137,8 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = $"When you're finished, mark the request as complete in “My Requests” - this will let us and " +
-                        $"anyone else involved with the request know it's been completed. You’ll still be able to find their contact " +
+                        Detail = $"When you’re finished, mark the request as complete in “My Requests” - this will let us and " +
+                        $"anyone else involved with the request know it’s been completed. You’ll still be able to find their contact " +
                         $"details in “My Requests” in case you need to get back in touch."
                     }
                 },
@@ -1198,7 +1198,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = $"When the help is no longer needed, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed."
+                        Detail = $"When the help is no longer needed, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
