@@ -21,7 +21,8 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.FaceMask,
                 SupportActivities.CommunityConnector,
                 SupportActivities.Transport,
-                SupportActivities.Other
+                SupportActivities.VolunteerInduction,
+                SupportActivities.Other,
             };
         }
         public static void SetSupportActivityConfigurationExtensionsData(this EntityTypeBuilder<SupportActivityConfiguration> entity)
