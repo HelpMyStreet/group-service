@@ -1,4 +1,4 @@
-﻿using GroupService.Repo.EntityFramework.Entities;
+using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -306,6 +306,34 @@ namespace GroupService.Repo.Helpers
                         Heading = "Mark the request as complete",
                         Detail = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:H&Cadminteam@ageukwirral.org.uk.",
                     }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKWirral_VolunteerSupport()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKWirral_VolunteerSupport,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Find out what help is needed",
+                        Detail = "Make sure you’ve seen all the details by clicking the “View more info” link. If you’re able to help, click to accept the request.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide the help that is needed",
+                        Detail = "Use the details given to you to carry out the request.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.",
+                    },
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
             };
@@ -1247,6 +1275,12 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKWirral_VolunteerSupport,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKWirral_VolunteerSupport())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_General,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKWirral_General())
             });
@@ -1454,6 +1488,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeUKWirral, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeUKWirral_Prescriptions);
             Populate(entity, Groups.AgeUKWirral, SupportActivities.Other, SupportActivityInstructionsEnum.AgeUKWirral_General);
             Populate(entity, Groups.AgeUKWirral, SupportActivities.Shopping, SupportActivityInstructionsEnum.AgeUKWirral_Shopping);
+            Populate(entity, Groups.AgeUKWirral, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.AgeUKWirral_VolunteerSupport);
 
             Populate(entity, Groups.FTLOS, SupportActivities.FaceMask, SupportActivityInstructionsEnum.FTLOS_FaceCovering);
 
