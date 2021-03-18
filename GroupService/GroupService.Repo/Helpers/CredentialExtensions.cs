@@ -439,7 +439,7 @@ namespace GroupService.Repo.Helpers
                 CredentialId = MANUALLY_VERIFIED,
                 CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                 Name = "Manual ID Verification",
-                HowToAchieve = "Email the Oh My Nottz team at mailto:guy@mynottz.com to arrange a manual ID check at The One Stop Shop.",
+                HowToAchieve = "Email Sam Kelly on mailto:sam@bridgescommunitytrust.org.uk to arrange a manual ID check at The One Stop Shop.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
                 $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
