@@ -699,7 +699,7 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.MeadowsCommunityHelpers_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
+                RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
             });
         }

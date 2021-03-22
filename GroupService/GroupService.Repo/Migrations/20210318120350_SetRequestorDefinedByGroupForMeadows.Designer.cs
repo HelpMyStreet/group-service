@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210318120350_SetRequestorDefinedByGroupForMeadows")]
+    partial class SetRequestorDefinedByGroupForMeadows
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2711,7 +2713,7 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 2,
-                            HowToAchieve = "Email Sam Kelly on mailto:sam@bridgescommunitytrust.org.uk to arrange a manual ID check at The One Stop Shop.",
+                            HowToAchieve = "Email the Oh My Nottz team at mailto:guy@mynottz.com to arrange a manual ID check at The One Stop Shop.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
