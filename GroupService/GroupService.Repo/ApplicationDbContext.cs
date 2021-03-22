@@ -1,4 +1,4 @@
-﻿using GroupService.Repo.EntityFramework.Entities;
+using GroupService.Repo.EntityFramework.Entities;
 using GroupService.Repo.Helpers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
@@ -183,7 +183,7 @@ namespace GroupService.Repo
                     .IsUnique();
 
                 entity.HasIndex(e => e.Identifier)
-                    .HasName("UC_GroupIdentified")
+                    .HasName("UC_GroupIdentifier")
                     .IsUnique();
 
                 entity.SetDefaultGroup();
