@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210323135125_SupportActivityInstructionsStep1")]
+    partial class SupportActivityInstructionsStep1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1889,7 +1891,22 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 41,
                             Name = "AgeUKWirral_VolunteerSupport"
-                        },                       
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Name = "AgeConnectCardiff_Shopping"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Name = "AgeConnectCardiff_FriendlyChat"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Name = "AgeConnectCardiff_Prescriptions"
+                        },
                         new
                         {
                             Id = 45,

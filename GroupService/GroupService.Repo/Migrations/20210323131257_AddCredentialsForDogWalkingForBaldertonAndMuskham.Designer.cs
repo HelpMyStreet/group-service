@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210323131257_AddCredentialsForDogWalkingForBaldertonAndMuskham")]
+    partial class AddCredentialsForDogWalkingForBaldertonAndMuskham
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1889,46 +1891,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 41,
                             Name = "AgeUKWirral_VolunteerSupport"
-                        },                       
-                        new
-                        {
-                            Id = 45,
-                            Name = "AgeUKNottsBalderton_Shopping"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Name = "AgeUKNottsBalderton_Prescriptions"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Name = "AgeUKNottsBalderton_FriendlyChat"
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Name = "AgeUKNottsBalderton_DogWalking"
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Name = "AgeUKNottsNorthMuskham_Shopping"
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Name = "AgeUKNottsNorthMuskham_Prescriptions"
-                        },
-                        new
-                        {
-                            Id = 51,
-                            Name = "AgeUKNottsNorthMuskham_FriendlyChat"
-                        },
-                        new
-                        {
-                            Id = 52,
-                            Name = "AgeUKNottsNorthMuskham_DogWalking"
                         });
                 });
 
@@ -5873,46 +5835,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             SupportActivityInstructionsId = (short)40,
                             Instructions = "{\"SupportActivityInstructions\":40,\"ActivityDetails\":null,\"Intro\":\"We are working on some changes which will make it easier to manage repeat requests, but for now please follow these instructions for providing help and marking a request as complete.\",\"Steps\":[{\"Heading\":\"Check how long the help is needed for\",\"Detail\":\"You can find out more in the ‘More details’ section of the request. Some requests may be for one-off help, while others are for ongoing support.\"},{\"Heading\":\"Take out the bins\",\"Detail\":\"When the help is needed, take out the bins. Make sure you take them out first thing (or the night before) and bring them back in if required.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When the help is no longer needed, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)48,
-                            Instructions = "{\"SupportActivityInstructions\":48,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for dog walking volunteers [here](/pdf/notts/balderton/DogWalking.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Get in touch with the person who needs the help to confirm what they need. If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help that’s needed.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)52,
-                            Instructions = "{\"SupportActivityInstructions\":52,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for dog walking volunteers [here](/pdf/notts/northmuskham/DogWalking.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Get in touch with the person who needs the help to confirm what they need. If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help that’s needed.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)45,
-                            Instructions = "{\"SupportActivityInstructions\":45,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for shopping volunteers [here](/pdf/notts/balderton/Shopping.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need and agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Pick up their shopping and drop it off at their door. Make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their shopping.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)46,
-                            Instructions = "{\"SupportActivityInstructions\":46,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for prescription collection volunteers [here](/pdf/notts/balderton/PrescriptionCollection.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)47,
-                            Instructions = "{\"SupportActivityInstructions\":47,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for telephone befriending [here](/pdf/notts/balderton/TelephoneBefriending.pdf).\",\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)49,
-                            Instructions = "{\"SupportActivityInstructions\":49,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for shopping volunteers [here](/pdf/notts/northmuskham/Shopping.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need and agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Pick up their shopping and drop it off at their door. Make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their shopping.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)50,
-                            Instructions = "{\"SupportActivityInstructions\":50,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for prescription collection volunteers [here](/pdf/notts/northmuskham/PrescriptionCollection.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)51,
-                            Instructions = "{\"SupportActivityInstructions\":51,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for telephone befriending [here](/pdf/notts/northmuskham/TelephoneBefriending.pdf).\",\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         });
                 });
 
