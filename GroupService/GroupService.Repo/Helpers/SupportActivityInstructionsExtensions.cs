@@ -1055,7 +1055,7 @@ namespace GroupService.Repo.Helpers
                         Detail = $"Please make sure to tell us if you have any concerns about the client, or if they do not want the visits anymore. We would also just love to hear how you’re getting on!"
                     }
                 },
-                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/docx/ageconnectscardiff/volunteer-expense-form.docx)."
+                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)."
             };
         }
 
@@ -1095,7 +1095,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_PracticalSupport,
-                ActivityDetails = $"[Expense Form](/docx/ageconnectscardiff/volunteer-expense-form.docx)",
+                ActivityDetails = $"[Expense Form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)",
                 Intro = $"This role can be a range of different things such as form filling, helping someone do some research, assisting with telephone calls, teaching someone how to use their phone or tablet, changing a lightbulb or reading someone’s correspondence.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -1125,7 +1125,7 @@ namespace GroupService.Repo.Helpers
                         Detail = $"Please make sure to tell us if you have any concerns or updates by using the contact details provided on the request or leaving feedback when you mark the request as complete."
                     }
                 },
-                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/docx/ageconnectscardiff/volunteer-expense-form.docx)."
+                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)."
             };
         }
 
@@ -1134,7 +1134,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Prescriptions,
-                ActivityDetails = $"[Expenses Form](/docx/ageconnectscardiff/volunteer-expense-form.docx)",
+                ActivityDetails = $"[Expenses Form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)",
                 Intro = $"We are looking for you to pick up a prescription on a client’s behalf. (Prescriptions in Wales are free)",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -1159,7 +1159,7 @@ namespace GroupService.Repo.Helpers
                         Detail = $"Please make sure to tell us if you have any concerns or updates by using the contact details provided on the request or leaving feedback when you mark the request as complete."
                     }
                 },
-                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/docx/ageconnectscardiff/volunteer-expense-form.docx)."
+                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)."
             };
         }
 
@@ -1224,7 +1224,7 @@ namespace GroupService.Repo.Helpers
                         Detail = $"Please make sure to tell us if you have any concerns about the client, or if they do not want the shopping service any more."
                     }
                 },
-                Close = "If for any reason you can’t complete the request - or you need to stop making calls - let us know by updating the accepted request and clicking “Can’t Do”, this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/docx/ageconnectscardiff/volunteer-expense-form.docx)."
+                Close = "If for any reason you can’t complete the request - or you need to stop making calls - let us know by updating the accepted request and clicking “Can’t Do”, this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)."
             };
         }
 
