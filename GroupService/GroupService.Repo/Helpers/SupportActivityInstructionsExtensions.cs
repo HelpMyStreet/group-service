@@ -1095,7 +1095,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_PracticalSupport,
-                ActivityDetails = $"[Expense Form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)",
+                ActivityDetails = null,
                 Intro = $"This role can be a range of different things such as form filling, helping someone do some research, assisting with telephone calls, teaching someone how to use their phone or tablet, changing a lightbulb or reading someone’s correspondence.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -1134,7 +1134,7 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Prescriptions,
-                ActivityDetails = $"[Expenses Form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)",
+                ActivityDetails = null,
                 Intro = $"We are looking for you to pick up a prescription on a client’s behalf. (Prescriptions in Wales are free)",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
