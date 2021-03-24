@@ -13,7 +13,7 @@ namespace GroupService.Repo.Helpers
     {
         public static void SetEnumSupportActivityInstructionsExtensionsData(this EntityTypeBuilder<EnumSupportActivityInstructions> entity)
         {
-            var supportActivityInstructions = Enum.GetValues(typeof(HelpMyStreet.Utils.Enums.SupportActivityInstructions)).Cast<HelpMyStreet.Utils.Enums.SupportActivityInstructions>();
+            var supportActivityInstructions = Enum.GetValues(typeof(SupportActivityInstructionsEnum)).Cast<SupportActivityInstructionsEnum>();
 
             foreach (var instruction in supportActivityInstructions)
             {
@@ -25,7 +25,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Shopping,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.HMS_Shopping,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -53,7 +53,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.HMS_OtherPurchase,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -81,7 +81,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_General,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.HMS_General,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -109,7 +109,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FriendlyChat,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.HMS_FriendlyChat,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -132,7 +132,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Homework,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.HMS_Homework,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -160,7 +160,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_CheckIn,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.HMS_CheckIn,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -188,7 +188,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FaceCovering,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.HMS_FaceCovering,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -221,7 +221,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.FTLOS_FaceCovering,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.FTLOS_FaceCovering,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -254,7 +254,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLincoln_V4V,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKLincoln_V4V,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -282,7 +282,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_Shopping,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKWirral_Shopping,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -343,7 +343,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_General,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKWirral_General,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -366,7 +366,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_Prescriptions,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKWirral_Prescriptions,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -399,7 +399,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_Shopping,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKLSL_Shopping,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -427,7 +427,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_Prescriptions,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKLSL_Prescriptions,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -455,7 +455,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_General,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKLSL_General,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -483,7 +483,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealtimeCompanion,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKSKC_MealtimeCompanion,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -511,7 +511,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsToYourDoor,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKSKC_MealsToYourDoor,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -539,7 +539,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_VolunteerSupport,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.HMS_VolunteerSupport,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -567,7 +567,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_EmergencySupport,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.HMS_EmergencySupport,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -595,7 +595,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKNWK_Other,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNWK_Other,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -623,7 +623,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Other,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKSKC_Other,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -651,7 +651,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Prescriptions,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKSKC_Prescriptions,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -679,7 +679,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Shopping,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKSKC_Shopping,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -707,7 +707,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKNWK_MealsToYourDoor,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNWK_MealsToYourDoor,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -735,7 +735,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKNWK_Prescriptions,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNWK_Prescriptions,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -763,7 +763,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKNWK_Shopping,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNWK_Shopping,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -791,7 +791,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_FriendlyChat,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKFANDS_FriendlyChat,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -817,7 +817,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_MealtimeCompanion,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKFANDS_MealtimeCompanion,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -847,7 +847,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_MealsToYourDoor,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKFANDS_MealsToYourDoor,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -877,7 +877,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_Transport,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKFANDS_Transport,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -905,7 +905,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_VolunteerSupport,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKFANDS_VolunteerSupport,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -933,7 +933,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_Other,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKFANDS_Other,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {
@@ -963,7 +963,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.Lincoln_VaccineSupport,
                 ActivityDetails = $"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. " +
                 $"Duties may vary by location and could include a range of indoor or outdoor activities, " +
                 $"such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site," +
@@ -995,7 +995,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_FriendlyChat,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeConnectCardiff_FriendlyChat,
                 ActivityDetails = null,
                 Intro = $"This platform was initially set up for one off requests and we are working on some changes which will make it easier to manage repeat requests. For now, please follow these instructions for providing help and marking a request as complete.",
                 Steps = new System.Collections.Generic.List<Step>()
@@ -1029,7 +1029,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_InPersonBefriending,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeConnectCardiff_InPersonBefriending,
                 ActivityDetails = null,
                 Intro = $"This platform was initially set up for one off requests and we are working on some changes which will make it easier to manage repeat requests. For now, please follow these instructions for providing help and marking a request as complete.",
                 Steps = new System.Collections.Generic.List<Step>()
@@ -1063,7 +1063,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Transport,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeConnectCardiff_Transport,
                 ActivityDetails = null,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
@@ -1094,7 +1094,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_PracticalSupport,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeConnectCardiff_PracticalSupport,
                 ActivityDetails = null,
                 Intro = $"This role can be a range of different things such as form filling, helping someone do some research, assisting with telephone calls, teaching someone how to use their phone or tablet, changing a lightbulb or reading someone’s correspondence.",
                 Steps = new System.Collections.Generic.List<Step>()
@@ -1133,7 +1133,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Prescriptions,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeConnectCardiff_Prescriptions,
                 ActivityDetails = null,
                 Intro = $"We are looking for you to pick up a prescription on a client’s behalf. (Prescriptions in Wales are free)",
                 Steps = new System.Collections.Generic.List<Step>()
@@ -1167,7 +1167,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Other,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeConnectCardiff_Other,
                 ActivityDetails = null,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
@@ -1198,7 +1198,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Shopping,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeConnectCardiff_Shopping,
                 ActivityDetails = null,
                 Intro = $"This platform was initially set up for one off requests and we are working on some changes which will make it easier to manage repeat requests. For now, please follow these instructions for providing help and marking a request as complete.",
                 Steps = new System.Collections.Generic.List<Step>()
@@ -1232,7 +1232,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_VolunteerSupport,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeConnectCardiff_VolunteerSupport,
                 ActivityDetails = null,
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
@@ -1261,7 +1261,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_VolunteerInduction,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeConnectCardiff_VolunteerInduction,
                 ActivityDetails = null,
                 Intro = "If you need to complete your volunteer induction training you can book on to this course.",
                 Steps = new System.Collections.Generic.List<Step>()
@@ -1290,7 +1290,7 @@ namespace GroupService.Repo.Helpers
         {
             return new Instructions()
             {
-                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_BinDayAssistance,
+                SupportActivityInstructions = SupportActivityInstructionsEnum.HMS_BinDayAssistance,
                 ActivityDetails = null,
                 Intro = "We are working on some changes which will make it easier to manage repeat requests, but for now please follow these instructions for providing help and marking a request as complete.",
                 Steps = new System.Collections.Generic.List<Step>()
@@ -1316,71 +1316,287 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_AgeUKNottsBalderton_DogWalking()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNottsBalderton_DogWalking,
+                ActivityDetails = null,
+                Intro = "Please follow these steps to complete this request. You can also find more guidance for dog walking volunteers [here](/pdf/notts/balderton/DogWalking.pdf).",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact the requester",
+                        Detail = $"Get in touch with the person who needs the help to confirm what they need. If someone else has requested the help on their behalf it may be useful to give them a call too."
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide help",
+                        Detail = $"Provide the help that’s needed."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = $"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch."                        
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKNottsNorthMuskham_DogWalking()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_DogWalking,
+                ActivityDetails = null,
+                Intro = "Please follow these steps to complete this request. You can also find more guidance for dog walking volunteers [here](/pdf/notts/northmuskham/DogWalking.pdf).",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact the requester",
+                        Detail = $"Get in touch with the person who needs the help to confirm what they need. If someone else has requested the help on their behalf it may be useful to give them a call too."
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide help",
+                        Detail = $"Provide the help that’s needed."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = $"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKNottsBalderton_Shopping()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNottsBalderton_Shopping,
+                Intro = "Please follow these steps to complete this request. You can also find more guidance for shopping volunteers [here](/pdf/notts/balderton/Shopping.pdf).",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact the requester",
+                        Detail = "Confirm what they need and agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide help",
+                        Detail = "Pick up their shopping and drop it off at their door. Make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their shopping."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKNottsBalderton_Prescriptions()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNottsBalderton_Prescriptions,
+                Intro = "Please follow these steps to complete this request. You can also find more guidance for prescription collection volunteers [here](/pdf/notts/balderton/PrescriptionCollection.pdf).",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact the requester",
+                        Detail = "Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide help",
+                        Detail = "Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKNottsBalderton_FriendlyChat()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNottsBalderton_FriendlyChat,
+                Intro = "Please follow these steps to complete this request. You can also find more guidance for telephone befriending [here](/pdf/notts/balderton/TelephoneBefriending.pdf).",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Give them a call",
+                        Detail = "Be a friendly voice at the end of the phone and have a good chat.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.",
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKNottsNorthMuskham_Shopping()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_Shopping,
+                Intro = "Please follow these steps to complete this request. You can also find more guidance for shopping volunteers [here](/pdf/notts/northmuskham/Shopping.pdf).",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact the requester",
+                        Detail = "Confirm what they need and agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide help",
+                        Detail = "Pick up their shopping and drop it off at their door. Make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their shopping."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKNottsNorthMuskham_Prescriptions()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_Prescriptions,
+                Intro = "Please follow these steps to complete this request. You can also find more guidance for prescription collection volunteers [here](/pdf/notts/northmuskham/PrescriptionCollection.pdf).",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact the requester",
+                        Detail = "Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide help",
+                        Detail = "Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeUKNottsNorthMuskham_FriendlyChat()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_FriendlyChat,
+                Intro = "Please follow these steps to complete this request. You can also find more guidance for telephone befriending [here](/pdf/notts/northmuskham/TelephoneBefriending.pdf).",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Give them a call",
+                        Detail = "Be a friendly voice at the end of the phone and have a good chat.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.",
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Shopping,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_Shopping,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HmsShopping())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_OtherPurchase,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_OtherPurchase,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HmsOtherPurchase())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_General,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_General,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HmsGeneral())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FriendlyChat,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_FriendlyChat,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HmsFriendlyChat())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_Homework,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_Homework,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HmsHomework())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_CheckIn,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_CheckIn,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HmsCheckIn())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_FaceCovering,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_FaceCovering,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HmsFaceCovering())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.FTLOS_FaceCovering,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.FTLOS_FaceCovering,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_FtlosFaceCovering())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLincoln_V4V,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKLincoln_V4V,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKLincoln_V4V())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_Shopping,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKWirral_Shopping,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKWirral_Shopping())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_Prescriptions,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKWirral_Prescriptions,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKWirral_Prescriptions())
             });
 
@@ -1392,195 +1608,244 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKWirral_General,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKWirral_General,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKWirral_General())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_Shopping,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKLSL_Shopping,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKLSL_Shopping())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_Prescriptions,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKLSL_Prescriptions,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKLSL_Prescriptions())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKLSL_General,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKLSL_General,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKLSL_General())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealtimeCompanion,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKSKC_MealtimeCompanion,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_MealtimeCompanion())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_MealsToYourDoor,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKSKC_MealsToYourDoor,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_MealOnWheels())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_VolunteerSupport,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_VolunteerSupport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HMS_VolunteerSupport())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_EmergencySupport,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_EmergencySupport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HMS_EmergencySupport())
             }); 
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Other,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKSKC_Other,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_Other())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Prescriptions,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKSKC_Prescriptions,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_Prescriptions())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKSKC_Shopping,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKSKC_Shopping,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKSKC_Shopping())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKNWK_Other,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNWK_Other,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNWK_Other())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKNWK_MealsToYourDoor,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNWK_MealsToYourDoor,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNWK_MealsToYourDoor())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKNWK_Prescriptions,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNWK_Prescriptions,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNWK_Prescriptions())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKNWK_Shopping,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNWK_Shopping,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNWK_Shopping())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_FriendlyChat,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKFANDS_FriendlyChat,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKFANDS_FriendlyChat())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_MealtimeCompanion,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKFANDS_MealtimeCompanion,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKFANDS_MealtimeCompanion())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_MealsToYourDoor,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKFANDS_MealsToYourDoor,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKFANDS_MealsToYourDoor())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_Transport,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKFANDS_Transport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKFANDS_Transport())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_VolunteerSupport,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKFANDS_VolunteerSupport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKFANDS_VolunteerSupport())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeUKFANDS_Other,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKFANDS_Other,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKFANDS_Other())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.Lincoln_VaccineSupport,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.Lincoln_VaccineSupport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_LincolnVaccineSupport())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_InPersonBefriending,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeConnectCardiff_InPersonBefriending,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_InPersonBefriending())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_FriendlyChat,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeConnectCardiff_FriendlyChat,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_FriendlyChat())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Transport,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeConnectCardiff_Transport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_Transport())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_PracticalSupport,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeConnectCardiff_PracticalSupport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_PracticalSupport())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_VolunteerSupport,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeConnectCardiff_VolunteerSupport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_VolunteerSupport())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Other,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeConnectCardiff_Other,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_Other())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Prescriptions,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeConnectCardiff_Prescriptions,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_Prescriptions())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Shopping,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeConnectCardiff_Shopping,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_Shopping())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_VolunteerInduction,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeConnectCardiff_VolunteerInduction,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_VolunteerInduction())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.HMS_BinDayAssistance,
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_BinDayAssistance,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HMS_BinDayAssistance())
             });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNottsBalderton_DogWalking,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNottsBalderton_DogWalking())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_DogWalking,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNottsNorthMuskham_DogWalking())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNottsBalderton_Shopping,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNottsBalderton_Shopping())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNottsBalderton_Prescriptions,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNottsBalderton_Prescriptions())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNottsBalderton_FriendlyChat,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNottsBalderton_FriendlyChat())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_Shopping,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNottsNorthMuskham_Shopping())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_Prescriptions,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNottsNorthMuskham_Prescriptions())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_FriendlyChat,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNottsNorthMuskham_FriendlyChat())
+            });
+
         }
 
 
@@ -1655,16 +1920,18 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeUKNWK_Prescriptions);
             Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
 
-            Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+            Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeUKNottsBalderton_Prescriptions);
             Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
-            Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
+            Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeUKNottsBalderton_FriendlyChat);
+            Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.Shopping, SupportActivityInstructionsEnum.AgeUKNottsBalderton_Shopping);
+            Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.DogWalking, SupportActivityInstructionsEnum.AgeUKNottsBalderton_DogWalking);
 
-            Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+            Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_Prescriptions);
             Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.Errands, SupportActivityInstructionsEnum.HMS_OtherPurchase);
             Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
-            Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
+            Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_FriendlyChat);
+            Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.Shopping, SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_Shopping);
+            Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.DogWalking, SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_DogWalking);
 
             Populate(entity, Groups.AgeUKSouthKentCoast, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeUKSKC_Prescriptions);
             Populate(entity, Groups.AgeUKSouthKentCoast, SupportActivities.MealsToYourDoor, SupportActivityInstructionsEnum.AgeUKSKC_MealsToYourDoor);

@@ -521,14 +521,14 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.AgeUKSouthKentCoast, ageUKSouthKentCoastActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKSouthKentCoast]);
             SetActivityCredentialSet(entity, Groups.AgeUKSouthKentCoast, ageUKSouthKentCoastActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKSouthKentCoast]);
 
-            var ageUKNottsNorthMuskhamActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.PhoneCalls_Friendly, SupportActivities.Other };
+            var ageUKNottsNorthMuskhamActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.PhoneCalls_Friendly, SupportActivities.Other, SupportActivities.DogWalking };
             SetActivityCredentialSet(entity, Groups.AgeUKNottsNorthMuskham, ageUKNottsNorthMuskhamActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNottsNorthMuskham]);
 
             var ageUKNorthWestKentActivities = new List<SupportActivities> { SupportActivities.CollectingPrescriptions, SupportActivities.PhoneCalls_Friendly, SupportActivities.Other, SupportActivities.MealsToYourDoor, SupportActivities.VolunteerSupport };
             SetActivityCredentialSet(entity, Groups.AgeUKNorthWestKent, ageUKNorthWestKentActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNorthWestKent]);
             SetActivityCredentialSet(entity, Groups.AgeUKNorthWestKent, ageUKNorthWestKentActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKNorthWestKent]);
 
-            var ageUKNottsBaldertonActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.PhoneCalls_Friendly, SupportActivities.Other };
+            var ageUKNottsBaldertonActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.PhoneCalls_Friendly, SupportActivities.Other, SupportActivities.DogWalking };
             SetActivityCredentialSet(entity, Groups.AgeUKNottsBalderton, ageUKNottsBaldertonActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNottsBalderton]);
 
             var ageUKWirralActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Other, SupportActivities.ColdWeatherArmy };

@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210323131257_AddCredentialsForDogWalkingForBaldertonAndMuskham")]
+    partial class AddCredentialsForDogWalkingForBaldertonAndMuskham
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1889,61 +1891,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 41,
                             Name = "AgeUKWirral_VolunteerSupport"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Name = "AgeConnectCardiff_Shopping"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Name = "AgeConnectCardiff_FriendlyChat"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Name = "AgeConnectCardiff_Prescriptions"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Name = "AgeUKNottsBalderton_Shopping"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Name = "AgeUKNottsBalderton_Prescriptions"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Name = "AgeUKNottsBalderton_FriendlyChat"
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Name = "AgeUKNottsBalderton_DogWalking"
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Name = "AgeUKNottsNorthMuskham_Shopping"
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Name = "AgeUKNottsNorthMuskham_Prescriptions"
-                        },
-                        new
-                        {
-                            Id = 51,
-                            Name = "AgeUKNottsNorthMuskham_FriendlyChat"
-                        },
-                        new
-                        {
-                            Id = 52,
-                            Name = "AgeUKNottsNorthMuskham_DogWalking"
                         });
                 });
 
@@ -2728,7 +2675,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             CredentialTypeId = (byte)4,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 3,
-                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx) and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
+                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Reference 1",
                             WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
@@ -2740,7 +2687,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             CredentialTypeId = (byte)4,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 4,
-                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx) and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
+                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/referencesform.docx) form and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Reference 2",
                             WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
@@ -3262,7 +3209,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -8,
                             SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)46
+                            SupportActivityInstructionsId = (short)2
                         },
                         new
                         {
@@ -3274,25 +3221,19 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -8,
                             SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)47
+                            SupportActivityInstructionsId = (short)4
                         },
                         new
                         {
                             GroupId = -8,
                             SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)45
-                        },
-                        new
-                        {
-                            GroupId = -8,
-                            SupportActivityId = 5,
-                            SupportActivityInstructionsId = (short)48
+                            SupportActivityInstructionsId = (short)1
                         },
                         new
                         {
                             GroupId = -10,
                             SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)50
+                            SupportActivityInstructionsId = (short)2
                         },
                         new
                         {
@@ -3310,19 +3251,13 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -10,
                             SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)51
+                            SupportActivityInstructionsId = (short)4
                         },
                         new
                         {
                             GroupId = -10,
                             SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)49
-                        },
-                        new
-                        {
-                            GroupId = -10,
-                            SupportActivityId = 5,
-                            SupportActivityInstructionsId = (short)52
+                            SupportActivityInstructionsId = (short)1
                         },
                         new
                         {
@@ -3477,8 +3412,20 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -23,
+                            SupportActivityId = 1,
+                            SupportActivityInstructionsId = (short)1
+                        },
+                        new
+                        {
+                            GroupId = -23,
                             SupportActivityId = 7,
-                            SupportActivityInstructionsId = (short)43
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            SupportActivityId = 2,
+                            SupportActivityInstructionsId = (short)2
                         },
                         new
                         {
@@ -3515,18 +3462,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -23,
                             SupportActivityId = 16,
                             SupportActivityInstructionsId = (short)38
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            SupportActivityId = 1,
-                            SupportActivityInstructionsId = (short)42
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)44
                         },
                         new
                         {
@@ -4596,7 +4531,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariantId = (byte)12,
                             SupportActivityId = 1,
                             DisplayOrder = (byte)1,
-                            IsPreSelected = false,
+                            IsPreSelected = true,
                             Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
                         },
                         new
@@ -4903,9 +4838,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                     b.Property<bool>("RequestsRequireApproval")
                         .HasColumnType("bit");
 
-                    b.Property<bool?>("SuppressRecipientPersonalDetails")
-                        .HasColumnType("bit");
-
                     b.Property<byte>("TargetGroups")
                         .HasColumnName("TargetGroups")
                         .HasColumnType("tinyint");
@@ -4923,7 +4855,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)1,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -4934,7 +4865,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)5,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -4945,7 +4875,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)4,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)1
                         },
                         new
@@ -4956,7 +4885,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)2,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
                             TargetGroups = (byte)4
                         },
                         new
@@ -4967,7 +4895,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)6,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
                             TargetGroups = (byte)0
                         },
                         new
@@ -4978,7 +4905,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)1,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -4989,7 +4915,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)7,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)0
                         },
                         new
@@ -5000,7 +4925,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)8,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)0
                         },
                         new
@@ -5011,7 +4935,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)9,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5022,7 +4945,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)10,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = true,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5033,7 +4955,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)11,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5044,7 +4965,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)12,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5055,7 +4975,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)13,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = true,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5066,7 +4985,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)14,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5077,7 +4995,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)15,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = true,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5088,7 +5005,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)16,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5099,7 +5015,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)18,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5110,7 +5025,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)17,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5121,7 +5035,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)17,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5132,7 +5045,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)17,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5143,7 +5055,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)17,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5154,7 +5065,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)17,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5165,7 +5075,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)17,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5176,7 +5085,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)17,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5187,7 +5095,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)17,
                             RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5198,7 +5105,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)19,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)0
                         },
                         new
@@ -5209,7 +5115,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)21,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = true,
-                            SuppressRecipientPersonalDetails = true,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5230,7 +5135,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)22,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = true,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -5241,7 +5145,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariant = (byte)23,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         });
                 });
@@ -5901,12 +5804,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             SupportActivityInstructionsId = (short)36,
-                            Instructions = "{\"SupportActivityInstructions\":36,\"ActivityDetails\":null,\"Intro\":\"This platform was initially set up for one off requests and we are working on some changes which will make it easier to manage repeat requests. For now, please follow these instructions for providing help and marking a request as complete.\",\"Steps\":[{\"Heading\":\"Visit the client\",\"Detail\":\"Meet up as agreed and have a lovely time - for the first visit, make sure you take along your ID badge or a letter from Age Connects explaining who you are\"},{\"Heading\":\"Contact your volunteer manager\",\"Detail\":\"Once you have completed your first visit, let us know by contacting your volunteer manager via email, phone or text. You will find their contact details listed as the ‘Requester’ on the accepted request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"Only mark the request as complete when no more visits are required. We expect to see the request as ‘In Progress’ for the duration of the ongoing support.\"},{\"Heading\":\"Share any concerns or updates\",\"Detail\":\"Please make sure to tell us if you have any concerns about the client, or if they do not want the visits anymore. We would also just love to hear how you’re getting on!\"}],\"Close\":\"If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx).\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)43,
-                            Instructions = "{\"SupportActivityInstructions\":43,\"ActivityDetails\":null,\"Intro\":\"This platform was initially set up for one off requests and we are working on some changes which will make it easier to manage repeat requests. For now, please follow these instructions for providing help and marking a request as complete.\",\"Steps\":[{\"Heading\":\"Give the client a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Contact your volunteer manager\",\"Detail\":\"Once you have completed your first call, let us know by contacting your volunteer manager via email, phone or text. You will find their contact details listed as the ‘Requester’ on the accepted request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"Only mark the request as complete when no more calls are required. We expect to see the request as ‘In Progress’ for the duration of the ongoing support.\"},{\"Heading\":\"Share any concerns or updates\",\"Detail\":\"Please make sure to tell us if you have any concerns about the client, or if they do not want the call anymore. We would also just love to hear how you’re getting on!\"}],\"Close\":\"If for any reason you can’t complete the request - or you need to stop making calls - let us know by updating the accepted request and clicking “Can’t Do”, this will allow us to find a new volunteer to help.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":36,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Get in touch with the requester and arrange a convenient time an place to meet up.\"},{\"Heading\":\"Meet up\",\"Detail\":\"Meet up as agreed and have a lovely time.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
@@ -5916,27 +5814,17 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             SupportActivityInstructionsId = (short)35,
-                            Instructions = "{\"SupportActivityInstructions\":35,\"ActivityDetails\":null,\"Intro\":\"This role can be a range of different things such as form filling, helping someone do some research, assisting with telephone calls, teaching someone how to use their phone or tablet, changing a lightbulb or reading someone’s correspondence.\",\"Steps\":[{\"Heading\":\"Check what help is needed\",\"Detail\":\"Make sure to read all of the information available on the open request (including clicking on the “More Info” link). Only accept the request if you’re able to provide the help that is needed.\"},{\"Heading\":\"Let the client know you’re able to help\",\"Detail\":\"Contact the client to let them know who you are and to confirm the help is still needed. Arrange a convenient date and time to provide the help.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help that is needed.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"Once you have completed the task, mark it as complete from your “My Requests” page.\"},{\"Heading\":\"Share any concerns or updates\",\"Detail\":\"Please make sure to tell us if you have any concerns or updates by using the contact details provided on the request or leaving feedback when you mark the request as complete.\"}],\"Close\":\"If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx).\"}"
+                            Instructions = "{\"SupportActivityInstructions\":35,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)34,
-                            Instructions = "{\"SupportActivityInstructions\":34,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the “View more info” link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":34,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the “View more info” link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)37,
                             Instructions = "{\"SupportActivityInstructions\":37,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)44,
-                            Instructions = "{\"SupportActivityInstructions\":44,\"ActivityDetails\":null,\"Intro\":\"We are looking for you to pick up a prescription on a client’s behalf. (Prescriptions in Wales are free)\",\"Steps\":[{\"Heading\":\"Let the client know you’re able to help\",\"Detail\":\"Contact the client to let them know who you are and to confirm the help is still needed. You should also check if the client has told the pharmacy that you will be picking up the prescription on their behalf - see the [NHS website] (https://www.nhs.uk/common-health-questions/caring-carers-and-long-term-conditions/can-i-pick-up-a-prescription-for-someone-else/) for more details.\"},{\"Heading\":\"Collect the prescription\",\"Detail\":\"Collect the prescription on the client’s behalf.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"Once you have completed the task, mark it as complete from your “My Requests” page.\"},{\"Heading\":\"Share any concerns or updates\",\"Detail\":\"Please make sure to tell us if you have any concerns or updates by using the contact details provided on the request or leaving feedback when you mark the request as complete.\"}],\"Close\":\"If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx).\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)42,
-                            Instructions = "{\"SupportActivityInstructions\":42,\"ActivityDetails\":null,\"Intro\":\"This platform was initially set up for one off requests and we are working on some changes which will make it easier to manage repeat requests. For now, please follow these instructions for providing help and marking a request as complete.\",\"Steps\":[{\"Heading\":\"Confirm the shopping list\",\"Detail\":\"Contact the client to confirm what they need. Please read our [shopping guidance for Age Connects Volunteers](/pdf/ageconnectscardiff/shopping-guidance.pdf) for more detail about payment methods.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Carry out the shopping and deliver it back to them. If they need it, we would like you to help them put the shopping away.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"Only mark the request as complete when no more help is required. We expect to see the request as ‘In Progress’ for the duration of the ongoing support if you are helping with regular shopping.\"},{\"Heading\":\"Share any concerns or updates\",\"Detail\":\"Please make sure to tell us if you have any concerns about the client, or if they do not want the shopping service any more.\"}],\"Close\":\"If for any reason you can’t complete the request - or you need to stop making calls - let us know by updating the accepted request and clicking “Can’t Do”, this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx).\"}"
                         },
                         new
                         {
@@ -5947,46 +5835,6 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             SupportActivityInstructionsId = (short)40,
                             Instructions = "{\"SupportActivityInstructions\":40,\"ActivityDetails\":null,\"Intro\":\"We are working on some changes which will make it easier to manage repeat requests, but for now please follow these instructions for providing help and marking a request as complete.\",\"Steps\":[{\"Heading\":\"Check how long the help is needed for\",\"Detail\":\"You can find out more in the ‘More details’ section of the request. Some requests may be for one-off help, while others are for ongoing support.\"},{\"Heading\":\"Take out the bins\",\"Detail\":\"When the help is needed, take out the bins. Make sure you take them out first thing (or the night before) and bring them back in if required.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When the help is no longer needed, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)48,
-                            Instructions = "{\"SupportActivityInstructions\":48,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for dog walking volunteers [here](/pdf/notts/balderton/DogWalking.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Get in touch with the person who needs the help to confirm what they need. If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help that’s needed.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)52,
-                            Instructions = "{\"SupportActivityInstructions\":52,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for dog walking volunteers [here](/pdf/notts/northmuskham/DogWalking.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Get in touch with the person who needs the help to confirm what they need. If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help that’s needed.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)45,
-                            Instructions = "{\"SupportActivityInstructions\":45,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for shopping volunteers [here](/pdf/notts/balderton/Shopping.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need and agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Pick up their shopping and drop it off at their door. Make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their shopping.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)46,
-                            Instructions = "{\"SupportActivityInstructions\":46,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for prescription collection volunteers [here](/pdf/notts/balderton/PrescriptionCollection.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)47,
-                            Instructions = "{\"SupportActivityInstructions\":47,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for telephone befriending [here](/pdf/notts/balderton/TelephoneBefriending.pdf).\",\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)49,
-                            Instructions = "{\"SupportActivityInstructions\":49,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for shopping volunteers [here](/pdf/notts/northmuskham/Shopping.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need and agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Pick up their shopping and drop it off at their door. Make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their shopping.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us and anyone else involved with the request know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)50,
-                            Instructions = "{\"SupportActivityInstructions\":50,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for prescription collection volunteers [here](/pdf/notts/northmuskham/PrescriptionCollection.pdf).\",\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)51,
-                            Instructions = "{\"SupportActivityInstructions\":51,\"ActivityDetails\":null,\"Intro\":\"Please follow these steps to complete this request. You can also find more guidance for telephone befriending [here](/pdf/notts/northmuskham/TelephoneBefriending.pdf).\",\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         });
                 });
 
