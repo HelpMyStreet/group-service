@@ -991,34 +991,71 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_AgeConnectCardiff_FriendlyChat()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_FriendlyChat,
+                ActivityDetails = null,
+                Intro = $"This platform was initially set up for one off requests and we are working on some changes which will make it easier to manage repeat requests. For now, please follow these instructions for providing help and marking a request as complete.",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Give the client a call",
+                        Detail = $"Be a friendly voice at the end of the phone and have a good chat."
+                    },
+                    new Step()
+                    {
+                        Heading = "Contact your volunteer manager",
+                        Detail = $"Once you have completed your first call, let us know by contacting your volunteer manager via email, phone or text. You will find their contact details listed as the ‘Requester’ on the accepted request."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = $"Only mark the request as complete when no more calls are required. We expect to see the request as ‘In Progress’ for the duration of the ongoing support."
+                    },
+                    new Step()
+                    {
+                        Heading = "Share any concerns or updates",
+                        Detail = $"Please make sure to tell us if you have any concerns about the client, or if they do not want the call anymore. We would also just love to hear how you’re getting on!"
+                    }
+                },
+                Close = "If for any reason you can’t complete the request - or you need to stop making calls - let us know by updating the accepted request and clicking “Can’t Do”, this will allow us to find a new volunteer to help."
+            };
+        }
+
         private static Instructions GetInstructions_AgeConnectCardiff_InPersonBefriending()
         {
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_InPersonBefriending,
                 ActivityDetails = null,
-                Intro = null,
+                Intro = $"This platform was initially set up for one off requests and we are working on some changes which will make it easier to manage repeat requests. For now, please follow these instructions for providing help and marking a request as complete.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
                     {
-                        Heading = "Contact the requester",
-                        Detail = $"Get in touch with the requester and arrange a convenient time an place to meet up."
+                        Heading = "Visit the client",
+                        Detail = $"Meet up as agreed and have a lovely time - for the first visit, make sure you take along your ID badge or a letter from Age Connects explaining who you are"
                     },
                     new Step()
                     {
-                        Heading = "Meet up",
-                        Detail = $"Meet up as agreed and have a lovely time."
+                        Heading = "Contact your volunteer manager",
+                        Detail = $"Once you have completed your first visit, let us know by contacting your volunteer manager via email, phone or text. You will find their contact details listed as the ‘Requester’ on the accepted request."
                     },
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = $"When you’re finished, mark the request as complete in “My Requests” - this will let us and " +
-                        $"anyone else involved with the request know it’s been completed. You’ll still be able to find their contact " +
-                        $"details in “My Requests” in case you need to get back in touch."
+                        Detail = $"Only mark the request as complete when no more visits are required. We expect to see the request as ‘In Progress’ for the duration of the ongoing support."
+                    },
+                    new Step()
+                    {
+                        Heading = "Share any concerns or updates",
+                        Detail = $"Please make sure to tell us if you have any concerns about the client, or if they do not want the visits anymore. We would also just love to hear how you’re getting on!"
                     }
                 },
-                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)."
             };
         }
 
@@ -1058,29 +1095,71 @@ namespace GroupService.Repo.Helpers
             return new Instructions()
             {
                 SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_PracticalSupport,
-                ActivityDetails = null,
-                Intro = null,
+                ActivityDetails = $"[Expense Form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)",
+                Intro = $"This role can be a range of different things such as form filling, helping someone do some research, assisting with telephone calls, teaching someone how to use their phone or tablet, changing a lightbulb or reading someone’s correspondence.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
                     {
-                        Heading = "Contact the requester",
-                        Detail = $"Confirm what they need. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too."
+                        Heading = "Check what help is needed",
+                        Detail = $"Make sure to read all of the information available on the open request (including clicking on the “More Info” link). Only accept the request if you’re able to provide the help that is needed."
+                    },
+                    new Step()
+                    {
+                        Heading = "Let the client know you’re able to help",
+                        Detail = $"Contact the client to let them know who you are and to confirm the help is still needed. Arrange a convenient date and time to provide the help."
                     },
                     new Step()
                     {
                         Heading = "Provide help",
-                        Detail = $"Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their purchase."
+                        Detail = $"Provide the help that is needed."
                     },
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = $"When you’re finished, mark the request as complete in “My Requests” - this will let us and " +
-                        $"anyone else involved with the request know it’s been completed. You’ll still be able to find their contact " +
-                        $"details in “My Requests” in case you need to get back in touch."
+                        Detail = $"Once you have completed the task, mark it as complete from your “My Requests” page."
+                    },
+                    new Step()
+                    {
+                        Heading = "Share any concerns or updates",
+                        Detail = $"Please make sure to tell us if you have any concerns or updates by using the contact details provided on the request or leaving feedback when you mark the request as complete."
                     }
                 },
-                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)."
+            };
+        }
+
+        private static Instructions GetInstructions_AgeConnectCardiff_Prescriptions()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Prescriptions,
+                ActivityDetails = $"[Expenses Form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)",
+                Intro = $"We are looking for you to pick up a prescription on a client’s behalf. (Prescriptions in Wales are free)",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Let the client know you’re able to help",
+                        Detail = $"Contact the client to let them know who you are and to confirm the help is still needed. You should also check if the client has told the pharmacy that you will be picking up the prescription on their behalf - see the [NHS website] (https://www.nhs.uk/common-health-questions/caring-carers-and-long-term-conditions/can-i-pick-up-a-prescription-for-someone-else/) for more details."
+                    },
+                    new Step()
+                    {
+                        Heading = "Collect the prescription",
+                        Detail = $"Collect the prescription on the client’s behalf."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = $"Once you have completed the task, mark it as complete from your “My Requests” page."
+                    },
+                    new Step()
+                    {
+                        Heading = "Share any concerns or updates",
+                        Detail = $"Please make sure to tell us if you have any concerns or updates by using the contact details provided on the request or leaving feedback when you mark the request as complete."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do” - this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)."
             };
         }
 
@@ -1115,6 +1194,40 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_AgeConnectCardiff_Shopping()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Shopping,
+                ActivityDetails = null,
+                Intro = $"This platform was initially set up for one off requests and we are working on some changes which will make it easier to manage repeat requests. For now, please follow these instructions for providing help and marking a request as complete.",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Confirm the shopping list",
+                        Detail = $"Contact the client to confirm what they need. Please read our [shopping guidance for Age Connects Volunteers](/pdf/ageconnectscardiff/shopping-guidance.pdf) for more detail about payment methods."
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide help",
+                        Detail = $"Carry out the shopping and deliver it back to them. If they need it, we would like you to help them put the shopping away."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = $"Only mark the request as complete when no more help is required. We expect to see the request as ‘In Progress’ for the duration of the ongoing support if you are helping with regular shopping."
+                    },
+                    new Step()
+                    {
+                        Heading = "Share any concerns or updates",
+                        Detail = $"Please make sure to tell us if you have any concerns about the client, or if they do not want the shopping service any more."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request - or you need to stop making calls - let us know by updating the accepted request and clicking “Can’t Do”, this will allow us to find a new volunteer to help. If you need to claim expenses for this activity, you must do so within three months by submitting our [expense claim form](/forms/ageconnect/cardiff/volunteer-expense-form.docx)."
+            };
+        }
+
         private static Instructions GetInstructions_AgeConnectCardiff_VolunteerSupport()
         {
             return new Instructions()
@@ -1137,9 +1250,7 @@ namespace GroupService.Repo.Helpers
                     new Step()
                     {
                         Heading = "Mark the request as complete",
-                        Detail = $"When you’re finished, mark the request as complete in “My Requests” - this will let us and " +
-                        $"anyone else involved with the request know it’s been completed. You’ll still be able to find their contact " +
-                        $"details in “My Requests” in case you need to get back in touch."
+                        Detail = $"When you're finished, mark the request as complete in “My Requests”."
                     }
                 },
                 Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
@@ -1419,6 +1530,12 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_FriendlyChat,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_FriendlyChat())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Transport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_Transport())
             });
@@ -1439,6 +1556,18 @@ namespace GroupService.Repo.Helpers
             {
                 SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Other,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_Other())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Prescriptions,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_Prescriptions())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)HelpMyStreet.Utils.Enums.SupportActivityInstructions.AgeConnectCardiff_Shopping,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeConnectCardiff_Shopping())
             });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -1566,15 +1695,15 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.Sandbox, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
             Populate(entity, Groups.Sandbox, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
 
-            Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
-            Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
-            Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+            Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeConnectCardiff_FriendlyChat);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.InPersonBefriending, SupportActivityInstructionsEnum.AgeConnectCardiff_InPersonBefriending);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.Other, SupportActivityInstructionsEnum.AgeConnectCardiff_Other);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.PracticalSupport, SupportActivityInstructionsEnum.AgeConnectCardiff_PracticalSupport);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.VolunteerInduction, SupportActivityInstructionsEnum.AgeConnectCardiff_VolunteerInduction);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.AgeConnectCardiff_VolunteerSupport);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.Transport, SupportActivityInstructionsEnum.AgeConnectCardiff_Transport);
+            Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.Shopping, SupportActivityInstructionsEnum.AgeConnectCardiff_Shopping);
+            Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeConnectCardiff_Prescriptions);
 
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.FaceMask, SupportActivityInstructionsEnum.HMS_FaceCovering);

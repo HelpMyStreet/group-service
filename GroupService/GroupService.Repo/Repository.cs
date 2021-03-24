@@ -325,6 +325,7 @@ namespace GroupService.Repo
                 RequestorDefinedByGroup = requestHelpJourney.RequestorDefinedByGroup,
                 AccessRestrictedByRole = requestHelpJourney.AccessRestrictedByRole,
                 RequestsRequireApproval = requestHelpJourney.RequestsRequireApproval,
+                SuppressRecipientPersonalDetails = requestHelpJourney.SuppressRecipientPersonalDetails
             };
 
             if(requestHelpJourney.RequestorDefinedByGroup == true && requestHelpJourney.Group?.RequestorDetails!=null)

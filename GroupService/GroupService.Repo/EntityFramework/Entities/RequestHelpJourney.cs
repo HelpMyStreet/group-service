@@ -13,6 +13,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public bool AccessRestrictedByRole { get; set; }
         public bool RequestorDefinedByGroup { get; set; }
         public bool RequestsRequireApproval { get; set; }
+        public bool? SuppressRecipientPersonalDetails { get; set; }
 
         public virtual Group Group { get; set; }
     }

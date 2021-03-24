@@ -382,6 +382,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -393,6 +394,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -404,6 +406,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -415,6 +418,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
             });
 
             entity.HasData(new RequestHelpJourney
@@ -426,6 +430,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
             });
 
             entity.HasData(new RequestHelpJourney
@@ -437,6 +442,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -448,6 +454,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -459,6 +466,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -470,6 +478,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -481,6 +490,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = true,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -492,6 +502,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -503,6 +514,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -514,6 +526,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = true,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -525,6 +538,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -536,6 +550,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = true,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -547,6 +562,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -558,6 +574,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -569,6 +586,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -580,6 +598,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -591,6 +610,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -602,6 +622,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -613,6 +634,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -624,6 +646,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -635,6 +658,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -646,6 +670,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -657,6 +682,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -668,6 +694,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = true,
+                SuppressRecipientPersonalDetails = true
             });
 
             entity.HasData(new RequestHelpJourney
@@ -678,7 +705,7 @@ namespace GroupService.Repo.Helpers
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
+                RequestsRequireApproval = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -690,6 +717,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = true,
+                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -701,6 +729,7 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
         }
 
