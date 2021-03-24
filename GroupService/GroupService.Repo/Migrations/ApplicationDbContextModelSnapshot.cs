@@ -4532,7 +4532,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestHelpFormVariantId = (byte)12,
                             SupportActivityId = 1,
                             DisplayOrder = (byte)1,
-                            IsPreSelected = true,
+                            IsPreSelected = false,
                             Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
                         },
                         new
