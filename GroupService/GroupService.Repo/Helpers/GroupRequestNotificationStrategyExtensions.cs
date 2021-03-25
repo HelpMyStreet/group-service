@@ -77,6 +77,41 @@ namespace GroupService.Repo.Helpers
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
                 MaxVolunteer = int.MaxValue
             });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.MeadowsCommunityHelpers,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.HLP,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
         }
     }
 }
