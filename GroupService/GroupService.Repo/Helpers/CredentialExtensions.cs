@@ -426,7 +426,7 @@ namespace GroupService.Repo.Helpers
                 CredentialId = VOLUNTEER_INDUCTION,
                 CredentialTypeId = (int)CredentialTypes.Training,
                 Name = "Volunteer Induction",
-                HowToAchieve = "Please contact our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to arrange your volunteer inductione",
+                HowToAchieve = "Please contact our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to arrange your volunteer induction.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training.",
                 DisplayOrder = 6,
