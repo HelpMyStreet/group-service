@@ -704,7 +704,7 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeConnectsCardiff_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
+                RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false
             });
 
