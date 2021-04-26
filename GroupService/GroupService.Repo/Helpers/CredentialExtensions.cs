@@ -11,8 +11,6 @@ namespace GroupService.Repo.Helpers
     {
         private static List<Groups> GROUPS_USING_YOTI;
         private static List<Groups> GROUPS_USING_MANUAL_ID;
-        private static List<Groups> EXCLUDE_GROUPS = new List<Groups>();
-        private static List<SupportActivities> EXCLUDE_ACTIVITIES = new List<SupportActivities>();
 
         // Credential Set IDs
         private static Dictionary<Groups, int> IDENTITY_CREDENTIAL_SETS;
@@ -61,18 +59,6 @@ namespace GroupService.Repo.Helpers
                 { Groups.Sandbox, 141 },
                 { Groups.AgeConnectsCardiff, 231 }
             };
-
-            EXCLUDE_GROUPS.Add(Groups.LincolnshireVolunteers);
-            EXCLUDE_GROUPS.Add(Groups.LouthPCN);
-            EXCLUDE_GROUPS.Add(Groups.GranthamPCN);
-            EXCLUDE_GROUPS.Add(Groups.SouthLincolnPCN);
-            EXCLUDE_GROUPS.Add(Groups.StamfordPCN);
-            EXCLUDE_GROUPS.Add(Groups.SpilsbyPCN);
-            EXCLUDE_GROUPS.Add(Groups.BostonPCN);
-            EXCLUDE_GROUPS.Add(Groups.LincolnPCN);
-            EXCLUDE_GROUPS.Add(Groups.LincolnPortlandPCN);
-            EXCLUDE_GROUPS.Add(Groups.Sandbox);
-            EXCLUDE_ACTIVITIES.Add(SupportActivities.VaccineSupport);
 
             GROUPS_USING_YOTI = new List<Groups> {
                 Groups.MeadowsCommunityHelpers,
