@@ -40,7 +40,7 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.AgeUKWirral,
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
-                MaxVolunteer = 10
+                MaxVolunteer = 15
             });
 
             entity.HasData(new GroupNewRequestNotificationStrategy
@@ -74,6 +74,41 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupNewRequestNotificationStrategy
             {
                 GroupId = (int)Groups.Sandbox,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.MeadowsCommunityHelpers,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.HLP,
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
                 MaxVolunteer = int.MaxValue
             });
