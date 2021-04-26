@@ -1016,7 +1016,7 @@ namespace GroupService.Repo.Helpers
                     {
                         Heading = "Attending your shift",
                         Detail = $"You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate " +
-                        $"clothing for the weather (e.g. a warm / waterproof coat). On your first shift at St. Mary’s please also bring some photo ID " +
+                        $"clothing for the weather (e.g. a warm / waterproof coat). On your first shift at St. Mary’s please also **bring some photo ID** " +
                         $"so we can take a copy for our records. Once you’ve completed a shift it will be marked as complete automatically. " +
                         $"You’ll still be able to find all the details in the “My Shifts” tab but searching for shifts with the status “Done”."
                     }
