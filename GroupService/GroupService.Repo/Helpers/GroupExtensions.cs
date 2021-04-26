@@ -94,7 +94,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new Group
             {
                 Id = (int)Groups.AgeUKNorthWestKent,
-                GroupName = "AgeUK North West Kent",
+                GroupName = "Age UK North West Kent",
                 GroupKey = "ageuknwkent",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
