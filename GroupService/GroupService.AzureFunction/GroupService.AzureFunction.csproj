@@ -24,6 +24,7 @@
 	<ItemGroup>
 		<ProjectReference ReplaceParameters="true" Include="..\GroupService.Handlers\GroupService.Handlers.csproj">
 		</ProjectReference>
+		<ProjectReference Include="..\GroupService.Mappers\GroupService.Mappers.csproj" />
 		<ProjectReference ReplaceParameters="true" Include="..\GroupService.Repo\GroupService.Repo.csproj">
 		</ProjectReference>
 	</ItemGroup>

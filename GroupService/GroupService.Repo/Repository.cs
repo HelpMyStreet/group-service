@@ -488,16 +488,7 @@ namespace GroupService.Repo
 
             var audits = _context.UserRoleAudit
                 .Where(x => x.UserId == userId && x.GroupId == groupId)
-                .Select(x => new HelpMyStreet.Utils.Models.UserRoleAudit()
-                {
-                   Action = (GroupAction) x.ActionId,
-                   DateRequested = x.DateRequested,
-                   Success = x.Success,
-                   Role = (GroupRoles) x.RoleId,
-                   AuthorisedByUserID = x.AuthorisedByUserId,
-                   GroupId = x.GroupId,
-                   UserId = x.UserId
-                })
+                .Select(x => _mapper.Map<HelpMyStreet.Utils.Models.UserRoleAudit>(x))
                 .ToList();
 
             var credentials = _context.UserCredential
@@ -538,17 +529,9 @@ namespace GroupService.Repo
 
             var audit = _context.UserRoleAudit
                 .Where(x => x.UserId == userId && x.GroupId == groupId)
-                .Select(x => new HelpMyStreet.Utils.Models.UserRoleAudit() 
-                {
-                    Action = (GroupAction)x.ActionId,
-                    DateRequested = x.DateRequested,
-                    Success = x.Success,
-                    Role = (GroupRoles)x.RoleId,
-                    AuthorisedByUserID = x.AuthorisedByUserId,
-                    GroupId = x.GroupId,
-                    UserId = x.UserId
-                })
+                .Select(x => _mapper.Map<HelpMyStreet.Utils.Models.UserRoleAudit>(x) )
                 .ToList();
+
 
             UserInGroup userInGroup = new UserInGroup()
             {
