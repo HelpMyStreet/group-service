@@ -488,12 +488,15 @@ namespace GroupService.Repo
 
             var audits = _context.UserRoleAudit
                 .Where(x => x.UserId == userId && x.GroupId == groupId)
-                .Select(x => new HelpMyStreet.Contracts.GroupService.Response.UserRoleAudit()
+                .Select(x => new HelpMyStreet.Utils.Models.UserRoleAudit()
                 {
                    Action = (GroupAction) x.ActionId,
                    DateRequested = x.DateRequested,
                    Success = x.Success,
-                   Role = (GroupRoles) x.RoleId
+                   Role = (GroupRoles) x.RoleId,
+                   AuthorisedByUserID = x.AuthorisedByUserId,
+                   GroupId = x.GroupId,
+                   UserId = x.UserId
                 })
                 .ToList();
 
@@ -533,12 +536,27 @@ namespace GroupService.Repo
                     .Distinct()
                 .ToList();
 
+            var audit = _context.UserRoleAudit
+                .Where(x => x.UserId == userId && x.GroupId == groupId)
+                .Select(x => new HelpMyStreet.Utils.Models.UserRoleAudit() 
+                {
+                    Action = (GroupAction)x.ActionId,
+                    DateRequested = x.DateRequested,
+                    Success = x.Success,
+                    Role = (GroupRoles)x.RoleId,
+                    AuthorisedByUserID = x.AuthorisedByUserId,
+                    GroupId = x.GroupId,
+                    UserId = x.UserId
+                })
+                .ToList();
+
             UserInGroup userInGroup = new UserInGroup()
             {
                 GroupRoles = roles,
                 UserId = userId,
                 GroupId = groupId,
-                ValidCredentials = validCredentials
+                ValidCredentials = validCredentials,
+                UserRoleAudit = audit
             };
             return userInGroup;
         }
