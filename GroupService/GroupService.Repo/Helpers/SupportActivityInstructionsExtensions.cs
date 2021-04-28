@@ -977,7 +977,9 @@ namespace GroupService.Repo.Helpers
                     {
                         Heading = "Check the request details",
                         Detail = $"Please read the [role description and useful information](/pdf/lincs-vaccination-support/lincs-vaccination-support-role-description.pdf) " +
-                        $"attachment for full details of the role."
+                        $"attachment for full details of the role. " +
+                        $"Volunteers may also be asked to participate in regular lateral flow testing, you can find more information [here](/pdf/lincs-vaccination-support/lateral-flow-testing-for-vaccination-support-volunteers.pdf)."
+
                     },
                     new Step()
                     {
