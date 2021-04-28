@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupService.Repo", "GroupS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupService.UnitTests", "GroupService\GroupService.UnitTests\GroupService.UnitTests.csproj", "{0B77B377-33E4-4142-B2A8-64DBE5A69BAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupService.Mappers", "GroupService\GroupService.Mappers\GroupService.Mappers.csproj", "{F9120AA4-687E-4D1B-98CC-6E32D845A060}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0B77B377-33E4-4142-B2A8-64DBE5A69BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B77B377-33E4-4142-B2A8-64DBE5A69BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B77B377-33E4-4142-B2A8-64DBE5A69BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9120AA4-687E-4D1B-98CC-6E32D845A060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9120AA4-687E-4D1B-98CC-6E32D845A060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9120AA4-687E-4D1B-98CC-6E32D845A060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9120AA4-687E-4D1B-98CC-6E32D845A060}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
