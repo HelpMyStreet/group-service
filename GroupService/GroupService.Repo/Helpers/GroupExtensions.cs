@@ -174,8 +174,9 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new Group
             {
                 Id = (int)Groups.StamfordPCN,
-                GroupName = "PCN Stamford",
-                GroupKey = "pcn-stamford",
+                GroupName = "Four Counties PCN",
+                GroupKey = "four-counties-pcn",
+                ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = false
