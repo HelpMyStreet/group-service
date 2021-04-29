@@ -1003,7 +1003,9 @@ namespace GroupService.Repo.Helpers
                 $"such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site," +
                 $" general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept " +
                 $"this role and basic training will be provided on the day. For a fuller description please see the volunteer instructions which are available when you click to accept the " +
-                $"shift or by clicking “View more info” on accepted shifts in the “My Shifts” tab.",
+                $"shift or by clicking “View more info” on accepted shifts in the “My Shifts” tab. " +
+                $"If you have any questions about this volunteering opportunity or are at high risk from COVID-19, " +
+                $"please email Lyndsay at mailto:lyndsay.money@nhs.net before accepting the shift.",
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
                 {

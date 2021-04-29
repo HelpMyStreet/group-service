@@ -845,15 +845,15 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestorDetails
             {
                 GroupId = (int)Groups.StamfordPCN,
-                FirstName = "Stamford",//TODO Need to pass the correct details in
-                LastName = "PCN",//TODO Need to pass the correct details in
-                OtherPhone = "",//TODO Need to pass the correct details in
-                EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
-                AddressLine1 = "Lakeside Healthcare at Stamford",
-                AddressLine2 = "Wharf Rd",
-                AddressLine3 = "Stamford",
-                Locality = "",
-                Postcode = "PE9 2DH"
+                FirstName = "Lyndsay",
+                LastName = "Money",
+                OtherPhone = "01780 761443",
+                EmailAddress = "lyndsay.money@nhs.net",
+                AddressLine1 = "Lakeside Healthcare Group",
+                AddressLine2 = "Unit 1 Exchange Court",
+                AddressLine3 = "Cottingham Road",
+                Locality = "Corby",
+                Postcode = "NN17 1TY"
             });
 
             entity.HasData(new RequestorDetails
