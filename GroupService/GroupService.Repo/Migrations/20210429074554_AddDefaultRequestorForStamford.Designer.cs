@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210429074554_AddDefaultRequestorForStamford")]
+    partial class AddDefaultRequestorForStamford
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2161,7 +2163,7 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = -9,
                             GroupKey = "ageuknwkent",
-                            GroupName = "Age UK North West Kent",
+                            GroupName = "AgeUK North West Kent",
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2616,7 +2618,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 2,
-                            HowToAchieve = "Unfortunately manual ID checks are not available right now, please use Yoti to verify you identity and start volunteering.",
+                            HowToAchieve = "If you’re unable to verify with Yoti, please email us to find out more about our manual ID check at mailto:baldertoncs@helpmystreet.org",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 

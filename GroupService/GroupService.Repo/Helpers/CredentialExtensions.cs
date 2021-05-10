@@ -11,8 +11,6 @@ namespace GroupService.Repo.Helpers
     {
         private static List<Groups> GROUPS_USING_YOTI;
         private static List<Groups> GROUPS_USING_MANUAL_ID;
-        private static List<Groups> EXCLUDE_GROUPS = new List<Groups>();
-        private static List<SupportActivities> EXCLUDE_ACTIVITIES = new List<SupportActivities>();
 
         // Credential Set IDs
         private static Dictionary<Groups, int> IDENTITY_CREDENTIAL_SETS;
@@ -61,18 +59,6 @@ namespace GroupService.Repo.Helpers
                 { Groups.Sandbox, 141 },
                 { Groups.AgeConnectsCardiff, 231 }
             };
-
-            EXCLUDE_GROUPS.Add(Groups.LincolnshireVolunteers);
-            EXCLUDE_GROUPS.Add(Groups.LouthPCN);
-            EXCLUDE_GROUPS.Add(Groups.GranthamPCN);
-            EXCLUDE_GROUPS.Add(Groups.SouthLincolnPCN);
-            EXCLUDE_GROUPS.Add(Groups.StamfordPCN);
-            EXCLUDE_GROUPS.Add(Groups.SpilsbyPCN);
-            EXCLUDE_GROUPS.Add(Groups.BostonPCN);
-            EXCLUDE_GROUPS.Add(Groups.LincolnPCN);
-            EXCLUDE_GROUPS.Add(Groups.LincolnPortlandPCN);
-            EXCLUDE_GROUPS.Add(Groups.Sandbox);
-            EXCLUDE_ACTIVITIES.Add(SupportActivities.VaccineSupport);
 
             GROUPS_USING_YOTI = new List<Groups> {
                 Groups.MeadowsCommunityHelpers,
@@ -219,7 +205,7 @@ namespace GroupService.Repo.Helpers
                 CredentialId = MANUALLY_VERIFIED,
                 CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                 Name = "Manual ID Verification",
-                HowToAchieve = "If you’re unable to verify with Yoti, please email us to find out more about our manual ID check at mailto:baldertoncs@helpmystreet.org",
+                HowToAchieve = "Unfortunately manual ID checks are not available right now, please use Yoti to verify you identity and start volunteering.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",

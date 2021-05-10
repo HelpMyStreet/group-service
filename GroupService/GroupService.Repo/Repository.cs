@@ -222,17 +222,7 @@ namespace GroupService.Repo
 
             if (group != null)
             {
-                return new HelpMyStreet.Utils.Models.Group()
-                {
-                    GroupId = group.Id,
-                    GroupName = group.GroupName,
-                    GroupKey = group.GroupKey,
-                    ParentGroupId = group.ParentGroupId,
-                    ShiftsEnabled = group.ShiftsEnabled,
-                    TasksEnabled = group.TasksEnabled,
-                    HomepageEnabled = group.HomepageEnabled
-                    
-                };
+                return _mapper.Map<HelpMyStreet.Utils.Models.Group>(group);
             }
             else
             {
@@ -246,16 +236,7 @@ namespace GroupService.Repo
 
             if (groups != null)
             {
-                return groups.Select(x => new HelpMyStreet.Utils.Models.Group()
-                {
-                    GroupId = x.Id,
-                    GroupKey = x.GroupKey,
-                    GroupName = x.GroupName,
-                    ParentGroupId = x.ParentGroupId,
-                    ShiftsEnabled = x.ShiftsEnabled,
-                    TasksEnabled = x.TasksEnabled,
-                    HomepageEnabled = x.HomepageEnabled
-                }).ToList();
+                return groups.Select(x => _mapper.Map<HelpMyStreet.Utils.Models.Group>(x)).ToList();
             }
             else
             {
@@ -436,18 +417,7 @@ namespace GroupService.Repo
         {
            var credentials = _context.GroupCredential
                 .Where(x => x.GroupId == groupID)
-                .Select(x => new HelpMyStreet.Contracts.GroupService.Response.GroupCredential()
-                {
-                    CredentialID = x.CredentialId,
-                    DisplayOrder = x.DisplayOrder,
-                    HowToAchieve = x.HowToAchieve,
-                    HowToAchieve_CTA_Destination = x.HowToAchieve_CTA_Destination,
-                    WhatIsThis = x.WhatIsThis,
-                    Name = x.Name,
-                    GroupID = groupID,
-                    CredentialTypes = (CredentialTypes) x.CredentialTypeId,
-                    CredentialVerifiedBy = (CredentialVerifiedBy) x.CredentialVerifiedById
-                })
+                .Select(x => _mapper.Map<HelpMyStreet.Contracts.GroupService.Response.GroupCredential>(x))
                 .ToList();
             return credentials;
         }
@@ -488,25 +458,12 @@ namespace GroupService.Repo
 
             var audits = _context.UserRoleAudit
                 .Where(x => x.UserId == userId && x.GroupId == groupId)
-                .Select(x => new HelpMyStreet.Contracts.GroupService.Response.UserRoleAudit()
-                {
-                   Action = (GroupAction) x.ActionId,
-                   DateRequested = x.DateRequested,
-                   Success = x.Success,
-                   Role = (GroupRoles) x.RoleId
-                })
+                .Select(x => _mapper.Map<HelpMyStreet.Utils.Models.UserRoleAudit>(x))
                 .ToList();
 
             var credentials = _context.UserCredential
                 .Where(x => x.UserId == userId && x.GroupId == groupId)
-                .Select(x => new HelpMyStreet.Utils.Models.UserCredential()
-                {
-                    AuthorisedByUserId = x.AuthorisedByUserId,
-                    CredentialId = x.CredentialId,
-                    ExpiryDate = x.ValidUntil,
-                    Notes = x.Notes,
-                    Reference = x.Notes
-                }).ToList();
+                .Select(x => _mapper.Map<HelpMyStreet.Utils.Models.UserCredential>(x)).ToList();
 
             returnValue.GroupRoles = roles;
             returnValue.UserRoleAudits = audits;
@@ -533,12 +490,19 @@ namespace GroupService.Repo
                     .Distinct()
                 .ToList();
 
+            var audit = _context.UserRoleAudit
+                .Where(x => x.UserId == userId && x.GroupId == groupId)
+                .Select(x => _mapper.Map<HelpMyStreet.Utils.Models.UserRoleAudit>(x) )
+                .ToList();
+
+
             UserInGroup userInGroup = new UserInGroup()
             {
                 GroupRoles = roles,
                 UserId = userId,
                 GroupId = groupId,
-                ValidCredentials = validCredentials
+                ValidCredentials = validCredentials,
+                UserRoleAudit = audit
             };
             return userInGroup;
         }
