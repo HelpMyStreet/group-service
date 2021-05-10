@@ -1,7 +1,9 @@
-﻿using GroupService.Core.Config;
+﻿using AutoMapper;
+using GroupService.Core.Config;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Core.Interfaces.Services;
 using GroupService.Handlers;
+using GroupService.Mappers;
 using GroupService.Repo;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.PollyPolicies;
@@ -41,6 +43,7 @@ namespace GroupService.AzureFunction
             IConfigurationRoot config = configBuilder.Build();
 
             builder.Services.AddMediatR(typeof(PostCreateGroupHandler).Assembly);
+            builder.Services.AddAutoMapper(typeof(UserRoleAuditProfile).Assembly);
 
             // DI doesn't work in startup
             PollyHttpPolicies pollyHttpPolicies = new PollyHttpPolicies(new PollyHttpPoliciesConfig());
