@@ -441,7 +441,7 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.MansfieldCVS,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.LincolnshireVolunteers
+                RegistrationFormVariant = (byte)RegistrationFormVariant.MansfieldCVS
             });
         }
 
