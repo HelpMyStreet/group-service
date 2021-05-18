@@ -1377,8 +1377,21 @@ namespace GroupService.Repo.Helpers
                 IsPreSelected = false,
                 DisplayOrder = 11
             });
-        }
 
+
+        }
+        private static void SetMansfieldCVSActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MansfieldCVS,
+                SupportActivityId = (int)SupportActivities.VaccineSupport,
+                Label = "Volunteering to support the COVID-19 vaccination programme (e.g. support staff for local vaccination centres)",
+                IsPreSelected = true,
+                DisplayOrder = 1
+            });
+        }
         public static void SetRegistrationFormSupportActivitiesExtensionsData(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
             SetDefaultSupportActivities(entity);
@@ -1395,6 +1408,7 @@ namespace GroupService.Repo.Helpers
             SetRuddingtonSupportActivities(entity);
             SetCardiffSupportActivities(entity);
             SetMeadowCommunityHelpersActivities(entity);
+            SetMansfieldCVSActivities(entity);
         }        
 
     }
