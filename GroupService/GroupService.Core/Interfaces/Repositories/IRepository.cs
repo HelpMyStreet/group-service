@@ -14,6 +14,7 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
+        List<KeyValuePair<string, string>> GetGroupEmailConfiguration(int groupId, GroupEmailVariant groupEmailVariant, CancellationToken cancellationToken);
         List<SupportActivityConfiguration> GetSupportActivitiesConfiguration(CancellationToken cancellationToken);
         List<SupportActivityDetail> GetSupportActivityDetails(RegistrationFormVariant registrationFormVariant, CancellationToken cancellationToken);
         GetGroupNewRequestNotificationStrategyResponse GetGroupNewRequestNotificationStrategy(int groupId, CancellationToken cancellationToken);

@@ -48,6 +48,7 @@ namespace GroupService.Repo
         public virtual DbSet<GroupSupportActivityInstructions> GroupSupportActivityInstructions { get; set; }
         public virtual DbSet<RegistrationFormSupportActivity> RegistrationFormSupportActivity { get; set; }
         public virtual DbSet<SupportActivityConfiguration> SupportActivityConfiguration { get; set; }
+        public virtual DbSet<GroupEmailConfiguration> GroupEmailConfiguration { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

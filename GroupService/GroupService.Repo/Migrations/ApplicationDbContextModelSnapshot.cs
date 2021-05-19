@@ -1209,6 +1209,27 @@ namespace GroupService.Repo.Migrations
                         });
                 });
 
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumGroupEmailVariant", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnName("ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GroupEmailVariant","Lookup");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Welcome"
+                        });
+                });
+
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumLocation", b =>
                 {
                     b.Property<int>("Id")
@@ -2937,6 +2958,136 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
 
 Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupEmailConfiguration", b =>
+                {
+                    b.Property<int>("GroupId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("GroupID")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<byte>("GroupEmailVariantId")
+                        .HasColumnName("GroupEmailVariantID")
+                        .HasColumnType("tinyint");
+
+                    b.Property<string>("Configuration")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("GroupId", "GroupEmailVariantId");
+
+                    b.ToTable("GroupEmailConfiguration","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = -1,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"<p>If you haven’t done it already, you may like to complete your online ID verification now. We’ve made it as quick and easy as possible with the help of our partner, Yoti. Click here to launch your profile and get verified.</p><p>Most requests on our platform require ID verification to give people in need of help the confidence you are who you say you are. Some of our partner organisations may also require additional checks, if this is the case we’ll let you know when you click to accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our Request Help form and let us know what they need.\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -2,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"1\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"1\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"<p>Questions? Email us at tankersley@helpmystreet.org</p><p>P.S.Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about.Complete our Request Help form and let us know what they need.</p>\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"<p>Questions? Email us at baldertoncs@helpmystreet.org</p><p>P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our Request Help form and let us know what they need.</p>\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"<p>Questions? Email us at northmuskham@helpmystreet.org<p>P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our Request Help form and let us know what they need.</p>\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -17,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -20,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -22,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            GroupEmailVariantId = (byte)1,
+                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         });
                 });
 
@@ -6540,6 +6691,15 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         .WithMany("GroupCredential")
                         .HasForeignKey("GroupId")
                         .HasConstraintName("FK_GroupCredential_Group")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupEmailConfiguration", b =>
+                {
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
+                        .WithMany("GroupEmailConfiguration")
+                        .HasForeignKey("GroupId")
+                        .HasConstraintName("FK_GroupEmailConfiguration_GroupID")
                         .IsRequired();
                 });
 

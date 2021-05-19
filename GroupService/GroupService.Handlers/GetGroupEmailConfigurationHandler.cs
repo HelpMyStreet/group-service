@@ -19,10 +19,9 @@ namespace GroupService.Handlers
 
         public async Task<GetGroupEmailConfigurationResponse> Handle(GetGroupEmailConfigurationRequest request, CancellationToken cancellationToken)
         {
-            //var instructions =_repository.GetGroupSupportActivityInstructions(request.GroupId, request.SupportActivityType.SupportActivity, cancellationToken);
             return new GetGroupEmailConfigurationResponse()
             {
-                EmailConfigurations = new List<KeyValuePair<string, string>>()
+                EmailConfigurations = _repository.GetGroupEmailConfiguration(request.GroupId, request.GroupEmailVariantType.GroupEmailVariant, cancellationToken)
             };
         }
     }
