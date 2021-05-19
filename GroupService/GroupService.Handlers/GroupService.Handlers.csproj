@@ -12,7 +12,6 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference ReplaceParameters="true" Include="..\GroupService.Core\GroupService.Core.csproj">
-			<Name>GroupService.Core</Name>
 		</ProjectReference>
 	</ItemGroup>
 </Project>

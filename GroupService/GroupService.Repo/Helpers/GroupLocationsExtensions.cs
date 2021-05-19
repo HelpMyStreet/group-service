@@ -62,6 +62,36 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Sandbox,
                 LocationId = (int)Location.RustonsSportsAndSocialClubLincoln
             });
+
+            entity.HasData(new GroupLocation
+            {
+                GroupId = (int)Groups.MansfieldWickes,
+                LocationId = (int)Location.MansfieldWickesSite
+            });
+
+            entity.HasData(new GroupLocation
+            {
+                GroupId = (int)Groups.GamstonCommunityHall,
+                LocationId = (int)Location.GamstonCommunityHall
+            });
+
+            entity.HasData(new GroupLocation
+            {
+                GroupId = (int)Groups.RichardHerrodCentre,
+                LocationId = (int)Location.RichardHerrodCentre
+            });
+
+            entity.HasData(new GroupLocation
+            {
+                GroupId = (int)Groups.KingsMeadowCampus,
+                LocationId = (int)Location.KingsMeadowCampus
+            });
+
+            entity.HasData(new GroupLocation
+            {
+                GroupId = (int)Groups.ForestRecreationGround,
+                LocationId = (int)Location.ForestRecreationGround
+            });
         }
     }
 }
