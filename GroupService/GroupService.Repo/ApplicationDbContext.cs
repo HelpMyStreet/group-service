@@ -35,6 +35,8 @@ namespace GroupService.Repo
         public virtual DbSet<EnumSupportActivity> EnumSupportActivity { get; set; }
         public virtual DbSet<EnumSupportActivityInstructions> EnumSupportActivityInstructions { get; set; }
         public virtual DbSet<EnumNewRequestNotificationStrategy> EnumNewRequestNotificationStrategy { get; set; }
+        public virtual DbSet<EnumGroupEmailVariant> EnumGroupEmailVariant { get; set; }
+
         public virtual DbSet<ActivityCredentialSet> ActivityCredentialSet { get; set; }
         public virtual DbSet<Credential> Credential { get; set; }
         public virtual DbSet<CredentialSet> CredentialSet { get; set; }
@@ -168,6 +170,15 @@ namespace GroupService.Repo
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.SetEnumStrategyData();
+            });
+
+            modelBuilder.Entity<EnumGroupEmailVariant>(entity =>
+            {
+                entity.ToTable("GroupEmailVariant", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumGroupEmailVariantExtensionsData();
             });
 
             modelBuilder.Entity<Group>(entity =>
@@ -573,6 +584,27 @@ namespace GroupService.Repo
                     .IsUnicode(false);
 
                 entity.PopulateSupportActivityInstructions();
+            });
+
+            modelBuilder.Entity<GroupEmailConfiguration>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId, e.GroupEmailVariantId });
+
+                entity.ToTable("GroupEmailConfiguration", "Group");
+
+                entity.Property(e => e.GroupId)
+                    .HasColumnName("GroupID")
+                    .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.GroupEmailVariantId).HasColumnName("GroupEmailVariantID");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.GroupEmailConfiguration)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GroupEmailConfiguration_GroupID");
+
+                entity.PopulateGroupEmailConfiguration();
             });
         }
     }
