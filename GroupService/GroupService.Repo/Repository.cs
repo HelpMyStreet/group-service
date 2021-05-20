@@ -4,6 +4,7 @@ using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
+using HelpMyStreet.Contracts.RequestService.Response;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -640,6 +642,24 @@ namespace GroupService.Repo
                     AutoSignUpWhenOtherSelected = x.AutoSignUpWhenOtherSelected
                 }).ToList();
 
+        }
+
+        public List<KeyValuePair<string, string>> GetGroupEmailConfiguration(int groupId, CommunicationJobTypes communicationJobType, CancellationToken cancellationToken)
+        {
+
+            var configuration  = _context.GroupEmailConfiguration
+                .Where(x => x.GroupId == groupId && x.CommunicationJobTypeId == (byte)communicationJobType)
+                .Select(x => x.Configuration)
+                .FirstOrDefault();
+
+            if(!string.IsNullOrEmpty(configuration))
+            {
+                return JsonConvert.DeserializeObject<List<KeyValuePair<string, string>>>(configuration);
+            }
+            else
+            {
+                return new List<KeyValuePair<string, string>>();
+            }
         }
     }
 }

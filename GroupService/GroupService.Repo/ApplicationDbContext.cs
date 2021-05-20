@@ -35,6 +35,8 @@ namespace GroupService.Repo
         public virtual DbSet<EnumSupportActivity> EnumSupportActivity { get; set; }
         public virtual DbSet<EnumSupportActivityInstructions> EnumSupportActivityInstructions { get; set; }
         public virtual DbSet<EnumNewRequestNotificationStrategy> EnumNewRequestNotificationStrategy { get; set; }
+        public virtual DbSet<EnumCommunicationJobType> EnumCommunicationJobType { get; set; }
+
         public virtual DbSet<ActivityCredentialSet> ActivityCredentialSet { get; set; }
         public virtual DbSet<Credential> Credential { get; set; }
         public virtual DbSet<CredentialSet> CredentialSet { get; set; }
@@ -46,6 +48,7 @@ namespace GroupService.Repo
         public virtual DbSet<GroupSupportActivityInstructions> GroupSupportActivityInstructions { get; set; }
         public virtual DbSet<RegistrationFormSupportActivity> RegistrationFormSupportActivity { get; set; }
         public virtual DbSet<SupportActivityConfiguration> SupportActivityConfiguration { get; set; }
+        public virtual DbSet<GroupEmailConfiguration> GroupEmailConfiguration { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -168,6 +171,15 @@ namespace GroupService.Repo
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.SetEnumStrategyData();
+            });
+
+            modelBuilder.Entity<EnumCommunicationJobType>(entity =>
+            {
+                entity.ToTable("CommunicationJobType", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetCommunicationJobData();
             });
 
             modelBuilder.Entity<Group>(entity =>
@@ -573,6 +585,27 @@ namespace GroupService.Repo
                     .IsUnicode(false);
 
                 entity.PopulateSupportActivityInstructions();
+            });
+
+            modelBuilder.Entity<GroupEmailConfiguration>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId, e.CommunicationJobTypeId });
+
+                entity.ToTable("GroupEmailConfiguration", "Group");
+
+                entity.Property(e => e.GroupId)
+                    .HasColumnName("GroupID")
+                    .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.CommunicationJobTypeId).HasColumnName("CommunicationJobTypeID");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.GroupEmailConfiguration)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GroupEmailConfiguration_GroupID");
+
+                entity.PopulateGroupEmailConfiguration();
             });
         }
     }

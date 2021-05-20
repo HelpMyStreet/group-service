@@ -2,6 +2,7 @@
 using GroupService.Core.Dto;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
+using HelpMyStreet.Contracts.RequestService.Response;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using System;
@@ -14,6 +15,7 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
+        List<KeyValuePair<string, string>> GetGroupEmailConfiguration(int groupId, CommunicationJobTypes communicationJobType, CancellationToken cancellationToken);
         List<SupportActivityConfiguration> GetSupportActivitiesConfiguration(CancellationToken cancellationToken);
         List<SupportActivityDetail> GetSupportActivityDetails(RegistrationFormVariant registrationFormVariant, CancellationToken cancellationToken);
         GetGroupNewRequestNotificationStrategyResponse GetGroupNewRequestNotificationStrategy(int groupId, CancellationToken cancellationToken);
