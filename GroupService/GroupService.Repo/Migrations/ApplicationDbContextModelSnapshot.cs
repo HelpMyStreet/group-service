@@ -1173,6 +1173,99 @@ namespace GroupService.Repo.Migrations
                         });
                 });
 
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumCommunicationJobType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("ID")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CommunicationJobType","Lookup");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "SendWelcomeMessage"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "SendRegistrationChasers"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "SendNewTaskNotification"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "SendOpenTaskDigest"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "SendTaskStateChangeUpdate"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "PostYotiCommunication"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "SendTaskReminder"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "InterUserMessage"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "NewCredentials"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "NewTaskPendingApprovalNotification"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "RequestorTaskConfirmation"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "TaskDetail"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "SendNewRequestNotification"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "SendShiftReminder"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "GroupWelcome"
+                        });
+                });
+
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumCredentialTypes", b =>
                 {
                     b.Property<int>("Id")
@@ -1206,27 +1299,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 4,
                             Name = "References"
-                        });
-                });
-
-            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumGroupEmailVariant", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnName("ID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("GroupEmailVariant","Lookup");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Welcome"
                         });
                 });
 
@@ -2969,14 +3041,14 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<byte>("GroupEmailVariantId")
-                        .HasColumnName("GroupEmailVariantID")
+                    b.Property<byte>("CommunicationJobTypeId")
+                        .HasColumnName("CommunicationJobTypeID")
                         .HasColumnType("tinyint");
 
                     b.Property<string>("Configuration")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("GroupId", "GroupEmailVariantId");
+                    b.HasKey("GroupId", "CommunicationJobTypeId");
 
                     b.ToTable("GroupEmailConfiguration","Group");
 
@@ -2984,109 +3056,109 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -1,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"<p>If you haven’t done it already, you may like to complete your online ID verification now. We’ve made it as quick and easy as possible with the help of our partner, Yoti. Click here to launch your profile and get verified.</p><p>Most requests on our platform require ID verification to give people in need of help the confidence you are who you say you are. Some of our partner organisations may also require additional checks, if this is the case we’ll let you know when you click to accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our Request Help form and let us know what they need.\"}]"
                         },
                         new
                         {
                             GroupId = -2,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"1\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -3,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -4,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"1\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -5,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"<p>Questions? Email us at tankersley@helpmystreet.org</p><p>P.S.Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about.Complete our Request Help form and let us know what they need.</p>\"}]"
                         },
                         new
                         {
                             GroupId = -6,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -7,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -8,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"<p>Questions? Email us at baldertoncs@helpmystreet.org</p><p>P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our Request Help form and let us know what they need.</p>\"}]"
                         },
                         new
                         {
                             GroupId = -9,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -10,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"<p>Questions? Email us at northmuskham@helpmystreet.org<p>P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our Request Help form and let us know what they need.</p>\"}]"
                         },
                         new
                         {
                             GroupId = -11,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -12,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -13,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -17,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -20,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -22,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -23,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -24,
-                            GroupEmailVariantId = (byte)1,
+                            CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         });
                 });

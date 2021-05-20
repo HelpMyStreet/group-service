@@ -35,7 +35,7 @@ namespace GroupService.Repo
         public virtual DbSet<EnumSupportActivity> EnumSupportActivity { get; set; }
         public virtual DbSet<EnumSupportActivityInstructions> EnumSupportActivityInstructions { get; set; }
         public virtual DbSet<EnumNewRequestNotificationStrategy> EnumNewRequestNotificationStrategy { get; set; }
-        public virtual DbSet<EnumGroupEmailVariant> EnumGroupEmailVariant { get; set; }
+        public virtual DbSet<EnumCommunicationJobType> EnumCommunicationJobType { get; set; }
 
         public virtual DbSet<ActivityCredentialSet> ActivityCredentialSet { get; set; }
         public virtual DbSet<Credential> Credential { get; set; }
@@ -173,13 +173,13 @@ namespace GroupService.Repo
                 entity.SetEnumStrategyData();
             });
 
-            modelBuilder.Entity<EnumGroupEmailVariant>(entity =>
+            modelBuilder.Entity<EnumCommunicationJobType>(entity =>
             {
-                entity.ToTable("GroupEmailVariant", "Lookup");
+                entity.ToTable("CommunicationJobType", "Lookup");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.SetEnumGroupEmailVariantExtensionsData();
+                entity.SetCommunicationJobData();
             });
 
             modelBuilder.Entity<Group>(entity =>
@@ -589,7 +589,7 @@ namespace GroupService.Repo
 
             modelBuilder.Entity<GroupEmailConfiguration>(entity =>
             {
-                entity.HasKey(e => new { e.GroupId, e.GroupEmailVariantId });
+                entity.HasKey(e => new { e.GroupId, e.CommunicationJobTypeId });
 
                 entity.ToTable("GroupEmailConfiguration", "Group");
 
@@ -597,7 +597,7 @@ namespace GroupService.Repo
                     .HasColumnName("GroupID")
                     .ValueGeneratedOnAdd();
 
-                entity.Property(e => e.GroupEmailVariantId).HasColumnName("GroupEmailVariantID");
+                entity.Property(e => e.CommunicationJobTypeId).HasColumnName("CommunicationJobTypeID");
 
                 entity.HasOne(d => d.Group)
                     .WithMany(p => p.GroupEmailConfiguration)

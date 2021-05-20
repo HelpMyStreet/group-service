@@ -4,6 +4,7 @@ using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
+using HelpMyStreet.Contracts.RequestService.Response;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using Microsoft.EntityFrameworkCore;
@@ -643,11 +644,11 @@ namespace GroupService.Repo
 
         }
 
-        public List<KeyValuePair<string, string>> GetGroupEmailConfiguration(int groupId, GroupEmailVariant groupEmailVariant, CancellationToken cancellationToken)
+        public List<KeyValuePair<string, string>> GetGroupEmailConfiguration(int groupId, CommunicationJobTypes communicationJobType, CancellationToken cancellationToken)
         {
 
             var configuration  = _context.GroupEmailConfiguration
-                .Where(x => x.GroupId == groupId && x.GroupEmailVariantId == (byte)groupEmailVariant)
+                .Where(x => x.GroupId == groupId && x.CommunicationJobTypeId == (byte)communicationJobType)
                 .Select(x => x.Configuration)
                 .FirstOrDefault();
 

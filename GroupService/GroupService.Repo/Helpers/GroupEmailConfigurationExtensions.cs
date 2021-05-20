@@ -1,4 +1,6 @@
 ﻿using GroupService.Repo.EntityFramework.Entities;
+using HelpMyStreet.Contracts.CommunicationService.Request;
+using HelpMyStreet.Contracts.RequestService.Response;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -12,16 +14,6 @@ namespace GroupService.Repo.Helpers
 {
     public static class GroupEmailConfigurationExtensions
     {
-        public static void SetEnumGroupEmailVariantExtensionsData(this EntityTypeBuilder<EnumGroupEmailVariant> entity)
-        {
-            var groupEmailVariant = Enum.GetValues(typeof(GroupEmailVariant)).Cast<GroupEmailVariant>();
-
-            foreach (var variant in groupEmailVariant)
-            {
-                entity.HasData(new EnumGroupEmailVariant { Id = (int)variant, Name = variant.ToString() });
-            }
-        }
-
         private static List<KeyValuePair<string,string>> GetWelcomeEmailConfiguration_HelpMyStreet()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
@@ -101,32 +93,32 @@ namespace GroupService.Repo.Helpers
 
         public static void PopulateGroupEmailConfiguration(this EntityTypeBuilder<GroupEmailConfiguration> entity)
         {
-            Populate(entity, Groups.Generic, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_HelpMyStreet());
-            Populate(entity, Groups.FTLOS, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_FTLOS());
-            Populate(entity, Groups.AgeUKLSL, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.HLP, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_HLP());
-            Populate(entity, Groups.Tankersley, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Tankersley());
-            Populate(entity, Groups.Ruddington, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.AgeUKWirral, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.AgeUKNottsBalderton, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Balderton());
-            Populate(entity, Groups.AgeUKNorthWestKent, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.AgeUKNottsNorthMuskham, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_NorthMuskham());
-            Populate(entity, Groups.AgeUKSouthKentCoast, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.LincolnshireVolunteers, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.AgeUKFavershamAndSittingbourne, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.StamfordPCN, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.LincolnPCN, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.Sandbox, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.AgeConnectsCardiff, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.MeadowsCommunityHelpers, GroupEmailVariant.Welcome, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.Generic, GetWelcomeEmailConfiguration_HelpMyStreet());
+            Populate(entity, Groups.FTLOS, GetWelcomeEmailConfiguration_FTLOS());
+            Populate(entity, Groups.AgeUKLSL, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.HLP, GetWelcomeEmailConfiguration_HLP());
+            Populate(entity, Groups.Tankersley, GetWelcomeEmailConfiguration_Tankersley());
+            Populate(entity, Groups.Ruddington, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.AgeUKWirral, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.AgeUKNottsBalderton, GetWelcomeEmailConfiguration_Balderton());
+            Populate(entity, Groups.AgeUKNorthWestKent, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.AgeUKNottsNorthMuskham, GetWelcomeEmailConfiguration_NorthMuskham());
+            Populate(entity, Groups.AgeUKSouthKentCoast, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.LincolnshireVolunteers, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.AgeUKFavershamAndSittingbourne, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.StamfordPCN, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.LincolnPCN, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.Sandbox, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.AgeConnectsCardiff, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.MeadowsCommunityHelpers, GetWelcomeEmailConfiguration_Default());
         }
 
-        private static void Populate(this EntityTypeBuilder<GroupEmailConfiguration> entity, Groups group, GroupEmailVariant groupEmailVariant, List<KeyValuePair<string, string>> keyValuePairs)
+        private static void Populate(this EntityTypeBuilder<GroupEmailConfiguration> entity, Groups group, List<KeyValuePair<string, string>> keyValuePairs)
         {
             entity.HasData(new GroupEmailConfiguration
             {
                 GroupId = (int)group,
-                GroupEmailVariantId = (byte)groupEmailVariant,
+                CommunicationJobTypeId = (byte) CommunicationJobTypes.GroupWelcome,
                 Configuration = JsonConvert.SerializeObject(keyValuePairs)
             });
         }

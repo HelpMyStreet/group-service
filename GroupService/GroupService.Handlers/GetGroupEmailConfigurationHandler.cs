@@ -21,7 +21,7 @@ namespace GroupService.Handlers
         {
             return new GetGroupEmailConfigurationResponse()
             {
-                EmailConfigurations = _repository.GetGroupEmailConfiguration(request.GroupId, request.GroupEmailVariantType.GroupEmailVariant, cancellationToken)
+                EmailConfigurations = _repository.GetGroupEmailConfiguration(request.GroupId, request.CommunicationJob.CommunicationJobType, cancellationToken)
             };
         }
     }
