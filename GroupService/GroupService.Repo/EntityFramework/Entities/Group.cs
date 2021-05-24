@@ -38,5 +38,6 @@ namespace GroupService.Repo.EntityFramework.Entities
         public virtual ICollection<GroupCredential> GroupCredential { get; set; }
         public virtual ICollection<GroupLocation> GroupLocation { get; set; }
         public virtual ICollection<GroupSupportActivityInstructions> GroupSupportActivityInstructions { get; set; }
+        public virtual ICollection<GroupEmailConfiguration> GroupEmailConfiguration { get; set; }
     }
 }
