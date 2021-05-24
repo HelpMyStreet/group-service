@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210524111352_CreateSouthwell")]
+    partial class CreateSouthwell
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -5654,8 +5656,8 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -31,
-                            Source = "",
-                            AccessRestrictedByRole = false,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)25,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,

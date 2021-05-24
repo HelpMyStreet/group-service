@@ -318,6 +318,16 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = false,
                 HomepageEnabled = false
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.Southwell,
+                GroupName = "Southwell Torpedos",
+                GroupKey = "southwell",
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -442,6 +452,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.MansfieldCVS,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.MansfieldCVS
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.Southwell,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Southwell
             });
         }
 
@@ -874,6 +891,18 @@ namespace GroupService.Repo.Helpers
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.Southwell,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Soutwell_Public,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = false
             });
