@@ -898,10 +898,10 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = (int)Groups.Southwell,
-                Source = REQUEST_SUBMITTER_SOURCE,
+                Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.Soutwell_Public,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
+                AccessRestrictedByRole = false,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = false
