@@ -2096,6 +2096,9 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.KingsMeadowCampus, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
             Populate(entity, Groups.ForestRecreationGround, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
 
+            Populate(entity, Groups.Southwell, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
+            Populate(entity, Groups.Southwell, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+            Populate(entity, Groups.Southwell, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
         }
     }
 }
