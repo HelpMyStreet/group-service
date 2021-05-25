@@ -46,6 +46,18 @@ namespace GroupService.Repo.Helpers
             return config;
         }
 
+        private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_AgeConnectCardiff()
+        {
+            List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
+            config.Add(new KeyValuePair<string, string>("HeaderRequired", "0"));
+            config.Add(new KeyValuePair<string, string>("GroupContent", $""));
+            config.Add(new KeyValuePair<string, string>("GroupSignature", ""));
+            config.Add(new KeyValuePair<string, string>("GroupPS", ""));
+            config.Add(new KeyValuePair<string, string>("GroupLogo", "ageconnectcardifflogo.png"));
+
+            return config;
+        }
+
         private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_HLP()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
@@ -109,7 +121,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.StamfordPCN, GetWelcomeEmailConfiguration_Default());
             Populate(entity, Groups.LincolnPCN, GetWelcomeEmailConfiguration_Default());
             Populate(entity, Groups.Sandbox, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.AgeConnectsCardiff, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.AgeConnectsCardiff, GetWelcomeEmailConfiguration_AgeConnectCardiff());
             Populate(entity, Groups.MeadowsCommunityHelpers, GetWelcomeEmailConfiguration_Default());
         }
 
