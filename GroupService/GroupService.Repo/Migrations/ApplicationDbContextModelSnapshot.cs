@@ -6052,6 +6052,11 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -24,
                             AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -31,
+                            AllowAutonomousJoinersAndLeavers = true
                         });
                 });
 
