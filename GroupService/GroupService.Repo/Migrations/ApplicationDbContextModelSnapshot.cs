@@ -3024,7 +3024,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 2,
-                            HowToAchieve = "If you’re unable to verify with Yoti, please email mailto:jacky.huson@btinternet.com to request a manual ID check. You will also need to join our group from our <a href=\"http://www.helpmystreet.org/southwell\">HelpMyStreet landing page</a> if you haven’t already.",
+                            HowToAchieve = "If you’re unable to verify with Yoti, please email mailto:jacky.huson@btinternet.com to request a manual ID check. You will also need to join our group from our <a href=\"/southwell\">HelpMyStreet landing page</a> if you haven’t already.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
