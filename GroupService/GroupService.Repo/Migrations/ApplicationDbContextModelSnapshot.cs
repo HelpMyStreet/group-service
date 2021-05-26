@@ -5903,7 +5903,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             FirstName = "Caroline",
                             LastName = "Horsman",
                             Locality = "Nottinghamshire",
-                            OtherPhone = "",
+                            OtherPhone = "07851 595171",
                             Postcode = "NG18 1QA"
                         },
                         new
@@ -5916,7 +5916,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             FirstName = "Caroline",
                             LastName = "Horsman",
                             Locality = "Nottinghamshire",
-                            OtherPhone = "",
+                            OtherPhone = "07851 595171",
                             Postcode = "NG18 1QA"
                         },
                         new
@@ -5929,7 +5929,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             FirstName = "Caroline",
                             LastName = "Horsman",
                             Locality = "Nottinghamshire",
-                            OtherPhone = "",
+                            OtherPhone = "07851 595171",
                             Postcode = "NG18 1QA"
                         },
                         new
@@ -5942,7 +5942,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             FirstName = "Caroline",
                             LastName = "Horsman",
                             Locality = "Nottinghamshire",
-                            OtherPhone = "",
+                            OtherPhone = "07851 595171",
                             Postcode = "NG18 1QA"
                         },
                         new
@@ -5955,7 +5955,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             FirstName = "Caroline",
                             LastName = "Horsman",
                             Locality = "Nottinghamshire",
-                            OtherPhone = "",
+                            OtherPhone = "07851 595171",
                             Postcode = "NG18 1QA"
                         },
                         new
@@ -5968,7 +5968,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             FirstName = "Caroline",
                             LastName = "Horsman",
                             Locality = "Nottinghamshire",
-                            OtherPhone = "",
+                            OtherPhone = "07851 595171",
                             Postcode = "NG18 1QA"
                         });
                 });
@@ -6051,6 +6051,11 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -24,
+                            AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -31,
                             AllowAutonomousJoinersAndLeavers = true
                         });
                 });
