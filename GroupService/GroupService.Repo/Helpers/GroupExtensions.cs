@@ -1096,7 +1096,7 @@ namespace GroupService.Repo.Helpers
                     GroupId = (int)mcvsGroup,
                     FirstName = "Caroline",
                     LastName = "Horsman",
-                    OtherPhone = "",
+                    OtherPhone = "07851 595171",
                     EmailAddress = "chorsman@scintillaspark.co.uk",
                     AddressLine1 = "Mansfield Community House",
                     AddressLine2 = "36 Wood Street",
