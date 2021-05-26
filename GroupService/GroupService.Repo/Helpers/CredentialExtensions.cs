@@ -19,6 +19,7 @@ namespace GroupService.Repo.Helpers
         private const int AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET = 234;
         private const int AGECONNECT_CARDIFF_REFERENCES_1_CREDENTIAL_SET = 235;
         private const int AGECONNECT_CARDIFF_REFERENCES_2_CREDENTIAL_SET = 236;
+        private const int SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET = 317;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -28,6 +29,7 @@ namespace GroupService.Repo.Helpers
         private const int VOLUNTEER_INDUCTION = 4;
         private const int REFERENCES_1 = 5;
         private const int REFERENCES_2 = 6;
+        private const int POLICIES_AND_PROCEDURES = 7;
 
         public static void InitialiseCredentialSets()
         {
@@ -47,7 +49,8 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKFavershamAndSittingbourne, 13 },
                 { Groups.Sandbox, 14 },
                 { Groups.AgeConnectsCardiff, 23 },
-                { Groups.MeadowsCommunityHelpers, 24 }
+                { Groups.MeadowsCommunityHelpers, 24 },
+                { Groups.Southwell, 31 }
 
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int> 
@@ -76,6 +79,7 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKLSL,
                 Groups.FTLOS,
                 Groups.Generic,
+                Groups.Southwell
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
@@ -89,7 +93,8 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKFavershamAndSittingbourne,
                 Groups.Sandbox,
                 Groups.AgeConnectsCardiff,
-                Groups.MeadowsCommunityHelpers
+                Groups.MeadowsCommunityHelpers,
+                Groups.Southwell
             };
         }
 
@@ -135,6 +140,12 @@ namespace GroupService.Repo.Helpers
             {
                 Id = REFERENCES_2,
                 Name = "Reference 2"
+            });
+
+            entity.HasData(new Credential
+            {
+                Id = POLICIES_AND_PROCEDURES,
+                Name = "Policies & Procedures"
             });
         }
 
@@ -433,7 +444,32 @@ namespace GroupService.Repo.Helpers
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.Southwell,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = $"If you’re unable to verify with Yoti, please email mailto:jacky.huson@btinternet.com to request a manual ID check. You will also need to join our group from our <a href=\"/southwell\">HelpMyStreet landing page</a> if you haven’t already.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
 
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.Southwell,
+                CredentialId = POLICIES_AND_PROCEDURES,
+                CredentialTypeId = (int)CredentialTypes.PolicyAgreement,
+                Name = "Volunteer Agreement",
+                HowToAchieve = $"In order to reassure the individuals we support please read and consent to our volunteer agreement found <a href=\"https://www.thetorpedos.org/publicdocuments\">here</a>. If you consent email mailto:info@thetorpedos.org and we will update your profile.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that a volunteer has accepted the Southwell Torpedos Volunteer Agreement. Volunteer admins should follow internal processes for manually verifying this credential.",
+                DisplayOrder = 3,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -495,6 +531,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeConnectsCardiff,
                 CredentialId = REFERENCES_2,
             });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET,
+                GroupId = (int)Groups.Southwell,
+                CredentialId = POLICIES_AND_PROCEDURES,
+            });
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
@@ -551,6 +594,9 @@ namespace GroupService.Repo.Helpers
             var defaultActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.MealPreparation, SupportActivities.PhoneCalls_Friendly, SupportActivities.HomeworkSupport, SupportActivities.CheckingIn, SupportActivities.Other, SupportActivities.FaceMask };
             SetActivityCredentialSet(entity, Groups.Generic, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Generic]);
             SetActivityCredentialSet(entity, Groups.Tankersley, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Tankersley]);
+
+            var southwellActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Other };
+            SetActivityCredentialSet(entity, Groups.Southwell, southwellActivities, IDENTITY_CREDENTIAL_SETS[Groups.Southwell]);
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId)
