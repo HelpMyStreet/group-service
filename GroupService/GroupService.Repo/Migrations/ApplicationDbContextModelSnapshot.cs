@@ -883,6 +883,24 @@ namespace GroupService.Repo.Migrations
                             GroupId = -5,
                             ActivityId = 12,
                             CredentialSetId = 5
+                        },
+                        new
+                        {
+                            GroupId = -31,
+                            ActivityId = 1,
+                            CredentialSetId = 31
+                        },
+                        new
+                        {
+                            GroupId = -31,
+                            ActivityId = 2,
+                            CredentialSetId = 31
+                        },
+                        new
+                        {
+                            GroupId = -31,
+                            ActivityId = 11,
+                            CredentialSetId = 31
                         });
                 });
 
@@ -937,6 +955,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 6,
                             Name = "Reference 2"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Policies & Procedures"
                         });
                 });
 
@@ -1053,6 +1076,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 31,
+                            GroupId = -31,
+                            CredentialId = -1
+                        },
+                        new
+                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1149,6 +1178,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 31,
+                            GroupId = -31,
+                            CredentialId = 1
+                        },
+                        new
+                        {
                             Id = 142,
                             GroupId = -22,
                             CredentialId = 3
@@ -1170,6 +1205,12 @@ namespace GroupService.Repo.Migrations
                             Id = 236,
                             GroupId = -23,
                             CredentialId = 6
+                        },
+                        new
+                        {
+                            Id = 317,
+                            GroupId = -31,
+                            CredentialId = 7
                         });
                 });
 
@@ -1206,6 +1247,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 4,
                             Name = "References"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "PolicyAgreement"
                         });
                 });
 
@@ -2687,6 +2733,20 @@ Volunteer admins cannot edit this credential."
                         },
                         new
                         {
+                            GroupId = -31,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
+
+Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
                             GroupId = -7,
                             CredentialId = 2,
                             CredentialTypeId = (byte)2,
@@ -2956,6 +3016,32 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
 
 Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -31,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "If you’re unable to verify with Yoti, please email mailto:jacky.huson@btinternet.com to request a manual ID check. You will also need to join our group from our <a href=\"http://www.helpmystreet.org/southwell\">HelpMyStreet landing page</a> if you haven’t already.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
+
+Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -31,
+                            CredentialId = 7,
+                            CredentialTypeId = (byte)5,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "In order to reassure the individuals we support please read and consent to our volunteer agreement found <a href=\"https://www.thetorpedos.org/publicdocuments\">here</a>. If you consent email mailto:info@thetorpedos.org and we will update your profile.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Volunteer Agreement",
+                            WhatIsThis = "Use this credential to certify that a volunteer has accepted the Southwell Torpedos Volunteer Agreement. Volunteer admins should follow internal processes for manually verifying this credential."
                         });
                 });
 
