@@ -2309,6 +2309,7 @@ namespace GroupService.Repo.Migrations
                             GroupKey = "east-lindsey-pcn",
                             GroupName = "East Lindsey PCN",
                             HomepageEnabled = false,
+                            ParentGroupId = -12,
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
