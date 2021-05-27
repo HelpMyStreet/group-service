@@ -144,9 +144,9 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new Group
             {
-                Id = (int)Groups.LouthPCN,
-                GroupName = "PCN Louth",
-                GroupKey = "pcn-louth",
+                Id = (int)Groups.EastLindseyPCN,
+                GroupName = "East Lindsey PCN",
+                GroupKey = "east-lindsey-pcn",
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = false
@@ -670,7 +670,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
-                GroupId = (int)Groups.LouthPCN,
+                GroupId = (int)Groups.EastLindseyPCN,
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
@@ -978,16 +978,16 @@ namespace GroupService.Repo.Helpers
             });
             entity.HasData(new RequestorDetails
             {
-                GroupId = (int)Groups.LouthPCN,
-                FirstName = "Louth Community", //TODO Need to pass the correct details in
-                LastName = "Hospital",//TODO Need to pass the correct details in
-                OtherPhone = "",//TODO Need to pass the correct details in
-                EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
-                AddressLine1 = "Louth County Hospital",
-                AddressLine2 = "High Holme Rd",
-                AddressLine3 = "Louth",
-                Locality = "Lincolnshire",
-                Postcode = "LN11 0EU"
+                GroupId = (int)Groups.EastLindseyPCN,
+                FirstName = "Karen",
+                LastName = "Garlant",
+                OtherPhone = "07947 597878",
+                EmailAddress = "karengarlant@lincolnshirecvs.org.uk",
+                AddressLine1 = "Lincolnshire CVS, Room G8",
+                AddressLine2 = "Boston Borough Council Offices, Municipal Buildings",
+                AddressLine3 = "West Street",
+                Locality = "Boston",
+                Postcode = "PE21 8QR"
             });
             entity.HasData(new RequestorDetails
             {
