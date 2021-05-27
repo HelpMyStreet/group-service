@@ -2111,6 +2111,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 54,
                             Name = "MansfieldCVS_VaccineSupport"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Name = "EastLindsey_VaccineSupport"
                         });
                 });
 
@@ -2319,8 +2324,8 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -14,
-                            GroupKey = "pcn-louth",
-                            GroupName = "PCN Louth",
+                            GroupKey = "east-lindsey-pcn",
+                            GroupName = "East Lindsey PCN",
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -3725,7 +3730,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -14,
                             SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
+                            SupportActivityInstructionsId = (short)55
                         },
                         new
                         {
@@ -5896,15 +5901,15 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -14,
-                            AddressLine1 = "Louth County Hospital",
-                            AddressLine2 = "High Holme Rd",
-                            AddressLine3 = "Louth",
-                            EmailAddress = "laura@factor-50.co.uk",
-                            FirstName = "Louth Community",
-                            LastName = "Hospital",
-                            Locality = "Lincolnshire",
-                            OtherPhone = "",
-                            Postcode = "LN11 0EU"
+                            AddressLine1 = "Lincolnshire CVS, Room G8",
+                            AddressLine2 = "Boston Borough Council Offices, Municipal Buildings",
+                            AddressLine3 = "West Street",
+                            EmailAddress = "karengarlant@lincolnshirecvs.org.uk",
+                            FirstName = "Karen",
+                            LastName = "Garlant",
+                            Locality = "Boston",
+                            OtherPhone = "07947 597878",
+                            Postcode = "PE21 8QR"
                         },
                         new
                         {
@@ -6602,6 +6607,11 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             SupportActivityInstructionsId = (short)54,
                             Instructions = "{\"SupportActivityInstructions\":54,\"ActivityDetails\":\"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. Duties may vary by location and could include a range of indoor or outdoor activities, such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site, general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept this role and basic training will be provided on the day. For a fuller description please see the volunteer instructions which are available when you click to accept the shift or by clicking “View more info” on accepted shifts in the “My Shifts” tab.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Please read the [role description and useful information](/pdf/mansfield-cvs/nottinghamshire-vaccine-support-information.pdf) attachment for full details of the role. Volunteers may also be asked to participate in regular lateral flow testing, you can find more information [here](/pdf/mansfield-cvs/lateral-flow-testing-for-vaccination-support-volunteers.pdf).\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab but searching for shifts with the status “Done”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)55,
+                            Instructions = "{\"SupportActivityInstructions\":55,\"ActivityDetails\":\"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. Duties may vary by location and could include a range of indoor or outdoor activities, such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site, general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept this role and basic training will be provided on the day.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Take a look at the request details for more information about what you may be asked to do on the day. Volunteers may also be asked to participate in regular lateral flow testing, you can find more information [here](/pdf/east_lindsey/lateral-flow-testing-for-vaccination-support-volunteers.pdf).\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab but searching for shifts with the status “Done”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
                         });
                 });
 
