@@ -18,11 +18,10 @@ namespace GroupService.Repo.Helpers
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
             config.Add(new KeyValuePair<string, string>("HeaderRequired", "0"));
-            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>If you haven’t done it already, you may like to complete your online ID verification now. We’ve made it as quick and easy as possible with the help of our partner, Yoti. Click <a href=\"{{{{BaseUrl}}}}/account/profile\">here</a> to launch your profile and get verified.</p>" +
-                                                                        $"<p>Most requests on our platform require ID verification to give people in need of help the confidence you are who you say you are. Some of our partner organisations may also require additional checks, if this is the case we’ll let you know when you click to accept a request.</p>"
-                                                      ));
+            config.Add(new KeyValuePair<string, string>("GroupContent", $""));
             config.Add(new KeyValuePair<string, string>("GroupSignature", ""));
             config.Add(new KeyValuePair<string, string>("GroupPS", $"P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our <a href=\"{{{{BaseUrl}}}}/request-help\">Request Help form</a> and let us know what they need."));
+            config.Add(new KeyValuePair<string, string>("ShowLinkToProfile", "true"));            
             return config;
         }
 
@@ -73,9 +72,9 @@ namespace GroupService.Repo.Helpers
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
             config.Add(new KeyValuePair<string, string>("HeaderRequired", "0"));
             config.Add(new KeyValuePair<string, string>("GroupContent", $""));
-            config.Add(new KeyValuePair<string, string>("GroupSignature", ""));
-            config.Add(new KeyValuePair<string, string>("GroupPS", $"<p>Questions? Email us at <a href=\"mailto:tankersley@helpmystreet.org\">tankersley@helpmystreet.org</a></p>" +
-                                                                   $"<p>P.S.Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you're worried about. Complete our <a href=\"{{{{BaseUrl}}}}/request-help/{{{{EncodedGroupId}}}}\">Request Help form</a> and let us know what they need.</p>"));
+            config.Add(new KeyValuePair<string, string>("GroupSignature", ""));            
+            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));
+            config.Add(new KeyValuePair<string, string>("GroupPS", $"<p>Questions? Email us at <a href=\"mailto:tankersley@helpmystreet.org\">tankersley@helpmystreet.org</a></p>"));
             return config;
         }
 
@@ -85,8 +84,8 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("HeaderRequired", "0"));
             config.Add(new KeyValuePair<string, string>("GroupContent", $""));
             config.Add(new KeyValuePair<string, string>("GroupSignature", ""));
-            config.Add(new KeyValuePair<string, string>("GroupPS", $"<p>Questions? Email us at <a href=\"mailto:baldertoncs@helpmystreet.org\">baldertoncs@helpmystreet.org</a></p>" +
-                                                                   $"<p>P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our <a href=\"{{{{BaseUrl}}}}/request-help/{{{{EncodedGroupId}}}}\">Request Help form</a> and let us know what they need.</p>"));
+            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));            
+            config.Add(new KeyValuePair<string, string>("GroupPS", $"<p>Questions? Email us at <a href=\"mailto:baldertoncs@helpmystreet.org\">baldertoncs@helpmystreet.org</a></p>"));
 
             return config;
         }
@@ -97,8 +96,8 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("HeaderRequired", "0"));
             config.Add(new KeyValuePair<string, string>("GroupContent", $""));
             config.Add(new KeyValuePair<string, string>("GroupSignature", ""));
-            config.Add(new KeyValuePair<string, string>("GroupPS", $"<p>Questions? Email us at <a href=\"mailto:northmuskham@helpmystreet.org\">northmuskham@helpmystreet.org</a>" +
-                                                                   $"<p>P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our <a href=\"{{{{BaseUrl}}}}/request-help//{{{{EncodedGroupId}}}}\">Request Help form</a> and let us know what they need.</p>"));
+            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));            
+            config.Add(new KeyValuePair<string, string>("GroupPS", $"<p>Questions? Email us at <a href=\"mailto:northmuskham@helpmystreet.org\">northmuskham@helpmystreet.org</a>"));
 
             return config;
         }
