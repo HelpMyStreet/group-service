@@ -147,6 +147,7 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.EastLindseyPCN,
                 GroupName = "East Lindsey PCN",
                 GroupKey = "east-lindsey-pcn",
+                ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = false
