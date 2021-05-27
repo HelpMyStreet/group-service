@@ -1592,6 +1592,72 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_MansfieldCVS_VaccineSupport()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport,
+                ActivityDetails = $"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. " +
+                $"Duties may vary by location and could include a range of indoor or outdoor activities, " +
+                $"such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site," +
+                $" general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept " +
+                $"this role and basic training will be provided on the day. For a fuller description please see the volunteer instructions which are available when you click to accept the " +
+                $"shift or by clicking “View more info” on accepted shifts in the “My Shifts” tab.",
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Check the request details",
+                        Detail = $"Please read the [role description and useful information](/pdf/mansfield-cvs/nottinghamshire-vaccine-support-information.pdf) " +
+                        $"attachment for full details of the role. " +
+                        $"Volunteers may also be asked to participate in regular lateral flow testing, you can find more information [here](/pdf/mansfield-cvs/lateral-flow-testing-for-vaccination-support-volunteers.pdf)."
+
+                    },
+                    new Step()
+                    {
+                        Heading = "Attending your shift",
+                        Detail = $"You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather " +
+                        $"(e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the " +
+                        $"details in the “My Shifts” tab but searching for shifts with the status “Done”."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer."
+            };
+        }
+
+        private static Instructions GetInstructions_EastLindsey_VaccineSupport()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.EastLindsey_VaccineSupport,
+                ActivityDetails = $"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination " +
+                $"centres. Duties may vary by location and could include a range of indoor or outdoor activities, such as: helping patients find " +
+                $"their way around the vaccination centre, providing assistance and reassurance to patients while they are on site, general domestic " +
+                $"duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist " +
+                $"skills to accept this role and basic training will be provided on the day.",
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Check the request details",
+                        Detail = $"Take a look at the request details for more information about what you may be asked to do on the day. " +
+                        $"Volunteers may also be asked to participate in regular lateral flow testing, you can find more information " +
+                        $"[here](/pdf/east_lindsey/lateral-flow-testing-for-vaccination-support-volunteers.pdf)."
+                    },
+                    new Step()
+                    {
+                        Heading = "Attending your shift",
+                        Detail = $"You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather " +
+                        $"(e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the " +
+                        $"details in the “My Shifts” tab but searching for shifts with the status “Done”."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer."
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -1912,6 +1978,17 @@ namespace GroupService.Repo.Helpers
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKNottsNorthMuskham_FriendlyChat())
             });
 
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_MansfieldCVS_VaccineSupport())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.EastLindsey_VaccineSupport,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_EastLindsey_VaccineSupport())
+            });
         }
 
 
@@ -2011,7 +2088,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.GranthamPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
             Populate(entity, Groups.LincolnPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
             Populate(entity, Groups.LincolnPortlandPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
-            Populate(entity, Groups.LouthPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
+            Populate(entity, Groups.EastLindseyPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.EastLindsey_VaccineSupport);
             Populate(entity, Groups.SouthLincolnPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
             Populate(entity, Groups.SpilsbyPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
             Populate(entity, Groups.StamfordPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_Stamford_VaccineSupport);
@@ -2049,6 +2126,17 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Covid19Help, SupportActivityInstructionsEnum.HMS_General);
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+
+            Populate(entity, Groups.MansfieldCVS, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
+            Populate(entity, Groups.MansfieldWickes, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
+            Populate(entity, Groups.GamstonCommunityHall, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
+            Populate(entity, Groups.RichardHerrodCentre, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
+            Populate(entity, Groups.KingsMeadowCampus, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
+            Populate(entity, Groups.ForestRecreationGround, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
+
+            Populate(entity, Groups.Southwell, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
+            Populate(entity, Groups.Southwell, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+            Populate(entity, Groups.Southwell, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
         }
     }
 }

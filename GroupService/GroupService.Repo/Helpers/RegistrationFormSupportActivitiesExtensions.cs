@@ -1377,8 +1377,75 @@ namespace GroupService.Repo.Helpers
                 IsPreSelected = false,
                 DisplayOrder = 11
             });
+
+
         }
 
+        private static void SetSouthwellActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Southwell,
+                SupportActivityId = (int)SupportActivities.Shopping,
+                Label = SupportActivities.Shopping.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 1
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Southwell,
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Southwell,
+                SupportActivityId = (int)SupportActivities.Errands,
+                Label = SupportActivities.Errands.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 3
+            });
+
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Southwell,
+                SupportActivityId = (int)SupportActivities.BinDayAssistance,
+                Label = SupportActivities.BinDayAssistance.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 4
+            });
+
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.Southwell,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = SupportActivities.Other.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 5
+            });
+
+        }
+
+        private static void SetMansfieldCVSActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.MansfieldCVS,
+                SupportActivityId = (int)SupportActivities.VaccineSupport,
+                Label = "Volunteering to support the COVID-19 vaccination programme (e.g. support staff for local vaccination centres)",
+                IsPreSelected = true,
+                DisplayOrder = 1
+            });
+        }
         public static void SetRegistrationFormSupportActivitiesExtensionsData(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
             SetDefaultSupportActivities(entity);
@@ -1395,6 +1462,8 @@ namespace GroupService.Repo.Helpers
             SetRuddingtonSupportActivities(entity);
             SetCardiffSupportActivities(entity);
             SetMeadowCommunityHelpersActivities(entity);
+            SetMansfieldCVSActivities(entity);
+            SetSouthwellActivities(entity);
         }        
 
     }
