@@ -25,6 +25,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public bool ShiftsEnabled { get; set; }
         public bool TasksEnabled { get; set; }
         public bool HomepageEnabled { get; set; }
+        public string GeographicName { get; set; }
 
         public virtual Group ParentGroup { get; set; }
         public virtual RequestorDetails RequestorDetails { get; set; }        

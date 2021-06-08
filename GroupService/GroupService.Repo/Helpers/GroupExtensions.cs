@@ -69,7 +69,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ruddington",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                GeographicName = "Ruddington"
             });
 
             entity.HasData(new Group
@@ -89,7 +90,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "balderton",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                GeographicName = "Balderton"
             });
 
             entity.HasData(new Group
@@ -99,7 +101,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ageuknwkent",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                GeographicName = "North West Kent (Dartford, Swanley or Gravesend)"
             });
 
             entity.HasData(new Group
@@ -109,7 +112,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "north-muskham",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                GeographicName = "North Muskham"
             });
 
             entity.HasData(new Group
@@ -119,7 +123,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ageuk-southkentcoast",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                GeographicName = "Deal or Folkestone"
             });
 
             entity.HasData(new Group
@@ -129,7 +134,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ageuk-favershamandsittingbourne",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                GeographicName = "Faversham or Sittingbourne"
             });
 
             entity.HasData(new Group
@@ -242,7 +248,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ageconnects-cardiff",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                GeographicName = "Cardiff & the Vale"
             });
 
             entity.HasData(new Group
@@ -252,7 +259,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "meadows-community-helpers",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                GeographicName = "The Meadows"
             });
 
             entity.HasData(new Group
@@ -327,7 +335,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "southwell",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                GeographicName = "Southwell or surrounding areas"
             });
         }
 
