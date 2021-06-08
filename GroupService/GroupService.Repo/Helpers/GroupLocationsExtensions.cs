@@ -10,7 +10,7 @@ namespace GroupService.Repo.Helpers
         {
             entity.HasData(new GroupLocation
             {
-                GroupId = (int)Groups.LouthPCN,
+                GroupId = (int)Groups.EastLindseyPCN,
                 LocationId = (int) Location.LouthCommunityHospital
             });
 
