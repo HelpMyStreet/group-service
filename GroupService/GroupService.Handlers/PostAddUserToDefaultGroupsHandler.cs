@@ -33,23 +33,28 @@ namespace GroupService.Handlers
         public async Task<PostAddUserToDefaultGroupsResponse> Handle(PostAddUserToDefaultGroupsRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
+            int groupIdToBeUsedInGroupWelcomeEmail = GROUPID_GENERIC;
 
             var user = _userService.GetUserByID(request.UserID).Result;
             if(user!=null)
             {
                 success = await AssignRole(GROUPID_GENERIC, request.UserID, cancellationToken);
-
-                if (user.User.ReferringGroupId.HasValue)
-                {
-                    success = await AssignRole(user.User.ReferringGroupId.Value, request.UserID, cancellationToken);
-                }
-
+               
                 if (success)
                 {
+                    if (user.User.ReferringGroupId.HasValue)
+                    {
+                        success = await AssignRole(user.User.ReferringGroupId.Value, request.UserID, cancellationToken);
+                        if(success)
+                        {
+                            groupIdToBeUsedInGroupWelcomeEmail = user.User.ReferringGroupId.Value;
+                        }
+                    }
+
                     await _communicationService.RequestCommunication(new RequestCommunicationRequest()
                     {
                         CommunicationJob = new CommunicationJob() { CommunicationJobType = CommunicationJobTypes.GroupWelcome, },
-                        GroupID = user.User.ReferringGroupId.HasValue ? user.User.ReferringGroupId.Value : GROUPID_GENERIC,
+                        GroupID = groupIdToBeUsedInGroupWelcomeEmail,
                         RecipientUserID = request.UserID
                     }, cancellationToken);
                 }
