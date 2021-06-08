@@ -144,9 +144,10 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new Group
             {
-                Id = (int)Groups.LouthPCN,
-                GroupName = "PCN Louth",
-                GroupKey = "pcn-louth",
+                Id = (int)Groups.EastLindseyPCN,
+                GroupName = "East Lindsey PCN",
+                GroupKey = "east-lindsey-pcn",
+                ParentGroupId = (int)Groups.LincolnshireVolunteers,
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = false
@@ -318,6 +319,16 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = false,
                 HomepageEnabled = false
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.Southwell,
+                GroupName = "Southwell Torpedos",
+                GroupKey = "southwell",
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -442,6 +453,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.MansfieldCVS,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.MansfieldCVS
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.Southwell,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Southwell
             });
         }
 
@@ -653,7 +671,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
-                GroupId = (int)Groups.LouthPCN,
+                GroupId = (int)Groups.EastLindseyPCN,
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
@@ -878,6 +896,18 @@ namespace GroupService.Repo.Helpers
                 SuppressRecipientPersonalDetails = false
             });
 
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.Southwell,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Soutwell_Public,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
+            });
+
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
@@ -949,16 +979,16 @@ namespace GroupService.Repo.Helpers
             });
             entity.HasData(new RequestorDetails
             {
-                GroupId = (int)Groups.LouthPCN,
-                FirstName = "Louth Community", //TODO Need to pass the correct details in
-                LastName = "Hospital",//TODO Need to pass the correct details in
-                OtherPhone = "",//TODO Need to pass the correct details in
-                EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
-                AddressLine1 = "Louth County Hospital",
-                AddressLine2 = "High Holme Rd",
-                AddressLine3 = "Louth",
-                Locality = "Lincolnshire",
-                Postcode = "LN11 0EU"
+                GroupId = (int)Groups.EastLindseyPCN,
+                FirstName = "Karen",
+                LastName = "Garlant",
+                OtherPhone = "07947 597878",
+                EmailAddress = "karengarlant@lincolnshirecvs.org.uk",
+                AddressLine1 = "Lincolnshire CVS, Room G8",
+                AddressLine2 = "Boston Borough Council Offices, Municipal Buildings",
+                AddressLine3 = "West Street",
+                Locality = "Boston",
+                Postcode = "PE21 8QR"
             });
             entity.HasData(new RequestorDetails
             {
@@ -1067,7 +1097,7 @@ namespace GroupService.Repo.Helpers
                     GroupId = (int)mcvsGroup,
                     FirstName = "Caroline",
                     LastName = "Horsman",
-                    OtherPhone = "",
+                    OtherPhone = "07851 595171",
                     EmailAddress = "chorsman@scintillaspark.co.uk",
                     AddressLine1 = "Mansfield Community House",
                     AddressLine2 = "36 Wood Street",

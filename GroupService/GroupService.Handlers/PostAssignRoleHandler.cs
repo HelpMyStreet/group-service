@@ -1,6 +1,9 @@
 ﻿using GroupService.Core.Interfaces.Repositories;
+using GroupService.Core.Interfaces.Services;
+using HelpMyStreet.Contracts.CommunicationService.Request;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
+using HelpMyStreet.Contracts.RequestService.Response;
 using HelpMyStreet.Utils.Enums;
 using MediatR;
 using System;
@@ -13,9 +16,11 @@ namespace GroupService.Handlers
     public class PostAssignRoleHandler : IRequestHandler<PostAssignRoleRequest, PostAssignRoleResponse>
     {
         private readonly IRepository _repository;
-        public PostAssignRoleHandler(IRepository repository)
+        private readonly ICommunicationService _communicationService;
+        public PostAssignRoleHandler(IRepository repository, ICommunicationService communicationService)
         {
             _repository = repository;
+            _communicationService = communicationService;
         }
 
         public async Task<PostAssignRoleResponse> Handle(PostAssignRoleRequest request, CancellationToken cancellationToken)
@@ -76,6 +81,16 @@ namespace GroupService.Handlers
                        success,
                        cancellationToken
                        );
+
+            if(success && request.Role.GroupRole == GroupRoles.Member)
+            {
+                await _communicationService.RequestCommunication(new RequestCommunicationRequest()
+                {
+                    CommunicationJob = new CommunicationJob() { CommunicationJobType = CommunicationJobTypes.GroupWelcome },
+                    GroupID = request.GroupID.Value,
+                    RecipientUserID = request.UserID.Value
+                }, cancellationToken);
+            }
 
             return new PostAssignRoleResponse()
             {
