@@ -59,7 +59,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "tankersley",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                GeographicName = "Tankersley or Pilley"
             });
 
             entity.HasData(new Group
