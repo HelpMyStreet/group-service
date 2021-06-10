@@ -3510,6 +3510,12 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -4,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            MaxVolunteer = 2147483647,
+                            NewRequestNotificationStrategyId = (byte)1
                         });
                 });
 
@@ -5574,6 +5580,12 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             GroupId = -31,
                             Source = "",
                             RegistrationFormVariant = (byte)15
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            Source = "",
+                            RegistrationFormVariant = (byte)16
                         });
                 });
 
@@ -6018,6 +6030,17 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)26,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)0
                         });
                 });
 
@@ -6239,6 +6262,19 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
+                            GroupId = -32,
+                            AddressLine1 = "Ruston Sports & Social Club",
+                            AddressLine2 = "Newark Road",
+                            AddressLine3 = "",
+                            EmailAddress = "g.burroughs@nhs.net",
+                            FirstName = "Gary",
+                            LastName = "Burroughs",
+                            Locality = "Lincoln",
+                            OtherPhone = "07340 066491",
+                            Postcode = "LN6 8RN"
+                        },
+                        new
+                        {
                             GroupId = -21,
                             AddressLine1 = "Portland Medical Practice",
                             AddressLine2 = "60 Portland St",
@@ -6413,6 +6449,11 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -31,
+                            AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -32,
                             AllowAutonomousJoinersAndLeavers = true
                         });
                 });
