@@ -2271,6 +2271,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 55,
                             Name = "EastLindsey_VaccineSupport"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Name = "APEXBank_BankStaffVaccinator"
                         });
                 });
 
@@ -4324,6 +4329,18 @@ Once you have certified this credential users will be able to book onto shifts."
                         new
                         {
                             GroupId = -31,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            SupportActivityId = 32,
+                            SupportActivityInstructionsId = (short)56
+                        },
+                        new
+                        {
+                            GroupId = -32,
                             SupportActivityId = 11,
                             SupportActivityInstructionsId = (short)2
                         });
@@ -7011,6 +7028,11 @@ Once you have certified this credential users will be able to book onto shifts."
                         {
                             SupportActivityInstructionsId = (short)55,
                             Instructions = "{\"SupportActivityInstructions\":55,\"ActivityDetails\":\"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. Duties may vary by location and could include a range of indoor or outdoor activities, such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site, general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept this role and basic training will be provided on the day.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Take a look at the request details for more information about what you may be asked to do on the day. Volunteers may also be asked to participate in regular lateral flow testing, you can find more information [here](/pdf/east_lindsey/lateral-flow-testing-for-vaccination-support-volunteers.pdf).\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab but searching for shifts with the status “Done”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)56,
+                            Instructions = "{\"SupportActivityInstructions\":56,\"ActivityDetails\":\"This is a paid role. Registered vaccinators are required for the local COVID-19 vaccination site at Ruston Sports and Social Club, Lincoln. Patients from all five APEX PCN member practices attend the site which has a current footfall in excess of 1301 patients per day. We run two four - hour shifts per day.Vaccinators are welcome to book onto a morning and an afternoon shift on the same day. Before you first shift you will be offered a full induction supported by the centre manager, current vaccinators and advanced practitioners.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Accept the shift\",\"Detail\":\"To book onto a shift simply click the green button below. We run two shifts per day and welcome staff wishing to book onto both shifts. You will find all our open shifts in 'Open Shifts'.\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"You'll receive a reminder email the day before your shift. Once you've completed a shift it will be marked as complete automatically, but you can still view a completed shift by selecting shifts with the status 'Done' in 'My Shifts'.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.On rare occasions we may need to cancela shift at short notice, where this is the case we will update you by email and endeavour to contact you using the details provided in your profile.\"}"
                         });
                 });
 
