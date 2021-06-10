@@ -20,6 +20,7 @@ namespace GroupService.Repo.Helpers
         private const int AGECONNECT_CARDIFF_REFERENCES_1_CREDENTIAL_SET = 235;
         private const int AGECONNECT_CARDIFF_REFERENCES_2_CREDENTIAL_SET = 236;
         private const int SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET = 317;
+        private const int APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET = 328;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -30,6 +31,8 @@ namespace GroupService.Repo.Helpers
         private const int REFERENCES_1 = 5;
         private const int REFERENCES_2 = 6;
         private const int POLICIES_AND_PROCEDURES = 7;
+        private const int VACCINATOR_TRAINING = 8;
+
 
         public static void InitialiseCredentialSets()
         {
@@ -50,7 +53,8 @@ namespace GroupService.Repo.Helpers
                 { Groups.Sandbox, 14 },
                 { Groups.AgeConnectsCardiff, 23 },
                 { Groups.MeadowsCommunityHelpers, 24 },
-                { Groups.Southwell, 31 }
+                { Groups.Southwell, 31 },
+                { Groups.ApexBankStaff, 32 }
 
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int> 
@@ -79,7 +83,8 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKLSL,
                 Groups.FTLOS,
                 Groups.Generic,
-                Groups.Southwell
+                Groups.Southwell,
+                Groups.ApexBankStaff
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
@@ -94,7 +99,8 @@ namespace GroupService.Repo.Helpers
                 Groups.Sandbox,
                 Groups.AgeConnectsCardiff,
                 Groups.MeadowsCommunityHelpers,
-                Groups.Southwell
+                Groups.Southwell,
+                Groups.ApexBankStaff
             };
         }
 
@@ -146,6 +152,12 @@ namespace GroupService.Repo.Helpers
             {
                 Id = POLICIES_AND_PROCEDURES,
                 Name = "Policies & Procedures"
+            });
+
+            entity.HasData(new Credential
+            {
+                Id = VACCINATOR_TRAINING,
+                Name = "Vaccinator Training"
             });
         }
 
@@ -470,6 +482,36 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
+
+            
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.ApexBankStaff,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = $"If you’re unable to verify with Yoti, please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
+                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.ApexBankStaff,
+                CredentialId = VACCINATOR_TRAINING,
+                CredentialTypeId = (int)CredentialTypes.Training,
+                Name = "Vaccinator Training",
+                HowToAchieve = $" Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net.Including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes onImmunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that the user meets the essential criteria for a bank staff vaccinator. \r\n\r\n" +
+                $"Once you have certified this credential users will be able to book onto shifts.",
+                DisplayOrder = 3,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+            
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -538,6 +580,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Southwell,
                 CredentialId = POLICIES_AND_PROCEDURES,
             });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET,
+                GroupId = (int)Groups.ApexBankStaff,
+                CredentialId = VACCINATOR_TRAINING,
+            });
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
@@ -598,6 +647,10 @@ namespace GroupService.Repo.Helpers
             var southwellActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Other };
             SetActivityCredentialSet(entity, Groups.Southwell, southwellActivities, IDENTITY_CREDENTIAL_SETS[Groups.Southwell]);
             SetActivityCredentialSet(entity, Groups.Southwell, southwellActivities, SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET);
+
+            var apexbankpcnActivities = new List<SupportActivities> { SupportActivities.BankStaffVaccinator, SupportActivities.Other};
+            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, IDENTITY_CREDENTIAL_SETS[Groups.ApexBankStaff]);
+            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET);
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId)

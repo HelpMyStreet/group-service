@@ -329,6 +329,16 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int) Groups.ApexBankStaff,
+                GroupName = "APEX PCN Bank Staff",
+                GroupKey = "apex-pcn-bank-staff",
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = true
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -460,6 +470,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.Southwell,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.Southwell
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.ApexBankStaff,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.ApexBankStaff
             });
         }
 
@@ -908,6 +925,18 @@ namespace GroupService.Repo.Helpers
                 SuppressRecipientPersonalDetails = false
             });
 
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.ApexBankStaff,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.ApexBankStaff_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
+            });
+
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
@@ -1071,6 +1100,20 @@ namespace GroupService.Repo.Helpers
                 AddressLine2 = "Newark Road",
                 AddressLine3 = "Lincoln",
                 Locality = "",
+                Postcode = "LN6 8RN"
+            });
+
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.ApexBankStaff,
+                FirstName = "Gary",
+                LastName = "Burroughs",
+                OtherPhone = "07340 066491",
+                EmailAddress = "g.burroughs@nhs.net",
+                AddressLine1 = "Ruston Sports & Social Club",
+                AddressLine2 = "Newark Road",
+                AddressLine3 = "",
+                Locality = "Lincoln",
                 Postcode = "LN6 8RN"
             });
 
