@@ -3495,6 +3495,11 @@ Once you have certified this credential users will be able to book onto shifts."
                         {
                             GroupId = -30,
                             LocationId = -15
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            LocationId = -9
                         });
                 });
 
