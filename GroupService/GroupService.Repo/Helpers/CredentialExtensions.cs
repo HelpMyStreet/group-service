@@ -516,7 +516,7 @@ namespace GroupService.Repo.Helpers
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
         {
-            foreach (var group in GROUPS_USING_YOTI.Where(x => !x.Equals(Groups.ApexBankStaff)))
+            foreach (var group in GROUPS_USING_YOTI)
             {
                 entity.HasData(new CredentialSet
                 {
@@ -536,7 +536,7 @@ namespace GroupService.Repo.Helpers
                 });
             }
 
-            foreach (var group in GROUPS_USING_MANUAL_ID.Where(x => !x.Equals(Groups.ApexBankStaff)))
+            foreach (var group in GROUPS_USING_MANUAL_ID)
             {
                 entity.HasData(new CredentialSet
                 {
@@ -581,12 +581,12 @@ namespace GroupService.Repo.Helpers
                 CredentialId = POLICIES_AND_PROCEDURES,
             });
 
-            //entity.HasData(new CredentialSet
-            //{
-            //    Id = APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET,
-            //    GroupId = (int)Groups.ApexBankStaff,
-            //    CredentialId = VACCINATOR_TRAINING,
-            //});
+            entity.HasData(new CredentialSet
+            {
+                Id = APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET,
+                GroupId = (int)Groups.ApexBankStaff,
+                CredentialId = VACCINATOR_TRAINING,
+            });
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
