@@ -1666,7 +1666,7 @@ namespace GroupService.Repo.Helpers
                 ActivityDetails = $"This is a paid role. Registered vaccinators are required for the local COVID-19 vaccination site at " +
                 $"Ruston Sports and Social Club, Lincoln. Patients from all five APEX PCN member practices attend the site which has a " +
                 $"current footfall in excess of 1301 patients per day. " +
-                $"We run two four - hour shifts per day.Vaccinators are welcome to book onto a morning and an afternoon shift on the same day. " +
+                $"We run two four - hour shifts per day. Vaccinators are welcome to book onto a morning and an afternoon shift on the same day. " +
                 $"Before you first shift you will be offered a full induction supported by the centre manager, current vaccinators and advanced practitioners.",
                 Intro = null,
                 Steps = new System.Collections.Generic.List<Step>()
@@ -1685,8 +1685,7 @@ namespace GroupService.Repo.Helpers
                         $"shifts with the status 'Done' in 'My Shifts'."
                     }
                 },
-                Close = $"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating " +
-                $"the accepted request and clicking “Can’t Do” so we can find another volunteer." +
+                Close = $"If for any reason you can't complete a shift please let us know as soon as possible by clicking “Can’t Do” on the accepted request. " +
                 $"On rare occasions we may need to cancela shift at short notice, where this is the case we will update you by email and endeavour " +
                 $"to contact you using the details provided in your profile."
             };

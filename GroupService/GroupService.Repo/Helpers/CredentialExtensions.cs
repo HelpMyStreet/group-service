@@ -504,7 +504,7 @@ namespace GroupService.Repo.Helpers
                 CredentialId = VACCINATOR_TRAINING,
                 CredentialTypeId = (int)CredentialTypes.Training,
                 Name = "Vaccinator Training",
-                HowToAchieve = $" Please email a copy of the required certificates toGary Burroughs at mailto:g.burroughs@nhs.net.Including your NMC, GMC or GPhC registration,mandated vaccination courses/programmes onImmunisation, BLS and anaphylaxis training, and theCOVID-19 vaccinator competency toolkit.",
+                HowToAchieve = $" Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net.Including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes onImmunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that the user meets the essential criteria for a bank staff vaccinator. \r\n\r\n" +
                 $"Once you have certified this credential users will be able to book onto shifts.",
