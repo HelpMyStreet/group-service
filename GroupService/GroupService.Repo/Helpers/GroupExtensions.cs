@@ -329,6 +329,16 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int) Groups.ApexBankStaff,
+                GroupName = "APEX PCN Bank Staff",
+                GroupKey = "apex-pcn-bank-staff",
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = true
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
