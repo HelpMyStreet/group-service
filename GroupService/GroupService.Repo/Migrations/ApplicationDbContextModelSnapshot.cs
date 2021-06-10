@@ -978,6 +978,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 7,
                             Name = "Policies & Procedures"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Vaccinator Training"
                         });
                 });
 
