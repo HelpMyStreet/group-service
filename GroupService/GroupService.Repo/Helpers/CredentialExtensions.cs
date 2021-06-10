@@ -163,7 +163,7 @@ namespace GroupService.Repo.Helpers
 
         public static void SetGroupCredentials(this EntityTypeBuilder<GroupCredential> entity)
         {
-            foreach (var group in GROUPS_USING_YOTI.Where(x => !x.Equals(Groups.ApexBankStaff)))
+            foreach (var group in GROUPS_USING_YOTI)
             {
                 entity.HasData(new GroupCredential
                 {
@@ -483,7 +483,7 @@ namespace GroupService.Repo.Helpers
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
-            /*
+            
             entity.HasData(new GroupCredential
             {
                 GroupId = (int)Groups.ApexBankStaff,
@@ -511,7 +511,7 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
-            */
+            
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)

@@ -2893,6 +2893,20 @@ Volunteer admins cannot edit this credential."
                         },
                         new
                         {
+                            GroupId = -32,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
+
+Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
                             GroupId = -7,
                             CredentialId = 2,
                             CredentialTypeId = (byte)2,
@@ -3188,6 +3202,34 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve_CTA_Destination = "",
                             Name = "Volunteer Agreement",
                             WhatIsThis = "Use this credential to certify that a volunteer has accepted the Southwell Torpedos Volunteer Agreement. Volunteer admins should follow internal processes for manually verifying this credential."
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "If you’re unable to verify with Yoti, please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
+
+Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            CredentialId = 8,
+                            CredentialTypeId = (byte)3,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = " Please email a copy of the required certificates toGary Burroughs at mailto:g.burroughs@nhs.net.Including your NMC, GMC or GPhC registration,mandated vaccination courses/programmes onImmunisation, BLS and anaphylaxis training, and theCOVID-19 vaccinator competency toolkit.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Vaccinator Training",
+                            WhatIsThis = @"Use this credential to certify that the user meets the essential criteria for a bank staff vaccinator. 
+
+Once you have certified this credential users will be able to book onto shifts."
                         });
                 });
 
