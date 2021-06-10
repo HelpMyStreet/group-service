@@ -5450,6 +5450,22 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             DisplayOrder = (byte)5,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)16,
+                            SupportActivityId = 32,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Covering bank staff vaccinator shifts (this is a paid role)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)16,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Please notify me about any other roles (including unpaid volunteer roles)"
                         });
                 });
 

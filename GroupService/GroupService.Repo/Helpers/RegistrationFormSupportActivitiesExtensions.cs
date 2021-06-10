@@ -38,6 +38,7 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.BinDayAssistance => "Taking out the bins on bin day",
                 SupportActivities.Covid19Help => "Providing help booking COVID-19 tests or vaccination appointments",
                 SupportActivities.DigitalSupport => "Providing digital support for people struggling with technology",
+                SupportActivities.BankStaffVaccinator => "Covering bank staff vaccinator shifts (this is a paid role)",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
         }
@@ -1434,6 +1435,28 @@ namespace GroupService.Repo.Helpers
 
         }
 
+        private static void SetApexBankStaffActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.ApexBankStaff,
+                SupportActivityId = (int)SupportActivities.BankStaffVaccinator,
+                Label = SupportActivities.BankStaffVaccinator.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 1
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.ApexBankStaff,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = "Please notify me about any other roles (including unpaid volunteer roles)",
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+        }
+
         private static void SetMansfieldCVSActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
 
@@ -1464,6 +1487,7 @@ namespace GroupService.Repo.Helpers
             SetMeadowCommunityHelpersActivities(entity);
             SetMansfieldCVSActivities(entity);
             SetSouthwellActivities(entity);
+            SetApexBankStaffActivities(entity);
         }        
 
     }
