@@ -919,6 +919,30 @@ namespace GroupService.Repo.Migrations
                             GroupId = -31,
                             ActivityId = 11,
                             CredentialSetId = 317
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            ActivityId = 32,
+                            CredentialSetId = 32
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            ActivityId = 11,
+                            CredentialSetId = 32
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            ActivityId = 32,
+                            CredentialSetId = 328
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            ActivityId = 11,
+                            CredentialSetId = 328
                         });
                 });
 
