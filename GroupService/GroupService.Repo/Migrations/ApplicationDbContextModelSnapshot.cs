@@ -2317,6 +2317,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 4,
                             Name = "GenericGroup"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "ThisGroupAndGenericGroup"
                         });
                 });
 
@@ -5595,6 +5600,10 @@ Once you have certified this credential users will be able to book onto shifts."
                         .HasColumnName("RegistrationFormVariant")
                         .HasColumnType("tinyint");
 
+                    b.Property<byte>("TargetGroups")
+                        .HasColumnName("TargetGroups")
+                        .HasColumnType("tinyint");
+
                     b.HasKey("GroupId", "Source");
 
                     b.ToTable("RegistrationJourney","Website");
@@ -5604,115 +5613,134 @@ Once you have certified this credential users will be able to book onto shifts."
                         {
                             GroupId = -1,
                             Source = "",
-                            RegistrationFormVariant = (byte)0
+                            RegistrationFormVariant = (byte)0,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -1,
                             Source = "face-masks",
-                            RegistrationFormVariant = (byte)4
+                            RegistrationFormVariant = (byte)4,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -2,
                             Source = "",
-                            RegistrationFormVariant = (byte)2
+                            RegistrationFormVariant = (byte)2,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -3,
                             Source = "",
-                            RegistrationFormVariant = (byte)3
+                            RegistrationFormVariant = (byte)3,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -4,
                             Source = "",
-                            RegistrationFormVariant = (byte)1
+                            RegistrationFormVariant = (byte)1,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -5,
                             Source = "",
-                            RegistrationFormVariant = (byte)0
+                            RegistrationFormVariant = (byte)0,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -6,
                             Source = "",
-                            RegistrationFormVariant = (byte)11
+                            RegistrationFormVariant = (byte)11,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -7,
                             Source = "",
-                            RegistrationFormVariant = (byte)5
+                            RegistrationFormVariant = (byte)5,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -8,
                             Source = "",
-                            RegistrationFormVariant = (byte)6
+                            RegistrationFormVariant = (byte)6,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -9,
                             Source = "",
-                            RegistrationFormVariant = (byte)7
+                            RegistrationFormVariant = (byte)7,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -10,
                             Source = "",
-                            RegistrationFormVariant = (byte)6
+                            RegistrationFormVariant = (byte)6,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -11,
                             Source = "",
-                            RegistrationFormVariant = (byte)8
+                            RegistrationFormVariant = (byte)8,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -13,
                             Source = "",
-                            RegistrationFormVariant = (byte)9
+                            RegistrationFormVariant = (byte)9,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -12,
                             Source = "",
-                            RegistrationFormVariant = (byte)10
+                            RegistrationFormVariant = (byte)10,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -23,
                             Source = "",
-                            RegistrationFormVariant = (byte)12
+                            RegistrationFormVariant = (byte)12,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -24,
                             Source = "",
-                            RegistrationFormVariant = (byte)13
+                            RegistrationFormVariant = (byte)13,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -25,
                             Source = "",
-                            RegistrationFormVariant = (byte)14
+                            RegistrationFormVariant = (byte)14,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -31,
                             Source = "",
-                            RegistrationFormVariant = (byte)15
+                            RegistrationFormVariant = (byte)15,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -32,
                             Source = "",
-                            RegistrationFormVariant = (byte)16
+                            RegistrationFormVariant = (byte)16,
+                            TargetGroups = (byte)0
                         });
                 });
 

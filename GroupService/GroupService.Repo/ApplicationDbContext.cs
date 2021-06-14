@@ -262,6 +262,8 @@ namespace GroupService.Repo
 
                 entity.Property(e => e.RegistrationFormVariant).HasColumnName("RegistrationFormVariant");
 
+                entity.Property(e => e.TargetGroups).HasColumnName("TargetGroups");
+
                 entity.HasOne(d => d.Group)
                     .WithMany(p => p.RegistrationJourney)
                     .HasForeignKey(d => d.GroupId)
