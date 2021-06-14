@@ -32,12 +32,21 @@ namespace GroupService.Handlers
             var user = _userService.GetUserByID(request.UserID).Result;
             if(user!=null)
             {
-                AssignRole(GROUPID_GENERIC, request.UserID, cancellationToken);
-
                 if (user.User.ReferringGroupId.HasValue)
                 {
+                    bool addToGenericGroup = await _repository.AddToGenericGroup(user.User.ReferringGroupId.Value, user.User.Source);
+
+                    if(addToGenericGroup)
+                    {
+                        AssignRole(GROUPID_GENERIC, request.UserID, cancellationToken);
+                    }
                     AssignRole(user.User.ReferringGroupId.Value, request.UserID, cancellationToken);
                 }
+                else
+                {
+                    AssignRole(GROUPID_GENERIC, request.UserID, cancellationToken);
+                }
+
                 success = true;
             }
 
