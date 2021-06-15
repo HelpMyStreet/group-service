@@ -173,8 +173,7 @@ namespace GroupService.Repo.Helpers
                     Name = "Yoti ID Verification",
                     HowToAchieve = "Complete online",
                     HowToAchieve_CTA_Destination = "/account?next=verify",
-                    WhatIsThis = $"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.\r\n\r\n" +
-                    $"Volunteer admins cannot edit this credential.",
+                    WhatIsThis = $"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential.",
                     DisplayOrder = 1,
                     CredentialVerifiedById = (byte)CredentialVerifiedBy.System
                 });
@@ -188,8 +187,7 @@ namespace GroupService.Repo.Helpers
                 Name = "DBS Check",
                 HowToAchieve = "Email Age UK Wirral to request or register your DBS check at mailto:volunteers@ageukwirral.org.uk",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
-                $"Volunteer admins should follow internal processes for logging a DBS check.",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -202,8 +200,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Wirral to find out how they can check your ID at mailto:volunteers@ageukwirral.org.uk",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -216,8 +213,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Lincoln & South Lincolnshire to find out how they can check your ID at mailto:volunteering@ageuklsl.org.uk",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-               $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -230,8 +226,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = "Unfortunately manual ID checks are not available right now, please use Yoti to verify you identity and start volunteering.",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-               $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -244,8 +239,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = "Please contact North Muskham Community Support to find out more about our manual ID check by emailing mailto:northmuskham@helpmystreet.org",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-               $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -258,8 +252,7 @@ namespace GroupService.Repo.Helpers
                 Name = "DBS Check",
                 HowToAchieve = "Email Age UK North West Kent to request or register your DBS check at mailto:contactus@ageuknorthwestkent.org.uk",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
-                $"Volunteer admins should follow internal processes for logging a DBS check.",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -272,8 +265,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = "If you’re unable to verify with Yoti, email Age UK North West Kent to find out how they can check your ID at mailto:contactus@ageuknorthwestkent.org.uk",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -286,8 +278,7 @@ namespace GroupService.Repo.Helpers
                 Name = "DBS Check",
                 HowToAchieve = "Email Age UK South Kent Coast to request or register your DBS check at mailto:volunteering@ageukskc.org.uk",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
-                $"Volunteer admins should follow internal processes for logging a DBS check.",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -300,8 +291,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = "If you’re unable to verify with Yoti, email Age UK South Kent Coast to find out how they can check your ID at mailto:volunteering@ageukskc.org.uk",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -314,8 +304,7 @@ namespace GroupService.Repo.Helpers
                 Name = "DBS Check",
                 HowToAchieve = "Email Age UK Faversham and Sittingbourne to request or register your DBS check at mailto:volunteering@ageukfaversham.org.uk",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
-                $"Volunteer admins should follow internal processes for logging a DBS check.",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -328,8 +317,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Faversham and Sittingbourne to find out how they can check your ID at mailto:volunteering@ageukfaversham.org.uk",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -342,8 +330,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = "If you’re unable to verify with Yoti, email your group admins to find out how they can check your ID",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -356,8 +343,7 @@ namespace GroupService.Repo.Helpers
                 Name = "DBS Check",
                 HowToAchieve = "Email your group admins to request or register your DBS check",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
-                $"Volunteer admins should follow internal processes for logging a DBS check.",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -383,8 +369,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -423,8 +408,7 @@ namespace GroupService.Repo.Helpers
                 Name = "DBS Check",
                 HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a DBS check.",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check.\r\n\r\n" +
-                $"Volunteer admins should follow internal processes for logging a DBS check.",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
                 DisplayOrder = 5,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -450,8 +434,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = "Email Sam Kelly on mailto:sam@bridgescommunitytrust.org.uk to arrange a manual ID check at The One Stop Shop.",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -464,8 +447,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = $"If you’re unable to verify with Yoti, please email mailto:jacky.huson@btinternet.com to request a manual ID check. You will also need to join our group from our <a href=\"/southwell\">HelpMyStreet landing page</a> if you haven’t already.",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -492,8 +474,7 @@ namespace GroupService.Repo.Helpers
                 Name = "Manual ID Verification",
                 HowToAchieve = $"If you’re unable to verify with Yoti, please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. \r\n\r\n" +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
@@ -504,10 +485,9 @@ namespace GroupService.Repo.Helpers
                 CredentialId = VACCINATOR_TRAINING,
                 CredentialTypeId = (int)CredentialTypes.Training,
                 Name = "Vaccinator Training",
-                HowToAchieve = $" Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net.Including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes onImmunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
+                HowToAchieve = $" Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net, including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes on immunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
                 HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that the user meets the essential criteria for a bank staff vaccinator. \r\n\r\n" +
-                $"Once you have certified this credential users will be able to book onto shifts.",
+                WhatIsThis = $"Use this credential to certify that the user meets the essential criteria for a bank staff vaccinator. Once you have certified this credential users will be able to book onto shifts.",
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
