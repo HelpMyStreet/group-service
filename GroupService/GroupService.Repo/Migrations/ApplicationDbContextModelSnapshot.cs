@@ -2250,6 +2250,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 4,
                             Name = "GenericGroup"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "ThisGroupAndGenericGroup"
                         });
                 });
 
@@ -2271,6 +2276,9 @@ namespace GroupService.Repo.Migrations
                         .HasColumnType("varchar(100)")
                         .HasMaxLength(100)
                         .IsUnicode(false);
+
+                    b.Property<byte>("GroupType")
+                        .HasColumnType("tinyint");
 
                     b.Property<bool>("HomepageEnabled")
                         .HasColumnType("bit");
@@ -2305,6 +2313,7 @@ namespace GroupService.Repo.Migrations
                             Id = -1,
                             GroupKey = "Generic",
                             GroupName = "HelpMyStreet",
+                            GroupType = (byte)2,
                             HomepageEnabled = false,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2314,6 +2323,7 @@ namespace GroupService.Repo.Migrations
                             Id = -2,
                             GroupKey = "ftlos",
                             GroupName = "For the Love of Scrubs",
+                            GroupType = (byte)2,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2323,6 +2333,7 @@ namespace GroupService.Repo.Migrations
                             Id = -3,
                             GroupKey = "ageuklsl",
                             GroupName = "Age UK Lincoln & South Lincolnshire",
+                            GroupType = (byte)1,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2332,6 +2343,7 @@ namespace GroupService.Repo.Migrations
                             Id = -4,
                             GroupKey = "hlp",
                             GroupName = "Healthy London Partnership",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2342,6 +2354,7 @@ namespace GroupService.Repo.Migrations
                             GeographicName = "Tankersley or Pilley",
                             GroupKey = "tankersley",
                             GroupName = "Tankersley & Pilley",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2352,6 +2365,7 @@ namespace GroupService.Repo.Migrations
                             GeographicName = "Ruddington",
                             GroupKey = "ruddington",
                             GroupName = "Ruddington",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2361,6 +2375,7 @@ namespace GroupService.Repo.Migrations
                             Id = -7,
                             GroupKey = "ageukwirral",
                             GroupName = "Age UK Wirral",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2371,6 +2386,7 @@ namespace GroupService.Repo.Migrations
                             GeographicName = "Balderton",
                             GroupKey = "balderton",
                             GroupName = "Balderton Community Support",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2381,6 +2397,7 @@ namespace GroupService.Repo.Migrations
                             GeographicName = "North West Kent (Dartford, Swanley or Gravesend)",
                             GroupKey = "ageuknwkent",
                             GroupName = "Age UK North West Kent",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2391,6 +2408,7 @@ namespace GroupService.Repo.Migrations
                             GeographicName = "North Muskham",
                             GroupKey = "north-muskham",
                             GroupName = "North Muskham Community Support",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2401,6 +2419,7 @@ namespace GroupService.Repo.Migrations
                             GeographicName = "Deal or Folkestone",
                             GroupKey = "ageuk-southkentcoast",
                             GroupName = "Age UK South Kent Coast",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2411,6 +2430,7 @@ namespace GroupService.Repo.Migrations
                             GeographicName = "Faversham or Sittingbourne",
                             GroupKey = "ageuk-favershamandsittingbourne",
                             GroupName = "Age UK Faversham & Sittingbourne",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2420,6 +2440,7 @@ namespace GroupService.Repo.Migrations
                             Id = -12,
                             GroupKey = "lincs-volunteers",
                             GroupName = "Lincolnshire Volunteers",
+                            GroupType = (byte)1,
                             HomepageEnabled = true,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2429,6 +2450,7 @@ namespace GroupService.Repo.Migrations
                             Id = -14,
                             GroupKey = "east-lindsey-pcn",
                             GroupName = "East Lindsey PCN",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -12,
                             ShiftsEnabled = true,
@@ -2439,6 +2461,7 @@ namespace GroupService.Repo.Migrations
                             Id = -15,
                             GroupKey = "pcn-grantham",
                             GroupName = "PCN Grantham",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2448,6 +2471,7 @@ namespace GroupService.Repo.Migrations
                             Id = -16,
                             GroupKey = "pcn-southlincoln",
                             GroupName = "PCN South Lincoln",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2457,6 +2481,7 @@ namespace GroupService.Repo.Migrations
                             Id = -17,
                             GroupKey = "four-counties-pcn",
                             GroupName = "Four Counties PCN",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -12,
                             ShiftsEnabled = true,
@@ -2467,6 +2492,7 @@ namespace GroupService.Repo.Migrations
                             Id = -18,
                             GroupKey = "pcn-spilsby",
                             GroupName = "PCN Spilsby",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2476,6 +2502,7 @@ namespace GroupService.Repo.Migrations
                             Id = -19,
                             GroupKey = "pcn-boston",
                             GroupName = "PCN Boston",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2485,6 +2512,7 @@ namespace GroupService.Repo.Migrations
                             Id = -20,
                             GroupKey = "apex-pcn-lincoln",
                             GroupName = "APEX PCN",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -12,
                             ShiftsEnabled = true,
@@ -2495,6 +2523,7 @@ namespace GroupService.Repo.Migrations
                             Id = -21,
                             GroupKey = "pcn-lincoln-portland",
                             GroupName = "PCN Lincoln Portland",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2504,6 +2533,7 @@ namespace GroupService.Repo.Migrations
                             Id = -22,
                             GroupKey = "hms-sandbox",
                             GroupName = "Sandbox",
+                            GroupType = (byte)2,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = true
@@ -2514,6 +2544,7 @@ namespace GroupService.Repo.Migrations
                             GeographicName = "Cardiff & the Vale",
                             GroupKey = "ageconnects-cardiff",
                             GroupName = "Age Connects Cardiff & the Vale",
+                            GroupType = (byte)1,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2524,6 +2555,7 @@ namespace GroupService.Repo.Migrations
                             GeographicName = "The Meadows",
                             GroupKey = "meadows-community-helpers",
                             GroupName = "Meadows Community Helpers",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
@@ -2533,6 +2565,7 @@ namespace GroupService.Repo.Migrations
                             Id = -25,
                             GroupKey = "mansfield-cvs",
                             GroupName = "Mansfield CVS",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2542,6 +2575,7 @@ namespace GroupService.Repo.Migrations
                             Id = -26,
                             GroupKey = "mansfield-wickes",
                             GroupName = "Mansfield (Wickes Site)",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -25,
                             ShiftsEnabled = true,
@@ -2552,6 +2586,7 @@ namespace GroupService.Repo.Migrations
                             Id = -27,
                             GroupKey = "gamston-community-hall",
                             GroupName = "Gamston Community Hall",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -25,
                             ShiftsEnabled = true,
@@ -2562,6 +2597,7 @@ namespace GroupService.Repo.Migrations
                             Id = -28,
                             GroupKey = "richard-herrod-centre",
                             GroupName = "Richard Herrod Centre",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -25,
                             ShiftsEnabled = true,
@@ -2572,6 +2608,7 @@ namespace GroupService.Repo.Migrations
                             Id = -29,
                             GroupKey = "kings-meadow-campus",
                             GroupName = "King's Meadow Campus",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -25,
                             ShiftsEnabled = true,
@@ -2582,6 +2619,7 @@ namespace GroupService.Repo.Migrations
                             Id = -30,
                             GroupKey = "forest-recreation-ground",
                             GroupName = "Forest Recreation Ground",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -25,
                             ShiftsEnabled = true,
@@ -2593,6 +2631,7 @@ namespace GroupService.Repo.Migrations
                             GeographicName = "Southwell or surrounding areas",
                             GroupKey = "southwell",
                             GroupName = "Southwell Torpedos",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true

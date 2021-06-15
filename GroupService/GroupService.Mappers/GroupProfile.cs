@@ -9,7 +9,8 @@ namespace GroupService.Mappers
         public GroupProfile()
         {
             CreateMap<Repo.EntityFramework.Entities.Group, HelpMyStreet.Utils.Models.Group>()
-                .ForMember(x => x.GroupId, x => x.MapFrom(m => m.Id));
+                .ForMember(x => x.GroupId, x => x.MapFrom(m => m.Id))
+                .ForMember(x => x.GroupType, x => x.MapFrom(m => (GroupTypes) m.GroupType));
         }
     }
 }
