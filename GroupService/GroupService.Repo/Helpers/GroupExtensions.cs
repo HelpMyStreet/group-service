@@ -20,7 +20,7 @@ namespace GroupService.Repo.Helpers
                 ShiftsEnabled = false,
                 TasksEnabled = true,
                 HomepageEnabled = false,
-                GroupType = (byte) GroupTypes.National
+                GroupType = (byte) GroupTypes.HelpMyStreet
             });
 
             entity.HasData(new Group

@@ -33,7 +33,6 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>For the Love of Scrubs"));
             config.Add(new KeyValuePair<string, string>("GroupPS", ""));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "false"));
             return config;
         }
 
@@ -46,7 +45,6 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Age UK Lincoln & South Lincolnshire"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:volunteering@ageuklsl.org.uk\">volunteering@ageuklsl.org.uk</a>."));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "false"));
             return config;
         }
 
@@ -67,7 +65,6 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("GroupContent", $""));
             config.Add(new KeyValuePair<string, string>("GroupSignature", signature));
             config.Add(new KeyValuePair<string, string>("GroupPS", ""));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "false"));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", showGroupLogo.ToString()));
             return config;
         }
@@ -79,7 +76,6 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Healthy London Partnership"));
             config.Add(new KeyValuePair<string, string>("GroupPS", ""));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "false"));
             return config;
         }
 
@@ -89,7 +85,6 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("GroupContent", $"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help."));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Tankersley & Pilley Community Helpers"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:tankersley@helpmystreet.org\">tankersley@helpmystreet.org</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));
             return config;
         }
 
@@ -99,18 +94,16 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("GroupContent", $"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help."));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Ruddington Community Response Team"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:ruddington@helpmystreet.org\">ruddington@helpmystreet.org</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));
             return config;
         }
 
         private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_AgeUKWirral()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
-            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href=\"mailto:volunteers@ageukwirral.org.uk>volunteers@ageukwirral.org.uk</a>.</p>" +
+            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to do a couple of checks. You will need to verify your ID - which you can do in just a couple of minutes online - and register a DBS check with us. If you’re having trouble verifying your ID or need to register a DBS check email <a href=\"mailto:volunteers@ageukwirral.org.uk\">volunteers@ageukwirral.org.uk</a>.</p>" +
                 $"<p>For some activities we will also need a DBS check. Please email us on the email address above to request or register your DBS check.</p>"));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Age UK Wirral"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:ruddington@helpmystreet.org\">ruddington@helpmystreet.org</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "false"));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
             return config;
         }
@@ -121,18 +114,16 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p>"));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Balderton Community Support"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:baldertoncs@helpmystreet.org\">baldertoncs@helpmystreet.org</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));
             return config;
         }
 
         private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_AgeUKNorthWest()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
-            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href=\"mailto:contactus@ageuknorthwestkent.org.uk>contactus@ageuknorthwestkent.org.uk</a>.</p>" +
+            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href=\"mailto:contactus@ageuknorthwestkent.org.uk\">contactus@ageuknorthwestkent.org.uk</a>.</p>" +
                 $"<p>For some activities we will also need a DBS check. Please email us on the email address above to request or register your DBS check.</p>"));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Age UK North West Kent"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:contactus@ageuknorthwestkent.org.uk\">contactus@ageuknorthwestkent.org.uk</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
             return config;
         }
@@ -140,11 +131,10 @@ namespace GroupService.Repo.Helpers
         private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_NorthMuskham()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
-            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href=\"mailto:contactus@ageuknorthwestkent.org.uk>contactus@ageuknorthwestkent.org.uk</a>.</p>" +
+            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p>" +
                 $"<p>For some activities we will also need a DBS check. Please email us on the email address above to request or register your DBS check.</p>"));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>North Muskham Community Support"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:northmuskham@helpmystreet.org.\">northmuskham@helpmystreet.org</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));
             return config;
         }
 
@@ -155,7 +145,6 @@ namespace GroupService.Repo.Helpers
                 $"<p>For some activities we will also need a DBS check. Please email us on the email address above to request or register your DBS check.</p>"));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Age UK South Kent Coast"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:contactus@ageukskc.org.uk.\">contactus@ageukskc.org.uk</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
             return config;
         }
@@ -166,7 +155,6 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("GroupContent", $""));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>The Lincolnshire Volunteers Team"));
             config.Add(new KeyValuePair<string, string>("GroupPS", ""));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "false"));
             return config;
         }
 
@@ -175,9 +163,8 @@ namespace GroupService.Repo.Helpers
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
             config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href=\"mailto:volunteering@ageukfaversham.org.uk\">volunteering@ageukfaversham.org.uk</a>.</p>" +
                 $"<p>For some activities we will also need a DBS check. Please email us on the email address above to request or register your DBS check.</p>"));
-            config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Age UK South Kent Coast"));
+            config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Age UK Faversham & Sittingbourne"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:volunteering@ageukfaversham.org.uk.\">volunteering@ageukfaversham.org.uk</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
             return config;
         }
@@ -186,10 +173,9 @@ namespace GroupService.Repo.Helpers
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
             config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p>" +
-                $"<p>For some roles, we may also require additional checks or training – we will let you know if any additional checks are needed before accept a request.</p>"));
+                $"<p>For some roles, we may also require additional checks or training – we will let you know if any additional checks are needed before you accept a request.</p>"));
             config.Add(new KeyValuePair<string, string>("GroupSignature", ""));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:contact@helpmystreet.org\">contact@helpmystreet.org</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "false"));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
             return config;
         }
@@ -201,7 +187,6 @@ namespace GroupService.Repo.Helpers
                 $"<p>We also ask all volunteers to complete our volunteer induction. This is a short web-session which gives us a chance to run through our policies and procedures. It also gives you a chance to meet other volunteers and ask any questions. We will contact you with the next available date when we receive your references. We may also require a DBS check; we’ll be in touch with more information about this if required.</p>"));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Age Connects Cardiff & the Vale"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:info@ageconnectscardiff.org.uk\">info@ageconnectscardiff.org.uk</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "false"));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
             return config;
         }
@@ -212,7 +197,6 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p>"));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>The Meadows Community Helpers"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:meadows-community-helpers@helpmystreet.org\">meadows-community-helpers@helpmystreet.org</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
             return config;
         }
@@ -224,7 +208,6 @@ namespace GroupService.Repo.Helpers
                 $"<p>Please read the public documents found on our website (<a href=\"https://www.thetorpedos.org/publicdocuments\">here</a>) and drop us an email at <a href=\"mailto:info@thetorpedos.org\">info@thetorpedos.org</a> to confirm you’ve read and agree to our policies and volunteer agreement.</p>"));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Southwell Torpedos"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:info@thetorpedos.org\">info@thetorpedos.org</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupRequestFormLink", "true"));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
             return config;
         }
