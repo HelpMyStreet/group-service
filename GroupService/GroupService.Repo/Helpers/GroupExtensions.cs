@@ -19,7 +19,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "Generic",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = false
+                HomepageEnabled = false,
+                GroupType = (byte) GroupTypes.National
             });
 
             entity.HasData(new Group
@@ -29,7 +30,8 @@ namespace GroupService.Repo.Helpers
                 GroupKey = "ftlos",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
-                HomepageEnabled = true
+                HomepageEnabled = true,
+                GroupType = (byte)GroupTypes.National
             });
 
             entity.HasData(new Group
