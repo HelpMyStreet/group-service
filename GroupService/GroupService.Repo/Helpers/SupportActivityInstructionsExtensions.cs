@@ -1686,7 +1686,7 @@ namespace GroupService.Repo.Helpers
                     }
                 },
                 Close = $"If for any reason you can't complete a shift please let us know as soon as possible by clicking “Can’t Do” on the accepted request. " +
-                $"On rare occasions we may need to cancela shift at short notice, where this is the case we will update you by email and endeavour " +
+                $"On rare occasions we may need to cancel a shift at short notice, where this is the case we will update you by email and endeavour " +
                 $"to contact you using the details provided in your profile."
             };
         }
