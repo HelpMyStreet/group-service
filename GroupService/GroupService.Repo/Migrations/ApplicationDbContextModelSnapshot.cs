@@ -5733,7 +5733,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                     {
                         GroupId = -1,
                         Source = "face-masks",
-                        RegistrationFormVari    ant = (byte)4,
+                        RegistrationFormVariant = (byte)4,
                         TargetGroups = (byte)5
                     },
                     new
