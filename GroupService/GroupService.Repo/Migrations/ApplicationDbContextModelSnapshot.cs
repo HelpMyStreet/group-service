@@ -2708,6 +2708,7 @@ namespace GroupService.Repo.Migrations
                             Id = -32,
                             GroupKey = "apex-pcn-bank-staff",
                             GroupName = "APEX PCN Bank Staff",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2788,7 +2789,7 @@ namespace GroupService.Repo.Migrations
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."                            
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -3005,7 +3006,7 @@ namespace GroupService.Repo.Migrations
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
                             WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                       },
+                        },
                         new
                         {
                             GroupId = -8,
@@ -4135,7 +4136,7 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -14,
                             SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
+                            SupportActivityInstructionsId = (short)55
                         },
                         new
                         {
