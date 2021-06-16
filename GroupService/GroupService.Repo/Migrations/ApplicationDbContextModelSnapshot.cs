@@ -3352,7 +3352,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -20,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
                         },
                         new
                         {

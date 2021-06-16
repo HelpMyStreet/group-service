@@ -234,7 +234,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.StamfordPCN, GetWelcomeEmailConfiguration_Default(true));
             Populate(entity, Groups.SpilsbyPCN, GetWelcomeEmailConfiguration_Default());
             Populate(entity, Groups.BostonPCN, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.LincolnPCN, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.LincolnPCN, GetWelcomeEmailConfiguration_Default(true));
             Populate(entity, Groups.LincolnPortlandPCN, GetWelcomeEmailConfiguration_Default(true));
             Populate(entity, Groups.Sandbox, GetWelcomeEmailConfiguration_Sandbox());
             Populate(entity, Groups.AgeConnectsCardiff, GetWelcomeEmailConfiguration_AgeConnectsCardiff());
