@@ -2702,6 +2702,15 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
                             TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -32,
+                            GroupKey = "apex-pcn-bank-staff",
+                            GroupName = "APEX PCN Bank Staff",
+                            HomepageEnabled = true,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         });
                 });
 
@@ -2767,9 +2776,7 @@ namespace GroupService.Repo.Migrations
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2781,9 +2788,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."                            
                         },
                         new
                         {
@@ -2795,9 +2800,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2809,9 +2812,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2823,9 +2824,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2837,9 +2836,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2851,9 +2848,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2865,9 +2860,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2879,9 +2872,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2893,9 +2884,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2907,9 +2896,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2921,9 +2908,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2935,9 +2920,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2949,9 +2932,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2963,9 +2944,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2977,9 +2956,19 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Complete online",
                             HowToAchieve_CTA_Destination = "/account?next=verify",
                             Name = "Yoti ID Verification",
-                            WhatIsThis = @"Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified.
-
-Volunteer admins cannot edit this credential."
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
                         },
                         new
                         {
@@ -2991,9 +2980,7 @@ Volunteer admins cannot edit this credential."
                             HowToAchieve = "Email Age UK Wirral to request or register your DBS check at mailto:volunteers@ageukwirral.org.uk",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
@@ -3005,9 +2992,7 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Wirral to find out how they can check your ID at mailto:volunteers@ageukwirral.org.uk",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {
@@ -3019,10 +3004,8 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Lincoln & South Lincolnshire to find out how they can check your ID at mailto:volunteering@ageuklsl.org.uk",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                       },
                         new
                         {
                             GroupId = -8,
@@ -3033,9 +3016,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve = "Unfortunately manual ID checks are not available right now, please use Yoti to verify you identity and start volunteering.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {
@@ -3047,9 +3028,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve = "Please contact North Muskham Community Support to find out more about our manual ID check by emailing mailto:northmuskham@helpmystreet.org",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {
@@ -3061,9 +3040,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve = "Email Age UK North West Kent to request or register your DBS check at mailto:contactus@ageuknorthwestkent.org.uk",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
@@ -3075,9 +3052,7 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             HowToAchieve = "If you’re unable to verify with Yoti, email Age UK North West Kent to find out how they can check your ID at mailto:contactus@ageuknorthwestkent.org.uk",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {
@@ -3089,9 +3064,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve = "Email Age UK South Kent Coast to request or register your DBS check at mailto:volunteering@ageukskc.org.uk",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
@@ -3103,9 +3076,7 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             HowToAchieve = "If you’re unable to verify with Yoti, email Age UK South Kent Coast to find out how they can check your ID at mailto:volunteering@ageukskc.org.uk",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {
@@ -3117,9 +3088,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve = "Email Age UK Faversham and Sittingbourne to request or register your DBS check at mailto:volunteering@ageukfaversham.org.uk",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
@@ -3131,9 +3100,7 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Faversham and Sittingbourne to find out how they can check your ID at mailto:volunteering@ageukfaversham.org.uk",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {
@@ -3145,9 +3112,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve = "If you’re unable to verify with Yoti, email your group admins to find out how they can check your ID",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {
@@ -3159,9 +3124,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve = "Email your group admins to request or register your DBS check",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
@@ -3185,9 +3148,7 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {
@@ -3223,9 +3184,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a DBS check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
-                            WhatIsThis = @"Use this credential to record a completed DBS (Disclosure and Barring Service) check.
-
-Volunteer admins should follow internal processes for logging a DBS check."
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
                         },
                         new
                         {
@@ -3249,9 +3208,7 @@ Volunteer admins should follow internal processes for logging a DBS check."
                             HowToAchieve = "Email Sam Kelly on mailto:sam@bridgescommunitytrust.org.uk to arrange a manual ID check at The One Stop Shop.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {
@@ -3263,9 +3220,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve = "If you’re unable to verify with Yoti, please email mailto:jacky.huson@btinternet.com to request a manual ID check. You will also need to join our group from our <a href=\"/southwell\">HelpMyStreet landing page</a> if you haven’t already.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
-                            WhatIsThis = @"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. 
-
-Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {
@@ -3278,6 +3233,30 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             HowToAchieve_CTA_Destination = "",
                             Name = "Volunteer Agreement",
                             WhatIsThis = "Use this credential to certify that a volunteer has accepted the Southwell Torpedos Volunteer Agreement. Volunteer admins should follow internal processes for manually verifying this credential."
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "If you’re unable to verify with Yoti, please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            CredentialId = 8,
+                            CredentialTypeId = (byte)3,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = " Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net, including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes on immunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Vaccinator Training",
+                            WhatIsThis = "Use this credential to certify that the user meets the essential criteria for a bank staff vaccinator. Once you have certified this credential users will be able to book onto shifts."
                         });
                 });
 
@@ -3568,6 +3547,11 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -30,
                             LocationId = -15
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            LocationId = -9
                         });
                 });
 
@@ -3675,6 +3659,12 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -4,
+                            MaxVolunteer = 2147483647,
+                            NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -32,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         });
@@ -4145,7 +4135,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -14,
                             SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)55
+                            SupportActivityInstructionsId = (short)22
                         },
                         new
                         {
@@ -4396,6 +4386,18 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -31,
+                            SupportActivityId = 11,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            SupportActivityId = 32,
+                            SupportActivityInstructionsId = (short)56
+                        },
+                        new
+                        {
+                            GroupId = -32,
                             SupportActivityId = 11,
                             SupportActivityInstructionsId = (short)2
                         });
@@ -5611,6 +5613,22 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             DisplayOrder = (byte)5,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)16,
+                            SupportActivityId = 32,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Covering bank staff vaccinator shifts (this is a paid role)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)16,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Please notify me about any other roles (including unpaid volunteer roles)"
                         });
                 });
 
@@ -5629,6 +5647,10 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         .HasColumnName("RegistrationFormVariant")
                         .HasColumnType("tinyint");
 
+                    b.Property<byte>("TargetGroups")
+                        .HasColumnName("TargetGroups")
+                        .HasColumnType("tinyint");
+
                     b.HasKey("GroupId", "Source");
 
                     b.ToTable("RegistrationJourney","Website");
@@ -5638,109 +5660,134 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -1,
                             Source = "",
-                            RegistrationFormVariant = (byte)0
+                            RegistrationFormVariant = (byte)0,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -1,
                             Source = "face-masks",
-                            RegistrationFormVariant = (byte)4
+                            RegistrationFormVariant = (byte)4,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -2,
                             Source = "",
-                            RegistrationFormVariant = (byte)2
+                            RegistrationFormVariant = (byte)2,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -3,
                             Source = "",
-                            RegistrationFormVariant = (byte)3
+                            RegistrationFormVariant = (byte)3,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -4,
                             Source = "",
-                            RegistrationFormVariant = (byte)1
+                            RegistrationFormVariant = (byte)1,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -5,
                             Source = "",
-                            RegistrationFormVariant = (byte)0
+                            RegistrationFormVariant = (byte)0,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -6,
                             Source = "",
-                            RegistrationFormVariant = (byte)11
+                            RegistrationFormVariant = (byte)11,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -7,
                             Source = "",
-                            RegistrationFormVariant = (byte)5
+                            RegistrationFormVariant = (byte)5,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -8,
                             Source = "",
-                            RegistrationFormVariant = (byte)6
+                            RegistrationFormVariant = (byte)6,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -9,
                             Source = "",
-                            RegistrationFormVariant = (byte)7
+                            RegistrationFormVariant = (byte)7,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -10,
                             Source = "",
-                            RegistrationFormVariant = (byte)6
+                            RegistrationFormVariant = (byte)6,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -11,
                             Source = "",
-                            RegistrationFormVariant = (byte)8
+                            RegistrationFormVariant = (byte)8,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -13,
                             Source = "",
-                            RegistrationFormVariant = (byte)9
+                            RegistrationFormVariant = (byte)9,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -12,
                             Source = "",
-                            RegistrationFormVariant = (byte)10
+                            RegistrationFormVariant = (byte)10,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -23,
                             Source = "",
-                            RegistrationFormVariant = (byte)12
+                            RegistrationFormVariant = (byte)12,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -24,
                             Source = "",
-                            RegistrationFormVariant = (byte)13
+                            RegistrationFormVariant = (byte)13,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -25,
                             Source = "",
-                            RegistrationFormVariant = (byte)14
+                            RegistrationFormVariant = (byte)14,
+                            TargetGroups = (byte)5
                         },
                         new
                         {
                             GroupId = -31,
                             Source = "",
-                            RegistrationFormVariant = (byte)15
+                            RegistrationFormVariant = (byte)15,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            Source = "",
+                            RegistrationFormVariant = (byte)16,
+                            TargetGroups = (byte)0
                         });
                 });
 
@@ -6185,6 +6232,17 @@ Volunteer admins should follow internal processes for manually verifying a volun
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)26,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)0
                         });
                 });
 
@@ -6406,6 +6464,19 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         },
                         new
                         {
+                            GroupId = -32,
+                            AddressLine1 = "Ruston Sports & Social Club",
+                            AddressLine2 = "Newark Road",
+                            AddressLine3 = "",
+                            EmailAddress = "g.burroughs@nhs.net",
+                            FirstName = "Gary",
+                            LastName = "Burroughs",
+                            Locality = "Lincoln",
+                            OtherPhone = "07340 066491",
+                            Postcode = "LN6 8RN"
+                        },
+                        new
+                        {
                             GroupId = -21,
                             AddressLine1 = "Portland Medical Practice",
                             AddressLine2 = "60 Portland St",
@@ -6580,6 +6651,11 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             GroupId = -31,
+                            AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -32,
                             AllowAutonomousJoinersAndLeavers = true
                         });
                 });
@@ -7032,6 +7108,11 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             SupportActivityInstructionsId = (short)55,
                             Instructions = "{\"SupportActivityInstructions\":55,\"ActivityDetails\":\"Vaccination programme support volunteers are needed to help things run smoothly at local COVID-19 vaccination centres. Duties may vary by location and could include a range of indoor or outdoor activities, such as: helping patients find their way around the vaccination centre, providing assistance and reassurance to patients while they are on site, general domestic duties (e.g. wiping down furniture and restocking sanitisation stations). You do not need a clinical background or any specialist skills to accept this role and basic training will be provided on the day.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Take a look at the request details for more information about what you may be asked to do on the day. Volunteers may also be asked to participate in regular lateral flow testing, you can find more information [here](/pdf/east_lindsey/lateral-flow-testing-for-vaccination-support-volunteers.pdf).\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab but searching for shifts with the status “Done”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)56,
+                            Instructions = "{\"SupportActivityInstructions\":56,\"ActivityDetails\":\"This is a paid role. Registered vaccinators are required for the local COVID-19 vaccination site at Ruston Sports and Social Club, Lincoln. Patients from all five APEX PCN member practices attend the site which has a current footfall in excess of 1301 patients per day. We run two four - hour shifts per day. Vaccinators are welcome to book onto a morning and an afternoon shift on the same day. Before you first shift you will be offered a full induction supported by the centre manager, current vaccinators and advanced practitioners.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Accept the shift\",\"Detail\":\"To book onto a shift simply click the green button below. We run two shifts per day and welcome staff wishing to book onto both shifts. You will find all our open shifts in 'Open Shifts'.\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"You'll receive a reminder email the day before your shift. Once you've completed a shift it will be marked as complete automatically, but you can still view a completed shift by selecting shifts with the status 'Done' in 'My Shifts'.\"}],\"Close\":\"If for any reason you can't complete a shift please let us know as soon as possible by clicking “Can’t Do” on the accepted request. On rare occasions we may need to cancel a shift at short notice, where this is the case we will update you by email and endeavour to contact you using the details provided in your profile.\"}"
                         });
                 });
 
