@@ -1573,6 +1573,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 15,
                             Name = "Southwell"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "ApexBankStaff"
                         });
                 });
 
@@ -1714,6 +1719,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 25,
                             Name = "Soutwell_Public"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Name = "ApexBankStaff_RequestSubmitter"
                         });
                 });
 
@@ -1918,6 +1928,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 31,
                             Name = "Covid19Help"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Name = "BankStaffVaccinator"
                         });
                 });
 
@@ -2209,6 +2224,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 55,
                             Name = "EastLindsey_VaccineSupport"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Name = "APEXBank_BankStaffVaccinator"
                         });
                 });
 
@@ -3352,7 +3372,7 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         {
                             GroupId = -20,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
                         },
                         new
                         {
@@ -6664,6 +6684,11 @@ Volunteer admins should follow internal processes for manually verifying a volun
                         new
                         {
                             SupportActivityId = 31,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 32,
                             AutoSignUpWhenOtherSelected = true
                         });
                 });
