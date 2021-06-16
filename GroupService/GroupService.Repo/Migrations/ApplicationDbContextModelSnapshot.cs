@@ -1247,8 +1247,7 @@ namespace GroupService.Repo.Migrations
                         Id = 328,
                         GroupId = -32,
                         CredentialId = 8
-
-                    );
+                    });
             });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumCommunicationJobType", b =>
