@@ -1129,6 +1129,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 32,
+                            GroupId = -32,
+                            CredentialId = -1
+                        },
+                        new
+                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1231,6 +1237,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 32,
+                            GroupId = -32,
+                            CredentialId = 1
+                        },
+                        new
+                        {
                             Id = 142,
                             GroupId = -22,
                             CredentialId = 3
@@ -1258,6 +1270,12 @@ namespace GroupService.Repo.Migrations
                             Id = 317,
                             GroupId = -31,
                             CredentialId = 7
+                        },
+                        new
+                        {
+                            Id = 328,
+                            GroupId = -32,
+                            CredentialId = 8
                         });
                 });
 
