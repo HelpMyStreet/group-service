@@ -1658,6 +1658,39 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_ApexBank_StaffVaccinator()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator,
+                ActivityDetails = $"This is a paid role. Registered vaccinators are required for the local COVID-19 vaccination site at " +
+                $"Ruston Sports and Social Club, Lincoln. Patients from all five APEX PCN member practices attend the site which has a " +
+                $"current footfall in excess of 1301 patients per day. " +
+                $"We run two four - hour shifts per day. Vaccinators are welcome to book onto a morning and an afternoon shift on the same day. " +
+                $"Before you first shift you will be offered a full induction supported by the centre manager, current vaccinators and advanced practitioners.",
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Accept the shift",
+                        Detail = $"To book onto a shift simply click the green button below. We run two shifts per day " +
+                        $"and welcome staff wishing to book onto both shifts. You will find all our open shifts in 'Open Shifts'.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Attending your shift",
+                        Detail = $"You'll receive a reminder email the day before your shift. Once you've completed a shift " +
+                        $"it will be marked as complete automatically, but you can still view a completed shift by selecting " +
+                        $"shifts with the status 'Done' in 'My Shifts'."
+                    }
+                },
+                Close = $"If for any reason you can't complete a shift please let us know as soon as possible by clicking “Can’t Do” on the accepted request. " +
+                $"On rare occasions we may need to cancel a shift at short notice, where this is the case we will update you by email and endeavour " +
+                $"to contact you using the details provided in your profile."
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -1989,6 +2022,12 @@ namespace GroupService.Repo.Helpers
                 SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.EastLindsey_VaccineSupport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_EastLindsey_VaccineSupport())
             });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_ApexBank_StaffVaccinator())
+            });
         }
 
 
@@ -2137,6 +2176,10 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.Southwell, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
             Populate(entity, Groups.Southwell, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
             Populate(entity, Groups.Southwell, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+
+            Populate(entity, Groups.ApexBankStaff, SupportActivities.BankStaffVaccinator, SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator);
+            Populate(entity, Groups.ApexBankStaff, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+
         }
     }
 }

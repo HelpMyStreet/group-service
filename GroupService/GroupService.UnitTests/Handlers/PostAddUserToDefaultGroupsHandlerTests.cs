@@ -28,6 +28,7 @@ namespace GroupService.UnitTests
         private int _groupId;
         private bool _roleAssigned = true;
         private GetUserByIDResponse _getUserByIDResponse;
+        private bool _addToGenericGroup = true;
 
         [SetUp]
         public void Setup()
@@ -48,6 +49,9 @@ namespace GroupService.UnitTests
                 .Returns(() => _groupId);
 
             _repository.Setup(x => x.AddUserRoleAudit(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<int>(), It.IsAny<GroupAction>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()));
+
+            _repository.Setup(x => x.AddToGenericGroup(It.IsAny<int>(), It.IsAny<string>()))
+                .ReturnsAsync(() => _addToGenericGroup);
         }
 
         private void SetUpUserService()
@@ -74,6 +78,7 @@ namespace GroupService.UnitTests
         [Test]
         public void WhenUserIsFaceMaskAndReferringGroupIDIsGeneric_ReturnSuccess()
         {
+            _addToGenericGroup = true;
             var result = _classUnderTest.Handle(new PostAddUserToDefaultGroupsRequest()
             {
                 UserID = 1
@@ -87,6 +92,7 @@ namespace GroupService.UnitTests
         [Test]
         public void WhenUserIsNotFaceMaskAndReferringGroupIDIsGeneric_ReturnSuccess()
         {
+            _addToGenericGroup = true;
             _getUserByIDResponse = new GetUserByIDResponse()
             {
                 User = new HelpMyStreet.Utils.Models.User()
@@ -134,8 +140,33 @@ namespace GroupService.UnitTests
         }
 
         [Test]
+        public void WhenAddingToApexDoNotAddToGenericGroup_ReturnSuccess()
+        {
+            _addToGenericGroup = false;
+            _getUserByIDResponse = new GetUserByIDResponse()
+            {
+                User = new HelpMyStreet.Utils.Models.User()
+                {
+                    ID = 1,
+                    ReferringGroupId = -32,
+                    SupportActivities = new List<SupportActivities>() { SupportActivities.BankStaffVaccinator }
+                }
+            };
+
+            var result = _classUnderTest.Handle(new PostAddUserToDefaultGroupsRequest()
+            {
+                UserID = 1,
+            }, CancellationToken.None);
+            Assert.AreEqual(true, result.Result.Success);
+            _repository.Verify(x => x.AssignRoleAsync(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Exactly(1));
+            _repository.Verify(x => x.AddUserRoleAudit(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<int>(), It.IsAny<GroupAction>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()), Times.Exactly(1));
+            _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
+        }
+
+        [Test]
         public void WhenAssignRoleFails_ReturnFailAndAudits()
         {
+            _addToGenericGroup = true;
             _roleAssigned = false;
             _getUserByIDResponse = new GetUserByIDResponse()
             {

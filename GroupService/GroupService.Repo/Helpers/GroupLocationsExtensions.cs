@@ -92,6 +92,12 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.ForestRecreationGround,
                 LocationId = (int)Location.ForestRecreationGround
             });
+
+            entity.HasData(new GroupLocation
+            {
+                GroupId = (int)Groups.ApexBankStaff,
+                LocationId = (int)Location.RustonsSportsAndSocialClubLincoln
+            });
         }
     }
 }
