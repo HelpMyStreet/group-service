@@ -9,6 +9,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public int GroupId { get; set; }
         public string Source { get; set; }
         public byte RegistrationFormVariant { get; set; }
+        public byte TargetGroups { get; set; }
 
         public virtual Group Group { get; set; }
     }

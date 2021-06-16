@@ -92,6 +92,11 @@ namespace GroupService.Repo.Helpers
                 AllowAutonomousJoinersAndLeavers = true
             });
 
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.ApexBankStaff,
+                AllowAutonomousJoinersAndLeavers = true
+            });
 
         }
     }
