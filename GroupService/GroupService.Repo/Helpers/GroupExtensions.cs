@@ -32,7 +32,8 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GroupType = (byte)GroupTypes.National,
-                FriendlyName = "For the Love of Scrubs"
+                FriendlyName = "For the Love of Scrubs",
+                ShortName = "For the Love of Scrubs"
             });
 
             entity.HasData(new Group
@@ -45,7 +46,8 @@ namespace GroupService.Repo.Helpers
                 HomepageEnabled = true,
                 GroupType = (byte)GroupTypes.Regional,
                 FriendlyName = "Age UK Lincoln & South Lincolnshire",
-                LinkURL = "/ageuklsl"
+                LinkURL = "/ageuklsl",
+                ShortName = "Age UK LSL"
             });
 
             entity.HasData(new Group
@@ -58,7 +60,8 @@ namespace GroupService.Repo.Helpers
                 HomepageEnabled = true,
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Healthy London Partnership",
-                LinkURL = "/healthylondonpartnership"
+                LinkURL = "/healthylondonpartnership",
+                ShortName = "Healthy London"
             });
 
             entity.HasData(new Group
@@ -72,7 +75,8 @@ namespace GroupService.Repo.Helpers
                 GeographicName = "Tankersley or Pilley",
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Tankersley & Pilley Community Helpers",
-                LinkURL = "/tankersley"
+                LinkURL = "/tankersley",
+                ShortName = "Tankersley"
             });
 
             entity.HasData(new Group
@@ -86,7 +90,8 @@ namespace GroupService.Repo.Helpers
                 GeographicName = "Ruddington",
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Ruddington Community Response Team",
-                LinkURL = "/ruddington"
+                LinkURL = "/ruddington",
+                ShortName = "Ruddington"
             });
 
             entity.HasData(new Group
@@ -99,7 +104,8 @@ namespace GroupService.Repo.Helpers
                 HomepageEnabled = true,
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Age UK Wirral",
-                LinkURL = "/ageukwirral"
+                LinkURL = "/ageukwirral",
+                ShortName = "Age UK Wirral"
             });
 
             entity.HasData(new Group
@@ -113,7 +119,8 @@ namespace GroupService.Repo.Helpers
                 GeographicName = "Balderton",
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Balderton Community Support",
-                LinkURL = "/balderton"
+                LinkURL = "/balderton",
+                ShortName = "Balderton"
             });
 
             entity.HasData(new Group
@@ -127,7 +134,8 @@ namespace GroupService.Repo.Helpers
                 GeographicName = "North West Kent (Dartford, Swanley or Gravesend)",
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Age UK North West Kent",
-                LinkURL = "/northwestkent"
+                LinkURL = "/northwestkent",
+                ShortName = "Age UK NWK"
             });
 
             entity.HasData(new Group
@@ -141,7 +149,8 @@ namespace GroupService.Repo.Helpers
                 GeographicName = "North Muskham",
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "North Muskham Community Support",
-                LinkURL = "/north-muskham"
+                LinkURL = "/north-muskham",
+                ShortName = "Age UK Muskham"
             });
 
             entity.HasData(new Group
@@ -155,7 +164,8 @@ namespace GroupService.Repo.Helpers
                 GeographicName = "Deal or Folkestone",
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Age UK South Kent Coast",
-                LinkURL = "/southkentcoast"
+                LinkURL = "/southkentcoast",
+                ShortName = "Age UK SKC"
             });
 
             entity.HasData(new Group
@@ -169,7 +179,8 @@ namespace GroupService.Repo.Helpers
                 GeographicName = "Faversham or Sittingbourne",
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Age UK Faversham & Sittingbourne",
-                LinkURL = "/favershamandsittingbourne"
+                LinkURL = "/favershamandsittingbourne",
+                ShortName = "Age UK Faversham"
             });
 
             entity.HasData(new Group
@@ -182,7 +193,8 @@ namespace GroupService.Repo.Helpers
                 HomepageEnabled = true,
                 GroupType = (byte)GroupTypes.Regional,
                 FriendlyName = "Lincolnshire Volunteers",
-                LinkURL = "/lincolnshirevolunteers"
+                LinkURL = "/lincolnshirevolunteers",
+                ShortName = "Linc Volunteers"
             });
 
             entity.HasData(new Group
@@ -298,7 +310,8 @@ namespace GroupService.Repo.Helpers
                 GeographicName = "Cardiff & the Vale",
                 GroupType = (byte)GroupTypes.Regional,
                 FriendlyName = "Age Connects Cardiff & the Vale",
-                LinkURL = "/ageconnects-cardiff"
+                LinkURL = "/ageconnects-cardiff",
+                ShortName = "Age Connect Cardiff"
             });
 
             entity.HasData(new Group
@@ -312,7 +325,8 @@ namespace GroupService.Repo.Helpers
                 GeographicName = "The Meadows",
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Meadows Community Helpers",
-                LinkURL = "/meadows-community-helpers"
+                LinkURL = "/meadows-community-helpers",
+                ShortName = "Meadows"
             });
 
             entity.HasData(new Group
@@ -397,7 +411,8 @@ namespace GroupService.Repo.Helpers
                 GeographicName = "Southwell or surrounding areas",
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Southwell Torpedos",
-                LinkURL = "/southwell"
+                LinkURL = "/southwell",
+                ShortName = "Southwell"
             });
 
             entity.HasData(new Group
@@ -409,7 +424,8 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = false,
                 HomepageEnabled = true,
                 FriendlyName = "Apex PCN Bank Staff",
-                LinkURL = "/apexpcnbankstaff"
+                LinkURL = "/apexpcnbankstaff",
+                ShortName = "Apex PCN Bank Staff"
             });
         }
 
