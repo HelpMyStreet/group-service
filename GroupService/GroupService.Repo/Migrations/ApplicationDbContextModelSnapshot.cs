@@ -2332,6 +2332,9 @@ namespace GroupService.Repo.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("FriendlyName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("GeographicName")
                         .HasColumnType("nvarchar(max)");
 
@@ -2349,6 +2352,9 @@ namespace GroupService.Repo.Migrations
 
                     b.Property<bool>("HomepageEnabled")
                         .HasColumnType("bit");
+
+                    b.Property<string>("LinkURL")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ParentGroupId")
                         .HasColumnType("int");
@@ -3554,6 +3560,31 @@ namespace GroupService.Repo.Migrations
                             GroupId = -32,
                             LocationId = -9
                         });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupMapDetails", b =>
+                {
+                    b.Property<int>("GroupId")
+                        .HasColumnName("GroupID")
+                        .HasColumnType("int");
+
+                    b.Property<byte>("MapLocationId")
+                        .HasColumnName("MapLocationID")
+                        .HasColumnType("tinyint");
+
+                    b.Property<decimal>("Latitude")
+                        .HasColumnType("decimal(9, 6)");
+
+                    b.Property<decimal>("Longitude")
+                        .HasColumnType("decimal(9, 6)");
+
+                    b.Property<decimal>("ZoomLevel")
+                        .HasColumnType("decimal(9, 6)");
+
+                    b.HasKey("GroupId", "MapLocationId")
+                        .HasName("PK_GROUP_GROUP_MAP_DETAILS");
+
+                    b.ToTable("GroupMapDetails","Group");
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupNewRequestNotificationStrategy", b =>
@@ -7273,6 +7304,15 @@ namespace GroupService.Repo.Migrations
                         .WithMany("GroupLocation")
                         .HasForeignKey("GroupId")
                         .HasConstraintName("FK_GroupLocation_Group")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupMapDetails", b =>
+                {
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
+                        .WithMany("GroupMapDetails")
+                        .HasForeignKey("GroupId")
+                        .HasConstraintName("FK_GroupCredential_GroupMapDetails")
                         .IsRequired();
                 });
 
