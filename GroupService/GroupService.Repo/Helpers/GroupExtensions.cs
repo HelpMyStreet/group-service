@@ -31,7 +31,8 @@ namespace GroupService.Repo.Helpers
                 ShiftsEnabled = false,
                 TasksEnabled = true,
                 HomepageEnabled = true,
-                GroupType = (byte)GroupTypes.National
+                GroupType = (byte)GroupTypes.National,
+                FriendlyName = "For the Love of Scrubs"
             });
 
             entity.HasData(new Group
@@ -42,7 +43,9 @@ namespace GroupService.Repo.Helpers
                 ShiftsEnabled = false,
                 TasksEnabled = true,
                 HomepageEnabled = true,
-                GroupType = (byte)GroupTypes.Regional
+                GroupType = (byte)GroupTypes.Regional,
+                FriendlyName = "Age UK Lincoln & South Lincolnshire",
+                LinkURL = "/ageuklsl"
             });
 
             entity.HasData(new Group
@@ -53,7 +56,9 @@ namespace GroupService.Repo.Helpers
                 ShiftsEnabled = false,
                 TasksEnabled = true,
                 HomepageEnabled = true,
-                GroupType = (byte)GroupTypes.Local
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "Healthy London Partnership",
+                LinkURL = "/healthylondonpartnership"
             });
 
             entity.HasData(new Group
@@ -65,7 +70,9 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "Tankersley or Pilley",
-                GroupType = (byte)GroupTypes.Local
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "Tankersley & Pilley Community Helpers",
+                LinkURL = "/tankersley"
             });
 
             entity.HasData(new Group
@@ -77,7 +84,9 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "Ruddington",
-                GroupType = (byte)GroupTypes.Local
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "Ruddington Community Response Team",
+                LinkURL = "/ruddington"
             });
 
             entity.HasData(new Group
@@ -88,7 +97,9 @@ namespace GroupService.Repo.Helpers
                 ShiftsEnabled = false,
                 TasksEnabled = true,
                 HomepageEnabled = true,
-                GroupType = (byte)GroupTypes.Local
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "Age UK Wirral",
+                LinkURL = "/ageukwirral"
             });
 
             entity.HasData(new Group
@@ -100,7 +111,9 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "Balderton",
-                GroupType = (byte)GroupTypes.Local
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "Balderton Community Support",
+                LinkURL = "/balderton"
             });
 
             entity.HasData(new Group
@@ -112,7 +125,9 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "North West Kent (Dartford, Swanley or Gravesend)",
-                GroupType = (byte)GroupTypes.Local
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "Age UK North West Kent",
+                LinkURL = "/northwestkent"
             });
 
             entity.HasData(new Group
@@ -124,7 +139,9 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "North Muskham",
-                GroupType = (byte)GroupTypes.Local
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "North Muskham Community Support",
+                LinkURL = "/north-muskham"
             });
 
             entity.HasData(new Group
@@ -136,7 +153,9 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "Deal or Folkestone",
-                GroupType = (byte)GroupTypes.Local
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "Age UK South Kent Coast",
+                LinkURL = "/southkentcoast"
             });
 
             entity.HasData(new Group
@@ -148,7 +167,9 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "Faversham or Sittingbourne",
-                GroupType = (byte)GroupTypes.Local
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "Age UK Faversham & Sittingbourne",
+                LinkURL = "/favershamandsittingbourne"
             });
 
             entity.HasData(new Group
@@ -159,7 +180,9 @@ namespace GroupService.Repo.Helpers
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = true,
-                GroupType = (byte)GroupTypes.Regional
+                GroupType = (byte)GroupTypes.Regional,
+                FriendlyName = "Lincolnshire Volunteers",
+                LinkURL = "/lincolnshirevolunteers"
             });
 
             entity.HasData(new Group
@@ -273,7 +296,9 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "Cardiff & the Vale",
-                GroupType = (byte)GroupTypes.Regional
+                GroupType = (byte)GroupTypes.Regional,
+                FriendlyName = "Age Connects Cardiff & the Vale",
+                LinkURL = "/ageconnects-cardiff"
             });
 
             entity.HasData(new Group
@@ -285,7 +310,9 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "The Meadows",
-                GroupType = (byte)GroupTypes.Local
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "Meadows Community Helpers",
+                LinkURL = "/meadows-community-helpers"
             });
 
             entity.HasData(new Group
@@ -368,7 +395,21 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "Southwell or surrounding areas",
-                GroupType = (byte)GroupTypes.Local
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "Southwell Torpedos",
+                LinkURL = "/southwell"
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int) Groups.ApexBankStaff,
+                GroupName = "APEX PCN Bank Staff",
+                GroupKey = "apex-pcn-bank-staff",
+                ShiftsEnabled = true,
+                TasksEnabled = false,
+                HomepageEnabled = true,
+                FriendlyName = "Apex PCN Bank Staff",
+                LinkURL = "/apexpcnbankstaff"
             });
         }
 
@@ -378,7 +419,8 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.Generic,
                 Source = "",
-                RegistrationFormVariant = (byte) RegistrationFormVariant.Default
+                RegistrationFormVariant = (byte) RegistrationFormVariant.Default,
+                TargetGroups = (byte) TargetGroups.ThisGroupAndGenericGroup
 
             });
 
@@ -387,7 +429,8 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.Generic,
                 Source = "face-masks",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.FaceMasks
+                RegistrationFormVariant = (byte)RegistrationFormVariant.FaceMasks,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
 
@@ -395,112 +438,136 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.FTLOS,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.FtLOS
+                RegistrationFormVariant = (byte)RegistrationFormVariant.FtLOS,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.AgeUKLSL,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKLSL
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKLSL,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.HLP,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.HLP
+                RegistrationFormVariant = (byte)RegistrationFormVariant.HLP,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.Tankersley,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.Default
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Default,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.Ruddington,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.Ruddington
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Ruddington,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.AgeUKWirral,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKWirral
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKWirral,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.AgeUKNottsBalderton,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNottsBalderton
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNottsBalderton,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.AgeUKNorthWestKent,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNWK
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNWK,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.AgeUKNottsNorthMuskham,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNottsBalderton
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNottsBalderton,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.AgeUKSouthKentCoast,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKSKC
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKSKC,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKFandS
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKFandS,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.LincolnshireVolunteers,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.LincolnshireVolunteers
+                RegistrationFormVariant = (byte)RegistrationFormVariant.LincolnshireVolunteers,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.AgeConnectsCardiff,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeConnectsCardiff
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeConnectsCardiff,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.MeadowsCommunityHelpers,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.MeadowsCommunityHelpers
+                RegistrationFormVariant = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.MansfieldCVS,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.MansfieldCVS
+                RegistrationFormVariant = (byte)RegistrationFormVariant.MansfieldCVS,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.Southwell,
                 Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.Southwell
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Southwell,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.ApexBankStaff,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.ApexBankStaff,
+                TargetGroups = (byte)TargetGroups.ThisGroup
             });
         }
 
@@ -949,6 +1016,18 @@ namespace GroupService.Repo.Helpers
                 SuppressRecipientPersonalDetails = false
             });
 
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.ApexBankStaff,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.ApexBankStaff_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
+            });
+
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
@@ -1117,6 +1196,20 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestorDetails
             {
+                GroupId = (int)Groups.ApexBankStaff,
+                FirstName = "Gary",
+                LastName = "Burroughs",
+                OtherPhone = "07340 066491",
+                EmailAddress = "g.burroughs@nhs.net",
+                AddressLine1 = "Ruston Sports & Social Club",
+                AddressLine2 = "Newark Road",
+                AddressLine3 = "",
+                Locality = "Lincoln",
+                Postcode = "LN6 8RN"
+            });
+
+            entity.HasData(new RequestorDetails
+            {
                 GroupId = (int)Groups.LincolnPortlandPCN,
                 FirstName = "Lincoln Portland",//TODO Need to pass the correct details in
                 LastName = "PCN",//TODO Need to pass the correct details in
@@ -1147,6 +1240,228 @@ namespace GroupService.Repo.Helpers
                     Postcode = "NG18 1QA"
                 });
             }
+        }
+
+        public static void AddGroupMapDetails(this EntityTypeBuilder<GroupMapDetails> entity)
+        {
+            
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.HLP,
+                Latitude = 51.507602M,
+                Longitude = -0.127816M,
+                ZoomLevel = 10
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.Tankersley,
+                Latitude = 53.498113M,
+                Longitude = -1.488587M,
+                ZoomLevel = 14
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.Ruddington,
+                Latitude = 52.8925M,
+                Longitude = -1.150M,
+                ZoomLevel = 14.6M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.AgeUKLSL,
+                Latitude = 53.2304334M,
+                Longitude = -0.5435425M,
+                ZoomLevel = 9M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.AgeUKLSL,
+                Latitude = 52.95M,
+                Longitude = -0.2M,
+                ZoomLevel = 9M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.AgeUKWirral,
+                Latitude = 53.37M,
+                Longitude = -3.05M,
+                ZoomLevel = 9M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.AgeUKWirral,
+                Latitude = 53.37M,
+                Longitude = -3.05M,
+                ZoomLevel = 11.15M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                Latitude = 53.0561082M,
+                Longitude = -0.8M,
+                ZoomLevel = 12M
+            });
+
+            
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.AgeUKNottsBalderton,
+                Latitude = 53.0561082M,
+                Longitude = -0.8M,
+                ZoomLevel = 12M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
+                Latitude = 53.120254M,
+                Longitude = -0.811079M,
+                ZoomLevel = 12M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
+                Latitude = 53.120254M,
+                Longitude = -0.811079M,
+                ZoomLevel = 14M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                Latitude = 51.15670694376801M,
+                Longitude = 1.2906096124741184M,
+                ZoomLevel = 12M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.AgeUKSouthKentCoast,
+                Latitude = 51.15670694376801M,
+                Longitude = 1.2906096124741184M,
+                ZoomLevel = 11M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                Latitude = 51.32681418199929M,
+                Longitude = 0.8065864663737088M,
+                ZoomLevel = 12M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
+                Latitude = 51.32681418199929M,
+                Longitude = 0.8065864663737088M,
+                ZoomLevel = 12M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                Latitude = 51.40020276537333M,
+                Longitude = 0.2950217005371014M,
+                ZoomLevel = 11M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.AgeUKNorthWestKent,
+                Latitude = 51.40020276537333M,
+                Longitude = 0.2950217005371014M,
+                ZoomLevel = 12M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.LincolnshireVolunteers,
+                Latitude = 53.196498M,
+                Longitude = -0.574294M,
+                ZoomLevel = 9M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.LincolnshireVolunteers,
+                Latitude = 52.95M,
+                Longitude = -0.2M,
+                ZoomLevel = 9M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                Latitude = 51.5022198M,
+                Longitude = -3.2752615M,
+                ZoomLevel = 11M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                Latitude = 51.5022198M,
+                Longitude = -3.2752615M,
+                ZoomLevel = 11M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.MeadowsCommunityHelpers,
+                Latitude = 52.94107706186348M,
+                Longitude = -1.1435562260432748M,
+                ZoomLevel = 9M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.MeadowsCommunityHelpers,
+                Latitude = 52.94107706186348M,
+                Longitude = -1.1435562260432748M,
+                ZoomLevel = 14M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.Southwell,
+                Latitude = 53.0779128M,
+                Longitude = -0.973649M,
+                ZoomLevel = 13.5M
+            });
+            
         }
     }
 }

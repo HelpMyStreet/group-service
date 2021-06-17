@@ -4,12 +4,13 @@ using System.Text;
 
 namespace GroupService.Repo.EntityFramework.Entities
 {
-    public class RegistrationJourney
+    public class GroupMapDetails
     {
         public int GroupId { get; set; }
-        public string Source { get; set; }
-        public byte RegistrationFormVariant { get; set; }
-        public byte TargetGroups { get; set; }
+        public byte MapLocationId { get; set; }
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
+        public decimal ZoomLevel { get; set; }
 
         public virtual Group Group { get; set; }
     }

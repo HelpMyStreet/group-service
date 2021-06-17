@@ -220,7 +220,9 @@ namespace GroupService.Repo
 
         public HelpMyStreet.Utils.Models.Group GetGroupById(int groupId, CancellationToken cancellationToken)
         {
-            var group = _context.Group.FirstOrDefault(x => x.Id == groupId);
+            var group = _context.Group
+                .Include(x=> x.GroupMapDetails)
+                .FirstOrDefault(x => x.Id == groupId);
 
             if (group != null)
             {
@@ -660,6 +662,27 @@ namespace GroupService.Repo
             {
                 return new List<KeyValuePair<string, string>>();
             }
+        }
+
+        public async Task<bool> AddToGenericGroup(int groupId, string source)
+        {
+            var journey = _context.RegistrationJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == source);
+
+            if(journey==null)
+            {
+                throw new Exception($"Expected journey for groupId {groupId} and source {source}");
+            }
+
+            switch ((TargetGroups) journey.TargetGroups)
+            {
+                case TargetGroups.GenericGroup:
+                case TargetGroups.ThisGroupAndGenericGroup:
+                    return true;
+                default:
+                    return false;
+            }
+
+            throw new NotImplementedException();
         }
     }
 }

@@ -34,23 +34,41 @@ namespace GroupService.Handlers
         {
             bool success = false;
             int groupIdToBeUsedInGroupWelcomeEmail = GROUPID_GENERIC;
-
             var user = _userService.GetUserByID(request.UserID).Result;
-            if(user!=null)
+            bool addToGenericGroup = true;
+            if (user!=null)
             {
-                success = await AssignRole(GROUPID_GENERIC, request.UserID, cancellationToken);
-               
-                if (success)
+                bool sendGroupWelcomeEmail = false;
+                if (user.User.ReferringGroupId.HasValue)
                 {
-                    if (user.User.ReferringGroupId.HasValue)
-                    {
-                        success = await AssignRole(user.User.ReferringGroupId.Value, request.UserID, cancellationToken);
-                        if(success)
-                        {
-                            groupIdToBeUsedInGroupWelcomeEmail = user.User.ReferringGroupId.Value;
-                        }
-                    }
+                    addToGenericGroup = await _repository.AddToGenericGroup(user.User.ReferringGroupId.Value, user.User.Source);
 
+                    success = await AssignRole(user.User.ReferringGroupId.Value, request.UserID, cancellationToken);                    
+                    if (success)
+                    {
+                        groupIdToBeUsedInGroupWelcomeEmail = user.User.ReferringGroupId.Value;
+                        sendGroupWelcomeEmail = true;
+                    }
+                    else
+                    {
+                        return new PostAddUserToDefaultGroupsResponse()
+                        {
+                            Success = success
+                        };
+                    }
+                }
+
+                if(addToGenericGroup)
+                {
+                    success = await AssignRole(GROUPID_GENERIC, request.UserID, cancellationToken);
+                    if(!sendGroupWelcomeEmail && success)
+                    {
+                        sendGroupWelcomeEmail = true;
+                    }
+                }
+
+                if (sendGroupWelcomeEmail)
+                {
                     await _communicationService.RequestCommunication(new RequestCommunicationRequest()
                     {
                         CommunicationJob = new CommunicationJob() { CommunicationJobType = CommunicationJobTypes.GroupWelcome, },

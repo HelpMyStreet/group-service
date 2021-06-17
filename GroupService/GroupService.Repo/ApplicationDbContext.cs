@@ -49,6 +49,7 @@ namespace GroupService.Repo
         public virtual DbSet<RegistrationFormSupportActivity> RegistrationFormSupportActivity { get; set; }
         public virtual DbSet<SupportActivityConfiguration> SupportActivityConfiguration { get; set; }
         public virtual DbSet<GroupEmailConfiguration> GroupEmailConfiguration { get; set; }
+        public virtual DbSet<GroupMapDetails> GroupMapDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -261,6 +262,8 @@ namespace GroupService.Repo
                     .IsUnicode(false);
 
                 entity.Property(e => e.RegistrationFormVariant).HasColumnName("RegistrationFormVariant");
+
+                entity.Property(e => e.TargetGroups).HasColumnName("TargetGroups");
 
                 entity.HasOne(d => d.Group)
                     .WithMany(p => p.RegistrationJourney)
@@ -606,6 +609,32 @@ namespace GroupService.Repo
                     .HasConstraintName("FK_GroupEmailConfiguration_GroupID");
 
                 entity.PopulateGroupEmailConfiguration();
+            });
+
+            modelBuilder.Entity<GroupMapDetails>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId, e.MapLocationId })
+                    .HasName("PK_GROUP_GROUP_MAP_DETAILS");
+
+                entity.ToTable("GroupMapDetails", "Group");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.MapLocationId).HasColumnName("MapLocationID");
+
+                entity.Property(e => e.Latitude).HasColumnType("decimal(9, 6)");
+
+                entity.Property(e => e.Longitude).HasColumnType("decimal(9, 6)");
+
+                entity.Property(e => e.ZoomLevel).HasColumnType("decimal(9, 6)");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.GroupMapDetails)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GroupCredential_GroupMapDetails");
+
+                entity.AddGroupMapDetails();
             });
         }
     }
