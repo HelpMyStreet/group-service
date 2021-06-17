@@ -1244,7 +1244,7 @@ namespace GroupService.Repo.Helpers
 
         public static void AddGroupMapDetails(this EntityTypeBuilder<GroupMapDetails> entity)
         {
-            /*
+            
             entity.HasData(new GroupMapDetails
             {
                 MapLocationId = (byte)MapLocation.Landing,
@@ -1317,22 +1317,14 @@ namespace GroupService.Repo.Helpers
                 ZoomLevel = 12M
             });
 
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.AgeUKNottsBalderton,
-                Latitude = 53.0561082M,
-                Longitude = -0.8M,
-                ZoomLevel = 12M
-            });
-
+            
             entity.HasData(new GroupMapDetails
             {
                 MapLocationId = (byte)MapLocation.Landing,
                 GroupId = (int)Groups.AgeUKNottsBalderton,
                 Latitude = 53.0561082M,
                 Longitude = -0.8M,
-                ZoomLevel = 13.5M
+                ZoomLevel = 12M
             });
 
             entity.HasData(new GroupMapDetails
@@ -1469,7 +1461,7 @@ namespace GroupService.Repo.Helpers
                 Longitude = -0.973649M,
                 ZoomLevel = 13.5M
             });
-            */
+            
         }
     }
 }

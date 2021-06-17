@@ -3616,6 +3616,200 @@ namespace GroupService.Repo.Migrations
                         .HasName("PK_GROUP_GROUP_MAP_DETAILS");
 
                     b.ToTable("GroupMapDetails","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = -4,
+                            MapLocationId = (byte)0,
+                            Latitude = 51.507602m,
+                            Longitude = -0.127816m,
+                            ZoomLevel = 10m
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            MapLocationId = (byte)0,
+                            Latitude = 53.498113m,
+                            Longitude = -1.488587m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.8925m,
+                            Longitude = -1.150m,
+                            ZoomLevel = 14.6m
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.2304334m,
+                            Longitude = -0.5435425m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.95m,
+                            Longitude = -0.2m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.37m,
+                            Longitude = -3.05m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            MapLocationId = (byte)0,
+                            Latitude = 53.37m,
+                            Longitude = -3.05m,
+                            ZoomLevel = 11.15m
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.0561082m,
+                            Longitude = -0.8m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            MapLocationId = (byte)0,
+                            Latitude = 53.0561082m,
+                            Longitude = -0.8m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.120254m,
+                            Longitude = -0.811079m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            MapLocationId = (byte)0,
+                            Latitude = 53.120254m,
+                            Longitude = -0.811079m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            MapLocationId = (byte)1,
+                            Latitude = 51.15670694376801m,
+                            Longitude = 1.2906096124741184m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            MapLocationId = (byte)0,
+                            Latitude = 51.15670694376801m,
+                            Longitude = 1.2906096124741184m,
+                            ZoomLevel = 11m
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            MapLocationId = (byte)1,
+                            Latitude = 51.32681418199929m,
+                            Longitude = 0.8065864663737088m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            MapLocationId = (byte)0,
+                            Latitude = 51.32681418199929m,
+                            Longitude = 0.8065864663737088m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            MapLocationId = (byte)1,
+                            Latitude = 51.40020276537333m,
+                            Longitude = 0.2950217005371014m,
+                            ZoomLevel = 11m
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            MapLocationId = (byte)0,
+                            Latitude = 51.40020276537333m,
+                            Longitude = 0.2950217005371014m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.196498m,
+                            Longitude = -0.574294m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.95m,
+                            Longitude = -0.2m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            MapLocationId = (byte)1,
+                            Latitude = 51.5022198m,
+                            Longitude = -3.2752615m,
+                            ZoomLevel = 11m
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            MapLocationId = (byte)0,
+                            Latitude = 51.5022198m,
+                            Longitude = -3.2752615m,
+                            ZoomLevel = 11m
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            MapLocationId = (byte)1,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
+                            GroupId = -31,
+                            MapLocationId = (byte)0,
+                            Latitude = 53.0779128m,
+                            Longitude = -0.973649m,
+                            ZoomLevel = 13.5m
+                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupNewRequestNotificationStrategy", b =>
