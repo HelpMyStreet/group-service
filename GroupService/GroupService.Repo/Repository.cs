@@ -684,5 +684,23 @@ namespace GroupService.Repo
 
             throw new NotImplementedException();
         }
+
+        public List<HelpMyStreet.Utils.Models.Group> GetGroupsWithMapDetails(MapLocation mapLocation, CancellationToken cancellationToken)
+        {
+            byte location = (byte)mapLocation;
+
+            var groups = _context.Group
+                    .Include(x => x.GroupMapDetails)
+                    .Where(c => c.GroupMapDetails.Any(i => i.MapLocationId == location));
+
+            if (groups != null)
+            {
+                return _mapper.Map<List<HelpMyStreet.Utils.Models.Group>>(groups);
+            }
+            else
+            {
+                return new List<HelpMyStreet.Utils.Models.Group>();
+            }
+        }
     }
 }
