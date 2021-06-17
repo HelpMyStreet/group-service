@@ -220,7 +220,9 @@ namespace GroupService.Repo
 
         public HelpMyStreet.Utils.Models.Group GetGroupById(int groupId, CancellationToken cancellationToken)
         {
-            var group = _context.Group.FirstOrDefault(x => x.Id == groupId);
+            var group = _context.Group
+                .Include(x=> x.GroupMapDetails)
+                .FirstOrDefault(x => x.Id == groupId);
 
             if (group != null)
             {
