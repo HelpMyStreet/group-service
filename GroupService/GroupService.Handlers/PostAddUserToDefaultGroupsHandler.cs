@@ -35,28 +35,13 @@ namespace GroupService.Handlers
             bool success = false;
             int groupIdToBeUsedInGroupWelcomeEmail = GROUPID_GENERIC;
             var user = _userService.GetUserByID(request.UserID).Result;
+            bool addToGenericGroup = true;
             if (user!=null)
             {
                 bool sendGroupWelcomeEmail = false;
                 if (user.User.ReferringGroupId.HasValue)
                 {
-                    bool addToGenericGroup = await _repository.AddToGenericGroup(user.User.ReferringGroupId.Value, user.User.Source);
-
-                    if (addToGenericGroup)
-                    {
-                        success = await AssignRole(GROUPID_GENERIC, request.UserID, cancellationToken);
-                        if(!success)
-                        {
-                            return new PostAddUserToDefaultGroupsResponse()
-                            {
-                                Success = success
-                            };
-                        }
-                        {
-                            sendGroupWelcomeEmail = true;
-                        }
-                    }
-
+                    addToGenericGroup = await _repository.AddToGenericGroup(user.User.ReferringGroupId.Value, user.User.Source);
 
                     success = await AssignRole(user.User.ReferringGroupId.Value, request.UserID, cancellationToken);                    
                     if (success)
@@ -64,11 +49,22 @@ namespace GroupService.Handlers
                         groupIdToBeUsedInGroupWelcomeEmail = user.User.ReferringGroupId.Value;
                         sendGroupWelcomeEmail = true;
                     }
+                    else
+                    {
+                        return new PostAddUserToDefaultGroupsResponse()
+                        {
+                            Success = success
+                        };
+                    }
                 }
-                else
+
+                if(addToGenericGroup)
                 {
                     success = await AssignRole(GROUPID_GENERIC, request.UserID, cancellationToken);
-                    sendGroupWelcomeEmail = success;
+                    if(!sendGroupWelcomeEmail && success)
+                    {
+                        sendGroupWelcomeEmail = true;
+                    }
                 }
 
                 if (sendGroupWelcomeEmail)
