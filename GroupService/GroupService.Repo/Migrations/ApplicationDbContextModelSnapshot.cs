@@ -2394,6 +2394,7 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -2,
+                            FriendlyName = "For the Love of Scrubs",
                             GroupKey = "ftlos",
                             GroupName = "For the Love of Scrubs",
                             GroupType = (byte)2,
@@ -2404,117 +2405,139 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -3,
+                            FriendlyName = "Age UK Lincoln & South Lincolnshire",
                             GroupKey = "ageuklsl",
                             GroupName = "Age UK Lincoln & South Lincolnshire",
                             GroupType = (byte)1,
                             HomepageEnabled = true,
+                            LinkURL = "/ageuklsl",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -4,
+                            FriendlyName = "Healthy London Partnership",
                             GroupKey = "hlp",
                             GroupName = "Healthy London Partnership",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/healthylondonpartnership",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -5,
+                            FriendlyName = "Tankersley & Pilley Community Helpers",
                             GeographicName = "Tankersley or Pilley",
                             GroupKey = "tankersley",
                             GroupName = "Tankersley & Pilley",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/tankersley",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -6,
+                            FriendlyName = "Ruddington Community Response Team",
                             GeographicName = "Ruddington",
                             GroupKey = "ruddington",
                             GroupName = "Ruddington",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/ruddington",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -7,
+                            FriendlyName = "Age UK Wirral",
                             GroupKey = "ageukwirral",
                             GroupName = "Age UK Wirral",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/ageukwirral",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -8,
+                            FriendlyName = "Balderton Community Support",
                             GeographicName = "Balderton",
                             GroupKey = "balderton",
                             GroupName = "Balderton Community Support",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/balderton",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -9,
+                            FriendlyName = "Age UK North West Kent",
                             GeographicName = "North West Kent (Dartford, Swanley or Gravesend)",
                             GroupKey = "ageuknwkent",
                             GroupName = "Age UK North West Kent",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/northwestkent",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -10,
+                            FriendlyName = "North Muskham Community Support",
                             GeographicName = "North Muskham",
                             GroupKey = "north-muskham",
                             GroupName = "North Muskham Community Support",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/north-muskham",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -11,
+                            FriendlyName = "Age UK South Kent Coast",
                             GeographicName = "Deal or Folkestone",
                             GroupKey = "ageuk-southkentcoast",
                             GroupName = "Age UK South Kent Coast",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/southkentcoast",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -13,
+                            FriendlyName = "Age UK Faversham & Sittingbourne",
                             GeographicName = "Faversham or Sittingbourne",
                             GroupKey = "ageuk-favershamandsittingbourne",
                             GroupName = "Age UK Faversham & Sittingbourne",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/favershamandsittingbourne",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -12,
+                            FriendlyName = "Lincolnshire Volunteers",
                             GroupKey = "lincs-volunteers",
                             GroupName = "Lincolnshire Volunteers",
                             GroupType = (byte)1,
                             HomepageEnabled = true,
+                            LinkURL = "/lincolnshirevolunteers",
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2614,22 +2637,26 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -23,
+                            FriendlyName = "Age Connects Cardiff & the Vale",
                             GeographicName = "Cardiff & the Vale",
                             GroupKey = "ageconnects-cardiff",
                             GroupName = "Age Connects Cardiff & the Vale",
                             GroupType = (byte)1,
                             HomepageEnabled = true,
+                            LinkURL = "/ageconnects-cardiff",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -24,
+                            FriendlyName = "Meadows Community Helpers",
                             GeographicName = "The Meadows",
                             GroupKey = "meadows-community-helpers",
                             GroupName = "Meadows Community Helpers",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/meadows-community-helpers",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
@@ -2701,21 +2728,25 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -31,
+                            FriendlyName = "Southwell Torpedos",
                             GeographicName = "Southwell or surrounding areas",
                             GroupKey = "southwell",
                             GroupName = "Southwell Torpedos",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/southwell",
                             ShiftsEnabled = false,
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -32,
+                            FriendlyName = "Apex PCN Bank Staff",
                             GroupKey = "apex-pcn-bank-staff",
                             GroupName = "APEX PCN Bank Staff",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/apexpcnbankstaff",
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         });
