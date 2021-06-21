@@ -2362,6 +2362,9 @@ namespace GroupService.Repo.Migrations
                     b.Property<bool>("ShiftsEnabled")
                         .HasColumnType("bit");
 
+                    b.Property<string>("ShortName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("TasksEnabled")
                         .HasColumnType("bit");
 
@@ -2400,6 +2403,7 @@ namespace GroupService.Repo.Migrations
                             GroupType = (byte)2,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
+                            ShortName = "For the Love of Scrubs",
                             TasksEnabled = true
                         },
                         new
@@ -2412,6 +2416,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/ageuklsl",
                             ShiftsEnabled = false,
+                            ShortName = "Age UK LSL",
                             TasksEnabled = true
                         },
                         new
@@ -2424,6 +2429,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/healthylondonpartnership",
                             ShiftsEnabled = false,
+                            ShortName = "Healthy London",
                             TasksEnabled = true
                         },
                         new
@@ -2437,6 +2443,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/tankersley",
                             ShiftsEnabled = false,
+                            ShortName = "Tankersley",
                             TasksEnabled = true
                         },
                         new
@@ -2450,6 +2457,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/ruddington",
                             ShiftsEnabled = false,
+                            ShortName = "Ruddington",
                             TasksEnabled = true
                         },
                         new
@@ -2462,6 +2470,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/ageukwirral",
                             ShiftsEnabled = false,
+                            ShortName = "Age UK Wirral",
                             TasksEnabled = true
                         },
                         new
@@ -2475,6 +2484,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/balderton",
                             ShiftsEnabled = false,
+                            ShortName = "Balderton",
                             TasksEnabled = true
                         },
                         new
@@ -2488,6 +2498,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/northwestkent",
                             ShiftsEnabled = false,
+                            ShortName = "Age UK NWK",
                             TasksEnabled = true
                         },
                         new
@@ -2501,6 +2512,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/north-muskham",
                             ShiftsEnabled = false,
+                            ShortName = "Age UK Muskham",
                             TasksEnabled = true
                         },
                         new
@@ -2514,6 +2526,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/southkentcoast",
                             ShiftsEnabled = false,
+                            ShortName = "Age UK SKC",
                             TasksEnabled = true
                         },
                         new
@@ -2527,6 +2540,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/favershamandsittingbourne",
                             ShiftsEnabled = false,
+                            ShortName = "Age UK Faversham",
                             TasksEnabled = true
                         },
                         new
@@ -2539,6 +2553,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/lincolnshirevolunteers",
                             ShiftsEnabled = true,
+                            ShortName = "Linc Volunteers",
                             TasksEnabled = false
                         },
                         new
@@ -2645,6 +2660,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/ageconnects-cardiff",
                             ShiftsEnabled = false,
+                            ShortName = "Age Connect Cardiff",
                             TasksEnabled = true
                         },
                         new
@@ -2658,6 +2674,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/meadows-community-helpers",
                             ShiftsEnabled = false,
+                            ShortName = "Meadows",
                             TasksEnabled = true
                         },
                         new
@@ -2736,6 +2753,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/southwell",
                             ShiftsEnabled = false,
+                            ShortName = "Southwell",
                             TasksEnabled = true
                         },
                         new
@@ -2748,6 +2766,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/apexpcnbankstaff",
                             ShiftsEnabled = true,
+                            ShortName = "Apex PCN Bank Staff",
                             TasksEnabled = false
                         });
                 });
