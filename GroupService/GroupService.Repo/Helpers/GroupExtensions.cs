@@ -1340,7 +1340,7 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKNottsBalderton,
                 Latitude = 53.0561082M,
                 Longitude = -0.8M,
-                ZoomLevel = 12M
+                ZoomLevel = 13.5M
             });
 
             entity.HasData(new GroupMapDetails
