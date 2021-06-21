@@ -1129,12 +1129,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 32,
-                            GroupId = -32,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -2913,18 +2907,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -32,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
-                        },
-                        new
-                        {
                             GroupId = -7,
                             CredentialId = 2,
                             CredentialTypeId = (byte)2,
@@ -4016,7 +3998,7 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -14,
                             SupportActivityId = 24,
-                            SupportActivityInstructionsId = (short)22
+                            SupportActivityInstructionsId = (short)55
                         },
                         new
                         {

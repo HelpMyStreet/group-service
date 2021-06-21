@@ -83,8 +83,7 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKLSL,
                 Groups.FTLOS,
                 Groups.Generic,
-                Groups.Southwell,
-                Groups.ApexBankStaff
+                Groups.Southwell
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
