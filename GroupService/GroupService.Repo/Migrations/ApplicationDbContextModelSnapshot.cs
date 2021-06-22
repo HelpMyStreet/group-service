@@ -2353,6 +2353,9 @@ namespace GroupService.Repo.Migrations
                     b.Property<bool>("HomepageEnabled")
                         .HasColumnType("bit");
 
+                    b.Property<string>("JoinGroupPopUpDetail")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LinkURL")
                         .HasColumnType("nvarchar(max)");
 
@@ -2658,6 +2661,7 @@ namespace GroupService.Repo.Migrations
                             GroupName = "Age Connects Cardiff & the Vale",
                             GroupType = (byte)1,
                             HomepageEnabled = true,
+                            JoinGroupPopUpDetail = "<p>Age Connects Cardiff & the Vale require two references, an Induction Session and (in most cases) a DBS check before you can start volunteering.</p><p>You will also be expected to make a minimum commitment of six months.</p>",
                             LinkURL = "/ageconnects-cardiff",
                             ShiftsEnabled = false,
                             ShortName = "Age Connect Cardiff",

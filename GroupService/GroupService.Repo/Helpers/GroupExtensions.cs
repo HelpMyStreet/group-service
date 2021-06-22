@@ -311,7 +311,8 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Regional,
                 FriendlyName = "Age Connects Cardiff & the Vale",
                 LinkURL = "/ageconnects-cardiff",
-                ShortName = "Age Connect Cardiff"
+                ShortName = "Age Connect Cardiff",
+                JoinGroupPopUpDetail = "<p>Age Connects Cardiff & the Vale require two references, an Induction Session and (in most cases) a DBS check before you can start volunteering.</p><p>You will also be expected to make a minimum commitment of six months.</p>"
             });
 
             entity.HasData(new Group
