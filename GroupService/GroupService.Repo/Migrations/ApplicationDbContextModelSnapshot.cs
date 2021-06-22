@@ -3181,7 +3181,7 @@ namespace GroupService.Repo.Migrations
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 2,
-                            HowToAchieve = "If you’re unable to verify with Yoti, please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
+                            HowToAchieve = "Please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
                             WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
