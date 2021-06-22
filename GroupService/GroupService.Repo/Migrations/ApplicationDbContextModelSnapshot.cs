@@ -3636,8 +3636,24 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -5,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.498113m,
+                            Longitude = -1.488587m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
                             GroupId = -6,
                             MapLocationId = (byte)0,
+                            Latitude = 52.8925m,
+                            Longitude = -1.150m,
+                            ZoomLevel = 14.6m
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            MapLocationId = (byte)1,
                             Latitude = 52.8925m,
                             Longitude = -1.150m,
                             ZoomLevel = 14.6m
