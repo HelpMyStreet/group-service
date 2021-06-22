@@ -1281,7 +1281,25 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new GroupMapDetails
             {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.Tankersley,
+                Latitude = 53.498113M,
+                Longitude = -1.488587M,
+                ZoomLevel = 14
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
                 MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.Ruddington,
+                Latitude = 52.8925M,
+                Longitude = -1.150M,
+                ZoomLevel = 14.6M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
                 GroupId = (int)Groups.Ruddington,
                 Latitude = 52.8925M,
                 Longitude = -1.150M,
