@@ -2270,6 +2270,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 56,
                             Name = "APEXBank_BankStaffVaccinator"
+                        },
+                        new
+                        {
+                            Id = 57,
+                            Name = "Southwell_Prescriptions"
                         });
                 });
 
@@ -4244,7 +4249,7 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -31,
                             SupportActivityId = 2,
-                            SupportActivityInstructionsId = (short)2
+                            SupportActivityInstructionsId = (short)57
                         },
                         new
                         {
@@ -6976,6 +6981,11 @@ namespace GroupService.Repo.Migrations
                         {
                             SupportActivityInstructionsId = (short)56,
                             Instructions = "{\"SupportActivityInstructions\":56,\"ActivityDetails\":\"This is a paid role. Registered vaccinators are required for the local COVID-19 vaccination site at Ruston Sports and Social Club, Lincoln. Patients from all five APEX PCN member practices attend the site which has a current footfall in excess of 1301 patients per day. We run two four - hour shifts per day. Vaccinators are welcome to book onto a morning and an afternoon shift on the same day. Before you first shift you will be offered a full induction supported by the centre manager, current vaccinators and advanced practitioners.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Accept the shift\",\"Detail\":\"To book onto a shift simply click the green button below. We run two shifts per day and welcome staff wishing to book onto both shifts. You will find all our open shifts in 'Open Shifts'.\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"You'll receive a reminder email the day before your shift. Once you've completed a shift it will be marked as complete automatically, but you can still view a completed shift by selecting shifts with the status 'Done' in 'My Shifts'.\"}],\"Close\":\"If for any reason you can't complete a shift please let us know as soon as possible by clicking “Can’t Do” on the accepted request. On rare occasions we may need to cancel a shift at short notice, where this is the case we will update you by email and endeavour to contact you using the details provided in your profile.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)57,
+                            Instructions = "{\"SupportActivityInstructions\":57,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact the requester\",\"Detail\":\"Confirm when the prescription will be ready and when you will deliver. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.\"},{\"Heading\":\"Provide help\",\"Detail\":\"Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their prescription.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”. In the event that the prescription is not available for delivery please inform the requester/client and rearrange delivery if possible. If you are unable to do delivery at another time remember to mark as “Can’t Do”.\"}"
                         });
                 });
 
