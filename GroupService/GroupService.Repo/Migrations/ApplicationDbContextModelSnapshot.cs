@@ -2395,6 +2395,7 @@ namespace GroupService.Repo.Migrations
                             GroupType = (byte)3,
                             HomepageEnabled = false,
                             ShiftsEnabled = false,
+                            ShortName = "HelpMyStreet",
                             TasksEnabled = true
                         },
                         new
@@ -2406,7 +2407,7 @@ namespace GroupService.Repo.Migrations
                             GroupType = (byte)2,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
-                            ShortName = "For the Love of Scrubs",
+                            ShortName = "FTLOS",
                             TasksEnabled = true
                         },
                         new
@@ -2473,7 +2474,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/ageukwirral",
                             ShiftsEnabled = false,
-                            ShortName = "Age UK Wirral",
+                            ShortName = "Wirral",
                             TasksEnabled = true
                         },
                         new
@@ -2501,7 +2502,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/northwestkent",
                             ShiftsEnabled = false,
-                            ShortName = "Age UK NWK",
+                            ShortName = "Age UK NW Kent",
                             TasksEnabled = true
                         },
                         new
@@ -2515,7 +2516,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/north-muskham",
                             ShiftsEnabled = false,
-                            ShortName = "Age UK Muskham",
+                            ShortName = "North Muskham",
                             TasksEnabled = true
                         },
                         new
@@ -2529,7 +2530,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/southkentcoast",
                             ShiftsEnabled = false,
-                            ShortName = "Age UK SKC",
+                            ShortName = "South Kent Coast",
                             TasksEnabled = true
                         },
                         new
@@ -2543,7 +2544,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/favershamandsittingbourne",
                             ShiftsEnabled = false,
-                            ShortName = "Age UK Faversham",
+                            ShortName = "Faversham & Sittingbourne",
                             TasksEnabled = true
                         },
                         new
@@ -2556,7 +2557,7 @@ namespace GroupService.Repo.Migrations
                             HomepageEnabled = true,
                             LinkURL = "/lincolnshirevolunteers",
                             ShiftsEnabled = true,
-                            ShortName = "Linc Volunteers",
+                            ShortName = "Lincs Vols",
                             TasksEnabled = false
                         },
                         new
@@ -2666,7 +2667,7 @@ namespace GroupService.Repo.Migrations
 You will also be expected to make a minimum commitment of six months.",
                             LinkURL = "/ageconnects-cardiff",
                             ShiftsEnabled = false,
-                            ShortName = "Age Connect Cardiff",
+                            ShortName = "Age Connects Cardiff",
                             TasksEnabled = true
                         },
                         new
@@ -2772,7 +2773,7 @@ You will also be expected to make a minimum commitment of six months.",
                             HomepageEnabled = true,
                             LinkURL = "/apexpcnbankstaff",
                             ShiftsEnabled = true,
-                            ShortName = "Apex PCN Bank Staff",
+                            ShortName = "Apex Bank Staff",
                             TasksEnabled = false
                         });
                 });
