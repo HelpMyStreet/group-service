@@ -31,6 +31,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public string FriendlyName { get; set; }
         public string LinkURL { get; set; }
         public string ShortName { get; set; }
+        public string JoinGroupPopUpDetail { get; set; }
 
         public virtual Group ParentGroup { get; set; }
         public virtual RequestorDetails RequestorDetails { get; set; }
