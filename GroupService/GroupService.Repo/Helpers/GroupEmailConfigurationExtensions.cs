@@ -213,7 +213,7 @@ namespace GroupService.Repo.Helpers
         private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_ApexBankStaffPCN()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
-            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>We are using HelpMyStreet to coordinate our bank shifts. To book onto a shift you will need to have met the essential criteria for the role. If there is something missing from your profile we will let you know when you try to book onto a shift.Please be aware that shifts may be added or cancelled at short notice due to unexpected demand. </p>" +
+            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>We are using HelpMyStreet to coordinate our bank shifts. To book onto a shift you will need to have met the essential criteria for the role. If there is something missing from your profile we will let you know when you try to book onto a shift. Please be aware that shifts may be added or cancelled at short notice due to unexpected demand. </p>" +
                 $"<p>HelpMyStreet was originally built for volunteering so please be aware that there may be some unpaid volunteer roles advertised on the platform. All of our roles will specify where they are paid positions.</p>"));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Kind regards,</p><p>Gary Burroughs - PCN Manager"));
             config.Add(new KeyValuePair<string, string>("GroupPS", ""));

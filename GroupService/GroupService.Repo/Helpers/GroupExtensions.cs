@@ -909,7 +909,7 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeConnectsCardiff_Public,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = false,
+                AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = true,
                 SuppressRecipientPersonalDetails = true
