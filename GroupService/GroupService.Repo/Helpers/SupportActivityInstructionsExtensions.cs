@@ -1691,6 +1691,34 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_Southwell_Prescriptions()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.Southwell_Prescriptions,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Contact the requester",
+                        Detail = "Confirm when the prescription will be ready and when you will deliver. Check if there will be a charge for anything, and if needed agree how it will be paid for. You can find out more about secure payment methods in our [FAQs](/questions#5). If someone else has requested the help on their behalf it may be useful to give them a call too.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Provide help",
+                        Detail = "Provide the help they need. If you do have to pay for something on their behalf, make sure you keep a copy of the receipt (e.g. by taking a photo) and give them the original along with their prescription.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail  = "When you're finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Requests” in case you need to get back in touch."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”. In the event that the prescription is not available for delivery please inform the requester/client and rearrange delivery if possible. If you are unable to do delivery at another time remember to mark as “Can’t Do”."
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -2028,6 +2056,14 @@ namespace GroupService.Repo.Helpers
                 SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_ApexBank_StaffVaccinator())
             });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.Southwell_Prescriptions,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_Southwell_Prescriptions())
+            });
+
+            
         }
 
 
@@ -2174,7 +2210,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.ForestRecreationGround, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
 
             Populate(entity, Groups.Southwell, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
-            Populate(entity, Groups.Southwell, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+            Populate(entity, Groups.Southwell, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.Southwell_Prescriptions);
             Populate(entity, Groups.Southwell, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
 
             Populate(entity, Groups.ApexBankStaff, SupportActivities.BankStaffVaccinator, SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator);
