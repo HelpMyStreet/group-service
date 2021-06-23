@@ -20,7 +20,8 @@ namespace GroupService.Repo.Helpers
                 ShiftsEnabled = false,
                 TasksEnabled = true,
                 HomepageEnabled = false,
-                GroupType = (byte) GroupTypes.HelpMyStreet
+                GroupType = (byte) GroupTypes.HelpMyStreet,
+                ShortName = "HelpMyStreet"
             });
 
             entity.HasData(new Group
@@ -33,7 +34,7 @@ namespace GroupService.Repo.Helpers
                 HomepageEnabled = true,
                 GroupType = (byte)GroupTypes.National,
                 FriendlyName = "For the Love of Scrubs",
-                ShortName = "For the Love of Scrubs"
+                ShortName = "FTLOS"
             });
 
             entity.HasData(new Group
@@ -105,7 +106,7 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Age UK Wirral",
                 LinkURL = "/ageukwirral",
-                ShortName = "Age UK Wirral"
+                ShortName = "Wirral"
             });
 
             entity.HasData(new Group
@@ -135,7 +136,7 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Age UK North West Kent",
                 LinkURL = "/northwestkent",
-                ShortName = "Age UK NWK"
+                ShortName = "Age UK NW Kent"
             });
 
             entity.HasData(new Group
@@ -150,7 +151,7 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "North Muskham Community Support",
                 LinkURL = "/north-muskham",
-                ShortName = "Age UK Muskham"
+                ShortName = "North Muskham"
             });
 
             entity.HasData(new Group
@@ -165,7 +166,7 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Age UK South Kent Coast",
                 LinkURL = "/southkentcoast",
-                ShortName = "Age UK SKC"
+                ShortName = "South Kent Coast"
             });
 
             entity.HasData(new Group
@@ -180,7 +181,7 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Local,
                 FriendlyName = "Age UK Faversham & Sittingbourne",
                 LinkURL = "/favershamandsittingbourne",
-                ShortName = "Age UK Faversham"
+                ShortName = "Faversham & Sittingbourne"
             });
 
             entity.HasData(new Group
@@ -194,7 +195,7 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Regional,
                 FriendlyName = "Lincolnshire Volunteers",
                 LinkURL = "/lincolnshirevolunteers",
-                ShortName = "Linc Volunteers"
+                ShortName = "Lincs Vols"
             });
 
             entity.HasData(new Group
@@ -311,7 +312,7 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Regional,
                 FriendlyName = "Age Connects Cardiff & the Vale",
                 LinkURL = "/ageconnects-cardiff",
-                ShortName = "Age Connect Cardiff",
+                ShortName = "Age Connects Cardiff",
                 JoinGroupPopUpDetail = "Age Connects Cardiff & the Vale require two references, an Induction Session and (in most cases) a DBS check before you can start volunteering." + Environment.NewLine + Environment.NewLine + "You will also be expected to make a minimum commitment of six months."
             });
 
@@ -426,7 +427,7 @@ namespace GroupService.Repo.Helpers
                 HomepageEnabled = true,
                 FriendlyName = "Apex PCN Bank Staff",
                 LinkURL = "/apexpcnbankstaff",
-                ShortName = "Apex PCN Bank Staff"
+                ShortName = "Apex Bank Staff"
             });
         }
 
