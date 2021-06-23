@@ -83,8 +83,7 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKLSL,
                 Groups.FTLOS,
                 Groups.Generic,
-                Groups.Southwell,
-                Groups.ApexBankStaff
+                Groups.Southwell
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
@@ -472,7 +471,7 @@ namespace GroupService.Repo.Helpers
                 CredentialId = MANUALLY_VERIFIED,
                 CredentialTypeId = (int)CredentialTypes.IdentityVerification,
                 Name = "Manual ID Verification",
-                HowToAchieve = $"If you’re unable to verify with Yoti, please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
+                HowToAchieve = $"Please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
                 DisplayOrder = 2,
