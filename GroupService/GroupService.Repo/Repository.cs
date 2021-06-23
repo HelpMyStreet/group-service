@@ -661,5 +661,26 @@ namespace GroupService.Repo
                 return new List<KeyValuePair<string, string>>();
             }
         }
+
+        public async Task<bool> AddToGenericGroup(int groupId, string source)
+        {
+            var journey = _context.RegistrationJourney.FirstOrDefault(x => x.GroupId == groupId && x.Source == source);
+
+            if(journey==null)
+            {
+                throw new Exception($"Expected journey for groupId {groupId} and source {source}");
+            }
+
+            switch ((TargetGroups) journey.TargetGroups)
+            {
+                case TargetGroups.GenericGroup:
+                case TargetGroups.ThisGroupAndGenericGroup:
+                    return true;
+                default:
+                    return false;
+            }
+
+            throw new NotImplementedException();
+        }
     }
 }
