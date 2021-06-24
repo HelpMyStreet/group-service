@@ -2331,6 +2331,12 @@ namespace GroupService.Repo.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("FriendlyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GeographicName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("GroupKey")
                         .HasColumnType("nvarchar(450)");
 
@@ -2340,14 +2346,26 @@ namespace GroupService.Repo.Migrations
                         .HasMaxLength(100)
                         .IsUnicode(false);
 
+                    b.Property<byte>("GroupType")
+                        .HasColumnType("tinyint");
+
                     b.Property<bool>("HomepageEnabled")
                         .HasColumnType("bit");
+
+                    b.Property<string>("JoinGroupPopUpDetail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LinkURL")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ParentGroupId")
                         .HasColumnType("int");
 
                     b.Property<bool>("ShiftsEnabled")
                         .HasColumnType("bit");
+
+                    b.Property<string>("ShortName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TasksEnabled")
                         .HasColumnType("bit");
@@ -2373,116 +2391,172 @@ namespace GroupService.Repo.Migrations
                             Id = -1,
                             GroupKey = "Generic",
                             GroupName = "HelpMyStreet",
+                            GroupType = (byte)3,
                             HomepageEnabled = false,
                             ShiftsEnabled = false,
+                            ShortName = "HelpMyStreet",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -2,
+                            FriendlyName = "For the Love of Scrubs",
                             GroupKey = "ftlos",
                             GroupName = "For the Love of Scrubs",
+                            GroupType = (byte)2,
                             HomepageEnabled = true,
                             ShiftsEnabled = false,
+                            ShortName = "FTLOS",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -3,
+                            FriendlyName = "Age UK Lincoln & South Lincolnshire",
                             GroupKey = "ageuklsl",
                             GroupName = "Age UK Lincoln & South Lincolnshire",
+                            GroupType = (byte)1,
                             HomepageEnabled = true,
+                            LinkURL = "/ageuklsl",
                             ShiftsEnabled = false,
+                            ShortName = "Age UK LSL",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -4,
+                            FriendlyName = "Healthy London Partnership",
                             GroupKey = "hlp",
                             GroupName = "Healthy London Partnership",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/healthylondonpartnership",
                             ShiftsEnabled = false,
+                            ShortName = "Healthy London",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -5,
+                            FriendlyName = "Tankersley & Pilley Community Helpers",
+                            GeographicName = "Tankersley or Pilley",
                             GroupKey = "tankersley",
                             GroupName = "Tankersley & Pilley",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/tankersley",
                             ShiftsEnabled = false,
+                            ShortName = "Tankersley",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -6,
+                            FriendlyName = "Ruddington Community Response Team",
+                            GeographicName = "Ruddington",
                             GroupKey = "ruddington",
                             GroupName = "Ruddington",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/ruddington",
                             ShiftsEnabled = false,
+                            ShortName = "Ruddington",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -7,
+                            FriendlyName = "Age UK Wirral",
                             GroupKey = "ageukwirral",
                             GroupName = "Age UK Wirral",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/ageukwirral",
                             ShiftsEnabled = false,
+                            ShortName = "Wirral",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -8,
+                            FriendlyName = "Balderton Community Support",
+                            GeographicName = "Balderton",
                             GroupKey = "balderton",
                             GroupName = "Balderton Community Support",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/balderton",
                             ShiftsEnabled = false,
+                            ShortName = "Balderton",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -9,
+                            FriendlyName = "Age UK North West Kent",
+                            GeographicName = "North West Kent (Dartford, Swanley or Gravesend)",
                             GroupKey = "ageuknwkent",
                             GroupName = "Age UK North West Kent",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/northwestkent",
                             ShiftsEnabled = false,
+                            ShortName = "Age UK NW Kent",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -10,
+                            FriendlyName = "North Muskham Community Support",
+                            GeographicName = "North Muskham",
                             GroupKey = "north-muskham",
                             GroupName = "North Muskham Community Support",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/north-muskham",
                             ShiftsEnabled = false,
+                            ShortName = "North Muskham",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -11,
+                            FriendlyName = "Age UK South Kent Coast",
+                            GeographicName = "Deal or Folkestone",
                             GroupKey = "ageuk-southkentcoast",
                             GroupName = "Age UK South Kent Coast",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/southkentcoast",
                             ShiftsEnabled = false,
+                            ShortName = "South Kent Coast",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -13,
+                            FriendlyName = "Age UK Faversham & Sittingbourne",
+                            GeographicName = "Faversham or Sittingbourne",
                             GroupKey = "ageuk-favershamandsittingbourne",
                             GroupName = "Age UK Faversham & Sittingbourne",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/favershamandsittingbourne",
                             ShiftsEnabled = false,
+                            ShortName = "Faversham & Sittingbourne",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -12,
+                            FriendlyName = "Lincolnshire Volunteers",
                             GroupKey = "lincs-volunteers",
                             GroupName = "Lincolnshire Volunteers",
+                            GroupType = (byte)1,
                             HomepageEnabled = true,
+                            LinkURL = "/lincolnshirevolunteers",
                             ShiftsEnabled = true,
+                            ShortName = "Lincs Vols",
                             TasksEnabled = false
                         },
                         new
@@ -2490,6 +2564,7 @@ namespace GroupService.Repo.Migrations
                             Id = -14,
                             GroupKey = "east-lindsey-pcn",
                             GroupName = "East Lindsey PCN",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -12,
                             ShiftsEnabled = true,
@@ -2500,6 +2575,7 @@ namespace GroupService.Repo.Migrations
                             Id = -15,
                             GroupKey = "pcn-grantham",
                             GroupName = "PCN Grantham",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2509,6 +2585,7 @@ namespace GroupService.Repo.Migrations
                             Id = -16,
                             GroupKey = "pcn-southlincoln",
                             GroupName = "PCN South Lincoln",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2518,6 +2595,7 @@ namespace GroupService.Repo.Migrations
                             Id = -17,
                             GroupKey = "four-counties-pcn",
                             GroupName = "Four Counties PCN",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -12,
                             ShiftsEnabled = true,
@@ -2528,6 +2606,7 @@ namespace GroupService.Repo.Migrations
                             Id = -18,
                             GroupKey = "pcn-spilsby",
                             GroupName = "PCN Spilsby",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2537,6 +2616,7 @@ namespace GroupService.Repo.Migrations
                             Id = -19,
                             GroupKey = "pcn-boston",
                             GroupName = "PCN Boston",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2546,6 +2626,7 @@ namespace GroupService.Repo.Migrations
                             Id = -20,
                             GroupKey = "apex-pcn-lincoln",
                             GroupName = "APEX PCN",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -12,
                             ShiftsEnabled = true,
@@ -2556,6 +2637,7 @@ namespace GroupService.Repo.Migrations
                             Id = -21,
                             GroupKey = "pcn-lincoln-portland",
                             GroupName = "PCN Lincoln Portland",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2565,6 +2647,7 @@ namespace GroupService.Repo.Migrations
                             Id = -22,
                             GroupKey = "hms-sandbox",
                             GroupName = "Sandbox",
+                            GroupType = (byte)2,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = true
@@ -2572,19 +2655,32 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -23,
+                            FriendlyName = "Age Connects Cardiff & the Vale",
+                            GeographicName = "Cardiff & the Vale",
                             GroupKey = "ageconnects-cardiff",
                             GroupName = "Age Connects Cardiff & the Vale",
+                            GroupType = (byte)1,
                             HomepageEnabled = true,
+                            JoinGroupPopUpDetail = @"Age Connects Cardiff & the Vale require two references, an Induction Session and (in most cases) a DBS check before you can start volunteering.
+
+You will also be expected to make a minimum commitment of six months.",
+                            LinkURL = "/ageconnects-cardiff",
                             ShiftsEnabled = false,
+                            ShortName = "Age Connects Cardiff",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -24,
+                            FriendlyName = "Meadows Community Helpers",
+                            GeographicName = "The Meadows",
                             GroupKey = "meadows-community-helpers",
                             GroupName = "Meadows Community Helpers",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/meadows-community-helpers",
                             ShiftsEnabled = false,
+                            ShortName = "Meadows",
                             TasksEnabled = true
                         },
                         new
@@ -2592,6 +2688,7 @@ namespace GroupService.Repo.Migrations
                             Id = -25,
                             GroupKey = "mansfield-cvs",
                             GroupName = "Mansfield CVS",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
@@ -2601,6 +2698,7 @@ namespace GroupService.Repo.Migrations
                             Id = -26,
                             GroupKey = "mansfield-wickes",
                             GroupName = "Mansfield (Wickes Site)",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -25,
                             ShiftsEnabled = true,
@@ -2611,6 +2709,7 @@ namespace GroupService.Repo.Migrations
                             Id = -27,
                             GroupKey = "gamston-community-hall",
                             GroupName = "Gamston Community Hall",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -25,
                             ShiftsEnabled = true,
@@ -2621,6 +2720,7 @@ namespace GroupService.Repo.Migrations
                             Id = -28,
                             GroupKey = "richard-herrod-centre",
                             GroupName = "Richard Herrod Centre",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -25,
                             ShiftsEnabled = true,
@@ -2631,6 +2731,7 @@ namespace GroupService.Repo.Migrations
                             Id = -29,
                             GroupKey = "kings-meadow-campus",
                             GroupName = "King's Meadow Campus",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -25,
                             ShiftsEnabled = true,
@@ -2641,6 +2742,7 @@ namespace GroupService.Repo.Migrations
                             Id = -30,
                             GroupKey = "forest-recreation-ground",
                             GroupName = "Forest Recreation Ground",
+                            GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -25,
                             ShiftsEnabled = true,
@@ -2649,19 +2751,28 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = -31,
+                            FriendlyName = "Southwell Torpedos",
+                            GeographicName = "Southwell or surrounding areas",
                             GroupKey = "southwell",
                             GroupName = "Southwell Torpedos",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/southwell",
                             ShiftsEnabled = false,
+                            ShortName = "Southwell",
                             TasksEnabled = true
                         },
                         new
                         {
                             Id = -32,
+                            FriendlyName = "Apex PCN Bank Staff",
                             GroupKey = "apex-pcn-bank-staff",
                             GroupName = "APEX PCN Bank Staff",
+                            GroupType = (byte)0,
                             HomepageEnabled = true,
+                            LinkURL = "/apexpcnbankstaff",
                             ShiftsEnabled = true,
+                            ShortName = "Apex Bank Staff",
                             TasksEnabled = false
                         });
                 });
@@ -3224,109 +3335,187 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -1,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"<p>If you haven’t done it already, you may like to complete your online ID verification now. We’ve made it as quick and easy as possible with the help of our partner, Yoti. Click here to launch your profile and get verified.</p><p>Most requests on our platform require ID verification to give people in need of help the confidence you are who you say you are. Some of our partner organisations may also require additional checks, if this is the case we’ll let you know when you click to accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our Request Help form and let us know what they need.\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>HelpMyStreet has partnered with organisations across the country to help make volunteering easier. To find out who we’re working with go to <a href=\\\"www.helpmystreet.org\\\">www.helpmystreet.org</a> and search our interactive map.</p><p>Most requests will need you to verify your ID before you start helping -  this is to make things as safe as possible for everyone using our site.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -2,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"1\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>For the Love of Scrubs\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         },
                         new
                         {
                             GroupId = -3,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href=\\\"mailto:volunteering@ageuklsl.org.uk\\\">volunteering@ageuklsl.org.uk</a>.\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Age UK Lincoln & South Lincolnshire\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:volunteering@ageuklsl.org.uk\\\">volunteering@ageuklsl.org.uk</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         },
                         new
                         {
                             GroupId = -4,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"1\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Healthy London Partnership\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         },
                         new
                         {
                             GroupId = -5,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"<p>Questions? Email us at tankersley@helpmystreet.org</p><p>P.S.Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about.Complete our Request Help form and let us know what they need.</p>\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Tankersley & Pilley Community Helpers\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:tankersley@helpmystreet.org\\\">tankersley@helpmystreet.org</a>.\"}]"
                         },
                         new
                         {
                             GroupId = -6,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Ruddington Community Response Team\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:ruddington@helpmystreet.org\\\">ruddington@helpmystreet.org</a>.\"}]"
                         },
                         new
                         {
                             GroupId = -7,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to do a couple of checks. You will need to verify your ID - which you can do in just a couple of minutes online - and register a DBS check with us. If you’re having trouble verifying your ID or need to register a DBS check email <a href=\\\"mailto:volunteers@ageukwirral.org.uk\\\">volunteers@ageukwirral.org.uk</a>.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Age UK Wirral\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:volunteers@ageukwirral.org.uk\\\">volunteers@ageukwirral.org.uk</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         },
                         new
                         {
                             GroupId = -8,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"<p>Questions? Email us at baldertoncs@helpmystreet.org</p><p>P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our Request Help form and let us know what they need.</p>\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Balderton Community Support\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:baldertoncs@helpmystreet.org\\\">baldertoncs@helpmystreet.org</a>.\"}]"
                         },
                         new
                         {
                             GroupId = -9,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href=\\\"mailto:contactus@ageuknorthwestkent.org.uk\\\">contactus@ageuknorthwestkent.org.uk</a>.</p><p>For some activities we will also need a DBS check. Please email us on the email address above to request or register your DBS check.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Age UK North West Kent\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:contactus@ageuknorthwestkent.org.uk\\\">contactus@ageuknorthwestkent.org.uk</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         },
                         new
                         {
                             GroupId = -10,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"<p>Questions? Email us at northmuskham@helpmystreet.org<p>P.S. Don’t forget that you can submit a request for help at any time if there’s someone far away from home that you’re worried about. Complete our Request Help form and let us know what they need.</p>\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>North Muskham Community Support\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:northmuskham@helpmystreet.org.\\\">northmuskham@helpmystreet.org</a>.\"}]"
                         },
                         new
                         {
                             GroupId = -11,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href=\\\"mailto:contactus@ageukskc.org.uk\\\">contactus@ageukskc.org.uk</a>.</p><p>For some activities we will also need a DBS check. Please email us on the email address above to request or register your DBS check.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Age UK South Kent Coast\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:contactus@ageukskc.org.uk.\\\">contactus@ageukskc.org.uk</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         },
                         new
                         {
                             GroupId = -12,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>The Lincolnshire Volunteers Team\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
                         },
                         new
                         {
                             GroupId = -13,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href=\\\"mailto:volunteering@ageukfaversham.org.uk\\\">volunteering@ageukfaversham.org.uk</a>.</p><p>For some activities we will also need a DBS check. Please email us on the email address above to request or register your DBS check.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Age UK Faversham & Sittingbourne\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:volunteering@ageukfaversham.org.uk.\\\">volunteering@ageukfaversham.org.uk</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -14,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -15,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
                         },
                         new
                         {
                             GroupId = -17,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -18,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -19,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
                         },
                         new
                         {
                             GroupId = -20,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -21,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
                         },
                         new
                         {
                             GroupId = -22,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p><p>For some roles, we may also require additional checks or training – we will let you know if any additional checks are needed before you accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:contact@helpmystreet.org\\\">contact@helpmystreet.org</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         },
                         new
                         {
                             GroupId = -23,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to do a couple of checks. We need two references from people who have known you for more than a year, they must also be over 18 and not related to you. If you would like to undertake any roles which involve face-to-face contact with a client we will also need a DBS check.</p><p>All of our volunteers also need to complete an induction. This is a short web-session which gives us a chance to run through our policies and procedures - it also gives you a chance to meet other volunteers and ask any questions. Find out more about these checks when you click to accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Age Connects Cardiff & the Vale\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:info@ageconnectscardiff.org.uk\\\">info@ageconnectscardiff.org.uk</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         },
                         new
                         {
                             GroupId = -24,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"HeaderRequired\",\"Value\":\"0\"},{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>The Meadows Community Helpers\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:meadows-community-helpers@helpmystreet.org\\\">meadows-community-helpers@helpmystreet.org</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Mansfield CVS</p>\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -27,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Mansfield CVS</p>\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -28,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Mansfield CVS</p>\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -29,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Mansfield CVS</p>\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -30,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Mansfield CVS</p>\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -31,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID and ensure you consent to our volunteer agreement – this is to make things as safe as possible for you and the people we help.</p><p>Please read the public documents found on our website (<a href=\\\"https://www.thetorpedos.org/publicdocuments\\\">here</a>) and drop us an email at <a href=\\\"mailto:info@thetorpedos.org\\\">info@thetorpedos.org</a> to confirm you’ve read and agree to our policies and volunteer agreement.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Southwell Torpedos\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:info@thetorpedos.org\\\">info@thetorpedos.org</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>We are using HelpMyStreet to coordinate our bank shifts. To book onto a shift you will need to have met the essential criteria for the role. If there is something missing from your profile we will let you know when you try to book onto a shift. Please be aware that shifts may be added or cancelled at short notice due to unexpected demand. </p><p>HelpMyStreet was originally built for volunteering so please be aware that there may be some unpaid volunteer roles advertised on the platform. All of our roles will specify where they are paid positions.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Kind regards,</p><p>Gary Burroughs - PCN Manager\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         });
                 });
 
@@ -3420,6 +3609,241 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -32,
                             LocationId = -9
+                        });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupMapDetails", b =>
+                {
+                    b.Property<int>("GroupId")
+                        .HasColumnName("GroupID")
+                        .HasColumnType("int");
+
+                    b.Property<byte>("MapLocationId")
+                        .HasColumnName("MapLocationID")
+                        .HasColumnType("tinyint");
+
+                    b.Property<decimal>("Latitude")
+                        .HasColumnType("decimal(9, 6)");
+
+                    b.Property<decimal>("Longitude")
+                        .HasColumnType("decimal(9, 6)");
+
+                    b.Property<decimal>("ZoomLevel")
+                        .HasColumnType("decimal(9, 6)");
+
+                    b.HasKey("GroupId", "MapLocationId")
+                        .HasName("PK_GROUP_GROUP_MAP_DETAILS");
+
+                    b.ToTable("GroupMapDetails","Group");
+
+                    b.HasData(
+                        new
+                        {
+                            GroupId = -4,
+                            MapLocationId = (byte)0,
+                            Latitude = 51.507602m,
+                            Longitude = -0.127816m,
+                            ZoomLevel = 10m
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            MapLocationId = (byte)0,
+                            Latitude = 53.498113m,
+                            Longitude = -1.488587m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.498113m,
+                            Longitude = -1.488587m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.8925m,
+                            Longitude = -1.150m,
+                            ZoomLevel = 14.6m
+                        },
+                        new
+                        {
+                            GroupId = -6,
+                            MapLocationId = (byte)1,
+                            Latitude = 52.8925m,
+                            Longitude = -1.150m,
+                            ZoomLevel = 14.6m
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.2304334m,
+                            Longitude = -0.5435425m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.95m,
+                            Longitude = -0.2m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.37m,
+                            Longitude = -3.05m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -7,
+                            MapLocationId = (byte)0,
+                            Latitude = 53.37m,
+                            Longitude = -3.05m,
+                            ZoomLevel = 11.15m
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.0561082m,
+                            Longitude = -0.8m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            MapLocationId = (byte)0,
+                            Latitude = 53.0561082m,
+                            Longitude = -0.8m,
+                            ZoomLevel = 13.5m
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.120254m,
+                            Longitude = -0.811079m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            MapLocationId = (byte)0,
+                            Latitude = 53.120254m,
+                            Longitude = -0.811079m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            MapLocationId = (byte)1,
+                            Latitude = 51.15670694376801m,
+                            Longitude = 1.2906096124741184m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            MapLocationId = (byte)0,
+                            Latitude = 51.15670694376801m,
+                            Longitude = 1.2906096124741184m,
+                            ZoomLevel = 11m
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            MapLocationId = (byte)1,
+                            Latitude = 51.32681418199929m,
+                            Longitude = 0.8065864663737088m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            MapLocationId = (byte)0,
+                            Latitude = 51.32681418199929m,
+                            Longitude = 0.8065864663737088m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            MapLocationId = (byte)1,
+                            Latitude = 51.40020276537333m,
+                            Longitude = 0.2950217005371014m,
+                            ZoomLevel = 11m
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            MapLocationId = (byte)0,
+                            Latitude = 51.40020276537333m,
+                            Longitude = 0.2950217005371014m,
+                            ZoomLevel = 12m
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            MapLocationId = (byte)1,
+                            Latitude = 53.196498m,
+                            Longitude = -0.574294m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.95m,
+                            Longitude = -0.2m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            MapLocationId = (byte)1,
+                            Latitude = 51.5022198m,
+                            Longitude = -3.2752615m,
+                            ZoomLevel = 11m
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            MapLocationId = (byte)0,
+                            Latitude = 51.5022198m,
+                            Longitude = -3.2752615m,
+                            ZoomLevel = 11m
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            MapLocationId = (byte)1,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
+                            GroupId = -31,
+                            MapLocationId = (byte)0,
+                            Latitude = 53.0779128m,
+                            Longitude = -0.973649m,
+                            ZoomLevel = 13.5m
                         });
                 });
 
@@ -5985,7 +6409,7 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -23,
                             Source = "",
-                            AccessRestrictedByRole = false,
+                            AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)21,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = true,
@@ -7145,6 +7569,15 @@ namespace GroupService.Repo.Migrations
                         .WithMany("GroupLocation")
                         .HasForeignKey("GroupId")
                         .HasConstraintName("FK_GroupLocation_Group")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.GroupMapDetails", b =>
+                {
+                    b.HasOne("GroupService.Repo.EntityFramework.Entities.Group", "Group")
+                        .WithMany("GroupMapDetails")
+                        .HasForeignKey("GroupId")
+                        .HasConstraintName("FK_GroupCredential_GroupMapDetails")
                         .IsRequired();
                 });
 

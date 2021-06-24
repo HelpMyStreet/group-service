@@ -3,6 +3,7 @@ using GroupService.Core.Interfaces.Repositories;
 using GroupService.Core.Interfaces.Services;
 using GroupService.Core.Services;
 using GroupService.Handlers;
+using HelpMyStreet.Contracts.CommunicationService.Request;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.UserService.Response;
 using HelpMyStreet.Utils.Enums;
@@ -22,6 +23,8 @@ namespace GroupService.UnitTests
         private PostAddUserToDefaultGroupsHandler _classUnderTest;
         private Mock<IRepository> _repository;
         private Mock<IUserService> _userService;
+        private Mock<ICommunicationService> _communicationService;
+
         private int _groupId;
         private bool _roleAssigned = true;
         private GetUserByIDResponse _getUserByIDResponse;
@@ -32,7 +35,8 @@ namespace GroupService.UnitTests
         {
             SetUpUserService();
             SetUpRepository();
-            _classUnderTest = new PostAddUserToDefaultGroupsHandler(_repository.Object,_userService.Object);
+            SetupCommunicationService();
+            _classUnderTest = new PostAddUserToDefaultGroupsHandler(_repository.Object,_userService.Object, _communicationService.Object);
         }
 
         private void SetUpRepository()
@@ -64,6 +68,11 @@ namespace GroupService.UnitTests
             _userService = new Mock<IUserService>();
             _userService.Setup(x => x.GetUserByID(It.IsAny<int>()))
                 .ReturnsAsync(() => _getUserByIDResponse);
+        }
+
+        private void SetupCommunicationService()
+        {
+            _communicationService = new Mock<ICommunicationService>();
         }
 
         [Test]
@@ -102,12 +111,13 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.AssignRoleAsync(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
             _repository.Verify(x => x.AddUserRoleAudit(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<int>(), It.IsAny<GroupAction>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
             _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Once);
         }
 
         [Test]
         public void WhenUserFaceMaskAndReferringGroupIDIsNotGeneric_ReturnSuccess()
         {
-            _addToGenericGroup = true;
+            _roleAssigned = true;
             _getUserByIDResponse = new GetUserByIDResponse()
             {
                 User = new HelpMyStreet.Utils.Models.User()
@@ -126,6 +136,7 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.AssignRoleAsync(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
             _repository.Verify(x => x.AddUserRoleAudit(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<int>(), It.IsAny<GroupAction>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
             _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Once);
         }
 
         [Test]
@@ -171,10 +182,11 @@ namespace GroupService.UnitTests
             {
                 UserID = 1,
             }, CancellationToken.None);
-            Assert.AreEqual(true, result.Result.Success);
-            _repository.Verify(x => x.AssignRoleAsync(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
-            _repository.Verify(x => x.AddUserRoleAudit(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<int>(), It.IsAny<GroupAction>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
+            Assert.AreEqual(false, result.Result.Success);
+            _repository.Verify(x => x.AssignRoleAsync(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Exactly(1));
+            _repository.Verify(x => x.AddUserRoleAudit(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<int>(), It.IsAny<GroupAction>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()), Times.Exactly(1));
             _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Never);
         }
     }
 }

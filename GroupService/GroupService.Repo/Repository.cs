@@ -220,7 +220,9 @@ namespace GroupService.Repo
 
         public HelpMyStreet.Utils.Models.Group GetGroupById(int groupId, CancellationToken cancellationToken)
         {
-            var group = _context.Group.FirstOrDefault(x => x.Id == groupId);
+            var group = _context.Group
+                .Include(x=> x.GroupMapDetails)
+                .FirstOrDefault(x => x.Id == groupId);
 
             if (group != null)
             {
@@ -681,6 +683,24 @@ namespace GroupService.Repo
             }
 
             throw new NotImplementedException();
+        }
+
+        public List<HelpMyStreet.Utils.Models.Group> GetGroupsWithMapDetails(MapLocation mapLocation, CancellationToken cancellationToken)
+        {
+            byte location = (byte)mapLocation;
+
+            var groups = _context.Group
+                    .Include(x => x.GroupMapDetails)
+                    .Where(c => c.GroupMapDetails.Any(i => i.MapLocationId == location));
+
+            if (groups != null)
+            {
+                return _mapper.Map<List<HelpMyStreet.Utils.Models.Group>>(groups);
+            }
+            else
+            {
+                return new List<HelpMyStreet.Utils.Models.Group>();
+            }
         }
     }
 }

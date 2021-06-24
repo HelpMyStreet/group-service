@@ -1,6 +1,8 @@
 using GroupService.AzureFunction;
 using GroupService.Core.Interfaces.Repositories;
+using GroupService.Core.Interfaces.Services;
 using GroupService.Handlers;
+using HelpMyStreet.Contracts.CommunicationService.Request;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Utils;
@@ -17,6 +19,8 @@ namespace GroupService.UnitTests
     {
         private PostAssignRoleHandler _classUnderTest;
         private Mock<IRepository> _repository;
+        private Mock<ICommunicationService> _communicationService;
+
         private int _groupId;
         private Dictionary<int, List<int>> _allUserRoles;
         private bool _success;
@@ -53,9 +57,10 @@ namespace GroupService.UnitTests
                 It.IsAny<GroupAction>(),
                 It.IsAny<bool>(),
                 It.IsAny<CancellationToken>()));
+
+            _communicationService = new Mock<ICommunicationService>();
                
-            _classUnderTest = new PostAssignRoleHandler(_repository.Object);
-               
+            _classUnderTest = new PostAssignRoleHandler(_repository.Object, _communicationService.Object);               
         }
 
         [Test]
@@ -139,6 +144,10 @@ namespace GroupService.UnitTests
                 It.IsAny<GroupAction>(),
                 It.IsAny<bool>(),
                 It.IsAny<CancellationToken>()), Times.Once);
+
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+
+
         }
 
         [Test]
@@ -181,6 +190,9 @@ namespace GroupService.UnitTests
                 It.IsAny<GroupAction>(),
                 It.IsAny<bool>(),
                 It.IsAny<CancellationToken>()), Times.Once);
+
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+
         }
 
         [Test]
@@ -212,6 +224,9 @@ namespace GroupService.UnitTests
                 It.IsAny<GroupAction>(),
                 It.IsAny<bool>(),
                 It.IsAny<CancellationToken>()), Times.Once);
+
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+
         }
 
         [Test]
@@ -245,6 +260,9 @@ namespace GroupService.UnitTests
                 It.IsAny<GroupAction>(),
                 It.IsAny<bool>(),
                 It.IsAny<CancellationToken>()), Times.Once);
+
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+
         }
 
         [Test]
@@ -278,6 +296,9 @@ namespace GroupService.UnitTests
                 It.IsAny<GroupAction>(),
                 It.IsAny<bool>(),
                 It.IsAny<CancellationToken>()), Times.Once);
+
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+
         }
 
         [Test]
@@ -318,6 +339,9 @@ namespace GroupService.UnitTests
                 It.IsAny<GroupAction>(),
                 It.IsAny<bool>(),
                 It.IsAny<CancellationToken>()), Times.Once);
+
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+
         }
 
         [Test]
@@ -358,6 +382,9 @@ namespace GroupService.UnitTests
                 It.IsAny<GroupAction>(),
                 It.IsAny<bool>(),
                 It.IsAny<CancellationToken>()), Times.Once);
+
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+
         }
 
     }
