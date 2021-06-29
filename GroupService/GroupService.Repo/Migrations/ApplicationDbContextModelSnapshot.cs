@@ -33,6 +33,9 @@ namespace GroupService.Repo.Migrations
                         .HasColumnName("CredentialSetID")
                         .HasColumnType("int");
 
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
                     b.HasKey("GroupId", "ActivityId", "CredentialSetId");
 
                     b.ToTable("ActivityCredentialSet","Group");
@@ -42,811 +45,946 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -13,
                             ActivityId = 7,
-                            CredentialSetId = 13
+                            CredentialSetId = 13,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -13,
                             ActivityId = 11,
-                            CredentialSetId = 13
+                            CredentialSetId = 13,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -13,
                             ActivityId = 21,
-                            CredentialSetId = 13
+                            CredentialSetId = 13,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -13,
                             ActivityId = 22,
-                            CredentialSetId = 13
+                            CredentialSetId = 13,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -13,
                             ActivityId = 23,
-                            CredentialSetId = 13
+                            CredentialSetId = 13,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -13,
                             ActivityId = 7,
-                            CredentialSetId = 131
+                            CredentialSetId = 131,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -13,
                             ActivityId = 11,
-                            CredentialSetId = 131
+                            CredentialSetId = 131,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -13,
                             ActivityId = 21,
-                            CredentialSetId = 131
+                            CredentialSetId = 131,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -13,
                             ActivityId = 22,
-                            CredentialSetId = 131
+                            CredentialSetId = 131,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -13,
                             ActivityId = 23,
-                            CredentialSetId = 131
+                            CredentialSetId = 131,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 1,
-                            CredentialSetId = 11
+                            CredentialSetId = 11,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 2,
-                            CredentialSetId = 11
+                            CredentialSetId = 11,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 11,
-                            CredentialSetId = 11
+                            CredentialSetId = 11,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 7,
-                            CredentialSetId = 11
+                            CredentialSetId = 11,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 21,
-                            CredentialSetId = 11
+                            CredentialSetId = 11,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 22,
-                            CredentialSetId = 11
+                            CredentialSetId = 11,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 23,
-                            CredentialSetId = 11
+                            CredentialSetId = 11,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 1,
-                            CredentialSetId = 111
+                            CredentialSetId = 111,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 2,
-                            CredentialSetId = 111
+                            CredentialSetId = 111,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 11,
-                            CredentialSetId = 111
+                            CredentialSetId = 111,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 7,
-                            CredentialSetId = 111
+                            CredentialSetId = 111,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 21,
-                            CredentialSetId = 111
+                            CredentialSetId = 111,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 22,
-                            CredentialSetId = 111
+                            CredentialSetId = 111,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -11,
                             ActivityId = 23,
-                            CredentialSetId = 111
+                            CredentialSetId = 111,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -10,
                             ActivityId = 1,
-                            CredentialSetId = 10
+                            CredentialSetId = 10,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -10,
                             ActivityId = 2,
-                            CredentialSetId = 10
+                            CredentialSetId = 10,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -10,
                             ActivityId = 3,
-                            CredentialSetId = 10
+                            CredentialSetId = 10,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -10,
                             ActivityId = 7,
-                            CredentialSetId = 10
+                            CredentialSetId = 10,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -10,
                             ActivityId = 11,
-                            CredentialSetId = 10
+                            CredentialSetId = 10,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -10,
                             ActivityId = 5,
-                            CredentialSetId = 10
+                            CredentialSetId = 10,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -9,
                             ActivityId = 2,
-                            CredentialSetId = 9
+                            CredentialSetId = 9,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -9,
                             ActivityId = 7,
-                            CredentialSetId = 9
+                            CredentialSetId = 9,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -9,
                             ActivityId = 11,
-                            CredentialSetId = 9
+                            CredentialSetId = 9,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -9,
                             ActivityId = 21,
-                            CredentialSetId = 9
+                            CredentialSetId = 9,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -9,
                             ActivityId = 22,
-                            CredentialSetId = 9
+                            CredentialSetId = 9,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -9,
                             ActivityId = 2,
-                            CredentialSetId = 91
+                            CredentialSetId = 91,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -9,
                             ActivityId = 7,
-                            CredentialSetId = 91
+                            CredentialSetId = 91,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -9,
                             ActivityId = 11,
-                            CredentialSetId = 91
+                            CredentialSetId = 91,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -9,
                             ActivityId = 21,
-                            CredentialSetId = 91
+                            CredentialSetId = 91,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -9,
                             ActivityId = 22,
-                            CredentialSetId = 91
+                            CredentialSetId = 91,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -8,
                             ActivityId = 1,
-                            CredentialSetId = 8
+                            CredentialSetId = 8,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -8,
                             ActivityId = 2,
-                            CredentialSetId = 8
+                            CredentialSetId = 8,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -8,
                             ActivityId = 7,
-                            CredentialSetId = 8
+                            CredentialSetId = 8,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -8,
                             ActivityId = 11,
-                            CredentialSetId = 8
+                            CredentialSetId = 8,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -8,
                             ActivityId = 5,
-                            CredentialSetId = 8
+                            CredentialSetId = 8,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -7,
                             ActivityId = 1,
-                            CredentialSetId = 7
+                            CredentialSetId = 7,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -7,
                             ActivityId = 2,
-                            CredentialSetId = 7
+                            CredentialSetId = 7,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -7,
                             ActivityId = 11,
-                            CredentialSetId = 7
+                            CredentialSetId = 7,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -7,
                             ActivityId = 15,
-                            CredentialSetId = 7
+                            CredentialSetId = 7,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -7,
                             ActivityId = 1,
-                            CredentialSetId = 71
+                            CredentialSetId = 71,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -7,
                             ActivityId = 2,
-                            CredentialSetId = 71
+                            CredentialSetId = 71,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -7,
                             ActivityId = 11,
-                            CredentialSetId = 71
+                            CredentialSetId = 71,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -7,
                             ActivityId = 15,
-                            CredentialSetId = 71
+                            CredentialSetId = 71,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -6,
                             ActivityId = 1,
-                            CredentialSetId = 6
+                            CredentialSetId = 6,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -6,
                             ActivityId = 2,
-                            CredentialSetId = 6
+                            CredentialSetId = 6,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -6,
                             ActivityId = 3,
-                            CredentialSetId = 6
+                            CredentialSetId = 6,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -6,
                             ActivityId = 5,
-                            CredentialSetId = 6
+                            CredentialSetId = 6,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -6,
                             ActivityId = 6,
-                            CredentialSetId = 6
+                            CredentialSetId = 6,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -6,
                             ActivityId = 7,
-                            CredentialSetId = 6
+                            CredentialSetId = 6,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -6,
                             ActivityId = 10,
-                            CredentialSetId = 6
+                            CredentialSetId = 6,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -6,
                             ActivityId = 11,
-                            CredentialSetId = 6
+                            CredentialSetId = 6,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -6,
                             ActivityId = 12,
-                            CredentialSetId = 6
+                            CredentialSetId = 6,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -4,
                             ActivityId = 14,
-                            CredentialSetId = 4
+                            CredentialSetId = 4,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -3,
                             ActivityId = 1,
-                            CredentialSetId = 3
+                            CredentialSetId = 3,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -3,
                             ActivityId = 2,
-                            CredentialSetId = 3
+                            CredentialSetId = 3,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -3,
                             ActivityId = 3,
-                            CredentialSetId = 3
+                            CredentialSetId = 3,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -3,
                             ActivityId = 11,
-                            CredentialSetId = 3
+                            CredentialSetId = 3,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -3,
                             ActivityId = 13,
-                            CredentialSetId = 3
+                            CredentialSetId = 3,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -2,
                             ActivityId = 12,
-                            CredentialSetId = 2
+                            CredentialSetId = 2,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -22,
                             ActivityId = 1,
-                            CredentialSetId = 14
+                            CredentialSetId = 14,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -22,
                             ActivityId = 7,
-                            CredentialSetId = 14
+                            CredentialSetId = 14,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -22,
                             ActivityId = 24,
-                            CredentialSetId = 14
+                            CredentialSetId = 14,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -22,
                             ActivityId = 1,
-                            CredentialSetId = 141
-                        },
-                        new
-                        {
-                            GroupId = -22,
-                            ActivityId = 7,
-                            CredentialSetId = 141
+                            CredentialSetId = 141,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -22,
                             ActivityId = 7,
-                            CredentialSetId = 142
+                            CredentialSetId = 141,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -22,
+                            ActivityId = 7,
+                            CredentialSetId = 142,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 26,
-                            CredentialSetId = 235
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 11,
-                            CredentialSetId = 235
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 27,
-                            CredentialSetId = 235
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 1,
-                            CredentialSetId = 235
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 16,
-                            CredentialSetId = 235
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 26,
-                            CredentialSetId = 231
+                            CredentialSetId = 231,
+                            DisplayOrder = 1
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 11,
-                            CredentialSetId = 231
+                            CredentialSetId = 231,
+                            DisplayOrder = 1
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 27,
-                            CredentialSetId = 231
+                            CredentialSetId = 231,
+                            DisplayOrder = 1
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 1,
-                            CredentialSetId = 231
+                            CredentialSetId = 231,
+                            DisplayOrder = 1
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 16,
-                            CredentialSetId = 231
+                            CredentialSetId = 231,
+                            DisplayOrder = 1
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 26,
-                            CredentialSetId = 234
+                            CredentialSetId = 234,
+                            DisplayOrder = 2
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 11,
-                            CredentialSetId = 234
+                            CredentialSetId = 234,
+                            DisplayOrder = 2
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 27,
-                            CredentialSetId = 234
+                            CredentialSetId = 234,
+                            DisplayOrder = 2
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 1,
-                            CredentialSetId = 234
+                            CredentialSetId = 234,
+                            DisplayOrder = 2
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 16,
-                            CredentialSetId = 234
+                            CredentialSetId = 234,
+                            DisplayOrder = 2
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 2,
-                            CredentialSetId = 235
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 7,
-                            CredentialSetId = 235
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 22,
-                            CredentialSetId = 235
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 2,
-                            CredentialSetId = 234
+                            CredentialSetId = 234,
+                            DisplayOrder = 1
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 7,
-                            CredentialSetId = 234
+                            CredentialSetId = 234,
+                            DisplayOrder = 1
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 22,
-                            CredentialSetId = 234
+                            CredentialSetId = 234,
+                            DisplayOrder = 1
                         },
                         new
                         {
                             GroupId = -24,
                             ActivityId = 1,
-                            CredentialSetId = 24
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -24,
                             ActivityId = 12,
-                            CredentialSetId = 24
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -24,
                             ActivityId = 10,
-                            CredentialSetId = 24
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -24,
                             ActivityId = 2,
-                            CredentialSetId = 24
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -24,
                             ActivityId = 3,
-                            CredentialSetId = 24
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -24,
                             ActivityId = 29,
-                            CredentialSetId = 24
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -24,
                             ActivityId = 7,
-                            CredentialSetId = 24
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -24,
                             ActivityId = 30,
-                            CredentialSetId = 24
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -24,
                             ActivityId = 31,
-                            CredentialSetId = 24
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -24,
                             ActivityId = 22,
-                            CredentialSetId = 24
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -24,
                             ActivityId = 11,
-                            CredentialSetId = 24
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -1,
                             ActivityId = 1,
-                            CredentialSetId = 1
+                            CredentialSetId = 1,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -1,
                             ActivityId = 2,
-                            CredentialSetId = 1
+                            CredentialSetId = 1,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -1,
                             ActivityId = 3,
-                            CredentialSetId = 1
+                            CredentialSetId = 1,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -1,
                             ActivityId = 6,
-                            CredentialSetId = 1
+                            CredentialSetId = 1,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -1,
                             ActivityId = 7,
-                            CredentialSetId = 1
+                            CredentialSetId = 1,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -1,
                             ActivityId = 9,
-                            CredentialSetId = 1
+                            CredentialSetId = 1,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -1,
                             ActivityId = 10,
-                            CredentialSetId = 1
+                            CredentialSetId = 1,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -1,
                             ActivityId = 11,
-                            CredentialSetId = 1
+                            CredentialSetId = 1,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -1,
                             ActivityId = 12,
-                            CredentialSetId = 1
+                            CredentialSetId = 1,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -5,
                             ActivityId = 1,
-                            CredentialSetId = 5
+                            CredentialSetId = 5,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -5,
                             ActivityId = 2,
-                            CredentialSetId = 5
+                            CredentialSetId = 5,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -5,
                             ActivityId = 3,
-                            CredentialSetId = 5
+                            CredentialSetId = 5,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -5,
                             ActivityId = 6,
-                            CredentialSetId = 5
+                            CredentialSetId = 5,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -5,
                             ActivityId = 7,
-                            CredentialSetId = 5
+                            CredentialSetId = 5,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -5,
                             ActivityId = 9,
-                            CredentialSetId = 5
+                            CredentialSetId = 5,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -5,
                             ActivityId = 10,
-                            CredentialSetId = 5
+                            CredentialSetId = 5,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -5,
                             ActivityId = 11,
-                            CredentialSetId = 5
+                            CredentialSetId = 5,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -5,
                             ActivityId = 12,
-                            CredentialSetId = 5
+                            CredentialSetId = 5,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -31,
                             ActivityId = 1,
-                            CredentialSetId = 31
+                            CredentialSetId = 31,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -31,
                             ActivityId = 2,
-                            CredentialSetId = 31
+                            CredentialSetId = 31,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -31,
                             ActivityId = 11,
-                            CredentialSetId = 31
+                            CredentialSetId = 31,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -31,
                             ActivityId = 1,
-                            CredentialSetId = 317
+                            CredentialSetId = 317,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -31,
                             ActivityId = 2,
-                            CredentialSetId = 317
+                            CredentialSetId = 317,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -31,
                             ActivityId = 11,
-                            CredentialSetId = 317
+                            CredentialSetId = 317,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -32,
                             ActivityId = 32,
-                            CredentialSetId = 32
+                            CredentialSetId = 32,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -32,
                             ActivityId = 11,
-                            CredentialSetId = 32
+                            CredentialSetId = 32,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -32,
                             ActivityId = 32,
-                            CredentialSetId = 328
+                            CredentialSetId = 328,
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -32,
                             ActivityId = 11,
-                            CredentialSetId = 328
+                            CredentialSetId = 328,
+                            DisplayOrder = 0
                         });
                 });
 
@@ -895,7 +1033,7 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 5,
-                            Name = "Reference 1"
+                            Name = "References"
                         },
                         new
                         {
@@ -934,12 +1072,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 24,
                             GroupId = -24,
-                            CredentialId = -1
-                        },
-                        new
-                        {
-                            Id = 23,
-                            GroupId = -23,
                             CredentialId = -1
                         },
                         new
@@ -2736,18 +2868,6 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
-                            GroupId = -23,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
-                        },
-                        new
-                        {
                             GroupId = -22,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
@@ -3088,7 +3208,7 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialId = 1,
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
+                            DisplayOrder = 1,
                             HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
@@ -3100,10 +3220,10 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialId = 5,
                             CredentialTypeId = (byte)4,
                             CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
+                            DisplayOrder = 2,
                             HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx) with details of your **two** referees. If it’s been more than two weeks and you haven’t heard anything, please get in touch.",
                             HowToAchieve_CTA_Destination = "",
-                            Name = "Reference 1",
+                            Name = "References",
                             WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
                         },
                         new
@@ -3112,7 +3232,7 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialId = 2,
                             CredentialTypeId = (byte)2,
                             CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 5,
+                            DisplayOrder = 3,
                             HowToAchieve = "This activity requires a DBS check, please complete and return this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-dbs-check-form.docx). If it’s been more than two weeks and you haven’t heard anything, please get in touch.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
@@ -3124,8 +3244,8 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialId = 4,
                             CredentialTypeId = (byte)3,
                             CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 6,
-                            HowToAchieve = "If you haven’t done so already, please book your space on one of our Core Induction Training sessions through <a href=\"https://www.eventbrite.co.uk/o/age-connects-cardiff-amp-vale-32377866579\">Eventbrite</a>. If you’ve recently completed your induction please be aware that it may take a couple of days for the system to update.",
+                            DisplayOrder = 4,
+                            HowToAchieve = "If you haven’t done so already, please book your space on one of our Core Induction Training sessions through <a href=\"https://www.eventbrite.co.uk/o/age-connects-cardiff-amp-vale-32377866579\" target=\"_blank\">Eventbrite</a>. If you’ve recently completed your induction please be aware that it may take a couple of days for the system to update.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Volunteer Induction",
                             WhatIsThis = "Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training."

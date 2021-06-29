@@ -403,6 +403,7 @@ namespace GroupService.Repo
 
             var credentialSets = _context.ActivityCredentialSet
                 .Where(x => x.GroupId == groupID && x.ActivityId == (int)supportActivity)
+                .OrderBy(x=> x.DisplayOrder)
                 .Select(x => x.CredentialSetId)
                 .ToList();
 
