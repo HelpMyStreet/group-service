@@ -491,73 +491,37 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 7,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
                             ActivityId = 26,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 2,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 22,
-                            CredentialSetId = 23
+                            CredentialSetId = 235
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 11,
-                            CredentialSetId = 23
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 26,
-                            CredentialSetId = 231
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 231
+                            CredentialSetId = 235
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 27,
+                            CredentialSetId = 235
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 1,
+                            CredentialSetId = 235
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 16,
+                            CredentialSetId = 235
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 26,
                             CredentialSetId = 231
                         },
                         new
@@ -569,20 +533,50 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 235
+                            ActivityId = 27,
+                            CredentialSetId = 231
                         },
                         new
                         {
                             GroupId = -23,
-                            ActivityId = 7,
-                            CredentialSetId = 235
+                            ActivityId = 1,
+                            CredentialSetId = 231
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 16,
+                            CredentialSetId = 231
                         },
                         new
                         {
                             GroupId = -23,
                             ActivityId = 26,
-                            CredentialSetId = 235
+                            CredentialSetId = 234
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 11,
+                            CredentialSetId = 234
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 27,
+                            CredentialSetId = 234
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 1,
+                            CredentialSetId = 234
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 16,
+                            CredentialSetId = 234
                         },
                         new
                         {
@@ -593,13 +587,7 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
+                            ActivityId = 7,
                             CredentialSetId = 235
                         },
                         new
@@ -611,61 +599,7 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -23,
-                            ActivityId = 11,
-                            CredentialSetId = 235
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 1,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 7,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 26,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
                             ActivityId = 2,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 22,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 11,
-                            CredentialSetId = 236
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 1,
                             CredentialSetId = 234
                         },
                         new
@@ -677,37 +611,7 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -23,
-                            ActivityId = 26,
-                            CredentialSetId = 234
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 2,
-                            CredentialSetId = 234
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 16,
-                            CredentialSetId = 234
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 27,
-                            CredentialSetId = 234
-                        },
-                        new
-                        {
-                            GroupId = -23,
                             ActivityId = 22,
-                            CredentialSetId = 234
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            ActivityId = 11,
                             CredentialSetId = 234
                         },
                         new
@@ -995,11 +899,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 6,
-                            Name = "Reference 2"
-                        },
-                        new
-                        {
                             Id = 7,
                             Name = "Policies & Procedures"
                         },
@@ -1252,12 +1151,6 @@ namespace GroupService.Repo.Migrations
                             Id = 235,
                             GroupId = -23,
                             CredentialId = 5
-                        },
-                        new
-                        {
-                            Id = 236,
-                            GroupId = -23,
-                            CredentialId = 6
                         },
                         new
                         {
@@ -2799,8 +2692,8 @@ You will also be expected to make a minimum commitment of six months.",
 
                     b.Property<string>("HowToAchieve")
                         .IsRequired()
-                        .HasColumnType("varchar(300)")
-                        .HasMaxLength(300)
+                        .HasColumnType("varchar(400)")
+                        .HasMaxLength(400)
                         .IsUnicode(false);
 
                     b.Property<string>("HowToAchieve_CTA_Destination")
@@ -3208,21 +3101,9 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialTypeId = (byte)4,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 3,
-                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx) and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
+                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx) with details of your **two** referees. If it’s been more than two weeks and you haven’t heard anything, please get in touch.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Reference 1",
-                            WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
-                        },
-                        new
-                        {
-                            GroupId = -23,
-                            CredentialId = 6,
-                            CredentialTypeId = (byte)4,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 4,
-                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx) and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Reference 2",
                             WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
                         },
                         new
@@ -3232,7 +3113,7 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialTypeId = (byte)2,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 5,
-                            HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a DBS check.",
+                            HowToAchieve = "This activity requires a DBS check, please complete and return this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-dbs-check-form.docx). If it’s been more than two weeks and you haven’t heard anything, please get in touch.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
@@ -3244,7 +3125,7 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialTypeId = (byte)3,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 6,
-                            HowToAchieve = "Please contact our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to arrange your volunteer induction.",
+                            HowToAchieve = "If you haven’t done so already, please book your space on one of our Core Induction Training sessions through <a href=\"https://www.eventbrite.co.uk/o/age-connects-cardiff-amp-vale-32377866579\">Eventbrite</a>. If you’ve recently completed your induction please be aware that it may take a couple of days for the system to update.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Volunteer Induction",
                             WhatIsThis = "Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training."
@@ -3467,7 +3348,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -23,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to do a couple of checks. We need two references from people who have known you for more than a year, they must also be over 18 and not related to you. If you would like to undertake any roles which involve face-to-face contact with a client we will also need a DBS check.</p><p>All of our volunteers also need to complete an induction. This is a short web-session which gives us a chance to run through our policies and procedures - it also gives you a chance to meet other volunteers and ask any questions. Find out more about these checks when you click to accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Age Connects Cardiff & the Vale\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:info@ageconnectscardiff.org.uk\\\">info@ageconnectscardiff.org.uk</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to do a couple of checks. We need two references from people who have known you for more than a year, they must also be over 18 and not related to you. If you would like to undertake any roles which involve face-to-face contact with a client we will also need a DBS check. Please complete and return this <a href=\\\"{{BaseUrl}}/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx\\\">form</a> with details of your references and to request a DBS check if required.<p><p>All of our volunteers also need to complete an induction. This is a short web-session which gives us a chance to run through our policies and procedures - it also gives you a chance to meet other volunteers and ask any questions. If you haven’t done so already, you can book your space for Core Induction Training on Eventbrite by clicking <a href=\\\"https://www.eventbrite.co.uk/o/age-connects-cardiff-amp-vale-32377866579\\\">here</a>.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Age Connects Cardiff & the Vale\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:info@ageconnectscardiff.org.uk\\\">info@ageconnectscardiff.org.uk</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         },
                         new
                         {
