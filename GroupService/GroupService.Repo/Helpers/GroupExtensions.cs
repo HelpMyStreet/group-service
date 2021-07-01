@@ -53,20 +53,6 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new Group
             {
-                Id = (int)Groups.HLP,
-                GroupName = "Healthy London Partnership",
-                GroupKey = "hlp",
-                ShiftsEnabled = false,
-                TasksEnabled = true,
-                HomepageEnabled = true,
-                GroupType = (byte)GroupTypes.Local,
-                FriendlyName = "Healthy London Partnership",
-                LinkURL = "/healthylondonpartnership",
-                ShortName = "Healthy London"
-            });
-
-            entity.HasData(new Group
-            {
                 Id = (int)Groups.Tankersley,
                 GroupName = "Tankersley & Pilley",
                 GroupKey = "tankersley",
@@ -630,18 +616,6 @@ namespace GroupService.Repo.Helpers
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = true
             });
-
-            //entity.HasData(new RequestHelpJourney
-            //{
-            //    GroupId = (int)Groups.HLP,
-            //    Source = "connected-together-service-directory",
-            //    RequestHelpFormVariant = (byte)RequestHelpFormVariant.HLP_CommunityConnector,
-            //    TargetGroups = (byte)TargetGroups.ThisGroup,
-            //    AccessRestrictedByRole = false,
-            //    RequestorDefinedByGroup = false,
-            //    RequestsRequireApproval = false,
-            //    SuppressRecipientPersonalDetails = true
-            //});
 
             entity.HasData(new RequestHelpJourney
             {
@@ -1254,16 +1228,6 @@ namespace GroupService.Repo.Helpers
 
         public static void AddGroupMapDetails(this EntityTypeBuilder<GroupMapDetails> entity)
         {
-            
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.HLP,
-                Latitude = 51.507602M,
-                Longitude = -0.127816M,
-                ZoomLevel = 10
-            });
-
             entity.HasData(new GroupMapDetails
             {
                 MapLocationId = (byte)MapLocation.Landing,

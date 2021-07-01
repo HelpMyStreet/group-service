@@ -2426,19 +2426,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = -4,
-                            FriendlyName = "Healthy London Partnership",
-                            GroupKey = "hlp",
-                            GroupName = "Healthy London Partnership",
-                            GroupType = (byte)0,
-                            HomepageEnabled = true,
-                            LinkURL = "/healthylondonpartnership",
-                            ShiftsEnabled = false,
-                            ShortName = "Healthy London",
-                            TasksEnabled = true
-                        },
-                        new
-                        {
                             Id = -5,
                             FriendlyName = "Tankersley & Pilley Community Helpers",
                             GeographicName = "Tankersley or Pilley",
@@ -3317,12 +3304,6 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
-                            GroupId = -4,
-                            CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Healthy London Partnership\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
-                        },
-                        new
-                        {
                             GroupId = -5,
                             CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Tankersley & Pilley Community Helpers\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:tankersley@helpmystreet.org\\\">tankersley@helpmystreet.org</a>.\"}]"
@@ -3603,14 +3584,6 @@ You will also be expected to make a minimum commitment of six months.",
                     b.ToTable("GroupMapDetails","Group");
 
                     b.HasData(
-                        new
-                        {
-                            GroupId = -4,
-                            MapLocationId = (byte)0,
-                            Latitude = 51.507602m,
-                            Longitude = -0.127816m,
-                            ZoomLevel = 10m
-                        },
                         new
                         {
                             GroupId = -5,
@@ -3911,12 +3884,6 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -11,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -4,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         },
