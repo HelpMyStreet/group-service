@@ -69,16 +69,6 @@ namespace GroupService.Repo.Helpers
             return config;
         }
 
-        private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_HLP()
-        {
-            List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
-            config.Add(new KeyValuePair<string, string>("GroupContent", $"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help."));
-            config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Healthy London Partnership"));
-            config.Add(new KeyValuePair<string, string>("GroupPS", ""));
-            config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
-            return config;
-        }
-
         private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_Tankersley()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
@@ -227,7 +217,6 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.Generic, GetWelcomeEmailConfiguration_HelpMyStreet());
             Populate(entity, Groups.FTLOS, GetWelcomeEmailConfiguration_FTLOS());
             Populate(entity, Groups.AgeUKLSL, GetWelcomeEmailConfiguration_AgeUKLSL());
-            Populate(entity, Groups.HLP, GetWelcomeEmailConfiguration_HLP());
             Populate(entity, Groups.Tankersley, GetWelcomeEmailConfiguration_Tankersley());
             Populate(entity, Groups.Ruddington, GetWelcomeEmailConfiguration_Ruddington());
             Populate(entity, Groups.AgeUKWirral, GetWelcomeEmailConfiguration_AgeUKWirral());

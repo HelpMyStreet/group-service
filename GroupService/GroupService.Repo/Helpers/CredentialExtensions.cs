@@ -20,6 +20,7 @@ namespace GroupService.Repo.Helpers
         private const int AGECONNECT_CARDIFF_REFERENCES_CREDENTIAL_SET = 235;
         private const int SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET = 317;
         private const int APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET = 328;
+        //private const int APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET = 329;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -30,7 +31,7 @@ namespace GroupService.Repo.Helpers
         private const int REFERENCES = 5;
         private const int POLICIES_AND_PROCEDURES = 7;
         private const int VACCINATOR_TRAINING = 8;
-
+        //private const int BANK_DETAILS = 9;
 
         public static void InitialiseCredentialSets()
         {
@@ -39,7 +40,6 @@ namespace GroupService.Repo.Helpers
                 { Groups.Generic, 1 },
                 { Groups.FTLOS, 2 },
                 { Groups.AgeUKLSL, 3 },
-                { Groups.HLP, 4 },
                 { Groups.Tankersley, 5 },
                 { Groups.Ruddington, 6 },
                 { Groups.AgeUKWirral, 7 },
@@ -76,7 +76,6 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKWirral,
                 Groups.Ruddington,
                 Groups.Tankersley,
-                Groups.HLP,
                 Groups.AgeUKLSL,
                 Groups.FTLOS,
                 Groups.Generic,
@@ -149,6 +148,13 @@ namespace GroupService.Repo.Helpers
                 Id = VACCINATOR_TRAINING,
                 Name = "Vaccinator Training"
             });
+
+            //entity.HasData(new Credential
+            //{
+            //    Id = BANK_DETAILS,
+            //    Name = "Bank Details"
+            //});
+
         }
 
         public static void SetGroupCredentials(this EntityTypeBuilder<GroupCredential> entity)
@@ -472,6 +478,19 @@ namespace GroupService.Repo.Helpers
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
+            //entity.HasData(new GroupCredential
+            //{
+            //    GroupId = (int)Groups.ApexBankStaff,
+            //    CredentialId = BANK_DETAILS,
+            //    CredentialTypeId = (int)CredentialTypes.BankDetails,
+            //    Name = "Bank Details",
+            //    HowToAchieve = $"A member of the team will be in touch to confirm how you will be paid for any shifts you complete. If you haven’t heard from us within two weeks please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net.",
+            //    HowToAchieve_CTA_Destination = "",
+            //    WhatIsThis = $"Use this credential to confirm payment arrangements have been agreed.",
+            //    DisplayOrder = 3,
+            //    CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            //});
+
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -540,6 +559,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.ApexBankStaff,
                 CredentialId = VACCINATOR_TRAINING,
             });
+
+            //entity.HasData(new CredentialSet
+            //{
+            //    Id = APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET,
+            //    GroupId = (int)Groups.ApexBankStaff,
+            //    CredentialId = BANK_DETAILS,
+            //});
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
@@ -568,8 +594,6 @@ namespace GroupService.Repo.Helpers
 
             var ruddingtonActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.DogWalking, SupportActivities.MealPreparation, SupportActivities.PhoneCalls_Friendly, SupportActivities.CheckingIn, SupportActivities.Other, SupportActivities.FaceMask };
             SetActivityCredentialSet(entity, Groups.Ruddington, ruddingtonActivities, IDENTITY_CREDENTIAL_SETS[Groups.Ruddington]);
-
-            SetActivityCredentialSet(entity, Groups.HLP, new List<SupportActivities> { SupportActivities.CommunityConnector }, IDENTITY_CREDENTIAL_SETS[Groups.HLP]);
 
             var ageUKLSLActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.Other, SupportActivities.WellbeingPackage };
             SetActivityCredentialSet(entity, Groups.AgeUKLSL, ageUKLSLActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKLSL]);
@@ -618,6 +642,7 @@ namespace GroupService.Repo.Helpers
             var apexbankpcnActivities = new List<SupportActivities> { SupportActivities.BankStaffVaccinator, SupportActivities.Other };
             SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, IDENTITY_CREDENTIAL_SETS[Groups.ApexBankStaff]);
             SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET);
+            //SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET);
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)
