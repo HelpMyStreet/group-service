@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210701102303_AddBankDetailsForCardiffStep2")]
-    partial class AddBankDetailsForCardiffStep2
+    [Migration("20210701134246_RemoveDataLinkedToHLP")]
+    partial class RemoveDataLinkedToHLP
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -972,28 +972,14 @@ namespace GroupService.Repo.Migrations
                             GroupId = -32,
                             ActivityId = 32,
                             CredentialSetId = 328,
-                            DisplayOrder = 1
+                            DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -32,
                             ActivityId = 11,
                             CredentialSetId = 328,
-                            DisplayOrder = 1
-                        },
-                        new
-                        {
-                            GroupId = -32,
-                            ActivityId = 32,
-                            CredentialSetId = 329,
-                            DisplayOrder = 2
-                        },
-                        new
-                        {
-                            GroupId = -32,
-                            ActivityId = 11,
-                            CredentialSetId = 329,
-                            DisplayOrder = 2
+                            DisplayOrder = 0
                         });
                 });
 
@@ -1053,11 +1039,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 8,
                             Name = "Vaccinator Training"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "Bank Details"
                         });
                 });
 
@@ -1303,12 +1284,6 @@ namespace GroupService.Repo.Migrations
                             Id = 328,
                             GroupId = -32,
                             CredentialId = 8
-                        },
-                        new
-                        {
-                            Id = 329,
-                            GroupId = -32,
-                            CredentialId = 9
                         });
                 });
 
@@ -2458,6 +2433,19 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -4,
+                            FriendlyName = "Healthy London Partnership",
+                            GroupKey = "hlp",
+                            GroupName = "Healthy London Partnership",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/healthylondonpartnership",
+                            ShiftsEnabled = false,
+                            ShortName = "Healthy London",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
                             Id = -5,
                             FriendlyName = "Tankersley & Pilley Community Helpers",
                             GeographicName = "Tankersley or Pilley",
@@ -3276,7 +3264,7 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialId = 1,
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 1,
+                            DisplayOrder = 2,
                             HowToAchieve = "Please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
@@ -3288,23 +3276,11 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialId = 8,
                             CredentialTypeId = (byte)3,
                             CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net, including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes on immunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
+                            DisplayOrder = 3,
+                            HowToAchieve = " Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net, including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes on immunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Vaccinator Training",
                             WhatIsThis = "Use this credential to certify that the user meets the essential criteria for a bank staff vaccinator. Once you have certified this credential users will be able to book onto shifts."
-                        },
-                        new
-                        {
-                            GroupId = -32,
-                            CredentialId = 9,
-                            CredentialTypeId = (byte)6,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "A member of the team will be in touch to confirm how you will be paid for any shifts you complete. If you haven’t heard from us within two weeks please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Bank Details",
-                            WhatIsThis = "Use this credential to confirm payment arrangements have been agreed."
                         });
                 });
 
@@ -3345,6 +3321,12 @@ You will also be expected to make a minimum commitment of six months.",
                             GroupId = -3,
                             CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href=\\\"mailto:volunteering@ageuklsl.org.uk\\\">volunteering@ageuklsl.org.uk</a>.\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Pip\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:volunteering@ageuklsl.org.uk\\\">volunteering@ageuklsl.org.uk</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -4,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Healthy London Partnership\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         },
                         new
                         {
@@ -3628,6 +3610,14 @@ You will also be expected to make a minimum commitment of six months.",
                     b.ToTable("GroupMapDetails","Group");
 
                     b.HasData(
+                        new
+                        {
+                            GroupId = -4,
+                            MapLocationId = (byte)0,
+                            Latitude = 51.507602m,
+                            Longitude = -0.127816m,
+                            ZoomLevel = 10m
+                        },
                         new
                         {
                             GroupId = -5,
@@ -3928,6 +3918,12 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -11,
+                            MaxVolunteer = 2147483647,
+                            NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -4,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         },

@@ -15,7 +15,7 @@ namespace GroupService.Repo.Helpers
 {
     public static class GroupEmailConfigurationExtensions
     {
-        private static List<KeyValuePair<string,string>> GetWelcomeEmailConfiguration_HelpMyStreet()
+        private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_HelpMyStreet()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
             config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>HelpMyStreet has partnered with organisations across the country to help make volunteering easier. To find out who we’re working with go to <a href=\"www.helpmystreet.org\">www.helpmystreet.org</a> and search our interactive map.</p>" +
@@ -251,7 +251,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupEmailConfiguration
             {
                 GroupId = (int)group,
-                CommunicationJobTypeId = (byte) CommunicationJobTypes.GroupWelcome,
+                CommunicationJobTypeId = (byte)CommunicationJobTypes.GroupWelcome,
                 Configuration = JsonConvert.SerializeObject(keyValuePairs)
             });
         }
