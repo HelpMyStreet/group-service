@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210701102042_AddBankDetailsForCardiffStep1")]
-    partial class AddBankDetailsForCardiffStep1
+    [Migration("20210701134625_RemoveHLPStep3")]
+    partial class RemoveHLPStep3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -1039,11 +1039,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 8,
                             Name = "Vaccinator Training"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "Bank Details"
                         });
                 });
 
@@ -3256,7 +3251,7 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialId = 1,
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 1,
+                            DisplayOrder = 2,
                             HowToAchieve = "Please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
@@ -3268,23 +3263,11 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialId = 8,
                             CredentialTypeId = (byte)3,
                             CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net, including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes on immunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
+                            DisplayOrder = 3,
+                            HowToAchieve = " Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net, including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes on immunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Vaccinator Training",
                             WhatIsThis = "Use this credential to certify that the user meets the essential criteria for a bank staff vaccinator. Once you have certified this credential users will be able to book onto shifts."
-                        },
-                        new
-                        {
-                            GroupId = -32,
-                            CredentialId = 9,
-                            CredentialTypeId = (byte)6,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "A member of the team will be in touch to confirm how you will be paid for any shifts you complete. If you haven’t heard from us within two weeks please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Bank Details",
-                            WhatIsThis = "Use this credential to confirm payment arrangements have been agreed."
                         });
                 });
 

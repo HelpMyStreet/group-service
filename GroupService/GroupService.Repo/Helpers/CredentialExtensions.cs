@@ -149,11 +149,11 @@ namespace GroupService.Repo.Helpers
                 Name = "Vaccinator Training"
             });
 
-            entity.HasData(new Credential
-            {
-                Id = BANK_DETAILS,
-                Name = "Bank Details"
-            });
+            //entity.HasData(new Credential
+            //{
+            //    Id = BANK_DETAILS,
+            //    Name = "Bank Details"
+            //});
         }
 
         public static void SetGroupCredentials(this EntityTypeBuilder<GroupCredential> entity)
@@ -460,7 +460,7 @@ namespace GroupService.Repo.Helpers
                 HowToAchieve = $"Please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
-                DisplayOrder = 1,
+                DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
@@ -470,25 +470,25 @@ namespace GroupService.Repo.Helpers
                 CredentialId = VACCINATOR_TRAINING,
                 CredentialTypeId = (int)CredentialTypes.Training,
                 Name = "Vaccinator Training",
-                HowToAchieve = $"Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net, including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes on immunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
+                HowToAchieve = $" Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net, including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes on immunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that the user meets the essential criteria for a bank staff vaccinator. Once you have certified this credential users will be able to book onto shifts.",
-                DisplayOrder = 2,
-                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
-            });
-
-            entity.HasData(new GroupCredential
-            {
-                GroupId = (int)Groups.ApexBankStaff,
-                CredentialId = BANK_DETAILS,
-                CredentialTypeId = (int)CredentialTypes.BankDetails,
-                Name = "Bank Details",
-                HowToAchieve = $"A member of the team will be in touch to confirm how you will be paid for any shifts you complete. If you haven’t heard from us within two weeks please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net.",
-                HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to confirm payment arrangements have been agreed.",
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
+
+            //entity.HasData(new GroupCredential
+            //{
+            //    GroupId = (int)Groups.ApexBankStaff,
+            //    CredentialId = BANK_DETAILS,
+            //    CredentialTypeId = (int)CredentialTypes.BankDetails,
+            //    Name = "Bank Details",
+            //    HowToAchieve = $"A member of the team will be in touch to confirm how you will be paid for any shifts you complete. If you haven’t heard from us within two weeks please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net.",
+            //    HowToAchieve_CTA_Destination = "",
+            //    WhatIsThis = $"Use this credential to confirm payment arrangements have been agreed.",
+            //    DisplayOrder = 3,
+            //    CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            //});
 
         }
 
@@ -559,12 +559,12 @@ namespace GroupService.Repo.Helpers
                 CredentialId = VACCINATOR_TRAINING,
             });
 
-            entity.HasData(new CredentialSet
-            {
-                Id = APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET,
-                GroupId = (int)Groups.ApexBankStaff,
-                CredentialId = BANK_DETAILS,
-            });
+            //entity.HasData(new CredentialSet
+            //{
+            //    Id = APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET,
+            //    GroupId = (int)Groups.ApexBankStaff,
+            //    CredentialId = BANK_DETAILS,
+            //});
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
@@ -639,9 +639,9 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.Southwell, southwellActivities, SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET);
 
             var apexbankpcnActivities = new List<SupportActivities> { SupportActivities.BankStaffVaccinator, SupportActivities.Other };
-            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, IDENTITY_CREDENTIAL_SETS[Groups.ApexBankStaff], 0);
-            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET, 1);
-            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET, 2);
+            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, IDENTITY_CREDENTIAL_SETS[Groups.ApexBankStaff]);
+            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET);
+            //SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET, 2);
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)
