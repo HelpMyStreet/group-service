@@ -477,13 +477,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            GroupId = -4,
-                            ActivityId = 14,
-                            CredentialSetId = 4,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
                             GroupId = -3,
                             ActivityId = 1,
                             CredentialSetId = 3,
@@ -1130,12 +1123,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 4,
-                            GroupId = -4,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 3,
                             GroupId = -3,
                             CredentialId = -1
@@ -1567,11 +1554,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 1,
-                            Name = "HLP"
-                        },
-                        new
-                        {
                             Id = 2,
                             Name = "FtLOS"
                         },
@@ -1685,11 +1667,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 5,
                             Name = "FaceMasks"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "HLP_CommunityConnector"
                         },
                         new
                         {
@@ -2965,18 +2942,6 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -5,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
-                        },
-                        new
-                        {
-                            GroupId = -4,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)1,
@@ -4821,110 +4786,6 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 14,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = true,
-                            Label = "Being a **COMMUNITY CONNECTOR**"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 1,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 12,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Supplying homemade face coverings"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 2,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "Collecting prescriptions from a local pharmacy"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 3,
-                            DisplayOrder = (byte)5,
-                            IsPreSelected = false,
-                            Label = "Running essential local errands (e.g. posting mail)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 13,
-                            DisplayOrder = (byte)6,
-                            IsPreSelected = false,
-                            Label = "Collecting and delivering a pre-prepared wellbeing package"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 5,
-                            DisplayOrder = (byte)7,
-                            IsPreSelected = false,
-                            Label = "Walking the dog"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 6,
-                            DisplayOrder = (byte)8,
-                            IsPreSelected = false,
-                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 7,
-                            DisplayOrder = (byte)9,
-                            IsPreSelected = false,
-                            Label = "Calling someone in need of a friendly chat"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 8,
-                            DisplayOrder = (byte)10,
-                            IsPreSelected = false,
-                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 9,
-                            DisplayOrder = (byte)11,
-                            IsPreSelected = false,
-                            Label = "Providing remote support for parents and carers home-schooling their children"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 10,
-                            DisplayOrder = (byte)12,
-                            IsPreSelected = false,
-                            Label = "Reaching out to people in my area to check-in"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)1,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)13,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
-                        },
-                        new
-                        {
                             RequestHelpFormVariantId = (byte)2,
                             SupportActivityId = 12,
                             DisplayOrder = (byte)1,
@@ -5979,13 +5840,6 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
-                            GroupId = -4,
-                            Source = "",
-                            RegistrationFormVariant = (byte)1,
-                            TargetGroups = (byte)5
-                        },
-                        new
-                        {
                             GroupId = -5,
                             Source = "",
                             RegistrationFormVariant = (byte)0,
@@ -6163,17 +6017,6 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = true,
                             TargetGroups = (byte)4
-                        },
-                        new
-                        {
-                            GroupId = -4,
-                            Source = "connected-together-service-directory",
-                            AccessRestrictedByRole = false,
-                            RequestHelpFormVariant = (byte)6,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
                         },
                         new
                         {

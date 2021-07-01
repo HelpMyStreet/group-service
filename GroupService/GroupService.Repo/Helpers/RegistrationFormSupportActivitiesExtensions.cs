@@ -155,128 +155,6 @@ namespace GroupService.Repo.Helpers
             });           
         }
 
-        private static void SetHLPSupportActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
-        {
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.CommunityConnector,
-                Label = SupportActivities.CommunityConnector.GetLabel(),
-                IsPreSelected = true,
-                DisplayOrder = 1
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.Shopping,
-                Label = SupportActivities.Shopping.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 2
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.FaceMask,
-                Label = SupportActivities.FaceMask.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 3
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
-                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 4
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.Errands,
-                Label = SupportActivities.Errands.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 5
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.WellbeingPackage,
-                Label = SupportActivities.WellbeingPackage.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 6
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.DogWalking,
-                Label = SupportActivities.DogWalking.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 7
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.MealPreparation,
-                Label = SupportActivities.MealPreparation.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 8
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
-                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 9
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.PhoneCalls_Anxious,
-                Label = SupportActivities.PhoneCalls_Anxious.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 10
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.HomeworkSupport,
-                Label = SupportActivities.HomeworkSupport.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 11
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.CheckingIn,
-                Label = SupportActivities.CheckingIn.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 12
-            });
-
-            entity.HasData(new RegistrationFormSupportActivity
-            {
-                RequestHelpFormVariantId = (byte)RegistrationFormVariant.HLP,
-                SupportActivityId = (int)SupportActivities.Other,
-                Label = SupportActivities.Other.GetLabel(),
-                IsPreSelected = false,
-                DisplayOrder = 13
-            });
-
-        }
-
         private static void SetFtLOSSupportActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
             entity.HasData(new RegistrationFormSupportActivity
@@ -1472,7 +1350,6 @@ namespace GroupService.Repo.Helpers
         public static void SetRegistrationFormSupportActivitiesExtensionsData(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
             SetDefaultSupportActivities(entity);
-            SetHLPSupportActivities(entity);
             SetFtLOSSupportActivities(entity);
             SetFaceMasksSupportActivities(entity);
             SetAgeUKLSLSupportActivities(entity);

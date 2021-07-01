@@ -470,14 +470,6 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RegistrationJourney
             {
-                GroupId = (int)Groups.HLP,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.HLP,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
                 GroupId = (int)Groups.Tankersley,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.Default,
@@ -639,17 +631,17 @@ namespace GroupService.Repo.Helpers
                 SuppressRecipientPersonalDetails = true
             });
 
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.HLP,
-                Source = "connected-together-service-directory",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.HLP_CommunityConnector,
-                TargetGroups = (byte)TargetGroups.ThisGroup,
-                AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = true
-            });
+            //entity.HasData(new RequestHelpJourney
+            //{
+            //    GroupId = (int)Groups.HLP,
+            //    Source = "connected-together-service-directory",
+            //    RequestHelpFormVariant = (byte)RequestHelpFormVariant.HLP_CommunityConnector,
+            //    TargetGroups = (byte)TargetGroups.ThisGroup,
+            //    AccessRestrictedByRole = false,
+            //    RequestorDefinedByGroup = false,
+            //    RequestsRequireApproval = false,
+            //    SuppressRecipientPersonalDetails = true
+            //});
 
             entity.HasData(new RequestHelpJourney
             {
