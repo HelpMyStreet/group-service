@@ -2067,17 +2067,18 @@ namespace GroupService.Repo.Helpers
         }
 
 
-        private static void Populate(EntityTypeBuilder<GroupSupportActivityInstructions> entity, Groups group, SupportActivities activity, SupportActivityInstructionsEnum instructions)
+        private static void Populate(EntityTypeBuilder<GroupSupportActivityConfiguration> entity, Groups group, SupportActivities activity, SupportActivityInstructionsEnum instructions, double radius = 20d)
         {
-            entity.HasData(new GroupSupportActivityInstructions()
+            entity.HasData(new GroupSupportActivityConfiguration()
             {
                 SupportActivityId = (int)activity,
                 GroupId = (int)group,
-                SupportActivityInstructionsId = (short)instructions
+                SupportActivityInstructionsId = (short)instructions,
+                Radius = radius
             });
         }
 
-        public static void PopulateGroupSupportActivityInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
+        public static void PopulateGroupSupportActivityInstructions(this EntityTypeBuilder<GroupSupportActivityConfiguration> entity)
         {
             Populate(entity, Groups.Generic, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn);
             Populate(entity, Groups.Generic, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
@@ -2130,6 +2131,8 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeUKFANDS_FriendlyChat);
             Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.Transport, SupportActivityInstructionsEnum.AgeUKFANDS_Transport);
             Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.AgeUKFANDS_VolunteerSupport);
+            Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.MealtimeCompanion, SupportActivityInstructionsEnum.AgeUKFANDS_MealtimeCompanion);
+
 
             Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.MealsToYourDoor, SupportActivityInstructionsEnum.AgeUKNWK_MealsToYourDoor);
             Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.Other, SupportActivityInstructionsEnum.AgeUKNWK_Other);
@@ -2213,7 +2216,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.Southwell, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.Southwell_Prescriptions);
             Populate(entity, Groups.Southwell, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
 
-            Populate(entity, Groups.ApexBankStaff, SupportActivities.BankStaffVaccinator, SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator);
+            Populate(entity, Groups.ApexBankStaff, SupportActivities.BankStaffVaccinator, SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator, 2000);
             Populate(entity, Groups.ApexBankStaff, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
 
         }
