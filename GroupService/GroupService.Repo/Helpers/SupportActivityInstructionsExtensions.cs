@@ -2067,9 +2067,9 @@ namespace GroupService.Repo.Helpers
         }
 
 
-        private static void Populate(EntityTypeBuilder<GroupSupportActivityInstructions> entity, Groups group, SupportActivities activity, SupportActivityInstructionsEnum instructions)
+        private static void Populate(EntityTypeBuilder<GroupSupportActivityConfiguration> entity, Groups group, SupportActivities activity, SupportActivityInstructionsEnum instructions)
         {
-            entity.HasData(new GroupSupportActivityInstructions()
+            entity.HasData(new GroupSupportActivityConfiguration()
             {
                 SupportActivityId = (int)activity,
                 GroupId = (int)group,
@@ -2077,7 +2077,7 @@ namespace GroupService.Repo.Helpers
             });
         }
 
-        public static void PopulateGroupSupportActivityInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
+        public static void PopulateGroupSupportActivityInstructions(this EntityTypeBuilder<GroupSupportActivityConfiguration> entity)
         {
             Populate(entity, Groups.Generic, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn);
             Populate(entity, Groups.Generic, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);

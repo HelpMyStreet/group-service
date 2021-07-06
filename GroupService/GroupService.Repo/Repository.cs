@@ -575,7 +575,7 @@ namespace GroupService.Repo
 
         public Instructions GetGroupSupportActivityInstructions(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken)
         {
-            string instruction = _context.GroupSupportActivityInstructions
+            string instruction = _context.GroupSupportActivityConfiguration
                 .Include(i => i.SupportActivityInstructions)
                 .Where(x => x.GroupId == groupId && x.SupportActivityId == (int)supportActivities)
                 .Select(x => x.SupportActivityInstructions.Instructions)
@@ -702,6 +702,14 @@ namespace GroupService.Repo
             {
                 return new List<HelpMyStreet.Utils.Models.Group>();
             }
+        }
+
+        public double GetGroupSupportActivityRadius(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken)
+        {
+            return _context.GroupSupportActivityConfiguration
+                .Where(x => x.GroupId == groupId && x.SupportActivityId == (int)supportActivities)
+                .Select(x => x.Radius)
+                .FirstOrDefault();
         }
     }
 }
