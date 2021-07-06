@@ -14,6 +14,7 @@ using HelpMyStreet.Utils.Utils;
 using HelpMyStreet.Contracts.GroupService.Response;
 using System.Net;
 using AzureFunctions.Extensions.Swashbuckle.Attribute;
+using GroupService.Core.Exception;
 
 namespace GroupService.AzureFunction
 {
@@ -39,6 +40,10 @@ namespace GroupService.AzureFunction
             {
                 GetGroupSupportActivityRadiusResponse response = await _mediator.Send(req, cancellationToken);
                 return new OkObjectResult(ResponseWrapper<GetGroupSupportActivityRadiusResponse, GroupServiceErrorCode>.CreateSuccessfulResponse(response));
+            }
+            catch (BadRequestException ex)
+            {
+                return new ObjectResult(ResponseWrapper<GetGroupMembersResponse, GroupServiceErrorCode>.CreateUnsuccessfulResponse(GroupServiceErrorCode.BadRequestError, "Bad Request Error")) { StatusCode = StatusCodes.Status400BadRequest };
             }
             catch (Exception ex)
             {

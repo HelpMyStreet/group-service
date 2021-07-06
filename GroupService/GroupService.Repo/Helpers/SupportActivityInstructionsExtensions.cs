@@ -2131,6 +2131,8 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeUKFANDS_FriendlyChat);
             Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.Transport, SupportActivityInstructionsEnum.AgeUKFANDS_Transport);
             Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.AgeUKFANDS_VolunteerSupport);
+            Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.MealtimeCompanion, SupportActivityInstructionsEnum.AgeUKFANDS_MealtimeCompanion);
+
 
             Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.MealsToYourDoor, SupportActivityInstructionsEnum.AgeUKNWK_MealsToYourDoor);
             Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.Other, SupportActivityInstructionsEnum.AgeUKNWK_Other);
@@ -2214,7 +2216,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.Southwell, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.Southwell_Prescriptions);
             Populate(entity, Groups.Southwell, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
 
-            Populate(entity, Groups.ApexBankStaff, SupportActivities.BankStaffVaccinator, SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator, 200);
+            Populate(entity, Groups.ApexBankStaff, SupportActivities.BankStaffVaccinator, SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator, 2000);
             Populate(entity, Groups.ApexBankStaff, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
 
         }

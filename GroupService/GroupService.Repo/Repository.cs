@@ -704,12 +704,22 @@ namespace GroupService.Repo
             }
         }
 
-        public double GetGroupSupportActivityRadius(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken)
+        public double? GetGroupSupportActivityRadius(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken)
         {
-            return _context.GroupSupportActivityConfiguration
+            var result = _context.GroupSupportActivityConfiguration
                 .Where(x => x.GroupId == groupId && x.SupportActivityId == (int)supportActivities)
-                .Select(x => x.Radius)
                 .FirstOrDefault();
+
+            if(result==null)
+            {
+                return null;
+            }
+            else
+            {
+                return result.Radius;
+            }
+
+
         }
     }
 }
