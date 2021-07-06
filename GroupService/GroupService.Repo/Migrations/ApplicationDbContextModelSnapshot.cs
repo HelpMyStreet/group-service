@@ -3981,7 +3981,7 @@ You will also be expected to make a minimum commitment of six months.",
 
                     b.HasIndex("SupportActivityInstructionsId");
 
-                    b.ToTable("GroupSupportActivityInstructions","Group");
+                    b.ToTable("GroupSupportActivityConfiguration","Group");
 
                     b.HasData(
                         new

@@ -563,7 +563,7 @@ namespace GroupService.Repo
             {
                 entity.HasKey(e => new { e.GroupId, e.SupportActivityId });
 
-                entity.ToTable("GroupSupportActivityInstructions", "Group");
+                entity.ToTable("GroupSupportActivityConfiguration", "Group");
 
                 entity.Property(e => e.GroupId)
                     .HasColumnName("GroupID")
