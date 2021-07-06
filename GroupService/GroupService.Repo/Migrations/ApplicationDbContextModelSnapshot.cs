@@ -4009,14 +4009,14 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -1,
                             SupportActivityId = 12,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)7
                         },
                         new
                         {
                             GroupId = -1,
                             SupportActivityId = 9,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)5
                         },
                         new
@@ -4037,7 +4037,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -1,
                             SupportActivityId = 7,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)4
                         },
                         new
@@ -4128,7 +4128,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -2,
                             SupportActivityId = 12,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)8
                         },
                         new
@@ -4163,7 +4163,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -6,
                             SupportActivityId = 12,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)7
                         },
                         new
@@ -4184,7 +4184,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -6,
                             SupportActivityId = 7,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)4
                         },
                         new
@@ -4226,14 +4226,14 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -5,
                             SupportActivityId = 12,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)7
                         },
                         new
                         {
                             GroupId = -5,
                             SupportActivityId = 9,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)5
                         },
                         new
@@ -4254,7 +4254,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -5,
                             SupportActivityId = 7,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)4
                         },
                         new
@@ -4282,7 +4282,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -13,
                             SupportActivityId = 7,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)27
                         },
                         new
@@ -4324,7 +4324,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -9,
                             SupportActivityId = 7,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)4
                         },
                         new
@@ -4366,7 +4366,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -8,
                             SupportActivityId = 7,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)47
                         },
                         new
@@ -4408,7 +4408,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -10,
                             SupportActivityId = 7,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)51
                         },
                         new
@@ -4457,7 +4457,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -11,
                             SupportActivityId = 7,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)4
                         },
                         new
@@ -4576,7 +4576,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -22,
                             SupportActivityId = 7,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)4
                         },
                         new
@@ -4604,7 +4604,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -23,
                             SupportActivityId = 7,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)43
                         },
                         new
@@ -4674,7 +4674,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -24,
                             SupportActivityId = 12,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)7
                         },
                         new
@@ -4709,7 +4709,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -24,
                             SupportActivityId = 7,
-                            Radius = 20.0,
+                            Radius = 2000.0,
                             SupportActivityInstructionsId = (short)4
                         },
                         new
