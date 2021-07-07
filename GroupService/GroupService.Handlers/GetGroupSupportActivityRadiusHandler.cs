@@ -24,7 +24,8 @@ namespace GroupService.Handlers
 
             if (!radius.HasValue)
             {
-                throw new BadRequestException($"Unable to retrieve radius for groupid { request.GroupId } and support activity {request.SupportActivityType.SupportActivity}");
+                radius = 20.0d;
+                //throw new BadRequestException($"Unable to retrieve radius for groupid { request.GroupId } and support activity {request.SupportActivityType.SupportActivity}");
             }
 
             return new GetGroupSupportActivityRadiusResponse()
