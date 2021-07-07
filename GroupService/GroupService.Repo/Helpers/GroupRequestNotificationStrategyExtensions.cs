@@ -11,7 +11,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupNewRequestNotificationStrategy
             {
                 GroupId = (int)Groups.Ruddington,
-                NewRequestNotificationStrategyId = (int) NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
                 MaxVolunteer = int.MaxValue
             });
 
@@ -102,13 +102,6 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupNewRequestNotificationStrategy
             {
                 GroupId = (int)Groups.AgeUKSouthKentCoast,
-                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
-                MaxVolunteer = int.MaxValue
-            });
-
-            entity.HasData(new GroupNewRequestNotificationStrategy
-            {
-                GroupId = (int)Groups.HLP,
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
                 MaxVolunteer = int.MaxValue
             });

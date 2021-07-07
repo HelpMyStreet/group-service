@@ -220,7 +220,9 @@ namespace GroupService.Repo
 
         public HelpMyStreet.Utils.Models.Group GetGroupById(int groupId, CancellationToken cancellationToken)
         {
-            var group = _context.Group.FirstOrDefault(x => x.Id == groupId);
+            var group = _context.Group
+                .Include(x=> x.GroupMapDetails)
+                .FirstOrDefault(x => x.Id == groupId);
 
             if (group != null)
             {
@@ -401,6 +403,7 @@ namespace GroupService.Repo
 
             var credentialSets = _context.ActivityCredentialSet
                 .Where(x => x.GroupId == groupID && x.ActivityId == (int)supportActivity)
+                .OrderBy(x=> x.DisplayOrder)
                 .Select(x => x.CredentialSetId)
                 .ToList();
 
@@ -572,7 +575,7 @@ namespace GroupService.Repo
 
         public Instructions GetGroupSupportActivityInstructions(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken)
         {
-            string instruction = _context.GroupSupportActivityInstructions
+            string instruction = _context.GroupSupportActivityConfiguration
                 .Include(i => i.SupportActivityInstructions)
                 .Where(x => x.GroupId == groupId && x.SupportActivityId == (int)supportActivities)
                 .Select(x => x.SupportActivityInstructions.Instructions)
@@ -681,6 +684,42 @@ namespace GroupService.Repo
             }
 
             throw new NotImplementedException();
+        }
+
+        public List<HelpMyStreet.Utils.Models.Group> GetGroupsWithMapDetails(MapLocation mapLocation, CancellationToken cancellationToken)
+        {
+            byte location = (byte)mapLocation;
+
+            var groups = _context.Group
+                    .Include(x => x.GroupMapDetails)
+                    .Where(c => c.GroupMapDetails.Any(i => i.MapLocationId == location));
+
+            if (groups != null)
+            {
+                return _mapper.Map<List<HelpMyStreet.Utils.Models.Group>>(groups);
+            }
+            else
+            {
+                return new List<HelpMyStreet.Utils.Models.Group>();
+            }
+        }
+
+        public double? GetGroupSupportActivityRadius(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken)
+        {
+            var result = _context.GroupSupportActivityConfiguration
+                .Where(x => x.GroupId == groupId && x.SupportActivityId == (int)supportActivities)
+                .FirstOrDefault();
+
+            if(result==null)
+            {
+                return null;
+            }
+            else
+            {
+                return result.Radius;
+            }
+
+
         }
     }
 }

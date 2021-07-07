@@ -36,6 +36,7 @@ namespace GroupService.Repo
         public virtual DbSet<EnumSupportActivityInstructions> EnumSupportActivityInstructions { get; set; }
         public virtual DbSet<EnumNewRequestNotificationStrategy> EnumNewRequestNotificationStrategy { get; set; }
         public virtual DbSet<EnumCommunicationJobType> EnumCommunicationJobType { get; set; }
+        public virtual DbSet<EnumRequestEvents> EnumRequestEvents { get; set; }
 
         public virtual DbSet<ActivityCredentialSet> ActivityCredentialSet { get; set; }
         public virtual DbSet<Credential> Credential { get; set; }
@@ -45,10 +46,11 @@ namespace GroupService.Repo
         public virtual DbSet<UserCredential> UserCredential { get; set; }
         public virtual DbSet<RequestorDetails> RequestorDetails { get; set; }
         public virtual DbSet<SupportActivityInstructions> SupportActivityInstructions { get; set; }
-        public virtual DbSet<GroupSupportActivityInstructions> GroupSupportActivityInstructions { get; set; }
+        public virtual DbSet<GroupSupportActivityConfiguration> GroupSupportActivityConfiguration { get; set; }
         public virtual DbSet<RegistrationFormSupportActivity> RegistrationFormSupportActivity { get; set; }
         public virtual DbSet<SupportActivityConfiguration> SupportActivityConfiguration { get; set; }
         public virtual DbSet<GroupEmailConfiguration> GroupEmailConfiguration { get; set; }
+        public virtual DbSet<GroupMapDetails> GroupMapDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -180,6 +182,15 @@ namespace GroupService.Repo
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.SetCommunicationJobData();
+            });
+
+            modelBuilder.Entity<EnumRequestEvents>(entity =>
+            {
+                entity.ToTable("RequestEvent", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumRequestEventData();
             });
 
             modelBuilder.Entity<Group>(entity =>
@@ -385,7 +396,7 @@ namespace GroupService.Repo
 
                 entity.Property(e => e.HowToAchieve)
                     .IsRequired()
-                    .HasMaxLength(300)
+                    .HasMaxLength(400)
                     .IsUnicode(false);
 
                 entity.Property(e => e.HowToAchieve_CTA_Destination)
@@ -548,11 +559,11 @@ namespace GroupService.Repo
                 entity.RequestorDetails();
             });
 
-            modelBuilder.Entity<GroupSupportActivityInstructions>(entity =>
+            modelBuilder.Entity<GroupSupportActivityConfiguration>(entity =>
             {
                 entity.HasKey(e => new { e.GroupId, e.SupportActivityId });
 
-                entity.ToTable("GroupSupportActivityInstructions", "Group");
+                entity.ToTable("GroupSupportActivityConfiguration", "Group");
 
                 entity.Property(e => e.GroupId)
                     .HasColumnName("GroupID")
@@ -608,6 +619,32 @@ namespace GroupService.Repo
                     .HasConstraintName("FK_GroupEmailConfiguration_GroupID");
 
                 entity.PopulateGroupEmailConfiguration();
+            });
+
+            modelBuilder.Entity<GroupMapDetails>(entity =>
+            {
+                entity.HasKey(e => new { e.GroupId, e.MapLocationId })
+                    .HasName("PK_GROUP_GROUP_MAP_DETAILS");
+
+                entity.ToTable("GroupMapDetails", "Group");
+
+                entity.Property(e => e.GroupId).HasColumnName("GroupID");
+
+                entity.Property(e => e.MapLocationId).HasColumnName("MapLocationID");
+
+                entity.Property(e => e.Latitude).HasColumnType("decimal(9, 6)");
+
+                entity.Property(e => e.Longitude).HasColumnType("decimal(9, 6)");
+
+                entity.Property(e => e.ZoomLevel).HasColumnType("decimal(9, 6)");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.GroupMapDetails)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GroupCredential_GroupMapDetails");
+
+                entity.AddGroupMapDetails();
             });
         }
     }

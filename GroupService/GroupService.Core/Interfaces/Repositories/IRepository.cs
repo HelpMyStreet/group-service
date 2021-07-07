@@ -21,6 +21,7 @@ namespace GroupService.Core.Interfaces.Repositories
         List<SupportActivityDetail> GetSupportActivityDetails(RegistrationFormVariant registrationFormVariant, CancellationToken cancellationToken);
         GetGroupNewRequestNotificationStrategyResponse GetGroupNewRequestNotificationStrategy(int groupId, CancellationToken cancellationToken);
         Instructions GetGroupSupportActivityInstructions(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken);
+        double? GetGroupSupportActivityRadius(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken);
         CredentialVerifiedBy GetCredentialVerifiedBy(int groupId, int credentialId);
         List<UserInGroup> GetAllGroupMembers(int groupId);
         UserInGroup GetGroupMember(int groupId, int userId);
@@ -32,6 +33,7 @@ namespace GroupService.Core.Interfaces.Repositories
         GetRegistrationFormVariantResponse GetRegistrationFormVariant(int groupId, string source, CancellationToken cancellationToken);
         GetRequestHelpFormVariantResponse GetRequestHelpFormVariant(int groupId, string source, CancellationToken cancellationToken);
         Group GetGroupById(int groupId, CancellationToken cancellationToken);
+        List<Group> GetGroupsWithMapDetails(MapLocation mapLocation, CancellationToken cancellationToken);
         List<Location> GetLocations(List<int> groups, CancellationToken cancellationToken);
         List<Group> GetChildGroups(int groupId, CancellationToken cancellationToken);
         List<int> GetGroupAndChildGroups(int groupId, CancellationToken cancellationToken);
