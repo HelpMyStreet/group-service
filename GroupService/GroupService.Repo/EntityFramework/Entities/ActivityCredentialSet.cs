@@ -9,6 +9,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public int GroupId { get; set; }
         public int ActivityId { get; set; }
         public int CredentialSetId { get; set; }
+        public int DisplayOrder { get; set; }
 
         public virtual Group Group { get; set; }
     }

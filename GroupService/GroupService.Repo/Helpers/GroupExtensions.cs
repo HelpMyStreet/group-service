@@ -21,7 +21,7 @@ namespace GroupService.Repo.Helpers
                 ShiftsEnabled = false,
                 TasksEnabled = true,
                 HomepageEnabled = false,
-                GroupType = (byte) GroupTypes.HelpMyStreet,
+                GroupType = (byte)GroupTypes.HelpMyStreet,
                 ShortName = "HelpMyStreet"
             });
 
@@ -50,21 +50,7 @@ namespace GroupService.Repo.Helpers
                 FriendlyName = "Age UK Lincoln & South Lincolnshire",
                 LinkURL = "/ageuklsl",
                 ShortName = "Age UK LSL"
-            });
-
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.HLP,
-                GroupName = "Healthy London Partnership",
-                GroupKey = "hlp",
-                ShiftsEnabled = false,
-                TasksEnabled = true,
-                HomepageEnabled = true,
-                GroupType = (byte)GroupTypes.Local,
-                FriendlyName = "Healthy London Partnership",
-                LinkURL = "/healthylondonpartnership",
-                ShortName = "Healthy London"
-            });
+            });            
 
             entity.HasData(new Group
             {
@@ -420,7 +406,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new Group
             {
-                Id = (int) Groups.ApexBankStaff,
+                Id = (int)Groups.ApexBankStaff,
                 GroupName = "APEX PCN Bank Staff",
                 GroupKey = "apex-pcn-bank-staff",
                 ShiftsEnabled = true,
@@ -438,8 +424,8 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.Generic,
                 Source = "",
-                RegistrationFormVariant = (byte) RegistrationFormVariant.Default,
-                TargetGroups = (byte) TargetGroups.ThisGroupAndGenericGroup
+                RegistrationFormVariant = (byte)RegistrationFormVariant.Default,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
 
             });
 
@@ -468,15 +454,7 @@ namespace GroupService.Repo.Helpers
                 RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKLSL,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.HLP,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.HLP,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
+            
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.Tankersley,
@@ -636,18 +614,6 @@ namespace GroupService.Repo.Helpers
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = true
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.HLP,
-                Source = "connected-together-service-directory",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.HLP_CommunityConnector,
-                TargetGroups = (byte)TargetGroups.ThisGroup,
-                AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = true
             });
@@ -1241,7 +1207,7 @@ namespace GroupService.Repo.Helpers
                 Postcode = "LN5 7LB"
             });
 
-            var mansfieldCVSGroups = new List<Groups>() {Groups.MansfieldCVS, Groups.MansfieldWickes, Groups.GamstonCommunityHall, Groups.RichardHerrodCentre, Groups.KingsMeadowCampus, Groups.ForestRecreationGround };
+            var mansfieldCVSGroups = new List<Groups>() { Groups.MansfieldCVS, Groups.MansfieldWickes, Groups.GamstonCommunityHall, Groups.RichardHerrodCentre, Groups.KingsMeadowCampus, Groups.ForestRecreationGround };
 
             foreach (var mcvsGroup in mansfieldCVSGroups)
             {
@@ -1263,16 +1229,6 @@ namespace GroupService.Repo.Helpers
 
         public static void AddGroupMapDetails(this EntityTypeBuilder<GroupMapDetails> entity)
         {
-            
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.HLP,
-                Latitude = 51.507602M,
-                Longitude = -0.127816M,
-                ZoomLevel = 10
-            });
-
             entity.HasData(new GroupMapDetails
             {
                 MapLocationId = (byte)MapLocation.Landing,
@@ -1354,7 +1310,7 @@ namespace GroupService.Repo.Helpers
                 ZoomLevel = 12M
             });
 
-            
+
             entity.HasData(new GroupMapDetails
             {
                 MapLocationId = (byte)MapLocation.Landing,
@@ -1498,7 +1454,7 @@ namespace GroupService.Repo.Helpers
                 Longitude = -0.973649M,
                 ZoomLevel = 13.5M
             });
-            
+
         }
     }
 }

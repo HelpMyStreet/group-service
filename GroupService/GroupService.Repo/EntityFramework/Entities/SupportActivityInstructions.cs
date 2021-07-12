@@ -8,12 +8,12 @@ namespace GroupService.Repo.EntityFramework.Entities
     {
         public SupportActivityInstructions()
         {
-            GroupSupportActivityInstructions = new HashSet<GroupSupportActivityInstructions>();
+            GroupSupportActivityInstructions = new HashSet<GroupSupportActivityConfiguration>();
         }
 
         public short SupportActivityInstructionsId { get; set; }
         public string Instructions { get; set; }
 
-        public virtual ICollection<GroupSupportActivityInstructions> GroupSupportActivityInstructions { get; set; }
+        public virtual ICollection<GroupSupportActivityConfiguration> GroupSupportActivityInstructions { get; set; }
     }
 }

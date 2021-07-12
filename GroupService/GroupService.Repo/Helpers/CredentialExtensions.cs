@@ -17,10 +17,10 @@ namespace GroupService.Repo.Helpers
         private static Dictionary<Groups, int> DBS_CREDENTIAL_SETS;
         private const int SANDBOX_BEFRIENDER_TRAINING_CREDENTIAL_SET = 142;
         private const int AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET = 234;
-        private const int AGECONNECT_CARDIFF_REFERENCES_1_CREDENTIAL_SET = 235;
-        private const int AGECONNECT_CARDIFF_REFERENCES_2_CREDENTIAL_SET = 236;
+        private const int AGECONNECT_CARDIFF_REFERENCES_CREDENTIAL_SET = 235;
         private const int SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET = 317;
         private const int APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET = 328;
+        private const int APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET = 329;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -28,11 +28,10 @@ namespace GroupService.Repo.Helpers
         private const int DBS_CHECK = 2;
         private const int SANDBOX_BEFRIENDER_TRAINING = 3;
         private const int VOLUNTEER_INDUCTION = 4;
-        private const int REFERENCES_1 = 5;
-        private const int REFERENCES_2 = 6;
+        private const int REFERENCES = 5;
         private const int POLICIES_AND_PROCEDURES = 7;
         private const int VACCINATOR_TRAINING = 8;
-
+        private const int BANK_DETAILS = 9;
 
         public static void InitialiseCredentialSets()
         {
@@ -41,7 +40,6 @@ namespace GroupService.Repo.Helpers
                 { Groups.Generic, 1 },
                 { Groups.FTLOS, 2 },
                 { Groups.AgeUKLSL, 3 },
-                { Groups.HLP, 4 },
                 { Groups.Tankersley, 5 },
                 { Groups.Ruddington, 6 },
                 { Groups.AgeUKWirral, 7 },
@@ -57,7 +55,7 @@ namespace GroupService.Repo.Helpers
                 { Groups.ApexBankStaff, 32 }
 
             };
-            DBS_CREDENTIAL_SETS = new Dictionary<Groups, int> 
+            DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
             {
                 { Groups.AgeUKWirral, 71 },
                 { Groups.AgeUKNorthWestKent, 91 },
@@ -69,7 +67,6 @@ namespace GroupService.Repo.Helpers
 
             GROUPS_USING_YOTI = new List<Groups> {
                 Groups.MeadowsCommunityHelpers,
-                Groups.AgeConnectsCardiff,
                 Groups.Sandbox,
                 Groups.AgeUKFavershamAndSittingbourne,
                 Groups.AgeUKSouthKentCoast,
@@ -79,7 +76,6 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKWirral,
                 Groups.Ruddington,
                 Groups.Tankersley,
-                Groups.HLP,
                 Groups.AgeUKLSL,
                 Groups.FTLOS,
                 Groups.Generic,
@@ -137,14 +133,8 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new Credential
             {
-                Id = REFERENCES_1,
-                Name = "Reference 1"
-            });
-
-            entity.HasData(new Credential
-            {
-                Id = REFERENCES_2,
-                Name = "Reference 2"
+                Id = REFERENCES,
+                Name = "References"
             });
 
             entity.HasData(new Credential
@@ -157,6 +147,12 @@ namespace GroupService.Repo.Helpers
             {
                 Id = VACCINATOR_TRAINING,
                 Name = "Vaccinator Training"
+            });
+
+            entity.HasData(new Credential
+            {
+                Id = BANK_DETAILS,
+                Name = "Bank Details"
             });
         }
 
@@ -369,33 +365,21 @@ namespace GroupService.Repo.Helpers
                 HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 1,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                CredentialId = REFERENCES,
+                CredentialTypeId = (int)CredentialTypes.References,
+                Name = "References",
+                HowToAchieve = $"Please complete this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx) with details of your **two** referees. " +
+                $"If it’s been more than two weeks and you haven’t heard anything, please get in touch.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference.",
                 DisplayOrder = 2,
-                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
-            });
-
-            entity.HasData(new GroupCredential
-            {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                CredentialId = REFERENCES_1,
-                CredentialTypeId = (int)CredentialTypes.References,
-                Name = "Reference 1",
-                HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx) and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
-                HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference.",
-                DisplayOrder = 3,
-                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
-            });
-
-            entity.HasData(new GroupCredential
-            {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                CredentialId = REFERENCES_2,
-                CredentialTypeId = (int)CredentialTypes.References,
-                Name = "Reference 2",
-                HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx) and return it by email to mailto:helen.prior@ageconnectscardiff.org.uk. We need both references to complete your onboarding.",
-                HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference.",
-                DisplayOrder = 4,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
@@ -405,10 +389,11 @@ namespace GroupService.Repo.Helpers
                 CredentialId = DBS_CHECK,
                 CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
                 Name = "DBS Check",
-                HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a DBS check.",
+                HowToAchieve = $"This activity requires a DBS check, please complete and return this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-dbs-check-form.docx). " +
+                $"If it’s been more than two weeks and you haven’t heard anything, please get in touch.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
-                DisplayOrder = 5,
+                DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
@@ -418,10 +403,11 @@ namespace GroupService.Repo.Helpers
                 CredentialId = VOLUNTEER_INDUCTION,
                 CredentialTypeId = (int)CredentialTypes.Training,
                 Name = "Volunteer Induction",
-                HowToAchieve = "Please contact our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to arrange your volunteer induction.",
+                HowToAchieve = $"If you haven’t done so already, please book your space on one of our Core Induction Training sessions through <a href=\"https://www.eventbrite.co.uk/o/age-connects-cardiff-amp-vale-32377866579\" target=\"_blank\">Eventbrite</a>. " +
+                $"If you’ve recently completed your induction please be aware that it may take a couple of days for the system to update.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training.",
-                DisplayOrder = 6,
+                DisplayOrder = 4,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
@@ -464,7 +450,7 @@ namespace GroupService.Repo.Helpers
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
-            
+
             entity.HasData(new GroupCredential
             {
                 GroupId = (int)Groups.ApexBankStaff,
@@ -474,7 +460,7 @@ namespace GroupService.Repo.Helpers
                 HowToAchieve = $"Please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
-                DisplayOrder = 2,
+                DisplayOrder = 1,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
@@ -484,13 +470,25 @@ namespace GroupService.Repo.Helpers
                 CredentialId = VACCINATOR_TRAINING,
                 CredentialTypeId = (int)CredentialTypes.Training,
                 Name = "Vaccinator Training",
-                HowToAchieve = $" Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net, including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes on immunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
+                HowToAchieve = $"Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net, including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes on immunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that the user meets the essential criteria for a bank staff vaccinator. Once you have certified this credential users will be able to book onto shifts.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.ApexBankStaff,
+                CredentialId = BANK_DETAILS,
+                CredentialTypeId = (int)CredentialTypes.BankDetails,
+                Name = "Bank Details",
+                HowToAchieve = $"A member of the team will be in touch to confirm how you will be paid for any shifts you complete. If you haven’t heard from us within two weeks please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to confirm payment arrangements have been agreed.",
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
-            
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -541,16 +539,9 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new CredentialSet
             {
-                Id = AGECONNECT_CARDIFF_REFERENCES_1_CREDENTIAL_SET,
+                Id = AGECONNECT_CARDIFF_REFERENCES_CREDENTIAL_SET,
                 GroupId = (int)Groups.AgeConnectsCardiff,
-                CredentialId = REFERENCES_1,
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = AGECONNECT_CARDIFF_REFERENCES_2_CREDENTIAL_SET,
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                CredentialId = REFERENCES_2,
+                CredentialId = REFERENCES,
             });
 
             entity.HasData(new CredentialSet
@@ -565,6 +556,13 @@ namespace GroupService.Repo.Helpers
                 Id = APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET,
                 GroupId = (int)Groups.ApexBankStaff,
                 CredentialId = VACCINATOR_TRAINING,
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET,
+                GroupId = (int)Groups.ApexBankStaff,
+                CredentialId = BANK_DETAILS,
             });
         }
 
@@ -595,8 +593,6 @@ namespace GroupService.Repo.Helpers
             var ruddingtonActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.DogWalking, SupportActivities.MealPreparation, SupportActivities.PhoneCalls_Friendly, SupportActivities.CheckingIn, SupportActivities.Other, SupportActivities.FaceMask };
             SetActivityCredentialSet(entity, Groups.Ruddington, ruddingtonActivities, IDENTITY_CREDENTIAL_SETS[Groups.Ruddington]);
 
-            SetActivityCredentialSet(entity, Groups.HLP, new List<SupportActivities> { SupportActivities.CommunityConnector }, IDENTITY_CREDENTIAL_SETS[Groups.HLP]);
-
             var ageUKLSLActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.Other, SupportActivities.WellbeingPackage };
             SetActivityCredentialSet(entity, Groups.AgeUKLSL, ageUKLSLActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKLSL]);
 
@@ -606,16 +602,30 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.Sandbox, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly }, DBS_CREDENTIAL_SETS[Groups.Sandbox]);
             SetActivityCredentialSet(entity, Groups.Sandbox, new List<SupportActivities> { SupportActivities.PhoneCalls_Friendly }, SANDBOX_BEFRIENDER_TRAINING_CREDENTIAL_SET);
 
-            var ageConnectsCardiffIdentifyReferencesActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.InPersonBefriending, SupportActivities.CollectingPrescriptions, SupportActivities.Transport, SupportActivities.PracticalSupport, SupportActivities.VolunteerSupport, SupportActivities.Other };
+            var ageConnectsCardiffIdentifyReferencesDBSVolunteerInduction = new List<SupportActivities>
+            {
+                SupportActivities.InPersonBefriending,
+                SupportActivities.Other,
+                SupportActivities.PracticalSupport,
+                SupportActivities.Shopping,
+                SupportActivities.Transport
+            };
 
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeConnectsCardiff]);
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.InPersonBefriending, SupportActivities.Transport, SupportActivities.PracticalSupport, SupportActivities.Other }, DBS_CREDENTIAL_SETS[Groups.AgeConnectsCardiff]);
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesActivities, AGECONNECT_CARDIFF_REFERENCES_1_CREDENTIAL_SET);
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesActivities, AGECONNECT_CARDIFF_REFERENCES_2_CREDENTIAL_SET);
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesActivities, AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET);
+            var ageConnectsCardiffIdentifyReferencesVolunteerInduction = new List<SupportActivities>
+            {
+                SupportActivities.CollectingPrescriptions,
+                SupportActivities.PhoneCalls_Friendly,
+                SupportActivities.VolunteerSupport
+            };
 
-            var meadowCommunityHelpersActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.FaceMask, SupportActivities.CheckingIn, SupportActivities.CollectingPrescriptions, 
-                SupportActivities.Errands, SupportActivities.DigitalSupport, SupportActivities.PhoneCalls_Friendly, SupportActivities.BinDayAssistance, SupportActivities.Covid19Help, 
+            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesDBSVolunteerInduction, AGECONNECT_CARDIFF_REFERENCES_CREDENTIAL_SET);
+            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesDBSVolunteerInduction, DBS_CREDENTIAL_SETS[Groups.AgeConnectsCardiff], 1);
+            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesDBSVolunteerInduction, AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET, 2);
+            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesVolunteerInduction, AGECONNECT_CARDIFF_REFERENCES_CREDENTIAL_SET);
+            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesVolunteerInduction, AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET, 1);
+
+            var meadowCommunityHelpersActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.FaceMask, SupportActivities.CheckingIn, SupportActivities.CollectingPrescriptions,
+                SupportActivities.Errands, SupportActivities.DigitalSupport, SupportActivities.PhoneCalls_Friendly, SupportActivities.BinDayAssistance, SupportActivities.Covid19Help,
                 SupportActivities.VolunteerSupport, SupportActivities.Other };
             SetActivityCredentialSet(entity, Groups.MeadowsCommunityHelpers, meadowCommunityHelpersActivities, IDENTITY_CREDENTIAL_SETS[Groups.MeadowsCommunityHelpers]);
 
@@ -627,12 +637,13 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.Southwell, southwellActivities, IDENTITY_CREDENTIAL_SETS[Groups.Southwell]);
             SetActivityCredentialSet(entity, Groups.Southwell, southwellActivities, SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET);
 
-            var apexbankpcnActivities = new List<SupportActivities> { SupportActivities.BankStaffVaccinator, SupportActivities.Other};
+            var apexbankpcnActivities = new List<SupportActivities> { SupportActivities.BankStaffVaccinator, SupportActivities.Other };
             SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, IDENTITY_CREDENTIAL_SETS[Groups.ApexBankStaff]);
-            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET);
+            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET, 1);
+            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET, 2);
         }
 
-        private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId)
+        private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)
         {
             foreach (var activity in activities)
             {
@@ -641,6 +652,7 @@ namespace GroupService.Repo.Helpers
                     GroupId = (int)group,
                     ActivityId = (int)activity,
                     CredentialSetId = credentialSetId,
+                    DisplayOrder = displayOrder
                 });
             }
         }

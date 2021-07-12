@@ -14,7 +14,7 @@ namespace GroupService.Repo.EntityFramework.Entities
             UserRole = new HashSet<UserRole>();
             RegistrationJourney = new HashSet<RegistrationJourney>();
             RequestHelpJourney = new HashSet<RequestHelpJourney>();
-            GroupSupportActivityInstructions = new HashSet<GroupSupportActivityInstructions>();
+            GroupSupportActivityInstructions = new HashSet<GroupSupportActivityConfiguration>();
             GroupLocation = new HashSet<GroupLocation>();
             GroupMapDetails = new HashSet<GroupMapDetails>();
         }
@@ -44,7 +44,7 @@ namespace GroupService.Repo.EntityFramework.Entities
         public virtual ICollection<ActivityCredentialSet> ActivityCredentialSet { get; set; }
         public virtual ICollection<GroupCredential> GroupCredential { get; set; }
         public virtual ICollection<GroupLocation> GroupLocation { get; set; }
-        public virtual ICollection<GroupSupportActivityInstructions> GroupSupportActivityInstructions { get; set; }
+        public virtual ICollection<GroupSupportActivityConfiguration> GroupSupportActivityInstructions { get; set; }
         public virtual ICollection<GroupEmailConfiguration> GroupEmailConfiguration { get; set; }
         public virtual ICollection<GroupMapDetails> GroupMapDetails { get; set; }
     }
