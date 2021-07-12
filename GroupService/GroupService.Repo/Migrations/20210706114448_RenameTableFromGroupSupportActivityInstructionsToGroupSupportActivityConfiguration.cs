@@ -43,6 +43,11 @@ namespace GroupService.Repo.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.Sql(@"
+                ALTER TABLE [Group].[GroupSupportActivityConfiguration]  
+                DISABLE CHANGE_TRACKING;
+                ");
+
             migrationBuilder.DropPrimaryKey(
                 name: "PK_GroupSupportActivityConfiguration",
                 schema: "Group",
