@@ -6,98 +6,44 @@ namespace GroupService.Repo.Helpers
 {
     public static class GroupLocationsExtensions
     {
+		private static void Populate(this EntityTypeBuilder<GroupLocation> entity, Groups group, Location location)
+		{
+			entity.HasData(new GroupLocation
+			{
+				GroupId = (int)group,
+				LocationId = (int)location
+			});
+		}
+
+
         public static void SetGroupLocationsConfiguration(this EntityTypeBuilder<GroupLocation> entity)
         {
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.EastLindseyPCN,
-                LocationId = (int) Location.LouthCommunityHospital
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.GranthamPCN,
-                LocationId = (int)Location.TableTennisClubGrantham
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.SouthLincolnPCN,
-                LocationId = (int)Location.WaddingtonBranchSurgerySouthLincoln
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.StamfordPCN,
-                LocationId = (int)Location.StMarysMedicalPracticeStamford
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.SpilsbyPCN,
-                LocationId = (int)Location.FranklinHallSpilsby
-            });
-
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.BostonPCN,
-                LocationId = (int)Location.SidingsMedicalPracticeBoston
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.LincolnPCN,
-                LocationId = (int)Location.RustonsSportsAndSocialClubLincoln
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.LincolnPortlandPCN,
-                LocationId = (int)Location.PortlandMedicalPracticeLincoln
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.Sandbox,
-                LocationId = (int)Location.RustonsSportsAndSocialClubLincoln
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.MansfieldWickes,
-                LocationId = (int)Location.MansfieldWickesSite
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.GamstonCommunityHall,
-                LocationId = (int)Location.GamstonCommunityHall
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.RichardHerrodCentre,
-                LocationId = (int)Location.RichardHerrodCentre
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.KingsMeadowCampus,
-                LocationId = (int)Location.KingsMeadowCampus
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.ForestRecreationGround,
-                LocationId = (int)Location.ForestRecreationGround
-            });
-
-            entity.HasData(new GroupLocation
-            {
-                GroupId = (int)Groups.ApexBankStaff,
-                LocationId = (int)Location.RustonsSportsAndSocialClubLincoln
-            });
-        }
+			Populate(entity, Groups.EastLindseyPCN, Location.LouthCommunityHospital);
+			Populate(entity, Groups.StamfordPCN, Location.StMarysMedicalPracticeStamford);
+			Populate(entity, Groups.LincolnPCN, Location.RustonsSportsAndSocialClubLincoln);
+			Populate(entity, Groups.Sandbox, Location.RustonsSportsAndSocialClubLincoln);
+			Populate(entity, Groups.MansfieldWickes, Location.MansfieldWickesSite);
+			Populate(entity, Groups.GamstonCommunityHall, Location.GamstonCommunityHall);
+			Populate(entity, Groups.RichardHerrodCentre, Location.RichardHerrodCentre);
+			Populate(entity, Groups.KingsMeadowCampus, Location.KingsMeadowCampus);
+			Populate(entity, Groups.ForestRecreationGround, Location.ForestRecreationGround);
+			Populate(entity, Groups.ApexBankStaff, Location.RustonsSportsAndSocialClubLincoln);
+			Populate(entity, Groups.Generic, Location.ForestRecreationGround);
+			Populate(entity, Groups.MansfieldCVS, Location.ForestRecreationGround);
+			Populate(entity, Groups.Generic, Location.KingsMeadowCampus);
+			Populate(entity, Groups.MansfieldCVS, Location.KingsMeadowCampus);
+			Populate(entity, Groups.Generic, Location.RichardHerrodCentre);
+			Populate(entity, Groups.MansfieldCVS, Location.RichardHerrodCentre);
+			Populate(entity, Groups.Generic, Location.GamstonCommunityHall);
+			Populate(entity, Groups.MansfieldCVS, Location.GamstonCommunityHall);
+			Populate(entity, Groups.Generic, Location.MansfieldWickesSite);
+			Populate(entity, Groups.MansfieldCVS, Location.MansfieldWickesSite);
+			Populate(entity, Groups.Generic, Location.RustonsSportsAndSocialClubLincoln);
+			Populate(entity, Groups.LincolnshireVolunteers, Location.RustonsSportsAndSocialClubLincoln);
+			Populate(entity, Groups.Generic, Location.StMarysMedicalPracticeStamford);
+			Populate(entity, Groups.LincolnshireVolunteers, Location.StMarysMedicalPracticeStamford);
+			Populate(entity, Groups.Generic, Location.LouthCommunityHospital);
+			Populate(entity, Groups.LincolnshireVolunteers, Location.LouthCommunityHospital);
+		}
     }
 }
