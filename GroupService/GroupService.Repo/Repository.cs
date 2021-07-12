@@ -93,10 +93,10 @@ namespace GroupService.Repo
             return g.Id;         
         }
 
-        public List<int> GetUserGroups(GetUserGroupsRequest request, CancellationToken cancellationToken)
+        public List<int> GetUserGroups(int userId, CancellationToken cancellationToken)
         {
             return _context.UserRole
-                .Where(w => w.UserId == request.UserID && w.RoleId == (int)GroupRoles.Member)
+                .Where(w => w.UserId == userId && w.RoleId == (int)GroupRoles.Member)
                 .Select(s => s.GroupId)
                 .ToList();
         }
@@ -403,6 +403,7 @@ namespace GroupService.Repo
 
             var credentialSets = _context.ActivityCredentialSet
                 .Where(x => x.GroupId == groupID && x.ActivityId == (int)supportActivity)
+                .OrderBy(x=> x.DisplayOrder)
                 .Select(x => x.CredentialSetId)
                 .ToList();
 
@@ -574,7 +575,7 @@ namespace GroupService.Repo
 
         public Instructions GetGroupSupportActivityInstructions(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken)
         {
-            string instruction = _context.GroupSupportActivityInstructions
+            string instruction = _context.GroupSupportActivityConfiguration
                 .Include(i => i.SupportActivityInstructions)
                 .Where(x => x.GroupId == groupId && x.SupportActivityId == (int)supportActivities)
                 .Select(x => x.SupportActivityInstructions.Instructions)
@@ -701,6 +702,24 @@ namespace GroupService.Repo
             {
                 return new List<HelpMyStreet.Utils.Models.Group>();
             }
+        }
+
+        public double? GetGroupSupportActivityRadius(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken)
+        {
+            var result = _context.GroupSupportActivityConfiguration
+                .Where(x => x.GroupId == groupId && x.SupportActivityId == (int)supportActivities)
+                .FirstOrDefault();
+
+            if(result==null)
+            {
+                return null;
+            }
+            else
+            {
+                return result.Radius;
+            }
+
+
         }
     }
 }

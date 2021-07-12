@@ -15,7 +15,7 @@ namespace GroupService.Repo.Helpers
 {
     public static class GroupEmailConfigurationExtensions
     {
-        private static List<KeyValuePair<string,string>> GetWelcomeEmailConfiguration_HelpMyStreet()
+        private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_HelpMyStreet()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
             config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>HelpMyStreet has partnered with organisations across the country to help make volunteering easier. To find out who we’re working with go to <a href=\"www.helpmystreet.org\">www.helpmystreet.org</a> and search our interactive map.</p>" +
@@ -42,7 +42,7 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("GroupContent", $"Before you start volunteering with us we need to verify your ID – " +
                 $"this is to make things as safe as possible for you and the people we help. You can verify your ID online, " +
                 $"or if you’re having trouble email us at <a href=\"mailto:volunteering@ageuklsl.org.uk\">volunteering@ageuklsl.org.uk</a>."));
-            config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Age UK Lincoln & South Lincolnshire"));
+            config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Pip"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:volunteering@ageuklsl.org.uk\">volunteering@ageuklsl.org.uk</a>."));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
             return config;
@@ -66,16 +66,6 @@ namespace GroupService.Repo.Helpers
             config.Add(new KeyValuePair<string, string>("GroupSignature", signature));
             config.Add(new KeyValuePair<string, string>("GroupPS", ""));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", showGroupLogo.ToString()));
-            return config;
-        }
-
-        private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_HLP()
-        {
-            List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
-            config.Add(new KeyValuePair<string, string>("GroupContent", $"Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help."));
-            config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Healthy London Partnership"));
-            config.Add(new KeyValuePair<string, string>("GroupPS", ""));
-            config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
             return config;
         }
 
@@ -181,8 +171,8 @@ namespace GroupService.Repo.Helpers
         private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_AgeConnectsCardiff()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
-            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to do a couple of checks. We need two references from people who have known you for more than a year, they must also be over 18 and not related to you. If you would like to undertake any roles which involve face-to-face contact with a client we will also need a DBS check.</p>" +
-                $"<p>All of our volunteers also need to complete an induction. This is a short web-session which gives us a chance to run through our policies and procedures - it also gives you a chance to meet other volunteers and ask any questions. Find out more about these checks when you click to accept a request.</p>"));
+            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to do a couple of checks. We need two references from people who have known you for more than a year, they must also be over 18 and not related to you. If you would like to undertake any roles which involve face-to-face contact with a client we will also need a DBS check. Please download our Volunteer Application Form from the <a href=\"{{{{BaseUrl}}}}/ageconnects-cardiff#resources\">useful links</a> section of our landing page to submit your details.<p>" +
+                $"<p>All of our volunteers also need to complete an induction. This is a short web-session which gives us a chance to run through our policies and procedures - it also gives you a chance to meet other volunteers and ask any questions. If you haven’t done so already, you can book your space for Core Induction Training on Eventbrite by clicking <a href=\"https://www.eventbrite.co.uk/o/age-connects-cardiff-amp-vale-32377866579\">here</a>.</p>"));
             config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Age Connects Cardiff & the Vale"));
             config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:info@ageconnectscardiff.org.uk\">info@ageconnectscardiff.org.uk</a>."));
             config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
@@ -227,7 +217,6 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.Generic, GetWelcomeEmailConfiguration_HelpMyStreet());
             Populate(entity, Groups.FTLOS, GetWelcomeEmailConfiguration_FTLOS());
             Populate(entity, Groups.AgeUKLSL, GetWelcomeEmailConfiguration_AgeUKLSL());
-            Populate(entity, Groups.HLP, GetWelcomeEmailConfiguration_HLP());
             Populate(entity, Groups.Tankersley, GetWelcomeEmailConfiguration_Tankersley());
             Populate(entity, Groups.Ruddington, GetWelcomeEmailConfiguration_Ruddington());
             Populate(entity, Groups.AgeUKWirral, GetWelcomeEmailConfiguration_AgeUKWirral());
@@ -262,7 +251,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupEmailConfiguration
             {
                 GroupId = (int)group,
-                CommunicationJobTypeId = (byte) CommunicationJobTypes.GroupWelcome,
+                CommunicationJobTypeId = (byte)CommunicationJobTypes.GroupWelcome,
                 Configuration = JsonConvert.SerializeObject(keyValuePairs)
             });
         }

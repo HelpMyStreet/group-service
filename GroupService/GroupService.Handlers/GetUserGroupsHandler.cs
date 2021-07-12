@@ -19,7 +19,7 @@ namespace GroupService.Handlers
 
         public async Task<GetUserGroupsResponse> Handle(GetUserGroupsRequest request, CancellationToken cancellationToken)
         {
-            List<int> groups = _repository.GetUserGroups(request, cancellationToken);
+            List<int> groups = _repository.GetUserGroups(request.UserID.Value, cancellationToken);
             return new GetUserGroupsResponse()
             {
                 Groups = groups

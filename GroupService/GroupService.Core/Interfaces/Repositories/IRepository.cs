@@ -21,6 +21,7 @@ namespace GroupService.Core.Interfaces.Repositories
         List<SupportActivityDetail> GetSupportActivityDetails(RegistrationFormVariant registrationFormVariant, CancellationToken cancellationToken);
         GetGroupNewRequestNotificationStrategyResponse GetGroupNewRequestNotificationStrategy(int groupId, CancellationToken cancellationToken);
         Instructions GetGroupSupportActivityInstructions(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken);
+        double? GetGroupSupportActivityRadius(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken);
         CredentialVerifiedBy GetCredentialVerifiedBy(int groupId, int credentialId);
         List<UserInGroup> GetAllGroupMembers(int groupId);
         UserInGroup GetGroupMember(int groupId, int userId);
@@ -37,7 +38,7 @@ namespace GroupService.Core.Interfaces.Repositories
         List<Group> GetChildGroups(int groupId, CancellationToken cancellationToken);
         List<int> GetGroupAndChildGroups(int groupId, CancellationToken cancellationToken);
         Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken);
-        List<int> GetUserGroups(GetUserGroupsRequest request, CancellationToken cancellationToken);
+        List<int> GetUserGroups(int userId, CancellationToken cancellationToken);
         Dictionary<int,List<int>> GetUserRoles(GetUserRolesRequest request, CancellationToken cancellationToken);
         Dictionary<int, List<int>> GetGroupMemberRoles(int groupId, CancellationToken cancellationToken);
         Task<bool> AssignRoleAsync(PostAssignRoleRequest request, CancellationToken cancellationToken);

@@ -11,6 +11,7 @@ namespace GroupService.Repo.Helpers
 {
     public static class SupportActivityInstructionsExtensions
     {
+        private const double NATIONAL_RADIUS = 2000d;
         public static void SetEnumSupportActivityInstructionsExtensionsData(this EntityTypeBuilder<EnumSupportActivityInstructions> entity)
         {
             var supportActivityInstructions = Enum.GetValues(typeof(SupportActivityInstructionsEnum)).Cast<SupportActivityInstructionsEnum>();
@@ -2067,26 +2068,27 @@ namespace GroupService.Repo.Helpers
         }
 
 
-        private static void Populate(EntityTypeBuilder<GroupSupportActivityInstructions> entity, Groups group, SupportActivities activity, SupportActivityInstructionsEnum instructions)
+        private static void Populate(EntityTypeBuilder<GroupSupportActivityConfiguration> entity, Groups group, SupportActivities activity, SupportActivityInstructionsEnum instructions, double radius = 20d)
         {
-            entity.HasData(new GroupSupportActivityInstructions()
+            entity.HasData(new GroupSupportActivityConfiguration()
             {
                 SupportActivityId = (int)activity,
                 GroupId = (int)group,
-                SupportActivityInstructionsId = (short)instructions
+                SupportActivityInstructionsId = (short)instructions,
+                Radius = radius
             });
         }
 
-        public static void PopulateGroupSupportActivityInstructions(this EntityTypeBuilder<GroupSupportActivityInstructions> entity)
+        public static void PopulateGroupSupportActivityInstructions(this EntityTypeBuilder<GroupSupportActivityConfiguration> entity)
         {
             Populate(entity, Groups.Generic, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn);
             Populate(entity, Groups.Generic, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
             Populate(entity, Groups.Generic, SupportActivities.Errands, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.Generic, SupportActivities.FaceMask, SupportActivityInstructionsEnum.HMS_FaceCovering);
-            Populate(entity, Groups.Generic, SupportActivities.HomeworkSupport, SupportActivityInstructionsEnum.HMS_Homework);
+            Populate(entity, Groups.Generic, SupportActivities.FaceMask, SupportActivityInstructionsEnum.HMS_FaceCovering, NATIONAL_RADIUS);
+            Populate(entity, Groups.Generic, SupportActivities.HomeworkSupport, SupportActivityInstructionsEnum.HMS_Homework, NATIONAL_RADIUS);
             Populate(entity, Groups.Generic, SupportActivities.MealPreparation, SupportActivityInstructionsEnum.HMS_General);
             Populate(entity, Groups.Generic, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.Generic, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
+            Populate(entity, Groups.Generic, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, NATIONAL_RADIUS);
             Populate(entity, Groups.Generic, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
 
             Populate(entity, Groups.AgeUKLSL, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeUKLSL_Prescriptions);
@@ -2102,52 +2104,54 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeUKWirral, SupportActivities.Shopping, SupportActivityInstructionsEnum.AgeUKWirral_Shopping);
             Populate(entity, Groups.AgeUKWirral, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.AgeUKWirral_VolunteerSupport);
 
-            Populate(entity, Groups.FTLOS, SupportActivities.FaceMask, SupportActivityInstructionsEnum.FTLOS_FaceCovering);
+            Populate(entity, Groups.FTLOS, SupportActivities.FaceMask, SupportActivityInstructionsEnum.FTLOS_FaceCovering, NATIONAL_RADIUS);
 
             Populate(entity, Groups.Ruddington, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn);
             Populate(entity, Groups.Ruddington, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
             Populate(entity, Groups.Ruddington, SupportActivities.DogWalking, SupportActivityInstructionsEnum.HMS_General);
             Populate(entity, Groups.Ruddington, SupportActivities.Errands, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.Ruddington, SupportActivities.FaceMask, SupportActivityInstructionsEnum.HMS_FaceCovering);
+            Populate(entity, Groups.Ruddington, SupportActivities.FaceMask, SupportActivityInstructionsEnum.HMS_FaceCovering, NATIONAL_RADIUS);
             Populate(entity, Groups.Ruddington, SupportActivities.MealPreparation, SupportActivityInstructionsEnum.HMS_General);
             Populate(entity, Groups.Ruddington, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.Ruddington, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
+            Populate(entity, Groups.Ruddington, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, NATIONAL_RADIUS);
             Populate(entity, Groups.Ruddington, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
             Populate(entity, Groups.Ruddington, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
 
             Populate(entity, Groups.Tankersley, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn);
             Populate(entity, Groups.Tankersley, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
             Populate(entity, Groups.Tankersley, SupportActivities.Errands, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.Tankersley, SupportActivities.FaceMask, SupportActivityInstructionsEnum.HMS_FaceCovering);
-            Populate(entity, Groups.Tankersley, SupportActivities.HomeworkSupport, SupportActivityInstructionsEnum.HMS_Homework);
+            Populate(entity, Groups.Tankersley, SupportActivities.FaceMask, SupportActivityInstructionsEnum.HMS_FaceCovering, NATIONAL_RADIUS);
+            Populate(entity, Groups.Tankersley, SupportActivities.HomeworkSupport, SupportActivityInstructionsEnum.HMS_Homework, NATIONAL_RADIUS);
             Populate(entity, Groups.Tankersley, SupportActivities.MealPreparation, SupportActivityInstructionsEnum.HMS_General);
             Populate(entity, Groups.Tankersley, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.Tankersley, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
+            Populate(entity, Groups.Tankersley, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, NATIONAL_RADIUS);
             Populate(entity, Groups.Tankersley, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
 
             Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.MealsToYourDoor, SupportActivityInstructionsEnum.AgeUKFANDS_MealsToYourDoor);
             Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.Other, SupportActivityInstructionsEnum.AgeUKFANDS_Other);
-            Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeUKFANDS_FriendlyChat);
+            Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeUKFANDS_FriendlyChat, NATIONAL_RADIUS);
             Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.Transport, SupportActivityInstructionsEnum.AgeUKFANDS_Transport);
             Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.AgeUKFANDS_VolunteerSupport);
+            Populate(entity, Groups.AgeUKFavershamAndSittingbourne, SupportActivities.MealtimeCompanion, SupportActivityInstructionsEnum.AgeUKFANDS_MealtimeCompanion);
+
 
             Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.MealsToYourDoor, SupportActivityInstructionsEnum.AgeUKNWK_MealsToYourDoor);
             Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.Other, SupportActivityInstructionsEnum.AgeUKNWK_Other);
-            Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
+            Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, NATIONAL_RADIUS);
             Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.Shopping, SupportActivityInstructionsEnum.AgeUKNWK_Shopping);
             Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeUKNWK_Prescriptions);
             Populate(entity, Groups.AgeUKNorthWestKent, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
 
             Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeUKNottsBalderton_Prescriptions);
             Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeUKNottsBalderton_FriendlyChat);
+            Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeUKNottsBalderton_FriendlyChat, NATIONAL_RADIUS);
             Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.Shopping, SupportActivityInstructionsEnum.AgeUKNottsBalderton_Shopping);
             Populate(entity, Groups.AgeUKNottsBalderton, SupportActivities.DogWalking, SupportActivityInstructionsEnum.AgeUKNottsBalderton_DogWalking);
 
             Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_Prescriptions);
             Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.Errands, SupportActivityInstructionsEnum.HMS_OtherPurchase);
             Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_FriendlyChat);
+            Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_FriendlyChat, NATIONAL_RADIUS);
             Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.Shopping, SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_Shopping);
             Populate(entity, Groups.AgeUKNottsNorthMuskham, SupportActivities.DogWalking, SupportActivityInstructionsEnum.AgeUKNottsNorthMuskham_DogWalking);
 
@@ -2155,7 +2159,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeUKSouthKentCoast, SupportActivities.MealsToYourDoor, SupportActivityInstructionsEnum.AgeUKSKC_MealsToYourDoor);
             Populate(entity, Groups.AgeUKSouthKentCoast, SupportActivities.MealtimeCompanion, SupportActivityInstructionsEnum.AgeUKSKC_MealtimeCompanion);
             Populate(entity, Groups.AgeUKSouthKentCoast, SupportActivities.Other, SupportActivityInstructionsEnum.AgeUKSKC_Other);
-            Populate(entity, Groups.AgeUKSouthKentCoast, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
+            Populate(entity, Groups.AgeUKSouthKentCoast, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, NATIONAL_RADIUS);
             Populate(entity, Groups.AgeUKSouthKentCoast, SupportActivities.Shopping, SupportActivityInstructionsEnum.AgeUKSKC_Shopping);
             Populate(entity, Groups.AgeUKSouthKentCoast, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
 
@@ -2175,12 +2179,12 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.Sandbox, SupportActivities.EmergencySupport, SupportActivityInstructionsEnum.HMS_EmergencySupport);
             Populate(entity, Groups.Sandbox, SupportActivities.Errands, SupportActivityInstructionsEnum.HMS_OtherPurchase);
             Populate(entity, Groups.Sandbox, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.Sandbox, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
+            Populate(entity, Groups.Sandbox, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, NATIONAL_RADIUS);
             Populate(entity, Groups.Sandbox, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
             Populate(entity, Groups.Sandbox, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
             Populate(entity, Groups.Sandbox, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
 
-            Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeConnectCardiff_FriendlyChat);
+            Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.AgeConnectCardiff_FriendlyChat, NATIONAL_RADIUS);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.InPersonBefriending, SupportActivityInstructionsEnum.AgeConnectCardiff_InPersonBefriending);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.Other, SupportActivityInstructionsEnum.AgeConnectCardiff_Other);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.PracticalSupport, SupportActivityInstructionsEnum.AgeConnectCardiff_PracticalSupport);
@@ -2191,12 +2195,12 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeConnectCardiff_Prescriptions);
 
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.FaceMask, SupportActivityInstructionsEnum.HMS_FaceCovering);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.FaceMask, SupportActivityInstructionsEnum.HMS_FaceCovering, NATIONAL_RADIUS);
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn);
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Errands, SupportActivityInstructionsEnum.HMS_OtherPurchase);
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.DigitalSupport, SupportActivityInstructionsEnum.HMS_General);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat);
+            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, NATIONAL_RADIUS);
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.BinDayAssistance, SupportActivityInstructionsEnum.HMS_BinDayAssistance);
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Covid19Help, SupportActivityInstructionsEnum.HMS_General);
             Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
@@ -2213,7 +2217,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.Southwell, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.Southwell_Prescriptions);
             Populate(entity, Groups.Southwell, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
 
-            Populate(entity, Groups.ApexBankStaff, SupportActivities.BankStaffVaccinator, SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator);
+            Populate(entity, Groups.ApexBankStaff, SupportActivities.BankStaffVaccinator, SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator, NATIONAL_RADIUS);
             Populate(entity, Groups.ApexBankStaff, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
 
         }
