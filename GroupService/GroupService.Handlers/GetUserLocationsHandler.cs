@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace GroupService.Handlers
 {
-    public class GetUserGroupsHandler : IRequestHandler<GetUserGroupsRequest, GetUserGroupsResponse>
+    public class GetUserLocationsHandler : IRequestHandler<GetUserLocationsRequest, GetUserLocationsResponse>
     {
         private readonly IRepository _repository;
-        public GetUserGroupsHandler(IRepository repository)
+        public GetUserLocationsHandler(IRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<GetUserGroupsResponse> Handle(GetUserGroupsRequest request, CancellationToken cancellationToken)
+        public async Task<GetUserLocationsResponse> Handle(GetUserLocationsRequest request, CancellationToken cancellationToken)
         {
             List<int> groups = _repository.GetUserGroups(request.UserID.Value, cancellationToken);
-            return new GetUserGroupsResponse()
+            return new GetUserLocationsResponse()
             {
-                Groups = groups
+                Locations = _repository.GetLocations(groups, cancellationToken)
             };
         }
     }

@@ -6,6 +6,11 @@ namespace GroupService.Repo.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.Sql(@"
+                ALTER TABLE [Group].[GroupSupportActivityInstructions]  
+                DISABLE CHANGE_TRACKING;
+                ");
+
             migrationBuilder.DropPrimaryKey(
                 name: "PK_GroupSupportActivityInstructions",
                 schema: "Group",
@@ -28,10 +33,21 @@ namespace GroupService.Repo.Migrations
                 schema: "Group",
                 table: "GroupSupportActivityConfiguration",
                 columns: new[] { "GroupID", "SupportActivityID" });
+
+            migrationBuilder.Sql(@"
+                ALTER TABLE [Group].[GroupSupportActivityConfiguration]
+                ENABLE CHANGE_TRACKING  
+                WITH (TRACK_COLUMNS_UPDATED = ON)
+                ");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.Sql(@"
+                ALTER TABLE [Group].[GroupSupportActivityConfiguration]  
+                DISABLE CHANGE_TRACKING;
+                ");
+
             migrationBuilder.DropPrimaryKey(
                 name: "PK_GroupSupportActivityConfiguration",
                 schema: "Group",
@@ -54,6 +70,12 @@ namespace GroupService.Repo.Migrations
                 schema: "Group",
                 table: "GroupSupportActivityInstructions",
                 columns: new[] { "GroupID", "SupportActivityID" });
+
+            migrationBuilder.Sql(@"
+                ALTER TABLE [Group].[GroupSupportActivityInstructions]
+                ENABLE CHANGE_TRACKING  
+                WITH (TRACK_COLUMNS_UPDATED = ON)
+                ");
         }
     }
 }

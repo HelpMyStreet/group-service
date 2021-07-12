@@ -3552,38 +3552,13 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
-                            GroupId = -15,
-                            LocationId = -4
-                        },
-                        new
-                        {
-                            GroupId = -16,
-                            LocationId = -5
-                        },
-                        new
-                        {
                             GroupId = -17,
                             LocationId = -6
                         },
                         new
                         {
-                            GroupId = -18,
-                            LocationId = -7
-                        },
-                        new
-                        {
-                            GroupId = -19,
-                            LocationId = -8
-                        },
-                        new
-                        {
                             GroupId = -20,
                             LocationId = -9
-                        },
-                        new
-                        {
-                            GroupId = -21,
-                            LocationId = -10
                         },
                         new
                         {
@@ -3619,6 +3594,86 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -32,
                             LocationId = -9
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -15
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            LocationId = -15
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -14
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            LocationId = -14
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -13
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            LocationId = -13
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -12
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            LocationId = -12
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -11
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            LocationId = -11
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -9
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            LocationId = -9
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -6
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            LocationId = -6
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -3
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            LocationId = -3
                         });
                 });
 

@@ -38,7 +38,7 @@ namespace GroupService.Core.Interfaces.Repositories
         List<Group> GetChildGroups(int groupId, CancellationToken cancellationToken);
         List<int> GetGroupAndChildGroups(int groupId, CancellationToken cancellationToken);
         Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken);
-        List<int> GetUserGroups(GetUserGroupsRequest request, CancellationToken cancellationToken);
+        List<int> GetUserGroups(int userId, CancellationToken cancellationToken);
         Dictionary<int,List<int>> GetUserRoles(GetUserRolesRequest request, CancellationToken cancellationToken);
         Dictionary<int, List<int>> GetGroupMemberRoles(int groupId, CancellationToken cancellationToken);
         Task<bool> AssignRoleAsync(PostAssignRoleRequest request, CancellationToken cancellationToken);
