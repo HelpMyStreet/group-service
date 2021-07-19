@@ -20,9 +20,9 @@ namespace GroupService.AzureFunction
     public class GetRegistrationFormSupportActivities
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetRegistrationFormSupportActivitiesRequest> _logger;
+        private readonly ILoggerWrapper<GetRegistrationFormSupportActivities> _logger;
 
-        public GetRegistrationFormSupportActivities(IMediator mediator,ILoggerWrapper<GetRegistrationFormSupportActivitiesRequest> logger)
+        public GetRegistrationFormSupportActivities(IMediator mediator,ILoggerWrapper<GetRegistrationFormSupportActivities> logger)
         {
             _mediator = mediator;
             _logger = logger;

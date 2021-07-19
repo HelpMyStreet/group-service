@@ -21,14 +21,14 @@ namespace GroupService.UnitTests.AzureFunctions
     public class PostAddUserToDefaultGroupsTests
     {
         private Mock<IMediator> _mediator;
-        private Mock<ILoggerWrapper<PostAddUserToDefaultGroupsRequest>> _logger;
+        private Mock<ILoggerWrapper<PostAddUserToDefaultGroups>> _logger;
         private PostAddUserToDefaultGroups _classUnderTest;
         private PostAddUserToDefaultGroupsResponse _response;
 
         [SetUp]
         public void Setup()
         {
-            _logger = new Mock<ILoggerWrapper<PostAddUserToDefaultGroupsRequest>>();
+            _logger = new Mock<ILoggerWrapper<PostAddUserToDefaultGroups>>();
             _mediator = new Mock<IMediator>();
             _mediator.Setup(x => x.Send(It.IsAny<PostAddUserToDefaultGroupsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(() => _response);
             _classUnderTest = new PostAddUserToDefaultGroups(_mediator.Object, _logger.Object);

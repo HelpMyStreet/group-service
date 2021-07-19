@@ -20,9 +20,9 @@ namespace GroupService.AzureFunction
     public class GetGroupNewRequestNotificationStrategy
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetGroupNewRequestNotificationStrategyRequest> _logger;
+        private readonly ILoggerWrapper<GetGroupNewRequestNotificationStrategy> _logger;
 
-        public GetGroupNewRequestNotificationStrategy(IMediator mediator,ILoggerWrapper<GetGroupNewRequestNotificationStrategyRequest> logger)
+        public GetGroupNewRequestNotificationStrategy(IMediator mediator,ILoggerWrapper<GetGroupNewRequestNotificationStrategy> logger)
         {
             _mediator = mediator;
             _logger = logger;

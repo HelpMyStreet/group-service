@@ -19,9 +19,9 @@ namespace GroupService.AzureFunction
     public class GetNewShiftActions
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetNewShiftActionsRequest> _logger;
+        private readonly ILoggerWrapper<GetNewShiftActions> _logger;
 
-        public GetNewShiftActions(IMediator mediator,ILoggerWrapper<GetNewShiftActionsRequest> logger)
+        public GetNewShiftActions(IMediator mediator,ILoggerWrapper<GetNewShiftActions> logger)
         {
             _mediator = mediator;
             _logger = logger;

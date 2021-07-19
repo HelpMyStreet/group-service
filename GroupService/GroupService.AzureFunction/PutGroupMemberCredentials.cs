@@ -22,9 +22,9 @@ namespace GroupService.AzureFunction
     public class PutGroupMemberCredentials
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<PutGroupMemberCredentialsRequest> _logger;
+        private readonly ILoggerWrapper<PutGroupMemberCredentials> _logger;
 
-        public PutGroupMemberCredentials(IMediator mediator,ILoggerWrapper<PutGroupMemberCredentialsRequest> logger)
+        public PutGroupMemberCredentials(IMediator mediator,ILoggerWrapper<PutGroupMemberCredentials> logger)
         {
             _mediator = mediator;
             _logger = logger;
