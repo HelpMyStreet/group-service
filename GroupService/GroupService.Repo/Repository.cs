@@ -721,5 +721,16 @@ namespace GroupService.Repo
 
 
         }
+
+        public List<GroupSupportActivityRadius> GetGroupSupportActivityRadii(CancellationToken cancellationToken)
+        {
+            return  _context.GroupSupportActivityConfiguration
+                .Select(x => new GroupSupportActivityRadius()
+                {
+                    Group = (Groups) x.GroupId,
+                    SupportActivity = (SupportActivities) x.SupportActivityId,
+                    SupportRadiusMiles = x.Radius
+                }).ToList();
+        }
     }
 }
