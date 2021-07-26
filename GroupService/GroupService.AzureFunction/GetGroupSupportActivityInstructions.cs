@@ -20,9 +20,9 @@ namespace GroupService.AzureFunction
     public class GetGroupSupportActivityInstructions
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetGroupSupportActivityInstructionsRequest> _logger;
+        private readonly ILoggerWrapper<GetGroupSupportActivityInstructions> _logger;
 
-        public GetGroupSupportActivityInstructions(IMediator mediator,ILoggerWrapper<GetGroupSupportActivityInstructionsRequest> logger)
+        public GetGroupSupportActivityInstructions(IMediator mediator,ILoggerWrapper<GetGroupSupportActivityInstructions> logger)
         {
             _mediator = mediator;
             _logger = logger;

@@ -21,9 +21,9 @@ namespace GroupService.AzureFunction
     public class GetGroupActivityCredentials
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetGroupActivityCredentialsRequest> _logger;
+        private readonly ILoggerWrapper<GetGroupActivityCredentials> _logger;
 
-        public GetGroupActivityCredentials(IMediator mediator,ILoggerWrapper<GetGroupActivityCredentialsRequest> logger)
+        public GetGroupActivityCredentials(IMediator mediator,ILoggerWrapper<GetGroupActivityCredentials> logger)
         {
             _mediator = mediator;
             _logger = logger;

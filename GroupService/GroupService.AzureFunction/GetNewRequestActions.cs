@@ -19,9 +19,9 @@ namespace GroupService.AzureFunction
     public class GetNewRequestActions
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetNewRequestActionsRequest> _logger;
+        private readonly ILoggerWrapper<GetNewRequestActions> _logger;
 
-        public GetNewRequestActions(IMediator mediator,ILoggerWrapper<GetNewRequestActionsRequest> logger)
+        public GetNewRequestActions(IMediator mediator,ILoggerWrapper<GetNewRequestActions> logger)
         {
             _mediator = mediator;
             _logger = logger;

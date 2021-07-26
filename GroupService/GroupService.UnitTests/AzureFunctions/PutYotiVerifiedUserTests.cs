@@ -22,14 +22,14 @@ namespace GroupService.UnitTests.AzureFunctions
     public class PutYotiVerifiedUserTests
     {
         private Mock<IMediator> _mediator;
-        private Mock<ILoggerWrapper<PutYotiVerifiedUserRequest>> _logger;
+        private Mock<ILoggerWrapper<PutYotiVerifiedUser>> _logger;
         private PutYotiVerifiedUser _classUnderTest;
         private bool _response;
 
         [SetUp]
         public void Setup()
         {
-            _logger = new Mock<ILoggerWrapper<PutYotiVerifiedUserRequest>>();
+            _logger = new Mock<ILoggerWrapper<PutYotiVerifiedUser>>();
             _mediator = new Mock<IMediator>();
             _mediator.Setup(x => x.Send(It.IsAny<PutYotiVerifiedUserRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(() => _response);
             _classUnderTest = new PutYotiVerifiedUser(_mediator.Object, _logger.Object);

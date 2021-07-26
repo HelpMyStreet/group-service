@@ -20,9 +20,9 @@ namespace GroupService.AzureFunction
     public class PostAssignRole
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<PostAssignRoleRequest> _logger;
+        private readonly ILoggerWrapper<PostAssignRole> _logger;
 
-        public PostAssignRole(IMediator mediator,ILoggerWrapper<PostAssignRoleRequest> logger)
+        public PostAssignRole(IMediator mediator,ILoggerWrapper<PostAssignRole> logger)
         {
             _mediator = mediator;
             _logger = logger;

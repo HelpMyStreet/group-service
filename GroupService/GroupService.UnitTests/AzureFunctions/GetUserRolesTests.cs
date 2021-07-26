@@ -21,14 +21,14 @@ namespace GroupService.UnitTests.AzureFunctions
     public class GetUserRolesTests
     {
         private Mock<IMediator> _mediator;
-        private Mock<ILoggerWrapper<GetUserRolesRequest>> _logger;
+        private Mock<ILoggerWrapper<GetUserRoles>> _logger;
         private GetUserRoles _classUnderTest;
         private GetUserRolesResponse _response;
 
         [SetUp]
         public void Setup()
         {
-            _logger = new Mock<ILoggerWrapper<GetUserRolesRequest>>();
+            _logger = new Mock<ILoggerWrapper<GetUserRoles>>();
             _mediator = new Mock<IMediator>();
             _mediator.Setup(x => x.Send(It.IsAny<GetUserRolesRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(()=> _response);
             _classUnderTest = new GetUserRoles(_mediator.Object,_logger.Object);

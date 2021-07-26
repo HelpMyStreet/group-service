@@ -21,14 +21,14 @@ namespace GroupService.UnitTests.AzureFunctions
     public class PostRevokeRoleTests
     {
         private Mock<IMediator> _mediator;
-        private Mock<ILoggerWrapper<PostRevokeRoleRequest>> _logger;
+        private Mock<ILoggerWrapper<PostRevokeRole>> _logger;
         private PostRevokeRole _classUnderTest;
         private PostRevokeRoleResponse _response;
 
         [SetUp]
         public void Setup()
         {
-            _logger = new Mock<ILoggerWrapper<PostRevokeRoleRequest>>();
+            _logger = new Mock<ILoggerWrapper<PostRevokeRole>>();
             _mediator = new Mock<IMediator>();
             _mediator.Setup(x => x.Send(It.IsAny<PostRevokeRoleRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(() => _response);
             _classUnderTest = new PostRevokeRole(_mediator.Object, _logger.Object);

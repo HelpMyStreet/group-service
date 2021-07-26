@@ -21,9 +21,9 @@ namespace GroupService.AzureFunction
     public class GetChildGroups
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetChildGroupsRequest> _logger;
+        private readonly ILoggerWrapper<GetChildGroups> _logger;
 
-        public GetChildGroups(IMediator mediator,ILoggerWrapper<GetChildGroupsRequest> logger)
+        public GetChildGroups(IMediator mediator,ILoggerWrapper<GetChildGroups> logger)
         {
             _mediator = mediator;
             _logger = logger;

@@ -21,14 +21,14 @@ namespace GroupService.UnitTests.AzureFunctions
     public class GetGroupByKeyTests
     {
         private Mock<IMediator> _mediator;
-        private Mock<ILoggerWrapper<GetGroupByKeyRequest>> _logger;
+        private Mock<ILoggerWrapper<GetGroupByKey>> _logger;
         private GetGroupByKey _classUnderTest;
         private GetGroupByKeyResponse _response;
 
         [SetUp]
         public void Setup()
         {
-            _logger = new Mock<ILoggerWrapper<GetGroupByKeyRequest>>();
+            _logger = new Mock<ILoggerWrapper<GetGroupByKey>>();
             _mediator = new Mock<IMediator>();
             _mediator.Setup(x => x.Send(It.IsAny<GetGroupByKeyRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(()=> _response);
             _classUnderTest = new GetGroupByKey(_mediator.Object,_logger.Object);
