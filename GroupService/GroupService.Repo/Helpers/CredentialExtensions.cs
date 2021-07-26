@@ -52,7 +52,8 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeConnectsCardiff, 23 },
                 { Groups.MeadowsCommunityHelpers, 24 },
                 { Groups.Southwell, 31 },
-                { Groups.ApexBankStaff, 32 }
+                { Groups.ApexBankStaff, 32 },
+                { Groups.AgeUKMidMersey, 33 },
 
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
@@ -62,7 +63,8 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKSouthKentCoast, 111 },
                 { Groups.AgeUKFavershamAndSittingbourne, 131 },
                 { Groups.Sandbox, 141 },
-                { Groups.AgeConnectsCardiff, 231 }
+                { Groups.AgeConnectsCardiff, 231 },
+                { Groups.AgeUKMidMersey, 331 }
             };
 
             GROUPS_USING_YOTI = new List<Groups> {
@@ -79,7 +81,8 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKLSL,
                 Groups.FTLOS,
                 Groups.Generic,
-                Groups.Southwell
+                Groups.Southwell,
+                Groups.AgeUKMidMersey
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
@@ -95,7 +98,8 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeConnectsCardiff,
                 Groups.MeadowsCommunityHelpers,
                 Groups.Southwell,
-                Groups.ApexBankStaff
+                Groups.ApexBankStaff,
+                Groups.AgeUKMidMersey
             };
         }
 
@@ -489,6 +493,32 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKMidMersey,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = $"If you’re unable to verify with Yoti, email us at mailto:enquiries@aukmm.org.uk to request a manual ID check.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeUKMidMersey,
+                CredentialId = DBS_CHECK,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "DBS Check",
+                HowToAchieve = $"This activity requires a DBS check. Email us at mailto:enquiries@aukmm.org.uk to request or register a DBS check.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
+                DisplayOrder = 3,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -641,6 +671,14 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, IDENTITY_CREDENTIAL_SETS[Groups.ApexBankStaff]);
             SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET, 1);
             SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET, 2);
+
+            var ageukmidmerseyActivities = new List<SupportActivities> {SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.DogWalking, SupportActivities.PhoneCalls_Friendly, SupportActivities.InPersonBefriending,
+            SupportActivities.CheckingIn, SupportActivities.BinDayAssistance, SupportActivities.PracticalSupport, SupportActivities.Covid19Help,
+            SupportActivities.DigitalSupport, SupportActivities.WellbeingPackage, SupportActivities.Transport, SupportActivities.VolunteerSupport,
+            SupportActivities.EmergencySupport, SupportActivities.SkillShare, SupportActivities.Other};
+
+            SetActivityCredentialSet(entity, Groups.AgeUKMidMersey, ageukmidmerseyActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKMidMersey]);
+            SetActivityCredentialSet(entity, Groups.AgeUKMidMersey, ageukmidmerseyActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKMidMersey]);
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)

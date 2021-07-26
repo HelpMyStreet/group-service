@@ -39,6 +39,7 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.Covid19Help => "Providing help booking COVID-19 tests or vaccination appointments",
                 SupportActivities.DigitalSupport => "Providing digital support for people struggling with technology",
                 SupportActivities.BankStaffVaccinator => "Covering bank staff vaccinator shifts (this is a paid role)",
+                SupportActivities.SkillShare => "Giving my time to share my skills and interests with other people who are interested to learn more",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
         }
@@ -1335,6 +1336,156 @@ namespace GroupService.Repo.Helpers
             });
         }
 
+        private static void SetAgeUKMidMerseyActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.Shopping,
+                Label = SupportActivities.Shopping.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 1
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.Errands,
+                Label = SupportActivities.Errands.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 3
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.DogWalking,
+                Label = SupportActivities.DogWalking.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 4
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 5
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.InPersonBefriending,
+                Label = SupportActivities.InPersonBefriending.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 6
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.CheckingIn,
+                Label = SupportActivities.CheckingIn.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 7
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.BinDayAssistance,
+                Label = SupportActivities.BinDayAssistance.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 8
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.PracticalSupport,
+                Label = SupportActivities.PracticalSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 9
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.Covid19Help,
+                Label = SupportActivities.Covid19Help.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 10
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.DigitalSupport,
+                Label = SupportActivities.DigitalSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 11
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.WellbeingPackage,
+                Label = SupportActivities.WellbeingPackage.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 12
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.Transport,
+                Label = SupportActivities.Transport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 13
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.EmergencySupport,
+                Label = SupportActivities.EmergencySupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 14
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.SkillShare,
+                Label = SupportActivities.SkillShare.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 15
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = SupportActivities.Other.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 16
+            });
+
+
+        }
+
         private static void SetMansfieldCVSActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
 
@@ -1365,6 +1516,7 @@ namespace GroupService.Repo.Helpers
             SetMansfieldCVSActivities(entity);
             SetSouthwellActivities(entity);
             SetApexBankStaffActivities(entity);
+            SetAgeUKMidMerseyActivities(entity);
         }        
 
     }

@@ -416,6 +416,19 @@ namespace GroupService.Repo.Helpers
                 LinkURL = "/apexpcnbankstaff",
                 ShortName = "Apex Bank Staff"
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.AgeUKMidMersey,
+                GroupName = "Age UK Mid Mersey",
+                GroupKey = "ageuk-midmersey",
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true,
+                FriendlyName = "Age UK Mid Mersey",
+                LinkURL = "/ageuk-midmersey",
+                ShortName = "Age UK MM"
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -564,6 +577,14 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.ApexBankStaff,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.ApexBankStaff,
+                TargetGroups = (byte)TargetGroups.ThisGroup
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.AgeUKMidMersey,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKMidMersey,
                 TargetGroups = (byte)TargetGroups.ThisGroup
             });
         }
@@ -1013,6 +1034,30 @@ namespace GroupService.Repo.Helpers
                 SuppressRecipientPersonalDetails = false
             });
 
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKMidMersey,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKMidMersey_Public,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.AgeUKMidMersey,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKMidMersey_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
+            });
+
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
@@ -1453,6 +1498,15 @@ namespace GroupService.Repo.Helpers
                 Latitude = 53.0779128M,
                 Longitude = -0.973649M,
                 ZoomLevel = 13.5M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.AgeUKMidMersey,
+                Latitude = 53.4042239M,
+                Longitude = -2.7936289M,
+                ZoomLevel = 11.8M
             });
 
         }
