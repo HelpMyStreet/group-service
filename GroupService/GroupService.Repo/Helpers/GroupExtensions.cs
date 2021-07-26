@@ -1037,18 +1037,6 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = (int)Groups.AgeUKMidMersey,
-                Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKMidMersey_Public,
-                TargetGroups = (byte)TargetGroups.ThisGroup,
-                AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.AgeUKMidMersey,
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKMidMersey_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
