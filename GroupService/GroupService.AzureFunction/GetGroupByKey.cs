@@ -20,9 +20,9 @@ namespace GroupService.AzureFunction
     public class GetGroupByKey
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetGroupByKeyRequest> _logger;
+        private readonly ILoggerWrapper<GetGroupByKey> _logger;
 
-        public GetGroupByKey(IMediator mediator,ILoggerWrapper<GetGroupByKeyRequest> logger)
+        public GetGroupByKey(IMediator mediator,ILoggerWrapper<GetGroupByKey> logger)
         {
             _mediator = mediator;
             _logger = logger;
