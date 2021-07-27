@@ -20,9 +20,9 @@ namespace GroupService.AzureFunction
     public class PostRevokeRole
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<PostRevokeRoleRequest> _logger;
+        private readonly ILoggerWrapper<PostRevokeRole> _logger;
 
-        public PostRevokeRole(IMediator mediator,ILoggerWrapper<PostRevokeRoleRequest> logger)
+        public PostRevokeRole(IMediator mediator,ILoggerWrapper<PostRevokeRole> logger)
         {
             _mediator = mediator;
             _logger = logger;

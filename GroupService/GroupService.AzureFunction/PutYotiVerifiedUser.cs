@@ -22,9 +22,9 @@ namespace GroupService.AzureFunction
     public class PutYotiVerifiedUser
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<PutYotiVerifiedUserRequest> _logger;
+        private readonly ILoggerWrapper<PutYotiVerifiedUser> _logger;
 
-        public PutYotiVerifiedUser(IMediator mediator,ILoggerWrapper<PutYotiVerifiedUserRequest> logger)
+        public PutYotiVerifiedUser(IMediator mediator,ILoggerWrapper<PutYotiVerifiedUser> logger)
         {
             _mediator = mediator;
             _logger = logger;

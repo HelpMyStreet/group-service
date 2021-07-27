@@ -20,9 +20,9 @@ namespace GroupService.AzureFunction
     public class PostAddUserToDefaultGroups
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<PostAddUserToDefaultGroupsRequest> _logger;
+        private readonly ILoggerWrapper<PostAddUserToDefaultGroups> _logger;
 
-        public PostAddUserToDefaultGroups(IMediator mediator,ILoggerWrapper<PostAddUserToDefaultGroupsRequest> logger)
+        public PostAddUserToDefaultGroups(IMediator mediator,ILoggerWrapper<PostAddUserToDefaultGroups> logger)
         {
             _mediator = mediator;
             _logger = logger;

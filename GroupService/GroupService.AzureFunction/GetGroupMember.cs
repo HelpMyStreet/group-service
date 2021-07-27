@@ -22,9 +22,9 @@ namespace GroupService.AzureFunction
     public class GetGroupMember
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetGroupMemberRequest> _logger;
+        private readonly ILoggerWrapper<GetGroupMember> _logger;
 
-        public GetGroupMember(IMediator mediator,ILoggerWrapper<GetGroupMemberRequest> logger)
+        public GetGroupMember(IMediator mediator,ILoggerWrapper<GetGroupMember> logger)
         {
             _mediator = mediator;
             _logger = logger;

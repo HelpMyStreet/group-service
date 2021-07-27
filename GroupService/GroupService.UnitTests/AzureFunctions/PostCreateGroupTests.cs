@@ -20,14 +20,14 @@ namespace GroupService.UnitTests.AzureFunctions
     public class PostCreateGroupTests
     {
         private Mock<IMediator> _mediator;
-        private Mock<ILoggerWrapper<PostCreateGroupRequest>> _logger;
+        private Mock<ILoggerWrapper<PostCreateGroup>> _logger;
         private PostCreateGroup _classUnderTest;
         private PostCreateGroupResponse _response;
 
         [SetUp]
         public void Setup()
         {
-            _logger = new Mock<ILoggerWrapper<PostCreateGroupRequest>>();
+            _logger = new Mock<ILoggerWrapper<PostCreateGroup>>();
             _mediator = new Mock<IMediator>();
             _mediator.Setup(x => x.Send(It.IsAny<PostCreateGroupRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(()=> _response);
             _classUnderTest = new PostCreateGroup(_mediator.Object,_logger.Object);

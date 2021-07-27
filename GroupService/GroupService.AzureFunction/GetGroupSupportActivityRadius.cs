@@ -21,9 +21,9 @@ namespace GroupService.AzureFunction
     public class GetGroupSupportActivityRadius
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetGroupSupportActivityRadiusRequest> _logger;
+        private readonly ILoggerWrapper<GetGroupSupportActivityRadius> _logger;
 
-        public GetGroupSupportActivityRadius(IMediator mediator,ILoggerWrapper<GetGroupSupportActivityRadiusRequest> logger)
+        public GetGroupSupportActivityRadius(IMediator mediator,ILoggerWrapper<GetGroupSupportActivityRadius> logger)
         {
             _mediator = mediator;
             _logger = logger;

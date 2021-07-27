@@ -20,9 +20,9 @@ namespace GroupService.AzureFunction
     public class GetGroupEmailConfiguration
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetGroupEmailConfigurationRequest> _logger;
+        private readonly ILoggerWrapper<GetGroupEmailConfiguration> _logger;
 
-        public GetGroupEmailConfiguration(IMediator mediator,ILoggerWrapper<GetGroupEmailConfigurationRequest> logger)
+        public GetGroupEmailConfiguration(IMediator mediator,ILoggerWrapper<GetGroupEmailConfiguration> logger)
         {
             _mediator = mediator;
             _logger = logger;

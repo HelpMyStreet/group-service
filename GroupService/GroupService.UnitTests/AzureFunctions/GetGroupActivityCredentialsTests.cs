@@ -24,14 +24,14 @@ namespace GroupService.UnitTests.AzureFunctions
     public class GetGroupActivityCredentialsTests
     {
         private Mock<IMediator> _mediator;
-        private Mock<ILoggerWrapper<GetGroupActivityCredentialsRequest>> _logger;
+        private Mock<ILoggerWrapper<GetGroupActivityCredentials>> _logger;
         private GetGroupActivityCredentials _classUnderTest;
         private GetGroupActivityCredentialsResponse _response;
 
         [SetUp]
         public void Setup()
         {
-            _logger = new Mock<ILoggerWrapper<GetGroupActivityCredentialsRequest>>();
+            _logger = new Mock<ILoggerWrapper<GetGroupActivityCredentials>>();
             _mediator = new Mock<IMediator>();
             _mediator.Setup(x => x.Send(It.IsAny<GetGroupActivityCredentialsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(() => _response);
             _classUnderTest = new GetGroupActivityCredentials(_mediator.Object, _logger.Object);
