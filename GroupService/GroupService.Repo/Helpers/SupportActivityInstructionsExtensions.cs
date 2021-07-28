@@ -1720,6 +1720,34 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_AgeUK_MidMersey_Befriending()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.AgeUKMidMersey_Befriending,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Arrange a visit",
+                        Detail = "Give them a call to arrange a visit – find a time and a place that suits you both.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Enjoy your visit",
+                        Detail = "Meet up as agreed and have a good chat. If it’s going well, you could arrange your next visit too!",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail  = "When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -2064,7 +2092,13 @@ namespace GroupService.Repo.Helpers
                 Instructions = JsonConvert.SerializeObject(GetInstructions_Southwell_Prescriptions())
             });
 
-            
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKMidMersey_Befriending,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUK_MidMersey_Befriending())
+            });
+
+
         }
 
 
@@ -2219,6 +2253,23 @@ namespace GroupService.Repo.Helpers
 
             Populate(entity, Groups.ApexBankStaff, SupportActivities.BankStaffVaccinator, SupportActivityInstructionsEnum.APEXBank_BankStaffVaccinator, NATIONAL_RADIUS);
             Populate(entity, Groups.ApexBankStaff, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
+
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, 2000);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.InPersonBefriending, SupportActivityInstructionsEnum.AgeUKMidMersey_Befriending, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.BinDayAssistance, SupportActivityInstructionsEnum.HMS_General, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.ColdWeatherArmy, SupportActivityInstructionsEnum.HMS_General, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.Covid19Help, SupportActivityInstructionsEnum.HMS_General, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.DigitalSupport, SupportActivityInstructionsEnum.HMS_General, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.DogWalking, SupportActivityInstructionsEnum.HMS_General, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.Errands, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.PracticalSupport, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.SkillShare, SupportActivityInstructionsEnum.HMS_VolunteerSupport, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport, 20);
+            Populate(entity, Groups.AgeUKMidMersey, SupportActivities.WellbeingPackage, SupportActivityInstructionsEnum.HMS_VolunteerSupport, 20);
 
         }
     }

@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210726140432_AgeUKMMGroupCredentialSets")]
+    partial class AgeUKMMGroupCredentialSets
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -992,244 +994,6 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 11,
                             CredentialSetId = 329,
                             DisplayOrder = 2
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 1,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 2,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 3,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 5,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 7,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 26,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 10,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 30,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 27,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 31,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 29,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 13,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 16,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 22,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 25,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 33,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 11,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 1,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 2,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 3,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 5,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 7,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 26,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 10,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 30,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 27,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 31,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 29,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 13,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 16,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 22,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 25,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 33,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 11,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
                         });
                 });
 
@@ -7191,6 +6955,17 @@ You will also be expected to make a minimum commitment of six months.",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)26,
                             RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -33,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)27,
+                            RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)0
