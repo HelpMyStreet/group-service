@@ -1829,6 +1829,9 @@ namespace GroupService.Repo.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -1840,36 +1843,43 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 1,
+                            IsAdmin = false,
                             Name = "Member"
                         },
                         new
                         {
                             Id = 2,
+                            IsAdmin = true,
                             Name = "TaskAdmin"
                         },
                         new
                         {
                             Id = 3,
+                            IsAdmin = true,
                             Name = "UserAdmin"
                         },
                         new
                         {
                             Id = 4,
+                            IsAdmin = true,
                             Name = "Owner"
                         },
                         new
                         {
                             Id = 5,
+                            IsAdmin = true,
                             Name = "RequestSubmitter"
                         },
                         new
                         {
                             Id = 6,
+                            IsAdmin = false,
                             Name = "Volunteer"
                         },
                         new
                         {
                             Id = 7,
+                            IsAdmin = true,
                             Name = "UserAdmin_ReadOnly"
                         });
                 });
