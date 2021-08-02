@@ -21,9 +21,9 @@ namespace GroupService.AzureFunction
     public class GetGroupMembersForGivenRole
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<GetGroupMembersForGivenRoleRequest> _logger;
+        private readonly ILoggerWrapper<GetGroupMembersForGivenRole> _logger;
 
-        public GetGroupMembersForGivenRole(IMediator mediator,ILoggerWrapper<GetGroupMembersForGivenRoleRequest> logger)
+        public GetGroupMembersForGivenRole(IMediator mediator,ILoggerWrapper<GetGroupMembersForGivenRole> logger)
         {
             _mediator = mediator;
             _logger = logger;

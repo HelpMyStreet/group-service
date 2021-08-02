@@ -23,14 +23,14 @@ namespace GroupService.UnitTests.AzureFunctions
     public class GetGroupMemberTests
     {
         private Mock<IMediator> _mediator;
-        private Mock<ILoggerWrapper<GetGroupMemberRequest>> _logger;
+        private Mock<ILoggerWrapper<GetGroupMember>> _logger;
         private GetGroupMember _classUnderTest;
         private GetGroupMemberResponse _response;
 
         [SetUp]
         public void Setup()
         {
-            _logger = new Mock<ILoggerWrapper<GetGroupMemberRequest>>();
+            _logger = new Mock<ILoggerWrapper<GetGroupMember>>();
             _mediator = new Mock<IMediator>();
             _mediator.Setup(x => x.Send(It.IsAny<GetGroupMemberRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(() => _response);
             _classUnderTest = new GetGroupMember(_mediator.Object, _logger.Object);

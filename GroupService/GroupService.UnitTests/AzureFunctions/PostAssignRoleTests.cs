@@ -21,14 +21,14 @@ namespace GroupService.UnitTests.AzureFunctions
     public class PostAssignRoleTests
     {
         private Mock<IMediator> _mediator;
-        private Mock<ILoggerWrapper<PostAssignRoleRequest>> _logger;
+        private Mock<ILoggerWrapper<PostAssignRole>> _logger;
         private PostAssignRole _classUnderTest;
         private PostAssignRoleResponse _response;
 
         [SetUp]
         public void Setup()
         {
-            _logger = new Mock<ILoggerWrapper<PostAssignRoleRequest>>();
+            _logger = new Mock<ILoggerWrapper<PostAssignRole>>();
             _mediator = new Mock<IMediator>();
             _mediator.Setup(x => x.Send(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(() => _response);
             _classUnderTest = new PostAssignRole(_mediator.Object, _logger.Object);

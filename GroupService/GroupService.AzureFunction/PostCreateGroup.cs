@@ -20,9 +20,9 @@ namespace GroupService.AzureFunction
     public class PostCreateGroup
     {
         private readonly IMediator _mediator;
-        private readonly ILoggerWrapper<PostCreateGroupRequest> _logger;
+        private readonly ILoggerWrapper<PostCreateGroup> _logger;
 
-        public PostCreateGroup(IMediator mediator,ILoggerWrapper<PostCreateGroupRequest> logger)
+        public PostCreateGroup(IMediator mediator,ILoggerWrapper<PostCreateGroup> logger)
         {
             _mediator = mediator;
             _logger = logger;

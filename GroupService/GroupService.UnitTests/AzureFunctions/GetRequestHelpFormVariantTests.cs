@@ -23,14 +23,14 @@ namespace GroupService.UnitTests.AzureFunctions
     public class GetRequestHelpFormVariantTests
     {
         private Mock<IMediator> _mediator;
-        private Mock<ILoggerWrapper<GetRequestHelpFormVariantRequest>> _logger;
+        private Mock<ILoggerWrapper<GetRequestHelpFormVariant>> _logger;
         private GetRequestHelpFormVariant _classUnderTest;
         private GetRequestHelpFormVariantResponse _response;
 
         [SetUp]
         public void Setup()
         {
-            _logger = new Mock<ILoggerWrapper<GetRequestHelpFormVariantRequest>>();
+            _logger = new Mock<ILoggerWrapper<GetRequestHelpFormVariant>>();
             _mediator = new Mock<IMediator>();
             _mediator.Setup(x => x.Send(It.IsAny<GetRequestHelpFormVariantRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(()=> _response);
             _classUnderTest = new GetRequestHelpFormVariant(_mediator.Object,_logger.Object);

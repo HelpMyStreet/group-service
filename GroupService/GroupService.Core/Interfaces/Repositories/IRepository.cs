@@ -22,6 +22,7 @@ namespace GroupService.Core.Interfaces.Repositories
         GetGroupNewRequestNotificationStrategyResponse GetGroupNewRequestNotificationStrategy(int groupId, CancellationToken cancellationToken);
         Instructions GetGroupSupportActivityInstructions(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken);
         double? GetGroupSupportActivityRadius(int groupId, SupportActivities supportActivities, CancellationToken cancellationToken);
+        List<GroupSupportActivityRadius> GetGroupSupportActivityRadii(CancellationToken cancellationToken);
         CredentialVerifiedBy GetCredentialVerifiedBy(int groupId, int credentialId);
         List<UserInGroup> GetAllGroupMembers(int groupId);
         UserInGroup GetGroupMember(int groupId, int userId);

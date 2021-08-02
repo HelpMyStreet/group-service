@@ -8,6 +8,7 @@ namespace GroupService.Repo.Helpers
 {
     public static class GroupExtensions
     {
+
         private const string REQUEST_SUBMITTER_SOURCE = "a";
 
         public static void SetDefaultGroup(this EntityTypeBuilder<Group> entity)
