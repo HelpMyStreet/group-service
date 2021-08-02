@@ -675,7 +675,7 @@ namespace GroupService.Repo.Helpers
             var ageukmidmerseyActivities = new List<SupportActivities> {SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.DogWalking, SupportActivities.PhoneCalls_Friendly, SupportActivities.InPersonBefriending,
             SupportActivities.CheckingIn, SupportActivities.BinDayAssistance, SupportActivities.PracticalSupport, SupportActivities.Covid19Help,
             SupportActivities.DigitalSupport, SupportActivities.WellbeingPackage, SupportActivities.Transport, SupportActivities.VolunteerSupport,
-            SupportActivities.EmergencySupport, SupportActivities.SkillShare, SupportActivities.Other};
+            SupportActivities.EmergencySupport, SupportActivities.SkillShare, SupportActivities.Other, SupportActivities.ColdWeatherArmy};
 
             SetActivityCredentialSet(entity, Groups.AgeUKMidMersey, ageukmidmerseyActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKMidMersey]);
             SetActivityCredentialSet(entity, Groups.AgeUKMidMersey, ageukmidmerseyActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKMidMersey]);
