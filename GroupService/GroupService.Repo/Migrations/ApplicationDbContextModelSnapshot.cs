@@ -1449,6 +1449,42 @@ namespace GroupService.Repo.Migrations
                         });
                 });
 
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumGroupType", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnName("ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GroupType","Lookup");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 0,
+                            Name = "Local"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            Name = "Regional"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "National"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "HelpMyStreet"
+                        });
+                });
+
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumLocation", b =>
                 {
                     b.Property<int>("Id")
@@ -1656,6 +1692,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 16,
                             Name = "ApexBankStaff"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Name = "AgeUKMidMersey"
                         });
                 });
 
@@ -1818,6 +1859,16 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 26,
                             Name = "ApexBankStaff_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Name = "AgeUKMidMersey_Public"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Name = "AgeUKMidMersey_RequestSubmitter"
                         });
                 });
 
@@ -1828,6 +1879,9 @@ namespace GroupService.Repo.Migrations
                         .HasColumnName("ID")
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -1840,36 +1894,43 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 1,
+                            IsAdmin = false,
                             Name = "Member"
                         },
                         new
                         {
                             Id = 2,
+                            IsAdmin = true,
                             Name = "TaskAdmin"
                         },
                         new
                         {
                             Id = 3,
+                            IsAdmin = true,
                             Name = "UserAdmin"
                         },
                         new
                         {
                             Id = 4,
+                            IsAdmin = true,
                             Name = "Owner"
                         },
                         new
                         {
                             Id = 5,
+                            IsAdmin = true,
                             Name = "RequestSubmitter"
                         },
                         new
                         {
                             Id = 6,
+                            IsAdmin = false,
                             Name = "Volunteer"
                         },
                         new
                         {
                             Id = 7,
+                            IsAdmin = true,
                             Name = "UserAdmin_ReadOnly"
                         });
                 });
@@ -2027,6 +2088,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 32,
                             Name = "BankStaffVaccinator"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Name = "SkillShare"
                         });
                 });
 
@@ -2328,6 +2394,16 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 57,
                             Name = "Southwell_Prescriptions"
+                        },
+                        new
+                        {
+                            Id = 58,
+                            Name = "AgeUKMidMersey_Befriending"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            Name = "AgeUKMidMersey_SkillShare"
                         });
                 });
 
@@ -7161,6 +7237,11 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             SupportActivityId = 32,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 33,
                             AutoSignUpWhenOtherSelected = true
                         });
                 });

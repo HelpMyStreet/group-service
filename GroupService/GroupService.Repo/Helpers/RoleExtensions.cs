@@ -1,5 +1,6 @@
 ﻿using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Utils.Enums;
+using HelpMyStreet.Utils.Extensions;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace GroupService.Repo.Helpers
 
             foreach (var role in groupRoles)
             {
-                entity.HasData(new EnumRole { Id = (int)role, Name = role.ToString() });
+                entity.HasData(new EnumRole { Id = (int)role, Name = role.ToString(), IsAdmin = role.IsAdmin() });
             }
         }
     }
