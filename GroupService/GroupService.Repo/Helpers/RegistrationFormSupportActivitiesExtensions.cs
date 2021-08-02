@@ -1459,10 +1459,19 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RegistrationFormSupportActivity
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
+                SupportActivityId = (int)SupportActivities.VolunteerSupport,
+                Label = SupportActivities.VolunteerSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 14
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.AgeUKMidMersey,
                 SupportActivityId = (int)SupportActivities.EmergencySupport,
                 Label = SupportActivities.EmergencySupport.GetLabel(),
                 IsPreSelected = false,
-                DisplayOrder = 14
+                DisplayOrder = 15
             });
 
             entity.HasData(new RegistrationFormSupportActivity
@@ -1471,7 +1480,7 @@ namespace GroupService.Repo.Helpers
                 SupportActivityId = (int)SupportActivities.SkillShare,
                 Label = SupportActivities.SkillShare.GetLabel(),
                 IsPreSelected = false,
-                DisplayOrder = 15
+                DisplayOrder = 16
             });
 
             entity.HasData(new RegistrationFormSupportActivity
@@ -1480,7 +1489,7 @@ namespace GroupService.Repo.Helpers
                 SupportActivityId = (int)SupportActivities.Other,
                 Label = SupportActivities.Other.GetLabel(),
                 IsPreSelected = false,
-                DisplayOrder = 16
+                DisplayOrder = 17
             });
 
 
