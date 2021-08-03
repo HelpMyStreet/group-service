@@ -426,8 +426,9 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 FriendlyName = "Age UK Mid Mersey",
-                LinkURL = "/ageuk-midmersey",
-                ShortName = "Age UK MM"
+                LinkURL = "/ageukmidmersey",
+                ShortName = "Age UK MM",
+                GeographicName = "St Helens, Halton, Knowsley and Warrington",
             });
         }
 
@@ -1239,6 +1240,7 @@ namespace GroupService.Repo.Helpers
                 Locality = "",
                 Postcode = "LN5 7LB"
             });
+
 
             var mansfieldCVSGroups = new List<Groups>() { Groups.MansfieldCVS, Groups.MansfieldWickes, Groups.GamstonCommunityHall, Groups.RichardHerrodCentre, Groups.KingsMeadowCampus, Groups.ForestRecreationGround };
 

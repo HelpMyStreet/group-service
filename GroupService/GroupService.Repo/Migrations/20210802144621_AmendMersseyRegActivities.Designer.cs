@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210802144621_AmendMersseyRegActivities")]
+    partial class AmendMersseyRegActivities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1115,13 +1117,6 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -33,
-                            ActivityId = 15,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
                             ActivityId = 1,
                             CredentialSetId = 331,
                             DisplayOrder = 0
@@ -1235,13 +1230,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -33,
                             ActivityId = 11,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 15,
                             CredentialSetId = 331,
                             DisplayOrder = 0
                         });

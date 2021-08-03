@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210802144323_AmendMersey")]
+    partial class AmendMersey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1115,13 +1117,6 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -33,
-                            ActivityId = 15,
-                            CredentialSetId = 33,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
                             ActivityId = 1,
                             CredentialSetId = 331,
                             DisplayOrder = 0
@@ -1235,13 +1230,6 @@ namespace GroupService.Repo.Migrations
                         {
                             GroupId = -33,
                             ActivityId = 11,
-                            CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -33,
-                            ActivityId = 15,
                             CredentialSetId = 331,
                             DisplayOrder = 0
                         });
@@ -6586,16 +6574,8 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             RequestHelpFormVariantId = (byte)17,
-                            SupportActivityId = 22,
-                            DisplayOrder = (byte)14,
-                            IsPreSelected = false,
-                            Label = "Helping with events, admin duties or not-for-profit activities"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)17,
                             SupportActivityId = 25,
-                            DisplayOrder = (byte)15,
+                            DisplayOrder = (byte)14,
                             IsPreSelected = false,
                             Label = "Providing help in emergency situations (e.g. extreme weather)"
                         },
@@ -6603,7 +6583,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             RequestHelpFormVariantId = (byte)17,
                             SupportActivityId = 33,
-                            DisplayOrder = (byte)16,
+                            DisplayOrder = (byte)15,
                             IsPreSelected = false,
                             Label = "Giving my time to share my skills and interests with other people who are interested to learn more"
                         },
@@ -6611,7 +6591,7 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             RequestHelpFormVariantId = (byte)17,
                             SupportActivityId = 11,
-                            DisplayOrder = (byte)17,
+                            DisplayOrder = (byte)16,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
                         });
