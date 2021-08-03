@@ -993,8 +993,6 @@ namespace GroupService.Repo.Migrations
                         CredentialSetId = 329,
                         DisplayOrder = 2
                     },
-
-                    ,
                     new
                     {
                         GroupId = -33,
