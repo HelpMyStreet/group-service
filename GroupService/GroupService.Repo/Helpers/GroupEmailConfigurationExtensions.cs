@@ -211,6 +211,17 @@ namespace GroupService.Repo.Helpers
             return config;
         }
 
+        private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_AgeUK_MidMersey()
+        {
+            List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
+            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href='mailto:enquiries@aukmm.org.uk'>enquiries@aukmm.org.uk</a></p>" +
+                $"<p>For some activities we will also need a DBS check. Please email us on the email address above to request or register your DBS check.</p>"));
+            config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>The Age UK Mid Mersey team"));
+            config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href='mailto:enquiries@aukmm.org.uk'>enquiries@aukmm.org.uk</a>"));
+            config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
+            return config;
+        }
+
 
         public static void PopulateGroupEmailConfiguration(this EntityTypeBuilder<GroupEmailConfiguration> entity)
         {
@@ -244,6 +255,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.ForestRecreationGround, GetWelcomeEmailConfiguration_Default(true, "Best wishes,</p><p>Mansfield CVS</p>"));
             Populate(entity, Groups.Southwell, GetWelcomeEmailConfiguration_Southwell());
             Populate(entity, Groups.ApexBankStaff, GetWelcomeEmailConfiguration_ApexBankStaffPCN());
+            Populate(entity, Groups.AgeUKMidMersey, GetWelcomeEmailConfiguration_AgeUK_MidMersey());
         }
 
         private static void Populate(this EntityTypeBuilder<GroupEmailConfiguration> entity, Groups group, List<KeyValuePair<string, string>> keyValuePairs)
