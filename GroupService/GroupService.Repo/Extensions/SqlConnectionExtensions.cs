@@ -12,5 +12,6 @@ namespace GroupService.Repo.Extensions
                 connection.AccessToken = new AzureServiceTokenProvider().GetAccessTokenAsync("https://database.windows.net/").Result;
             }
         }
+
     }
 }
