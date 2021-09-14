@@ -1507,6 +1507,72 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 1
             });
         }
+
+        private static void SetBostonGNSActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.BostonGNS,
+                SupportActivityId = (int)SupportActivities.Shopping,
+                Label = SupportActivities.Shopping.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 1
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.BostonGNS,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.BostonGNS,
+                SupportActivityId = (int)SupportActivities.CollectingPrescriptions,
+                Label = SupportActivities.CollectingPrescriptions.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 3
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.BostonGNS,
+                SupportActivityId = (int)SupportActivities.PracticalSupport,
+                Label = SupportActivities.PracticalSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 4
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.BostonGNS,
+                SupportActivityId = (int)SupportActivities.DogWalking,
+                Label = SupportActivities.DogWalking.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 5
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.BostonGNS,
+                SupportActivityId = (int)SupportActivities.DigitalSupport,
+                Label = SupportActivities.DigitalSupport.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 6
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.BostonGNS,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = SupportActivities.Other.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 7
+            });
+        }
         public static void SetRegistrationFormSupportActivitiesExtensionsData(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
             SetDefaultSupportActivities(entity);
@@ -1526,6 +1592,7 @@ namespace GroupService.Repo.Helpers
             SetSouthwellActivities(entity);
             SetApexBankStaffActivities(entity);
             SetAgeUKMidMerseyActivities(entity);
+            SetBostonGNSActivities(entity);
         }        
 
     }
