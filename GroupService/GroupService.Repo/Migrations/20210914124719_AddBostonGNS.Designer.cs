@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210914124719_AddBostonGNS")]
+    partial class AddBostonGNS
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1967,11 +1969,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 17,
                             Name = "AgeUKMidMersey"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Name = "BostonGNS"
                         });
                 });
 
@@ -2144,16 +2141,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 28,
                             Name = "AgeUKMidMersey_RequestSubmitter"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Name = "BostonGNS_Public"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Name = "BostonGNS_RequestSubmitter"
                         });
                 });
 
@@ -6874,13 +6861,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Source = "",
                             RegistrationFormVariant = (byte)17,
                             TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            Source = "",
-                            RegistrationFormVariant = (byte)18,
-                            TargetGroups = (byte)5
                         });
                 });
 
@@ -7332,28 +7312,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Source = "a",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)28,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            Source = "",
-                            AccessRestrictedByRole = false,
-                            RequestHelpFormVariant = (byte)29,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)30,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = true,
