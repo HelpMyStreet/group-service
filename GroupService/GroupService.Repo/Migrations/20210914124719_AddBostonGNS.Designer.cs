@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210914124719_AddBostonGNS")]
+    partial class AddBostonGNS
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1967,11 +1969,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 17,
                             Name = "AgeUKMidMersey"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Name = "BostonGNS"
                         });
                 });
 
@@ -2144,16 +2141,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 28,
                             Name = "AgeUKMidMersey_RequestSubmitter"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Name = "BostonGNS_Public"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Name = "BostonGNS_RequestSubmitter"
                         });
                 });
 
@@ -6715,62 +6702,6 @@ You will also be expected to make a minimum commitment of six months.",
                             DisplayOrder = (byte)17,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 1,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = false,
-                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 7,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Calling someone in need of a friendly chat"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 2,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Collecting prescriptions from a local pharmacy"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 27,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "Providing help with everyday practical tasks (e.g. changing a lightbulb, filling in forms etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 5,
-                            DisplayOrder = (byte)5,
-                            IsPreSelected = false,
-                            Label = "Walking the dog"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 29,
-                            DisplayOrder = (byte)6,
-                            IsPreSelected = false,
-                            Label = "Providing digital support for people struggling with technology"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)7,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
                         });
                 });
 
@@ -6930,13 +6861,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Source = "",
                             RegistrationFormVariant = (byte)17,
                             TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            Source = "",
-                            RegistrationFormVariant = (byte)18,
-                            TargetGroups = (byte)5
                         });
                 });
 
@@ -7388,28 +7312,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Source = "a",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)28,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            Source = "",
-                            AccessRestrictedByRole = false,
-                            RequestHelpFormVariant = (byte)29,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)30,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = true,

@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210914130410_AddBostonGNSRequestAndRegistration")]
+    partial class AddBostonGNSRequestAndRegistration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -6713,62 +6715,6 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestHelpFormVariantId = (byte)17,
                             SupportActivityId = 11,
                             DisplayOrder = (byte)17,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 1,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = false,
-                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 7,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Calling someone in need of a friendly chat"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 2,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Collecting prescriptions from a local pharmacy"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 27,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "Providing help with everyday practical tasks (e.g. changing a lightbulb, filling in forms etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 5,
-                            DisplayOrder = (byte)5,
-                            IsPreSelected = false,
-                            Label = "Walking the dog"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 29,
-                            DisplayOrder = (byte)6,
-                            IsPreSelected = false,
-                            Label = "Providing digital support for people struggling with technology"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)7,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
                         });
