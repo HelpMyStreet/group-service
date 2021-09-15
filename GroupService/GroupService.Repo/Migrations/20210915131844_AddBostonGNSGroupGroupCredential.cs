@@ -6,6 +6,18 @@ namespace GroupService.Repo.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterColumn<string>(
+                name: "HowToAchieve",
+                schema: "Group",
+                table: "GroupCredential",
+                unicode: false,
+                maxLength: 1000,
+                nullable: false,
+                oldClrType: typeof(string),
+                oldType: "varchar(400)",
+                oldUnicode: false,
+                oldMaxLength: 400);
+
             migrationBuilder.InsertData(
                 schema: "Group",
                 table: "GroupCredential",
@@ -51,6 +63,18 @@ namespace GroupService.Repo.Migrations
                 table: "GroupCredential",
                 keyColumns: new[] { "GroupID", "CredentialID" },
                 keyValues: new object[] { -34, 10 });
+
+            migrationBuilder.AlterColumn<string>(
+                name: "HowToAchieve",
+                schema: "Group",
+                table: "GroupCredential",
+                type: "varchar(400)",
+                unicode: false,
+                maxLength: 400,
+                nullable: false,
+                oldClrType: typeof(string),
+                oldUnicode: false,
+                oldMaxLength: 1000);
         }
     }
 }
