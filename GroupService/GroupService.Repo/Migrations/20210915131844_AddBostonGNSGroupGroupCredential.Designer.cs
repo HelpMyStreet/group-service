@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210915131844_AddBostonGNSGroupGroupCredential")]
+    partial class AddBostonGNSGroupGroupCredential
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1244,202 +1246,6 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 15,
                             CredentialSetId = 331,
                             DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
                         });
                 });
 
@@ -1625,12 +1431,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 34,
-                            GroupId = -34,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1669,12 +1469,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 331,
                             GroupId = -33,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 341,
-                            GroupId = -34,
                             CredentialId = 2
                         },
                         new
@@ -1757,12 +1551,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 34,
-                            GroupId = -34,
-                            CredentialId = 1
-                        },
-                        new
-                        {
                             Id = 142,
                             GroupId = -22,
                             CredentialId = 3
@@ -1796,18 +1584,6 @@ namespace GroupService.Repo.Migrations
                             Id = 329,
                             GroupId = -32,
                             CredentialId = 9
-                        },
-                        new
-                        {
-                            Id = 3410,
-                            GroupId = -34,
-                            CredentialId = 10
-                        },
-                        new
-                        {
-                            Id = 345,
-                            GroupId = -34,
-                            CredentialId = 5
                         });
                 });
 
