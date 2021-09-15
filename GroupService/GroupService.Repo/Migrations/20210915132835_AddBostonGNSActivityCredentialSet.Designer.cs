@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210915132835_AddBostonGNSActivityCredentialSet")]
+    partial class AddBostonGNSActivityCredentialSet
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -5745,55 +5747,6 @@ You will also be expected to make a minimum commitment of six months.",
                             SupportActivityId = 13,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 1,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 7,
-                            Radius = 2000.0,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 2,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 27,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 5,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 29,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 11,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
                         });
                 });
 

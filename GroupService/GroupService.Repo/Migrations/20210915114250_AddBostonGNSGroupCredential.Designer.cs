@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210915114250_AddBostonGNSGroupCredential")]
+    partial class AddBostonGNSGroupCredential
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1244,202 +1246,6 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 15,
                             CredentialSetId = 331,
                             DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
                         });
                 });
 
@@ -1625,12 +1431,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 34,
-                            GroupId = -34,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1669,12 +1469,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 331,
                             GroupId = -33,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 341,
-                            GroupId = -34,
                             CredentialId = 2
                         },
                         new
@@ -1757,12 +1551,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 34,
-                            GroupId = -34,
-                            CredentialId = 1
-                        },
-                        new
-                        {
                             Id = 142,
                             GroupId = -22,
                             CredentialId = 3
@@ -1796,18 +1584,6 @@ namespace GroupService.Repo.Migrations
                             Id = 329,
                             GroupId = -32,
                             CredentialId = 9
-                        },
-                        new
-                        {
-                            Id = 3410,
-                            GroupId = -34,
-                            CredentialId = 10
-                        },
-                        new
-                        {
-                            Id = 345,
-                            GroupId = -34,
-                            CredentialId = 5
                         });
                 });
 
@@ -3671,18 +3447,6 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
-                            GroupId = -34,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
-                        },
-                        new
-                        {
                             GroupId = -7,
                             CredentialId = 2,
                             CredentialTypeId = (byte)2,
@@ -3989,54 +3753,6 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 3,
                             HowToAchieve = "This activity requires a DBS check. Email us at mailto:enquiries@aukmm.org.uk to request or register a DBS check.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "DBS Check",
-                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            CredentialId = 1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "If you are unable to confirm your ID using Yoti please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about how you can request a manual ID check.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Manual ID Verification",
-                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            CredentialId = 5,
-                            CredentialTypeId = (byte)4,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "We ask all our volunteers to provide a personal reference - this must be someone who is 18 or over, has known you for over a year and is not related to you. Please have a think about who this could be, and check that they are happy for you to share their contact details with us for the purpose of requesting a reference. Please also make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can contact you for their information.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "References",
-                            WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            CredentialId = 10,
-                            CredentialTypeId = (byte)3,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 4,
-                            HowToAchieve = "Safeguarding how-to text: ‘We ask all our volunteers to complete basic safeguarding training to keep you, and the people we help safe. Please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about this short training session.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Safeguarding training",
-                            WhatIsThis = "Use this credential to certify that the user has completed safeguarding training."
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            CredentialId = 2,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 5,
-                            HowToAchieve = "For some activities we need to our volunteers to be DBS checked. Please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about requesting or registering a DBS check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
@@ -5745,55 +5461,6 @@ You will also be expected to make a minimum commitment of six months.",
                             SupportActivityId = 13,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 1,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 7,
-                            Radius = 2000.0,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 2,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 27,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 5,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 29,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 11,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
                         });
                 });
 
