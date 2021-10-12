@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012131250_DeleteMeadowsCommunityHelpers_Step2")]
+    partial class DeleteMeadowsCommunityHelpers_Step2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -3949,6 +3951,22 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            MapLocationId = (byte)1,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
                             GroupId = -31,
                             MapLocationId = (byte)0,
                             Latitude = 53.0779128m,
@@ -6284,6 +6302,13 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            Source = "",
+                            RegistrationFormVariant = (byte)13,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
                             GroupId = -31,
                             Source = "",
                             RegistrationFormVariant = (byte)15,
@@ -6580,6 +6605,28 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestHelpFormVariant = (byte)20,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)22,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = true,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)23,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new

@@ -654,11 +654,6 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesVolunteerInduction, AGECONNECT_CARDIFF_REFERENCES_CREDENTIAL_SET);
             SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesVolunteerInduction, AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET, 1);
 
-            var meadowCommunityHelpersActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.FaceMask, SupportActivities.CheckingIn, SupportActivities.CollectingPrescriptions,
-                SupportActivities.Errands, SupportActivities.DigitalSupport, SupportActivities.PhoneCalls_Friendly, SupportActivities.BinDayAssistance, SupportActivities.Covid19Help,
-                SupportActivities.VolunteerSupport, SupportActivities.Other };
-            SetActivityCredentialSet(entity, Groups.MeadowsCommunityHelpers, meadowCommunityHelpersActivities, IDENTITY_CREDENTIAL_SETS[Groups.MeadowsCommunityHelpers]);
-
             var defaultActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.MealPreparation, SupportActivities.PhoneCalls_Friendly, SupportActivities.HomeworkSupport, SupportActivities.CheckingIn, SupportActivities.Other, SupportActivities.FaceMask };
             SetActivityCredentialSet(entity, Groups.Generic, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Generic]);
             SetActivityCredentialSet(entity, Groups.Tankersley, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Tankersley]);

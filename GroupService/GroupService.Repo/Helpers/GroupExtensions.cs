@@ -551,14 +551,6 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RegistrationJourney
             {
-                GroupId = (int)Groups.MeadowsCommunityHelpers,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
                 GroupId = (int)Groups.Southwell,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.Southwell,
@@ -845,30 +837,6 @@ namespace GroupService.Repo.Helpers
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.MeadowsCommunityHelpers,
-                Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.MeadowsCommunityHelpers_Public,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = false,
-                RequestorDefinedByGroup = false,
-                RequestsRequireApproval = true,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.MeadowsCommunityHelpers,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.MeadowsCommunityHelpers_RequestSubmitter,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = false,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -1251,24 +1219,6 @@ namespace GroupService.Repo.Helpers
                 Latitude = 51.5022198M,
                 Longitude = -3.2752615M,
                 ZoomLevel = 11M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.MeadowsCommunityHelpers,
-                Latitude = 52.94107706186348M,
-                Longitude = -1.1435562260432748M,
-                ZoomLevel = 9M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.MeadowsCommunityHelpers,
-                Latitude = 52.94107706186348M,
-                Longitude = -1.1435562260432748M,
-                ZoomLevel = 14M
             });
 
             entity.HasData(new GroupMapDetails

@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012130951_DeleteMeadowsCommunityHelpers_Step1")]
+    partial class DeleteMeadowsCommunityHelpers_Step1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -705,6 +707,83 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 22,
                             CredentialSetId = 234,
                             DisplayOrder = 1
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 1,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 12,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 10,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 2,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 3,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 29,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 7,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 30,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 31,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 22,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 11,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
                         },
                         new
                         {
@@ -3949,6 +4028,22 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            MapLocationId = (byte)1,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
                             GroupId = -31,
                             MapLocationId = (byte)0,
                             Latitude = 53.0779128m,
@@ -6284,6 +6379,13 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            Source = "",
+                            RegistrationFormVariant = (byte)13,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
                             GroupId = -31,
                             Source = "",
                             RegistrationFormVariant = (byte)15,
@@ -6580,6 +6682,28 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestHelpFormVariant = (byte)20,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)22,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = true,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)23,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
