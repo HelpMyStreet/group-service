@@ -197,27 +197,27 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Local
             });
 
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.GranthamPCN,
-                GroupName = "PCN Grantham",
-                GroupKey = "pcn-grantham",
-                ShiftsEnabled = true,
-                TasksEnabled = false,
-                HomepageEnabled = false,
-                GroupType = (byte)GroupTypes.Local
-            });
+            //entity.HasData(new Group
+            //{
+            //    Id = (int)Groups.GranthamPCN,
+            //    GroupName = "PCN Grantham",
+            //    GroupKey = "pcn-grantham",
+            //    ShiftsEnabled = true,
+            //    TasksEnabled = false,
+            //    HomepageEnabled = false,
+            //    GroupType = (byte)GroupTypes.Local
+            //});
 
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.SouthLincolnPCN,
-                GroupName = "PCN South Lincoln",
-                GroupKey = "pcn-southlincoln",
-                ShiftsEnabled = true,
-                TasksEnabled = false,
-                HomepageEnabled = false,
-                GroupType = (byte)GroupTypes.Local
-            });
+            //entity.HasData(new Group
+            //{
+            //    Id = (int)Groups.SouthLincolnPCN,
+            //    GroupName = "PCN South Lincoln",
+            //    GroupKey = "pcn-southlincoln",
+            //    ShiftsEnabled = true,
+            //    TasksEnabled = false,
+            //    HomepageEnabled = false,
+            //    GroupType = (byte)GroupTypes.Local
+            //});
 
             entity.HasData(new Group
             {
@@ -231,27 +231,27 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Local
             });
 
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.SpilsbyPCN,
-                GroupName = "PCN Spilsby",
-                GroupKey = "pcn-spilsby",
-                ShiftsEnabled = true,
-                TasksEnabled = false,
-                HomepageEnabled = false,
-                GroupType = (byte)GroupTypes.Local
-            });
+            //entity.HasData(new Group
+            //{
+            //    Id = (int)Groups.SpilsbyPCN,
+            //    GroupName = "PCN Spilsby",
+            //    GroupKey = "pcn-spilsby",
+            //    ShiftsEnabled = true,
+            //    TasksEnabled = false,
+            //    HomepageEnabled = false,
+            //    GroupType = (byte)GroupTypes.Local
+            //});
 
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.BostonPCN,
-                GroupName = "PCN Boston",
-                GroupKey = "pcn-boston",
-                ShiftsEnabled = true,
-                TasksEnabled = false,
-                HomepageEnabled = false,
-                GroupType = (byte)GroupTypes.Local
-            });
+            //entity.HasData(new Group
+            //{
+            //    Id = (int)Groups.BostonPCN,
+            //    GroupName = "PCN Boston",
+            //    GroupKey = "pcn-boston",
+            //    ShiftsEnabled = true,
+            //    TasksEnabled = false,
+            //    HomepageEnabled = false,
+            //    GroupType = (byte)GroupTypes.Local
+            //});
 
             entity.HasData(new Group
             {
@@ -265,16 +265,16 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Local
             });
 
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.LincolnPortlandPCN,
-                GroupName = "PCN Lincoln Portland",
-                GroupKey = "pcn-lincoln-portland",
-                ShiftsEnabled = true,
-                TasksEnabled = false,
-                HomepageEnabled = false,
-                GroupType = (byte)GroupTypes.Local
-            });
+            //entity.HasData(new Group
+            //{
+            //    Id = (int)Groups.LincolnPortlandPCN,
+            //    GroupName = "PCN Lincoln Portland",
+            //    GroupKey = "pcn-lincoln-portland",
+            //    ShiftsEnabled = true,
+            //    TasksEnabled = false,
+            //    HomepageEnabled = false,
+            //    GroupType = (byte)GroupTypes.Local
+            //});
 
             entity.HasData(new Group
             {
@@ -318,76 +318,76 @@ namespace GroupService.Repo.Helpers
                 ShortName = "Meadows"
             });
 
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.MansfieldCVS,
-                GroupName = "Mansfield CVS",
-                GroupKey = "mansfield-cvs",
-                ShiftsEnabled = true,
-                TasksEnabled = false,
-                HomepageEnabled = false,
-                GroupType = (byte)GroupTypes.Local
-            });
+            //entity.HasData(new Group
+            //{
+            //    Id = (int)Groups.MansfieldCVS,
+            //    GroupName = "Mansfield CVS",
+            //    GroupKey = "mansfield-cvs",
+            //    ShiftsEnabled = true,
+            //    TasksEnabled = false,
+            //    HomepageEnabled = false,
+            //    GroupType = (byte)GroupTypes.Local
+            //});
 
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.MansfieldWickes,
-                GroupName = "Mansfield (Wickes Site)",
-                GroupKey = "mansfield-wickes",
-                ShiftsEnabled = true,
-                ParentGroupId = (int)Groups.MansfieldCVS,
-                TasksEnabled = false,
-                HomepageEnabled = false,
-                GroupType = (byte)GroupTypes.Local
-            });
+            //entity.HasData(new Group
+            //{
+            //    Id = (int)Groups.MansfieldWickes,
+            //    GroupName = "Mansfield (Wickes Site)",
+            //    GroupKey = "mansfield-wickes",
+            //    ShiftsEnabled = true,
+            //    ParentGroupId = (int)Groups.MansfieldCVS,
+            //    TasksEnabled = false,
+            //    HomepageEnabled = false,
+            //    GroupType = (byte)GroupTypes.Local
+            //});
 
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.GamstonCommunityHall,
-                GroupName = "Gamston Community Hall",
-                GroupKey = "gamston-community-hall",
-                ShiftsEnabled = true,
-                ParentGroupId = (int)Groups.MansfieldCVS,
-                TasksEnabled = false,
-                HomepageEnabled = false,
-                GroupType = (byte)GroupTypes.Local
-            });
+            //entity.HasData(new Group
+            //{
+            //    Id = (int)Groups.GamstonCommunityHall,
+            //    GroupName = "Gamston Community Hall",
+            //    GroupKey = "gamston-community-hall",
+            //    ShiftsEnabled = true,
+            //    ParentGroupId = (int)Groups.MansfieldCVS,
+            //    TasksEnabled = false,
+            //    HomepageEnabled = false,
+            //    GroupType = (byte)GroupTypes.Local
+            //});
 
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.RichardHerrodCentre,
-                GroupName = "Richard Herrod Centre",
-                GroupKey = "richard-herrod-centre",
-                ShiftsEnabled = true,
-                ParentGroupId = (int)Groups.MansfieldCVS,
-                TasksEnabled = false,
-                HomepageEnabled = false,
-                GroupType = (byte)GroupTypes.Local
-            });
+            //entity.HasData(new Group
+            //{
+            //    Id = (int)Groups.RichardHerrodCentre,
+            //    GroupName = "Richard Herrod Centre",
+            //    GroupKey = "richard-herrod-centre",
+            //    ShiftsEnabled = true,
+            //    ParentGroupId = (int)Groups.MansfieldCVS,
+            //    TasksEnabled = false,
+            //    HomepageEnabled = false,
+            //    GroupType = (byte)GroupTypes.Local
+            //});
 
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.KingsMeadowCampus,
-                GroupName = "King's Meadow Campus",
-                GroupKey = "kings-meadow-campus",
-                ShiftsEnabled = true,
-                ParentGroupId = (int)Groups.MansfieldCVS,
-                TasksEnabled = false,
-                HomepageEnabled = false,
-                GroupType = (byte)GroupTypes.Local
-            });
+            //entity.HasData(new Group
+            //{
+            //    Id = (int)Groups.KingsMeadowCampus,
+            //    GroupName = "King's Meadow Campus",
+            //    GroupKey = "kings-meadow-campus",
+            //    ShiftsEnabled = true,
+            //    ParentGroupId = (int)Groups.MansfieldCVS,
+            //    TasksEnabled = false,
+            //    HomepageEnabled = false,
+            //    GroupType = (byte)GroupTypes.Local
+            //});
 
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.ForestRecreationGround,
-                GroupName = "Forest Recreation Ground",
-                GroupKey = "forest-recreation-ground",
-                ShiftsEnabled = true,
-                ParentGroupId = (int)Groups.MansfieldCVS,
-                TasksEnabled = false,
-                HomepageEnabled = false,
-                GroupType = (byte)GroupTypes.Local
-            });
+            //entity.HasData(new Group
+            //{
+            //    Id = (int)Groups.ForestRecreationGround,
+            //    GroupName = "Forest Recreation Ground",
+            //    GroupKey = "forest-recreation-ground",
+            //    ShiftsEnabled = true,
+            //    ParentGroupId = (int)Groups.MansfieldCVS,
+            //    TasksEnabled = false,
+            //    HomepageEnabled = false,
+            //    GroupType = (byte)GroupTypes.Local
+            //});
 
             entity.HasData(new Group
             {
@@ -554,14 +554,6 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.MeadowsCommunityHelpers,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.MeadowsCommunityHelpers,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.MansfieldCVS,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.MansfieldCVS,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
@@ -798,30 +790,6 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
-                GroupId = (int)Groups.GranthamPCN,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.SouthLincolnPCN,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
                 GroupId = (int)Groups.StamfordPCN,
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
@@ -834,43 +802,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RequestHelpJourney
             {
-                GroupId = (int)Groups.SpilsbyPCN,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.BostonPCN,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
                 GroupId = (int)Groups.LincolnPCN,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.LincolnPortlandPCN,
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteers,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
@@ -935,78 +867,6 @@ namespace GroupService.Repo.Helpers
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.MansfieldCVS,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.ChildGroupSelector,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.MansfieldWickes,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Mansfield_CVS,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.GamstonCommunityHall,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Mansfield_CVS,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.RichardHerrodCentre,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Mansfield_CVS,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.KingsMeadowCampus,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Mansfield_CVS,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.ForestRecreationGround,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.Mansfield_CVS,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = false
             });
@@ -1129,34 +989,7 @@ namespace GroupService.Repo.Helpers
                 Locality = "Boston",
                 Postcode = "PE21 8QR"
             });
-            entity.HasData(new RequestorDetails
-            {
-                GroupId = (int)Groups.GranthamPCN,
-                FirstName = "Grantham",//TODO Need to pass the correct details in
-                LastName = "PCN",//TODO Need to pass the correct details in
-                OtherPhone = "",//TODO Need to pass the correct details in
-                EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
-                AddressLine1 = "Grantham Meres Leisure Centre Table Tennis Club",
-                AddressLine2 = "Trent Road",
-                AddressLine3 = "Grantham",
-                Locality = "",
-                Postcode = "NG31 7XQ"
-            });
-
-            entity.HasData(new RequestorDetails
-            {
-                GroupId = (int)Groups.SouthLincolnPCN,
-                FirstName = "South Lincoln",//TODO Need to pass the correct details in
-                LastName = "PCN",//TODO Need to pass the correct details in
-                OtherPhone = "",//TODO Need to pass the correct details in
-                EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
-                AddressLine1 = "Cliff Villages Medical Practice",
-                AddressLine2 = "Mere Rd",
-                AddressLine3 = "Waddington",
-                Locality = "Lincoln",
-                Postcode = "LN5 9NX"
-            });
-
+            
             entity.HasData(new RequestorDetails
             {
                 GroupId = (int)Groups.StamfordPCN,
@@ -1169,34 +1002,6 @@ namespace GroupService.Repo.Helpers
                 AddressLine3 = "Cottingham Road",
                 Locality = "Corby",
                 Postcode = "NN17 1TY"
-            });
-
-            entity.HasData(new RequestorDetails
-            {
-                GroupId = (int)Groups.SpilsbyPCN,
-                FirstName = "Spilsby",//TODO Need to pass the correct details in
-                LastName = "PCN",//TODO Need to pass the correct details in
-                OtherPhone = "",//TODO Need to pass the correct details in
-                EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
-                AddressLine1 = "Franklin Hall",
-                AddressLine2 = "Halton Rd",
-                AddressLine3 = "Spilsby",
-                Locality = "",
-                Postcode = "PE23 5LA"
-            });
-
-            entity.HasData(new RequestorDetails
-            {
-                GroupId = (int)Groups.BostonPCN,
-                FirstName = "Boston",//TODO Need to pass the correct details in
-                LastName = "PCN",//TODO Need to pass the correct details in
-                OtherPhone = "",//TODO Need to pass the correct details in
-                EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
-                AddressLine1 = "Sidings Medical Practice",
-                AddressLine2 = "14 Sleaford Rd",
-                AddressLine3 = "Boston",
-                Locality = "",
-                Postcode = "PE21 8EG"
             });
 
             entity.HasData(new RequestorDetails
@@ -1227,22 +1032,7 @@ namespace GroupService.Repo.Helpers
                 Postcode = "LN6 8RN"
             });
 
-            entity.HasData(new RequestorDetails
-            {
-                GroupId = (int)Groups.LincolnPortlandPCN,
-                FirstName = "Lincoln Portland",//TODO Need to pass the correct details in
-                LastName = "PCN",//TODO Need to pass the correct details in
-                OtherPhone = "",//TODO Need to pass the correct details in
-                EmailAddress = "laura@factor-50.co.uk",//TODO Need to pass the correct details in
-                AddressLine1 = "Portland Medical Practice",
-                AddressLine2 = "60 Portland St",
-                AddressLine3 = "Lincoln",
-                Locality = "",
-                Postcode = "LN5 7LB"
-            });
-
-
-            var mansfieldCVSGroups = new List<Groups>() { Groups.MansfieldCVS, Groups.MansfieldWickes, Groups.GamstonCommunityHall, Groups.RichardHerrodCentre, Groups.KingsMeadowCampus, Groups.ForestRecreationGround };
+            var mansfieldCVSGroups = new List<Groups>();
 
             foreach (var mcvsGroup in mansfieldCVSGroups)
             {

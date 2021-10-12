@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012114625_DeleteNeverUsedGroups_Step2")]
+    partial class DeleteNeverUsedGroups_Step2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -3018,6 +3020,16 @@ You will also be expected to make a minimum commitment of six months.",
                             ShiftsEnabled = false,
                             ShortName = "Meadows",
                             TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -25,
+                            GroupKey = "mansfield-cvs",
+                            GroupName = "Mansfield CVS",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {

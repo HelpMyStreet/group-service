@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012102618_DeleteNeverUsedGroups_Step1")]
+    partial class DeleteNeverUsedGroups_Step1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2958,6 +2960,26 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -15,
+                            GroupKey = "pcn-grantham",
+                            GroupName = "PCN Grantham",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -16,
+                            GroupKey = "pcn-southlincoln",
+                            GroupName = "PCN South Lincoln",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
                             Id = -17,
                             GroupKey = "four-counties-pcn",
                             GroupName = "Four Counties PCN",
@@ -2969,12 +2991,42 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -18,
+                            GroupKey = "pcn-spilsby",
+                            GroupName = "PCN Spilsby",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -19,
+                            GroupKey = "pcn-boston",
+                            GroupName = "PCN Boston",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
                             Id = -20,
                             GroupKey = "apex-pcn-lincoln",
                             GroupName = "APEX PCN",
                             GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -12,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -21,
+                            GroupKey = "pcn-lincoln-portland",
+                            GroupName = "PCN Lincoln Portland",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -3018,6 +3070,71 @@ You will also be expected to make a minimum commitment of six months.",
                             ShiftsEnabled = false,
                             ShortName = "Meadows",
                             TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -25,
+                            GroupKey = "mansfield-cvs",
+                            GroupName = "Mansfield CVS",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -26,
+                            GroupKey = "mansfield-wickes",
+                            GroupName = "Mansfield (Wickes Site)",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -27,
+                            GroupKey = "gamston-community-hall",
+                            GroupName = "Gamston Community Hall",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -28,
+                            GroupKey = "richard-herrod-centre",
+                            GroupName = "Richard Herrod Centre",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -29,
+                            GroupKey = "kings-meadow-campus",
+                            GroupName = "King's Meadow Campus",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -30,
+                            GroupKey = "forest-recreation-ground",
+                            GroupName = "Forest Recreation Ground",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {
