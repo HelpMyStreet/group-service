@@ -50,7 +50,6 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKFavershamAndSittingbourne, 13 },
                 { Groups.Sandbox, 14 },
                 { Groups.AgeConnectsCardiff, 23 },
-                { Groups.MeadowsCommunityHelpers, 24 },
                 { Groups.Southwell, 31 },
                 { Groups.ApexBankStaff, 32 },
                 { Groups.AgeUKMidMersey, 33 },
@@ -68,7 +67,6 @@ namespace GroupService.Repo.Helpers
             };
 
             GROUPS_USING_YOTI = new List<Groups> {
-                Groups.MeadowsCommunityHelpers,
                 Groups.Sandbox,
                 Groups.AgeUKFavershamAndSittingbourne,
                 Groups.AgeUKSouthKentCoast,
@@ -96,7 +94,6 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKFavershamAndSittingbourne,
                 Groups.Sandbox,
                 Groups.AgeConnectsCardiff,
-                Groups.MeadowsCommunityHelpers,
                 Groups.Southwell,
                 Groups.ApexBankStaff,
                 Groups.AgeUKMidMersey
@@ -412,19 +409,6 @@ namespace GroupService.Repo.Helpers
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training.",
                 DisplayOrder = 4,
-                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
-            });
-
-            entity.HasData(new GroupCredential
-            {
-                GroupId = (int)Groups.MeadowsCommunityHelpers,
-                CredentialId = MANUALLY_VERIFIED,
-                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
-                Name = "Manual ID Verification",
-                HowToAchieve = "Email Sam Kelly on mailto:sam@bridgescommunitytrust.org.uk to arrange a manual ID check at The One Stop Shop.",
-                HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
-                DisplayOrder = 2,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 

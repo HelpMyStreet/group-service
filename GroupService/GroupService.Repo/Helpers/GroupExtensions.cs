@@ -197,28 +197,6 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Local
             });
 
-            //entity.HasData(new Group
-            //{
-            //    Id = (int)Groups.GranthamPCN,
-            //    GroupName = "PCN Grantham",
-            //    GroupKey = "pcn-grantham",
-            //    ShiftsEnabled = true,
-            //    TasksEnabled = false,
-            //    HomepageEnabled = false,
-            //    GroupType = (byte)GroupTypes.Local
-            //});
-
-            //entity.HasData(new Group
-            //{
-            //    Id = (int)Groups.SouthLincolnPCN,
-            //    GroupName = "PCN South Lincoln",
-            //    GroupKey = "pcn-southlincoln",
-            //    ShiftsEnabled = true,
-            //    TasksEnabled = false,
-            //    HomepageEnabled = false,
-            //    GroupType = (byte)GroupTypes.Local
-            //});
-
             entity.HasData(new Group
             {
                 Id = (int)Groups.StamfordPCN,
@@ -231,28 +209,6 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.Local
             });
 
-            //entity.HasData(new Group
-            //{
-            //    Id = (int)Groups.SpilsbyPCN,
-            //    GroupName = "PCN Spilsby",
-            //    GroupKey = "pcn-spilsby",
-            //    ShiftsEnabled = true,
-            //    TasksEnabled = false,
-            //    HomepageEnabled = false,
-            //    GroupType = (byte)GroupTypes.Local
-            //});
-
-            //entity.HasData(new Group
-            //{
-            //    Id = (int)Groups.BostonPCN,
-            //    GroupName = "PCN Boston",
-            //    GroupKey = "pcn-boston",
-            //    ShiftsEnabled = true,
-            //    TasksEnabled = false,
-            //    HomepageEnabled = false,
-            //    GroupType = (byte)GroupTypes.Local
-            //});
-
             entity.HasData(new Group
             {
                 Id = (int)Groups.LincolnPCN,
@@ -264,17 +220,6 @@ namespace GroupService.Repo.Helpers
                 HomepageEnabled = false,
                 GroupType = (byte)GroupTypes.Local
             });
-
-            //entity.HasData(new Group
-            //{
-            //    Id = (int)Groups.LincolnPortlandPCN,
-            //    GroupName = "PCN Lincoln Portland",
-            //    GroupKey = "pcn-lincoln-portland",
-            //    ShiftsEnabled = true,
-            //    TasksEnabled = false,
-            //    HomepageEnabled = false,
-            //    GroupType = (byte)GroupTypes.Local
-            //});
 
             entity.HasData(new Group
             {
@@ -302,92 +247,6 @@ namespace GroupService.Repo.Helpers
                 ShortName = "Age Connects Cardiff",
                 JoinGroupPopUpDetail = "Age Connects Cardiff & the Vale require two references, an Induction Session and (in most cases) a DBS check before you can start volunteering." + Environment.NewLine + Environment.NewLine + "You will also be expected to make a minimum commitment of six months."
             });
-
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.MeadowsCommunityHelpers,
-                GroupName = "Meadows Community Helpers",
-                GroupKey = "meadows-community-helpers",
-                ShiftsEnabled = false,
-                TasksEnabled = true,
-                HomepageEnabled = true,
-                GeographicName = "The Meadows",
-                GroupType = (byte)GroupTypes.Local,
-                FriendlyName = "Meadows Community Helpers",
-                LinkURL = "/meadows-community-helpers",
-                ShortName = "Meadows"
-            });
-
-            //entity.HasData(new Group
-            //{
-            //    Id = (int)Groups.MansfieldCVS,
-            //    GroupName = "Mansfield CVS",
-            //    GroupKey = "mansfield-cvs",
-            //    ShiftsEnabled = true,
-            //    TasksEnabled = false,
-            //    HomepageEnabled = false,
-            //    GroupType = (byte)GroupTypes.Local
-            //});
-
-            //entity.HasData(new Group
-            //{
-            //    Id = (int)Groups.MansfieldWickes,
-            //    GroupName = "Mansfield (Wickes Site)",
-            //    GroupKey = "mansfield-wickes",
-            //    ShiftsEnabled = true,
-            //    ParentGroupId = (int)Groups.MansfieldCVS,
-            //    TasksEnabled = false,
-            //    HomepageEnabled = false,
-            //    GroupType = (byte)GroupTypes.Local
-            //});
-
-            //entity.HasData(new Group
-            //{
-            //    Id = (int)Groups.GamstonCommunityHall,
-            //    GroupName = "Gamston Community Hall",
-            //    GroupKey = "gamston-community-hall",
-            //    ShiftsEnabled = true,
-            //    ParentGroupId = (int)Groups.MansfieldCVS,
-            //    TasksEnabled = false,
-            //    HomepageEnabled = false,
-            //    GroupType = (byte)GroupTypes.Local
-            //});
-
-            //entity.HasData(new Group
-            //{
-            //    Id = (int)Groups.RichardHerrodCentre,
-            //    GroupName = "Richard Herrod Centre",
-            //    GroupKey = "richard-herrod-centre",
-            //    ShiftsEnabled = true,
-            //    ParentGroupId = (int)Groups.MansfieldCVS,
-            //    TasksEnabled = false,
-            //    HomepageEnabled = false,
-            //    GroupType = (byte)GroupTypes.Local
-            //});
-
-            //entity.HasData(new Group
-            //{
-            //    Id = (int)Groups.KingsMeadowCampus,
-            //    GroupName = "King's Meadow Campus",
-            //    GroupKey = "kings-meadow-campus",
-            //    ShiftsEnabled = true,
-            //    ParentGroupId = (int)Groups.MansfieldCVS,
-            //    TasksEnabled = false,
-            //    HomepageEnabled = false,
-            //    GroupType = (byte)GroupTypes.Local
-            //});
-
-            //entity.HasData(new Group
-            //{
-            //    Id = (int)Groups.ForestRecreationGround,
-            //    GroupName = "Forest Recreation Ground",
-            //    GroupKey = "forest-recreation-ground",
-            //    ShiftsEnabled = true,
-            //    ParentGroupId = (int)Groups.MansfieldCVS,
-            //    TasksEnabled = false,
-            //    HomepageEnabled = false,
-            //    GroupType = (byte)GroupTypes.Local
-            //});
 
             entity.HasData(new Group
             {
