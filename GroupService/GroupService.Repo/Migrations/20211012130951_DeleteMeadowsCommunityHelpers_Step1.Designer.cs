@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012130951_DeleteMeadowsCommunityHelpers_Step1")]
+    partial class DeleteMeadowsCommunityHelpers_Step1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -708,6 +710,83 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -24,
+                            ActivityId = 1,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 12,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 10,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 2,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 3,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 29,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 7,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 30,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 31,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 22,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 11,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
                             GroupId = -1,
                             ActivityId = 1,
                             CredentialSetId = 1,
@@ -1257,6 +1336,12 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
+                            Id = 24,
+                            GroupId = -24,
+                            CredentialId = -1
+                        },
+                        new
+                        {
                             Id = 14,
                             GroupId = -22,
                             CredentialId = -1
@@ -1433,6 +1518,12 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 23,
                             GroupId = -23,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 24,
+                            GroupId = -24,
                             CredentialId = 1
                         },
                         new
@@ -2918,6 +3009,20 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            Id = -24,
+                            FriendlyName = "Meadows Community Helpers",
+                            GeographicName = "The Meadows",
+                            GroupKey = "meadows-community-helpers",
+                            GroupName = "Meadows Community Helpers",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/meadows-community-helpers",
+                            ShiftsEnabled = false,
+                            ShortName = "Meadows",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
                             Id = -31,
                             FriendlyName = "Southwell Torpedos",
                             GeographicName = "Southwell or surrounding areas",
@@ -3011,6 +3116,18 @@ You will also be expected to make a minimum commitment of six months.",
                     b.ToTable("GroupCredential","Group");
 
                     b.HasData(
+                        new
+                        {
+                            GroupId = -24,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
                         new
                         {
                             GroupId = -22,
@@ -3394,6 +3511,18 @@ You will also be expected to make a minimum commitment of six months.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Volunteer Induction",
                             WhatIsThis = "Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training."
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Email Sam Kelly on mailto:sam@bridgescommunitytrust.org.uk to arrange a manual ID check at The One Stop Shop.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {
@@ -3896,6 +4025,22 @@ You will also be expected to make a minimum commitment of six months.",
                             Latitude = 51.5022198m,
                             Longitude = -3.2752615m,
                             ZoomLevel = 11m
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            MapLocationId = (byte)1,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 14m
                         },
                         new
                         {
@@ -6234,6 +6379,13 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            Source = "",
+                            RegistrationFormVariant = (byte)13,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
                             GroupId = -31,
                             Source = "",
                             RegistrationFormVariant = (byte)15,
@@ -6530,6 +6682,28 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestHelpFormVariant = (byte)20,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)22,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = true,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)23,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new

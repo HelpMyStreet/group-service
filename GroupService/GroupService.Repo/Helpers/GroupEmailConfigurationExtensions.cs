@@ -179,16 +179,6 @@ namespace GroupService.Repo.Helpers
             return config;
         }
 
-        private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_Meadows()
-        {
-            List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
-            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p>"));
-            config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>The Meadows Community Helpers"));
-            config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:meadows-community-helpers@helpmystreet.org\">meadows-community-helpers@helpmystreet.org</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
-            return config;
-        }
-
         private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_Southwell()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
@@ -238,21 +228,10 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.LincolnshireVolunteers, GetWelcomeEmailConfiguration_LincolnshireVolunteers());
             Populate(entity, Groups.AgeUKFavershamAndSittingbourne, GetWelcomeEmailConfiguration_AgeUKFaversham());
             Populate(entity, Groups.EastLindseyPCN, GetWelcomeEmailConfiguration_Default(true));
-            Populate(entity, Groups.GranthamPCN, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.SouthLincolnPCN, GetWelcomeEmailConfiguration_Default());
             Populate(entity, Groups.StamfordPCN, GetWelcomeEmailConfiguration_Default(true));
-            Populate(entity, Groups.SpilsbyPCN, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.BostonPCN, GetWelcomeEmailConfiguration_Default());
             Populate(entity, Groups.LincolnPCN, GetWelcomeEmailConfiguration_Default(true));
-            Populate(entity, Groups.LincolnPortlandPCN, GetWelcomeEmailConfiguration_Default(true));
             Populate(entity, Groups.Sandbox, GetWelcomeEmailConfiguration_Sandbox());
             Populate(entity, Groups.AgeConnectsCardiff, GetWelcomeEmailConfiguration_AgeConnectsCardiff());
-            Populate(entity, Groups.MeadowsCommunityHelpers, GetWelcomeEmailConfiguration_Meadows());
-            Populate(entity, Groups.MansfieldCVS, GetWelcomeEmailConfiguration_Default(true, "Best wishes,</p><p>Mansfield CVS</p>"));
-            Populate(entity, Groups.GamstonCommunityHall, GetWelcomeEmailConfiguration_Default(true, "Best wishes,</p><p>Mansfield CVS</p>"));
-            Populate(entity, Groups.RichardHerrodCentre, GetWelcomeEmailConfiguration_Default(true, "Best wishes,</p><p>Mansfield CVS</p>"));
-            Populate(entity, Groups.KingsMeadowCampus, GetWelcomeEmailConfiguration_Default(true, "Best wishes,</p><p>Mansfield CVS</p>"));
-            Populate(entity, Groups.ForestRecreationGround, GetWelcomeEmailConfiguration_Default(true, "Best wishes,</p><p>Mansfield CVS</p>"));
             Populate(entity, Groups.Southwell, GetWelcomeEmailConfiguration_Southwell());
             Populate(entity, Groups.ApexBankStaff, GetWelcomeEmailConfiguration_ApexBankStaffPCN());
             Populate(entity, Groups.AgeUKMidMersey, GetWelcomeEmailConfiguration_AgeUK_MidMersey());

@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012132133_DeleteMeadowsCommunityHelpers_Step4")]
+    partial class DeleteMeadowsCommunityHelpers_Step4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2918,6 +2920,20 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            Id = -24,
+                            FriendlyName = "Meadows Community Helpers",
+                            GeographicName = "The Meadows",
+                            GroupKey = "meadows-community-helpers",
+                            GroupName = "Meadows Community Helpers",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/meadows-community-helpers",
+                            ShiftsEnabled = false,
+                            ShortName = "Meadows",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
                             Id = -31,
                             FriendlyName = "Southwell Torpedos",
                             GeographicName = "Southwell or surrounding areas",
@@ -3011,6 +3027,18 @@ You will also be expected to make a minimum commitment of six months.",
                     b.ToTable("GroupCredential","Group");
 
                     b.HasData(
+                        new
+                        {
+                            GroupId = -24,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
                         new
                         {
                             GroupId = -22,
@@ -3394,6 +3422,18 @@ You will also be expected to make a minimum commitment of six months.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Volunteer Induction",
                             WhatIsThis = "Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training."
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Email Sam Kelly on mailto:sam@bridgescommunitytrust.org.uk to arrange a manual ID check at The One Stop Shop.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
                         },
                         new
                         {

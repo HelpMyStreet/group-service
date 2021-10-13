@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012132530_DeleteMeadowsCommunityHelpers_Step5")]
+    partial class DeleteMeadowsCommunityHelpers_Step5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2914,6 +2916,20 @@ You will also be expected to make a minimum commitment of six months.",
                             LinkURL = "/ageconnects-cardiff",
                             ShiftsEnabled = false,
                             ShortName = "Age Connects Cardiff",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -24,
+                            FriendlyName = "Meadows Community Helpers",
+                            GeographicName = "The Meadows",
+                            GroupKey = "meadows-community-helpers",
+                            GroupName = "Meadows Community Helpers",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/meadows-community-helpers",
+                            ShiftsEnabled = false,
+                            ShortName = "Meadows",
                             TasksEnabled = true
                         },
                         new
