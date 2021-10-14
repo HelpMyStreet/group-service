@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012102618_DeleteNeverUsedGroups_Step1")]
+    partial class DeleteNeverUsedGroups_Step1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -708,6 +710,83 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -24,
+                            ActivityId = 1,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 12,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 10,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 2,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 3,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 29,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 7,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 30,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 31,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 22,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 11,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
                             GroupId = -1,
                             ActivityId = 1,
                             CredentialSetId = 1,
@@ -1257,6 +1336,12 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
+                            Id = 24,
+                            GroupId = -24,
+                            CredentialId = -1
+                        },
+                        new
+                        {
                             Id = 14,
                             GroupId = -22,
                             CredentialId = -1
@@ -1433,6 +1518,12 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 23,
                             GroupId = -23,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 24,
+                            GroupId = -24,
                             CredentialId = 1
                         },
                         new
@@ -2869,6 +2960,26 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -15,
+                            GroupKey = "pcn-grantham",
+                            GroupName = "PCN Grantham",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -16,
+                            GroupKey = "pcn-southlincoln",
+                            GroupName = "PCN South Lincoln",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
                             Id = -17,
                             GroupKey = "four-counties-pcn",
                             GroupName = "Four Counties PCN",
@@ -2880,12 +2991,42 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -18,
+                            GroupKey = "pcn-spilsby",
+                            GroupName = "PCN Spilsby",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -19,
+                            GroupKey = "pcn-boston",
+                            GroupName = "PCN Boston",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
                             Id = -20,
                             GroupKey = "apex-pcn-lincoln",
                             GroupName = "APEX PCN",
                             GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -12,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -21,
+                            GroupKey = "pcn-lincoln-portland",
+                            GroupName = "PCN Lincoln Portland",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -2915,6 +3056,85 @@ You will also be expected to make a minimum commitment of six months.",
                             ShiftsEnabled = false,
                             ShortName = "Age Connects Cardiff",
                             TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -24,
+                            FriendlyName = "Meadows Community Helpers",
+                            GeographicName = "The Meadows",
+                            GroupKey = "meadows-community-helpers",
+                            GroupName = "Meadows Community Helpers",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/meadows-community-helpers",
+                            ShiftsEnabled = false,
+                            ShortName = "Meadows",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -25,
+                            GroupKey = "mansfield-cvs",
+                            GroupName = "Mansfield CVS",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -26,
+                            GroupKey = "mansfield-wickes",
+                            GroupName = "Mansfield (Wickes Site)",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -27,
+                            GroupKey = "gamston-community-hall",
+                            GroupName = "Gamston Community Hall",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -28,
+                            GroupKey = "richard-herrod-centre",
+                            GroupName = "Richard Herrod Centre",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -29,
+                            GroupKey = "kings-meadow-campus",
+                            GroupName = "King's Meadow Campus",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -30,
+                            GroupKey = "forest-recreation-ground",
+                            GroupName = "Forest Recreation Ground",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {
@@ -3011,6 +3231,18 @@ You will also be expected to make a minimum commitment of six months.",
                     b.ToTable("GroupCredential","Group");
 
                     b.HasData(
+                        new
+                        {
+                            GroupId = -24,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
                         new
                         {
                             GroupId = -22,
@@ -3397,6 +3629,18 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Email Sam Kelly on mailto:sam@bridgescommunitytrust.org.uk to arrange a manual ID check at The One Stop Shop.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
                             GroupId = -31,
                             CredentialId = 1,
                             CredentialTypeId = (byte)1,
@@ -3602,6 +3846,12 @@ You will also be expected to make a minimum commitment of six months.",
                             GroupId = -23,
                             CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to do a couple of checks. We need two references from people who have known you for more than a year, they must also be over 18 and not related to you. If you would like to undertake any roles which involve face-to-face contact with a client we will also need a DBS check. Please download our Volunteer Application Form from the <a href=\\\"{{BaseUrl}}/ageconnects-cardiff#resources\\\">useful links</a> section of our landing page to submit your details.<p><p>All of our volunteers also need to complete an induction. This is a short web-session which gives us a chance to run through our policies and procedures - it also gives you a chance to meet other volunteers and ask any questions. If you haven’t done so already, you can book your space for Core Induction Training on Eventbrite by clicking <a href=\\\"https://www.eventbrite.co.uk/o/age-connects-cardiff-amp-vale-32377866579\\\">here</a>.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Age Connects Cardiff & the Vale\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:helen.prior@ageconnectscardiff.org.uk\\\">helen.prior@ageconnectscardiff.org.uk</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>The Meadows Community Helpers\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:meadows-community-helpers@helpmystreet.org\\\">meadows-community-helpers@helpmystreet.org</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         },
                         new
                         {
@@ -3899,6 +4149,22 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            MapLocationId = (byte)1,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
                             GroupId = -31,
                             MapLocationId = (byte)0,
                             Latitude = 53.0779128m,
@@ -3995,6 +4261,12 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -23,
+                            MaxVolunteer = 2147483647,
+                            NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -24,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         },
@@ -4699,6 +4971,83 @@ You will also be expected to make a minimum commitment of six months.",
                             SupportActivityId = 2,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)44
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 1,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)1
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 12,
+                            Radius = 2000.0,
+                            SupportActivityInstructionsId = (short)7
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 10,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 2,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 3,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 29,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 7,
+                            Radius = 2000.0,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 30,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)40
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 31,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 22,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)18
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 11,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)2
                         },
                         new
                         {
@@ -6234,6 +6583,13 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            Source = "",
+                            RegistrationFormVariant = (byte)13,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
                             GroupId = -31,
                             Source = "",
                             RegistrationFormVariant = (byte)15,
@@ -6534,6 +6890,28 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)22,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = true,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)23,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
                             GroupId = -31,
                             Source = "",
                             AccessRestrictedByRole = false,
@@ -6819,6 +7197,11 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -23,
+                            AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -24,
                             AllowAutonomousJoinersAndLeavers = true
                         },
                         new
