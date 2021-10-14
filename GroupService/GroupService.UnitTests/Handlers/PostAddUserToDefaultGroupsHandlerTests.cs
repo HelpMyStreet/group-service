@@ -111,7 +111,7 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.AssignRoleAsync(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
             _repository.Verify(x => x.AddUserRoleAudit(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<int>(), It.IsAny<GroupAction>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
             _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
-            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
         }
 
         [Test]
@@ -136,7 +136,7 @@ namespace GroupService.UnitTests
             _repository.Verify(x => x.AssignRoleAsync(It.IsAny<PostAssignRoleRequest>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
             _repository.Verify(x => x.AddUserRoleAudit(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<GroupRoles>(), It.IsAny<int>(), It.IsAny<GroupAction>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
             _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
-            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
         }
 
         [Test]

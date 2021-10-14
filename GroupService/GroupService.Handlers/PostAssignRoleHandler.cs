@@ -90,6 +90,16 @@ namespace GroupService.Handlers
                     GroupID = request.GroupID.Value,
                     RecipientUserID = request.UserID.Value
                 }, cancellationToken);
+
+                await _communicationService.RequestCommunication(new RequestCommunicationRequest()
+                {
+                    CommunicationJob = new CommunicationJob() { CommunicationJobType = CommunicationJobTypes.NewUserNotification },
+                    GroupID = request.GroupID.Value,
+                    AdditionalParameters = new System.Collections.Generic.Dictionary<string, string>()
+                    {
+                        { "Volunteer",request.UserID.Value.ToString() }
+                    }
+                }, cancellationToken);
             }
 
             return new PostAssignRoleResponse()

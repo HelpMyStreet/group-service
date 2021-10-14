@@ -71,10 +71,21 @@ namespace GroupService.Handlers
                 {
                     await _communicationService.RequestCommunication(new RequestCommunicationRequest()
                     {
-                        CommunicationJob = new CommunicationJob() { CommunicationJobType = CommunicationJobTypes.GroupWelcome, },
+                        CommunicationJob = new CommunicationJob() { CommunicationJobType = CommunicationJobTypes.GroupWelcome },
                         GroupID = groupIdToBeUsedInGroupWelcomeEmail,
                         RecipientUserID = request.UserID
                     }, cancellationToken);
+
+                    await _communicationService.RequestCommunication(new RequestCommunicationRequest()
+                    {
+                        CommunicationJob = new CommunicationJob() { CommunicationJobType = CommunicationJobTypes.NewUserNotification },
+                        GroupID = groupIdToBeUsedInGroupWelcomeEmail,
+                        AdditionalParameters = new System.Collections.Generic.Dictionary<string, string>()
+                        {
+                            { "Volunteer",request.UserID.ToString() }
+                        }
+                    }, cancellationToken);
+
                 }
             }
 
