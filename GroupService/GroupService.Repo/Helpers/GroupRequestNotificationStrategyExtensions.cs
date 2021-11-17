@@ -87,13 +87,6 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new GroupNewRequestNotificationStrategy
             {
-                GroupId = (int)Groups.MeadowsCommunityHelpers,
-                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
-                MaxVolunteer = int.MaxValue
-            });
-
-            entity.HasData(new GroupNewRequestNotificationStrategy
-            {
                 GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
                 MaxVolunteer = int.MaxValue

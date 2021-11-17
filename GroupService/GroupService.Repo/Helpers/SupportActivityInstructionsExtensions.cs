@@ -2197,13 +2197,8 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeUKSouthKentCoast, SupportActivities.Shopping, SupportActivityInstructionsEnum.AgeUKSKC_Shopping);
             Populate(entity, Groups.AgeUKSouthKentCoast, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
 
-            Populate(entity, Groups.BostonPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
-            Populate(entity, Groups.GranthamPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
             Populate(entity, Groups.LincolnPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
-            Populate(entity, Groups.LincolnPortlandPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
             Populate(entity, Groups.EastLindseyPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.EastLindsey_VaccineSupport);
-            Populate(entity, Groups.SouthLincolnPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
-            Populate(entity, Groups.SpilsbyPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_VaccineSupport);
             Populate(entity, Groups.StamfordPCN, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.Lincoln_Stamford_VaccineSupport);
 
             Populate(entity, Groups.LincolnshireVolunteers, SupportActivities.EmergencySupport, SupportActivityInstructionsEnum.HMS_EmergencySupport);
@@ -2227,25 +2222,6 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.Transport, SupportActivityInstructionsEnum.AgeConnectCardiff_Transport);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.Shopping, SupportActivityInstructionsEnum.AgeConnectCardiff_Shopping);
             Populate(entity, Groups.AgeConnectsCardiff, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.AgeConnectCardiff_Prescriptions);
-
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.FaceMask, SupportActivityInstructionsEnum.HMS_FaceCovering, NATIONAL_RADIUS);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Errands, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.DigitalSupport, SupportActivityInstructionsEnum.HMS_General);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, NATIONAL_RADIUS);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.BinDayAssistance, SupportActivityInstructionsEnum.HMS_BinDayAssistance);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Covid19Help, SupportActivityInstructionsEnum.HMS_General);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport);
-            Populate(entity, Groups.MeadowsCommunityHelpers, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase);
-
-            Populate(entity, Groups.MansfieldCVS, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
-            Populate(entity, Groups.MansfieldWickes, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
-            Populate(entity, Groups.GamstonCommunityHall, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
-            Populate(entity, Groups.RichardHerrodCentre, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
-            Populate(entity, Groups.KingsMeadowCampus, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
-            Populate(entity, Groups.ForestRecreationGround, SupportActivities.VaccineSupport, SupportActivityInstructionsEnum.MansfieldCVS_VaccineSupport);
 
             Populate(entity, Groups.Southwell, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping);
             Populate(entity, Groups.Southwell, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.Southwell_Prescriptions);

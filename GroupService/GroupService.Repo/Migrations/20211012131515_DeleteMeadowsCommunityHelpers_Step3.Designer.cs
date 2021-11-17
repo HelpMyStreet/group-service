@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012131515_DeleteMeadowsCommunityHelpers_Step3")]
+    partial class DeleteMeadowsCommunityHelpers_Step3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1167,202 +1169,6 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 15,
                             CredentialSetId = 331,
                             DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
                         });
                 });
 
@@ -1427,11 +1233,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 9,
                             Name = "Bank Details"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Name = "Safeguarding Training"
                         });
                 });
 
@@ -1456,6 +1257,12 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("CredentialSet","Group");
 
                     b.HasData(
+                        new
+                        {
+                            Id = 24,
+                            GroupId = -24,
+                            CredentialId = -1
+                        },
                         new
                         {
                             Id = 14,
@@ -1542,12 +1349,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 34,
-                            GroupId = -34,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1586,12 +1387,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 331,
                             GroupId = -33,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 341,
-                            GroupId = -34,
                             CredentialId = 2
                         },
                         new
@@ -1650,6 +1445,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 24,
+                            GroupId = -24,
+                            CredentialId = 1
+                        },
+                        new
+                        {
                             Id = 31,
                             GroupId = -31,
                             CredentialId = 1
@@ -1664,12 +1465,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 33,
                             GroupId = -33,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 34,
-                            GroupId = -34,
                             CredentialId = 1
                         },
                         new
@@ -1707,18 +1502,6 @@ namespace GroupService.Repo.Migrations
                             Id = 329,
                             GroupId = -32,
                             CredentialId = 9
-                        },
-                        new
-                        {
-                            Id = 3410,
-                            GroupId = -34,
-                            CredentialId = 10
-                        },
-                        new
-                        {
-                            Id = 345,
-                            GroupId = -34,
-                            CredentialId = 5
                         });
                 });
 
@@ -1915,11 +1698,6 @@ namespace GroupService.Repo.Migrations
                     b.HasData(
                         new
                         {
-                            Id = -16,
-                            Name = "RichmondMedicalCentre"
-                        },
-                        new
-                        {
                             Id = -15,
                             Name = "ForestRecreationGround"
                         },
@@ -2114,11 +1892,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 17,
                             Name = "AgeUKMidMersey"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Name = "BostonGNS"
                         });
                 });
 
@@ -2291,16 +2064,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 28,
                             Name = "AgeUKMidMersey_RequestSubmitter"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Name = "BostonGNS_Public"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Name = "BostonGNS_RequestSubmitter"
                         });
                 });
 
@@ -2373,9 +2136,6 @@ namespace GroupService.Repo.Migrations
                         .HasColumnName("ID")
                         .HasColumnType("int");
 
-                    b.Property<string>("FriendlyName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -2387,175 +2147,146 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 1,
-                            FriendlyName = "Shopping",
                             Name = "Shopping"
                         },
                         new
                         {
                             Id = 2,
-                            FriendlyName = "Prescriptions",
                             Name = "CollectingPrescriptions"
                         },
                         new
                         {
                             Id = 3,
-                            FriendlyName = "Errands",
                             Name = "Errands"
                         },
                         new
                         {
                             Id = 4,
-                            FriendlyName = "Medical Appointment Transport",
                             Name = "MedicalAppointmentTransport"
                         },
                         new
                         {
                             Id = 5,
-                            FriendlyName = "Dog Walking",
                             Name = "DogWalking"
                         },
                         new
                         {
                             Id = 6,
-                            FriendlyName = "Prepared Meal",
                             Name = "MealPreparation"
                         },
                         new
                         {
                             Id = 7,
-                            FriendlyName = "Friendly Chat",
                             Name = "PhoneCalls_Friendly"
                         },
                         new
                         {
                             Id = 8,
-                            FriendlyName = "Supportive Chat",
                             Name = "PhoneCalls_Anxious"
                         },
                         new
                         {
                             Id = 9,
-                            FriendlyName = "Homework",
                             Name = "HomeworkSupport"
                         },
                         new
                         {
                             Id = 10,
-                            FriendlyName = "Check In",
                             Name = "CheckingIn"
                         },
                         new
                         {
                             Id = 11,
-                            FriendlyName = "Other",
                             Name = "Other"
                         },
                         new
                         {
                             Id = 12,
-                            FriendlyName = "Face Covering",
                             Name = "FaceMask"
                         },
                         new
                         {
                             Id = 13,
-                            FriendlyName = "Wellbeing Package",
                             Name = "WellbeingPackage"
                         },
                         new
                         {
                             Id = 14,
-                            FriendlyName = "Community Connector",
                             Name = "CommunityConnector"
                         },
                         new
                         {
                             Id = 15,
-                            FriendlyName = "Cold Weather Army",
                             Name = "ColdWeatherArmy"
                         },
                         new
                         {
                             Id = 16,
-                            FriendlyName = "Transport",
                             Name = "Transport"
                         },
                         new
                         {
                             Id = 21,
-                            FriendlyName = "Meals To Your Door",
                             Name = "MealsToYourDoor"
                         },
                         new
                         {
                             Id = 22,
-                            FriendlyName = "Volunteer Support",
                             Name = "VolunteerSupport"
                         },
                         new
                         {
                             Id = 23,
-                            FriendlyName = "Mealtime Companion",
                             Name = "MealtimeCompanion"
                         },
                         new
                         {
                             Id = 24,
-                            FriendlyName = "Vaccine Support",
                             Name = "VaccineSupport"
                         },
                         new
                         {
                             Id = 25,
-                            FriendlyName = "Emergency Support",
                             Name = "EmergencySupport"
                         },
                         new
                         {
                             Id = 26,
-                            FriendlyName = "In-Person Befriending",
                             Name = "InPersonBefriending"
                         },
                         new
                         {
                             Id = 27,
-                            FriendlyName = "Practical Support",
                             Name = "PracticalSupport"
                         },
                         new
                         {
                             Id = 28,
-                            FriendlyName = "Volunteer Induction",
                             Name = "VolunteerInduction"
                         },
                         new
                         {
                             Id = 29,
-                            FriendlyName = "Digital Support",
                             Name = "DigitalSupport"
                         },
                         new
                         {
                             Id = 30,
-                            FriendlyName = "Bin Day Assistance",
                             Name = "BinDayAssistance"
                         },
                         new
                         {
                             Id = 31,
-                            FriendlyName = "Covid 19 Help",
                             Name = "Covid19Help"
                         },
                         new
                         {
                             Id = 32,
-                            FriendlyName = "Bank Staff Vaccinator",
                             Name = "BankStaffVaccinator"
                         },
                         new
                         {
                             Id = 33,
-                            FriendlyName = "Skill Share",
                             Name = "SkillShare"
                         });
                 });
@@ -3201,6 +2932,20 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            Id = -24,
+                            FriendlyName = "Meadows Community Helpers",
+                            GeographicName = "The Meadows",
+                            GroupKey = "meadows-community-helpers",
+                            GroupName = "Meadows Community Helpers",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/meadows-community-helpers",
+                            ShiftsEnabled = false,
+                            ShortName = "Meadows",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
                             Id = -31,
                             FriendlyName = "Southwell Torpedos",
                             GeographicName = "Southwell or surrounding areas",
@@ -3239,20 +2984,6 @@ You will also be expected to make a minimum commitment of six months.",
                             ShiftsEnabled = false,
                             ShortName = "Age UK MM",
                             TasksEnabled = true
-                        },
-                        new
-                        {
-                            Id = -34,
-                            FriendlyName = "Boston and Surrounding Areas",
-                            GeographicName = "Boston or surrounding areas",
-                            GroupKey = "boston",
-                            GroupName = "Boston and Surrounding Areas",
-                            GroupType = (byte)0,
-                            HomepageEnabled = true,
-                            LinkURL = "/boston",
-                            ShiftsEnabled = false,
-                            ShortName = "Boston",
-                            TasksEnabled = true
                         });
                 });
 
@@ -3278,8 +3009,8 @@ You will also be expected to make a minimum commitment of six months.",
 
                     b.Property<string>("HowToAchieve")
                         .IsRequired()
-                        .HasColumnType("varchar(1000)")
-                        .HasMaxLength(1000)
+                        .HasColumnType("varchar(400)")
+                        .HasMaxLength(400)
                         .IsUnicode(false);
 
                     b.Property<string>("HowToAchieve_CTA_Destination")
@@ -3308,6 +3039,18 @@ You will also be expected to make a minimum commitment of six months.",
                     b.ToTable("GroupCredential","Group");
 
                     b.HasData(
+                        new
+                        {
+                            GroupId = -24,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
                         new
                         {
                             GroupId = -22,
@@ -3467,18 +3210,6 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -33,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
-                        },
-                        new
-                        {
-                            GroupId = -34,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)1,
@@ -3706,6 +3437,18 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Email Sam Kelly on mailto:sam@bridgescommunitytrust.org.uk to arrange a manual ID check at The One Stop Shop.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
                             GroupId = -31,
                             CredentialId = 1,
                             CredentialTypeId = (byte)1,
@@ -3784,54 +3527,6 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 3,
                             HowToAchieve = "This activity requires a DBS check. Email us at mailto:enquiries@aukmm.org.uk to request or register a DBS check.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "DBS Check",
-                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            CredentialId = 1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "If you are unable to confirm your ID using Yoti please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about how you can request a manual ID check.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Manual ID Verification",
-                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            CredentialId = 5,
-                            CredentialTypeId = (byte)4,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "We ask all our volunteers to provide a personal reference - this must be someone who is 18 or over, has known you for over a year and is not related to you. Please have a think about who this could be, and check that they are happy for you to share their contact details with us for the purpose of requesting a reference. Please also make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can contact you for their information.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "References",
-                            WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            CredentialId = 10,
-                            CredentialTypeId = (byte)3,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 4,
-                            HowToAchieve = "Safeguarding how-to text: ‘We ask all our volunteers to complete basic safeguarding training to keep you, and the people we help safe. Please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about this short training session.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Safeguarding training",
-                            WhatIsThis = "Use this credential to certify that the user has completed safeguarding training."
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            CredentialId = 2,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 5,
-                            HowToAchieve = "For some activities we need to our volunteers to be DBS checked. Please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about requesting or registering a DBS check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
@@ -3977,12 +3672,6 @@ You will also be expected to make a minimum commitment of six months.",
                             GroupId = -33,
                             CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help. You can verify your ID online, or if you’re having trouble email us at <a href='mailto:enquiries@aukmm.org.uk'>enquiries@aukmm.org.uk</a></p><p>For some activities we will also need a DBS check. Please email us on the email address above to request or register your DBS check.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>The Age UK Mid Mersey team\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href='mailto:enquiries@aukmm.org.uk'>enquiries@aukmm.org.uk</a>\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>For most volunteering opportunities we offer we will need to verify your ID and complete some basic training before you can start helping – this is to make things as safe as possible for you and the people we help. You’ll find all the details of the checks needed when you click to accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>The Boston Community\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"false\"}]"
                         });
                 });
 
@@ -4056,26 +3745,6 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -12,
                             LocationId = -3
-                        },
-                        new
-                        {
-                            GroupId = -20,
-                            LocationId = -16
-                        },
-                        new
-                        {
-                            GroupId = -12,
-                            LocationId = -16
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            LocationId = -16
-                        },
-                        new
-                        {
-                            GroupId = -32,
-                            LocationId = -16
                         });
                 });
 
@@ -4295,14 +3964,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Latitude = 53.4042239m,
                             Longitude = -2.7936289m,
                             ZoomLevel = 11.8m
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            MapLocationId = (byte)0,
-                            Latitude = 52.979m,
-                            Longitude = -0.02500m,
-                            ZoomLevel = 13.8m
                         });
                 });
 
@@ -4416,12 +4077,6 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -31,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -34,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         });
@@ -5243,55 +4898,6 @@ You will also be expected to make a minimum commitment of six months.",
                             SupportActivityId = 13,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 1,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 7,
-                            Radius = 2000.0,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 2,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 27,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 5,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 29,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 11,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
                         });
                 });
 
@@ -6553,62 +6159,6 @@ You will also be expected to make a minimum commitment of six months.",
                             DisplayOrder = (byte)17,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 1,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = false,
-                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 7,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Calling someone in need of a friendly chat"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 2,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Collecting prescriptions from a local pharmacy"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 27,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "Providing help with everyday practical tasks (e.g. changing a lightbulb, filling in forms etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 5,
-                            DisplayOrder = (byte)5,
-                            IsPreSelected = false,
-                            Label = "Walking the dog"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 29,
-                            DisplayOrder = (byte)6,
-                            IsPreSelected = false,
-                            Label = "Providing digital support for people struggling with technology"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)18,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)7,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
                         });
                 });
 
@@ -6754,13 +6304,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Source = "",
                             RegistrationFormVariant = (byte)17,
                             TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            Source = "",
-                            RegistrationFormVariant = (byte)18,
-                            TargetGroups = (byte)5
                         });
                 });
 
@@ -7073,28 +6616,6 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = true,
                             TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            Source = "",
-                            AccessRestrictedByRole = false,
-                            RequestHelpFormVariant = (byte)29,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)30,
-                            RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
                         });
                 });
 
@@ -7365,11 +6886,6 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -33,
-                            AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -34,
                             AllowAutonomousJoinersAndLeavers = true
                         });
                 });
