@@ -1550,9 +1550,9 @@ namespace GroupService.Repo.Helpers
             {
                 MapLocationId = (byte)MapLocation.Landing,
                 GroupId = (int)Groups.BostonGNS,
-                Latitude = 52.98035M,
-                Longitude = -0.02765M,
-                ZoomLevel = 11.8M
+                Latitude = 52.979M,
+                Longitude = -0.02500M,
+                ZoomLevel = 13.8M
             });
 
         }
