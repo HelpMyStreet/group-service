@@ -1,5 +1,6 @@
 ﻿using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Utils.Enums;
+using HelpMyStreet.Utils.Extensions;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace GroupService.Repo.Helpers
 
             foreach (var activity in supportActivity)
             {
-                entity.HasData(new EnumSupportActivityInstructions { Id = (int)activity, Name = activity.ToString() });
+                entity.HasData(new EnumSupportActivity { Id = (int)activity, Name = activity.ToString(), FriendlyName = activity.FriendlyNameShort() });
             }
         }
     }

@@ -225,7 +225,7 @@ namespace GroupService.UnitTests
                 It.IsAny<bool>(),
                 It.IsAny<CancellationToken>()), Times.Once);
 
-            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+            _communicationService.Verify(x => x.RequestCommunication(It.IsAny<RequestCommunicationRequest>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
 
         }
 
