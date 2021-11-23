@@ -40,7 +40,7 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.AgeUKWirral,
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
-                MaxVolunteer = 15
+                MaxVolunteer = int.MaxValue
             });
 
             entity.HasData(new GroupNewRequestNotificationStrategy
