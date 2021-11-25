@@ -759,6 +759,7 @@ namespace GroupService.Repo
                     && x.Success == true
                     )
                 .Select(x => x.UserId)
+                .Distinct()
                 .Count();
         }
 
