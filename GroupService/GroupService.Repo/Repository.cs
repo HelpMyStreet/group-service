@@ -749,13 +749,13 @@ namespace GroupService.Repo
         {
             groupId = groupId.HasValue ? groupId.Value : GENERIC_GROUPID;
 
-            DateTime dtLessThan7Days = DateTime.UtcNow.Date.AddDays(-days);
+            DateTime dtLessThanXDays = DateTime.UtcNow.Date.AddDays(-days);
 
             return _context.UserRoleAudit
                 .Where(x => ((GroupRoles)x.RoleId) == GroupRoles.Member 
                     && x.GroupId == groupId 
                     && ((GroupAction) x.ActionId) == GroupAction.AddMember 
-                    && x.DateRequested > dtLessThan7Days
+                    && x.DateRequested > dtLessThanXDays
                     && x.Success == true
                     )
                 .Select(x => x.UserId)
