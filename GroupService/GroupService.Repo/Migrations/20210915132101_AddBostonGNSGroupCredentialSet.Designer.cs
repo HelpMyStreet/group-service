@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210915132101_AddBostonGNSGroupCredentialSet")]
+    partial class AddBostonGNSGroupCredentialSet
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -708,6 +710,83 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -24,
+                            ActivityId = 1,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 12,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 10,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 2,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 3,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 29,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 7,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 30,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 31,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 22,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            ActivityId = 11,
+                            CredentialSetId = 24,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
                             GroupId = -1,
                             ActivityId = 1,
                             CredentialSetId = 1,
@@ -1166,202 +1245,6 @@ namespace GroupService.Repo.Migrations
                             GroupId = -33,
                             ActivityId = 15,
                             CredentialSetId = 331,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 34,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 341,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 345,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 1,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 7,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 2,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 27,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 5,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 29,
-                            CredentialSetId = 3410,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            ActivityId = 11,
-                            CredentialSetId = 3410,
                             DisplayOrder = 0
                         });
                 });
@@ -1456,6 +1339,12 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("CredentialSet","Group");
 
                     b.HasData(
+                        new
+                        {
+                            Id = 24,
+                            GroupId = -24,
+                            CredentialId = -1
+                        },
                         new
                         {
                             Id = 14,
@@ -1646,6 +1535,12 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 23,
                             GroupId = -23,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 24,
+                            GroupId = -24,
                             CredentialId = 1
                         },
                         new
@@ -1913,11 +1808,6 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("Location","Lookup");
 
                     b.HasData(
-                        new
-                        {
-                            Id = -16,
-                            Name = "RichmondMedicalCentre"
-                        },
                         new
                         {
                             Id = -15,
@@ -2373,9 +2263,6 @@ namespace GroupService.Repo.Migrations
                         .HasColumnName("ID")
                         .HasColumnType("int");
 
-                    b.Property<string>("FriendlyName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -2387,175 +2274,146 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 1,
-                            FriendlyName = "Shopping",
                             Name = "Shopping"
                         },
                         new
                         {
                             Id = 2,
-                            FriendlyName = "Prescriptions",
                             Name = "CollectingPrescriptions"
                         },
                         new
                         {
                             Id = 3,
-                            FriendlyName = "Errands",
                             Name = "Errands"
                         },
                         new
                         {
                             Id = 4,
-                            FriendlyName = "Medical Appointment Transport",
                             Name = "MedicalAppointmentTransport"
                         },
                         new
                         {
                             Id = 5,
-                            FriendlyName = "Dog Walking",
                             Name = "DogWalking"
                         },
                         new
                         {
                             Id = 6,
-                            FriendlyName = "Prepared Meal",
                             Name = "MealPreparation"
                         },
                         new
                         {
                             Id = 7,
-                            FriendlyName = "Friendly Chat",
                             Name = "PhoneCalls_Friendly"
                         },
                         new
                         {
                             Id = 8,
-                            FriendlyName = "Supportive Chat",
                             Name = "PhoneCalls_Anxious"
                         },
                         new
                         {
                             Id = 9,
-                            FriendlyName = "Homework",
                             Name = "HomeworkSupport"
                         },
                         new
                         {
                             Id = 10,
-                            FriendlyName = "Check In",
                             Name = "CheckingIn"
                         },
                         new
                         {
                             Id = 11,
-                            FriendlyName = "Other",
                             Name = "Other"
                         },
                         new
                         {
                             Id = 12,
-                            FriendlyName = "Face Covering",
                             Name = "FaceMask"
                         },
                         new
                         {
                             Id = 13,
-                            FriendlyName = "Wellbeing Package",
                             Name = "WellbeingPackage"
                         },
                         new
                         {
                             Id = 14,
-                            FriendlyName = "Community Connector",
                             Name = "CommunityConnector"
                         },
                         new
                         {
                             Id = 15,
-                            FriendlyName = "Cold Weather Army",
                             Name = "ColdWeatherArmy"
                         },
                         new
                         {
                             Id = 16,
-                            FriendlyName = "Transport",
                             Name = "Transport"
                         },
                         new
                         {
                             Id = 21,
-                            FriendlyName = "Meals To Your Door",
                             Name = "MealsToYourDoor"
                         },
                         new
                         {
                             Id = 22,
-                            FriendlyName = "Volunteer Support",
                             Name = "VolunteerSupport"
                         },
                         new
                         {
                             Id = 23,
-                            FriendlyName = "Mealtime Companion",
                             Name = "MealtimeCompanion"
                         },
                         new
                         {
                             Id = 24,
-                            FriendlyName = "Vaccine Support",
                             Name = "VaccineSupport"
                         },
                         new
                         {
                             Id = 25,
-                            FriendlyName = "Emergency Support",
                             Name = "EmergencySupport"
                         },
                         new
                         {
                             Id = 26,
-                            FriendlyName = "In-Person Befriending",
                             Name = "InPersonBefriending"
                         },
                         new
                         {
                             Id = 27,
-                            FriendlyName = "Practical Support",
                             Name = "PracticalSupport"
                         },
                         new
                         {
                             Id = 28,
-                            FriendlyName = "Volunteer Induction",
                             Name = "VolunteerInduction"
                         },
                         new
                         {
                             Id = 29,
-                            FriendlyName = "Digital Support",
                             Name = "DigitalSupport"
                         },
                         new
                         {
                             Id = 30,
-                            FriendlyName = "Bin Day Assistance",
                             Name = "BinDayAssistance"
                         },
                         new
                         {
                             Id = 31,
-                            FriendlyName = "Covid 19 Help",
                             Name = "Covid19Help"
                         },
                         new
                         {
                             Id = 32,
-                            FriendlyName = "Bank Staff Vaccinator",
                             Name = "BankStaffVaccinator"
                         },
                         new
                         {
                             Id = 33,
-                            FriendlyName = "Skill Share",
                             Name = "SkillShare"
                         });
                 });
@@ -3152,6 +3010,26 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -15,
+                            GroupKey = "pcn-grantham",
+                            GroupName = "PCN Grantham",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -16,
+                            GroupKey = "pcn-southlincoln",
+                            GroupName = "PCN South Lincoln",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
                             Id = -17,
                             GroupKey = "four-counties-pcn",
                             GroupName = "Four Counties PCN",
@@ -3163,12 +3041,42 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -18,
+                            GroupKey = "pcn-spilsby",
+                            GroupName = "PCN Spilsby",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -19,
+                            GroupKey = "pcn-boston",
+                            GroupName = "PCN Boston",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
                             Id = -20,
                             GroupKey = "apex-pcn-lincoln",
                             GroupName = "APEX PCN",
                             GroupType = (byte)0,
                             HomepageEnabled = false,
                             ParentGroupId = -12,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -21,
+                            GroupKey = "pcn-lincoln-portland",
+                            GroupName = "PCN Lincoln Portland",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
                             ShiftsEnabled = true,
                             TasksEnabled = false
                         },
@@ -3198,6 +3106,85 @@ You will also be expected to make a minimum commitment of six months.",
                             ShiftsEnabled = false,
                             ShortName = "Age Connects Cardiff",
                             TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -24,
+                            FriendlyName = "Meadows Community Helpers",
+                            GeographicName = "The Meadows",
+                            GroupKey = "meadows-community-helpers",
+                            GroupName = "Meadows Community Helpers",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/meadows-community-helpers",
+                            ShiftsEnabled = false,
+                            ShortName = "Meadows",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -25,
+                            GroupKey = "mansfield-cvs",
+                            GroupName = "Mansfield CVS",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -26,
+                            GroupKey = "mansfield-wickes",
+                            GroupName = "Mansfield (Wickes Site)",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -27,
+                            GroupKey = "gamston-community-hall",
+                            GroupName = "Gamston Community Hall",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -28,
+                            GroupKey = "richard-herrod-centre",
+                            GroupName = "Richard Herrod Centre",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -29,
+                            GroupKey = "kings-meadow-campus",
+                            GroupName = "King's Meadow Campus",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -30,
+                            GroupKey = "forest-recreation-ground",
+                            GroupName = "Forest Recreation Ground",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -25,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
                         },
                         new
                         {
@@ -3278,8 +3265,8 @@ You will also be expected to make a minimum commitment of six months.",
 
                     b.Property<string>("HowToAchieve")
                         .IsRequired()
-                        .HasColumnType("varchar(1000)")
-                        .HasMaxLength(1000)
+                        .HasColumnType("varchar(400)")
+                        .HasMaxLength(400)
                         .IsUnicode(false);
 
                     b.Property<string>("HowToAchieve_CTA_Destination")
@@ -3308,6 +3295,18 @@ You will also be expected to make a minimum commitment of six months.",
                     b.ToTable("GroupCredential","Group");
 
                     b.HasData(
+                        new
+                        {
+                            GroupId = -24,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
                         new
                         {
                             GroupId = -22,
@@ -3706,6 +3705,18 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Email Sam Kelly on mailto:sam@bridgescommunitytrust.org.uk to arrange a manual ID check at The One Stop Shop.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
                             GroupId = -31,
                             CredentialId = 1,
                             CredentialTypeId = (byte)1,
@@ -3938,13 +3949,43 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -15,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
+                        },
+                        new
+                        {
                             GroupId = -17,
                             CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
                         },
                         new
                         {
+                            GroupId = -18,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -19,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
+                        },
+                        new
+                        {
                             GroupId = -20,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -21,
                             CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
                         },
@@ -3959,6 +4000,42 @@ You will also be expected to make a minimum commitment of six months.",
                             GroupId = -23,
                             CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to do a couple of checks. We need two references from people who have known you for more than a year, they must also be over 18 and not related to you. If you would like to undertake any roles which involve face-to-face contact with a client we will also need a DBS check. Please download our Volunteer Application Form from the <a href=\\\"{{BaseUrl}}/ageconnects-cardiff#resources\\\">useful links</a> section of our landing page to submit your details.<p><p>All of our volunteers also need to complete an induction. This is a short web-session which gives us a chance to run through our policies and procedures - it also gives you a chance to meet other volunteers and ask any questions. If you haven’t done so already, you can book your space for Core Induction Training on Eventbrite by clicking <a href=\\\"https://www.eventbrite.co.uk/o/age-connects-cardiff-amp-vale-32377866579\\\">here</a>.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Age Connects Cardiff & the Vale\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:helen.prior@ageconnectscardiff.org.uk\\\">helen.prior@ageconnectscardiff.org.uk</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>The Meadows Community Helpers\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:meadows-community-helpers@helpmystreet.org\\\">meadows-community-helpers@helpmystreet.org</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Mansfield CVS</p>\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -27,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Mansfield CVS</p>\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -28,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Mansfield CVS</p>\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -29,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Mansfield CVS</p>\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -30,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>Mansfield CVS</p>\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"True\"}]"
                         },
                         new
                         {
@@ -4024,8 +4101,83 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -26,
+                            LocationId = -11
+                        },
+                        new
+                        {
+                            GroupId = -27,
+                            LocationId = -12
+                        },
+                        new
+                        {
+                            GroupId = -28,
+                            LocationId = -13
+                        },
+                        new
+                        {
+                            GroupId = -29,
+                            LocationId = -14
+                        },
+                        new
+                        {
+                            GroupId = -30,
+                            LocationId = -15
+                        },
+                        new
+                        {
                             GroupId = -32,
                             LocationId = -9
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -15
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            LocationId = -15
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -14
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            LocationId = -14
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -13
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            LocationId = -13
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -12
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            LocationId = -12
+                        },
+                        new
+                        {
+                            GroupId = -1,
+                            LocationId = -11
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            LocationId = -11
                         },
                         new
                         {
@@ -4056,26 +4208,6 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -12,
                             LocationId = -3
-                        },
-                        new
-                        {
-                            GroupId = -20,
-                            LocationId = -16
-                        },
-                        new
-                        {
-                            GroupId = -12,
-                            LocationId = -16
-                        },
-                        new
-                        {
-                            GroupId = -1,
-                            LocationId = -16
-                        },
-                        new
-                        {
-                            GroupId = -32,
-                            LocationId = -16
                         });
                 });
 
@@ -4282,6 +4414,22 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            MapLocationId = (byte)1,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 9m
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            MapLocationId = (byte)0,
+                            Latitude = 52.94107706186348m,
+                            Longitude = -1.1435562260432748m,
+                            ZoomLevel = 14m
+                        },
+                        new
+                        {
                             GroupId = -31,
                             MapLocationId = (byte)0,
                             Latitude = 53.0779128m,
@@ -4300,9 +4448,9 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -34,
                             MapLocationId = (byte)0,
-                            Latitude = 52.979m,
-                            Longitude = -0.02500m,
-                            ZoomLevel = 13.8m
+                            Latitude = 52.98035m,
+                            Longitude = -0.02765m,
+                            ZoomLevel = 11.8m
                         });
                 });
 
@@ -4350,7 +4498,7 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -7,
-                            MaxVolunteer = 2147483647,
+                            MaxVolunteer = 15,
                             NewRequestNotificationStrategyId = (byte)1
                         },
                         new
@@ -4386,6 +4534,12 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -23,
+                            MaxVolunteer = 2147483647,
+                            NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -24,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         },
@@ -4945,7 +5099,28 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -19,
+                            SupportActivityId = 24,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -15,
+                            SupportActivityId = 24,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
                             GroupId = -20,
+                            SupportActivityId = 24,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -21,
                             SupportActivityId = 24,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)22
@@ -4956,6 +5131,20 @@ You will also be expected to make a minimum commitment of six months.",
                             SupportActivityId = 24,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)55
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            SupportActivityId = 24,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)22
+                        },
+                        new
+                        {
+                            GroupId = -18,
+                            SupportActivityId = 24,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)22
                         },
                         new
                         {
@@ -5096,6 +5285,125 @@ You will also be expected to make a minimum commitment of six months.",
                             SupportActivityId = 2,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)44
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 1,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)1
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 12,
+                            Radius = 2000.0,
+                            SupportActivityInstructionsId = (short)7
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 10,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 2,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 3,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 29,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 7,
+                            Radius = 2000.0,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 30,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)40
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 31,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)3
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 22,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)18
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            SupportActivityId = 11,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            SupportActivityId = 24,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)54
+                        },
+                        new
+                        {
+                            GroupId = -26,
+                            SupportActivityId = 24,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)54
+                        },
+                        new
+                        {
+                            GroupId = -27,
+                            SupportActivityId = 24,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)54
+                        },
+                        new
+                        {
+                            GroupId = -28,
+                            SupportActivityId = 24,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)54
+                        },
+                        new
+                        {
+                            GroupId = -29,
+                            SupportActivityId = 24,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)54
+                        },
+                        new
+                        {
+                            GroupId = -30,
+                            SupportActivityId = 24,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)54
                         },
                         new
                         {
@@ -5243,55 +5551,6 @@ You will also be expected to make a minimum commitment of six months.",
                             SupportActivityId = 13,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)18
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 1,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 7,
-                            Radius = 2000.0,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 2,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 27,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 5,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 29,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)3
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            SupportActivityId = 11,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
                         });
                 });
 
@@ -6736,6 +6995,20 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -24,
+                            Source = "",
+                            RegistrationFormVariant = (byte)13,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            Source = "",
+                            RegistrationFormVariant = (byte)14,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
                             GroupId = -31,
                             Source = "",
                             RegistrationFormVariant = (byte)15,
@@ -6989,6 +7262,28 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -15,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
                             GroupId = -17,
                             Source = "a",
                             AccessRestrictedByRole = true,
@@ -7000,7 +7295,40 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -18,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -19,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
                             GroupId = -20,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -21,
                             Source = "a",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)17,
@@ -7039,6 +7367,94 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestHelpFormVariant = (byte)20,
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)22,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = true,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -24,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)23,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)18,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -26,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)24,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -27,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)24,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -28,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)24,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -29,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)24,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -30,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)24,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
                         },
                         new
@@ -7238,6 +7654,32 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
+                            GroupId = -15,
+                            AddressLine1 = "Grantham Meres Leisure Centre Table Tennis Club",
+                            AddressLine2 = "Trent Road",
+                            AddressLine3 = "Grantham",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "Grantham",
+                            LastName = "PCN",
+                            Locality = "",
+                            OtherPhone = "",
+                            Postcode = "NG31 7XQ"
+                        },
+                        new
+                        {
+                            GroupId = -16,
+                            AddressLine1 = "Cliff Villages Medical Practice",
+                            AddressLine2 = "Mere Rd",
+                            AddressLine3 = "Waddington",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "South Lincoln",
+                            LastName = "PCN",
+                            Locality = "Lincoln",
+                            OtherPhone = "",
+                            Postcode = "LN5 9NX"
+                        },
+                        new
+                        {
                             GroupId = -17,
                             AddressLine1 = "Lakeside Healthcare Group",
                             AddressLine2 = "Unit 1 Exchange Court",
@@ -7248,6 +7690,32 @@ You will also be expected to make a minimum commitment of six months.",
                             Locality = "Corby",
                             OtherPhone = "01780 761443",
                             Postcode = "NN17 1TY"
+                        },
+                        new
+                        {
+                            GroupId = -18,
+                            AddressLine1 = "Franklin Hall",
+                            AddressLine2 = "Halton Rd",
+                            AddressLine3 = "Spilsby",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "Spilsby",
+                            LastName = "PCN",
+                            Locality = "",
+                            OtherPhone = "",
+                            Postcode = "PE23 5LA"
+                        },
+                        new
+                        {
+                            GroupId = -19,
+                            AddressLine1 = "Sidings Medical Practice",
+                            AddressLine2 = "14 Sleaford Rd",
+                            AddressLine3 = "Boston",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "Boston",
+                            LastName = "PCN",
+                            Locality = "",
+                            OtherPhone = "",
+                            Postcode = "PE21 8EG"
                         },
                         new
                         {
@@ -7274,6 +7742,97 @@ You will also be expected to make a minimum commitment of six months.",
                             Locality = "Lincoln",
                             OtherPhone = "07340 066491",
                             Postcode = "LN6 8RN"
+                        },
+                        new
+                        {
+                            GroupId = -21,
+                            AddressLine1 = "Portland Medical Practice",
+                            AddressLine2 = "60 Portland St",
+                            AddressLine3 = "Lincoln",
+                            EmailAddress = "laura@factor-50.co.uk",
+                            FirstName = "Lincoln Portland",
+                            LastName = "PCN",
+                            Locality = "",
+                            OtherPhone = "",
+                            Postcode = "LN5 7LB"
+                        },
+                        new
+                        {
+                            GroupId = -25,
+                            AddressLine1 = "Mansfield Community House",
+                            AddressLine2 = "36 Wood Street",
+                            AddressLine3 = "Mansfield",
+                            EmailAddress = "chorsman@scintillaspark.co.uk",
+                            FirstName = "Caroline",
+                            LastName = "Horsman",
+                            Locality = "Nottinghamshire",
+                            OtherPhone = "07851 595171",
+                            Postcode = "NG18 1QA"
+                        },
+                        new
+                        {
+                            GroupId = -26,
+                            AddressLine1 = "Mansfield Community House",
+                            AddressLine2 = "36 Wood Street",
+                            AddressLine3 = "Mansfield",
+                            EmailAddress = "chorsman@scintillaspark.co.uk",
+                            FirstName = "Caroline",
+                            LastName = "Horsman",
+                            Locality = "Nottinghamshire",
+                            OtherPhone = "07851 595171",
+                            Postcode = "NG18 1QA"
+                        },
+                        new
+                        {
+                            GroupId = -27,
+                            AddressLine1 = "Mansfield Community House",
+                            AddressLine2 = "36 Wood Street",
+                            AddressLine3 = "Mansfield",
+                            EmailAddress = "chorsman@scintillaspark.co.uk",
+                            FirstName = "Caroline",
+                            LastName = "Horsman",
+                            Locality = "Nottinghamshire",
+                            OtherPhone = "07851 595171",
+                            Postcode = "NG18 1QA"
+                        },
+                        new
+                        {
+                            GroupId = -28,
+                            AddressLine1 = "Mansfield Community House",
+                            AddressLine2 = "36 Wood Street",
+                            AddressLine3 = "Mansfield",
+                            EmailAddress = "chorsman@scintillaspark.co.uk",
+                            FirstName = "Caroline",
+                            LastName = "Horsman",
+                            Locality = "Nottinghamshire",
+                            OtherPhone = "07851 595171",
+                            Postcode = "NG18 1QA"
+                        },
+                        new
+                        {
+                            GroupId = -29,
+                            AddressLine1 = "Mansfield Community House",
+                            AddressLine2 = "36 Wood Street",
+                            AddressLine3 = "Mansfield",
+                            EmailAddress = "chorsman@scintillaspark.co.uk",
+                            FirstName = "Caroline",
+                            LastName = "Horsman",
+                            Locality = "Nottinghamshire",
+                            OtherPhone = "07851 595171",
+                            Postcode = "NG18 1QA"
+                        },
+                        new
+                        {
+                            GroupId = -30,
+                            AddressLine1 = "Mansfield Community House",
+                            AddressLine2 = "36 Wood Street",
+                            AddressLine3 = "Mansfield",
+                            EmailAddress = "chorsman@scintillaspark.co.uk",
+                            FirstName = "Caroline",
+                            LastName = "Horsman",
+                            Locality = "Nottinghamshire",
+                            OtherPhone = "07851 595171",
+                            Postcode = "NG18 1QA"
                         });
                 });
 
@@ -7350,6 +7909,11 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -23,
+                            AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -24,
                             AllowAutonomousJoinersAndLeavers = true
                         },
                         new

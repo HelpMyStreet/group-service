@@ -21,6 +21,8 @@ namespace GroupService.Repo.Helpers
         private const int SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET = 317;
         private const int APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET = 328;
         private const int APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET = 329;
+        private const int BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET = 3410;
+        private const int BOSTONGNS_REFERENCES_CREDENTIAL_SET = 345;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -32,6 +34,7 @@ namespace GroupService.Repo.Helpers
         private const int POLICIES_AND_PROCEDURES = 7;
         private const int VACCINATOR_TRAINING = 8;
         private const int BANK_DETAILS = 9;
+        private const int SAFEGUARDING_TRAINING = 10;
 
         public static void InitialiseCredentialSets()
         {
@@ -53,6 +56,7 @@ namespace GroupService.Repo.Helpers
                 { Groups.Southwell, 31 },
                 { Groups.ApexBankStaff, 32 },
                 { Groups.AgeUKMidMersey, 33 },
+                { Groups.BostonGNS, 34 }
 
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
@@ -63,7 +67,8 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKFavershamAndSittingbourne, 131 },
                 { Groups.Sandbox, 141 },
                 { Groups.AgeConnectsCardiff, 231 },
-                { Groups.AgeUKMidMersey, 331 }
+                { Groups.AgeUKMidMersey, 331 },
+                { Groups.BostonGNS, 341 }
             };
 
             GROUPS_USING_YOTI = new List<Groups> {
@@ -80,7 +85,8 @@ namespace GroupService.Repo.Helpers
                 Groups.FTLOS,
                 Groups.Generic,
                 Groups.Southwell,
-                Groups.AgeUKMidMersey
+                Groups.AgeUKMidMersey,
+                Groups.BostonGNS
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
@@ -96,7 +102,8 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeConnectsCardiff,
                 Groups.Southwell,
                 Groups.ApexBankStaff,
-                Groups.AgeUKMidMersey
+                Groups.AgeUKMidMersey,
+                Groups.BostonGNS
             };
         }
 
@@ -154,6 +161,12 @@ namespace GroupService.Repo.Helpers
             {
                 Id = BANK_DETAILS,
                 Name = "Bank Details"
+            });
+
+            entity.HasData(new Credential
+            {
+                Id = SAFEGUARDING_TRAINING,
+                Name = "Safeguarding Training"
             });
         }
 
@@ -503,6 +516,69 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.BostonGNS,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = $"If you are unable to confirm your ID using Yoti please make sure you’re a member of our group by clicking ‘Join Our Group’ " +
+                $"from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about how " +
+                $"you can request a manual ID check.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. " +
+                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.BostonGNS,
+                CredentialId = REFERENCES,
+                CredentialTypeId = (int)CredentialTypes.References,
+                Name = "References",
+                HowToAchieve = $"We ask all our volunteers to provide a personal reference - this must be someone who is 18 or over, has known you for over a " +
+                $"year and is not related to you. Please have a think about who this could be, and check that they are happy for you to share their contact details " +
+                $"with us for the purpose of requesting a reference. Please also make sure you’re a member of our group by clicking ‘Join Our Group’ from our " +
+                $"<a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can contact you for their information.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference.",
+                DisplayOrder = 3,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.BostonGNS,
+                CredentialId = SAFEGUARDING_TRAINING,
+                CredentialTypeId = (int)CredentialTypes.Training,
+                Name = "Safeguarding training",
+                HowToAchieve = $"Safeguarding how-to text: ‘We ask all our volunteers to complete basic safeguarding training to keep you, and the people we help safe. " +
+                $"Please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to " +
+                $"HelpMyStreet so we can get in touch with more information about this short training session.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that the user has completed safeguarding training.",
+                DisplayOrder = 4,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.BostonGNS,
+                CredentialId = DBS_CHECK,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "DBS Check",
+                HowToAchieve = $"For some activities we need to our volunteers to be DBS checked. Please make sure you’re a member of our group by clicking " +
+                $"‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more " +
+                $"information about requesting or registering a DBS check.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal " +
+                $"processes for logging a DBS check.",
+                DisplayOrder = 5,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -577,6 +653,20 @@ namespace GroupService.Repo.Helpers
                 Id = APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET,
                 GroupId = (int)Groups.ApexBankStaff,
                 CredentialId = BANK_DETAILS,
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET,
+                GroupId = (int)Groups.BostonGNS,
+                CredentialId = SAFEGUARDING_TRAINING,
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = BOSTONGNS_REFERENCES_CREDENTIAL_SET,
+                GroupId = (int)Groups.BostonGNS,
+                CredentialId = REFERENCES,
             });
         }
 
@@ -658,6 +748,12 @@ namespace GroupService.Repo.Helpers
 
             SetActivityCredentialSet(entity, Groups.AgeUKMidMersey, ageukmidmerseyActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKMidMersey]);
             SetActivityCredentialSet(entity, Groups.AgeUKMidMersey, ageukmidmerseyActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKMidMersey]);
+
+            var bostonGNSActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.CollectingPrescriptions, SupportActivities.PracticalSupport, SupportActivities.DogWalking, SupportActivities.DigitalSupport, SupportActivities.Other };
+            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, IDENTITY_CREDENTIAL_SETS[Groups.BostonGNS]);
+            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
+            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_REFERENCES_CREDENTIAL_SET);
+            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)

@@ -212,6 +212,16 @@ namespace GroupService.Repo.Helpers
             return config;
         }
 
+        private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_BostonGNS()
+        {
+            List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
+            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>For most volunteering opportunities we offer we will need to verify your ID and complete some basic training before you can start helping – " +
+                $"this is to make things as safe as possible for you and the people we help. You’ll find all the details of the checks needed when you click to accept a request.</p>"));
+            config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>The Boston Community"));            
+            config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "false"));
+            return config;
+        }
+
 
         public static void PopulateGroupEmailConfiguration(this EntityTypeBuilder<GroupEmailConfiguration> entity)
         {
@@ -235,6 +245,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.Southwell, GetWelcomeEmailConfiguration_Southwell());
             Populate(entity, Groups.ApexBankStaff, GetWelcomeEmailConfiguration_ApexBankStaffPCN());
             Populate(entity, Groups.AgeUKMidMersey, GetWelcomeEmailConfiguration_AgeUK_MidMersey());
+            Populate(entity, Groups.BostonGNS, GetWelcomeEmailConfiguration_BostonGNS());
         }
 
         private static void Populate(this EntityTypeBuilder<GroupEmailConfiguration> entity, Groups group, List<KeyValuePair<string, string>> keyValuePairs)

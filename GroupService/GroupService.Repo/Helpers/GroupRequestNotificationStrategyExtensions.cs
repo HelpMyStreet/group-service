@@ -40,7 +40,7 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.AgeUKWirral,
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
-                MaxVolunteer = 15
+                MaxVolunteer = int.MaxValue
             });
 
             entity.HasData(new GroupNewRequestNotificationStrategy
@@ -116,6 +116,13 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupNewRequestNotificationStrategy
             {
                 GroupId = (int)Groups.Southwell,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.BostonGNS,
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
                 MaxVolunteer = int.MaxValue
             });
