@@ -2247,6 +2247,14 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeUKMidMersey, SupportActivities.VolunteerSupport, SupportActivityInstructionsEnum.HMS_VolunteerSupport, 20);
             Populate(entity, Groups.AgeUKMidMersey, SupportActivities.WellbeingPackage, SupportActivityInstructionsEnum.HMS_VolunteerSupport, 20);
 
+            Populate(entity, Groups.BostonGNS, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping, 20);
+            Populate(entity, Groups.BostonGNS, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, 2000);
+            Populate(entity, Groups.BostonGNS, SupportActivities.CollectingPrescriptions, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+            Populate(entity, Groups.BostonGNS, SupportActivities.PracticalSupport, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+            Populate(entity, Groups.BostonGNS, SupportActivities.DogWalking, SupportActivityInstructionsEnum.HMS_General, 20);
+            Populate(entity, Groups.BostonGNS, SupportActivities.DigitalSupport, SupportActivityInstructionsEnum.HMS_General, 20);
+            Populate(entity, Groups.BostonGNS, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+
         }
     }
 }

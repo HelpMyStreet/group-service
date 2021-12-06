@@ -6,6 +6,7 @@ using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Contracts.RequestService.Response;
 using HelpMyStreet.Utils.Enums;
+using HelpMyStreet.Utils.Extensions;
 using HelpMyStreet.Utils.Models;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -22,6 +23,7 @@ namespace GroupService.Repo
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
+        private const int GENERIC_GROUPID = -1;
 
         public Repository(ApplicationDbContext context, IMapper mapper)
         {
@@ -732,5 +734,34 @@ namespace GroupService.Repo
                     SupportRadiusMiles = x.Radius
                 }).ToList();
         }
+
+        public async Task<int> MemberVolunterCount(int? groupId)
+        {
+            groupId = groupId.HasValue ? groupId.Value : GENERIC_GROUPID;
+
+            return _context.UserRole
+                .Where(x => ((GroupRoles)x.RoleId) == GroupRoles.Member && x.GroupId == groupId)
+                .Select(x => x.UserId)
+                .Count();
+        }
+
+        public async Task<int> MemberVolunterCountLastXDays(int? groupId, int days)
+        {
+            groupId = groupId.HasValue ? groupId.Value : GENERIC_GROUPID;
+
+            DateTime dtLessThanXDays = DateTime.UtcNow.Date.AddDays(-days);
+
+            return _context.UserRoleAudit
+                .Where(x => ((GroupRoles)x.RoleId) == GroupRoles.Member 
+                    && x.GroupId == groupId 
+                    && ((GroupAction) x.ActionId) == GroupAction.AddMember 
+                    && x.DateRequested > dtLessThanXDays
+                    && x.Success == true
+                    )
+                .Select(x => x.UserId)
+                .Distinct()
+                .Count();
+        }
+
     }
 }

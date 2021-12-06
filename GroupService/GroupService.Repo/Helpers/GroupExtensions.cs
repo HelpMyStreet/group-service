@@ -289,6 +289,21 @@ namespace GroupService.Repo.Helpers
                 ShortName = "Age UK MM",
                 GeographicName = "St Helens, Halton, Knowsley and Warrington",
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.BostonGNS,
+                GroupName = "Boston and Surrounding Areas",
+                GroupKey = "boston",
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true,
+                FriendlyName = "Boston and Surrounding Areas",
+                LinkURL = "/boston",
+                ShortName = "Boston",
+                GeographicName = "Boston or surrounding areas",
+            });
+
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -430,6 +445,14 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKMidMersey,
                 TargetGroups = (byte)TargetGroups.ThisGroup
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.BostonGNS,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.BostonGNS,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
         }
 
@@ -727,6 +750,30 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.AgeUKMidMersey,
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeUKMidMersey_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.BostonGNS,
+                Source = "",
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.BostonGNS_Public,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = false,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.BostonGNS,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.BostonGNS_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
@@ -1096,6 +1143,15 @@ namespace GroupService.Repo.Helpers
                 Latitude = 53.4042239M,
                 Longitude = -2.7936289M,
                 ZoomLevel = 11.8M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.BostonGNS,
+                Latitude = 52.979M,
+                Longitude = -0.02500M,
+                ZoomLevel = 13.8M
             });
 
         }
