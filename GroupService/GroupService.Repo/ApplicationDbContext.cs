@@ -406,7 +406,7 @@ namespace GroupService.Repo
 
                 entity.Property(e => e.HowToAchieve)
                     .IsRequired()
-                    .HasMaxLength(400)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.HowToAchieve_CTA_Destination)
