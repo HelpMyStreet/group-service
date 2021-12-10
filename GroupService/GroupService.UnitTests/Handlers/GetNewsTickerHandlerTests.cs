@@ -21,8 +21,6 @@ namespace GroupService.UnitTests
         private Mock<IRepository> _repository;
         private GetNewsTickerHandler _classUnderTest;
         private int _memberVolunteerCount;
-        private int _memberVolunterCountLastXDays;
-        private IEqualityComparer<NewsTickerMessage> _equalityComparer;
         private Dictionary<int, int> _dictCount;
 
 
@@ -31,7 +29,6 @@ namespace GroupService.UnitTests
         {
             _dictCount = new Dictionary<int, int>();
             SetupRepository();
-            _equalityComparer = new NewsTickerMessages_EqualityComparer();
             _classUnderTest = new GetNewsTickerHandler(_repository.Object);
         }
 
@@ -45,12 +42,14 @@ namespace GroupService.UnitTests
                 .ReturnsAsync((int? x, int y) => _dictCount[y] );
         }
 
-        [TestCase(5, 10, 20, 2)]
-        [TestCase(5, 1, 20, 2)]
-        [TestCase(4, 1, 20, 1)]
-        [TestCase(4, 0, 0, 0)]
+        [TestCase(5, 10, 20, "**5** volunteers waiting to help", "**10** new volunteers joined today","", 2)]
+        [TestCase(5, 1, 20, "**5** volunteers waiting to help", "", "**20** new volunteers joined this week",2)]
+        [TestCase(4, 1, 20, "", "","**20** new volunteers joined this week", 1)]
+        [TestCase(4, 0, 0, "", "", "", 0)]
         [Test]
-        public async Task HappyPath(int volunteerCount, int lastDayCount, int last7DaysCount, int messageCount)
+        public async Task HappyPath(int volunteerCount, int lastDayCount, int last7DaysCount,
+            string volunteerMessage, string lastDayMessage, string lastWeekMessage,
+            int messageCount)
         {
             int? groupId = -3;
             _memberVolunteerCount = volunteerCount;
@@ -65,31 +64,19 @@ namespace GroupService.UnitTests
                 GroupId = groupId
             }, CancellationToken.None);
 
-            if (volunteerCount >= 5)
+            if (!string.IsNullOrEmpty(volunteerMessage))
             {
-                Assert.AreEqual(true, response.Messages.Contains(new NewsTickerMessage()
-                {
-                    Value = volunteerCount,
-                    Message = $"**{ volunteerCount }** volunteers waiting to help"
-                }, _equalityComparer));
+                Assert.AreEqual(1, response.Messages.Count(x => x.Message == volunteerMessage));
             }
 
-            if (lastDayCount >= 5)
+            if (!string.IsNullOrEmpty(lastDayMessage))
             {
-                Assert.AreEqual(true, response.Messages.Contains(new NewsTickerMessage()
-                {
-                    Value = lastDayCount,
-                    Message = $"**{ lastDayCount }** new volunteers joined today"
-                }, _equalityComparer));
+                Assert.AreEqual(1, response.Messages.Count(x => x.Message == lastDayMessage));
             }
 
-            if (last7DaysCount >= 2 && lastDayCount <= 1)
+            if (!string.IsNullOrEmpty(lastWeekMessage))
             {
-                Assert.AreEqual(true, response.Messages.Contains(new NewsTickerMessage()
-                {
-                    Value = last7DaysCount,
-                    Message = $"**{ last7DaysCount }** new volunteers joined this week"
-                }, _equalityComparer));
+                Assert.AreEqual(1, response.Messages.Count(x => x.Message == lastWeekMessage));
             }
 
             Assert.AreEqual(messageCount, response.Messages.Count);
