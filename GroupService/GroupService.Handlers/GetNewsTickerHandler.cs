@@ -1,5 +1,6 @@
 ﻿using GroupService.Core.Interfaces.Repositories;
 using HelpMyStreet.Contracts;
+using HelpMyStreet.Utils.Models;
 using MediatR;
 using System.Collections.Generic;
 using System.Threading;

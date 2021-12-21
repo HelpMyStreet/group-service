@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211221083355_AddUrgentRequestNotification")]
+    partial class AddUrgentRequestNotification
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4366,120 +4368,103 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -6,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -3,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -2,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -5,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -7,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -8,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -1,
                             MaxVolunteer = 100,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -9,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -10,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -22,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -23,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -13,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -11,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -32,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -33,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -31,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -34,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1,
-                            UrgentRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1
                         });
                 });
 
