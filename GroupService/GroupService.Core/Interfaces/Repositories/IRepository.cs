@@ -49,7 +49,7 @@ namespace GroupService.Core.Interfaces.Repositories
         void AddUserRoleAudit(int groupId, int userId, GroupRoles groupRole, int authorisedByUserID, GroupAction groupAction, bool success, CancellationToken cancellationToken);
         bool RoleAssigned(int userId,int groupId, GroupRoles groupRole, CancellationToken cancellationToken);
         bool RoleMemberAssignedForUserInGroup(int userId, int groupId, CancellationToken cancellationToken);
-        List<int> GetGroupMembers(GetGroupMembersRequest request, CancellationToken cancellationToken);
+        List<int> GetGroupMembers(int groupId, CancellationToken cancellationToken);
         int GetGroupByKey(GetGroupByKeyRequest request, CancellationToken cancellationToken);
         bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole);
         bool UserIsInRolesForGroup(int userID, int groupId, List<GroupRoles> groupRoles, bool mustBeInAll);

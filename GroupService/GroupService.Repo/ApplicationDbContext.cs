@@ -36,6 +36,7 @@ namespace GroupService.Repo
         public virtual DbSet<EnumSupportActivity> EnumSupportActivity { get; set; }
         public virtual DbSet<EnumSupportActivityInstructions> EnumSupportActivityInstructions { get; set; }
         public virtual DbSet<EnumNewRequestNotificationStrategy> EnumNewRequestNotificationStrategy { get; set; }
+        public virtual DbSet<EnumUrgentRequestNotificationStrategy> EnumUrgentRequestNotificationStrategy { get; set; }
         public virtual DbSet<EnumCommunicationJobType> EnumCommunicationJobType { get; set; }
         public virtual DbSet<EnumRequestEvents> EnumRequestEvents { get; set; }
 
@@ -183,6 +184,15 @@ namespace GroupService.Repo
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.SetEnumStrategyData();
+            });
+
+            modelBuilder.Entity<EnumUrgentRequestNotificationStrategy>(entity =>
+            {
+                entity.ToTable("UrgentRequestNotificationStrategy", "Lookup");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.SetEnumUrgentRequestNotificationStrategyData();
             });
 
             modelBuilder.Entity<EnumCommunicationJobType>(entity =>

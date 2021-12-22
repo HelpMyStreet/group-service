@@ -83,6 +83,7 @@ namespace GroupService.AzureFunction
             builder.Services.AddTransient<IRequestService, Core.Services.RequestService>();
             builder.Services.AddTransient<IExpiredService, Core.Services.ExpiredService>();
             builder.Services.AddTransient<ICommunicationService, Core.Services.CommunicationService>();
+            builder.Services.AddTransient<ITargetGroupService, Core.Services.TargetGroupService>();
 
             builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILogger<>), typeof(Logger<>)));
             builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILoggerWrapper<>), typeof(LoggerWrapper<>)));
