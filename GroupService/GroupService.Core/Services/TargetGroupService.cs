@@ -74,13 +74,7 @@ namespace GroupService.Core.Services
         public async Task<IEnumerable<int>> GetTargetGroupsMembers(int referringGroupId, string source, CancellationToken cancellationToken)
         {
             var targetGroups = await GetTargetGroups(referringGroupId, source, cancellationToken);
-            IEnumerable<int> groupVolunteers = new List<int>();
-            targetGroups.ToList().ForEach(group =>
-            {
-                var members = _repository.GetGroupMembers(group, cancellationToken);
-                groupVolunteers = groupVolunteers.Concat(members);
-            });
-
+            var groupVolunteers = targetGroups.SelectMany(group => _repository.GetGroupMembers(group, cancellationToken));
             return groupVolunteers.Distinct().ToList();
         }
     }

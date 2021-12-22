@@ -122,8 +122,6 @@ namespace GroupService.UnitTests
 
             Assert.AreEqual(_groupStrategy[referringGroupId].MaxVolunteer, response.VolunteerSummaries.ToList().Count);
             Assert.AreEqual(expectedResults, response.VolunteerSummaries);
-
-            int i = 1;
         }
 
         [TestCase(-1)]
