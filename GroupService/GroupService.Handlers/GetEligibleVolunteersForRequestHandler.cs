@@ -16,76 +16,17 @@ namespace GroupService.Handlers
     {
         private readonly IRepository _repository;
         private readonly IUserService _userService;
-        public GetEligibleVolunteersForRequestHandler(IRepository repository, IUserService userService)
+        private readonly ITargetGroupService _targetGroupService;
+        public GetEligibleVolunteersForRequestHandler(IRepository repository, IUserService userService, ITargetGroupService targetGroupService)
         {
             _repository = repository;
             _userService = userService;
-        }
-
-        private List<int> GetTargetGroups(int referringGroupId, string source, CancellationToken cancellationToken)
-        {
-            GetRequestHelpFormVariantResponse requestJourney = _repository.GetRequestHelpFormVariant(referringGroupId, source ?? "", cancellationToken);
-
-            int targetGroupId;
-            bool includeChildGroups;
-
-            switch (requestJourney.TargetGroups)
-            {
-                case TargetGroups.GenericGroup:
-                    targetGroupId = -1;
-                    includeChildGroups = false;
-                    break;
-                case TargetGroups.ParentGroup:
-                    targetGroupId = _repository.GetGroupById(referringGroupId, cancellationToken).ParentGroupId.Value;
-                    includeChildGroups = false;
-                    break;
-                case TargetGroups.SiblingsAndParentGroup:
-                    targetGroupId = _repository.GetGroupById(referringGroupId, cancellationToken).ParentGroupId.Value;
-                    includeChildGroups = true;
-                    break;
-                case TargetGroups.ThisGroup:
-                    targetGroupId = referringGroupId;
-                    includeChildGroups = false;
-                    break;
-                case TargetGroups.ThisGroupAndChildren:
-                    targetGroupId = referringGroupId;
-                    includeChildGroups = true;
-                    break;
-                default:
-                    throw new Exception($"Unexpected TargetGroups value {requestJourney.TargetGroups}");
-            }
-
-            List<int> targetGroups;
-
-            if (includeChildGroups)
-            {
-                targetGroups = _repository.GetGroupAndChildGroups(targetGroupId, cancellationToken);
-
-                if (targetGroups == null)
-                {
-                    throw new Exception("Null response from GetGroupAndChildGroups");
-                }
-            }
-            else
-            {
-                targetGroups = new List<int>() { targetGroupId };
-            }
-
-            return targetGroups;
+            _targetGroupService = targetGroupService;
         }
 
         public async Task<GetEligibleVolunteersForRequestResponse> Handle(GetEligibleVolunteersForRequestRequest request, CancellationToken cancellationToken)
         {
-            IEnumerable<int> groupVolunteers = new List<int>();
-            var targetGroups = GetTargetGroups(request.ReferringGroupId, string.Empty, cancellationToken);
-
-            targetGroups.ForEach(group =>
-            {
-                var members = _repository.GetGroupMembers(group, cancellationToken);
-                groupVolunteers = groupVolunteers.Concat(members);            
-            });
-
-            groupVolunteers = groupVolunteers.Distinct().ToList();
+            var groupVolunteers = await _targetGroupService.GetTargetGroupsMembers(request.ReferringGroupId, request.Source, cancellationToken);
 
             var strategy = _repository.GetGroupNewRequestNotificationStrategy(request.ReferringGroupId, cancellationToken);
 
