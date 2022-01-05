@@ -740,8 +740,13 @@ namespace GroupService.Repo
             groupId = groupId.HasValue ? groupId.Value : GENERIC_GROUPID;
 
             return _context.UserRole
-                .Where(x => ((GroupRoles)x.RoleId) == GroupRoles.Member && x.GroupId == groupId)
+                .Include(x => x.Group)
+                .Where(x => 
+                    (((GroupRoles)x.RoleId) == GroupRoles.Member) && 
+                    (x.GroupId == groupId || x.Group.ParentGroupId == groupId) 
+                )
                 .Select(x => x.UserId)
+                .Distinct()
                 .Count();
         }
 
@@ -751,9 +756,12 @@ namespace GroupService.Repo
 
             DateTime dtLessThanXDays = DateTime.UtcNow.Date.AddDays(-days);
 
+            var groups = _context.Group.Where(x => x.ParentGroupId == groupId || x.Id == groupId)
+                .Select(x => x.Id);
+
             return _context.UserRoleAudit
                 .Where(x => ((GroupRoles)x.RoleId) == GroupRoles.Member 
-                    && x.GroupId == groupId 
+                    && groups.Contains(x.GroupId) 
                     && ((GroupAction) x.ActionId) == GroupAction.AddMember 
                     && x.DateRequested > dtLessThanXDays
                     && x.Success == true
