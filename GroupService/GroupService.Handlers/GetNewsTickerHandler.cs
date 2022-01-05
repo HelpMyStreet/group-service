@@ -33,7 +33,7 @@ namespace GroupService.Handlers
                 response.Messages.Add(new NewsTickerMessage()
                 {
                     Value = volunteerCount,
-                    Message = $"**{ volunteerCount }** volunteers waiting to help"
+                    Message = $"**{volunteerCount:n0}** volunteers waiting to help"
                 });
             }
 
@@ -42,7 +42,7 @@ namespace GroupService.Handlers
                 response.Messages.Add(new NewsTickerMessage()
                 {
                     Value = newVolunteerCountInLast7Days,
-                    Message = $"**{ newVolunteerCountInLast7Days }** new volunteers joined this week"
+                    Message = $"**{newVolunteerCountInLast7Days:n0}** new volunteers joined this week"
                 });
             }
 
@@ -51,7 +51,7 @@ namespace GroupService.Handlers
                 response.Messages.Add(new NewsTickerMessage()
                 {
                     Value = newVolunteerCountInLastDay,
-                    Message = $"**{ newVolunteerCountInLastDay }** new volunteers joined today"
+                    Message = $"**{newVolunteerCountInLastDay:n0}** new volunteers joined today"
                 });
             }
 
