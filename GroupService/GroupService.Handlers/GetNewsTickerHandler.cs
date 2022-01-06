@@ -3,6 +3,7 @@ using HelpMyStreet.Contracts;
 using HelpMyStreet.Utils.Models;
 using MediatR;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -24,9 +25,18 @@ namespace GroupService.Handlers
                 Messages = new List<NewsTickerMessage>()
             };
 
-            int volunteerCount = await _repository.MemberVolunterCount(request.GroupId);
-            int newVolunteerCountInLast7Days = await _repository.MemberVolunterCountLastXDays(request.GroupId, 7);
-            int newVolunteerCountInLastDay = await _repository.MemberVolunterCountLastXDays(request.GroupId, 1);
+            List<int> groups = new List<int>();
+
+            if (request.GroupId.HasValue)
+            {
+                groups.Add(request.GroupId.Value);
+                var childGroups = _repository.GetChildGroups(request.GroupId.Value,cancellationToken);
+                groups.AddRange(childGroups.Select(sm => sm.GroupId));
+            }
+
+            int volunteerCount = await _repository.MemberVolunterCount(groups);
+            int newVolunteerCountInLast7Days = await _repository.MemberVolunterCountLastXDays(groups, 7);
+            int newVolunteerCountInLastDay = await _repository.MemberVolunterCountLastXDays(groups, 1);
 
             if(volunteerCount>=5)
             {
