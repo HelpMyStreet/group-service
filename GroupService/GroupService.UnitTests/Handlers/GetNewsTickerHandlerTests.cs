@@ -22,6 +22,7 @@ namespace GroupService.UnitTests
         private GetNewsTickerHandler _classUnderTest;
         private int _memberVolunteerCount;
         private Dictionary<int, int> _dictCount;
+        private List<Group> _childGroups;
 
 
         [SetUp]
@@ -35,16 +36,20 @@ namespace GroupService.UnitTests
         private void SetupRepository()
         {
             _repository = new Mock<IRepository>();
-            _repository.Setup(x => x.MemberVolunterCount(It.IsAny<int?>()))
+
+            _repository.Setup(x => x.GetChildGroups(It.IsAny<int>(), It.IsAny<CancellationToken>()))
+                .Returns(() => _childGroups);
+
+            _repository.Setup(x => x.MemberVolunterCount(It.IsAny<List<int>>()))
                 .ReturnsAsync(() => _memberVolunteerCount);
 
-            _repository.Setup(x => x.MemberVolunterCountLastXDays(It.IsAny<int?>(), It.IsAny<int>()))
-                .ReturnsAsync((int? x, int y) => _dictCount[y] );
+            _repository.Setup(x => x.MemberVolunterCountLastXDays(It.IsAny<List<int>>(), It.IsAny<int>()))
+                .ReturnsAsync((List<int> x, int y) => _dictCount[y] );
         }
 
         [TestCase(5, 10, 20, "**5** volunteers waiting to help", "**10** new volunteers joined today","", 2)]
-        [TestCase(5, 1, 20, "**5** volunteers waiting to help", "", "**20** new volunteers joined this week",2)]
-        [TestCase(4, 1, 20, "", "","**20** new volunteers joined this week", 1)]
+        [TestCase(5, 1, 20, "**5** volunteers waiting to help", "", "**20** new volunteers joined this week", 2)]
+        [TestCase(4, 1, 20, "", "", "**20** new volunteers joined this week", 1)]
         [TestCase(4, 0, 0, "", "", "", 0)]
         [Test]
         public async Task HappyPath(int volunteerCount, int lastDayCount, int last7DaysCount,
@@ -52,6 +57,9 @@ namespace GroupService.UnitTests
             int messageCount)
         {
             int? groupId = -3;
+
+            _childGroups = new List<Group>();
+
             _memberVolunteerCount = volunteerCount;
             _dictCount = new Dictionary<int, int>()
             {
