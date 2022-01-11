@@ -15,8 +15,8 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
-        Task<int> MemberVolunterCount(int? groupId);
-        Task<int> MemberVolunterCountLastXDays(int? groupId, int days);        
+        Task<int> MemberVolunterCount(IEnumerable<int> groups);
+        Task<int> MemberVolunterCountLastXDays(IEnumerable<int> groups, int days);        
         Task<bool> AddToGenericGroup(int groupId, string source);
         List<KeyValuePair<string, string>> GetGroupEmailConfiguration(int groupId, CommunicationJobTypes communicationJobType, CancellationToken cancellationToken);
         List<SupportActivityConfiguration> GetSupportActivitiesConfiguration(CancellationToken cancellationToken);

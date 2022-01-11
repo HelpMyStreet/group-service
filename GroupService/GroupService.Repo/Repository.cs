@@ -736,25 +736,25 @@ namespace GroupService.Repo
                 }).ToList();
         }
 
-        public async Task<int> MemberVolunterCount(int? groupId)
+        public async Task<int> MemberVolunterCount(IEnumerable<int> groups)
         {
-            groupId = groupId.HasValue ? groupId.Value : GENERIC_GROUPID;
-
             return _context.UserRole
-                .Where(x => ((GroupRoles)x.RoleId) == GroupRoles.Member && x.GroupId == groupId)
+                .Where(x => 
+                    (((GroupRoles)x.RoleId) == GroupRoles.Member) &&
+                    (groups.Count() == 0 || groups.Contains(x.GroupId)) 
+                )
                 .Select(x => x.UserId)
+                .Distinct()
                 .Count();
         }
 
-        public async Task<int> MemberVolunterCountLastXDays(int? groupId, int days)
+        public async Task<int> MemberVolunterCountLastXDays(IEnumerable<int> groups, int days)
         {
-            groupId = groupId.HasValue ? groupId.Value : GENERIC_GROUPID;
-
             DateTime dtLessThanXDays = DateTime.UtcNow.Date.AddDays(-days);
 
             return _context.UserRoleAudit
                 .Where(x => ((GroupRoles)x.RoleId) == GroupRoles.Member 
-                    && x.GroupId == groupId 
+                    && (groups.Count() == 0 || groups.Contains(x.GroupId))
                     && ((GroupAction) x.ActionId) == GroupAction.AddMember 
                     && x.DateRequested > dtLessThanXDays
                     && x.Success == true
