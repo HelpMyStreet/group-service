@@ -5,7 +5,6 @@
         public int GroupId { get; set; }
         public byte NewRequestNotificationStrategyId { get; set; }
         public int MaxVolunteer { get; set; }
-        public byte? UrgentRequestNotificationStrategyId { get; set; }
         public virtual Group Group { get; set; }
     }
 }
