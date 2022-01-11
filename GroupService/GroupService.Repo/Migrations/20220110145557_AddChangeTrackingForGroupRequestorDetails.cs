@@ -18,7 +18,7 @@ namespace GroupService.Repo.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql(@"
-                DELETE FROM [dbo].[table_store_ChangeTracking_version] WHERE TableName='Group.RequestorDetailse';                
+                DELETE FROM [dbo].[table_store_ChangeTracking_version] WHERE TableName='Group.RequestorDetails';                
                 ");
 
             migrationBuilder.Sql(@"
