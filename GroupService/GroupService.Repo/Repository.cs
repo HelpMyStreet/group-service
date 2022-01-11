@@ -606,8 +606,7 @@ namespace GroupService.Repo
                 return new GetGroupNewRequestNotificationStrategyResponse()
                 {
                     NewRequestNotificationStrategy = (NewRequestNotificationStrategy)strategy.NewRequestNotificationStrategyId,
-                    MaxVolunteer = strategy.MaxVolunteer,
-                    UrgentRequestNotificationStrategy = (UrgentRequestNotificationStrategy) strategy.UrgentRequestNotificationStrategyId
+                    MaxVolunteer = strategy.MaxVolunteer
                 };
             }
             else
