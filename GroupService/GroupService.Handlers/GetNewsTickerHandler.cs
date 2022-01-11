@@ -1,7 +1,9 @@
 ﻿using GroupService.Core.Interfaces.Repositories;
 using HelpMyStreet.Contracts;
+using HelpMyStreet.Utils.Models;
 using MediatR;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,16 +25,25 @@ namespace GroupService.Handlers
                 Messages = new List<NewsTickerMessage>()
             };
 
-            int volunteerCount = await _repository.MemberVolunterCount(request.GroupId);
-            int newVolunteerCountInLast7Days = await _repository.MemberVolunterCountLastXDays(request.GroupId, 7);
-            int newVolunteerCountInLastDay = await _repository.MemberVolunterCountLastXDays(request.GroupId, 1);
+            List<int> groups = new List<int>();
+
+            if (request.GroupId.HasValue)
+            {
+                groups.Add(request.GroupId.Value);
+                var childGroups = _repository.GetChildGroups(request.GroupId.Value,cancellationToken);
+                groups.AddRange(childGroups.Select(sm => sm.GroupId));
+            }
+
+            int volunteerCount = await _repository.MemberVolunterCount(groups);
+            int newVolunteerCountInLast7Days = await _repository.MemberVolunterCountLastXDays(groups, 7);
+            int newVolunteerCountInLastDay = await _repository.MemberVolunterCountLastXDays(groups, 1);
 
             if(volunteerCount>=5)
             {
                 response.Messages.Add(new NewsTickerMessage()
                 {
                     Value = volunteerCount,
-                    Message = $"**{ volunteerCount }** volunteers waiting to help"
+                    Message = $"**{volunteerCount:n0}** volunteers waiting to help"
                 });
             }
 
@@ -41,7 +52,7 @@ namespace GroupService.Handlers
                 response.Messages.Add(new NewsTickerMessage()
                 {
                     Value = newVolunteerCountInLast7Days,
-                    Message = $"**{ newVolunteerCountInLast7Days }** new volunteers joined this week"
+                    Message = $"**{newVolunteerCountInLast7Days:n0}** new volunteers joined this week"
                 });
             }
 
@@ -50,7 +61,7 @@ namespace GroupService.Handlers
                 response.Messages.Add(new NewsTickerMessage()
                 {
                     Value = newVolunteerCountInLastDay,
-                    Message = $"**{ newVolunteerCountInLastDay }** new volunteers joined today"
+                    Message = $"**{newVolunteerCountInLastDay:n0}** new volunteers joined today"
                 });
             }
 
