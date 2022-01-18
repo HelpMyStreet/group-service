@@ -1154,6 +1154,15 @@ namespace GroupService.Repo.Helpers
                 ZoomLevel = 13.8M
             });
 
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.HomePage,
+                GroupId = (int)Groups.BostonGNS,
+                Latitude = 52.979M,
+                Longitude = -0.02500M,
+                ZoomLevel = 13.8M
+            });
+
         }
     }
 }
