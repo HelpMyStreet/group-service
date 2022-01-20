@@ -21,7 +21,7 @@ namespace GroupService.UnitTests
         public void Setup()
         {
             _repository = new Mock<IRepository>();
-            _repository.Setup(x => x.GetGroupMembers(It.IsAny<GetGroupMembersRequest>(), It.IsAny<CancellationToken>()))
+            _repository.Setup(x => x.GetGroupMembers(It.IsAny<int>(), It.IsAny<CancellationToken>()))
                 .Returns(() => _users);
 
             _classUnderTest = new GetGroupMembersHandler(_repository.Object);
@@ -43,7 +43,7 @@ namespace GroupService.UnitTests
 
             Assert.AreEqual(_users.Count, result.Users.Count);
             Assert.AreEqual(_users, result.Users);
-            _repository.Verify(x => x.GetGroupMembers(It.IsAny<GetGroupMembersRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+            _repository.Verify(x => x.GetGroupMembers(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
         }
     }
 }

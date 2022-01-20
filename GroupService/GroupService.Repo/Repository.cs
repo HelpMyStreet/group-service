@@ -192,10 +192,10 @@ namespace GroupService.Repo
             }
         }
 
-        public List<int> GetGroupMembers(GetGroupMembersRequest request, CancellationToken cancellationToken)
+        public List<int> GetGroupMembers(int groupId, CancellationToken cancellationToken)
         {
             return _context.UserRole
-                .Where(w => w.GroupId == request.GroupID && w.RoleId == (int) GroupRoles.Member)
+                .Where(w => w.GroupId == groupId && w.RoleId == (int) GroupRoles.Member)
                 .Select(s => s.UserId)
                 .ToList();
         }
