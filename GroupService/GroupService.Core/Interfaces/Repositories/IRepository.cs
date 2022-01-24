@@ -37,7 +37,8 @@ namespace GroupService.Core.Interfaces.Repositories
         GetRequestHelpFormVariantResponse GetRequestHelpFormVariant(int groupId, string source, CancellationToken cancellationToken);
         Group GetGroupById(int groupId, CancellationToken cancellationToken);
         List<Group> GetGroupsWithMapDetails(MapLocation mapLocation, CancellationToken cancellationToken);
-        List<Location> GetLocations(List<int> groups, CancellationToken cancellationToken);
+        List<GroupLocation> GetGroupLocations(List<int> groups, CancellationToken cancellationToken);
+        List<GroupRadius> GetGroupRadii(List<int> groups, CancellationToken cancellationToken);
         List<Group> GetChildGroups(int groupId, CancellationToken cancellationToken);
         List<int> GetGroupAndChildGroups(int groupId, CancellationToken cancellationToken);
         Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken);
