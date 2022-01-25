@@ -83,6 +83,11 @@ namespace GroupService.UnitTests
                 {
                     GroupID = (int) Groups.Generic,
                     Location = Location.FranklinHallSpilsby
+                },
+                new GroupLocation()
+                {
+                    GroupID = (int) Groups.AgeConnectsCardiff,
+                    Location = Location.KingsMeadowCampus
                 }
             };
 
@@ -101,6 +106,29 @@ namespace GroupService.UnitTests
         private void SetupAddressService()
         {
             _addressService = new Mock<IAddressService>();
+
+            _getLocationsByDistanceResponse = new GetLocationsByDistanceResponse()
+            {
+                LocationDistances = new List<LocationDistance>()
+                {
+                    new LocationDistance()
+                    {
+                        Location = Location.ForestRecreationGround,
+                        DistanceFromPostCode = 200
+                    },
+                    new LocationDistance()
+                    {
+                        Location = Location.KingsMeadowCampus,
+                        DistanceFromPostCode = 20
+                    },
+                    new LocationDistance()
+                    {
+                        Location = Location.FranklinHallSpilsby,
+                        DistanceFromPostCode = 40
+                    },
+                }
+            };
+
             _addressService.Setup(x => x.GetLocationsByDistance(It.IsAny<string>(), It.IsAny<int>()))
                 .ReturnsAsync(() => _getLocationsByDistanceResponse);
         }
@@ -132,23 +160,6 @@ namespace GroupService.UnitTests
                (int) Groups.Generic
             };
 
-            _getLocationsByDistanceResponse = new GetLocationsByDistanceResponse()
-            {
-                LocationDistances = new List<LocationDistance>()
-                {
-                    new LocationDistance()
-                    {
-                        Location = Location.ForestRecreationGround,
-                        DistanceFromPostCode = 200
-                    },
-                    new LocationDistance()
-                    {
-                        Location = Location.KingsMeadowCampus,
-                        DistanceFromPostCode = 20
-                    }
-                }
-            };
-
              var result = _classUnderTest.Handle(new GetUserLocationsRequest()
             {
                 UserID = userId
@@ -175,28 +186,6 @@ namespace GroupService.UnitTests
             {
                (int) Groups.Generic
             };
-
-            _getLocationsByDistanceResponse = new GetLocationsByDistanceResponse()
-            {
-                LocationDistances = new List<LocationDistance>()
-                {
-                    new LocationDistance()
-                    {
-                        Location = Location.ForestRecreationGround,
-                        DistanceFromPostCode = 200
-                    },
-                    new LocationDistance()
-                    {
-                        Location = Location.KingsMeadowCampus,
-                        DistanceFromPostCode = 20
-                    },
-                    new LocationDistance()
-                    {
-                        Location = Location.FranklinHallSpilsby,
-                        DistanceFromPostCode = 40
-                    }
-                }
-            };
             
             var result = _classUnderTest.Handle(new GetUserLocationsRequest()
             {
@@ -221,29 +210,7 @@ namespace GroupService.UnitTests
             };
             _groups = new List<int>()
             {
-               (int) Groups.Generic
-            };
-
-            _getLocationsByDistanceResponse = new GetLocationsByDistanceResponse()
-            {
-                LocationDistances = new List<LocationDistance>()
-                {
-                    new LocationDistance()
-                    {
-                        Location = Location.ForestRecreationGround,
-                        DistanceFromPostCode = 15
-                    },
-                    new LocationDistance()
-                    {
-                        Location = Location.KingsMeadowCampus,
-                        DistanceFromPostCode = 200
-                    },
-                    new LocationDistance()
-                    {
-                        Location = Location.FranklinHallSpilsby,
-                        DistanceFromPostCode = 20
-                    }
-                }
+               (int) Groups.AgeConnectsCardiff
             };
 
             var result = _classUnderTest.Handle(new GetUserLocationsRequest()
@@ -252,11 +219,8 @@ namespace GroupService.UnitTests
             }, CancellationToken.None).Result;
 
             Verify();
-            Assert.AreEqual(true, result.Locations.Contains(Location.FranklinHallSpilsby));
-            Assert.AreEqual(true, result.Locations.Contains(Location.ForestRecreationGround));
-            Assert.AreEqual(false, result.Locations.Contains(Location.KingsMeadowCampus));
+            Assert.AreEqual(true, result.Locations.Contains(Location.KingsMeadowCampus));
         }
-
 
         [Test]
         public void WhenGroupHasNoLocations_ReturnNoLocations()
@@ -273,30 +237,9 @@ namespace GroupService.UnitTests
 
             _groups = new List<int>()
             {
-               (int) Groups.AgeConnectsCardiff
+               (int) Groups.AgeUKLSL
             };
 
-            _getLocationsByDistanceResponse = new GetLocationsByDistanceResponse()
-            {
-                LocationDistances = new List<LocationDistance>()
-                {
-                    new LocationDistance()
-                    {
-                        Location = Location.ForestRecreationGround,
-                        DistanceFromPostCode = 15
-                    },
-                    new LocationDistance()
-                    {
-                        Location = Location.KingsMeadowCampus,
-                        DistanceFromPostCode = 200
-                    },
-                    new LocationDistance()
-                    {
-                        Location = Location.FranklinHallSpilsby,
-                        DistanceFromPostCode = 20
-                    }
-                }
-            };
             var result = _classUnderTest.Handle(new GetUserLocationsRequest()
             {
                 UserID = userId
