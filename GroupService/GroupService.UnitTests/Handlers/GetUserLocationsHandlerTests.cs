@@ -64,7 +64,7 @@ namespace GroupService.UnitTests
                }
            };
 
-            _repository.Setup(x => x.GetGroupRadii(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()))
+            _repository.Setup(x => x.GetMaxShiftSupportActivityRadius(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()))
                 .Returns((List<int> a, CancellationToken b) => _groupRadii.Where(x => a.Contains(x.GroupID)).ToList());
 
             _groupLocations = new List<GroupLocation>()
@@ -108,7 +108,7 @@ namespace GroupService.UnitTests
         private void Verify()
         {
             _repository.Verify(x => x.GetUserGroups(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.GetGroupRadii(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
+            _repository.Verify(x => x.GetMaxShiftSupportActivityRadius(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
             _repository.Verify(x => x.GetGroupLocations(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
             _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
             _addressService.Verify(x => x.GetLocationsByDistance(It.IsAny<string>(), It.IsAny<int>()), Times.Once);

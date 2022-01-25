@@ -32,7 +32,7 @@ namespace GroupService.Handlers
 
            var getLocationsByDistanceResponse  = await _addressService.GetLocationsByDistance(user.User.PostalCode, 2000);
 
-            var groupRadii = _repository.GetGroupRadii(groups, cancellationToken);
+            var groupRadii = _repository.GetMaxShiftSupportActivityRadius(groups, cancellationToken);
 
             var groupLocations = _repository.GetGroupLocations(groups, cancellationToken);
 

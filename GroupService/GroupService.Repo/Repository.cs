@@ -766,7 +766,7 @@ namespace GroupService.Repo
                 .Count();
         }
 
-        public List<GroupRadius> GetGroupRadii(List<int> groups, CancellationToken cancellationToken)
+        public List<GroupRadius> GetMaxShiftSupportActivityRadius(List<int> groups, CancellationToken cancellationToken)
         {
             var groupSupportActivityRadii = _context.GroupSupportActivityConfiguration
                 .Where(x => groups.Contains(x.GroupId))

@@ -38,7 +38,7 @@ namespace GroupService.Core.Interfaces.Repositories
         Group GetGroupById(int groupId, CancellationToken cancellationToken);
         List<Group> GetGroupsWithMapDetails(MapLocation mapLocation, CancellationToken cancellationToken);
         List<GroupLocation> GetGroupLocations(List<int> groups, CancellationToken cancellationToken);
-        List<GroupRadius> GetGroupRadii(List<int> groups, CancellationToken cancellationToken);
+        List<GroupRadius> GetMaxShiftSupportActivityRadius(List<int> groups, CancellationToken cancellationToken);
         List<Group> GetChildGroups(int groupId, CancellationToken cancellationToken);
         List<int> GetGroupAndChildGroups(int groupId, CancellationToken cancellationToken);
         Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken);
