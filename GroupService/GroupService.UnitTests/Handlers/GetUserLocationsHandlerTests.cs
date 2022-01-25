@@ -11,6 +11,7 @@ using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -35,8 +36,7 @@ namespace GroupService.UnitTests
             SetupUserService();
             SetupAddressService();
 
-            _classUnderTest = new GetUserLocationsHandler(_repository.Object, _userService.Object, _addressService.Object);
-               
+            _classUnderTest = new GetUserLocationsHandler(_repository.Object, _userService.Object, _addressService.Object);    
         }
 
         private void SetupRepository()
@@ -45,11 +45,49 @@ namespace GroupService.UnitTests
             _repository.Setup(x => x.GetUserGroups(It.IsAny<int>(), It.IsAny<CancellationToken>()))
                 .Returns(() => _groups);
 
+            _groupRadii = new List<GroupRadius>()
+           {
+               new GroupRadius()
+               {
+                   GroupID = (int) Groups.ApexBankStaff,
+                   Radius = 2000
+               },
+               new GroupRadius()
+               {
+                   GroupID = (int) Groups.Generic,
+                   Radius = 20
+               },
+               new GroupRadius()
+               {
+                   GroupID = (int) Groups.AgeConnectsCardiff,
+                   Radius = 20
+               }
+           };
+
             _repository.Setup(x => x.GetGroupRadii(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()))
-                .Returns(() => _groupRadii);
+                .Returns((List<int> a, CancellationToken b) => _groupRadii.Where(x => a.Contains(x.GroupID)).ToList());
+
+            _groupLocations = new List<GroupLocation>()
+            {
+                new GroupLocation()
+                {
+                    GroupID = (int) Groups.Generic,
+                    Location = Location.ForestRecreationGround
+                },
+                new GroupLocation()
+                {
+                    GroupID = (int) Groups.ApexBankStaff,
+                    Location = Location.ForestRecreationGround
+                },
+                new GroupLocation()
+                {
+                    GroupID = (int) Groups.Generic,
+                    Location = Location.FranklinHallSpilsby
+                }
+            };
 
             _repository.Setup(x => x.GetGroupLocations(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()))
-               .Returns(() => _groupLocations);
+               .Returns((List<int> a, CancellationToken b) => _groupLocations.Where(x => a.Contains(x.GroupID)).ToList());
 
         }
 
@@ -67,6 +105,15 @@ namespace GroupService.UnitTests
                 .ReturnsAsync(() => _getLocationsByDistanceResponse);
         }
 
+        private void Verify()
+        {
+            _repository.Verify(x => x.GetUserGroups(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
+            _repository.Verify(x => x.GetGroupRadii(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
+            _repository.Verify(x => x.GetGroupLocations(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
+            _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
+            _addressService.Verify(x => x.GetLocationsByDistance(It.IsAny<string>(), It.IsAny<int>()), Times.Once);
+        }
+
         [Test]
         public void WhenUserIsPartOfApex_ReturnLocations()
         {
@@ -79,8 +126,6 @@ namespace GroupService.UnitTests
                     PostalCode = "POSTCODE"
                 }
             };
-
-
             _groups = new List<int>()
             {
                (int) Groups.ApexBankStaff,
@@ -104,46 +149,12 @@ namespace GroupService.UnitTests
                 }
             };
 
-            _groupRadii = new List<GroupRadius>()
-           {
-               new GroupRadius()
-               {
-                   GroupID = (int) Groups.ApexBankStaff,
-                   Radius = 2000
-               },
-               new GroupRadius()
-               {
-                   GroupID = (int) Groups.Generic,
-                   Radius = 20
-               }
-           };
-
-            _groupLocations = new List<GroupLocation>()
-            {
-                new GroupLocation()
-                {
-                    GroupID = (int) Groups.Generic,
-                    Location = Location.ForestRecreationGround
-                },
-                new GroupLocation()
-                {
-                    GroupID = (int) Groups.ApexBankStaff,
-                    Location = Location.ForestRecreationGround
-                }
-            };
-
              var result = _classUnderTest.Handle(new GetUserLocationsRequest()
             {
                 UserID = userId
             }, CancellationToken.None).Result;
 
-            _repository.Verify(x => x.GetUserGroups(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.GetGroupRadii(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.GetGroupLocations(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
-            _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
-            _addressService.Verify(x => x.GetLocationsByDistance(It.IsAny<string>(), It.IsAny<int>()), Times.Once);
-
-
+            Verify();
             Assert.AreEqual(new List<Location>() { Location.ForestRecreationGround }, result.Locations);
         }
 
@@ -159,7 +170,6 @@ namespace GroupService.UnitTests
                     PostalCode = "POSTCODE"
                 }
             };
-
 
             _groups = new List<int>()
             {
@@ -187,40 +197,13 @@ namespace GroupService.UnitTests
                     }
                 }
             };
-
-            _groupRadii = new List<GroupRadius>()
-           {
-               new GroupRadius()
-               {
-                   GroupID = (int) Groups.Generic,
-                   Radius = 20
-               }
-           };
-
-            _groupLocations = new List<GroupLocation>()
-            {
-                new GroupLocation()
-                {
-                    GroupID = (int) Groups.Generic,
-                    Location = Location.ForestRecreationGround
-                },
-                new GroupLocation()
-                {
-                    GroupID = (int) Groups.Generic,
-                    Location = Location.FranklinHallSpilsby
-                }
-            };
-
+            
             var result = _classUnderTest.Handle(new GetUserLocationsRequest()
             {
                 UserID = userId
             }, CancellationToken.None).Result;
 
-            _repository.Verify(x => x.GetUserGroups(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.GetGroupRadii(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.GetGroupLocations(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
-            _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
-            _addressService.Verify(x => x.GetLocationsByDistance(It.IsAny<string>(), It.IsAny<int>()), Times.Once);
+            Verify();
             Assert.AreEqual(0, result.Locations.Count);
         }
 
@@ -236,8 +219,6 @@ namespace GroupService.UnitTests
                     PostalCode = "POSTCODE"
                 }
             };
-
-
             _groups = new List<int>()
             {
                (int) Groups.Generic
@@ -265,40 +246,12 @@ namespace GroupService.UnitTests
                 }
             };
 
-            _groupRadii = new List<GroupRadius>()
-           {
-               new GroupRadius()
-               {
-                   GroupID = (int) Groups.Generic,
-                   Radius = 20
-               }
-           };
-
-            _groupLocations = new List<GroupLocation>()
-            {
-                new GroupLocation()
-                {
-                    GroupID = (int) Groups.Generic,
-                    Location = Location.ForestRecreationGround
-                },
-                new GroupLocation()
-                {
-                    GroupID = (int) Groups.Generic,
-                    Location = Location.FranklinHallSpilsby
-                }
-            };
-
             var result = _classUnderTest.Handle(new GetUserLocationsRequest()
             {
                 UserID = userId
             }, CancellationToken.None).Result;
 
-            _repository.Verify(x => x.GetUserGroups(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.GetGroupRadii(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.GetGroupLocations(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
-            _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
-            _addressService.Verify(x => x.GetLocationsByDistance(It.IsAny<string>(), It.IsAny<int>()), Times.Once);
-
+            Verify();
             Assert.AreEqual(true, result.Locations.Contains(Location.FranklinHallSpilsby));
             Assert.AreEqual(true, result.Locations.Contains(Location.ForestRecreationGround));
             Assert.AreEqual(false, result.Locations.Contains(Location.KingsMeadowCampus));
@@ -344,29 +297,12 @@ namespace GroupService.UnitTests
                     }
                 }
             };
-
-            _groupRadii = new List<GroupRadius>()
-           {
-               new GroupRadius()
-               {
-                   GroupID = (int) Groups.AgeConnectsCardiff,
-                   Radius = 20
-               }
-           };
-
-            _groupLocations = new List<GroupLocation>();
-
             var result = _classUnderTest.Handle(new GetUserLocationsRequest()
             {
                 UserID = userId
             }, CancellationToken.None).Result;
 
-            _repository.Verify(x => x.GetUserGroups(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.GetGroupRadii(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
-            _repository.Verify(x => x.GetGroupLocations(It.IsAny<List<int>>(), It.IsAny<CancellationToken>()), Times.Once);
-            _userService.Verify(x => x.GetUserByID(It.IsAny<int>()), Times.Once);
-            _addressService.Verify(x => x.GetLocationsByDistance(It.IsAny<string>(), It.IsAny<int>()), Times.Once);
-
+            Verify();
             Assert.AreEqual(0, result.Locations.Count);
         }
     }

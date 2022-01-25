@@ -768,7 +768,7 @@ namespace GroupService.Repo
 
         public List<GroupRadius> GetGroupRadii(List<int> groups, CancellationToken cancellationToken)
         {
-            var allRelevantConfig = _context.GroupSupportActivityConfiguration
+            var groupSupportActivityRadii = _context.GroupSupportActivityConfiguration
                 .Where(x => groups.Contains(x.GroupId))
                 .GroupBy(x => new { x.GroupId, x.Radius, x.SupportActivityId })
                 .Select(s => new
@@ -783,8 +783,8 @@ namespace GroupService.Repo
 
             groups.ForEach(g =>
             {
-                var userRadius = allRelevantConfig.Where(w => w.GroupID == g && w.SupportActivity.RequestType() == RequestType.Shift);
-                double maxRadius = userRadius.Count()>0 ? userRadius.Select(x => x.Radius).Max() : 20d;
+                var groupShiftSupportActivityRadii = groupSupportActivityRadii.Where(w => w.GroupID == g && w.SupportActivity.RequestType() == RequestType.Shift);
+                double maxRadius = groupShiftSupportActivityRadii.Count()>0 ? groupShiftSupportActivityRadii.Select(x => x.Radius).Max() : 20d;
                 result.Add(new GroupRadius()
                 {
                     GroupID = g,

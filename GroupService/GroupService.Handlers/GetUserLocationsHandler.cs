@@ -32,19 +32,19 @@ namespace GroupService.Handlers
 
            var getLocationsByDistanceResponse  = await _addressService.GetLocationsByDistance(user.User.PostalCode, 2000);
 
-            var radii = _repository.GetGroupRadii(groups, cancellationToken);
+            var groupRadii = _repository.GetGroupRadii(groups, cancellationToken);
 
             var groupLocations = _repository.GetGroupLocations(groups, cancellationToken);
 
             List<Location> userLocations = new List<Location>();
             foreach(Core.Domains.Entities.GroupLocation gl in groupLocations)
             {
-                var userRadius = radii.FirstOrDefault(w => w.GroupID == gl.GroupID);
+                var groupRadius = groupRadii.FirstOrDefault(w => w.GroupID == gl.GroupID);
 
                 var locationDistance = getLocationsByDistanceResponse.LocationDistances
-                    .First(x => x.Location == gl.Location);
+                    .FirstOrDefault(x => x.Location == gl.Location);
 
-                if(locationDistance.DistanceFromPostCode<=userRadius.Radius)
+                if(locationDistance!=null && groupRadius!=null && locationDistance.DistanceFromPostCode<=groupRadius.Radius)
                 {
                     userLocations.Add(gl.Location);
                 }

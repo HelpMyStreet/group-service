@@ -29,15 +29,15 @@ namespace GroupService.Core.Services
             using (HttpResponseMessage response = await _httpClientWrapper.GetAsync(HttpClientConfigName.AddressService, path, CancellationToken.None).ConfigureAwait(false))
             {
                 string jsonResponse = await response.Content.ReadAsStringAsync();
-                var userIDResponse = JsonConvert.DeserializeObject<ResponseWrapper<GetLocationsByDistanceResponse, UserServiceErrorCode>>(jsonResponse);
+                var getlocationsByDistanceReponse = JsonConvert.DeserializeObject<ResponseWrapper<GetLocationsByDistanceResponse, UserServiceErrorCode>>(jsonResponse);
 
-                if (userIDResponse.HasContent && userIDResponse.IsSuccessful)
+                if (getlocationsByDistanceReponse.HasContent && getlocationsByDistanceReponse.IsSuccessful)
                 {
-                    return userIDResponse.Content;
+                    return getlocationsByDistanceReponse.Content;
                 }
                 else
                 {
-                    throw new System.Exception(userIDResponse.Errors.ToString());
+                    throw new System.Exception(getlocationsByDistanceReponse.Errors.ToString());
                 }
             }
         }
