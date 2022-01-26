@@ -2,6 +2,7 @@
 using GroupService.Core.Dto;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
+using HelpMyStreet.Contracts.ReportService;
 using HelpMyStreet.Contracts.RequestService.Response;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
@@ -15,6 +16,7 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
+        Task<Chart> GetVolumeByUserType(int groupId);
         Task<int> MemberVolunterCount(IEnumerable<int> groups);
         Task<int> MemberVolunterCountLastXDays(IEnumerable<int> groups, int days);        
         Task<bool> AddToGenericGroup(int groupId, string source);

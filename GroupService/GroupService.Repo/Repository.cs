@@ -2,8 +2,10 @@ using AutoMapper;
 using GroupService.Core.Domains.Entities;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
+using GroupService.Repo.EntityFramework.Helper;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
+using HelpMyStreet.Contracts.ReportService;
 using HelpMyStreet.Contracts.RequestService.Response;
 using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Extensions;
@@ -763,5 +765,63 @@ namespace GroupService.Repo
                 .Count();
         }
 
+        public async Task<Chart> GetVolumeByUserType(int groupId)
+        {
+            DateTime dt = DateTime.UtcNow.Date.AddMonths(-13);
+            Chart result = new Chart()
+            {
+                Title = "Volume of user by type",
+                XAxisName = "Month",
+                YAxisName = "Count",
+                ChartType = ChartTypes.Bar,
+                ChartItems = new List<ChartItem>()
+            };
+
+            var chartItems = _context.UserRoleAudit
+                .Where(x => x.GroupId == groupId && x.Success == true && x.DateRequested > dt && x.ActionId == 1)
+                .GroupBy(g => new { g.RoleId , g.ActionId, date = g.DateRequested })
+                .Select(s => new DataItem
+                {
+                    Date = s.Key.date,
+                    IsAdmin = ((GroupRoles)s.Key.RoleId).IsAdmin(),
+                    GroupAction = (GroupAction) s.Key.ActionId,
+                    Count = s.Count()
+                }).ToList();
+
+            List<(string roleType, bool isAdmin)> roleType = new List<(string roleType, bool isAdmin)>();
+            roleType.Add(("Admins", true));
+            roleType.Add(("Volunteers", false));
+
+            //Populate chartitems with roleType for each month
+            while (dt < DateTime.UtcNow.Date)
+            {
+                roleType.ForEach(sa =>
+                {
+                    result.ChartItems.Add(new ChartItem() { Count = 0, XAxis = $"{dt:yyyy}-{dt:MM}", Label = sa.roleType });
+                });
+                dt = dt.AddMonths(1);
+            }
+
+            var groupedChartItems = chartItems.GroupBy(g => new { g.IsAdmin, date = $"{g.Date:yyyy}-{g.Date:MM}" })
+                .Select(s => new ChartItem
+                {
+                    Count = s.Count(),
+                    Label = s.Key.IsAdmin ? "Admins" : "Volunteers",
+                    XAxis = s.Key.date
+                }).ToList();
+
+            //override chart items with actual values form the dataset.
+            result.ChartItems.ForEach(item =>
+            {
+                var matchedItem = groupedChartItems.FirstOrDefault(x => x.XAxis == item.XAxis && x.Label == item.Label);
+
+                if (matchedItem != null)
+                {
+                    item.Count = matchedItem.Count;
+                }
+            });
+
+            return result;
+        }
     }
 }
