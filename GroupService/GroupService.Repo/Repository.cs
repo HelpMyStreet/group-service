@@ -767,7 +767,7 @@ namespace GroupService.Repo
                 .Select(s => new UserRoleSummary
                 {
                     UserId = s.UserId,
-                    DateRequested = s.DateRequested,
+                    DateRequested = s.DateRequested.Date,
                     Role = (GroupRoles) s.RoleId
                 }).ToList();
         }

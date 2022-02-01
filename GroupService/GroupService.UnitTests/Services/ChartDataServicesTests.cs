@@ -39,6 +39,11 @@ namespace GroupService.UnitTests.Services
                 new UserRoleSummary() {DateRequested = new DateTime(2021,2,1), Role = GroupRoles.RequestSubmitter, UserId = 5},
                 new UserRoleSummary() {DateRequested = new DateTime(2021,3,1), Role = GroupRoles.Member, UserId = 6},
                 new UserRoleSummary() {DateRequested = new DateTime(2021,3,1), Role = GroupRoles.TaskAdmin, UserId = 6},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,5,1), Role = GroupRoles.TaskAdmin, UserId = 7},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,5,1), Role = GroupRoles.RequestSubmitter, UserId = 7},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,5,1), Role = GroupRoles.Owner, UserId = 7},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,6,1), Role = GroupRoles.Volunteer, UserId = 8},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,6,1), Role = GroupRoles.Member, UserId = 8},
 
             };
 
@@ -85,7 +90,45 @@ namespace GroupService.UnitTests.Services
             foreach (var item in expectedOutcome)
             {
                 var actual = result.Where(x => x.Series == item.Key.series && x.XAxis == item.Key.xAxis).Select(x => x.Value).First();
-                Assert.AreEqual(actual, item.Value);
+                Assert.AreEqual(item.Value, actual);
+            }
+        }
+
+        [Test]
+        public async Task WhenUserIsAssignedToMultipleAdminRoles_ThenUserCountShouldOnlyBeOne()
+        {
+            DateTime minDate = new DateTime(2021, 1, 1);
+            DateTime maxDate = new DateTime(2022, 1, 31);
+
+            Dictionary<(string series, string xAxis), double> expectedOutcome = new Dictionary<(string xAxis, string series), double>();
+            expectedOutcome.Add(("Volunteers", "2021-05"), 0);
+            expectedOutcome.Add(("Admins", "2021-05"), 1);
+
+            List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(-1, minDate, maxDate);
+
+            foreach (var item in expectedOutcome)
+            {
+                var actual = result.Where(x => x.Series == item.Key.series && x.XAxis == item.Key.xAxis).Select(x => x.Value).First();
+                Assert.AreEqual(item.Value, actual);
+            }
+        }
+
+        [Test]
+        public async Task WhenUserIsAssignedToMultipleVolunterRoles_ThenUserCountShouldOnlyBeOne()
+        {
+            DateTime minDate = new DateTime(2021, 1, 1);
+            DateTime maxDate = new DateTime(2022, 1, 31);
+
+            Dictionary<(string series, string xAxis), double> expectedOutcome = new Dictionary<(string xAxis, string series), double>();
+            expectedOutcome.Add(("Volunteers", "2021-06"), 1);
+            expectedOutcome.Add(("Admins", "2021-06"), 0);
+
+            List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(-1, minDate, maxDate);
+
+            foreach (var item in expectedOutcome)
+            {
+                var actual = result.Where(x => x.Series == item.Key.series && x.XAxis == item.Key.xAxis).Select(x => x.Value).First();
+                Assert.AreEqual(item.Value, actual);
             }
         }
 

@@ -50,10 +50,11 @@ namespace GroupService.Core.Services
 
             GroupAndReplaceValuesForKnown(
                dataPoints,
-               roleSummary.Select(x => new DataItem()
+               roleSummary.GroupBy(x => new { Series = x.IsAdmin ? "Admins" : "Volunteers", x.DateRequested, x.UserId})
+               .Select(x => new DataItem()
                {
-                   Date = x.DateRequested,
-                   Series = x.IsAdmin ? "Admins" : "Volunteers"
+                   Date = x.Key.DateRequested,
+                   Series = x.Key.Series
                }).ToList());
 
             return dataPoints;
