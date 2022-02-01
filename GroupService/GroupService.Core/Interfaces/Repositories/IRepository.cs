@@ -1,4 +1,5 @@
-﻿using GroupService.Core.Domains.Entities;
+﻿using GroupService.Core.Domains;
+using GroupService.Core.Domains.Entities;
 using GroupService.Core.Dto;
 using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
@@ -16,7 +17,7 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
-        Task<Chart> GetVolumeByUserType(int groupId);
+        Task<List<UserRoleSummary>> GetUserRoleSummary(int groupId, DateTime minDate, DateTime maxDate);
         Task<int> MemberVolunterCount(IEnumerable<int> groups);
         Task<int> MemberVolunterCountLastXDays(IEnumerable<int> groups, int days);        
         Task<bool> AddToGenericGroup(int groupId, string source);
