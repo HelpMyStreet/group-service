@@ -18,9 +18,29 @@ namespace GroupService.Core.Services
         {
             _repository = repository;
         }
+
+        private bool HasAdminAndMemberRole(List<UserRoleSummary> roleSummaries, int userId, DateTime dt)
+        {
+            IEnumerable<bool> roles = roleSummaries.Where(x => x.UserId == userId && x.DateRequested.Date == dt).Select(x=> x.IsAdmin).Distinct();
+
+            return roles.Contains(true) && roles.Contains(false);            
+        }
+
         public async Task<List<DataPoint>> GetVolumeByUserType(int groupId, DateTime minDate, DateTime maxDate)
         {
-            var roleSummary = await _repository.GetUserRoleSummary(groupId, minDate, maxDate);
+            List<UserRoleSummary> roleSummary = await _repository.GetUserRoleSummary(groupId, minDate, maxDate);
+
+            List<UserRoleSummary> rolesToRemove = new List<UserRoleSummary>();
+
+            roleSummary.Where(x => HasAdminAndMemberRole(roleSummary, x.UserId, x.DateRequested.Date) == true)
+                .ToList()
+                .ForEach(item =>
+                {
+                    var nonAdminRoles = roleSummary.Where(x => x.IsAdmin == false && x.UserId == item.UserId && x.DateRequested.Date == item.DateRequested.Date);
+                    rolesToRemove.AddRange(nonAdminRoles);
+                });            
+
+            roleSummary = roleSummary.Except(rolesToRemove).ToList();
 
             List<(string roleType, bool isAdmin)> roleType = new List<(string roleType, bool isAdmin)>();
             roleType.Add(("Admins", true));

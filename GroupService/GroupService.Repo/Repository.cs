@@ -766,9 +766,9 @@ namespace GroupService.Repo
                 .Where(x => x.GroupId == groupId && x.Success == true && x.DateRequested >= minDate && x.DateRequested<=maxDate && x.ActionId == 1)
                 .Select(s => new UserRoleSummary
                 {
+                    UserId = s.UserId,
                     DateRequested = s.DateRequested,
-                    Roles = (GroupRoles) s.RoleId,
-                    GroupAction = (GroupAction) s.ActionId
+                    Role = (GroupRoles) s.RoleId
                 }).ToList();
         }
     }

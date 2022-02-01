@@ -32,11 +32,13 @@ namespace GroupService.UnitTests.Services
 
             _userRoleSummaries = new List<UserRoleSummary>()
             {
-                new UserRoleSummary() {DateRequested = new DateTime(2021,1,1), GroupAction = GroupAction.AddMember, Roles = GroupRoles.Member},
-                new UserRoleSummary() {DateRequested = new DateTime(2021,1,1), GroupAction = GroupAction.AddMember, Roles = GroupRoles.Member},
-                new UserRoleSummary() {DateRequested = new DateTime(2021,1,1), GroupAction = GroupAction.AddMember, Roles = GroupRoles.Owner},
-                new UserRoleSummary() { DateRequested = new DateTime(2021, 1, 1), GroupAction = GroupAction.AddMember, Roles = GroupRoles.Owner},
-                new UserRoleSummary() {DateRequested = new DateTime(2021,2,1), GroupAction = GroupAction.AddMember, Roles = GroupRoles.RequestSubmitter},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,1,1), Role = GroupRoles.Member, UserId = 1},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,1,1), Role = GroupRoles.Member,UserId = 2},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,1,1), Role = GroupRoles.Owner, UserId = 3},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,1,1), Role = GroupRoles.Owner, UserId = 4},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,2,1), Role = GroupRoles.RequestSubmitter, UserId = 5},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,3,1), Role = GroupRoles.Member, UserId = 6},
+                new UserRoleSummary() {DateRequested = new DateTime(2021,3,1), Role = GroupRoles.TaskAdmin, UserId = 6},
 
             };
 
@@ -47,8 +49,7 @@ namespace GroupService.UnitTests.Services
         [Test]
         public async Task GetVolumeByUserType_Check()
         {
-            DateTime minDate = new DateTime(2021, 1, 1);
-            DateTime startDate = minDate;
+            DateTime minDate = new DateTime(2021, 1, 1);            
             DateTime maxDate = new DateTime(2022, 1, 31);
 
             Dictionary<(string series, string xAxis), double> expectedOutcome = new Dictionary<(string xAxis, string series), double>();
@@ -56,7 +57,9 @@ namespace GroupService.UnitTests.Services
             expectedOutcome.Add(("Admins", "2021-01"), 2);
             expectedOutcome.Add(("Admins", "2021-02"), 1);
             expectedOutcome.Add(("Volunteers", "2021-03"), 0);
-            expectedOutcome.Add(("Admins", "2021-03"), 0);
+            expectedOutcome.Add(("Admins", "2021-03"), 1);
+            expectedOutcome.Add(("Volunteers", "2021-04"), 0);
+            expectedOutcome.Add(("Admins", "2021-04"), 0);
 
             List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(-1, minDate, maxDate);
 
@@ -66,5 +69,25 @@ namespace GroupService.UnitTests.Services
                 Assert.AreEqual(actual, item.Value);
             }
         }
+
+        [Test]
+        public async Task WhenUserIsAdmin_ThenUserShouldNotBeAlwaysReturnedAsVolunter()
+        {
+            DateTime minDate = new DateTime(2021, 1, 1);
+            DateTime maxDate = new DateTime(2022, 1, 31);
+
+            Dictionary<(string series, string xAxis), double> expectedOutcome = new Dictionary<(string xAxis, string series), double>();
+            expectedOutcome.Add(("Volunteers", "2021-03"), 0);
+            expectedOutcome.Add(("Admins", "2021-03"), 1);
+
+            List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(-1, minDate, maxDate);
+
+            foreach (var item in expectedOutcome)
+            {
+                var actual = result.Where(x => x.Series == item.Key.series && x.XAxis == item.Key.xAxis).Select(x => x.Value).First();
+                Assert.AreEqual(actual, item.Value);
+            }
+        }
+
     }
 }
