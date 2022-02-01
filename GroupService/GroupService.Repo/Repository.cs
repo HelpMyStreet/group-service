@@ -1,4 +1,5 @@
 using AutoMapper;
+using GroupService.Core.Domains;
 using GroupService.Core.Domains.Entities;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
@@ -6,15 +7,12 @@ using HelpMyStreet.Contracts.GroupService.Request;
 using HelpMyStreet.Contracts.GroupService.Response;
 using HelpMyStreet.Contracts.RequestService.Response;
 using HelpMyStreet.Utils.Enums;
-using HelpMyStreet.Utils.Extensions;
 using HelpMyStreet.Utils.Models;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 namespace GroupService.Repo
@@ -23,7 +21,6 @@ namespace GroupService.Repo
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private const int GENERIC_GROUPID = -1;
 
         public Repository(ApplicationDbContext context, IMapper mapper)
         {
@@ -763,5 +760,16 @@ namespace GroupService.Repo
                 .Count();
         }
 
+        public async Task<List<UserRoleSummary>> GetUserRoleSummary(int groupId, DateTime minDate, DateTime maxDate)
+        {
+             return _context.UserRoleAudit
+                .Where(x => x.GroupId == groupId && x.Success == true && x.DateRequested >= minDate && x.DateRequested<=maxDate && x.ActionId == 1)
+                .Select(s => new UserRoleSummary
+                {
+                    UserId = s.UserId,
+                    DateRequested = s.DateRequested.Date,
+                    Role = (GroupRoles) s.RoleId
+                }).ToList();
+        }
     }
 }
