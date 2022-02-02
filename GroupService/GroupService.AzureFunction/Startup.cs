@@ -82,6 +82,7 @@ namespace GroupService.AzureFunction
             builder.Services.AddTransient<IUserService, Core.Services.UserService>();
             builder.Services.AddTransient<IRequestService, Core.Services.RequestService>();
             builder.Services.AddTransient<IExpiredService, Core.Services.ExpiredService>();
+            builder.Services.AddTransient<IAddressService, Core.Services.AddressService>();
             builder.Services.AddTransient<ICommunicationService, Core.Services.CommunicationService>();
             builder.Services.AddTransient<ITargetGroupService, Core.Services.TargetGroupService>();
 

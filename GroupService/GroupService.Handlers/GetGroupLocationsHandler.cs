@@ -34,10 +34,10 @@ namespace GroupService.Handlers
 
             }
 
-            var locations = _repository.GetLocations(groups, cancellationToken);
+            var locations = _repository.GetGroupLocations(groups, cancellationToken);
             return new GetGroupLocationsResponse()
             {
-                Locations = locations
+                Locations = locations.Select(x=> x.Location).Distinct().ToList()
             };
         }
     }
