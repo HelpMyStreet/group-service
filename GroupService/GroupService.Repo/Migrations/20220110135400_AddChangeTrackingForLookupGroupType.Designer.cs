@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220110135400_AddChangeTrackingForLookupGroupType")]
+    partial class AddChangeTrackingForLookupGroupType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1822,11 +1824,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 17,
                             Name = "InProgressReminder"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Name = "JobsDueTomorrow"
                         });
                 });
 
@@ -2929,6 +2926,32 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 5,
                             Name = "ThisGroupAndGenericGroup"
+                        });
+                });
+
+            modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumUrgentRequestNotificationStrategy", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnName("ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UrgentRequestNotificationStrategy","Lookup");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "SendEmail"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "DontSendEmail"
                         });
                 });
 
@@ -4318,14 +4341,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Latitude = 52.979m,
                             Longitude = -0.02500m,
                             ZoomLevel = 13.8m
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            MapLocationId = (byte)1,
-                            Latitude = 52.979m,
-                            Longitude = -0.02500m,
-                            ZoomLevel = 13.8m
                         });
                 });
 
@@ -4341,6 +4356,9 @@ You will also be expected to make a minimum commitment of six months.",
                     b.Property<byte>("NewRequestNotificationStrategyId")
                         .HasColumnType("tinyint");
 
+                    b.Property<byte?>("UrgentRequestNotificationStrategyId")
+                        .HasColumnType("tinyint");
+
                     b.HasKey("GroupId");
 
                     b.ToTable("NewRequestNotificationStrategy","Group");
@@ -4350,103 +4368,120 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -6,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -3,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -2,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -5,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -7,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -8,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -1,
                             MaxVolunteer = 100,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -9,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -10,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -22,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -23,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -13,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -11,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -32,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -33,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -31,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         },
                         new
                         {
                             GroupId = -34,
                             MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
+                            NewRequestNotificationStrategyId = (byte)1,
+                            UrgentRequestNotificationStrategyId = (byte)1
                         });
                 });
 

@@ -189,10 +189,10 @@ namespace GroupService.Repo
             }
         }
 
-        public List<int> GetGroupMembers(GetGroupMembersRequest request, CancellationToken cancellationToken)
+        public List<int> GetGroupMembers(int groupId, CancellationToken cancellationToken)
         {
             return _context.UserRole
-                .Where(w => w.GroupId == request.GroupID && w.RoleId == (int) GroupRoles.Member)
+                .Where(w => w.GroupId == groupId && w.RoleId == (int) GroupRoles.Member)
                 .Select(s => s.UserId)
                 .ToList();
         }
@@ -612,12 +612,15 @@ namespace GroupService.Repo
             }            
         }
 
-        public List<Location> GetLocations(List<int> groups, CancellationToken cancellationToken)
+        public List<Core.Domains.Entities.GroupLocation> GetGroupLocations(List<int> groups, CancellationToken cancellationToken)
         {
             return _context.GroupLocation
                 .Where(x => groups.Contains(x.GroupId))
-                .Select(x => (Location)x.LocationId)
-                .ToList();
+                .Select(x => new Core.Domains.Entities.GroupLocation()
+                {
+                    GroupID = x.GroupId,
+                    Location = (Location)x.LocationId
+                }).ToList();
         }
 
         public List<SupportActivityDetail> GetSupportActivityDetails(RegistrationFormVariant registrationFormVariant, CancellationToken cancellationToken)
@@ -759,8 +762,38 @@ namespace GroupService.Repo
                 .Distinct()
                 .Count();
         }
+        
+        public List<GroupRadius> GetMaxShiftSupportActivityRadius(List<int> groups, CancellationToken cancellationToken)
+        {
+            var groupSupportActivityRadii = _context.GroupSupportActivityConfiguration
+                .Where(x => groups.Contains(x.GroupId))
+                .GroupBy(x => new { x.GroupId, x.Radius, x.SupportActivityId })
+                .Select(s => new
+                {
+                    GroupID = s.Key.GroupId,
+                    Radius = s.Max(m => m.Radius),
+                    SupportActivity = (SupportActivities) (s.Key.SupportActivityId)
+                })
+                .ToList();
 
-        public async Task<List<UserRoleSummary>> GetUserRoleSummary(int groupId, DateTime minDate, DateTime maxDate)
+            var result = new List<GroupRadius>();
+
+            groups.ForEach(g =>
+            {
+                var groupShiftSupportActivityRadii = groupSupportActivityRadii.Where(w => w.GroupID == g && w.SupportActivity.RequestType() == RequestType.Shift);
+                double maxRadius = groupShiftSupportActivityRadii.Count()>0 ? groupShiftSupportActivityRadii.Select(x => x.Radius).Max() : 20d;
+                result.Add(new GroupRadius()
+                {
+                    GroupID = g,
+                    Radius = maxRadius
+                });
+            }
+            );
+
+            return result;
+        }
+	
+	      public async Task<List<UserRoleSummary>> GetUserRoleSummary(int groupId, DateTime minDate, DateTime maxDate)
         {
              return _context.UserRoleAudit
                 .Where(x => x.GroupId == groupId && x.Success == true && x.DateRequested >= minDate && x.DateRequested<=maxDate && x.ActionId == 1)
@@ -770,6 +803,6 @@ namespace GroupService.Repo
                     DateRequested = s.DateRequested.Date,
                     Role = (GroupRoles) s.RoleId
                 }).ToList();
-        }
+		    }
     }
 }

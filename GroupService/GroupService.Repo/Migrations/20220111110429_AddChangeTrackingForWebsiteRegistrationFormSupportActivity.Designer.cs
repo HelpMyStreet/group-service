@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220111110429_AddChangeTrackingForWebsiteRegistrationFormSupportActivity")]
+    partial class AddChangeTrackingForWebsiteRegistrationFormSupportActivity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4315,14 +4317,6 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -34,
                             MapLocationId = (byte)0,
-                            Latitude = 52.979m,
-                            Longitude = -0.02500m,
-                            ZoomLevel = 13.8m
-                        },
-                        new
-                        {
-                            GroupId = -34,
-                            MapLocationId = (byte)1,
                             Latitude = 52.979m,
                             Longitude = -0.02500m,
                             ZoomLevel = 13.8m

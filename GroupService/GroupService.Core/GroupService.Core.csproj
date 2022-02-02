@@ -14,11 +14,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Domains\Entities\" />
 		<Folder Include="Dto\" />
 	</ItemGroup>
 	<ItemGroup>
-		<Folder Include="Domains\Entities\" />
 		<Folder Include="Dto\" />
 	</ItemGroup>
 </Project>

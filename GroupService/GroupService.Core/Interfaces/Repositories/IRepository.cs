@@ -40,7 +40,8 @@ namespace GroupService.Core.Interfaces.Repositories
         GetRequestHelpFormVariantResponse GetRequestHelpFormVariant(int groupId, string source, CancellationToken cancellationToken);
         Group GetGroupById(int groupId, CancellationToken cancellationToken);
         List<Group> GetGroupsWithMapDetails(MapLocation mapLocation, CancellationToken cancellationToken);
-        List<Location> GetLocations(List<int> groups, CancellationToken cancellationToken);
+        List<GroupLocation> GetGroupLocations(List<int> groups, CancellationToken cancellationToken);
+        List<GroupRadius> GetMaxShiftSupportActivityRadius(List<int> groups, CancellationToken cancellationToken);
         List<Group> GetChildGroups(int groupId, CancellationToken cancellationToken);
         List<int> GetGroupAndChildGroups(int groupId, CancellationToken cancellationToken);
         Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken);
@@ -52,7 +53,7 @@ namespace GroupService.Core.Interfaces.Repositories
         void AddUserRoleAudit(int groupId, int userId, GroupRoles groupRole, int authorisedByUserID, GroupAction groupAction, bool success, CancellationToken cancellationToken);
         bool RoleAssigned(int userId,int groupId, GroupRoles groupRole, CancellationToken cancellationToken);
         bool RoleMemberAssignedForUserInGroup(int userId, int groupId, CancellationToken cancellationToken);
-        List<int> GetGroupMembers(GetGroupMembersRequest request, CancellationToken cancellationToken);
+        List<int> GetGroupMembers(int groupId, CancellationToken cancellationToken);
         int GetGroupByKey(GetGroupByKeyRequest request, CancellationToken cancellationToken);
         bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole);
         bool UserIsInRolesForGroup(int userID, int groupId, List<GroupRoles> groupRoles, bool mustBeInAll);
