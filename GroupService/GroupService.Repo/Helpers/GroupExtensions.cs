@@ -968,7 +968,7 @@ namespace GroupService.Repo.Helpers
                 FirstName = "Arrowe", //TODO replace with actual values
                 LastName = "Park Hospital", //TODO replace with actual values
                 OtherPhone = "07777 777777", //TODO replace with actual values
-                EmailAddress = "laura@factor-50.co.uk", //TODO replace with actual values
+                EmailAddress = "", //TODO replace with actual values
                 AddressLine1 = "Address Line 1", //TODO replace with actual values
                 AddressLine2 = "Address Line 2", //TODO replace with actual values
                 AddressLine3 = "", //TODO replace with actual values
