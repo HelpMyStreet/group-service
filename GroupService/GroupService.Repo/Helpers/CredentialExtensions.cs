@@ -787,6 +787,10 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_REFERENCES_CREDENTIAL_SET);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);
+
+            var arroweParkHospitalActivities = new List<SupportActivities> { SupportActivities.BreakfastVisit, SupportActivities.LunchVisit, SupportActivities.MedicationCheckIn, SupportActivities.WellBeingVisit , SupportActivities.Other };
+            SetActivityCredentialSet(entity, Groups.ArroweParkHospital, arroweParkHospitalActivities, IDENTITY_CREDENTIAL_SETS[Groups.ArroweParkHospital]);
+            SetActivityCredentialSet(entity, Groups.ArroweParkHospital, arroweParkHospitalActivities, DBS_CREDENTIAL_SETS[Groups.ArroweParkHospital]);
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)
