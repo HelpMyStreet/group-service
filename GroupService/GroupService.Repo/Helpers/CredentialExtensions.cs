@@ -70,7 +70,7 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeConnectsCardiff, 231 },
                 { Groups.AgeUKMidMersey, 331 },
                 { Groups.BostonGNS, 341 },
-                //{ Groups.ArroweParkHospital, 351 }
+                { Groups.ArroweParkHospital, 351 }
             };
 
             GROUPS_USING_YOTI = new List<Groups> {
@@ -616,7 +616,7 @@ namespace GroupService.Repo.Helpers
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
         {
-            foreach (var group in GROUPS_USING_YOTI.Where(x=> !x.Equals(Groups.ArroweParkHospital)))
+            foreach (var group in GROUPS_USING_YOTI)
             {
                 entity.HasData(new CredentialSet
                 {
@@ -626,7 +626,7 @@ namespace GroupService.Repo.Helpers
                 });
             }
 
-            foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS.Where(x => !x.Equals(Groups.ArroweParkHospital)))
+            foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS)
             {
                 entity.HasData(new CredentialSet
                 {
@@ -636,7 +636,7 @@ namespace GroupService.Repo.Helpers
                 });
             }
 
-            foreach (var group in GROUPS_USING_MANUAL_ID.Where(x => !x.Equals(Groups.ArroweParkHospital)))
+            foreach (var group in GROUPS_USING_MANUAL_ID)
             {
                 entity.HasData(new CredentialSet
                 {
