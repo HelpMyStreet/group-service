@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220203124413_AddArroweParkHospital_Step2")]
+    partial class AddArroweParkHospital_Step2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1363,76 +1365,6 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 11,
                             CredentialSetId = 3410,
                             DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 34,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 35,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 36,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 37,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 11,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 34,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 35,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 36,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 37,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 11,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
                         });
                 });
 
@@ -1618,12 +1550,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 35,
-                            GroupId = -35,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1668,12 +1594,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 341,
                             GroupId = -34,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 351,
-                            GroupId = -35,
                             CredentialId = 2
                         },
                         new
@@ -1752,12 +1672,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 34,
                             GroupId = -34,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 35,
-                            GroupId = -35,
                             CredentialId = 1
                         },
                         new
@@ -2477,6 +2391,12 @@ namespace GroupService.Repo.Migrations
                             Id = 7,
                             IsAdmin = true,
                             Name = "UserAdmin_ReadOnly"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            IsAdmin = true,
+                            Name = "ShowCharts"
                         });
                 });
 

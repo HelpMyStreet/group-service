@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220203112937_AddArroweParkHospital_Step1")]
+    partial class AddArroweParkHospital_Step1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1363,76 +1365,6 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 11,
                             CredentialSetId = 3410,
                             DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 34,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 35,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 36,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 37,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 11,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 34,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 35,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 36,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 37,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 11,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
                         });
                 });
 
@@ -1618,12 +1550,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 35,
-                            GroupId = -35,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1668,12 +1594,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 341,
                             GroupId = -34,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 351,
-                            GroupId = -35,
                             CredentialId = 2
                         },
                         new
@@ -1752,12 +1672,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 34,
                             GroupId = -34,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 35,
-                            GroupId = -35,
                             CredentialId = 1
                         },
                         new
@@ -2477,6 +2391,12 @@ namespace GroupService.Repo.Migrations
                             Id = 7,
                             IsAdmin = true,
                             Name = "UserAdmin_ReadOnly"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            IsAdmin = true,
+                            Name = "ShowCharts"
                         });
                 });
 
@@ -3661,18 +3581,6 @@ You will also be expected to make a minimum commitment of six months.",
                         },
                         new
                         {
-                            GroupId = -35,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
-                        },
-                        new
-                        {
                             GroupId = -7,
                             CredentialId = 2,
                             CredentialTypeId = (byte)2,
@@ -4015,30 +3923,6 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 5,
                             HowToAchieve = "For some activities we need to our volunteers to be DBS checked. Please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about requesting or registering a DBS check.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "DBS Check",
-                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            CredentialId = 1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "If you are unable to confirm your ID using Yoti please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about how you can request a manual ID check.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Manual ID Verification",
-                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            CredentialId = 2,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "Contact the person who invited you to join this group to request or register your DBS check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
@@ -7603,7 +7487,7 @@ You will also be expected to make a minimum commitment of six months.",
                             AddressLine1 = "Address Line 1",
                             AddressLine2 = "Address Line 2",
                             AddressLine3 = "",
-                            EmailAddress = "",
+                            EmailAddress = "laura@factor-50.co.uk",
                             FirstName = "Arrowe",
                             LastName = "Park Hospital",
                             Locality = "Locality",
