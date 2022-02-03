@@ -40,6 +40,10 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.DigitalSupport => "Providing digital support for people struggling with technology",
                 SupportActivities.BankStaffVaccinator => "Covering bank staff vaccinator shifts (this is a paid role)",
                 SupportActivities.SkillShare => "Giving my time to share my skills and interests with other people who are interested to learn more",
+                SupportActivities.BreakfastVisit => "Breakfast visit",
+                SupportActivities.LunchVisit => "Lunch visit",
+                SupportActivities.MedicationCheckIn => "Medication check-in",
+                SupportActivities.WellBeingVisit => "Wellbeing visit",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
         }
@@ -1573,6 +1577,55 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 7
             });
         }
+
+        private static void SetArroweParkHospitalActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.ArroweParkHospital,
+                SupportActivityId = (int)SupportActivities.BreakfastVisit,
+                Label = SupportActivities.BreakfastVisit.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 1
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.ArroweParkHospital,
+                SupportActivityId = (int)SupportActivities.LunchVisit,
+                Label = SupportActivities.LunchVisit.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.ArroweParkHospital,
+                SupportActivityId = (int)SupportActivities.MedicationCheckIn,
+                Label = SupportActivities.MedicationCheckIn.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 3
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.ArroweParkHospital,
+                SupportActivityId = (int)SupportActivities.WellBeingVisit,
+                Label = SupportActivities.WellBeingVisit.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 4
+            });
+
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.ArroweParkHospital,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = SupportActivities.Other.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 5
+            });
+        }
+
         public static void SetRegistrationFormSupportActivitiesExtensionsData(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
             SetDefaultSupportActivities(entity);
@@ -1593,6 +1646,7 @@ namespace GroupService.Repo.Helpers
             SetApexBankStaffActivities(entity);
             SetAgeUKMidMerseyActivities(entity);
             SetBostonGNSActivities(entity);
+            SetArroweParkHospitalActivities(entity);
         }        
 
     }

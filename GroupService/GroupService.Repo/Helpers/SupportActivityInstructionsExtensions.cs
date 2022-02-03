@@ -1748,6 +1748,132 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_APH_BreakfastVisit()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.APH_BreakfastVisit,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Check for any special requirements",
+                        Detail = $"Once you accept the request more information will become available for you to complete it. Make sure to read the request details " +
+                        $"in full by clicking the “View more info” link next to the request in the “My Requests” section of your profile.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Visit the client",
+                        Detail = "Make sure you give them plenty of time to get to the door, and double-check for any specific requirements in the request details.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Help prepare a meal and provide company",
+                        Detail  = "Ask the client how you can help - you may need to help them prepare a meal, or just check that they have already eaten."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail  = "After your visit, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_APH_LunchVisit()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.APH_LunchVisit,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Check for any special requirements",
+                        Detail = $"Once you accept the request more information will become available for you to complete it. Make sure to read the " +
+                        $"request details in full by clicking the “View more info” link next to the request in the “My Requests” section of your profile.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Visit the client",
+                        Detail = "Make sure you give them plenty of time to get to the door, and double-check for any specific requirements in the request details.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Help prepare a meal and provide company",
+                        Detail  = "Ask the client how you can help - you may need to help them prepare a meal, or just check that they have already eaten."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail  = "After your visit, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_APH_MedicationCheckIn()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.APH_MedicationCheckIn,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Visit the client",
+                        Detail = $"Use the details provided when you accept the request to visit the client. Make sure you give them plenty of time to get " +
+                        $"to the door, and double-check for any specific requirements in the request details.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Check they’re OK and ask about their medications",
+                        Detail = "<ul><li>Check the client is OK and settled at home</li><li>Make sure they have all the medications they need at home</li><li>Ask if they understand how and when to take their medications and check they’re taking them</li></ul>",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail  = "After your visit, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
+        private static Instructions GetInstructions_APH_WellBeingVisit()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.APH_WellBeingVisit,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Visit the client",
+                        Detail = $"Use the details provided when you accept the request to visit the client. Make sure you give them plenty of time to get to the door" +
+                        $", and double-check for any specific requirements in the request details.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Check they’re OK",
+                        Detail = "Check the client is OK and settled at home.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail  = "After your visit, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”."
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -2098,6 +2224,30 @@ namespace GroupService.Repo.Helpers
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUK_MidMersey_Befriending())
             });
 
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.APH_BreakfastVisit,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_APH_BreakfastVisit())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.APH_LunchVisit,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_APH_LunchVisit())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.APH_MedicationCheckIn,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_APH_MedicationCheckIn())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.APH_WellBeingVisit,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_APH_WellBeingVisit())
+            });
+
 
         }
 
@@ -2254,6 +2404,13 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.BostonGNS, SupportActivities.DogWalking, SupportActivityInstructionsEnum.HMS_General, 20);
             Populate(entity, Groups.BostonGNS, SupportActivities.DigitalSupport, SupportActivityInstructionsEnum.HMS_General, 20);
             Populate(entity, Groups.BostonGNS, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+
+
+            Populate(entity, Groups.ArroweParkHospital, SupportActivities.BreakfastVisit, SupportActivityInstructionsEnum.APH_BreakfastVisit, 20);
+            Populate(entity, Groups.ArroweParkHospital, SupportActivities.LunchVisit, SupportActivityInstructionsEnum.APH_LunchVisit, 20);
+            Populate(entity, Groups.ArroweParkHospital, SupportActivities.MedicationCheckIn, SupportActivityInstructionsEnum.APH_MedicationCheckIn, 20);
+            Populate(entity, Groups.ArroweParkHospital, SupportActivities.WellBeingVisit, SupportActivityInstructionsEnum.APH_WellBeingVisit, 20);
+            Populate(entity, Groups.ArroweParkHospital, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
 
         }
     }
