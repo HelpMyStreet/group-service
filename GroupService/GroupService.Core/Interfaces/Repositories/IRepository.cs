@@ -17,7 +17,7 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
-        Task<List<UserRoleSummary>> GetUserRoleSummary(int groupId, DateTime minDate, DateTime maxDate);
+        Task<List<UserRoleSummary>> GetUserRoleSummary(IEnumerable<int> groups, DateTime minDate, DateTime maxDate);
         Task<int> MemberVolunterCount(IEnumerable<int> groups);
         Task<int> MemberVolunterCountLastXDays(IEnumerable<int> groups, int days);        
         Task<bool> AddToGenericGroup(int groupId, string source);

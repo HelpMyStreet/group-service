@@ -2,10 +2,12 @@
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Core.Interfaces.Services;
 using HelpMyStreet.Contracts.ReportService;
+using HelpMyStreet.Utils.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GroupService.Core.Services
@@ -19,6 +21,19 @@ namespace GroupService.Core.Services
             _repository = repository;
         }
 
+        private async Task<List<int>> GetGroups(int groupId)
+        {
+            List<int> groups = new List<int>()
+            {
+                groupId
+            };
+
+            List<Group> childGroups = _repository.GetChildGroups(groupId, CancellationToken.None);
+            groups.AddRange(childGroups.Select(sm => sm.GroupId));
+
+            return groups;
+        }
+
         private bool HasAdminAndMemberRole(List<UserRoleSummary> roleSummaries, int userId, DateTime dt)
         {
             IEnumerable<bool> roles = roleSummaries.Where(x => x.UserId == userId && x.DateRequested.Date == dt).Select(x=> x.IsAdmin).Distinct();
@@ -28,7 +43,8 @@ namespace GroupService.Core.Services
 
         public async Task<List<DataPoint>> GetVolumeByUserType(int groupId, DateTime minDate, DateTime maxDate)
         {
-            List<UserRoleSummary> roleSummary = await _repository.GetUserRoleSummary(groupId, minDate, maxDate);
+            var groups = await GetGroups(groupId);
+            List<UserRoleSummary> roleSummary = await _repository.GetUserRoleSummary(groups, minDate, maxDate);
 
             List<UserRoleSummary> rolesToRemove = new List<UserRoleSummary>();
 

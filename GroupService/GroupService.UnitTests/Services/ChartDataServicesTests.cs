@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GroupService.UnitTests.Services
@@ -17,6 +18,7 @@ namespace GroupService.UnitTests.Services
     {
         private Mock<IRepository> _repository;
         private List<UserRoleSummary> _userRoleSummaries;
+        private List<HelpMyStreet.Utils.Models.Group> _childGroups;
         private ChartDataService _classUnderTest;
 
         [SetUp]
@@ -47,8 +49,19 @@ namespace GroupService.UnitTests.Services
 
             };
 
-            _repository.Setup(x => x.GetUserRoleSummary(It.IsAny<int>(), It.IsAny<DateTime>(), It.IsAny<DateTime>()))
+            _repository.Setup(x => x.GetUserRoleSummary(It.IsAny<List<int>>(), It.IsAny<DateTime>(), It.IsAny<DateTime>()))
                 .ReturnsAsync(() => _userRoleSummaries);
+
+            _childGroups = new List<HelpMyStreet.Utils.Models.Group>()
+            {
+                new HelpMyStreet.Utils.Models.Group()
+                {
+                    GroupId = -1
+                }
+            };
+
+            _repository.Setup(x => x.GetChildGroups(It.IsAny<int>(), It.IsAny<CancellationToken>()))
+                .Returns(() => _childGroups);
         }
 
         [Test]
