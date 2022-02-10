@@ -1,4 +1,5 @@
 using AutoMapper;
+using GroupService.Core.Domains;
 using GroupService.Core.Domains.Entities;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
@@ -13,8 +14,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 namespace GroupService.Repo
@@ -23,7 +22,6 @@ namespace GroupService.Repo
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private const int GENERIC_GROUPID = -1;
 
         public Repository(ApplicationDbContext context, IMapper mapper)
         {
@@ -765,7 +763,7 @@ namespace GroupService.Repo
                 .Distinct()
                 .Count();
         }
-
+        
         public List<GroupRadius> GetMaxShiftSupportActivityRadius(List<int> groups, CancellationToken cancellationToken)
         {
             var groupSupportActivityRadii = _context.GroupSupportActivityConfiguration
@@ -795,5 +793,17 @@ namespace GroupService.Repo
 
             return result;
         }
+	
+	      public async Task<List<UserRoleSummary>> GetUserRoleSummary(IEnumerable<int> groups, DateTime minDate, DateTime maxDate)
+        {
+             return _context.UserRoleAudit
+                .Where(x => groups.Contains(x.GroupId) && x.Success == true && x.DateRequested >= minDate && x.DateRequested<=maxDate && x.ActionId == 1)
+                .Select(s => new UserRoleSummary
+                {
+                    UserId = s.UserId,
+                    DateRequested = s.DateRequested.Date,
+                    Role = (GroupRoles) s.RoleId
+                }).ToList();
+		    }
     }
 }
