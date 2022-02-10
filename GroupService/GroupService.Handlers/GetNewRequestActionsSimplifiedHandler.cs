@@ -103,6 +103,13 @@ namespace GroupService.Handlers
                 requestTaskActions.Add(NewTaskAction.NotifyMatchingVolunteers, targetGroups);
             }
 
+            if (!requestTaskActions.TryGetValue(NewTaskAction.MakeAvailableToGroups, out _))
+            {
+                throw new Exception($"MakeAvailableToGroups missing for groupId:{request.GroupId} and " +
+                    $"source:{request.Source} and " +
+                    $"supportActivity:{request.SupportActivity.SupportActivities.First().FriendlyNameShort()}");
+            }
+
             return new GetNewRequestActionsSimplifiedResponse()
             {
                 Actions = actions,
