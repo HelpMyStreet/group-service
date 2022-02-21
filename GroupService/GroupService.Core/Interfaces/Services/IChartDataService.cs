@@ -10,5 +10,6 @@ namespace GroupService.Core.Interfaces.Services
     public interface IChartDataService
     {
         Task<List<DataPoint>> GetVolumeByUserType(int groupId, DateTime minDate, DateTime maxDate);
+        Task<List<DataPoint>> TotalGroupUsersByType(int groupId);
     }
 }

@@ -41,10 +41,17 @@ namespace GroupService.Core.Services
             return roles.Contains(true) && roles.Contains(false);            
         }
 
+        private bool HasAdminAndMemberRole(List<UserRoleSummary> roleSummaries, int userId)
+        {
+            IEnumerable<bool> roles = roleSummaries.Where(x => x.UserId == userId).Select(x => x.IsAdmin).Distinct();
+
+            return roles.Contains(true) && roles.Contains(false);
+        }
+
         public async Task<List<DataPoint>> GetVolumeByUserType(int groupId, DateTime minDate, DateTime maxDate)
         {
             var groups = await GetGroups(groupId);
-            List<UserRoleSummary> roleSummary = await _repository.GetUserRoleSummary(groups, minDate, maxDate);
+            List<UserRoleSummary> roleSummary = await _repository.GetUserRoleSummary(groups, minDate, maxDate);            
 
             List<UserRoleSummary> rolesToRemove = new List<UserRoleSummary>();
 
@@ -72,6 +79,46 @@ namespace GroupService.Core.Services
                    Date = x.Key.DateRequested,
                    Series = x.Key.Series
                }).ToList());
+
+            return dataPoints;
+        }
+
+        public async Task<List<DataPoint>> TotalGroupUsersByType(int groupId)
+        {
+            var groups = await GetGroups(groupId);
+            List<UserRoleSummary> roleSummary = await _repository.GetTotalGroupUsersByType(groups);            
+
+            List<UserRoleSummary> rolesToRemove = new List<UserRoleSummary>();
+
+            roleSummary.Where(x => HasAdminAndMemberRole(roleSummary, x.UserId) == true)
+                .ToList()
+                .ForEach(item =>
+                {
+                    var nonAdminRoles = roleSummary.Where(x => x.IsAdmin == false && x.UserId == item.UserId);
+                    rolesToRemove.AddRange(nonAdminRoles);
+                });
+
+            roleSummary = roleSummary.Except(rolesToRemove).ToList();
+
+            List<(string roleType, bool isAdmin)> roleType = new List<(string roleType, bool isAdmin)>();
+            roleType.Add(("Admins", true));
+            roleType.Add(("Volunteers", false));
+
+            List<DataPoint> dataPoints = new List<DataPoint>()
+            { 
+                new DataPoint()
+                {
+                    XAxis = "Admins",
+                    Value = roleSummary.Select(x=> new {x.UserId, x.IsAdmin }).Where(x=> x.IsAdmin==true).Distinct().Count(),
+                    Series = "Count"
+                },
+                new DataPoint()
+                {
+                    XAxis = "Volunteers",
+                    Value = roleSummary.Select(x=> new {x.UserId, x.IsAdmin }).Where(x=> x.IsAdmin==false).Distinct().Count(),
+                    Series = "Count"
+                }
+            };
 
             return dataPoints;
         }
