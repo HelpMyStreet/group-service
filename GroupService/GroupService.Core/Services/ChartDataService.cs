@@ -44,7 +44,7 @@ namespace GroupService.Core.Services
         public async Task<List<DataPoint>> GetVolumeByUserType(int groupId, DateTime minDate, DateTime maxDate)
         {
             var groups = await GetGroups(groupId);
-            List<UserRoleSummary> roleSummary = await _repository.GetUserRoleSummary(groups, minDate, maxDate);
+            List<UserRoleSummary> roleSummary = await _repository.GetUserRoleSummary(groups, minDate, maxDate);            
 
             List<UserRoleSummary> rolesToRemove = new List<UserRoleSummary>();
 
@@ -72,6 +72,34 @@ namespace GroupService.Core.Services
                    Date = x.Key.DateRequested,
                    Series = x.Key.Series
                }).ToList());
+
+            return dataPoints;
+        }
+
+        public async Task<List<DataPoint>> TotalGroupUsersByType(int groupId)
+        {
+            var groups = await GetGroups(groupId);
+            List<UserRoleSummary> roleSummary = await _repository.GetTotalGroupUsersByType(groups);
+
+            var totalCount = roleSummary.Select(x => x.UserId).Distinct().Count();
+            var adminCount = roleSummary.Where(x => x.IsAdmin == true).Select(x => x.UserId).Distinct().Count();
+            var volunteerCount = totalCount - adminCount;
+
+            List<DataPoint> dataPoints = new List<DataPoint>()
+            { 
+                new DataPoint()
+                {
+                    XAxis = "Admins",
+                    Value = adminCount,
+                    Series = "Count"
+                },
+                new DataPoint()
+                {
+                    XAxis = "Volunteers",
+                    Value = volunteerCount,
+                    Series = "Count"
+                }
+            };
 
             return dataPoints;
         }

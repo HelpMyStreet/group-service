@@ -797,7 +797,7 @@ namespace GroupService.Repo
 	      public async Task<List<UserRoleSummary>> GetUserRoleSummary(IEnumerable<int> groups, DateTime minDate, DateTime maxDate)
         {
              return _context.UserRoleAudit
-                .Where(x => groups.Contains(x.GroupId) && x.Success == true && x.DateRequested >= minDate && x.DateRequested<=maxDate && x.ActionId == 1)
+                .Where(x => groups.Contains(x.GroupId) && x.Success == true && x.DateRequested >= minDate && x.DateRequested <= maxDate && x.ActionId == 1)
                 .Select(s => new UserRoleSummary
                 {
                     UserId = s.UserId,
@@ -805,5 +805,16 @@ namespace GroupService.Repo
                     Role = (GroupRoles) s.RoleId
                 }).ToList();
 		    }
+
+        public async Task<List<UserRoleSummary>> GetTotalGroupUsersByType(IEnumerable<int> groups)
+        {
+            return _context.UserRole
+               .Where(x => groups.Contains(x.GroupId))
+               .Select(s => new UserRoleSummary
+               {
+                   UserId = s.UserId,
+                   Role = (GroupRoles)s.RoleId
+               }).ToList();
+        }
     }
 }

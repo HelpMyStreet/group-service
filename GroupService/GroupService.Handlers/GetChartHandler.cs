@@ -42,6 +42,15 @@ namespace GroupService.Handlers
                             DataPoints = dataPoints
                         }
                     };
+                case HelpMyStreet.Utils.Enums.Charts.TotalGroupUsersByType:
+                    dataPoints = await _chartService.TotalGroupUsersByType(request.GroupId);
+                    return new GetChartResponse()
+                    {
+                        Chart = new Chart()
+                        {
+                            DataPoints = dataPoints
+                        }
+                    };
                 default:
                     throw new Exception($"Unknown chart type { request.Chart.Chart}");
             }
