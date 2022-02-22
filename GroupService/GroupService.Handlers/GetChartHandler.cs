@@ -60,6 +60,8 @@ namespace GroupService.Handlers
                     {
                         Chart = new Chart()
                         {
+                            XAxisName = "User type",
+                            YAxisName = "Users",
                             DataPoints = dataPoints
                         }
                     };
