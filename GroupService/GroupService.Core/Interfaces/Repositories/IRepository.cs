@@ -18,6 +18,7 @@ namespace GroupService.Core.Interfaces.Repositories
     public interface IRepository
     {
         bool AllowRoleChange(GroupRoles role, int groupId, int authorisedByUserID, CancellationToken cancellationToken);
+        Task<List<UserRoleSummary>> GetTotalGroupUsersByType(IEnumerable<int> groups);
         Task<List<UserRoleSummary>> GetUserRoleSummary(IEnumerable<int> groups, DateTime minDate, DateTime maxDate);
         Task<int> MemberVolunterCount(IEnumerable<int> groups);
         Task<int> MemberVolunterCountLastXDays(IEnumerable<int> groups, int days);        
