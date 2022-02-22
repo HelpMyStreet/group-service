@@ -23,64 +23,73 @@ namespace GroupService.Handlers
             _communicationService = communicationService;
         }
 
+        private bool PassedExistingRoleCheck(GroupRoles role, int userId, int groupId, CancellationToken cancellationToken)
+        {
+            bool passedExistingRoleCheck = true;
+            if (role != GroupRoles.Member && role != GroupRoles.Volunteer)
+            {
+                passedExistingRoleCheck = _repository.RoleAssigned(userId, groupId, GroupRoles.Member, cancellationToken);
+            }
+            return passedExistingRoleCheck;
+        }
+
+        private void LogFailureToAssignRole(PostAssignRoleRequest request, CancellationToken cancellationToken)
+        {
+            _repository.AddUserRoleAudit(
+                           request.GroupID.Value,
+                           request.UserID.Value,
+                           request.Role.GroupRole,
+                           request.AuthorisedByUserID.Value,
+                           GroupAction.AddMember,
+                           false,
+                           cancellationToken
+                           );
+        }
+
+
         public async Task<PostAssignRoleResponse> Handle(PostAssignRoleRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
-            bool passedExistingRoleCheck = true;
+            bool roleAssigned = false;
 
-            if (request.Role.GroupRole != GroupRoles.Member && request.Role.GroupRole != GroupRoles.Volunteer)
+            bool passedExistingRoleCheck = PassedExistingRoleCheck(request.Role.GroupRole, request.UserID.Value, request.GroupID.Value, cancellationToken);
+
+            if (passedExistingRoleCheck)
             {
-                passedExistingRoleCheck = _repository.RoleMemberAssignedForUserInGroup(request.UserID.Value, request.GroupID.Value, cancellationToken);
-            }
+                roleAssigned = _repository.RoleAssigned(request.UserID.Value, request.GroupID.Value, request.Role.GroupRole, cancellationToken);
 
-            bool roleAssigned = _repository.RoleAssigned(request.UserID.Value, request.GroupID.Value, request.Role.GroupRole, cancellationToken);
-
-            if (!roleAssigned && passedExistingRoleCheck)
-            {
-                if (request.AuthorisedByUserID.Value == -1)
+                if (!roleAssigned)
                 {
-                    success = await _repository.AssignRoleAsync(request, cancellationToken);
-                }
-                else if (request.AuthorisedByUserID.Value == request.UserID 
-                            && request.Role.GroupRole == GroupRoles.Member 
-                            && _repository.GetSecurityConfiguration(request.GroupID.Value).AllowAutonomousJoinersAndLeavers)
-                {
-                    success = await _repository.AssignRoleAsync(request, cancellationToken);
-                }
-                else
-                {
-                    var allroles = _repository.GetUserRoles(new GetUserRolesRequest()
+                    bool canTryToAddUserToGroup;
+                    if (request.AuthorisedByUserID.Value == -1)
                     {
-                        UserID = request.AuthorisedByUserID.Value
-                    }, cancellationToken);
-
-                    if (allroles != null && allroles.Count > 0)
+                        canTryToAddUserToGroup = true;
+                    }
+                    else if (request.AuthorisedByUserID.Value == request.UserID
+                                && request.Role.GroupRole == GroupRoles.Member
+                                && _repository.GetSecurityConfiguration(request.GroupID.Value).AllowAutonomousJoinersAndLeavers)
                     {
-                        var rolesForGivenGroup = allroles[request.GroupID.Value];
-                        if (rolesForGivenGroup != null && rolesForGivenGroup.Count > 0)
-                        {
-                            if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && request.Role.GroupRole != GroupRoles.Owner)
-                            {
-                                success = await _repository.AssignRoleAsync(request, cancellationToken);
-                            }
-                            else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin) && request.Role.GroupRole == GroupRoles.Member)
-                            {
-                                success = await _repository.AssignRoleAsync(request, cancellationToken);
-                            }
-                        }
+                        canTryToAddUserToGroup = true;
+                    }
+                    else
+                    {
+                        canTryToAddUserToGroup = _repository.AllowRoleChange(request.Role.GroupRole, request.GroupID.Value, request.AuthorisedByUserID.Value, cancellationToken);
+                    }
+
+                    if (canTryToAddUserToGroup)
+                    {
+                        success = await _repository.AssignRoleAsync(request, cancellationToken);
+                    }
+                    else
+                    {
+                        LogFailureToAssignRole(request, cancellationToken);
                     }
                 }
             }
-
-            _repository.AddUserRoleAudit(
-                       request.GroupID.Value,
-                       request.UserID.Value,
-                       request.Role.GroupRole,
-                       request.AuthorisedByUserID.Value,
-                       GroupAction.AddMember,
-                       success,
-                       cancellationToken
-                       );
+            else
+            {
+                LogFailureToAssignRole(request, cancellationToken);
+            }
 
             if(success && request.Role.GroupRole == GroupRoles.Member)
             {

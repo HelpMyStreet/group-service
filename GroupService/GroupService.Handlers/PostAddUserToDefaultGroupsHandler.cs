@@ -58,7 +58,7 @@ namespace GroupService.Handlers
                     }
                 }
 
-                if(addToGenericGroup)
+                if(addToGenericGroup && user.User.ReferringGroupId!=GROUPID_GENERIC)
                 {
                     success = await AssignRole(GROUPID_GENERIC, request.UserID, cancellationToken);
                     if(!sendGroupWelcomeEmail && success)
@@ -105,18 +105,8 @@ namespace GroupService.Handlers
                 Role = new RoleRequest()
                 {
                     GroupRole = GroupRoles.Member
-                }
+                },               
             }, cancellationToken);
-
-            _repository.AddUserRoleAudit(
-                        groupID,
-                        userID,
-                        GroupRoles.Member,
-                        USERID_ADMINISTRATOR,
-                        GroupAction.AddMember,
-                        success,
-                        cancellationToken
-                        );
             return success;
         }
     }

@@ -17,6 +17,7 @@ namespace GroupService.Core.Interfaces.Repositories
 {
     public interface IRepository
     {
+        bool AllowRoleChange(GroupRoles role, int groupId, int authorisedByUserID, CancellationToken cancellationToken);
         Task<List<UserRoleSummary>> GetUserRoleSummary(IEnumerable<int> groups, DateTime minDate, DateTime maxDate);
         Task<int> MemberVolunterCount(IEnumerable<int> groups);
         Task<int> MemberVolunterCountLastXDays(IEnumerable<int> groups, int days);        
@@ -46,13 +47,13 @@ namespace GroupService.Core.Interfaces.Repositories
         List<int> GetGroupAndChildGroups(int groupId, CancellationToken cancellationToken);
         Task<int> CreateGroupAsync(PostCreateGroupRequest request, CancellationToken cancellationToken);
         List<int> GetUserGroups(int userId, CancellationToken cancellationToken);
-        Dictionary<int,List<int>> GetUserRoles(GetUserRolesRequest request, CancellationToken cancellationToken);
+        Dictionary<int,List<int>> GetUserRoles(int userId, CancellationToken cancellationToken);
         Dictionary<int, List<int>> GetGroupMemberRoles(int groupId, CancellationToken cancellationToken);
         Task<bool> AssignRoleAsync(PostAssignRoleRequest request, CancellationToken cancellationToken);
         Task<bool> RevokeRoleAsync(PostRevokeRoleRequest request, CancellationToken cancellationToken);
         void AddUserRoleAudit(int groupId, int userId, GroupRoles groupRole, int authorisedByUserID, GroupAction groupAction, bool success, CancellationToken cancellationToken);
         bool RoleAssigned(int userId,int groupId, GroupRoles groupRole, CancellationToken cancellationToken);
-        bool RoleMemberAssignedForUserInGroup(int userId, int groupId, CancellationToken cancellationToken);
+        //bool RoleMemberAssignedForUserInGroup(int userId, int groupId, CancellationToken cancellationToken);
         List<int> GetGroupMembers(int groupId, CancellationToken cancellationToken);
         int GetGroupByKey(GetGroupByKeyRequest request, CancellationToken cancellationToken);
         bool UserIsInRoleForGroup(int userID, int groupId, GroupRoles groupRole);

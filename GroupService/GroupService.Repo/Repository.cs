@@ -50,10 +50,33 @@ namespace GroupService.Repo
                     UserId = request.UserID.Value,
                     RoleId = (int)request.Role.GroupRole
                 });
+
+                _context.UserRoleAudit.Add(new EntityFramework.Entities.UserRoleAudit()
+                {
+                    DateRequested = DateTime.Now.ToUniversalTime(),
+                    GroupId = request.GroupID.Value,
+                    UserId = request.UserID.Value,
+                    RoleId = (int)request.Role.GroupRole,
+                    AuthorisedByUserId = request.AuthorisedByUserID.Value,
+                    ActionId = (byte) GroupAction.AddMember,
+                    Success = true
+                });
+
                 int result = _context.SaveChanges();
-                if (result == 1)
+                if (result == 2)
                 {
                     success = true;
+                }
+                else
+                {
+                    AddUserRoleAudit(
+                        request.GroupID.Value,
+                        request.UserID.Value,
+                        request.Role.GroupRole,
+                        request.AuthorisedByUserID.Value,
+                        GroupAction.AddMember,
+                        false,
+                        cancellationToken);
                 }
             }
             
@@ -101,12 +124,12 @@ namespace GroupService.Repo
                 .ToList();
         }
 
-        public Dictionary<int, List<int>> GetUserRoles(GetUserRolesRequest request, CancellationToken cancellationToken)
+        public Dictionary<int, List<int>> GetUserRoles(int userId, CancellationToken cancellationToken)
         {
             Dictionary<int, List<int>> response = new Dictionary<int, List<int>>();
 
             var roles = _context.UserRole
-                .Where(w => w.UserId == request.UserID).ToList();
+                .Where(w => w.UserId == userId).ToList();
 
             List<int> distinctGroups = roles
                 .Select(r => r.GroupId)
@@ -149,8 +172,19 @@ namespace GroupService.Repo
             w.GroupId == request.GroupID.Value &&
             w.RoleId == (int)request.Role.GroupRole));
 
+            _context.UserRoleAudit.Add(new EntityFramework.Entities.UserRoleAudit()
+            {
+                DateRequested = DateTime.Now.ToUniversalTime(),
+                GroupId = request.GroupID.Value,
+                UserId = request.UserID.Value,
+                RoleId = (int)request.Role.GroupRole,
+                AuthorisedByUserId = request.AuthorisedByUserID.Value,
+                ActionId = (byte)GroupAction.AddMember,
+                Success = true
+            });
+
             int result = await _context.SaveChangesAsync(cancellationToken);
-            if (result == 1)
+            if (result == 2)
             {
                 success = true;
             }
@@ -556,11 +590,6 @@ namespace GroupService.Repo
                 .Select(x => (CredentialVerifiedBy)x.CredentialVerifiedById).FirstOrDefault();
         }
 
-        public bool RoleMemberAssignedForUserInGroup(int userId, int groupId, CancellationToken cancellationToken)
-        {
-            return RoleAssigned(userId, groupId, GroupRoles.Member, cancellationToken);
-        }
-
         public bool UserHasRolesOtherThanVolunteerAndMember(int groupId, int userId, CancellationToken cancellationToken)
         {
             bool result = false;
@@ -805,5 +834,28 @@ namespace GroupService.Repo
                     Role = (GroupRoles) s.RoleId
                 }).ToList();
 		    }
+
+        public bool AllowRoleChange(GroupRoles role, int groupId, int authorisedByUserID, CancellationToken cancellationToken)
+        {
+            bool allowRole = false;
+            var allroles = GetUserRoles(authorisedByUserID, cancellationToken);
+
+            if (allroles != null && allroles.Count > 0)
+            {
+                var rolesForGivenGroup = allroles[groupId];
+                if (rolesForGivenGroup != null && rolesForGivenGroup.Count > 0)
+                {
+                    if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && role != GroupRoles.Owner)
+                    {
+                        allowRole = true;
+                    }
+                    else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin) && role == GroupRoles.Member)
+                    {
+                        allowRole = true;
+                    }
+                }
+            }
+            return allowRole;
+        }
     }
 }

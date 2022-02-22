@@ -18,6 +18,19 @@ namespace GroupService.Handlers
             _repository = repository;
         }
 
+        private void LogFailureToAssignRole(PostRevokeRoleRequest request, CancellationToken cancellationToken)
+        {
+            _repository.AddUserRoleAudit(
+                           request.GroupID.Value,
+                           request.UserID.Value,
+                           request.Role.GroupRole,
+                           request.AuthorisedByUserID.Value,
+                           GroupAction.RevokeMember,
+                           false,
+                           cancellationToken
+                           );
+        }
+
         public async Task<PostRevokeRoleResponse> Handle(PostRevokeRoleRequest request, CancellationToken cancellationToken)
         {
             bool success = false;
@@ -32,50 +45,35 @@ namespace GroupService.Handlers
 
             if (roleAssigned && !userHasOtherRoles)
             {
+                bool canTryToRemoveUserFromGroup;
                 if (request.AuthorisedByUserID.Value == -1)
                 {
-                    success = await _repository.RevokeRoleAsync(request, cancellationToken);
+                    canTryToRemoveUserFromGroup = true;
                 }
                 else if (request.AuthorisedByUserID.Value == request.UserID
                             && request.Role.GroupRole == GroupRoles.Member
                             && _repository.GetSecurityConfiguration(request.GroupID.Value).AllowAutonomousJoinersAndLeavers)
                 {
+                    canTryToRemoveUserFromGroup = true;
+                }
+                else
+                {
+                    canTryToRemoveUserFromGroup = _repository.AllowRoleChange(request.Role.GroupRole, request.GroupID.Value, request.AuthorisedByUserID.Value, cancellationToken);  
+                }
+
+                if (canTryToRemoveUserFromGroup)
+                {
                     success = await _repository.RevokeRoleAsync(request, cancellationToken);
                 }
                 else
                 {
-                    var allroles = _repository.GetUserRoles(new GetUserRolesRequest()
-                    {
-                        UserID = request.AuthorisedByUserID.Value
-                    }, cancellationToken);
-
-                    if (allroles != null && allroles.Count > 0)
-                    {
-                        var rolesForGivenGroup = allroles[request.GroupID.Value];
-                        if (rolesForGivenGroup != null && rolesForGivenGroup.Count > 0)
-                        {
-                            if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && request.Role.GroupRole != GroupRoles.Owner)
-                            {
-                                success = await _repository.RevokeRoleAsync(request, cancellationToken);
-                            }
-                            else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin) && request.Role.GroupRole == GroupRoles.Member)
-                            {
-                                success = await _repository.RevokeRoleAsync(request, cancellationToken);
-                            }
-                        }
-                    }   
+                    LogFailureToAssignRole(request, cancellationToken);
                 }
             }
-
-            _repository.AddUserRoleAudit(
-                       request.GroupID.Value,
-                       request.UserID.Value,
-                       request.Role.GroupRole,
-                       request.AuthorisedByUserID.Value,
-                       GroupAction.RevokeMember,
-                       success,
-                       cancellationToken
-                       );
+            else
+            {
+                LogFailureToAssignRole(request, cancellationToken);
+            }
 
             return new PostRevokeRoleResponse()
             {
