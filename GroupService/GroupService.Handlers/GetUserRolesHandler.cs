@@ -19,7 +19,7 @@ namespace GroupService.Handlers
 
         public async Task<GetUserRolesResponse> Handle(GetUserRolesRequest request, CancellationToken cancellationToken)
         {
-            var roles = _repository.GetUserRoles(request, cancellationToken);
+            var roles = _repository.GetUserRoles(request.UserID.Value, cancellationToken);
             return new GetUserRolesResponse()
             {
                 UserGroupRoles = roles
