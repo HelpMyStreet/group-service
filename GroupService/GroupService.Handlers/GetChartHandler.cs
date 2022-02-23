@@ -3,6 +3,7 @@ using GroupService.Core.Interfaces.Services;
 using HelpMyStreet.Contracts.ReportService;
 using HelpMyStreet.Contracts.ReportService.Request;
 using HelpMyStreet.Contracts.ReportService.Response;
+using HelpMyStreet.Utils.Enums;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -31,8 +32,8 @@ namespace GroupService.Handlers
 
             switch (request.Chart.Chart)
             {
-                case HelpMyStreet.Utils.Enums.Charts.VolumeOfUsersByType:
-                    dataPoints = await _chartService.GetVolumeByUserType(request.GroupId, request.DateFrom, request.DateTo);
+                case Charts.VolumeOfUsersByType:
+                    dataPoints = await _chartService.GetVolumeByUserType(GroupAction.AddMember, request.GroupId, request.DateFrom, request.DateTo);
                     return new GetChartResponse()
                     {
                         Chart = new Chart()
@@ -42,12 +43,25 @@ namespace GroupService.Handlers
                             DataPoints = dataPoints
                         }
                     };
-                case HelpMyStreet.Utils.Enums.Charts.TotalGroupUsersByType:
+                case Charts.VolumeOfUsersLeavingByMonth:
+                    dataPoints = await _chartService.GetVolumeByUserType(GroupAction.RevokeMember, request.GroupId, request.DateFrom, request.DateTo);
+                    return new GetChartResponse()
+                    {
+                        Chart = new Chart()
+                        {
+                            XAxisName = "Month",
+                            YAxisName = "Count",
+                            DataPoints = dataPoints
+                        }
+                    };
+                case Charts.TotalGroupUsersByType:
                     dataPoints = await _chartService.TotalGroupUsersByType(request.GroupId);
                     return new GetChartResponse()
                     {
                         Chart = new Chart()
                         {
+                            XAxisName = "User type",
+                            YAxisName = "Users",
                             DataPoints = dataPoints
                         }
                     };

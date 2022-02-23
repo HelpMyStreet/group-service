@@ -49,7 +49,7 @@ namespace GroupService.UnitTests.Services
 
             };
 
-            _repository.Setup(x => x.GetUserRoleSummary(It.IsAny<List<int>>(), It.IsAny<DateTime>(), It.IsAny<DateTime>()))
+            _repository.Setup(x => x.GetUserRoleSummary(It.IsAny<List<int>>(), It.IsAny<GroupAction>(), It.IsAny<DateTime>(), It.IsAny<DateTime>()))
                 .ReturnsAsync(() => _userRoleSummaries);
 
             _childGroups = new List<HelpMyStreet.Utils.Models.Group>()
@@ -79,7 +79,7 @@ namespace GroupService.UnitTests.Services
             expectedOutcome.Add(("Volunteers", "2021-04"), 0);
             expectedOutcome.Add(("Admins", "2021-04"), 0);
 
-            List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(-1, minDate, maxDate);
+            List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(GroupAction.AddMember, -1, minDate, maxDate);
 
             foreach (var item in expectedOutcome)
             {
@@ -98,7 +98,7 @@ namespace GroupService.UnitTests.Services
             expectedOutcome.Add(("Volunteers", "2021-03"), 0);
             expectedOutcome.Add(("Admins", "2021-03"), 1);
 
-            List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(-1, minDate, maxDate);
+            List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(GroupAction.AddMember, - 1, minDate, maxDate);
 
             foreach (var item in expectedOutcome)
             {
@@ -117,7 +117,7 @@ namespace GroupService.UnitTests.Services
             expectedOutcome.Add(("Volunteers", "2021-05"), 0);
             expectedOutcome.Add(("Admins", "2021-05"), 1);
 
-            List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(-1, minDate, maxDate);
+            List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(GroupAction.AddMember, - 1, minDate, maxDate);
 
             foreach (var item in expectedOutcome)
             {
@@ -136,7 +136,7 @@ namespace GroupService.UnitTests.Services
             expectedOutcome.Add(("Volunteers", "2021-06"), 1);
             expectedOutcome.Add(("Admins", "2021-06"), 0);
 
-            List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(-1, minDate, maxDate);
+            List<DataPoint> result = await _classUnderTest.GetVolumeByUserType(GroupAction.AddMember, - 1, minDate, maxDate);
 
             foreach (var item in expectedOutcome)
             {
