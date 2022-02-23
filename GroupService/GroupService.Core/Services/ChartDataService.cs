@@ -2,6 +2,7 @@
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Core.Interfaces.Services;
 using HelpMyStreet.Contracts.ReportService;
+using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using System;
 using System.Collections.Generic;
@@ -41,10 +42,10 @@ namespace GroupService.Core.Services
             return roles.Contains(true) && roles.Contains(false);            
         }
 
-        public async Task<List<DataPoint>> GetVolumeByUserType(int groupId, DateTime minDate, DateTime maxDate)
+        public async Task<List<DataPoint>> GetVolumeByUserType(GroupAction action, int groupId, DateTime minDate, DateTime maxDate)
         {
             var groups = await GetGroups(groupId);
-            List<UserRoleSummary> roleSummary = await _repository.GetUserRoleSummary(groups, minDate, maxDate);            
+            List<UserRoleSummary> roleSummary = await _repository.GetUserRoleSummary(groups, action, minDate, maxDate);            
 
             List<UserRoleSummary> rolesToRemove = new List<UserRoleSummary>();
 
