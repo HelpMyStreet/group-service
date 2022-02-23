@@ -18,7 +18,7 @@ namespace GroupService.Handlers
             _repository = repository;
         }
 
-        private void LogFailureToAssignRole(PostRevokeRoleRequest request, CancellationToken cancellationToken)
+        private void LogFailureToRevokeRole(PostRevokeRoleRequest request, CancellationToken cancellationToken)
         {
             _repository.AddUserRoleAudit(
                            request.GroupID.Value,
@@ -79,7 +79,7 @@ namespace GroupService.Handlers
 
             if (logFailure)
             {
-                LogFailureToAssignRole(request, cancellationToken);
+                LogFailureToRevokeRole(request, cancellationToken);
             }
 
             return new PostRevokeRoleResponse()
