@@ -168,7 +168,7 @@ namespace GroupService.Repo
                 UserId = request.UserID.Value,
                 RoleId = (int)request.Role.GroupRole,
                 AuthorisedByUserId = request.AuthorisedByUserID.Value,
-                ActionId = (byte)GroupAction.AddMember,
+                ActionId = (byte)GroupAction.RevokeMember,
                 Success = true
             });
 
