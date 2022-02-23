@@ -67,17 +67,6 @@ namespace GroupService.Repo
                 {
                     success = true;
                 }
-                else
-                {
-                    AddUserRoleAudit(
-                        request.GroupID.Value,
-                        request.UserID.Value,
-                        request.Role.GroupRole,
-                        request.AuthorisedByUserID.Value,
-                        GroupAction.AddMember,
-                        false,
-                        cancellationToken);
-                }
             }
             
             return success;
@@ -835,21 +824,21 @@ namespace GroupService.Repo
                 }).ToList();
 		    }
 
-        public bool AllowRoleChange(GroupRoles role, int groupId, int authorisedByUserID, CancellationToken cancellationToken)
+        public bool AllowRoleChange(GroupRoles roleToBeAssigned, int groupId, int authorisedByUserID, CancellationToken cancellationToken)
         {
             bool allowRole = false;
-            var allroles = GetUserRoles(authorisedByUserID, cancellationToken);
+            var authorisingUserRoles = GetUserRoles(authorisedByUserID, cancellationToken);
 
-            if (allroles != null && allroles.Count > 0)
+            if (authorisingUserRoles != null && authorisingUserRoles.Count > 0)
             {
-                var rolesForGivenGroup = allroles[groupId];
+                var rolesForGivenGroup = authorisingUserRoles[groupId];
                 if (rolesForGivenGroup != null && rolesForGivenGroup.Count > 0)
                 {
-                    if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && role != GroupRoles.Owner)
+                    if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && roleToBeAssigned != GroupRoles.Owner)
                     {
                         allowRole = true;
                     }
-                    else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin) && role == GroupRoles.Member)
+                    else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin) && roleToBeAssigned == GroupRoles.Member)
                     {
                         allowRole = true;
                     }

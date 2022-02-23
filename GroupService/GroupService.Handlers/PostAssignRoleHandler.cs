@@ -28,6 +28,7 @@ namespace GroupService.Handlers
             bool passedExistingRoleCheck = true;
             if (role != GroupRoles.Member && role != GroupRoles.Volunteer)
             {
+                //Volunteer must be a member before they can be assigned an admin role
                 passedExistingRoleCheck = _repository.RoleAssigned(userId, groupId, GroupRoles.Member, cancellationToken);
             }
             return passedExistingRoleCheck;
@@ -51,6 +52,7 @@ namespace GroupService.Handlers
         {
             bool success = false;
             bool roleAssigned = false;
+            bool logFailure = false;
 
             bool passedExistingRoleCheck = PassedExistingRoleCheck(request.Role.GroupRole, request.UserID.Value, request.GroupID.Value, cancellationToken);
 
@@ -79,14 +81,20 @@ namespace GroupService.Handlers
                     if (canTryToAddUserToGroup)
                     {
                         success = await _repository.AssignRoleAsync(request, cancellationToken);
+                        logFailure = !success;
                     }
                     else
                     {
-                        LogFailureToAssignRole(request, cancellationToken);
+                        logFailure = true;
                     }
                 }
             }
             else
+            {
+                logFailure = true;
+            }
+
+            if(logFailure)
             {
                 LogFailureToAssignRole(request, cancellationToken);
             }

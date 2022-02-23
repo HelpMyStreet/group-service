@@ -35,8 +35,9 @@ namespace GroupService.Handlers
         {
             bool success = false;
             bool userHasOtherRoles = false;
+            bool logFailure = false;
 
-            if(request.Role.GroupRole == GroupRoles.Member)
+            if (request.Role.GroupRole == GroupRoles.Member)
             {
                 userHasOtherRoles = _repository.UserHasRolesOtherThanVolunteerAndMember(request.GroupID.Value, request.UserID.Value, cancellationToken);
             }
@@ -64,13 +65,19 @@ namespace GroupService.Handlers
                 if (canTryToRemoveUserFromGroup)
                 {
                     success = await _repository.RevokeRoleAsync(request, cancellationToken);
+                    logFailure = !success;
                 }
                 else
                 {
-                    LogFailureToAssignRole(request, cancellationToken);
+                    logFailure = true;
                 }
             }
             else
+            {
+                logFailure = true;
+            }
+
+            if (logFailure)
             {
                 LogFailureToAssignRole(request, cancellationToken);
             }
