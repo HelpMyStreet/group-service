@@ -642,7 +642,7 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.LincolnshireVolunteers,
                 Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.ChildGroupSelector,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteersRequests_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = true,

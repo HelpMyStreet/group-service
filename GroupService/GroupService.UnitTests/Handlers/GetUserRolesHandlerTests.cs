@@ -21,7 +21,7 @@ namespace GroupService.UnitTests
         public void Setup()
         {
             _repository = new Mock<IRepository>();
-            _repository.Setup(x => x.GetUserRoles(It.IsAny<GetUserRolesRequest>(), It.IsAny<CancellationToken>()))
+            _repository.Setup(x => x.GetUserRoles(It.IsAny<int>(), It.IsAny<CancellationToken>()))
                 .Returns(() => _groups);
 
             _classUnderTest = new GetUserRolesHandler(_repository.Object);
@@ -50,7 +50,7 @@ namespace GroupService.UnitTests
 
             Assert.AreEqual(_groups.Count, result.UserGroupRoles.Count);
             Assert.AreEqual(_groups, result.UserGroupRoles);
-            _repository.Verify(x => x.GetUserRoles(It.IsAny<GetUserRolesRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+            _repository.Verify(x => x.GetUserRoles(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
         }
 
         [Test]
@@ -65,7 +65,7 @@ namespace GroupService.UnitTests
 
             Assert.AreEqual(0, result.UserGroupRoles.Count);
             Assert.AreEqual(_groups, result.UserGroupRoles);
-            _repository.Verify(x => x.GetUserRoles(It.IsAny<GetUserRolesRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+            _repository.Verify(x => x.GetUserRoles(It.IsAny<int>(), It.IsAny<CancellationToken>()), Times.Once);
         }
     }
 }

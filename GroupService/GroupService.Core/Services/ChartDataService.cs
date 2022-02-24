@@ -2,6 +2,7 @@
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Core.Interfaces.Services;
 using HelpMyStreet.Contracts.ReportService;
+using HelpMyStreet.Utils.Enums;
 using HelpMyStreet.Utils.Models;
 using System;
 using System.Collections.Generic;
@@ -41,10 +42,10 @@ namespace GroupService.Core.Services
             return roles.Contains(true) && roles.Contains(false);            
         }
 
-        public async Task<List<DataPoint>> GetVolumeByUserType(int groupId, DateTime minDate, DateTime maxDate)
+        public async Task<List<DataPoint>> GetVolumeByUserType(GroupAction action, int groupId, DateTime minDate, DateTime maxDate)
         {
             var groups = await GetGroups(groupId);
-            List<UserRoleSummary> roleSummary = await _repository.GetUserRoleSummary(groups, minDate, maxDate);
+            List<UserRoleSummary> roleSummary = await _repository.GetUserRoleSummary(groups, action, minDate, maxDate);            
 
             List<UserRoleSummary> rolesToRemove = new List<UserRoleSummary>();
 
@@ -72,6 +73,34 @@ namespace GroupService.Core.Services
                    Date = x.Key.DateRequested,
                    Series = x.Key.Series
                }).ToList());
+
+            return dataPoints;
+        }
+
+        public async Task<List<DataPoint>> TotalGroupUsersByType(int groupId)
+        {
+            var groups = await GetGroups(groupId);
+            List<UserRoleSummary> roleSummary = await _repository.GetTotalGroupUsersByType(groups);
+
+            var totalCount = roleSummary.Select(x => x.UserId).Distinct().Count();
+            var adminCount = roleSummary.Where(x => x.IsAdmin == true).Select(x => x.UserId).Distinct().Count();
+            var volunteerCount = totalCount - adminCount;
+
+            List<DataPoint> dataPoints = new List<DataPoint>()
+            { 
+                new DataPoint()
+                {
+                    XAxis = "Admins",
+                    Value = adminCount,
+                    Series = "Count"
+                },
+                new DataPoint()
+                {
+                    XAxis = "Volunteers",
+                    Value = volunteerCount,
+                    Series = "Count"
+                }
+            };
 
             return dataPoints;
         }
