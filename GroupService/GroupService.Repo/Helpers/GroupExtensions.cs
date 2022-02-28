@@ -176,9 +176,10 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.LincolnshireVolunteers,
                 GroupName = "Lincolnshire Volunteers",
                 GroupKey = "lincs-volunteers",
-                ShiftsEnabled = true,
-                TasksEnabled = false,
+                ShiftsEnabled = false,
+                TasksEnabled = true,
                 HomepageEnabled = true,
+                GeographicName = "Lincolnshire Volunteers",
                 GroupType = (byte)GroupTypes.Regional,
                 FriendlyName = "Lincolnshire Volunteers",
                 LinkURL = "/lincolnshirevolunteers",
@@ -645,7 +646,7 @@ namespace GroupService.Repo.Helpers
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteersRequests_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
+                RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = false
             });
