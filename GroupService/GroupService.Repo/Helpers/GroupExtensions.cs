@@ -176,7 +176,7 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.LincolnshireVolunteers,
                 GroupName = "Lincolnshire Volunteers",
                 GroupKey = "lincs-volunteers",
-                ShiftsEnabled = false,
+                ShiftsEnabled = true,
                 TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "Lincolnshire Volunteers",
