@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220302133823_AddStrategyForLincolnshireVolunteers")]
+    partial class AddStrategyForLincolnshireVolunteers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2134,6 +2136,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "BostonGNS"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "ArroweParkHospital"
                         });
                 });
 
@@ -2316,6 +2323,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 30,
                             Name = "BostonGNS_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Name = "ArroweParkHospital_RequestSubmitter"
                         },
                         new
                         {
@@ -2583,6 +2595,30 @@ namespace GroupService.Repo.Migrations
                             Id = 33,
                             FriendlyName = "Skill Share",
                             Name = "SkillShare"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            FriendlyName = "Breakfast Visit",
+                            Name = "BreakfastVisit"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            FriendlyName = "Lunch Visit",
+                            Name = "LunchVisit"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            FriendlyName = "Medication Check In",
+                            Name = "MedicationCheckIn"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            FriendlyName = "Wellbeing Visit",
+                            Name = "WellBeingVisit"
                         });
                 });
 
@@ -2894,6 +2930,26 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 59,
                             Name = "AgeUKMidMersey_SkillShare"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Name = "APH_BreakfastVisit"
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Name = "APH_LunchVisit"
+                        },
+                        new
+                        {
+                            Id = 62,
+                            Name = "APH_MedicationCheckIn"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Name = "APH_WellBeingVisit"
                         });
                 });
 
@@ -7572,6 +7628,26 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             SupportActivityId = 33,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 34,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 35,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 36,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 37,
                             AutoSignUpWhenOtherSelected = true
                         });
                 });
