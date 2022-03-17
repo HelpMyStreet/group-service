@@ -32,6 +32,12 @@ namespace GroupService.Repo.Migrations
 
             migrationBuilder.DeleteData(
                 schema: "Group",
+                table: "NewRequestNotificationStrategy",
+                keyColumn: "GroupId",
+                keyValue: -35);
+
+            migrationBuilder.DeleteData(
+                schema: "Group",
                 table: "Group",
                 keyColumn: "Id",
                 keyValue: -35);
@@ -44,6 +50,12 @@ namespace GroupService.Repo.Migrations
                 table: "Group",
                 columns: new[] { "Id", "FriendlyName", "GeographicName", "GroupKey", "GroupName", "GroupType", "HomepageEnabled", "JoinGroupPopUpDetail", "LinkURL", "ParentGroupId", "ShiftsEnabled", "ShortName", "TasksEnabled" },
                 values: new object[] { -35, "Arrowe Park Hospital", "Arrowe Park Hospital", "aph", "Arrowe Park Hospital", (byte)0, true, null, "/aph", null, false, "APH", true });
+
+            migrationBuilder.InsertData(
+                schema: "Group",
+                table: "NewRequestNotificationStrategy",
+                columns: new[] { "GroupID", "MaxVolunteer", "NewRequestNotificationStrategyId" },
+                values: new object[] { -35, 2147483647, (byte)1 });
 
             migrationBuilder.InsertData(
                 schema: "Group",

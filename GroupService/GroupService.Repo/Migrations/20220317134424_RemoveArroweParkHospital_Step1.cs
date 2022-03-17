@@ -66,12 +66,6 @@ namespace GroupService.Repo.Migrations
                 keyColumns: new[] { "GroupID", "ActivityID", "CredentialSetID" },
                 keyValues: new object[] { -35, 37, 351 });
 
-            migrationBuilder.InsertData(
-                schema: "Lookup",
-                table: "RequestHelpFormVariant",
-                columns: new[] { "ID", "Name" },
-                values: new object[] { 31, "ArroweParkHospital_RequestSubmitter" });
-
             migrationBuilder.UpdateData(
                 schema: "Lookup",
                 table: "SupportActivity",
@@ -91,12 +85,6 @@ namespace GroupService.Repo.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DeleteData(
-                schema: "Lookup",
-                table: "RequestHelpFormVariant",
-                keyColumn: "ID",
-                keyValue: 31);
-
             migrationBuilder.InsertData(
                 schema: "Group",
                 table: "ActivityCredentialSet",
