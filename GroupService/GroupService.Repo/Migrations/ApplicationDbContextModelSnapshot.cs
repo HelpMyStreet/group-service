@@ -2409,7 +2409,9 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 30,
                             Name = "BostonGNS_RequestSubmitter"
-                        }
+                        },
+                        new
+                        {
                             Id = 32,
                             Name = "LincolnshireVolunteersRequests_RequestSubmitter"
                         });
