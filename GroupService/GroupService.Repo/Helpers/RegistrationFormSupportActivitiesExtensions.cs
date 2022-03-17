@@ -40,10 +40,6 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.DigitalSupport => "Providing digital support for people struggling with technology",
                 SupportActivities.BankStaffVaccinator => "Covering bank staff vaccinator shifts (this is a paid role)",
                 SupportActivities.SkillShare => "Giving my time to share my skills and interests with other people who are interested to learn more",
-                SupportActivities.BreakfastVisit => "Breakfast visit",
-                SupportActivities.LunchVisit => "Lunch visit",
-                SupportActivities.MedicationCheckIn => "Medication check-in",
-                SupportActivities.WellBeingVisit => "Wellbeing visit",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
         }
