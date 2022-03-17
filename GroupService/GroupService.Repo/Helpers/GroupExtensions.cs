@@ -304,22 +304,6 @@ namespace GroupService.Repo.Helpers
                 ShortName = "Boston",
                 GeographicName = "Boston or surrounding areas",
             });
-
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.ArroweParkHospital,
-                GroupName = "Arrowe Park Hospital",
-                GroupKey = "aph",
-                ShiftsEnabled = false,
-                TasksEnabled = true,
-                HomepageEnabled = true,
-                FriendlyName = "Arrowe Park Hospital",
-                LinkURL = "/aph",
-                ShortName = "APH",
-                GeographicName = "Arrowe Park Hospital",
-            });
-
-
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -469,16 +453,7 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.BostonGNS,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.ArroweParkHospital,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.ArroweParkHospital,
-                TargetGroups = (byte)TargetGroups.ThisGroup
-            });
-            
+            });            
         }
 
         public static void RequestHelpJourney(this EntityTypeBuilder<RequestHelpJourney> entity)
@@ -805,20 +780,6 @@ namespace GroupService.Repo.Helpers
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = true
             });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.ArroweParkHospital,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.ArroweParkHospital_RequestSubmitter,
-                TargetGroups = (byte)TargetGroups.ThisGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = false
-            });
-            
-
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
@@ -962,20 +923,6 @@ namespace GroupService.Repo.Helpers
                     Postcode = "NG18 1QA"
                 });
             }
-
-            entity.HasData(new RequestorDetails
-            {
-                GroupId = (int)Groups.ArroweParkHospital,
-                FirstName = "Arrowe", //TODO replace with actual values
-                LastName = "Park Hospital", //TODO replace with actual values
-                OtherPhone = "07777 777777", //TODO replace with actual values
-                EmailAddress = "", //TODO replace with actual values
-                AddressLine1 = "Address Line 1", //TODO replace with actual values
-                AddressLine2 = "Address Line 2", //TODO replace with actual values
-                AddressLine3 = "", //TODO replace with actual values
-                Locality = "Locality", //TODO replace with actual values
-                Postcode = "LN6 8RN" ////TODO replace with actual values
-            });
         }
 
         public static void AddGroupMapDetails(this EntityTypeBuilder<GroupMapDetails> entity)
@@ -1214,16 +1161,6 @@ namespace GroupService.Repo.Helpers
                 Longitude = -0.02500M,
                 ZoomLevel = 13.8M
             });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.ArroweParkHospital,
-                Latitude = 53.37M,
-                Longitude = -3.05M,
-                ZoomLevel = 11.15M
-            });
-
         }
     }
 }

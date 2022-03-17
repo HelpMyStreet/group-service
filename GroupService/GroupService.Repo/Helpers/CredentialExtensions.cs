@@ -56,8 +56,7 @@ namespace GroupService.Repo.Helpers
                 { Groups.Southwell, 31 },
                 { Groups.ApexBankStaff, 32 },
                 { Groups.AgeUKMidMersey, 33 },
-                { Groups.BostonGNS, 34 },
-                { Groups.ArroweParkHospital, 35  }
+                { Groups.BostonGNS, 34 }
 
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
@@ -69,8 +68,7 @@ namespace GroupService.Repo.Helpers
                 { Groups.Sandbox, 141 },
                 { Groups.AgeConnectsCardiff, 231 },
                 { Groups.AgeUKMidMersey, 331 },
-                { Groups.BostonGNS, 341 },
-                { Groups.ArroweParkHospital, 351 }
+                { Groups.BostonGNS, 341 }
             };
 
             GROUPS_USING_YOTI = new List<Groups> {
@@ -88,8 +86,7 @@ namespace GroupService.Repo.Helpers
                 Groups.Generic,
                 Groups.Southwell,
                 Groups.AgeUKMidMersey,
-                Groups.BostonGNS,
-                Groups.ArroweParkHospital
+                Groups.BostonGNS
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
@@ -106,8 +103,7 @@ namespace GroupService.Repo.Helpers
                 Groups.Southwell,
                 Groups.ApexBankStaff,
                 Groups.AgeUKMidMersey,
-                Groups.BostonGNS,
-                Groups.ArroweParkHospital
+                Groups.BostonGNS
             };
         }
 
@@ -583,35 +579,6 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 5,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
-
-            entity.HasData(new GroupCredential
-            {
-                GroupId = (int)Groups.ArroweParkHospital,
-                CredentialId = MANUALLY_VERIFIED,
-                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
-                Name = "Manual ID Verification",
-                HowToAchieve = $"If you are unable to confirm your ID using Yoti please make sure you’re a member of our group by clicking ‘Join Our Group’ " +
-                $"from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about how " +
-                $"you can request a manual ID check.",
-                HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. " +
-                $"Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
-                DisplayOrder = 2,
-                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
-            });
-
-            entity.HasData(new GroupCredential
-            {
-                GroupId = (int)Groups.ArroweParkHospital,
-                CredentialId = DBS_CHECK,
-                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
-                Name = "DBS Check",
-                HowToAchieve = "Contact the person who invited you to join this group to request or register your DBS check.",
-                HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
-                DisplayOrder = 3,
-                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
-            });
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -787,10 +754,6 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_REFERENCES_CREDENTIAL_SET);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);
-
-            var arroweParkHospitalActivities = new List<SupportActivities> { SupportActivities.BreakfastVisit, SupportActivities.LunchVisit, SupportActivities.MedicationCheckIn, SupportActivities.WellBeingVisit , SupportActivities.Other };
-            SetActivityCredentialSet(entity, Groups.ArroweParkHospital, arroweParkHospitalActivities, IDENTITY_CREDENTIAL_SETS[Groups.ArroweParkHospital]);
-            SetActivityCredentialSet(entity, Groups.ArroweParkHospital, arroweParkHospitalActivities, DBS_CREDENTIAL_SETS[Groups.ArroweParkHospital]);
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)

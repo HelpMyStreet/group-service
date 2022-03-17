@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220317142442_RemoveArroweParkHospital_Step4")]
+    partial class RemoveArroweParkHospital_Step4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -3334,6 +3336,20 @@ You will also be expected to make a minimum commitment of six months.",
                             ShiftsEnabled = false,
                             ShortName = "Boston",
                             TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -35,
+                            FriendlyName = "Arrowe Park Hospital",
+                            GeographicName = "Arrowe Park Hospital",
+                            GroupKey = "aph",
+                            GroupName = "Arrowe Park Hospital",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/aph",
+                            ShiftsEnabled = false,
+                            ShortName = "APH",
+                            TasksEnabled = true
                         });
                 });
 
@@ -4392,6 +4408,14 @@ You will also be expected to make a minimum commitment of six months.",
                             Latitude = 52.979m,
                             Longitude = -0.02500m,
                             ZoomLevel = 13.8m
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            MapLocationId = (byte)0,
+                            Latitude = 53.37m,
+                            Longitude = -3.05m,
+                            ZoomLevel = 11.15m
                         });
                 });
 
@@ -6856,6 +6880,13 @@ You will also be expected to make a minimum commitment of six months.",
                             Source = "",
                             RegistrationFormVariant = (byte)18,
                             TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            Source = "",
+                            RegistrationFormVariant = (byte)19,
+                            TargetGroups = (byte)0
                         });
                 });
 
@@ -7190,6 +7221,17 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = true,
                             TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)31,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)0
                         });
                 });
 
@@ -7368,6 +7410,19 @@ You will also be expected to make a minimum commitment of six months.",
                             LastName = "Burroughs",
                             Locality = "Lincoln",
                             OtherPhone = "07340 066491",
+                            Postcode = "LN6 8RN"
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            AddressLine1 = "Address Line 1",
+                            AddressLine2 = "Address Line 2",
+                            AddressLine3 = "",
+                            EmailAddress = "",
+                            FirstName = "Arrowe",
+                            LastName = "Park Hospital",
+                            Locality = "Locality",
+                            OtherPhone = "07777 777777",
                             Postcode = "LN6 8RN"
                         });
                 });
