@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220228094225_TweakLincolnshireVolunteersGroupConfig")]
+    partial class TweakLincolnshireVolunteersGroupConfig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1363,76 +1365,6 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 11,
                             CredentialSetId = 3410,
                             DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 34,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 35,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 36,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 37,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 11,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 34,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 35,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 36,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 37,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 11,
-                            CredentialSetId = 351,
-                            DisplayOrder = 0
                         });
                 });
 
@@ -1618,12 +1550,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 35,
-                            GroupId = -35,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1668,12 +1594,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 341,
                             GroupId = -34,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 351,
-                            GroupId = -35,
                             CredentialId = 2
                         },
                         new
@@ -1752,12 +1672,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 34,
                             GroupId = -34,
-                            CredentialId = 1
-                        },
-                        new
-                        {
-                            Id = 35,
-                            GroupId = -35,
                             CredentialId = 1
                         },
                         new
@@ -2409,7 +2323,14 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 30,
                             Name = "BostonGNS_RequestSubmitter"
-                        }
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Name = "ArroweParkHospital_RequestSubmitter"
+                        },
+                        new
+                        {
                             Id = 32,
                             Name = "LincolnshireVolunteersRequests_RequestSubmitter"
                         });
@@ -2684,13 +2605,13 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 35,
-                            FriendlyName = "Lunch visit",
+                            FriendlyName = "Lunch Visit",
                             Name = "LunchVisit"
                         },
                         new
                         {
                             Id = 36,
-                            FriendlyName = "Medication Checkin",
+                            FriendlyName = "Medication Check In",
                             Name = "MedicationCheckIn"
                         },
                         new
@@ -3297,9 +3218,9 @@ namespace GroupService.Repo.Migrations
                             GroupType = (byte)1,
                             HomepageEnabled = true,
                             LinkURL = "/lincolnshirevolunteers",
-                            ShiftsEnabled = true,
+                            ShiftsEnabled = false,
                             ShortName = "Lincs Vols",
-                            TasksEnabled = false
+                            TasksEnabled = true
                         },
                         new
                         {
@@ -3414,20 +3335,6 @@ You will also be expected to make a minimum commitment of six months.",
                             LinkURL = "/boston",
                             ShiftsEnabled = false,
                             ShortName = "Boston",
-                            TasksEnabled = true
-                        },
-                        new
-                        {
-                            Id = -35,
-                            FriendlyName = "Arrowe Park Hospital",
-                            GeographicName = "Arrowe Park Hospital",
-                            GroupKey = "aph",
-                            GroupName = "Arrowe Park Hospital",
-                            GroupType = (byte)0,
-                            HomepageEnabled = true,
-                            LinkURL = "/aph",
-                            ShiftsEnabled = false,
-                            ShortName = "APH",
                             TasksEnabled = true
                         });
                 });
@@ -3655,18 +3562,6 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -34,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
-                        },
-                        new
-                        {
-                            GroupId = -35,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)1,
@@ -4020,30 +3915,6 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 5,
                             HowToAchieve = "For some activities we need to our volunteers to be DBS checked. Please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about requesting or registering a DBS check.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "DBS Check",
-                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            CredentialId = 1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "If you are unable to confirm your ID using Yoti please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about how you can request a manual ID check.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Manual ID Verification",
-                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            CredentialId = 2,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "Contact the person who invited you to join this group to request or register your DBS check.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
@@ -4523,14 +4394,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Latitude = 52.979m,
                             Longitude = -0.02500m,
                             ZoomLevel = 13.8m
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            MapLocationId = (byte)0,
-                            Latitude = 53.37m,
-                            Longitude = -3.05m,
-                            ZoomLevel = 11.15m
                         });
                 });
 
@@ -4650,12 +4513,6 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -34,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -12,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         });
@@ -5523,41 +5380,6 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -34,
-                            SupportActivityId = 11,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            SupportActivityId = 34,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)60
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            SupportActivityId = 35,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)61
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            SupportActivityId = 36,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)62
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            SupportActivityId = 37,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)63
-                        },
-                        new
-                        {
-                            GroupId = -35,
                             SupportActivityId = 11,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)2
@@ -6878,46 +6700,6 @@ You will also be expected to make a minimum commitment of six months.",
                             DisplayOrder = (byte)7,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 34,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = false,
-                            Label = "Breakfast visit"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 35,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Lunch visit"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 36,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Medication check-in"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 37,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "Wellbeing visit"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)5,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
                         });
                 });
 
@@ -7070,13 +6852,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Source = "",
                             RegistrationFormVariant = (byte)18,
                             TargetGroups = (byte)5
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            Source = "",
-                            RegistrationFormVariant = (byte)19,
-                            TargetGroups = (byte)0
                         });
                 });
 
@@ -7286,8 +7061,8 @@ You will also be expected to make a minimum commitment of six months.",
                             GroupId = -12,
                             Source = "a",
                             AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)18,
-                            RequestorDefinedByGroup = true,
+                            RequestHelpFormVariant = (byte)32,
+                            RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
@@ -7410,17 +7185,6 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)31,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)0
                         });
                 });
@@ -7601,19 +7365,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Locality = "Lincoln",
                             OtherPhone = "07340 066491",
                             Postcode = "LN6 8RN"
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            AddressLine1 = "Address Line 1",
-                            AddressLine2 = "Address Line 2",
-                            AddressLine3 = "",
-                            EmailAddress = "",
-                            FirstName = "Arrowe",
-                            LastName = "Park Hospital",
-                            Locality = "Locality",
-                            OtherPhone = "07777 777777",
-                            Postcode = "LN6 8RN"
                         });
                 });
 
@@ -7710,11 +7461,6 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -34,
-                            AllowAutonomousJoinersAndLeavers = true
-                        },
-                        new
-                        {
-                            GroupId = -35,
                             AllowAutonomousJoinersAndLeavers = true
                         });
                 });
@@ -8207,26 +7953,6 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             SupportActivityInstructionsId = (short)58,
                             Instructions = "{\"SupportActivityInstructions\":58,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Arrange a visit\",\"Detail\":\"Give them a call to arrange a visit – find a time and a place that suits you both.\"},{\"Heading\":\"Enjoy your visit\",\"Detail\":\"Meet up as agreed and have a good chat. If it’s going well, you could arrange your next visit too!\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)60,
-                            Instructions = "{\"SupportActivityInstructions\":60,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Check for any special requirements\",\"Detail\":\"Once you accept the request more information will become available for you to complete it. Make sure to read the request details in full by clicking the “View more info” link next to the request in the “My Requests” section of your profile.\"},{\"Heading\":\"Visit the client\",\"Detail\":\"Make sure you give them plenty of time to get to the door, and double-check for any specific requirements in the request details.\"},{\"Heading\":\"Help prepare a meal and provide company\",\"Detail\":\"Ask the client how you can help - you may need to help them prepare a meal, or just check that they have already eaten.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"After your visit, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)61,
-                            Instructions = "{\"SupportActivityInstructions\":61,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Check for any special requirements\",\"Detail\":\"Once you accept the request more information will become available for you to complete it. Make sure to read the request details in full by clicking the “View more info” link next to the request in the “My Requests” section of your profile.\"},{\"Heading\":\"Visit the client\",\"Detail\":\"Make sure you give them plenty of time to get to the door, and double-check for any specific requirements in the request details.\"},{\"Heading\":\"Help prepare a meal and provide company\",\"Detail\":\"Ask the client how you can help - you may need to help them prepare a meal, or just check that they have already eaten.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"After your visit, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)62,
-                            Instructions = "{\"SupportActivityInstructions\":62,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Visit the client\",\"Detail\":\"Use the details provided when you accept the request to visit the client. Make sure you give them plenty of time to get to the door, and double-check for any specific requirements in the request details.\"},{\"Heading\":\"Check they’re OK and ask about their medications\",\"Detail\":\"<ul><li>Check the client is OK and settled at home</li><li>Make sure they have all the medications they need at home</li><li>Ask if they understand how and when to take their medications and check they’re taking them</li></ul>\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"After your visit, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)63,
-                            Instructions = "{\"SupportActivityInstructions\":63,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Visit the client\",\"Detail\":\"Use the details provided when you accept the request to visit the client. Make sure you give them plenty of time to get to the door, and double-check for any specific requirements in the request details.\"},{\"Heading\":\"Check they’re OK\",\"Detail\":\"Check the client is OK and settled at home.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"After your visit, mark the request as complete in “My Requests”. If you have any concerns about the person you visited let us know immediately.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         });
                 });
 

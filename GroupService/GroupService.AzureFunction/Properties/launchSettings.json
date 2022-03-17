@@ -2,7 +2,7 @@
   "profiles": {
     "GroupService.AzureFunction": {
       "commandName": "Project",
-      "commandLineArgs": "host start --port 7074 "
+      "commandLineArgs": "host start --port 7072 "
     }
   }
 }

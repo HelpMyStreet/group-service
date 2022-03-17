@@ -1,4 +1,5 @@
 using AutoMapper;
+using GroupService.Core.Domains;
 using GroupService.Core.Domains.Entities;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Repo.EntityFramework.Entities;
@@ -13,8 +14,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 namespace GroupService.Repo
@@ -23,7 +22,6 @@ namespace GroupService.Repo
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private const int GENERIC_GROUPID = -1;
 
         public Repository(ApplicationDbContext context, IMapper mapper)
         {
@@ -52,8 +50,20 @@ namespace GroupService.Repo
                     UserId = request.UserID.Value,
                     RoleId = (int)request.Role.GroupRole
                 });
+
+                _context.UserRoleAudit.Add(new EntityFramework.Entities.UserRoleAudit()
+                {
+                    DateRequested = DateTime.Now.ToUniversalTime(),
+                    GroupId = request.GroupID.Value,
+                    UserId = request.UserID.Value,
+                    RoleId = (int)request.Role.GroupRole,
+                    AuthorisedByUserId = request.AuthorisedByUserID.Value,
+                    ActionId = (byte) GroupAction.AddMember,
+                    Success = true
+                });
+
                 int result = _context.SaveChanges();
-                if (result == 1)
+                if (result == 2)
                 {
                     success = true;
                 }
@@ -103,12 +113,12 @@ namespace GroupService.Repo
                 .ToList();
         }
 
-        public Dictionary<int, List<int>> GetUserRoles(GetUserRolesRequest request, CancellationToken cancellationToken)
+        public Dictionary<int, List<int>> GetUserRoles(int userId, CancellationToken cancellationToken)
         {
             Dictionary<int, List<int>> response = new Dictionary<int, List<int>>();
 
             var roles = _context.UserRole
-                .Where(w => w.UserId == request.UserID).ToList();
+                .Where(w => w.UserId == userId).ToList();
 
             List<int> distinctGroups = roles
                 .Select(r => r.GroupId)
@@ -151,8 +161,19 @@ namespace GroupService.Repo
             w.GroupId == request.GroupID.Value &&
             w.RoleId == (int)request.Role.GroupRole));
 
+            _context.UserRoleAudit.Add(new EntityFramework.Entities.UserRoleAudit()
+            {
+                DateRequested = DateTime.Now.ToUniversalTime(),
+                GroupId = request.GroupID.Value,
+                UserId = request.UserID.Value,
+                RoleId = (int)request.Role.GroupRole,
+                AuthorisedByUserId = request.AuthorisedByUserID.Value,
+                ActionId = (byte)GroupAction.RevokeMember,
+                Success = true
+            });
+
             int result = await _context.SaveChangesAsync(cancellationToken);
-            if (result == 1)
+            if (result == 2)
             {
                 success = true;
             }
@@ -558,11 +579,6 @@ namespace GroupService.Repo
                 .Select(x => (CredentialVerifiedBy)x.CredentialVerifiedById).FirstOrDefault();
         }
 
-        public bool RoleMemberAssignedForUserInGroup(int userId, int groupId, CancellationToken cancellationToken)
-        {
-            return RoleAssigned(userId, groupId, GroupRoles.Member, cancellationToken);
-        }
-
         public bool UserHasRolesOtherThanVolunteerAndMember(int groupId, int userId, CancellationToken cancellationToken)
         {
             bool result = false;
@@ -765,7 +781,7 @@ namespace GroupService.Repo
                 .Distinct()
                 .Count();
         }
-
+        
         public List<GroupRadius> GetMaxShiftSupportActivityRadius(List<int> groups, CancellationToken cancellationToken)
         {
             var groupSupportActivityRadii = _context.GroupSupportActivityConfiguration
@@ -795,5 +811,53 @@ namespace GroupService.Repo
 
             return result;
         }
+
+        public async Task<List<UserRoleSummary>> GetUserRoleSummary(IEnumerable<int> groups, GroupAction action, DateTime minDate, DateTime maxDate)
+        {
+            int roleID_volunteer = (int)GroupRoles.Volunteer;
+            return _context.UserRoleAudit
+               .Where(x => x.RoleId!=roleID_volunteer && groups.Contains(x.GroupId) && x.Success == true && x.DateRequested >= minDate && x.DateRequested <= maxDate && x.ActionId == (int)action)
+               .Select(s => new UserRoleSummary
+               {
+                   UserId = s.UserId,
+                   DateRequested = s.DateRequested.Date,
+                   Role = (GroupRoles)s.RoleId
+               }).ToList();
+        }
+
+        public bool AllowRoleChange(GroupRoles roleToBeAssigned, int groupId, int authorisedByUserID, CancellationToken cancellationToken)
+        {
+            bool allowRole = false;
+            var authorisingUserRoles = GetUserRoles(authorisedByUserID, cancellationToken);
+
+            if (authorisingUserRoles != null && authorisingUserRoles.Count > 0)
+            {
+                var rolesForGivenGroup = authorisingUserRoles[groupId];
+                if (rolesForGivenGroup != null && rolesForGivenGroup.Count > 0)
+                {
+                    if (rolesForGivenGroup.Contains((int)GroupRoles.Owner) && roleToBeAssigned != GroupRoles.Owner)
+                    {
+                        allowRole = true;
+                    }
+                    else if (rolesForGivenGroup.Contains((int)GroupRoles.UserAdmin) && roleToBeAssigned == GroupRoles.Member)
+                    {
+                        allowRole = true;
+                    }
+                }
+            }
+            return allowRole;
+        }
+        
+        public async Task<List<UserRoleSummary>> GetTotalGroupUsersByType(IEnumerable<int> groups)
+        {
+            int roleID_volunteer = (int)GroupRoles.Volunteer;
+            return _context.UserRole
+               .Where(x => x.RoleId!=roleID_volunteer && groups.Contains(x.GroupId))
+               .Select(s => new UserRoleSummary
+               {
+                   UserId = s.UserId,
+                   Role = (GroupRoles)s.RoleId
+               }).ToList();
+         }
     }
 }

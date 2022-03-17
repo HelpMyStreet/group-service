@@ -2,6 +2,7 @@
 using GroupService.Core.Config;
 using GroupService.Core.Interfaces.Repositories;
 using GroupService.Core.Interfaces.Services;
+using GroupService.Core.Services;
 using GroupService.Handlers;
 using GroupService.Mappers;
 using GroupService.Repo;
@@ -85,6 +86,8 @@ namespace GroupService.AzureFunction
             builder.Services.AddTransient<IAddressService, Core.Services.AddressService>();
             builder.Services.AddTransient<ICommunicationService, Core.Services.CommunicationService>();
             builder.Services.AddTransient<ITargetGroupService, Core.Services.TargetGroupService>();
+            builder.Services.AddTransient<IChartDataService, ChartDataService>();
+         
 
             builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILogger<>), typeof(Logger<>)));
             builder.Services.TryAdd(ServiceDescriptor.Singleton(typeof(ILoggerWrapper<>), typeof(LoggerWrapper<>)));

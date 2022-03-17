@@ -179,6 +179,7 @@ namespace GroupService.Repo.Helpers
                 ShiftsEnabled = true,
                 TasksEnabled = false,
                 HomepageEnabled = true,
+                GeographicName = "Lincolnshire Volunteers",
                 GroupType = (byte)GroupTypes.Regional,
                 FriendlyName = "Lincolnshire Volunteers",
                 LinkURL = "/lincolnshirevolunteers",

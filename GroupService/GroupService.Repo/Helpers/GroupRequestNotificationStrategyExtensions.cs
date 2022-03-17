@@ -129,7 +129,7 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new GroupNewRequestNotificationStrategy
             {
-                GroupId = (int)Groups.ArroweParkHospital,
+                GroupId = (int)Groups.LincolnshireVolunteers,
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
                 MaxVolunteer = int.MaxValue
             });
