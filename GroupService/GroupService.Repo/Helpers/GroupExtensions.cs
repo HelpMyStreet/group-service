@@ -304,7 +304,6 @@ namespace GroupService.Repo.Helpers
                 ShortName = "Boston",
                 GeographicName = "Boston or surrounding areas",
             });
-
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -454,7 +453,7 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.BostonGNS,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
+            });            
         }
 
         public static void RequestHelpJourney(this EntityTypeBuilder<RequestHelpJourney> entity)
@@ -781,7 +780,6 @@ namespace GroupService.Repo.Helpers
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = true
             });
-
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
@@ -1163,7 +1161,6 @@ namespace GroupService.Repo.Helpers
                 Longitude = -0.02500M,
                 ZoomLevel = 13.8M
             });
-
         }
     }
 }
