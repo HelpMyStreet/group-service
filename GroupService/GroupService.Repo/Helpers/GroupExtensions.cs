@@ -304,6 +304,20 @@ namespace GroupService.Repo.Helpers
                 ShortName = "Boston",
                 GeographicName = "Boston or surrounding areas",
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.UkraineRefugees,
+                GroupName = "Help Ukraine",
+                GroupKey = "help-ukraine",
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true,
+                FriendlyName = "Help Ukraine",
+                LinkURL = "/help-ukraine",
+                ShortName = "Help Ukraine",
+                GeographicName = "Help Ukraine",
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -453,7 +467,15 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.BostonGNS,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });            
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.UkraineRefugees,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.UkraineRefugees,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
+            });
         }
 
         public static void RequestHelpJourney(this EntityTypeBuilder<RequestHelpJourney> entity)
@@ -775,6 +797,18 @@ namespace GroupService.Repo.Helpers
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.BostonGNS_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.UkraineRefugees,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.UkraineRefugees_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,

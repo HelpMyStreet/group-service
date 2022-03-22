@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220321192558_AddUkraineRefugees_Step1")]
+    partial class AddUkraineRefugees_Step1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1827,6 +1829,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
@@ -6704,46 +6711,6 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestHelpFormVariantId = (byte)18,
                             SupportActivityId = 11,
                             DisplayOrder = (byte)7,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 34,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = true,
-                            Label = "Providing accommodation for  refugees (minimum six months)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 1,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 7,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Calling someone in need of a friendly chat"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 10,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "Reaching out to people in my area to check-in"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)5,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
                         });
