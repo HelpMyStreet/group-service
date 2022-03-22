@@ -57,7 +57,8 @@ namespace GroupService.Repo.Helpers
                 { Groups.Southwell, 31 },
                 { Groups.ApexBankStaff, 32 },
                 { Groups.AgeUKMidMersey, 33 },
-                { Groups.BostonGNS, 34 }
+                { Groups.BostonGNS, 34 },
+                { Groups.UkraineRefugees, 35 }
 
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
@@ -87,7 +88,8 @@ namespace GroupService.Repo.Helpers
                 Groups.Generic,
                 Groups.Southwell,
                 Groups.AgeUKMidMersey,
-                Groups.BostonGNS
+                Groups.BostonGNS,
+                Groups.UkraineRefugees
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
