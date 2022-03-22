@@ -594,7 +594,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupCredential
             {
                 GroupId = (int)Groups.UkraineRefugees,
-                CredentialId = MANUALLY_VERIFIED,
+                CredentialId = APPROVED_HOST,
                 CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
                 Name = "Approved Host",
                 HowToAchieve = $"Hosts must be approved before they can be matched to a request for accommodation. A member of our team will be in touch as soon as possible to start the process.",

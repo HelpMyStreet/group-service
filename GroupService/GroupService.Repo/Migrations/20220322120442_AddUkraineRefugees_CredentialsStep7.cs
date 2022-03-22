@@ -2,7 +2,7 @@
 
 namespace GroupService.Repo.Migrations
 {
-    public partial class AddUkraineRefugees_CredentialsStep6 : Migration
+    public partial class AddUkraineRefugees_CredentialsStep7 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

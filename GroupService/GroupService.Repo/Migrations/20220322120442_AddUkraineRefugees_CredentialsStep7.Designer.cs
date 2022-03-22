@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220322115353_AddUkraineRefugees_CredentialsStep6")]
-    partial class AddUkraineRefugees_CredentialsStep6
+    [Migration("20220322120442_AddUkraineRefugees_CredentialsStep7")]
+    partial class AddUkraineRefugees_CredentialsStep7
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -3987,7 +3987,7 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -35,
-                            CredentialId = 1,
+                            CredentialId = 11,
                             CredentialTypeId = (byte)2,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 2,
