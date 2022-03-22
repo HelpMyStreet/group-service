@@ -1198,6 +1198,15 @@ namespace GroupService.Repo.Helpers
                 Longitude = -0.02500M,
                 ZoomLevel = 13.8M
             });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.UkraineRefugees,
+                Latitude = 55.0M,
+                Longitude = -4.5M,
+                ZoomLevel = 5.3M
+            });
         }
     }
 }
