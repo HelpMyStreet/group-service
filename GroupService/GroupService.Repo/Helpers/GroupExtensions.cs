@@ -474,7 +474,7 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.UkraineRefugees,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.UkraineRefugees,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
+                TargetGroups = (byte)TargetGroups.GenericGroup
             });
         }
 
@@ -808,7 +808,7 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.UkraineRefugees,
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.UkraineRefugees_RequestSubmitter,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
