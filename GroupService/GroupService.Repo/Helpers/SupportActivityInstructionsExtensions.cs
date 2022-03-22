@@ -1720,40 +1720,40 @@ namespace GroupService.Repo.Helpers
             };
         }
 
-        //private static Instructions GetInstructions_UKRANIAN_Accomodation()
-        //{
-        //    return new Instructions()
-        //    {
-        //        SupportActivityInstructions = SupportActivityInstructionsEnum.UKRANIAN_Accomodation,
-        //        Intro = null,
-        //        Steps = new System.Collections.Generic.List<Step>()
-        //        {
-        //            new Step()
-        //            {
-        //                Heading = "Make sure you’ve found an appropriate match",
-        //                Detail = "Make sure you have read all of the information available and are happy that you can provide suitable accommodation for the person(s) requesting help.",
-        //            },
-        //            new Step()
-        //            {
-        //                Heading = "Click to ‘Accept’",
-        //                Detail = "If you’re happy you’ll provide a good match, click to accept the request. Please only accept one request for each property / room you have available - if you accept multiple requests you may make the process slower for the person(s) requesting help.",
-        //            },
-        //            new Step()
-        //            {
-        //                Heading = "Contact the request coordinator",
-        //                Detail  = "Use the details in the ‘My requests’ section of your profile to contact the request coordinator who will be able to provide more information. If your match is accepted they will also be able to provide the details of the person(s) requesting help."
-        //            },
-        //            new Step()
-        //            {
-        //                Heading = "Mark the request as complete",
-        //                Detail  = "Let us know when the person(s) you’re helping have moved in by marking the request as complete in “My Requests”."
-        //            }
-        //        },
-        //        Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do”. This will automatically notify everyone involved in the request for you."
-        //    };
-        //}
+        private static Instructions GetInstructions_UKRANIAN_Accomodation()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.UKRANIAN_Accomodation,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Make sure you’ve found an appropriate match",
+                        Detail = "Make sure you have read all of the information available and are happy that you can provide suitable accommodation for the person(s) requesting help.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Click to ‘Accept’",
+                        Detail = "If you’re happy you’ll provide a good match, click to accept the request. Please only accept one request for each property / room you have available - if you accept multiple requests you may make the process slower for the person(s) requesting help.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Contact the request coordinator",
+                        Detail  = "Use the details in the ‘My requests’ section of your profile to contact the request coordinator who will be able to provide more information. If your match is accepted they will also be able to provide the details of the person(s) requesting help."
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail  = "Let us know when the person(s) you’re helping have moved in by marking the request as complete in “My Requests”."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do”. This will automatically notify everyone involved in the request for you."
+            };
+        }
 
-        
+
 
         private static Instructions GetInstructions_AgeUK_MidMersey_Befriending()
         {
@@ -2133,13 +2133,13 @@ namespace GroupService.Repo.Helpers
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUK_MidMersey_Befriending())
             });
 
-            //entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
-            //{
-            //    SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.UKRANIAN_Accomodation,
-            //    Instructions = JsonConvert.SerializeObject(GetInstructions_UKRANIAN_Accomodation())
-            //});
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.UKRANIAN_Accomodation,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_UKRANIAN_Accomodation())
+            });
 
-            
+
         }
 
 
@@ -2296,7 +2296,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.BostonGNS, SupportActivities.DigitalSupport, SupportActivityInstructionsEnum.HMS_General, 20);
             Populate(entity, Groups.BostonGNS, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
 
-            //Populate(entity, Groups.UkraineRefugees, SupportActivities.Accommodation, SupportActivityInstructionsEnum.UKRANIAN_Accomodation, 100);
+            Populate(entity, Groups.UkraineRefugees, SupportActivities.Accommodation, SupportActivityInstructionsEnum.UKRANIAN_Accomodation, 100);
             Populate(entity, Groups.UkraineRefugees, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping, 20);
             Populate(entity, Groups.UkraineRefugees, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, 2000);
             Populate(entity, Groups.UkraineRefugees, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn, 20);
