@@ -763,6 +763,9 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_REFERENCES_CREDENTIAL_SET);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);
+
+            var ukranianActivities = new List<SupportActivities> { SupportActivities.Accommodation, SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.CheckingIn, SupportActivities.Other};
+            SetActivityCredentialSet(entity, Groups.UkraineRefugees, ukranianActivities, IDENTITY_CREDENTIAL_SETS[Groups.UkraineRefugees]);
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)
