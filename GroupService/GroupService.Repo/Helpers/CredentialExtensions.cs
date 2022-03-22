@@ -35,6 +35,7 @@ namespace GroupService.Repo.Helpers
         private const int VACCINATOR_TRAINING = 8;
         private const int BANK_DETAILS = 9;
         private const int SAFEGUARDING_TRAINING = 10;
+        private const int APPROVED_HOST = 11;
 
         public static void InitialiseCredentialSets()
         {
@@ -167,6 +168,12 @@ namespace GroupService.Repo.Helpers
             {
                 Id = SAFEGUARDING_TRAINING,
                 Name = "Safeguarding Training"
+            });
+
+            entity.HasData(new Credential
+            {
+                Id = APPROVED_HOST,
+                Name = "Approved Host"
             });
         }
 
