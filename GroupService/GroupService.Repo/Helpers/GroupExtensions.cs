@@ -1203,9 +1203,9 @@ namespace GroupService.Repo.Helpers
             {
                 MapLocationId = (byte)MapLocation.Landing,
                 GroupId = (int)Groups.UkraineRefugees,
-                Latitude = 55.0M,
+                Latitude = 54.55M,
                 Longitude = -4.5M,
-                ZoomLevel = 5.3M
+                ZoomLevel = 5.1M
             });
         }
     }
