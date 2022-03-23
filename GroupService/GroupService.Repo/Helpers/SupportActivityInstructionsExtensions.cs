@@ -2296,7 +2296,7 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.BostonGNS, SupportActivities.DigitalSupport, SupportActivityInstructionsEnum.HMS_General, 20);
             Populate(entity, Groups.BostonGNS, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
 
-            Populate(entity, Groups.UkraineRefugees, SupportActivities.Accommodation, SupportActivityInstructionsEnum.UKRANIAN_Accomodation, 100);
+            Populate(entity, Groups.UkraineRefugees, SupportActivities.Accommodation, SupportActivityInstructionsEnum.UKRANIAN_Accomodation, 300);
             Populate(entity, Groups.UkraineRefugees, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping, 20);
             Populate(entity, Groups.UkraineRefugees, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, 2000);
             Populate(entity, Groups.UkraineRefugees, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn, 20);
