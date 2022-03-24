@@ -138,7 +138,7 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.UkraineRefugees,
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
-                MaxVolunteer = int.MaxValue
+                MaxVolunteer = 0
             });
         }
     }
