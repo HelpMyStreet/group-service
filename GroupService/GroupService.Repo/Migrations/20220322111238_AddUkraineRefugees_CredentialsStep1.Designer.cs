@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220322111238_AddUkraineRefugees_CredentialsStep1")]
+    partial class AddUkraineRefugees_CredentialsStep1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1363,48 +1365,6 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 11,
                             CredentialSetId = 3410,
                             DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 34,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 1,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 7,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 10,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 11,
-                            CredentialSetId = 35,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            ActivityId = 34,
-                            CredentialSetId = 3511,
-                            DisplayOrder = 0
                         });
                 });
 
@@ -1595,12 +1555,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 35,
-                            GroupId = -35,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1772,12 +1726,6 @@ namespace GroupService.Repo.Migrations
                             Id = 345,
                             GroupId = -34,
                             CredentialId = 5
-                        },
-                        new
-                        {
-                            Id = 3511,
-                            GroupId = -35,
-                            CredentialId = 11
                         });
                 });
 
@@ -1886,6 +1834,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
@@ -2656,7 +2609,7 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 34,
-                            FriendlyName = "Accommodation",
+                            FriendlyName = "Accomodation",
                             Name = "Accommodation"
                         });
                 });
@@ -2989,11 +2942,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 63,
                             Name = "APH_WellBeingVisit"
-                        },
-                        new
-                        {
-                            Id = 64,
-                            Name = "UKRANIAN_Accommodation"
                         });
                 });
 
@@ -3390,11 +3338,6 @@ You will also be expected to make a minimum commitment of six months.",
                             GroupName = "Help Ukraine",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
-                            JoinGroupPopUpDetail = @"To become a host / sponsor for people forced to escape their homeland you will need to be able to provide at least six months’ accommodation and can be living in any part of the UK. You must be over 18, and can be of any nationality, with any immigration status, providing you have at least 6 months’ leave to remain in the UK.
-
-To ensure a safe and suitable environment for  those requiring accommodation, we’re going to be carrying out checks (background and in-person) on you as a sponsor, your family and the accommodation that you will provide.
-
-Please only continue with your registration if you can meet these terms.",
                             LinkURL = "/help-ukraine",
                             ShiftsEnabled = false,
                             ShortName = "Help Ukraine",
@@ -3625,18 +3568,6 @@ Please only continue with your registration if you can meet these terms.",
                         new
                         {
                             GroupId = -34,
-                            CredentialId = -1,
-                            CredentialTypeId = (byte)1,
-                            CredentialVerifiedById = (byte)1,
-                            DisplayOrder = 1,
-                            HowToAchieve = "Complete online",
-                            HowToAchieve_CTA_Destination = "/account?next=verify",
-                            Name = "Yoti ID Verification",
-                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
-                        },
-                        new
-                        {
-                            GroupId = -35,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)1,
@@ -3993,18 +3924,6 @@ Please only continue with your registration if you can meet these terms.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            CredentialId = 11,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 2,
-                            HowToAchieve = "Hosts must be approved before they can be matched to a request for accommodation. A member of our team will be in touch as soon as possible to start the process.",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Approved Host",
-                            WhatIsThis = "Use this credential to certify that a host has completed all of the necessary checks and is approved for hosting. Volunteer admins should follow internal processes for manually verifying an approved host."
                         });
                 });
 
@@ -4481,14 +4400,6 @@ Please only continue with your registration if you can meet these terms.",
                             Latitude = 52.979m,
                             Longitude = -0.02500m,
                             ZoomLevel = 13.8m
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            MapLocationId = (byte)0,
-                            Latitude = 54.55m,
-                            Longitude = -4.5m,
-                            ZoomLevel = 5.1m
                         });
                 });
 
@@ -4620,7 +4531,7 @@ Please only continue with your registration if you can meet these terms.",
                         new
                         {
                             GroupId = -35,
-                            MaxVolunteer = 0,
+                            MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         });
                 });
@@ -5487,41 +5398,6 @@ Please only continue with your registration if you can meet these terms.",
                         new
                         {
                             GroupId = -34,
-                            SupportActivityId = 11,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            SupportActivityId = 34,
-                            Radius = 300.0,
-                            SupportActivityInstructionsId = (short)64
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            SupportActivityId = 1,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)1
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            SupportActivityId = 7,
-                            Radius = 2000.0,
-                            SupportActivityInstructionsId = (short)4
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            SupportActivityId = 10,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)6
-                        },
-                        new
-                        {
-                            GroupId = -35,
                             SupportActivityId = 11,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)2
@@ -6849,7 +6725,7 @@ Please only continue with your registration if you can meet these terms.",
                             SupportActivityId = 34,
                             DisplayOrder = (byte)1,
                             IsPreSelected = true,
-                            Label = "Providing accommodation"
+                            Label = "Providing accommodation for  refugees (minimum six months)"
                         },
                         new
                         {
@@ -7040,7 +6916,7 @@ Please only continue with your registration if you can meet these terms.",
                             GroupId = -35,
                             Source = "",
                             RegistrationFormVariant = (byte)19,
-                            TargetGroups = (byte)4
+                            TargetGroups = (byte)5
                         });
                 });
 
@@ -7385,7 +7261,7 @@ Please only continue with your registration if you can meet these terms.",
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)4
+                            TargetGroups = (byte)5
                         });
                 });
 
@@ -8143,11 +8019,6 @@ Please only continue with your registration if you can meet these terms.",
                         {
                             SupportActivityInstructionsId = (short)58,
                             Instructions = "{\"SupportActivityInstructions\":58,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Arrange a visit\",\"Detail\":\"Give them a call to arrange a visit – find a time and a place that suits you both.\"},{\"Heading\":\"Enjoy your visit\",\"Detail\":\"Meet up as agreed and have a good chat. If it’s going well, you could arrange your next visit too!\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)64,
-                            Instructions = "{\"SupportActivityInstructions\":64,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Make sure you’ve found an appropriate match\",\"Detail\":\"Make sure you have read all of the information available and are happy that you can provide suitable accommodation for the person(s) requesting help.\"},{\"Heading\":\"Click to ‘Accept’\",\"Detail\":\"If you’re happy you’ll provide a good match, click to accept the request. Please only accept one request for each property / room you have available - if you accept multiple requests you may make the process slower for the person(s) requesting help.\"},{\"Heading\":\"Contact the request coordinator\",\"Detail\":\"Use the details in the ‘My requests’ section of your profile to contact the request coordinator who will be able to provide more information. If your match is accepted they will also be able to provide the details of the person(s) requesting help.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"Let us know when the person(s) you’re helping have moved in by marking the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do”. This will automatically notify everyone involved in the request for you.\"}"
                         });
                 });
 

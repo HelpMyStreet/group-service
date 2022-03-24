@@ -23,6 +23,7 @@ namespace GroupService.Repo.Helpers
         private const int APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET = 329;
         private const int BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET = 3410;
         private const int BOSTONGNS_REFERENCES_CREDENTIAL_SET = 345;
+        private const int UKRANIAN_APPROVEDHOST_CREDENTIAL_SET = 3511;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -35,6 +36,7 @@ namespace GroupService.Repo.Helpers
         private const int VACCINATOR_TRAINING = 8;
         private const int BANK_DETAILS = 9;
         private const int SAFEGUARDING_TRAINING = 10;
+        private const int APPROVED_HOST = 11;
 
         public static void InitialiseCredentialSets()
         {
@@ -56,7 +58,8 @@ namespace GroupService.Repo.Helpers
                 { Groups.Southwell, 31 },
                 { Groups.ApexBankStaff, 32 },
                 { Groups.AgeUKMidMersey, 33 },
-                { Groups.BostonGNS, 34 }
+                { Groups.BostonGNS, 34 },
+                { Groups.UkraineRefugees, 35 }
 
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
@@ -86,7 +89,8 @@ namespace GroupService.Repo.Helpers
                 Groups.Generic,
                 Groups.Southwell,
                 Groups.AgeUKMidMersey,
-                Groups.BostonGNS
+                Groups.BostonGNS,
+                Groups.UkraineRefugees
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
@@ -103,7 +107,8 @@ namespace GroupService.Repo.Helpers
                 Groups.Southwell,
                 Groups.ApexBankStaff,
                 Groups.AgeUKMidMersey,
-                Groups.BostonGNS
+                Groups.BostonGNS,
+               // Groups.UkraineRefugees
             };
         }
 
@@ -167,6 +172,12 @@ namespace GroupService.Repo.Helpers
             {
                 Id = SAFEGUARDING_TRAINING,
                 Name = "Safeguarding Training"
+            });
+
+            entity.HasData(new Credential
+            {
+                Id = APPROVED_HOST,
+                Name = "Approved Host"
             });
         }
 
@@ -579,6 +590,19 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 5,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.UkraineRefugees,
+                CredentialId = APPROVED_HOST,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "Approved Host",
+                HowToAchieve = $"Hosts must be approved before they can be matched to a request for accommodation. A member of our team will be in touch as soon as possible to start the process.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that a host has completed all of the necessary checks and is approved for hosting. Volunteer admins should follow internal processes for manually verifying an approved host.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -668,6 +692,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.BostonGNS,
                 CredentialId = REFERENCES,
             });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = UKRANIAN_APPROVEDHOST_CREDENTIAL_SET,
+                GroupId = (int)Groups.UkraineRefugees,
+                CredentialId = APPROVED_HOST,
+            });
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
@@ -754,6 +785,10 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_REFERENCES_CREDENTIAL_SET);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);
+
+            var ukranianActivities = new List<SupportActivities> { SupportActivities.Accommodation, SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.CheckingIn, SupportActivities.Other};
+            SetActivityCredentialSet(entity, Groups.UkraineRefugees, ukranianActivities, IDENTITY_CREDENTIAL_SETS[Groups.UkraineRefugees]);
+            SetActivityCredentialSet(entity, Groups.UkraineRefugees, new List<SupportActivities> { SupportActivities.Accommodation }, UKRANIAN_APPROVEDHOST_CREDENTIAL_SET);
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)

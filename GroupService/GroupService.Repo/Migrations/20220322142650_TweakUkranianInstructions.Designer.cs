@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220322142650_TweakUkranianInstructions")]
+    partial class TweakUkranianInstructions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1886,6 +1888,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
@@ -2656,7 +2663,7 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 34,
-                            FriendlyName = "Accommodation",
+                            FriendlyName = "Accomodation",
                             Name = "Accommodation"
                         });
                 });
@@ -2993,7 +3000,7 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 64,
-                            Name = "UKRANIAN_Accommodation"
+                            Name = "UKRANIAN_Accomodation"
                         });
                 });
 
@@ -3390,11 +3397,6 @@ You will also be expected to make a minimum commitment of six months.",
                             GroupName = "Help Ukraine",
                             GroupType = (byte)0,
                             HomepageEnabled = true,
-                            JoinGroupPopUpDetail = @"To become a host / sponsor for people forced to escape their homeland you will need to be able to provide at least six months’ accommodation and can be living in any part of the UK. You must be over 18, and can be of any nationality, with any immigration status, providing you have at least 6 months’ leave to remain in the UK.
-
-To ensure a safe and suitable environment for  those requiring accommodation, we’re going to be carrying out checks (background and in-person) on you as a sponsor, your family and the accommodation that you will provide.
-
-Please only continue with your registration if you can meet these terms.",
                             LinkURL = "/help-ukraine",
                             ShiftsEnabled = false,
                             ShortName = "Help Ukraine",
@@ -4481,14 +4483,6 @@ Please only continue with your registration if you can meet these terms.",
                             Latitude = 52.979m,
                             Longitude = -0.02500m,
                             ZoomLevel = 13.8m
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            MapLocationId = (byte)0,
-                            Latitude = 54.55m,
-                            Longitude = -4.5m,
-                            ZoomLevel = 5.1m
                         });
                 });
 
@@ -4620,7 +4614,7 @@ Please only continue with your registration if you can meet these terms.",
                         new
                         {
                             GroupId = -35,
-                            MaxVolunteer = 0,
+                            MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         });
                 });
@@ -5495,7 +5489,7 @@ Please only continue with your registration if you can meet these terms.",
                         {
                             GroupId = -35,
                             SupportActivityId = 34,
-                            Radius = 300.0,
+                            Radius = 100.0,
                             SupportActivityInstructionsId = (short)64
                         },
                         new
@@ -6849,7 +6843,7 @@ Please only continue with your registration if you can meet these terms.",
                             SupportActivityId = 34,
                             DisplayOrder = (byte)1,
                             IsPreSelected = true,
-                            Label = "Providing accommodation"
+                            Label = "Providing accommodation for  refugees (minimum six months)"
                         },
                         new
                         {
