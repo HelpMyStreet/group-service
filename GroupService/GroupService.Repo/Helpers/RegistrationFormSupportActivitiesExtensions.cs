@@ -40,6 +40,7 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.DigitalSupport => "Providing digital support for people struggling with technology",
                 SupportActivities.BankStaffVaccinator => "Covering bank staff vaccinator shifts (this is a paid role)",
                 SupportActivities.SkillShare => "Giving my time to share my skills and interests with other people who are interested to learn more",
+                SupportActivities.Accommodation => "Providing accommodation",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
         }
@@ -1573,6 +1574,50 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 7
             });
         }
+
+        private static void SetUkranianRefugeesActivities(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
+        {
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.UkraineRefugees,
+                SupportActivityId = (int)SupportActivities.Accommodation,
+                Label = SupportActivities.Accommodation.GetLabel(),
+                IsPreSelected = true,
+                DisplayOrder = 1
+            });
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.UkraineRefugees,
+                SupportActivityId = (int)SupportActivities.Shopping,
+                Label = SupportActivities.Shopping.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 2
+            });
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.UkraineRefugees,
+                SupportActivityId = (int)SupportActivities.PhoneCalls_Friendly,
+                Label = SupportActivities.PhoneCalls_Friendly.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 3
+            });
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.UkraineRefugees,
+                SupportActivityId = (int)SupportActivities.CheckingIn,
+                Label = SupportActivities.CheckingIn.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 4
+            });
+            entity.HasData(new RegistrationFormSupportActivity
+            {
+                RequestHelpFormVariantId = (byte)RegistrationFormVariant.UkraineRefugees,
+                SupportActivityId = (int)SupportActivities.Other,
+                Label = SupportActivities.Other.GetLabel(),
+                IsPreSelected = false,
+                DisplayOrder = 5
+            });
+        }
         public static void SetRegistrationFormSupportActivitiesExtensionsData(this EntityTypeBuilder<RegistrationFormSupportActivity> entity)
         {
             SetDefaultSupportActivities(entity);
@@ -1593,6 +1638,7 @@ namespace GroupService.Repo.Helpers
             SetApexBankStaffActivities(entity);
             SetAgeUKMidMerseyActivities(entity);
             SetBostonGNSActivities(entity);
+            SetUkranianRefugeesActivities(entity);
         }        
 
     }

@@ -103,6 +103,12 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.BostonGNS,
                 AllowAutonomousJoinersAndLeavers = true
             });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.UkraineRefugees,
+                AllowAutonomousJoinersAndLeavers = true
+            });
         }
     }
 }

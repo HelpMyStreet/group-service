@@ -304,6 +304,23 @@ namespace GroupService.Repo.Helpers
                 ShortName = "Boston",
                 GeographicName = "Boston or surrounding areas",
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.UkraineRefugees,
+                GroupName = "Help Ukraine",
+                GroupKey = "help-ukraine",
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = true,
+                FriendlyName = "Help Ukraine",
+                LinkURL = "/help-ukraine",
+                ShortName = "Help Ukraine",
+                GeographicName = "Help Ukraine",
+                JoinGroupPopUpDetail = "To become a host / sponsor for people forced to escape their homeland you will need to be able to provide at least six months’ accommodation and can be living in any part of the UK. You must be over 18, and can be of any nationality, with any immigration status, providing you have at least 6 months’ leave to remain in the UK." + Environment.NewLine + Environment.NewLine +
+                "To ensure a safe and suitable environment for  those requiring accommodation, we’re going to be carrying out checks (background and in-person) on you as a sponsor, your family and the accommodation that you will provide." + Environment.NewLine + Environment.NewLine +
+                "Please only continue with your registration if you can meet these terms."
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -453,7 +470,15 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.BostonGNS,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });            
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.UkraineRefugees,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.UkraineRefugees,
+                TargetGroups = (byte)TargetGroups.GenericGroup
+            });
         }
 
         public static void RequestHelpJourney(this EntityTypeBuilder<RequestHelpJourney> entity)
@@ -775,6 +800,18 @@ namespace GroupService.Repo.Helpers
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.BostonGNS_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.UkraineRefugees,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.UkraineRefugees_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
@@ -1160,6 +1197,15 @@ namespace GroupService.Repo.Helpers
                 Latitude = 52.979M,
                 Longitude = -0.02500M,
                 ZoomLevel = 13.8M
+            });
+
+            entity.HasData(new GroupMapDetails
+            {
+                MapLocationId = (byte)MapLocation.Landing,
+                GroupId = (int)Groups.UkraineRefugees,
+                Latitude = 54.55M,
+                Longitude = -4.5M,
+                ZoomLevel = 5.1M
             });
         }
     }
