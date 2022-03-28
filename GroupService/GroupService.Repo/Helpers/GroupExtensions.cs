@@ -318,14 +318,12 @@ namespace GroupService.Repo.Helpers
                 ShortName = "Help Ukraine",
                 GeographicName = "Help Ukraine",
                 JoinGroupPopUpDetail = $"This group has been created to help prospective UK hosts find a suitable match for the UK Government Homes " +
-                $"for Ukraine Scheme. Please only register if the following apply:" +
-                $"<ul>" +
-                $"<li>You are 18 or over</li>" +
-                $"<li>You are able to offer accommodation for at least 6 months</li>" +
-                $"<li>You are a British citizen or have leave to remain in the UK for at least 6 months</li>" +
-                $"<li>You are looking to be a sponsor for UK Government Homes for Ukraine Scheme</li>" +
-                $"<li>You will submit a separate application to the UK Government Homes for Ukraine Scheme once a match has been confirmed</li>" +
-                $"</ul>" +
+                $"for Ukraine Scheme. Please only register if the following apply: " + Environment.NewLine+ Environment.NewLine +
+                $"* You are 18 or over" + Environment.NewLine + Environment.NewLine +
+                $"* You are able to offer accommodation for at least 6 months" + Environment.NewLine + Environment.NewLine +
+                $"* You are a British citizen or have leave to remain in the UK for at least 6 months" + Environment.NewLine + Environment.NewLine +
+                $"* You are looking to be a sponsor for UK Government Homes for Ukraine Scheme" + Environment.NewLine + Environment.NewLine +
+                $"* You will submit a separate application to the UK Government Homes for Ukraine Scheme once a match has been confirmed" + Environment.NewLine + Environment.NewLine +
                 $"You will need to verify your identity with photographic ID to access a match using this site. The UK Government may also carry out their own " +
                 $"checks following an application to the scheme. Please only continue with your registration if you can meet these terms."
             });
