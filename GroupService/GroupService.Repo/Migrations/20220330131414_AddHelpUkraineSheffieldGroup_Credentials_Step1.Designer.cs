@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220330131414_AddHelpUkraineSheffieldGroup_Credentials_Step1")]
+    partial class AddHelpUkraineSheffieldGroup_Credentials_Step1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1405,41 +1407,6 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 34,
                             CredentialSetId = 3511,
                             DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            ActivityId = 34,
-                            CredentialSetId = 36,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            ActivityId = 1,
-                            CredentialSetId = 36,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            ActivityId = 7,
-                            CredentialSetId = 36,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            ActivityId = 10,
-                            CredentialSetId = 36,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            ActivityId = 11,
-                            CredentialSetId = 36,
-                            DisplayOrder = 0
                         });
                 });
 
@@ -1632,12 +1599,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 35,
                             GroupId = -35,
-                            CredentialId = -1
-                        },
-                        new
-                        {
-                            Id = 36,
-                            GroupId = -36,
                             CredentialId = -1
                         },
                         new
@@ -1927,6 +1888,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
@@ -3454,7 +3420,7 @@ You will need to verify your identity with photographic ID to access a match usi
                             Id = -36,
                             FriendlyName = "Help Ukraine Sheffield",
                             GeographicName = "Help Ukraine Sheffield",
-                            GroupKey = "help-ukraine-sheffield",
+                            GroupKey = "help-ukraine",
                             GroupName = "Help Ukraine Sheffield",
                             GroupType = (byte)0,
                             HomepageEnabled = false,

@@ -327,6 +327,22 @@ namespace GroupService.Repo.Helpers
                 $"You will need to verify your identity with photographic ID to access a match using this site. The UK Government may also carry out their own " +
                 $"checks following an application to the scheme. Please only continue with your registration if you can meet these terms."
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.HelpUkraineSheffield,
+                GroupName = "Help Ukraine Sheffield",
+                GroupKey = "help-ukraine-sheffield",
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = false,
+                FriendlyName = "Help Ukraine Sheffield",
+                LinkURL = "/help-ukraine-sheffield",
+                ShortName = "Help Ukraine Sheffield",
+                GeographicName = "Help Ukraine Sheffield",
+                JoinGroupPopUpDetail = null,
+                ParentGroupId = (int) Groups.UkraineRefugees
+            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -481,6 +497,14 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.UkraineRefugees,
+                Source = "",
+                RegistrationFormVariant = (byte)RegistrationFormVariant.UkraineRefugees,
+                TargetGroups = (byte)TargetGroups.GenericGroup
+            });
+
+            entity.HasData(new RegistrationJourney
+            {
+                GroupId = (int)Groups.HelpUkraineSheffield,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.UkraineRefugees,
                 TargetGroups = (byte)TargetGroups.GenericGroup
@@ -815,6 +839,18 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = (int)Groups.UkraineRefugees,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.UkraineRefugees_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.HelpUkraineSheffield,
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.UkraineRefugees_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
