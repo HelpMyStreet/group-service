@@ -10,7 +10,7 @@ namespace GroupService.Repo.Migrations
                 schema: "Group",
                 table: "Group",
                 columns: new[] { "Id", "FriendlyName", "GeographicName", "GroupKey", "GroupName", "GroupType", "HomepageEnabled", "JoinGroupPopUpDetail", "LinkURL", "ParentGroupId", "ShiftsEnabled", "ShortName", "TasksEnabled" },
-                values: new object[] { -36, "Help Ukraine Sheffield", "Help Ukraine Sheffield", "help-ukraine", "Help Ukraine Sheffield", (byte)0, false, null, "/help-ukraine-sheffield", -35, false, "Help Ukraine Sheffield", true });
+                values: new object[] { -36, "Help Ukraine Sheffield", "Help Ukraine Sheffield", "help-ukraine-sheffield", "Help Ukraine Sheffield", (byte)0, false, null, "/help-ukraine-sheffield", -35, false, "Help Ukraine Sheffield", true });
 
             migrationBuilder.InsertData(
                 schema: "Website",
