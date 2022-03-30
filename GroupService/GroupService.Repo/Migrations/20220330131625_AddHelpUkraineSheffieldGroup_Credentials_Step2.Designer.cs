@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220330131625_AddHelpUkraineSheffieldGroup_Credentials_Step2")]
+    partial class AddHelpUkraineSheffieldGroup_Credentials_Step2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1405,41 +1407,6 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 34,
                             CredentialSetId = 3511,
                             DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            ActivityId = 34,
-                            CredentialSetId = 36,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            ActivityId = 1,
-                            CredentialSetId = 36,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            ActivityId = 7,
-                            CredentialSetId = 36,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            ActivityId = 10,
-                            CredentialSetId = 36,
-                            DisplayOrder = 0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            ActivityId = 11,
-                            CredentialSetId = 36,
-                            DisplayOrder = 0
                         });
                 });
 
@@ -1927,6 +1894,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
