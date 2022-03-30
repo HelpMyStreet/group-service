@@ -109,6 +109,12 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.UkraineRefugees,
                 AllowAutonomousJoinersAndLeavers = true
             });
+
+            entity.HasData(new SecurityConfiguration
+            {
+                GroupId = (int)Groups.HelpUkraineSheffield,
+                AllowAutonomousJoinersAndLeavers = false
+            });
         }
     }
 }
