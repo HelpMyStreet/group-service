@@ -332,7 +332,7 @@ namespace GroupService.Repo.Helpers
             {
                 Id = (int)Groups.HelpUkraineSheffield,
                 GroupName = "Help Ukraine Sheffield",
-                GroupKey = "help-ukraine",
+                GroupKey = "help-ukraine-sheffield",
                 ShiftsEnabled = false,
                 TasksEnabled = true,
                 HomepageEnabled = false,
