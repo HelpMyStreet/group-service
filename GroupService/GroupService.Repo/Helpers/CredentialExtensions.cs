@@ -59,8 +59,7 @@ namespace GroupService.Repo.Helpers
                 { Groups.ApexBankStaff, 32 },
                 { Groups.AgeUKMidMersey, 33 },
                 { Groups.BostonGNS, 34 },
-                { Groups.UkraineRefugees, 35 },
-                { Groups.HelpUkraineSheffield, 36 }
+                { Groups.UkraineRefugees, 35 }
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
             {
@@ -90,8 +89,7 @@ namespace GroupService.Repo.Helpers
                 Groups.Southwell,
                 Groups.AgeUKMidMersey,
                 Groups.BostonGNS,
-                Groups.UkraineRefugees,
-                Groups.HelpUkraineSheffield
+                Groups.UkraineRefugees
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
@@ -789,9 +787,7 @@ namespace GroupService.Repo.Helpers
 
             var ukranianActivities = new List<SupportActivities> { SupportActivities.Accommodation, SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.CheckingIn, SupportActivities.Other};
             SetActivityCredentialSet(entity, Groups.UkraineRefugees, ukranianActivities, IDENTITY_CREDENTIAL_SETS[Groups.UkraineRefugees]);
-            SetActivityCredentialSet(entity, Groups.UkraineRefugees, new List<SupportActivities> { SupportActivities.Accommodation }, UKRANIAN_APPROVEDHOST_CREDENTIAL_SET);
-
-            SetActivityCredentialSet(entity, Groups.HelpUkraineSheffield, ukranianActivities, IDENTITY_CREDENTIAL_SETS[Groups.HelpUkraineSheffield]);
+            SetActivityCredentialSet(entity, Groups.UkraineRefugees, new List<SupportActivities> { SupportActivities.Accommodation }, UKRANIAN_APPROVEDHOST_CREDENTIAL_SET);    
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)

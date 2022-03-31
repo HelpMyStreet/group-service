@@ -2301,13 +2301,6 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.UkraineRefugees, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, 2000);
             Populate(entity, Groups.UkraineRefugees, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn, 20);
             Populate(entity, Groups.UkraineRefugees, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
-
-            Populate(entity, Groups.HelpUkraineSheffield, SupportActivities.Accommodation, SupportActivityInstructionsEnum.UKRANIAN_Accommodation, 300);
-            Populate(entity, Groups.HelpUkraineSheffield, SupportActivities.Shopping, SupportActivityInstructionsEnum.HMS_Shopping, 20);
-            Populate(entity, Groups.HelpUkraineSheffield, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, 2000);
-            Populate(entity, Groups.HelpUkraineSheffield, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn, 20);
-            Populate(entity, Groups.HelpUkraineSheffield, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
-
         }
     }
 }

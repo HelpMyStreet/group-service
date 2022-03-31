@@ -140,13 +140,6 @@ namespace GroupService.Repo.Helpers
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
                 MaxVolunteer = 0
             });
-
-            entity.HasData(new GroupNewRequestNotificationStrategy
-            {
-                GroupId = (int)Groups.HelpUkraineSheffield,
-                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
-                MaxVolunteer = 0
-            });
         }
     }
 }
