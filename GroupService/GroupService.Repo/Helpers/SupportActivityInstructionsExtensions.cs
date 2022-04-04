@@ -1740,8 +1740,8 @@ namespace GroupService.Repo.Helpers
                     },
                     new Step()
                     {
-                        Heading = "Contact the request coordinator",
-                        Detail  = "Use the details in the ‘My requests’ section of your profile to contact the request coordinator who will be able to provide more information. If your match is accepted they will also be able to provide the details of the person(s) requesting help."
+                        Heading = "Make contact",
+                        Detail  = "Use the details in the ‘My requests’ section of your profile to make contact with the person requesting help. In some cases we may not be able to share their details with you directly and  you will have to contact the request coordinator for more information."
                     },
                     new Step()
                     {
@@ -1749,7 +1749,7 @@ namespace GroupService.Repo.Helpers
                         Detail  = "Let us know when the person(s) you’re helping have moved in by marking the request as complete in “My Requests”."
                     }
                 },
-                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do”. This will automatically notify everyone involved in the request for you."
+                Close = "If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do”. This will automatically notify everyone involved in the request for you and make the request visible to other volunteer hosts who may be able to help."
             };
         }
 
@@ -2301,7 +2301,6 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.UkraineRefugees, SupportActivities.PhoneCalls_Friendly, SupportActivityInstructionsEnum.HMS_FriendlyChat, 2000);
             Populate(entity, Groups.UkraineRefugees, SupportActivities.CheckingIn, SupportActivityInstructionsEnum.HMS_CheckIn, 20);
             Populate(entity, Groups.UkraineRefugees, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
-
         }
     }
 }

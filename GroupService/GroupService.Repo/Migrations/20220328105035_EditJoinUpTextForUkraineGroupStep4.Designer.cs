@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220328105035_EditJoinUpTextForUkraineGroupStep4")]
+    partial class EditJoinUpTextForUkraineGroupStep4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1886,6 +1888,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
@@ -4161,12 +4168,6 @@ You will need to verify your identity with photographic ID to access a match usi
                             GroupId = -34,
                             CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>For most volunteering opportunities we offer we will need to verify your ID and complete some basic training before you can start helping – this is to make things as safe as possible for you and the people we help. You’ll find all the details of the checks needed when you click to accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>The Boston Community\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"false\"}]"
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>HelpMyStreet is being made available to help prospective UK hosts find a suitable match for the UK Government Homes for Ukraine Scheme. If you find a suitable person / family on HelpMyStreet you will need to submit a separate application through the UK Government Homes for Ukraine Scheme to start the official process.</p><p>HelpMyStreet will be partnering with organisations and individuals who have experience with finding accommodation for people fleeing unsafe situations. Each partner will be able to bring their own processes for vetting hosts and those requesting help.</p><p>You are registering as a host. As a minimum you will need to verify your identity online using photographic ID. Some referring organisations may require additional checks - if these apply you’ll be shown the relevant details when you click to accept a request.</p><p>Many people fleeing Ukraine have some preference for where they are placed to make sure they are close to family, friends, or their wider community. This is important to make sure they are settled and supported in their new community. Our platform will notify you when new requests are submitted for accommodation in your area. If you have also expressed an interest in other volunteering activities the HelpMyStreet platform may also email you about other opportunities in your area.<p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Thank you for your offer of support,</p><p>From all at HelpMyStreet and our partners\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         });
                 });
 
@@ -8161,7 +8162,7 @@ You will need to verify your identity with photographic ID to access a match usi
                         new
                         {
                             SupportActivityInstructionsId = (short)64,
-                            Instructions = "{\"SupportActivityInstructions\":64,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Make sure you’ve found an appropriate match\",\"Detail\":\"Make sure you have read all of the information available and are happy that you can provide suitable accommodation for the person(s) requesting help.\"},{\"Heading\":\"Click to ‘Accept’\",\"Detail\":\"If you’re happy you’ll provide a good match, click to accept the request. Please only accept one request for each property / room you have available - if you accept multiple requests you may make the process slower for the person(s) requesting help.\"},{\"Heading\":\"Make contact\",\"Detail\":\"Use the details in the ‘My requests’ section of your profile to make contact with the person requesting help. In some cases we may not be able to share their details with you directly and  you will have to contact the request coordinator for more information.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"Let us know when the person(s) you’re helping have moved in by marking the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do”. This will automatically notify everyone involved in the request for you and make the request visible to other volunteer hosts who may be able to help.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":64,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Make sure you’ve found an appropriate match\",\"Detail\":\"Make sure you have read all of the information available and are happy that you can provide suitable accommodation for the person(s) requesting help.\"},{\"Heading\":\"Click to ‘Accept’\",\"Detail\":\"If you’re happy you’ll provide a good match, click to accept the request. Please only accept one request for each property / room you have available - if you accept multiple requests you may make the process slower for the person(s) requesting help.\"},{\"Heading\":\"Contact the request coordinator\",\"Detail\":\"Use the details in the ‘My requests’ section of your profile to contact the request coordinator who will be able to provide more information. If your match is accepted they will also be able to provide the details of the person(s) requesting help.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"Let us know when the person(s) you’re helping have moved in by marking the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do”. This will automatically notify everyone involved in the request for you.\"}"
                         });
                 });
 

@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220330124337_AddHelpUkraineSheffieldGroup_Step2")]
+    partial class AddHelpUkraineSheffieldGroup_Step2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1886,6 +1888,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
@@ -3406,6 +3413,21 @@ You will need to verify your identity with photographic ID to access a match usi
                             LinkURL = "/help-ukraine",
                             ShiftsEnabled = false,
                             ShortName = "Help Ukraine",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -36,
+                            FriendlyName = "Help Ukraine Sheffield",
+                            GeographicName = "Help Ukraine Sheffield",
+                            GroupKey = "help-ukraine",
+                            GroupName = "Help Ukraine Sheffield",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            LinkURL = "/help-ukraine-sheffield",
+                            ParentGroupId = -35,
+                            ShiftsEnabled = false,
+                            ShortName = "Help Ukraine Sheffield",
                             TasksEnabled = true
                         });
                 });
@@ -5539,6 +5561,41 @@ You will need to verify your identity with photographic ID to access a match usi
                             SupportActivityId = 11,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            SupportActivityId = 34,
+                            Radius = 300.0,
+                            SupportActivityInstructionsId = (short)64
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            SupportActivityId = 1,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)1
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            SupportActivityId = 7,
+                            Radius = 2000.0,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            SupportActivityId = 10,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            SupportActivityId = 11,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)2
                         });
                 });
 
@@ -7055,6 +7112,13 @@ You will need to verify your identity with photographic ID to access a match usi
                             Source = "",
                             RegistrationFormVariant = (byte)19,
                             TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            Source = "",
+                            RegistrationFormVariant = (byte)19,
+                            TargetGroups = (byte)4
                         });
                 });
 
@@ -7393,6 +7457,17 @@ You will need to verify your identity with photographic ID to access a match usi
                         new
                         {
                             GroupId = -35,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)33,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -36,
                             Source = "a",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)33,
