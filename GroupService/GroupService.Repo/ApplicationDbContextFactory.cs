@@ -19,8 +19,8 @@ namespace GroupService.Repo
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            var connectionStringSettings = configuration.GetSection("ConnectionStrings");
-            var connectionStrings = new ConnectionStrings();
+            IConfigurationSection connectionStringSettings = configuration.GetSection("ConnectionStrings");
+            var connectionStrings = new ConnectionStrings();            
             connectionStringSettings.Bind(connectionStrings);
 
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
