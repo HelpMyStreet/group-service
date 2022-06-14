@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220614072127_RemoveUkraineUsers_Step6")]
+    partial class RemoveUkraineUsers_Step6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1832,6 +1834,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
@@ -3325,6 +3332,33 @@ You will also be expected to make a minimum commitment of six months.",
                             LinkURL = "/boston",
                             ShiftsEnabled = false,
                             ShortName = "Boston",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -35,
+                            FriendlyName = "Help Ukraine",
+                            GeographicName = "Help Ukraine",
+                            GroupKey = "help-ukraine",
+                            GroupName = "Help Ukraine",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            JoinGroupPopUpDetail = @"This group has been created to help prospective UK hosts find a suitable match for the UK Government Homes for Ukraine Scheme. Please only register if the following apply: 
+
+* You are 18 or over
+
+* You are able to offer accommodation for at least 6 months
+
+* You are a British citizen or have leave to remain in the UK for at least 6 months
+
+* You are looking to be a sponsor for UK Government Homes for Ukraine Scheme
+
+* You will submit a separate application to the UK Government Homes for Ukraine Scheme once a match has been confirmed
+
+You will need to verify your identity with photographic ID to access a match using this site. The UK Government may also carry out their own checks following an application to the scheme. Please only continue with your registration if you can meet these terms.",
+                            LinkURL = "/help-ukraine",
+                            ShiftsEnabled = false,
+                            ShortName = "Help Ukraine",
                             TasksEnabled = true
                         });
                 });

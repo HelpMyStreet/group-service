@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220613150352_RemoveUkraineUsers")]
+    partial class RemoveUkraineUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1363,6 +1365,48 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 11,
                             CredentialSetId = 3410,
                             DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            ActivityId = 34,
+                            CredentialSetId = 35,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            ActivityId = 1,
+                            CredentialSetId = 35,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            ActivityId = 7,
+                            CredentialSetId = 35,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            ActivityId = 10,
+                            CredentialSetId = 35,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            ActivityId = 11,
+                            CredentialSetId = 35,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            ActivityId = 34,
+                            CredentialSetId = 3511,
+                            DisplayOrder = 0
                         });
                 });
 
@@ -1553,6 +1597,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 35,
+                            GroupId = -35,
+                            CredentialId = -1
+                        },
+                        new
+                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1724,6 +1774,12 @@ namespace GroupService.Repo.Migrations
                             Id = 345,
                             GroupId = -34,
                             CredentialId = 5
+                        },
+                        new
+                        {
+                            Id = 3511,
+                            GroupId = -35,
+                            CredentialId = 11
                         });
                 });
 
@@ -1832,6 +1888,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
@@ -3326,6 +3387,33 @@ You will also be expected to make a minimum commitment of six months.",
                             ShiftsEnabled = false,
                             ShortName = "Boston",
                             TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -35,
+                            FriendlyName = "Help Ukraine",
+                            GeographicName = "Help Ukraine",
+                            GroupKey = "help-ukraine",
+                            GroupName = "Help Ukraine",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            JoinGroupPopUpDetail = @"This group has been created to help prospective UK hosts find a suitable match for the UK Government Homes for Ukraine Scheme. Please only register if the following apply: 
+
+* You are 18 or over
+
+* You are able to offer accommodation for at least 6 months
+
+* You are a British citizen or have leave to remain in the UK for at least 6 months
+
+* You are looking to be a sponsor for UK Government Homes for Ukraine Scheme
+
+* You will submit a separate application to the UK Government Homes for Ukraine Scheme once a match has been confirmed
+
+You will need to verify your identity with photographic ID to access a match using this site. The UK Government may also carry out their own checks following an application to the scheme. Please only continue with your registration if you can meet these terms.",
+                            LinkURL = "/help-ukraine",
+                            ShiftsEnabled = false,
+                            ShortName = "Help Ukraine",
+                            TasksEnabled = true
                         });
                 });
 
@@ -3552,6 +3640,18 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -34,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -35,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)1,
@@ -3908,6 +4008,18 @@ You will also be expected to make a minimum commitment of six months.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            CredentialId = 11,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Hosts must be approved before they can be matched to a request for accommodation. A member of our team will be in touch as soon as possible to start the process.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Approved Host",
+                            WhatIsThis = "Use this credential to certify that a host has completed all of the necessary checks and is approved for hosting. Volunteer admins should follow internal processes for manually verifying an approved host."
                         });
                 });
 
@@ -4056,6 +4168,12 @@ You will also be expected to make a minimum commitment of six months.",
                             GroupId = -34,
                             CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>For most volunteering opportunities we offer we will need to verify your ID and complete some basic training before you can start helping – this is to make things as safe as possible for you and the people we help. You’ll find all the details of the checks needed when you click to accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>The Boston Community\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"false\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>HelpMyStreet is being made available to help prospective UK hosts find a suitable match for the UK Government Homes for Ukraine Scheme. If you find a suitable person / family on HelpMyStreet you will need to submit a separate application through the UK Government Homes for Ukraine Scheme to start the official process.</p><p>HelpMyStreet will be partnering with organisations and individuals who have experience with finding accommodation for people fleeing unsafe situations. Each partner will be able to bring their own processes for vetting hosts and those requesting help.</p><p>You are registering as a host. As a minimum you will need to verify your identity online using photographic ID. Some referring organisations may require additional checks - if these apply you’ll be shown the relevant details when you click to accept a request.</p><p>Many people fleeing Ukraine have some preference for where they are placed to make sure they are close to family, friends, or their wider community. This is important to make sure they are settled and supported in their new community. Our platform will notify you when new requests are submitted for accommodation in your area. If you have also expressed an interest in other volunteering activities the HelpMyStreet platform may also email you about other opportunities in your area.<p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Thank you for your offer of support,</p><p>From all at HelpMyStreet and our partners\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         });
                 });
 
@@ -4384,6 +4502,14 @@ You will also be expected to make a minimum commitment of six months.",
                             Latitude = 52.979m,
                             Longitude = -0.02500m,
                             ZoomLevel = 13.8m
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            MapLocationId = (byte)0,
+                            Latitude = 54.55m,
+                            Longitude = -4.5m,
+                            ZoomLevel = 5.1m
                         });
                 });
 
@@ -4510,6 +4636,12 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -12,
                             MaxVolunteer = 2147483647,
+                            NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            MaxVolunteer = 0,
                             NewRequestNotificationStrategyId = (byte)1
                         });
                 });
@@ -5376,6 +5508,41 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -34,
+                            SupportActivityId = 11,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            SupportActivityId = 34,
+                            Radius = 300.0,
+                            SupportActivityInstructionsId = (short)64
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            SupportActivityId = 1,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)1
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            SupportActivityId = 7,
+                            Radius = 2000.0,
+                            SupportActivityInstructionsId = (short)4
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            SupportActivityId = 10,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)6
+                        },
+                        new
+                        {
+                            GroupId = -35,
                             SupportActivityId = 11,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)2
@@ -6888,6 +7055,13 @@ You will also be expected to make a minimum commitment of six months.",
                             Source = "",
                             RegistrationFormVariant = (byte)18,
                             TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            Source = "",
+                            RegistrationFormVariant = (byte)19,
+                            TargetGroups = (byte)4
                         });
                 });
 
@@ -7222,6 +7396,17 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = true,
                             TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)33,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)4
                         });
                 });
 
@@ -7497,6 +7682,11 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -34,
+                            AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -35,
                             AllowAutonomousJoinersAndLeavers = true
                         });
                 });
@@ -7974,6 +8164,11 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             SupportActivityInstructionsId = (short)58,
                             Instructions = "{\"SupportActivityInstructions\":58,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Arrange a visit\",\"Detail\":\"Give them a call to arrange a visit – find a time and a place that suits you both.\"},{\"Heading\":\"Enjoy your visit\",\"Detail\":\"Meet up as agreed and have a good chat. If it’s going well, you could arrange your next visit too!\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)64,
+                            Instructions = "{\"SupportActivityInstructions\":64,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Make sure you’ve found an appropriate match\",\"Detail\":\"Make sure you have read all of the information available and are happy that you can provide suitable accommodation for the person(s) requesting help.\"},{\"Heading\":\"Click to ‘Accept’\",\"Detail\":\"If you’re happy you’ll provide a good match, click to accept the request. Please only accept one request for each property / room you have available - if you accept multiple requests you may make the process slower for the person(s) requesting help.\"},{\"Heading\":\"Make contact\",\"Detail\":\"Use the details in the ‘My requests’ section of your profile to make contact with the person requesting help. In some cases we may not be able to share their details with you directly and  you will have to contact the request coordinator for more information.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"Let us know when the person(s) you’re helping have moved in by marking the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request, let us know by updating the accepted request and clicking “Can’t Do”. This will automatically notify everyone involved in the request for you and make the request visible to other volunteer hosts who may be able to help.\"}"
                         });
                 });
 
