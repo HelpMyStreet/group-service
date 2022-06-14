@@ -304,29 +304,6 @@ namespace GroupService.Repo.Helpers
                 ShortName = "Boston",
                 GeographicName = "Boston or surrounding areas",
             });
-
-            entity.HasData(new Group
-            {
-                Id = (int)Groups.UkraineRefugees,
-                GroupName = "Help Ukraine",
-                GroupKey = "help-ukraine",
-                ShiftsEnabled = false,
-                TasksEnabled = true,
-                HomepageEnabled = true,
-                FriendlyName = "Help Ukraine",
-                LinkURL = "/help-ukraine",
-                ShortName = "Help Ukraine",
-                GeographicName = "Help Ukraine",
-                JoinGroupPopUpDetail = $"This group has been created to help prospective UK hosts find a suitable match for the UK Government Homes " +
-                $"for Ukraine Scheme. Please only register if the following apply: " + Environment.NewLine+ Environment.NewLine +
-                $"* You are 18 or over" + Environment.NewLine + Environment.NewLine +
-                $"* You are able to offer accommodation for at least 6 months" + Environment.NewLine + Environment.NewLine +
-                $"* You are a British citizen or have leave to remain in the UK for at least 6 months" + Environment.NewLine + Environment.NewLine +
-                $"* You are looking to be a sponsor for UK Government Homes for Ukraine Scheme" + Environment.NewLine + Environment.NewLine +
-                $"* You will submit a separate application to the UK Government Homes for Ukraine Scheme once a match has been confirmed" + Environment.NewLine + Environment.NewLine +
-                $"You will need to verify your identity with photographic ID to access a match using this site. The UK Government may also carry out their own " +
-                $"checks following an application to the scheme. Please only continue with your registration if you can meet these terms."
-            });
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -476,14 +453,6 @@ namespace GroupService.Repo.Helpers
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.BostonGNS,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.UkraineRefugees,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.UkraineRefugees,
-                TargetGroups = (byte)TargetGroups.GenericGroup
             });
         }
 
@@ -806,18 +775,6 @@ namespace GroupService.Repo.Helpers
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.BostonGNS_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = false,
-                RequestsRequireApproval = false,
-                SuppressRecipientPersonalDetails = true
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.UkraineRefugees,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.UkraineRefugees_RequestSubmitter,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
@@ -1203,15 +1160,6 @@ namespace GroupService.Repo.Helpers
                 Latitude = 52.979M,
                 Longitude = -0.02500M,
                 ZoomLevel = 13.8M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.UkraineRefugees,
-                Latitude = 54.55M,
-                Longitude = -4.5M,
-                ZoomLevel = 5.1M
             });
         }
     }

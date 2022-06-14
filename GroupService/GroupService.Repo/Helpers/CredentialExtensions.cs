@@ -58,8 +58,7 @@ namespace GroupService.Repo.Helpers
                 { Groups.Southwell, 31 },
                 { Groups.ApexBankStaff, 32 },
                 { Groups.AgeUKMidMersey, 33 },
-                { Groups.BostonGNS, 34 },
-                { Groups.UkraineRefugees, 35 }
+                { Groups.BostonGNS, 34 }
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
             {
@@ -88,8 +87,7 @@ namespace GroupService.Repo.Helpers
                 Groups.Generic,
                 Groups.Southwell,
                 Groups.AgeUKMidMersey,
-                Groups.BostonGNS,
-                Groups.UkraineRefugees
+                Groups.BostonGNS
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
@@ -106,8 +104,7 @@ namespace GroupService.Repo.Helpers
                 Groups.Southwell,
                 Groups.ApexBankStaff,
                 Groups.AgeUKMidMersey,
-                Groups.BostonGNS,
-               // Groups.UkraineRefugees
+                Groups.BostonGNS
             };
         }
 
@@ -589,19 +586,6 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 5,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
-
-            entity.HasData(new GroupCredential
-            {
-                GroupId = (int)Groups.UkraineRefugees,
-                CredentialId = APPROVED_HOST,
-                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
-                Name = "Approved Host",
-                HowToAchieve = $"Hosts must be approved before they can be matched to a request for accommodation. A member of our team will be in touch as soon as possible to start the process.",
-                HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that a host has completed all of the necessary checks and is approved for hosting. Volunteer admins should follow internal processes for manually verifying an approved host.",
-                DisplayOrder = 2,
-                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
-            });
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -691,13 +675,6 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.BostonGNS,
                 CredentialId = REFERENCES,
             });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = UKRANIAN_APPROVEDHOST_CREDENTIAL_SET,
-                GroupId = (int)Groups.UkraineRefugees,
-                CredentialId = APPROVED_HOST,
-            });
         }
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
@@ -785,9 +762,6 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_REFERENCES_CREDENTIAL_SET);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);
 
-            var ukranianActivities = new List<SupportActivities> { SupportActivities.Accommodation, SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.CheckingIn, SupportActivities.Other};
-            SetActivityCredentialSet(entity, Groups.UkraineRefugees, ukranianActivities, IDENTITY_CREDENTIAL_SETS[Groups.UkraineRefugees]);
-            SetActivityCredentialSet(entity, Groups.UkraineRefugees, new List<SupportActivities> { SupportActivities.Accommodation }, UKRANIAN_APPROVEDHOST_CREDENTIAL_SET);    
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)
