@@ -76,12 +76,6 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new SecurityConfiguration
             {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
                 GroupId = (int) Groups.Southwell,
                 AllowAutonomousJoinersAndLeavers = true
             });

@@ -54,7 +54,6 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKSouthKentCoast, 11 },
                 { Groups.AgeUKFavershamAndSittingbourne, 13 },
                 { Groups.Sandbox, 14 },
-                { Groups.AgeConnectsCardiff, 23 },
                 { Groups.Southwell, 31 },
                 { Groups.ApexBankStaff, 32 },
                 { Groups.AgeUKMidMersey, 33 },
@@ -67,7 +66,6 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKSouthKentCoast, 111 },
                 { Groups.AgeUKFavershamAndSittingbourne, 131 },
                 { Groups.Sandbox, 141 },
-                //{ Groups.AgeConnectsCardiff, 231 },
                 { Groups.AgeUKMidMersey, 331 },
                 { Groups.BostonGNS, 341 }
             };
@@ -100,7 +98,6 @@ namespace GroupService.Repo.Helpers
                 Groups.AgeUKSouthKentCoast,
                 Groups.AgeUKFavershamAndSittingbourne,
                 Groups.Sandbox,
-                Groups.AgeConnectsCardiff,
                 Groups.Southwell,
                 Groups.ApexBankStaff,
                 Groups.AgeUKMidMersey,
@@ -545,7 +542,7 @@ namespace GroupService.Repo.Helpers
                 });
             }
 
-            foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS.Where(x => !x.Equals(Groups.AgeConnectsCardiff)))
+            foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS)
             {
                 entity.HasData(new CredentialSet
                 {
@@ -555,7 +552,7 @@ namespace GroupService.Repo.Helpers
                 });
             }
 
-            foreach (var group in GROUPS_USING_MANUAL_ID.Where(x => !x.Equals(Groups.AgeConnectsCardiff)))
+            foreach (var group in GROUPS_USING_MANUAL_ID)
             {
                 entity.HasData(new CredentialSet
                 {

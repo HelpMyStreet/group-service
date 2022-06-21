@@ -168,17 +168,6 @@ namespace GroupService.Repo.Helpers
             return config;
         }
 
-        private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_AgeConnectsCardiff()
-        {
-            List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
-            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to do a couple of checks. We need two references from people who have known you for more than a year, they must also be over 18 and not related to you. If you would like to undertake any roles which involve face-to-face contact with a client we will also need a DBS check. Please download our Volunteer Application Form from the <a href=\"{{{{BaseUrl}}}}/ageconnects-cardiff#resources\">useful links</a> section of our landing page to submit your details.<p>" +
-                $"<p>All of our volunteers also need to complete an induction. This is a short web-session which gives us a chance to run through our policies and procedures - it also gives you a chance to meet other volunteers and ask any questions. If you haven’t done so already, you can book your space for Core Induction Training on Eventbrite by clicking <a href=\"https://www.eventbrite.co.uk/o/age-connects-cardiff-amp-vale-32377866579\">here</a>.</p>"));
-            config.Add(new KeyValuePair<string, string>("GroupSignature", "Best wishes,</p><p>Age Connects Cardiff & the Vale"));
-            config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:helen.prior@ageconnectscardiff.org.uk\">helen.prior@ageconnectscardiff.org.uk</a>."));
-            config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
-            return config;
-        }
-
         private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_Southwell()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
@@ -240,7 +229,6 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.StamfordPCN, GetWelcomeEmailConfiguration_Default(true));
             Populate(entity, Groups.LincolnPCN, GetWelcomeEmailConfiguration_Default(true));
             Populate(entity, Groups.Sandbox, GetWelcomeEmailConfiguration_Sandbox());
-            Populate(entity, Groups.AgeConnectsCardiff, GetWelcomeEmailConfiguration_AgeConnectsCardiff());
             Populate(entity, Groups.Southwell, GetWelcomeEmailConfiguration_Southwell());
             Populate(entity, Groups.ApexBankStaff, GetWelcomeEmailConfiguration_ApexBankStaffPCN());
             Populate(entity, Groups.AgeUKMidMersey, GetWelcomeEmailConfiguration_AgeUK_MidMersey());

@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220621085529_RemoveAgeConnectsGroup_Step7")]
+    partial class RemoveAgeConnectsGroup_Step7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1661,6 +1663,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
@@ -3082,6 +3089,23 @@ namespace GroupService.Repo.Migrations
                             GroupType = (byte)2,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -23,
+                            FriendlyName = "Age Connects Cardiff & the Vale",
+                            GeographicName = "Cardiff & the Vale",
+                            GroupKey = "ageconnects-cardiff",
+                            GroupName = "Age Connects Cardiff & the Vale",
+                            GroupType = (byte)1,
+                            HomepageEnabled = true,
+                            JoinGroupPopUpDetail = @"Age Connects Cardiff & the Vale require two references, an Induction Session and (in most cases) a DBS check before you can start volunteering.
+
+You will also be expected to make a minimum commitment of six months.",
+                            LinkURL = "/ageconnects-cardiff",
+                            ShiftsEnabled = false,
+                            ShortName = "Age Connects Cardiff",
                             TasksEnabled = true
                         },
                         new
@@ -6529,6 +6553,13 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -23,
+                            Source = "",
+                            RegistrationFormVariant = (byte)12,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
                             GroupId = -31,
                             Source = "",
                             RegistrationFormVariant = (byte)15,
@@ -6812,6 +6843,27 @@ namespace GroupService.Repo.Migrations
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            Source = "",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)21,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = true,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)20,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
                         },
                         new
                         {
@@ -7117,6 +7169,11 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -12,
+                            AllowAutonomousJoinersAndLeavers = true
+                        },
+                        new
+                        {
+                            GroupId = -23,
                             AllowAutonomousJoinersAndLeavers = true
                         },
                         new

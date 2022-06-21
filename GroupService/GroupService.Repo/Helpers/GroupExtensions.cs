@@ -235,22 +235,6 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new Group
             {
-                Id = (int)Groups.AgeConnectsCardiff,
-                GroupName = "Age Connects Cardiff & the Vale",
-                GroupKey = "ageconnects-cardiff",
-                ShiftsEnabled = false,
-                TasksEnabled = true,
-                HomepageEnabled = true,
-                GeographicName = "Cardiff & the Vale",
-                GroupType = (byte)GroupTypes.Regional,
-                FriendlyName = "Age Connects Cardiff & the Vale",
-                LinkURL = "/ageconnects-cardiff",
-                ShortName = "Age Connects Cardiff",
-                JoinGroupPopUpDetail = "Age Connects Cardiff & the Vale require two references, an Induction Session and (in most cases) a DBS check before you can start volunteering." + Environment.NewLine + Environment.NewLine + "You will also be expected to make a minimum commitment of six months."
-            });
-
-            entity.HasData(new Group
-            {
                 Id = (int)Groups.Southwell,
                 GroupName = "Southwell Torpedos",
                 GroupKey = "southwell",
@@ -412,14 +396,6 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.LincolnshireVolunteers,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.LincolnshireVolunteers,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeConnectsCardiff,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
 
@@ -696,29 +672,6 @@ namespace GroupService.Repo.Helpers
                 RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = false
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                Source = "",
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeConnectsCardiff_Public,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = false,
-                RequestsRequireApproval = true,
-                SuppressRecipientPersonalDetails = true
-            });
-
-            entity.HasData(new RequestHelpJourney
-            {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.AgeConnectsCardiff_RequestSubmitter,
-                TargetGroups = (byte)TargetGroups.GenericGroup,
-                AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = false,
-                RequestsRequireApproval = false
             });
 
             entity.HasData(new RequestHelpJourney
@@ -1106,24 +1059,6 @@ namespace GroupService.Repo.Helpers
                 Latitude = 52.95M,
                 Longitude = -0.2M,
                 ZoomLevel = 9M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                Latitude = 51.5022198M,
-                Longitude = -3.2752615M,
-                ZoomLevel = 11M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                Latitude = 51.5022198M,
-                Longitude = -3.2752615M,
-                ZoomLevel = 11M
             });
 
             entity.HasData(new GroupMapDetails

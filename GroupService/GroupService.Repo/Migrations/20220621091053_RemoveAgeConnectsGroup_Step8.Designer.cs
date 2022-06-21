@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220621091053_RemoveAgeConnectsGroup_Step8")]
+    partial class RemoveAgeConnectsGroup_Step8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1661,6 +1663,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
@@ -3082,6 +3089,23 @@ namespace GroupService.Repo.Migrations
                             GroupType = (byte)2,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -23,
+                            FriendlyName = "Age Connects Cardiff & the Vale",
+                            GeographicName = "Cardiff & the Vale",
+                            GroupKey = "ageconnects-cardiff",
+                            GroupName = "Age Connects Cardiff & the Vale",
+                            GroupType = (byte)1,
+                            HomepageEnabled = true,
+                            JoinGroupPopUpDetail = @"Age Connects Cardiff & the Vale require two references, an Induction Session and (in most cases) a DBS check before you can start volunteering.
+
+You will also be expected to make a minimum commitment of six months.",
+                            LinkURL = "/ageconnects-cardiff",
+                            ShiftsEnabled = false,
+                            ShortName = "Age Connects Cardiff",
                             TasksEnabled = true
                         },
                         new
