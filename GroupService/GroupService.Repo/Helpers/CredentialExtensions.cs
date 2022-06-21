@@ -377,7 +377,18 @@ namespace GroupService.Repo.Helpers
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
 
-            
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.AgeConnectsCardiff,
+                CredentialId = MANUALLY_VERIFIED,
+                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
+                Name = "Manual ID Verification",
+                HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
+                DisplayOrder = 1,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
 
             entity.HasData(new GroupCredential
             {
@@ -589,7 +600,7 @@ namespace GroupService.Repo.Helpers
                 });
             }
 
-            foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS.Where(x=> !x.Equals(Groups.AgeConnectsCardiff)))
+            foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS.Where(x => !x.Equals(Groups.AgeConnectsCardiff)))
             {
                 entity.HasData(new CredentialSet
                 {

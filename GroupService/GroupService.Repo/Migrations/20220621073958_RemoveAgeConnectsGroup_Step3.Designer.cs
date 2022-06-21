@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220621073958_RemoveAgeConnectsGroup_Step3")]
+    partial class RemoveAgeConnectsGroup_Step3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1436,6 +1438,12 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 231,
+                            GroupId = -23,
+                            CredentialId = 2
+                        },
+                        new
+                        {
                             Id = 331,
                             GroupId = -33,
                             CredentialId = 2
@@ -1661,6 +1669,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
