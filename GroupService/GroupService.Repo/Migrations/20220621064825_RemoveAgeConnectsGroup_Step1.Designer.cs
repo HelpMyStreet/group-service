@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220621064825_RemoveAgeConnectsGroup_Step1")]
+    partial class RemoveAgeConnectsGroup_Step1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -558,6 +560,153 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 7,
                             CredentialSetId = 142,
                             DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 26,
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 11,
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 27,
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 1,
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 16,
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 26,
+                            CredentialSetId = 231,
+                            DisplayOrder = 1
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 11,
+                            CredentialSetId = 231,
+                            DisplayOrder = 1
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 27,
+                            CredentialSetId = 231,
+                            DisplayOrder = 1
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 1,
+                            CredentialSetId = 231,
+                            DisplayOrder = 1
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 16,
+                            CredentialSetId = 231,
+                            DisplayOrder = 1
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 26,
+                            CredentialSetId = 234,
+                            DisplayOrder = 2
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 11,
+                            CredentialSetId = 234,
+                            DisplayOrder = 2
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 27,
+                            CredentialSetId = 234,
+                            DisplayOrder = 2
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 1,
+                            CredentialSetId = 234,
+                            DisplayOrder = 2
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 16,
+                            CredentialSetId = 234,
+                            DisplayOrder = 2
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 2,
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 7,
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 22,
+                            CredentialSetId = 235,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 2,
+                            CredentialSetId = 234,
+                            DisplayOrder = 1
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 7,
+                            CredentialSetId = 234,
+                            DisplayOrder = 1
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            ActivityId = 22,
+                            CredentialSetId = 234,
+                            DisplayOrder = 1
                         },
                         new
                         {
@@ -1685,6 +1834,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
                         });
                 });
 
