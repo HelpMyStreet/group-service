@@ -67,7 +67,7 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeUKSouthKentCoast, 111 },
                 { Groups.AgeUKFavershamAndSittingbourne, 131 },
                 { Groups.Sandbox, 141 },
-                { Groups.AgeConnectsCardiff, 231 },
+                //{ Groups.AgeConnectsCardiff, 231 },
                 { Groups.AgeUKMidMersey, 331 },
                 { Groups.BostonGNS, 341 }
             };
@@ -373,61 +373,6 @@ namespace GroupService.Repo.Helpers
                 HowToAchieve = "Email your group admins to book onto the next course",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to record that a volunteer has completed the Befriender traning course.",
-                DisplayOrder = 4,
-                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
-            });
-
-            entity.HasData(new GroupCredential
-            {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                CredentialId = MANUALLY_VERIFIED,
-                CredentialTypeId = (int)CredentialTypes.IdentityVerification,
-                Name = "Manual ID Verification",
-                HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
-                HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity.",
-                DisplayOrder = 1,
-                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
-            });
-
-            entity.HasData(new GroupCredential
-            {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                CredentialId = REFERENCES,
-                CredentialTypeId = (int)CredentialTypes.References,
-                Name = "References",
-                HowToAchieve = $"Please complete this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx) with details of your **two** referees. " +
-                $"If it’s been more than two weeks and you haven’t heard anything, please get in touch.",
-                HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference.",
-                DisplayOrder = 2,
-                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
-            });
-
-            entity.HasData(new GroupCredential
-            {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                CredentialId = DBS_CHECK,
-                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
-                Name = "DBS Check",
-                HowToAchieve = $"This activity requires a DBS check, please complete and return this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-dbs-check-form.docx). " +
-                $"If it’s been more than two weeks and you haven’t heard anything, please get in touch.",
-                HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
-                DisplayOrder = 3,
-                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
-            });
-
-            entity.HasData(new GroupCredential
-            {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                CredentialId = VOLUNTEER_INDUCTION,
-                CredentialTypeId = (int)CredentialTypes.Training,
-                Name = "Volunteer Induction",
-                HowToAchieve = $"If you haven’t done so already, please book your space on one of our Core Induction Training sessions through <a href=\"https://www.eventbrite.co.uk/o/age-connects-cardiff-amp-vale-32377866579\" target=\"_blank\">Eventbrite</a>. " +
-                $"If you’ve recently completed your induction please be aware that it may take a couple of days for the system to update.",
-                HowToAchieve_CTA_Destination = "",
-                WhatIsThis = $"Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training.",
                 DisplayOrder = 4,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
