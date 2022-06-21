@@ -222,7 +222,6 @@ namespace GroupService.Repo.Helpers
             return config;
         }
 
-
         public static void PopulateGroupEmailConfiguration(this EntityTypeBuilder<GroupEmailConfiguration> entity)
         {
             Populate(entity, Groups.Generic, GetWelcomeEmailConfiguration_HelpMyStreet());

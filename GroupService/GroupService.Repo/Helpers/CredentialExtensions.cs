@@ -23,6 +23,7 @@ namespace GroupService.Repo.Helpers
         private const int APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET = 329;
         private const int BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET = 3410;
         private const int BOSTONGNS_REFERENCES_CREDENTIAL_SET = 345;
+        private const int UKRANIAN_APPROVEDHOST_CREDENTIAL_SET = 3511;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -35,6 +36,7 @@ namespace GroupService.Repo.Helpers
         private const int VACCINATOR_TRAINING = 8;
         private const int BANK_DETAILS = 9;
         private const int SAFEGUARDING_TRAINING = 10;
+        private const int APPROVED_HOST = 11;
 
         public static void InitialiseCredentialSets()
         {
@@ -57,7 +59,6 @@ namespace GroupService.Repo.Helpers
                 { Groups.ApexBankStaff, 32 },
                 { Groups.AgeUKMidMersey, 33 },
                 { Groups.BostonGNS, 34 }
-
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
             {
@@ -167,6 +168,12 @@ namespace GroupService.Repo.Helpers
             {
                 Id = SAFEGUARDING_TRAINING,
                 Name = "Safeguarding Training"
+            });
+
+            entity.HasData(new Credential
+            {
+                Id = APPROVED_HOST,
+                Name = "Approved Host"
             });
         }
 
@@ -754,6 +761,7 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_REFERENCES_CREDENTIAL_SET);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);
+
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)

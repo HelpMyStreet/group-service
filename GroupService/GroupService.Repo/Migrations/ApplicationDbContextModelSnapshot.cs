@@ -1432,6 +1432,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 10,
                             Name = "Safeguarding Training"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Approved Host"
                         });
                 });
 
@@ -2134,6 +2139,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "BostonGNS"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "UkraineRefugees"
                         });
                 });
 
@@ -2321,6 +2331,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 32,
                             Name = "LincolnshireVolunteersRequests_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Name = "UkraineRefugees_RequestSubmitter"
                         });
                 });
 
@@ -2583,6 +2598,12 @@ namespace GroupService.Repo.Migrations
                             Id = 33,
                             FriendlyName = "Skill Share",
                             Name = "SkillShare"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            FriendlyName = "Accommodation",
+                            Name = "Accommodation"
                         });
                 });
 
@@ -2894,6 +2915,31 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 59,
                             Name = "AgeUKMidMersey_SkillShare"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Name = "APH_BreakfastVisit"
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Name = "APH_LunchVisit"
+                        },
+                        new
+                        {
+                            Id = 62,
+                            Name = "APH_MedicationCheckIn"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Name = "APH_WellBeingVisit"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            Name = "UKRANIAN_Accommodation"
                         });
                 });
 
@@ -6650,6 +6696,46 @@ You will also be expected to make a minimum commitment of six months.",
                             DisplayOrder = (byte)7,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)19,
+                            SupportActivityId = 34,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Providing accommodation"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)19,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)19,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)19,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)19,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
                         });
                 });
 
@@ -7572,6 +7658,11 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             SupportActivityId = 33,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 34,
                             AutoSignUpWhenOtherSelected = true
                         });
                 });

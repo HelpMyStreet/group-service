@@ -103,7 +103,6 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.BostonGNS,
                 AllowAutonomousJoinersAndLeavers = true
             });
-
         }
     }
 }
