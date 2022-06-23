@@ -304,6 +304,37 @@ namespace GroupService.Repo.Helpers
                 ShortName = "Boston",
                 GeographicName = "Boston or surrounding areas",
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.LincolnshireLCVS,
+                GroupName = "LCVS",
+                GroupKey = "lincolnshire-lcvs",
+                ParentGroupId = (int)Groups.LincolnshireVolunteers,
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = false,
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "LCVS",
+                LinkURL = "/lincolnshire-lcvs",
+                ShortName = "LCVS"
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.LincolnshireVCS,
+                GroupName = "VCS",
+                GroupKey = "lincolnshire-vcs",
+                ParentGroupId = (int)Groups.LincolnshireVolunteers,
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = false,
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "LCVS",
+                LinkURL = "/lincolnshire-vcs",
+                ShortName = "VCS"
+            });
+
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -780,6 +811,31 @@ namespace GroupService.Repo.Helpers
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = true
             });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.LincolnshireVCS,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteersRequests_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.LincolnshireLCVS,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteersRequests_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
+            });
+
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
@@ -923,6 +979,34 @@ namespace GroupService.Repo.Helpers
                     Postcode = "NG18 1QA"
                 });
             }
+
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.LincolnshireVCS,
+                FirstName = "Lincolnshire VCS",
+                LastName = "(Voluntary Centre Services)",
+                OtherPhone = "01522 551683",
+                EmailAddress = "test@email.com",
+                AddressLine1 = "Lincolnshire VCS",
+                AddressLine2 = "City Hall",
+                AddressLine3 = "",
+                Locality = "Lincoln",
+                Postcode = "LN1 1DF"
+            });
+
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.LincolnshireLCVS,
+                FirstName = "Lincolnshire LCVS",
+                LastName = "(Voluntary Centre Services)",
+                OtherPhone = "01522 551683",
+                EmailAddress = "test@email.com",
+                AddressLine1 = "Lincolnshire LCVS",
+                AddressLine2 = "City Hall",
+                AddressLine3 = "",
+                Locality = "Lincoln",
+                Postcode = "LN1 1DF"
+            });
         }
 
         public static void AddGroupMapDetails(this EntityTypeBuilder<GroupMapDetails> entity)
@@ -1161,6 +1245,7 @@ namespace GroupService.Repo.Helpers
                 Longitude = -0.02500M,
                 ZoomLevel = 13.8M
             });
+
         }
     }
 }

@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220622111409_AddNewSubGroupsLCVSAndVCS")]
+    partial class AddNewSubGroupsLCVSAndVCS
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1832,6 +1834,21 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Name = "ImpendingUserDeletion"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "UserDeleted"
                         });
                 });
 
@@ -2946,11 +2963,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 64,
                             Name = "UKRANIAN_Accommodation"
-                        },
-                        new
-                        {
-                            Id = 65,
-                            Name = "Lincolnshire_AdvertisingRoles"
                         });
                 });
 
@@ -5418,20 +5430,6 @@ You will also be expected to make a minimum commitment of six months.",
                             SupportActivityId = 11,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            SupportActivityId = 35,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)65
-                        },
-                        new
-                        {
-                            GroupId = -37,
-                            SupportActivityId = 35,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)65
                         });
                 });
 
@@ -7275,28 +7273,6 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = true,
                             TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)32,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -37,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)32,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
                         });
                 });
 
@@ -7476,32 +7452,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Locality = "Lincoln",
                             OtherPhone = "07340 066491",
                             Postcode = "LN6 8RN"
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            AddressLine1 = "Lincolnshire VCS",
-                            AddressLine2 = "City Hall",
-                            AddressLine3 = "",
-                            EmailAddress = "test@email.com",
-                            FirstName = "Lincolnshire VCS",
-                            LastName = "(Voluntary Centre Services)",
-                            Locality = "Lincoln",
-                            OtherPhone = "01522 551683",
-                            Postcode = "LN1 1DF"
-                        },
-                        new
-                        {
-                            GroupId = -37,
-                            AddressLine1 = "Lincolnshire LCVS",
-                            AddressLine2 = "City Hall",
-                            AddressLine3 = "",
-                            EmailAddress = "test@email.com",
-                            FirstName = "Lincolnshire LCVS",
-                            LastName = "(Voluntary Centre Services)",
-                            Locality = "Lincoln",
-                            OtherPhone = "01522 551683",
-                            Postcode = "LN1 1DF"
                         });
                 });
 
@@ -8080,11 +8030,6 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             SupportActivityInstructionsId = (short)58,
                             Instructions = "{\"SupportActivityInstructions\":58,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Arrange a visit\",\"Detail\":\"Give them a call to arrange a visit – find a time and a place that suits you both.\"},{\"Heading\":\"Enjoy your visit\",\"Detail\":\"Meet up as agreed and have a good chat. If it’s going well, you could arrange your next visit too!\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)65,
-                            Instructions = "{\"SupportActivityInstructions\":65,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the opportunity is right for you\",\"Detail\":\"Make sure you’ve clicked to ‘view more info’ on the open request to check the opportunity is right for you.\"},{\"Heading\":\"Click to apply\",\"Detail\":\"If you want to find out or apply for the role, click to apply. The organisation managing the request will be in touch to take you through the next steps.\"},{\"Heading\":\"Start helping\",\"Detail\":\"Once everything is in place you can start helping! The request will stay in your “My Requests” view for as long as you’re helping.\"}],\"Close\":\"In your “My Requests” view you can mark the request as complete or let the requester know you can no longer help by clicking “Can’t Do” so they can’t start looking for a new volunteer.\"}"
                         });
                 });
 

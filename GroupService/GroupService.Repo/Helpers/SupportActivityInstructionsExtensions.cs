@@ -1748,6 +1748,34 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_Linc_Advertising_Roles()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Check the opportunity is right for you",
+                        Detail = "Make sure you’ve clicked to ‘view more info’ on the open request to check the opportunity is right for you.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Click to apply",
+                        Detail = "If you want to find out or apply for the role, click to apply. The organisation managing the request will be in touch to take you through the next steps.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Start helping",
+                        Detail  = "Once everything is in place you can start helping! The request will stay in your “My Requests” view for as long as you’re helping."
+                    }
+                },
+                Close = "In your “My Requests” view you can mark the request as complete or let the requester know you can no longer help by clicking “Can’t Do” so they can’t start looking for a new volunteer."
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -2097,6 +2125,12 @@ namespace GroupService.Repo.Helpers
                 SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKMidMersey_Befriending,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUK_MidMersey_Befriending())
             });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short) SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_Linc_Advertising_Roles())
+            });
         }
 
 
@@ -2252,6 +2286,9 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.BostonGNS, SupportActivities.DogWalking, SupportActivityInstructionsEnum.HMS_General, 20);
             Populate(entity, Groups.BostonGNS, SupportActivities.DigitalSupport, SupportActivityInstructionsEnum.HMS_General, 20);
             Populate(entity, Groups.BostonGNS, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+
+            Populate(entity, Groups.LincolnshireVCS, SupportActivities.AdvertisingRoles, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+            Populate(entity, Groups.LincolnshireLCVS, SupportActivities.AdvertisingRoles, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
         }
     }
 }
