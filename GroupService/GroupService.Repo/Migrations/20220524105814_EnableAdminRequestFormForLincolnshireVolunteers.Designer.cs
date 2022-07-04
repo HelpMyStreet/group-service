@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220524105814_EnableAdminRequestFormForLincolnshireVolunteers")]
+    partial class EnableAdminRequestFormForLincolnshireVolunteers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1432,11 +1434,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 10,
                             Name = "Safeguarding Training"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Name = "Approved Host"
                         });
                 });
 
@@ -2143,7 +2140,7 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 19,
-                            Name = "UkraineRefugees"
+                            Name = "ArroweParkHospital"
                         });
                 });
 
@@ -2329,13 +2326,13 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 32,
-                            Name = "LincolnshireVolunteersRequests_RequestSubmitter"
+                            Id = 31,
+                            Name = "ArroweParkHospital_RequestSubmitter"
                         },
                         new
                         {
-                            Id = 33,
-                            Name = "UkraineRefugees_RequestSubmitter"
+                            Id = 32,
+                            Name = "LincolnshireVolunteersRequests_RequestSubmitter"
                         });
                 });
 
@@ -2602,14 +2599,26 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 34,
-                            FriendlyName = "Accommodation",
-                            Name = "Accommodation"
+                            FriendlyName = "Breakfast Visit",
+                            Name = "BreakfastVisit"
                         },
                         new
                         {
                             Id = 35,
-                            FriendlyName = "Advertising Roles",
-                            Name = "AdvertisingRoles"
+                            FriendlyName = "Lunch Visit",
+                            Name = "LunchVisit"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            FriendlyName = "Medication Check In",
+                            Name = "MedicationCheckIn"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            FriendlyName = "Wellbeing Visit",
+                            Name = "WellBeingVisit"
                         });
                 });
 
@@ -2941,16 +2950,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 63,
                             Name = "APH_WellBeingVisit"
-                        },
-                        new
-                        {
-                            Id = 64,
-                            Name = "UKRANIAN_Accommodation"
-                        },
-                        new
-                        {
-                            Id = 65,
-                            Name = "Lincolnshire_AdvertisingRoles"
                         });
                 });
 
@@ -3219,7 +3218,7 @@ namespace GroupService.Repo.Migrations
                             GroupType = (byte)1,
                             HomepageEnabled = true,
                             LinkURL = "/lincolnshirevolunteers",
-                            ShiftsEnabled = false,
+                            ShiftsEnabled = true,
                             ShortName = "Lincs Vols",
                             TasksEnabled = true
                         },
@@ -3336,34 +3335,6 @@ You will also be expected to make a minimum commitment of six months.",
                             LinkURL = "/boston",
                             ShiftsEnabled = false,
                             ShortName = "Boston",
-                            TasksEnabled = true
-                        },
-                        new
-                        {
-                            Id = -37,
-                            FriendlyName = "LCVS",
-                            GroupKey = "lincolnshire-lcvs",
-                            GroupName = "LCVS",
-                            GroupType = (byte)0,
-                            HomepageEnabled = false,
-                            LinkURL = "/lincolnshire-lcvs",
-                            ParentGroupId = -12,
-                            ShiftsEnabled = false,
-                            ShortName = "LCVS",
-                            TasksEnabled = true
-                        },
-                        new
-                        {
-                            Id = -36,
-                            FriendlyName = "LCVS",
-                            GroupKey = "lincolnshire-vcs",
-                            GroupName = "VCS",
-                            GroupType = (byte)0,
-                            HomepageEnabled = false,
-                            LinkURL = "/lincolnshire-vcs",
-                            ParentGroupId = -12,
-                            ShiftsEnabled = false,
-                            ShortName = "VCS",
                             TasksEnabled = true
                         });
                 });
@@ -5418,20 +5389,6 @@ You will also be expected to make a minimum commitment of six months.",
                             SupportActivityId = 11,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)2
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            SupportActivityId = 35,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)65
-                        },
-                        new
-                        {
-                            GroupId = -37,
-                            SupportActivityId = 35,
-                            Radius = 20.0,
-                            SupportActivityInstructionsId = (short)65
                         });
                 });
 
@@ -6749,46 +6706,6 @@ You will also be expected to make a minimum commitment of six months.",
                             DisplayOrder = (byte)7,
                             IsPreSelected = false,
                             Label = "I may be able to help with other tasks, so please check with me."
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 34,
-                            DisplayOrder = (byte)1,
-                            IsPreSelected = true,
-                            Label = "Providing accommodation"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 1,
-                            DisplayOrder = (byte)2,
-                            IsPreSelected = false,
-                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 7,
-                            DisplayOrder = (byte)3,
-                            IsPreSelected = false,
-                            Label = "Calling someone in need of a friendly chat"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 10,
-                            DisplayOrder = (byte)4,
-                            IsPreSelected = false,
-                            Label = "Reaching out to people in my area to check-in"
-                        },
-                        new
-                        {
-                            RequestHelpFormVariantId = (byte)19,
-                            SupportActivityId = 11,
-                            DisplayOrder = (byte)5,
-                            IsPreSelected = false,
-                            Label = "I may be able to help with other tasks, so please check with me."
                         });
                 });
 
@@ -7151,7 +7068,7 @@ You will also be expected to make a minimum commitment of six months.",
                             Source = "a",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)32,
-                            RequestorDefinedByGroup = false,
+                            RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
@@ -7272,28 +7189,6 @@ You will also be expected to make a minimum commitment of six months.",
                             AccessRestrictedByRole = true,
                             RequestHelpFormVariant = (byte)30,
                             RequestorDefinedByGroup = false,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)32,
-                            RequestorDefinedByGroup = true,
-                            RequestsRequireApproval = false,
-                            SuppressRecipientPersonalDetails = true,
-                            TargetGroups = (byte)0
-                        },
-                        new
-                        {
-                            GroupId = -37,
-                            Source = "a",
-                            AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)32,
-                            RequestorDefinedByGroup = true,
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = true,
                             TargetGroups = (byte)0
@@ -7476,32 +7371,6 @@ You will also be expected to make a minimum commitment of six months.",
                             Locality = "Lincoln",
                             OtherPhone = "07340 066491",
                             Postcode = "LN6 8RN"
-                        },
-                        new
-                        {
-                            GroupId = -36,
-                            AddressLine1 = "Lincolnshire VCS",
-                            AddressLine2 = "City Hall",
-                            AddressLine3 = "",
-                            EmailAddress = "test@email.com",
-                            FirstName = "Lincolnshire VCS",
-                            LastName = "(Voluntary Centre Services)",
-                            Locality = "Lincoln",
-                            OtherPhone = "01522 551683",
-                            Postcode = "LN1 1DF"
-                        },
-                        new
-                        {
-                            GroupId = -37,
-                            AddressLine1 = "Lincolnshire LCVS",
-                            AddressLine2 = "City Hall",
-                            AddressLine3 = "",
-                            EmailAddress = "test@email.com",
-                            FirstName = "Lincolnshire LCVS",
-                            LastName = "(Voluntary Centre Services)",
-                            Locality = "Lincoln",
-                            OtherPhone = "01522 551683",
-                            Postcode = "LN1 1DF"
                         });
                 });
 
@@ -7769,6 +7638,16 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             SupportActivityId = 35,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 36,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 37,
                             AutoSignUpWhenOtherSelected = true
                         });
                 });
@@ -8080,11 +7959,6 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             SupportActivityInstructionsId = (short)58,
                             Instructions = "{\"SupportActivityInstructions\":58,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Arrange a visit\",\"Detail\":\"Give them a call to arrange a visit – find a time and a place that suits you both.\"},{\"Heading\":\"Enjoy your visit\",\"Detail\":\"Meet up as agreed and have a good chat. If it’s going well, you could arrange your next visit too!\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
-                        },
-                        new
-                        {
-                            SupportActivityInstructionsId = (short)65,
-                            Instructions = "{\"SupportActivityInstructions\":65,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the opportunity is right for you\",\"Detail\":\"Make sure you’ve clicked to ‘view more info’ on the open request to check the opportunity is right for you.\"},{\"Heading\":\"Click to apply\",\"Detail\":\"If you want to find out or apply for the role, click to apply. The organisation managing the request will be in touch to take you through the next steps.\"},{\"Heading\":\"Start helping\",\"Detail\":\"Once everything is in place you can start helping! The request will stay in your “My Requests” view for as long as you’re helping.\"}],\"Close\":\"In your “My Requests” view you can mark the request as complete or let the requester know you can no longer help by clicking “Can’t Do” so they can’t start looking for a new volunteer.\"}"
                         });
                 });
 
