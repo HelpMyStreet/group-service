@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220705113058_AddNHSVRDemoSubgroups_step3")]
+    partial class AddNHSVRDemoSubgroups_step3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1620,18 +1622,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 40,
-                            GroupId = -40,
-                            CredentialId = -1
-                        },
-                        new
-                        {
-                            Id = 39,
-                            GroupId = -39,
-                            CredentialId = -1
-                        },
-                        new
-                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1682,18 +1672,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 381,
                             GroupId = -38,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 391,
-                            GroupId = -39,
-                            CredentialId = 2
-                        },
-                        new
-                        {
-                            Id = 401,
-                            GroupId = -40,
                             CredentialId = 2
                         },
                         new
@@ -1826,18 +1804,6 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 3812,
                             GroupId = -38,
-                            CredentialId = 12
-                        },
-                        new
-                        {
-                            Id = 3812,
-                            GroupId = -39,
-                            CredentialId = 12
-                        },
-                        new
-                        {
-                            Id = 3812,
-                            GroupId = -40,
                             CredentialId = 12
                         });
                 });

@@ -60,7 +60,9 @@ namespace GroupService.Repo.Helpers
                 { Groups.ApexBankStaff, 32 },
                 { Groups.AgeUKMidMersey, 33 },
                 { Groups.BostonGNS, 34 },                
-                { Groups.NHSVRDemo, 38 }
+                { Groups.NHSVRDemo, 38 },
+                { Groups.NottinghamshireCountyCouncil, 39 },
+                { Groups.NottinghamshireIntegratedCareBoard, 40 }
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
             {
@@ -72,7 +74,9 @@ namespace GroupService.Repo.Helpers
                 { Groups.AgeConnectsCardiff, 231 },
                 { Groups.AgeUKMidMersey, 331 },
                 { Groups.BostonGNS, 341 },
-                { Groups.NHSVRDemo, 381 }
+                { Groups.NHSVRDemo, 381 },
+                { Groups.NottinghamshireCountyCouncil, 391 },
+                { Groups.NottinghamshireIntegratedCareBoard, 401 }
 
             };
 
@@ -92,7 +96,9 @@ namespace GroupService.Repo.Helpers
                 Groups.Southwell,
                 Groups.AgeUKMidMersey,
                 Groups.BostonGNS,                
-                Groups.NHSVRDemo
+                Groups.NHSVRDemo,
+                Groups.NottinghamshireIntegratedCareBoard,
+                Groups.NottinghamshireCountyCouncil
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
@@ -623,6 +629,58 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.NottinghamshireIntegratedCareBoard,
+                CredentialId = DBS_CHECK,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "DBS Check",
+                HowToAchieve = "Here you can enter your own text to let volunteers know how to request and log a DBS check.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.NottinghamshireIntegratedCareBoard,
+                CredentialId = HEALTH_SAFETY,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "Health, Safety and Infection Prevention and Control",
+                HowToAchieve = "This is a free, online learning module provided by Health Education England (HEE) on the e-learning for healthcare platform. Launch the training module and upload your completion certificate  to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training.",
+                DisplayOrder = 3,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.NottinghamshireCountyCouncil,
+                CredentialId = DBS_CHECK,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "DBS Check",
+                HowToAchieve = "Here you can enter your own text to let volunteers know how to request and log a DBS check.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.NottinghamshireCountyCouncil,
+                CredentialId = HEALTH_SAFETY,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "Health, Safety and Infection Prevention and Control",
+                HowToAchieve = "This is a free, online learning module provided by Health Education England (HEE) on the e-learning for healthcare platform. Launch the training module and upload your completion certificate  to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training.",
+                DisplayOrder = 3,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
@@ -644,7 +702,7 @@ namespace GroupService.Repo.Helpers
                     Id = dbsCredentialSet.Value,
                     GroupId = (int)dbsCredentialSet.Key,
                     CredentialId = DBS_CHECK
-                });                
+                });             
             }
 
             foreach (var group in GROUPS_USING_MANUAL_ID)
@@ -717,6 +775,20 @@ namespace GroupService.Repo.Helpers
             {
                 Id = NHSVRDEMO_HEALTH_CREDENTIAL_SET,
                 GroupId = (int)Groups.NHSVRDemo,
+                CredentialId = HEALTH_SAFETY,
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = NHSVRDEMO_HEALTH_CREDENTIAL_SET,
+                GroupId = (int)Groups.NottinghamshireCountyCouncil,
+                CredentialId = HEALTH_SAFETY,
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = NHSVRDEMO_HEALTH_CREDENTIAL_SET,
+                GroupId = (int)Groups.NottinghamshireIntegratedCareBoard,
                 CredentialId = HEALTH_SAFETY,
             });
         }
