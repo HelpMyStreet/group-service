@@ -37,6 +37,7 @@ namespace GroupService.Repo.Helpers
         private const int BANK_DETAILS = 9;
         private const int SAFEGUARDING_TRAINING = 10;
         private const int APPROVED_HOST = 11;
+        private const int HEALTH_SAFETY = 12;
 
         public static void InitialiseCredentialSets()
         {
@@ -58,7 +59,8 @@ namespace GroupService.Repo.Helpers
                 { Groups.Southwell, 31 },
                 { Groups.ApexBankStaff, 32 },
                 { Groups.AgeUKMidMersey, 33 },
-                { Groups.BostonGNS, 34 }
+                { Groups.BostonGNS, 34 },                
+                { Groups.NHSVRDemo, 38 }
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
             {
@@ -69,7 +71,9 @@ namespace GroupService.Repo.Helpers
                 { Groups.Sandbox, 141 },
                 { Groups.AgeConnectsCardiff, 231 },
                 { Groups.AgeUKMidMersey, 331 },
-                { Groups.BostonGNS, 341 }
+                { Groups.BostonGNS, 341 },
+                { Groups.NHSVRDemo, 381 }
+
             };
 
             GROUPS_USING_YOTI = new List<Groups> {
@@ -87,7 +91,8 @@ namespace GroupService.Repo.Helpers
                 Groups.Generic,
                 Groups.Southwell,
                 Groups.AgeUKMidMersey,
-                Groups.BostonGNS
+                Groups.BostonGNS,                
+                Groups.NHSVRDemo
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
@@ -104,7 +109,7 @@ namespace GroupService.Repo.Helpers
                 Groups.Southwell,
                 Groups.ApexBankStaff,
                 Groups.AgeUKMidMersey,
-                Groups.BostonGNS
+                Groups.BostonGNS               
             };
         }
 
@@ -175,6 +180,12 @@ namespace GroupService.Repo.Helpers
                 Id = APPROVED_HOST,
                 Name = "Approved Host"
             });
+
+            //entity.HasData(new Credential
+            //{
+            //    Id = HEALTH_SAFETY,
+            //    Name = "Health, Safety and Infection Prevention and Control for Volunteers"
+            //});
         }
 
         public static void SetGroupCredentials(this EntityTypeBuilder<GroupCredential> entity)
@@ -586,11 +597,24 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 5,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.NHSVRDemo,
+                CredentialId = DBS_CHECK,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "DBS Check",
+                HowToAchieve = "Here you can enter your own text to let volunteers know how to request and log a DBS check.",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
+                DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
         }
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
         {
-            foreach (var group in GROUPS_USING_YOTI)
+            foreach (var group in GROUPS_USING_YOTI.Where(x=> !x.Equals(Groups.NHSVRDemo)))
             {
                 entity.HasData(new CredentialSet
                 {
@@ -602,12 +626,15 @@ namespace GroupService.Repo.Helpers
 
             foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS)
             {
-                entity.HasData(new CredentialSet
+                if (dbsCredentialSet.Key != Groups.NHSVRDemo)
                 {
-                    Id = dbsCredentialSet.Value,
-                    GroupId = (int)dbsCredentialSet.Key,
-                    CredentialId = DBS_CHECK
-                });
+                    entity.HasData(new CredentialSet
+                    {
+                        Id = dbsCredentialSet.Value,
+                        GroupId = (int)dbsCredentialSet.Key,
+                        CredentialId = DBS_CHECK
+                    });
+                }
             }
 
             foreach (var group in GROUPS_USING_MANUAL_ID)
@@ -760,8 +787,7 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, IDENTITY_CREDENTIAL_SETS[Groups.BostonGNS]);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_REFERENCES_CREDENTIAL_SET);
-            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);
-
+            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);        
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)
