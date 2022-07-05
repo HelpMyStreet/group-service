@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220705081529_AddNHSVRDemo_Step5")]
-    partial class AddNHSVRDemo_Step5
+    [Migration("20220705091319_AddNHSVRDemo_Step7")]
+    partial class AddNHSVRDemo_Step7
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -1376,8 +1376,8 @@ namespace GroupService.Repo.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(50)")
-                        .HasMaxLength(50)
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100)
                         .IsUnicode(false);
 
                     b.HasKey("Id");
@@ -3463,8 +3463,8 @@ You will also be expected to make a minimum commitment of six months.",
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(50)")
-                        .HasMaxLength(50)
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100)
                         .IsUnicode(false);
 
                     b.Property<string>("WhatIsThis")
@@ -4032,6 +4032,18 @@ You will also be expected to make a minimum commitment of six months.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            CredentialId = 12,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "This is a free, online learning module provided by Health Education England (HEE) on the e-learning for healthcare platform. Launch the training module and upload your completion certificate  to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Health, Safety and Infection Prevention and Control",
+                            WhatIsThis = "Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training."
                         });
                 });
 
