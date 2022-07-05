@@ -24,6 +24,8 @@ namespace GroupService.Repo.Helpers
         private const int BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET = 3410;
         private const int BOSTONGNS_REFERENCES_CREDENTIAL_SET = 345;
         private const int NHSVRDEMO_HEALTH_CREDENTIAL_SET = 3812;
+        private const int NHSVRDEMO_SUBGROUP1_HEALTH_CREDENTIAL_SET = 3912;
+        private const int NHSVRDEMO_SUBGROUP2_HEALTH_CREDENTIAL_SET = 4012;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -780,14 +782,14 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new CredentialSet
             {
-                Id = NHSVRDEMO_HEALTH_CREDENTIAL_SET,
+                Id = NHSVRDEMO_SUBGROUP1_HEALTH_CREDENTIAL_SET,
                 GroupId = (int)Groups.NottinghamshireCountyCouncil,
                 CredentialId = HEALTH_SAFETY,
             });
 
             entity.HasData(new CredentialSet
             {
-                Id = NHSVRDEMO_HEALTH_CREDENTIAL_SET,
+                Id = NHSVRDEMO_SUBGROUP2_HEALTH_CREDENTIAL_SET,
                 GroupId = (int)Groups.NottinghamshireIntegratedCareBoard,
                 CredentialId = HEALTH_SAFETY,
             });
@@ -880,8 +882,16 @@ namespace GroupService.Repo.Helpers
 
             var nhsvrdemoActivities = new List<SupportActivities> { SupportActivities.NHSTransport, SupportActivities.NHSSteward, SupportActivities.NHSCheckInAndChat, SupportActivities.NHSCheckInAndChatPlus, SupportActivities.EmergencySupport, SupportActivities.Other };
             SetActivityCredentialSet(entity, Groups.NHSVRDemo, nhsvrdemoActivities, IDENTITY_CREDENTIAL_SETS[Groups.NHSVRDemo]);
-            SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSSteward }, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
-            SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSCheckInAndChatPlus }, NHSVRDEMO_HEALTH_CREDENTIAL_SET);            
+            SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSSteward }, DBS_CREDENTIAL_SETS[Groups.NHSVRDemo]);
+            SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSCheckInAndChatPlus }, NHSVRDEMO_HEALTH_CREDENTIAL_SET);
+
+            SetActivityCredentialSet(entity, Groups.NottinghamshireCountyCouncil, nhsvrdemoActivities, IDENTITY_CREDENTIAL_SETS[Groups.NottinghamshireCountyCouncil]);
+            SetActivityCredentialSet(entity, Groups.NottinghamshireCountyCouncil, new List<SupportActivities> { SupportActivities.NHSSteward }, DBS_CREDENTIAL_SETS[Groups.NottinghamshireCountyCouncil]);
+            SetActivityCredentialSet(entity, Groups.NottinghamshireCountyCouncil, new List<SupportActivities> { SupportActivities.NHSCheckInAndChatPlus }, NHSVRDEMO_SUBGROUP1_HEALTH_CREDENTIAL_SET);
+
+            SetActivityCredentialSet(entity, Groups.NottinghamshireIntegratedCareBoard, nhsvrdemoActivities, IDENTITY_CREDENTIAL_SETS[Groups.NottinghamshireIntegratedCareBoard]);
+            SetActivityCredentialSet(entity, Groups.NottinghamshireIntegratedCareBoard, new List<SupportActivities> { SupportActivities.NHSSteward }, DBS_CREDENTIAL_SETS[Groups.NottinghamshireIntegratedCareBoard]);
+            SetActivityCredentialSet(entity, Groups.NottinghamshireIntegratedCareBoard, new List<SupportActivities> { SupportActivities.NHSCheckInAndChatPlus }, NHSVRDEMO_SUBGROUP2_HEALTH_CREDENTIAL_SET);
 
         }
 
