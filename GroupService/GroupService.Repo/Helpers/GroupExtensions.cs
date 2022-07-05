@@ -346,6 +346,30 @@ namespace GroupService.Repo.Helpers
                 GroupType = (byte)GroupTypes.National
             });
 
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.NottinghamshireCountyCouncil,
+                GroupName = "Nottinghamshire County Council",
+                GroupKey = "nhsvr-group1",
+                ParentGroupId = (int)Groups.NHSVRDemo,
+                ShiftsEnabled = true,
+                TasksEnabled = true,
+                HomepageEnabled = false,
+                GroupType = (byte)GroupTypes.Local
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.NottinghamshireIntegratedCareBoard,
+                GroupName = "NHS Nottingham & Nottinghamshire Integrated Care Board",
+                GroupKey = "nhsvr-group2",
+                ParentGroupId = (int)Groups.NHSVRDemo,
+                ShiftsEnabled = true,
+                TasksEnabled = true,
+                HomepageEnabled = false,
+                GroupType = (byte)GroupTypes.Regional
+            });
+
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -850,6 +874,30 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestHelpJourney
             {
                 GroupId = (int)Groups.NHSVRDemo,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.NHSVRDemo_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.NottinghamshireCountyCouncil,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.NHSVRDemo_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.NottinghamshireIntegratedCareBoard,
                 Source = REQUEST_SUBMITTER_SOURCE,
                 RequestHelpFormVariant = (byte)RequestHelpFormVariant.NHSVRDemo_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.ThisGroup,
