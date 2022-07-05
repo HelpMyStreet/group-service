@@ -256,6 +256,8 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.AgeUKMidMersey, GetWelcomeEmailConfiguration_AgeUK_MidMersey());
             Populate(entity, Groups.BostonGNS, GetWelcomeEmailConfiguration_BostonGNS());            
             Populate(entity, Groups.NHSVRDemo, GetWelcomeEmailConfiguration_NHSVRDemo());
+            Populate(entity, Groups.NottinghamshireCountyCouncil, GetWelcomeEmailConfiguration_NHSVRDemo());
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, GetWelcomeEmailConfiguration_NHSVRDemo());
         }
 
         private static void Populate(this EntityTypeBuilder<GroupEmailConfiguration> entity, Groups group, List<KeyValuePair<string, string>> keyValuePairs)
