@@ -192,7 +192,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new Credential
             {
                 Id = HEALTH_SAFETY,
-                Name = "Health, Safety and Infection Prevention and Control for Volunteers"
+                Name = "Health and Safety Training"
             });
         }
 
@@ -624,8 +624,8 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.NHSVRDemo,
                 CredentialId = HEALTH_SAFETY,
                 CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
-                Name = "Health, Safety and Infection Prevention and Control",
-                HowToAchieve = "This is a free, online learning module provided by Health Education England (HEE) on the e-learning for healthcare platform. Launch the training module and upload your completion certificate  to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                Name = "Health and Safety Training",
+                HowToAchieve = "The **Health, Safety and Infection Prevention and Control** for Volunteers training is a free, online learning module provided by Health Education England (HEE). <a href=\"https://portal.e-lfh.org.uk/Component/Details/556093\" target=\"_blank\">Launch the training module</a> and upload your completion certificate to continue. (You will need to log-in or sign up for a free account to access this training.)",
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training.",
                 DisplayOrder = 3,
