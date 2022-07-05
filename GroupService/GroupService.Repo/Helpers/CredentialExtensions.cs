@@ -181,11 +181,11 @@ namespace GroupService.Repo.Helpers
                 Name = "Approved Host"
             });
 
-            //entity.HasData(new Credential
-            //{
-            //    Id = HEALTH_SAFETY,
-            //    Name = "Health, Safety and Infection Prevention and Control for Volunteers"
-            //});
+            entity.HasData(new Credential
+            {
+                Id = HEALTH_SAFETY,
+                Name = "Health, Safety and Infection Prevention and Control for Volunteers"
+            });
         }
 
         public static void SetGroupCredentials(this EntityTypeBuilder<GroupCredential> entity)
@@ -608,6 +608,19 @@ namespace GroupService.Repo.Helpers
                 HowToAchieve_CTA_Destination = "",
                 WhatIsThis = $"Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check.",
                 DisplayOrder = 2,
+                CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
+            });
+
+            entity.HasData(new GroupCredential
+            {
+                GroupId = (int)Groups.NHSVRDemo,
+                CredentialId = HEALTH_SAFETY,
+                CredentialTypeId = (int)CredentialTypes.ThirdPartyCheck,
+                Name = "Health, Safety and Infection Prevention and Control",
+                HowToAchieve = "This is a free, online learning module provided by Health Education England (HEE) on the e-learning for healthcare platform. Launch the training module and upload your completion certificate  to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                HowToAchieve_CTA_Destination = "",
+                WhatIsThis = $"",
+                DisplayOrder = 3,
                 CredentialVerifiedById = (byte)CredentialVerifiedBy.GroupAdmin
             });
         }

@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220705081529_AddNHSVRDemo_Step5")]
+    partial class AddNHSVRDemo_Step5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4030,18 +4032,6 @@ You will also be expected to make a minimum commitment of six months.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
-                        },
-                        new
-                        {
-                            GroupId = -38,
-                            CredentialId = 12,
-                            CredentialTypeId = (byte)2,
-                            CredentialVerifiedById = (byte)2,
-                            DisplayOrder = 3,
-                            HowToAchieve = "This is a free, online learning module provided by Health Education England (HEE) on the e-learning for healthcare platform. Launch the training module and upload your completion certificate  to continue. (You will need to log-in or sign up for a free account to access this training.)",
-                            HowToAchieve_CTA_Destination = "",
-                            Name = "Health, Safety and Infection Prevention and Control",
-                            WhatIsThis = ""
                         });
                 });
 
