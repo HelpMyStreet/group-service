@@ -806,10 +806,10 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_REFERENCES_CREDENTIAL_SET);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);
 
-            //var nhsvrdemoActivities = new List<SupportActivities> { SupportActivities.NHSTransport, SupportActivities.NHSSteward, SupportActivities.NHSCheckInAndChat, SupportActivities.NHSCheckInAndChatPlus, SupportActivities.EmergencySupport, SupportActivities.Other };
-            //SetActivityCredentialSet(entity, Groups.NHSVRDemo, nhsvrdemoActivities, IDENTITY_CREDENTIAL_SETS[Groups.NHSVRDemo]);
-            //SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSSteward }, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
-            //SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSCheckInAndChatPlus }, NHSVRDEMO_HEALTH_CREDENTIAL_SET);            
+            var nhsvrdemoActivities = new List<SupportActivities> { SupportActivities.NHSTransport, SupportActivities.NHSSteward, SupportActivities.NHSCheckInAndChat, SupportActivities.NHSCheckInAndChatPlus, SupportActivities.EmergencySupport, SupportActivities.Other };
+            SetActivityCredentialSet(entity, Groups.NHSVRDemo, nhsvrdemoActivities, IDENTITY_CREDENTIAL_SETS[Groups.NHSVRDemo]);
+            SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSSteward }, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
+            SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSCheckInAndChatPlus }, NHSVRDEMO_HEALTH_CREDENTIAL_SET);            
 
         }
 
