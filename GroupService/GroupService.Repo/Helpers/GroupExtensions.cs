@@ -335,6 +335,17 @@ namespace GroupService.Repo.Helpers
                 ShortName = "VCS"
             });
 
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.NHSVRDemo,
+                GroupName = "NHSVR Demo",
+                GroupKey = "nhsvr-demo",
+                ShiftsEnabled = true,
+                TasksEnabled = true,
+                HomepageEnabled = false,
+                GroupType = (byte)GroupTypes.National
+            });
+
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -834,6 +845,18 @@ namespace GroupService.Repo.Helpers
                 RequestorDefinedByGroup = true,
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = true
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.NHSVRDemo,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.NHSVRDemo_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
             });
 
         }

@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220705073657_AddNHSVRDemo_Step2")]
+    partial class AddNHSVRDemo_Step2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4149,12 +4151,6 @@ You will also be expected to make a minimum commitment of six months.",
                             GroupId = -34,
                             CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>For most volunteering opportunities we offer we will need to verify your ID and complete some basic training before you can start helping – this is to make things as safe as possible for you and the people we help. You’ll find all the details of the checks needed when you click to accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>The Boston Community\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"false\"}]"
-                        },
-                        new
-                        {
-                            GroupId = -38,
-                            CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p><p>For some roles, we may also require additional checks or training – we will let you know if any additional checks are needed before you accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:contact@helpmystreet.org\\\">contact@helpmystreet.org</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
                         });
                 });
 
@@ -4248,21 +4244,6 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -32,
                             LocationId = -16
-                        },
-                        new
-                        {
-                            GroupId = -38,
-                            LocationId = -15
-                        },
-                        new
-                        {
-                            GroupId = -38,
-                            LocationId = -13
-                        },
-                        new
-                        {
-                            GroupId = -38,
-                            LocationId = -11
                         });
                 });
 
@@ -4623,18 +4604,6 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -12,
-                            MaxVolunteer = 2147483647,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -35,
-                            MaxVolunteer = 0,
-                            NewRequestNotificationStrategyId = (byte)1
-                        },
-                        new
-                        {
-                            GroupId = -38,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         });
