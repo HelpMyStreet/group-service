@@ -23,7 +23,7 @@ namespace GroupService.Repo.Helpers
         private const int APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET = 329;
         private const int BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET = 3410;
         private const int BOSTONGNS_REFERENCES_CREDENTIAL_SET = 345;
-        private const int UKRANIAN_APPROVEDHOST_CREDENTIAL_SET = 3511;
+        private const int NHSVRDEMO_HEALTH_CREDENTIAL_SET = 3812;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -627,7 +627,7 @@ namespace GroupService.Repo.Helpers
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
         {
-            foreach (var group in GROUPS_USING_YOTI.Where(x=> !x.Equals(Groups.NHSVRDemo)))
+            foreach (var group in GROUPS_USING_YOTI)
             {
                 entity.HasData(new CredentialSet
                 {
@@ -639,15 +639,12 @@ namespace GroupService.Repo.Helpers
 
             foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS)
             {
-                if (dbsCredentialSet.Key != Groups.NHSVRDemo)
+                entity.HasData(new CredentialSet
                 {
-                    entity.HasData(new CredentialSet
-                    {
-                        Id = dbsCredentialSet.Value,
-                        GroupId = (int)dbsCredentialSet.Key,
-                        CredentialId = DBS_CHECK
-                    });
-                }
+                    Id = dbsCredentialSet.Value,
+                    GroupId = (int)dbsCredentialSet.Key,
+                    CredentialId = DBS_CHECK
+                });                
             }
 
             foreach (var group in GROUPS_USING_MANUAL_ID)
@@ -714,6 +711,13 @@ namespace GroupService.Repo.Helpers
                 Id = BOSTONGNS_REFERENCES_CREDENTIAL_SET,
                 GroupId = (int)Groups.BostonGNS,
                 CredentialId = REFERENCES,
+            });
+
+            entity.HasData(new CredentialSet
+            {
+                Id = NHSVRDEMO_HEALTH_CREDENTIAL_SET,
+                GroupId = (int)Groups.NHSVRDemo,
+                CredentialId = HEALTH_SAFETY,
             });
         }
 
@@ -800,8 +804,13 @@ namespace GroupService.Repo.Helpers
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, IDENTITY_CREDENTIAL_SETS[Groups.BostonGNS]);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
             SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_REFERENCES_CREDENTIAL_SET);
-            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);       
-            
+            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);
+
+            //var nhsvrdemoActivities = new List<SupportActivities> { SupportActivities.NHSTransport, SupportActivities.NHSSteward, SupportActivities.NHSCheckInAndChat, SupportActivities.NHSCheckInAndChatPlus, SupportActivities.EmergencySupport, SupportActivities.Other };
+            //SetActivityCredentialSet(entity, Groups.NHSVRDemo, nhsvrdemoActivities, IDENTITY_CREDENTIAL_SETS[Groups.NHSVRDemo]);
+            //SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSSteward }, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
+            //SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSCheckInAndChatPlus }, NHSVRDEMO_HEALTH_CREDENTIAL_SET);            
+
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)
