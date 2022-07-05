@@ -2418,6 +2418,20 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.NHSVRDemo, SupportActivities.NHSCheckInAndChatPlus, SupportActivityInstructionsEnum.NHSDemo_CheckInAndChatPlus, 20);
             Populate(entity, Groups.NHSVRDemo, SupportActivities.EmergencySupport, SupportActivityInstructionsEnum.HMS_EmergencySupport, 20);
             Populate(entity, Groups.NHSVRDemo, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.NHSTransport, SupportActivityInstructionsEnum.NHSDemo_Transport, 20);
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.NHSSteward, SupportActivityInstructionsEnum.NHSDemo_Steward, 20);
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.NHSCheckInAndChat, SupportActivityInstructionsEnum.NHSDemo_CheckInAndChat, 20);
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.NHSCheckInAndChatPlus, SupportActivityInstructionsEnum.NHSDemo_CheckInAndChatPlus, 20);
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.EmergencySupport, SupportActivityInstructionsEnum.HMS_EmergencySupport, 20);
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.NHSTransport, SupportActivityInstructionsEnum.NHSDemo_Transport, 20);
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.NHSSteward, SupportActivityInstructionsEnum.NHSDemo_Steward, 20);
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.NHSCheckInAndChat, SupportActivityInstructionsEnum.NHSDemo_CheckInAndChat, 20);
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.NHSCheckInAndChatPlus, SupportActivityInstructionsEnum.NHSDemo_CheckInAndChatPlus, 20);
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.EmergencySupport, SupportActivityInstructionsEnum.HMS_EmergencySupport, 20);
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
         }
     }
 }
