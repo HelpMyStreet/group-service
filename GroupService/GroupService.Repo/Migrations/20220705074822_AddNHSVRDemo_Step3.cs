@@ -28,8 +28,7 @@ namespace GroupService.Repo.Migrations
                 table: "NewRequestNotificationStrategy",
                 columns: new[] { "GroupID", "MaxVolunteer", "NewRequestNotificationStrategyId" },
                 values: new object[,]
-                {
-                    { -35, 0, (byte)1 },
+                {                    
                     { -38, 2147483647, (byte)1 }
                 });
         }
@@ -65,12 +64,6 @@ namespace GroupService.Repo.Migrations
                 table: "NewRequestNotificationStrategy",
                 keyColumn: "GroupID",
                 keyValue: -38);
-
-            migrationBuilder.DeleteData(
-                schema: "Group",
-                table: "NewRequestNotificationStrategy",
-                keyColumn: "GroupID",
-                keyValue: -35);
         }
     }
 }
