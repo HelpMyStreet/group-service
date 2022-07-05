@@ -222,6 +222,16 @@ namespace GroupService.Repo.Helpers
             return config;
         }
 
+        private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_NHSVRDemo()
+        {
+            List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
+            config.Add(new KeyValuePair<string, string>("GroupContent", $"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p><p>For some roles, we may also require additional checks or training – we will let you know if any additional checks are needed before you accept a request.</p>"));
+            config.Add(new KeyValuePair<string, string>("GroupSignature", ""));
+            config.Add(new KeyValuePair<string, string>("GroupPS", "Questions? Drop us an email at <a href=\"mailto:contact@helpmystreet.org\">contact@helpmystreet.org</a>."));
+            config.Add(new KeyValuePair<string, string>("ShowGroupLogo", "true"));
+            return config;
+        }
+
         public static void PopulateGroupEmailConfiguration(this EntityTypeBuilder<GroupEmailConfiguration> entity)
         {
             Populate(entity, Groups.Generic, GetWelcomeEmailConfiguration_HelpMyStreet());
@@ -244,7 +254,10 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.Southwell, GetWelcomeEmailConfiguration_Southwell());
             Populate(entity, Groups.ApexBankStaff, GetWelcomeEmailConfiguration_ApexBankStaffPCN());
             Populate(entity, Groups.AgeUKMidMersey, GetWelcomeEmailConfiguration_AgeUK_MidMersey());
-            Populate(entity, Groups.BostonGNS, GetWelcomeEmailConfiguration_BostonGNS());
+            Populate(entity, Groups.BostonGNS, GetWelcomeEmailConfiguration_BostonGNS());            
+            Populate(entity, Groups.NHSVRDemo, GetWelcomeEmailConfiguration_NHSVRDemo());
+            Populate(entity, Groups.NottinghamshireCountyCouncil, GetWelcomeEmailConfiguration_NHSVRDemo());
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, GetWelcomeEmailConfiguration_NHSVRDemo());
         }
 
         private static void Populate(this EntityTypeBuilder<GroupEmailConfiguration> entity, Groups group, List<KeyValuePair<string, string>> keyValuePairs)

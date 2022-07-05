@@ -34,6 +34,18 @@ namespace GroupService.Repo.Helpers
 			Populate(entity, Groups.Generic, Location.RichmondMedicalCentre);
 			Populate(entity, Groups.ApexBankStaff, Location.RichmondMedicalCentre);
 
+			Populate(entity, Groups.NHSVRDemo, Location.ForestRecreationGround);
+			Populate(entity, Groups.NHSVRDemo, Location.RichardHerrodCentre);
+			Populate(entity, Groups.NHSVRDemo, Location.MansfieldWickesSite);
+
+			Populate(entity, Groups.NottinghamshireCountyCouncil, Location.ForestRecreationGround);
+			Populate(entity, Groups.NottinghamshireCountyCouncil, Location.RichardHerrodCentre);
+			Populate(entity, Groups.NottinghamshireCountyCouncil, Location.MansfieldWickesSite);
+
+			Populate(entity, Groups.NottinghamshireIntegratedCareBoard, Location.ForestRecreationGround);
+			Populate(entity, Groups.NottinghamshireIntegratedCareBoard, Location.RichardHerrodCentre);
+			Populate(entity, Groups.NottinghamshireIntegratedCareBoard, Location.MansfieldWickesSite);
+
 		}
 	}
 }
