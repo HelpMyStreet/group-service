@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220706091636_AddActivityInstructionsForLincsGroups")]
+    partial class AddActivityInstructionsForLincsGroups
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1832,6 +1834,21 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Name = "ImpendingUserDeletion"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "UserDeleted"
                         });
                 });
 

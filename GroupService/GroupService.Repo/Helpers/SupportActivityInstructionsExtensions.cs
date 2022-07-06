@@ -2289,6 +2289,9 @@ namespace GroupService.Repo.Helpers
 
             Populate(entity, Groups.LincolnshireVCS, SupportActivities.AdvertisingRoles, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
             Populate(entity, Groups.LincolnshireLCVS, SupportActivities.AdvertisingRoles, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+
+            Populate(entity, Groups.LincolnshireVCS, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+            Populate(entity, Groups.LincolnshireLCVS, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
         }
     }
 }
