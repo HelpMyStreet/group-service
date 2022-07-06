@@ -1815,7 +1815,7 @@ namespace GroupService.Repo.Helpers
                 Intro = null,
                 ActivityDetails = $"Volunteers are needed to support the safe movement of patients around " +
                 $"events / sites. You may be required to monitor patient numbers, ensure safe social distancing, " +
-                $"or identify patients requiring additional support.The maximum shift length is 4 hours.",
+                $"or identify patients requiring additional support. The maximum shift length is 4 hours.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
