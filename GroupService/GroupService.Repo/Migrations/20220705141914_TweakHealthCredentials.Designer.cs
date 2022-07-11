@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220705141914_TweakHealthCredentials")]
+    partial class TweakHealthCredentials
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1409,14 +1411,14 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -38,
-                            ActivityId = 39,
+                            ActivityId = 36,
                             CredentialSetId = 381,
                             DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -38,
-                            ActivityId = 36,
+                            ActivityId = 39,
                             CredentialSetId = 3812,
                             DisplayOrder = 0
                         },
@@ -1465,14 +1467,14 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -39,
-                            ActivityId = 39,
+                            ActivityId = 36,
                             CredentialSetId = 391,
                             DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -39,
-                            ActivityId = 36,
+                            ActivityId = 39,
                             CredentialSetId = 3912,
                             DisplayOrder = 0
                         },
@@ -1521,14 +1523,14 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -40,
-                            ActivityId = 39,
+                            ActivityId = 36,
                             CredentialSetId = 401,
                             DisplayOrder = 0
                         },
                         new
                         {
                             GroupId = -40,
-                            ActivityId = 36,
+                            ActivityId = 39,
                             CredentialSetId = 4012,
                             DisplayOrder = 0
                         });
@@ -4350,9 +4352,9 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialTypeId = (byte)2,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 3,
-                            HowToAchieve = "The **Health, Safety and Infection Prevention and Control** for Volunteers training is a free, online learning module provided by Health Education England (HEE). <a href=\"https://portal.e-lfh.org.uk/Component/Details/556093\" target=\"_blank\">Launch the training module</a> and upload your completion certificate to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                            HowToAchieve = "This is a free, online learning module provided by Health Education England (HEE) on the e-learning for healthcare platform. Launch the training module and upload your completion certificate  to continue. (You will need to log-in or sign up for a free account to access this training.)",
                             HowToAchieve_CTA_Destination = "",
-                            Name = "Health and Safety Training",
+                            Name = "Health, Safety and Infection Prevention and Control",
                             WhatIsThis = "Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training."
                         },
                         new
@@ -4374,9 +4376,9 @@ You will also be expected to make a minimum commitment of six months.",
                             CredentialTypeId = (byte)2,
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 3,
-                            HowToAchieve = "The **Health, Safety and Infection Prevention and Control** for Volunteers training is a free, online learning module provided by Health Education England (HEE). <a href=\"https://portal.e-lfh.org.uk/Component/Details/556093\" target=\"_blank\">Launch the training module</a> and upload your completion certificate to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                            HowToAchieve = "This is a free, online learning module provided by Health Education England (HEE) on the e-learning for healthcare platform. Launch the training module and upload your completion certificate  to continue. (You will need to log-in or sign up for a free account to access this training.)",
                             HowToAchieve_CTA_Destination = "",
-                            Name = "Health and Safety Training",
+                            Name = "Health, Safety and Infection Prevention and Control",
                             WhatIsThis = "Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training."
                         });
                 });
@@ -8786,12 +8788,12 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             SupportActivityInstructionsId = (short)66,
-                            Instructions = "{\"SupportActivityInstructions\":66,\"ActivityDetails\":\"Volunteers are needed to transport equipment, supplies or medication between NHS services and sites. Pharmacies may need volunteers to deliver prescribed medication to patients’ homes / alternative sites.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Please read all of the available information by expanding ‘more information’ on the open request before clicking to accept a request. You must have your own transport that is suitable for the journey described in the request (you can cycle or walk if appropriate).\"},{\"Heading\":\"Completing the request\",\"Detail\":\"You’ll receive a reminder email the day before the transportation is required. Make sure to arrive on time and have a copy of the pick-up and drop-off locations to hand.\"},{\"Heading\":\"Marking it as complete\",\"Detail\":\"Once you’ve completed a request don’t forget to mark it as complete in your “My Requests” tab, this will let the requesting organisation know you have completed the task.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":66,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Please read all of the available information by expanding ‘more information’ on the open request before clicking to accept a request. You must have your own transport that is suitable for the journey described in the request (you can cycle or walk if appropriate).\"},{\"Heading\":\"Completing the request\",\"Detail\":\"You’ll receive a reminder email the day before the transportation is required. Make sure to arrive on time and have a copy of the pick-up and drop-off locations to hand.\"},{\"Heading\":\"Marking it as complete\",\"Detail\":\"Once you’ve completed a request don’t forget to mark it as complete in your “My Requests” tab, this will let the requesting organisation know you have completed the task.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
                         },
                         new
                         {
                             SupportActivityInstructionsId = (short)67,
-                            Instructions = "{\"SupportActivityInstructions\":67,\"ActivityDetails\":\"Volunteers are needed to support the safe movement of patients around events / sites. You may be required to monitor patient numbers, ensure safe social distancing, or identify patients requiring additional support. The maximum shift length is 4 hours.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Please read all of the available information by expanding ‘more information’ on the open request before clicking to accept a shift.\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab by searching for shifts with the status “Done”\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":67,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Please read all of the available information by expanding ‘more information’ on the open request before clicking to accept a shift.\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab by searching for shifts with the status “Done”\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
                         },
                         new
                         {
@@ -8801,7 +8803,7 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             SupportActivityInstructionsId = (short)69,
-                            Instructions = "{\"SupportActivityInstructions\":69,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
+                            Instructions = "{\"SupportActivityInstructions\":68,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
                         });
                 });
 

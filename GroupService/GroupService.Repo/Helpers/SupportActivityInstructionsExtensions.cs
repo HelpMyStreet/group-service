@@ -1782,6 +1782,9 @@ namespace GroupService.Repo.Helpers
             {
                 SupportActivityInstructions = SupportActivityInstructionsEnum.NHSDemo_Transport,
                 Intro = null,
+                ActivityDetails = $"Volunteers are needed to transport equipment, supplies or medication between " +
+                $"NHS services and sites. Pharmacies may need volunteers to deliver prescribed medication to patients’ " +
+                $"homes / alternative sites.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
@@ -1810,6 +1813,9 @@ namespace GroupService.Repo.Helpers
             {
                 SupportActivityInstructions = SupportActivityInstructionsEnum.NHSDemo_Steward,
                 Intro = null,
+                ActivityDetails = $"Volunteers are needed to support the safe movement of patients around " +
+                $"events / sites. You may be required to monitor patient numbers, ensure safe social distancing, " +
+                $"or identify patients requiring additional support. The maximum shift length is 4 hours.",
                 Steps = new System.Collections.Generic.List<Step>()
                 {
                     new Step()
@@ -2250,7 +2256,7 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
                 SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.NHSDemo_CheckInAndChatPlus,
-                Instructions = JsonConvert.SerializeObject(GetInstructions_NHSDemo_CheckInAndChat())
+                Instructions = JsonConvert.SerializeObject(GetInstructions_NHSDemo_CheckInAndChatPlus())
             });
 
         }
