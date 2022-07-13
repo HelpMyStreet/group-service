@@ -2417,6 +2417,12 @@ namespace GroupService.Repo.Helpers
 
             Populate(entity, Groups.LincolnshireVCS, SupportActivities.AdvertisingRoles, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
             Populate(entity, Groups.LincolnshireLCVS, SupportActivities.AdvertisingRoles, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+            Populate(entity, Groups.LincolnshireVolunteers, SupportActivities.AdvertisingRoles, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+
+            Populate(entity, Groups.LincolnshireVCS, SupportActivities.Other, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+            Populate(entity, Groups.LincolnshireLCVS, SupportActivities.Other, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+            Populate(entity, Groups.LincolnshireVolunteers, SupportActivities.Other, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+
 
             Populate(entity, Groups.NHSVRDemo, SupportActivities.NHSTransport, SupportActivityInstructionsEnum.NHSDemo_Transport, 20);
             Populate(entity, Groups.NHSVRDemo, SupportActivities.NHSSteward, SupportActivityInstructionsEnum.NHSDemo_Steward, 20);
