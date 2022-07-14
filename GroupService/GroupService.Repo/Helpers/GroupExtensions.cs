@@ -330,7 +330,7 @@ namespace GroupService.Repo.Helpers
                 TasksEnabled = true,
                 HomepageEnabled = false,
                 GroupType = (byte)GroupTypes.Local,
-                FriendlyName = "LCVS",
+                FriendlyName = "VCS",
                 LinkURL = "/lincolnshire-vcs",
                 ShortName = "VCS"
             });
