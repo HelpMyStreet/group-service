@@ -41,6 +41,7 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.BankStaffVaccinator => "Covering bank staff vaccinator shifts (this is a paid role)",
                 SupportActivities.SkillShare => "Giving my time to share my skills and interests with other people who are interested to learn more",
                 SupportActivities.Accommodation => "Providing accommodation",
+                SupportActivities.AdvertisingRoles => "Ongoing voluntary roles",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
         }
@@ -845,7 +846,7 @@ namespace GroupService.Repo.Helpers
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
                 SupportActivityId = (int)SupportActivities.AdvertisingRoles,
-                Label = "Volunteering to fill open voluntary roles",
+                Label = SupportActivities.AdvertisingRoles.GetLabel(),
                 IsPreSelected = true,
                 DisplayOrder = 1
             });
