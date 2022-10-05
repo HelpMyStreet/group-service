@@ -844,8 +844,8 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RegistrationFormSupportActivity
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
-                SupportActivityId = (int)SupportActivities.VaccineSupport,
-                Label = "Volunteering to support the COVID-19 vaccination programme (e.g. support staff for local vaccination centres)",
+                SupportActivityId = (int)SupportActivities.AdvertisingRoles,
+                Label = "Volunteering to fill open voluntary roles",
                 IsPreSelected = true,
                 DisplayOrder = 1
             });
@@ -922,22 +922,12 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 9
             });
 
-            //entity.HasData(new RegistrationFormSupportActivity
-            //{
-            //    RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
-            //    SupportActivityId = (int)SupportActivities.EmergencySupport,
-            //    Label = SupportActivities.EmergencySupport.GetLabel(),
-            //    IsPreSelected = false,
-            //    DisplayOrder = 10
-            //});
-
-
             entity.HasData(new RegistrationFormSupportActivity
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
                 SupportActivityId = (int)SupportActivities.Other,
                 Label = SupportActivities.Other.GetLabel(),
-                IsPreSelected = false,
+                IsPreSelected = true,
                 DisplayOrder = 11
             });
         }
