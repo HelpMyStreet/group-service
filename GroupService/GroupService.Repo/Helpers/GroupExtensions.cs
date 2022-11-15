@@ -1054,10 +1054,10 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestorDetails
             {
                 GroupId = (int)Groups.LincolnshireVCS,
-                FirstName = "Lincolnshire VCS",
-                LastName = "(Voluntary Centre Services)",
+                FirstName = "Voluntary Centre Services",
+                LastName = "(VCS)",
                 OtherPhone = "01522 551683",
-                EmailAddress = "test@email.com",
+                EmailAddress = "volunteering@voluntarycentreservices.org.uk",
                 AddressLine1 = "Lincolnshire VCS",
                 AddressLine2 = "City Hall",
                 AddressLine3 = "",
@@ -1068,8 +1068,8 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RequestorDetails
             {
                 GroupId = (int)Groups.LincolnshireLCVS,
-                FirstName = "Lincolnshire LCVS",
-                LastName = "(Voluntary Centre Services)",
+                FirstName = "Lincolnshire Community and Voluntary Service",
+                LastName = "(LCVS)",
                 OtherPhone = "01522 551683",
                 EmailAddress = "test@email.com",
                 AddressLine1 = "Lincolnshire LCVS",
