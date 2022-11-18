@@ -161,6 +161,20 @@ namespace GroupService.Repo.Helpers
                 NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
                 MaxVolunteer = int.MaxValue
             });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.LincolnshireVCS,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
+
+            entity.HasData(new GroupNewRequestNotificationStrategy
+            {
+                GroupId = (int)Groups.LincolnshireLCVS,
+                NewRequestNotificationStrategyId = (int)NewRequestNotificationStrategy.ClosestNEligibleVolunteers,
+                MaxVolunteer = int.MaxValue
+            });
         }
     }
 }
