@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30011.22
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupService.AzureFunction", "GroupService\GroupService.AzureFunction\GroupService.AzureFunction.csproj", "{5743CD8A-2606-479A-9229-4711F2CFA7DB}"
 EndProject

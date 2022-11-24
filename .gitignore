@@ -349,4 +349,7 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-GroupService/GroupService.AzureFunction/appsettings.json
+/GroupService/GroupService.AzureFunction/appsettings.json
+/GroupService/GroupService.AzureFunction/appsettings.Development.json
+/GroupService/GroupService.AzureFunction/appsettings.NMR.json
+/GroupService/GroupService.AzureFunction/appsettings.UAT.json

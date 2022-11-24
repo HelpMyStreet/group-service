@@ -15,6 +15,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  dotNetFramework: 'net6.0'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -47,7 +48,7 @@ steps:
     publishWebProjects: false
     zipAfterPublish: true
     projects: '**/**/*.AzureFunction.csproj'
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    arguments: '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --output $(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   displayName: Publish Build Artefacts
