@@ -1070,13 +1070,13 @@ namespace GroupService.Repo.Helpers
                 GroupId = (int)Groups.LincolnshireLCVS,
                 FirstName = "Lincolnshire Community and Voluntary Service",
                 LastName = "(LCVS)",
-                OtherPhone = "01522 551683",
-                EmailAddress = "test@email.com",
-                AddressLine1 = "Lincolnshire LCVS",
-                AddressLine2 = "City Hall",
-                AddressLine3 = "",
-                Locality = "Lincoln",
-                Postcode = "LN1 1DF"
+                OtherPhone = "01205 510888",
+                EmailAddress = "enquiry@lincolnshirecvs.org.uk",
+                AddressLine1 = "Lincolnshire CVS",
+                AddressLine2 = "Room G8 Boston Borough Council Offices",
+                AddressLine3 = "Municipal Building West Street",
+                Locality = "Boston",
+                Postcode = "PE21 8QR"
             });
         }
 
