@@ -1763,8 +1763,13 @@ namespace GroupService.Repo.Helpers
                     },
                     new Step()
                     {
-                        Heading = "Click to apply",
-                        Detail = "If you want to find out or apply for the role, click to apply. The organisation managing the request will be in touch to take you through the next steps.",
+                        Heading = "Click to enquire",
+                        Detail = "We will share your details with the organisation managing the request. They will contact you shortly to discuss the role and take you through the next steps to apply.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Complete application process",
+                        Detail = "The application process will differ by role, but generally includes some form of training or induction. You’ll need to complete any necessary steps before you can start helping.",
                     },
                     new Step()
                     {
