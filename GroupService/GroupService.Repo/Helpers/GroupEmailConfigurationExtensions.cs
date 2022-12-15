@@ -258,6 +258,8 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.NHSVRDemo, GetWelcomeEmailConfiguration_NHSVRDemo());
             Populate(entity, Groups.NottinghamshireCountyCouncil, GetWelcomeEmailConfiguration_NHSVRDemo());
             Populate(entity, Groups.NottinghamshireIntegratedCareBoard, GetWelcomeEmailConfiguration_NHSVRDemo());
+            Populate(entity, Groups.LincolnshireVCS, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.LincolnshireLCVS, GetWelcomeEmailConfiguration_Default());
         }
 
         private static void Populate(this EntityTypeBuilder<GroupEmailConfiguration> entity, Groups group, List<KeyValuePair<string, string>> keyValuePairs)
