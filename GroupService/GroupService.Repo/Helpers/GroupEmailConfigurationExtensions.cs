@@ -146,6 +146,13 @@ namespace GroupService.Repo.Helpers
             return config;
         }
 
+        private static List<KeyValuePair<string, string>> DontSendGroupWelcomeEmail()
+        {
+            List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
+            config.Add(new KeyValuePair<string, string>("DontSendEmail", "true"));
+            return config;
+        }
+
         private static List<KeyValuePair<string, string>> GetWelcomeEmailConfiguration_AgeUKFaversham()
         {
             List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
@@ -258,8 +265,8 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.NHSVRDemo, GetWelcomeEmailConfiguration_NHSVRDemo());
             Populate(entity, Groups.NottinghamshireCountyCouncil, GetWelcomeEmailConfiguration_NHSVRDemo());
             Populate(entity, Groups.NottinghamshireIntegratedCareBoard, GetWelcomeEmailConfiguration_NHSVRDemo());
-            Populate(entity, Groups.LincolnshireVCS, GetWelcomeEmailConfiguration_Default());
-            Populate(entity, Groups.LincolnshireLCVS, GetWelcomeEmailConfiguration_Default());
+            Populate(entity, Groups.LincolnshireVCS, DontSendGroupWelcomeEmail());
+            Populate(entity, Groups.LincolnshireLCVS, DontSendGroupWelcomeEmail());
         }
 
         private static void Populate(this EntityTypeBuilder<GroupEmailConfiguration> entity, Groups group, List<KeyValuePair<string, string>> keyValuePairs)
