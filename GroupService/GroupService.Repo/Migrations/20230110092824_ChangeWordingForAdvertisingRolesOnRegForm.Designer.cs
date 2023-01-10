@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230110092824_ChangeWordingForAdvertisingRolesOnRegForm")]
+    partial class ChangeWordingForAdvertisingRolesOnRegForm
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4549,13 +4551,13 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -36,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"DontSendEmail\",\"Value\":\"true\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
                         },
                         new
                         {
                             GroupId = -37,
                             CommunicationJobTypeId = (byte)15,
-                            Configuration = "[{\"Key\":\"DontSendEmail\",\"Value\":\"true\"}]"
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"False\"}]"
                         });
                 });
 

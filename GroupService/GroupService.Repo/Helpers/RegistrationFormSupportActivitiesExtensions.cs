@@ -41,7 +41,7 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.BankStaffVaccinator => "Covering bank staff vaccinator shifts (this is a paid role)",
                 SupportActivities.SkillShare => "Giving my time to share my skills and interests with other people who are interested to learn more",
                 SupportActivities.Accommodation => "Providing accommodation",
-                SupportActivities.AdvertisingRoles => "Ongoing voluntary roles",
+                SupportActivities.AdvertisingRoles => "Longer-term volunteering opportunities",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
         }
