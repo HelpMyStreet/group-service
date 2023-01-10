@@ -1773,8 +1773,8 @@ namespace GroupService.Repo.Helpers
                     },
                     new Step()
                     {
-                        Heading = "Start helping",
-                        Detail  = "Once everything is in place you can start helping! The request will stay in your “My Requests” view for as long as you’re helping."
+                        Heading = "Start volunteering",
+                        Detail =  "Once everything is in place you can start volunteering! The request will stay in your “My Requests” view until you have completed or resigned from the volunteer role."
                     }
                 },
                 Close = "In your “My Requests” view you can mark the request as complete or let the requester know you can no longer help by clicking “Can’t Do” so they can’t start looking for a new volunteer."
