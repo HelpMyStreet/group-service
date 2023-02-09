@@ -176,8 +176,8 @@ namespace GroupService.Repo.Helpers
                 Id = (int)Groups.LincolnshireVolunteers,
                 GroupName = "Lincolnshire Volunteers",
                 GroupKey = "lincs-volunteers",
-                ShiftsEnabled = true,
-                TasksEnabled = false,
+                ShiftsEnabled = false,
+                TasksEnabled = true,
                 HomepageEnabled = true,
                 GeographicName = "Lincolnshire Volunteers",
                 GroupType = (byte)GroupTypes.Regional,
@@ -304,6 +304,72 @@ namespace GroupService.Repo.Helpers
                 ShortName = "Boston",
                 GeographicName = "Boston or surrounding areas",
             });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.LincolnshireLCVS,
+                GroupName = "LCVS",
+                GroupKey = "lincolnshire-lcvs",
+                ParentGroupId = (int)Groups.LincolnshireVolunteers,
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = false,
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "LCVS",
+                LinkURL = "/lincolnshire-lcvs",
+                ShortName = "LCVS"
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.LincolnshireVCS,
+                GroupName = "VCS",
+                GroupKey = "lincolnshire-vcs",
+                ParentGroupId = (int)Groups.LincolnshireVolunteers,
+                ShiftsEnabled = false,
+                TasksEnabled = true,
+                HomepageEnabled = false,
+                GroupType = (byte)GroupTypes.Local,
+                FriendlyName = "VCS",
+                LinkURL = "/lincolnshire-vcs",
+                ShortName = "VCS"
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.NHSVRDemo,
+                GroupName = "NHSVR Demo",
+                GroupKey = "nhsvr-demo",
+                ShiftsEnabled = true,
+                TasksEnabled = true,
+                HomepageEnabled = false,
+                GroupType = (byte)GroupTypes.National
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.NottinghamshireCountyCouncil,
+                GroupName = "Nottinghamshire County Council",
+                GroupKey = "nhsvr-group1",
+                ParentGroupId = (int)Groups.NHSVRDemo,
+                ShiftsEnabled = true,
+                TasksEnabled = true,
+                HomepageEnabled = false,
+                GroupType = (byte)GroupTypes.Local
+            });
+
+            entity.HasData(new Group
+            {
+                Id = (int)Groups.NottinghamshireIntegratedCareBoard,
+                GroupName = "NHS Nottingham & Nottinghamshire Integrated Care Board",
+                GroupKey = "nhsvr-group2",
+                ParentGroupId = (int)Groups.NHSVRDemo,
+                ShiftsEnabled = true,
+                TasksEnabled = true,
+                HomepageEnabled = false,
+                GroupType = (byte)GroupTypes.Regional
+            });
+
         }
 
         public static void RegistrationJourney(this EntityTypeBuilder<RegistrationJourney> entity)
@@ -642,10 +708,10 @@ namespace GroupService.Repo.Helpers
             {
                 GroupId = (int)Groups.LincolnshireVolunteers,
                 Source = REQUEST_SUBMITTER_SOURCE,
-                RequestHelpFormVariant = (byte)RequestHelpFormVariant.ChildGroupSelector,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteersRequests_RequestSubmitter,
                 TargetGroups = (byte)TargetGroups.GenericGroup,
                 AccessRestrictedByRole = true,
-                RequestorDefinedByGroup = true,
+                RequestorDefinedByGroup = false,
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = false
             });
@@ -780,6 +846,67 @@ namespace GroupService.Repo.Helpers
                 RequestsRequireApproval = false,
                 SuppressRecipientPersonalDetails = true
             });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.LincolnshireVCS,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteersRequests_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.LincolnshireLCVS,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.LincolnshireVolunteersRequests_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.GenericGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = true,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = true
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.NHSVRDemo,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.NHSVRDemo_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.NottinghamshireCountyCouncil,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.NHSVRDemo_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
+            });
+
+            entity.HasData(new RequestHelpJourney
+            {
+                GroupId = (int)Groups.NottinghamshireIntegratedCareBoard,
+                Source = REQUEST_SUBMITTER_SOURCE,
+                RequestHelpFormVariant = (byte)RequestHelpFormVariant.NHSVRDemo_RequestSubmitter,
+                TargetGroups = (byte)TargetGroups.ThisGroup,
+                AccessRestrictedByRole = true,
+                RequestorDefinedByGroup = false,
+                RequestsRequireApproval = false,
+                SuppressRecipientPersonalDetails = false
+            });
+
         }
 
         public static void RequestorDetails(this EntityTypeBuilder<RequestorDetails> entity)
@@ -923,6 +1050,34 @@ namespace GroupService.Repo.Helpers
                     Postcode = "NG18 1QA"
                 });
             }
+
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.LincolnshireVCS,
+                FirstName = "Voluntary Centre Services",
+                LastName = "(VCS)",
+                OtherPhone = "01522 551683",
+                EmailAddress = "volunteering@voluntarycentreservices.org.uk",
+                AddressLine1 = "Lincolnshire VCS",
+                AddressLine2 = "City Hall",
+                AddressLine3 = "",
+                Locality = "Lincoln",
+                Postcode = "LN1 1DF"
+            });
+
+            entity.HasData(new RequestorDetails
+            {
+                GroupId = (int)Groups.LincolnshireLCVS,
+                FirstName = "Lincolnshire Community and Voluntary Service",
+                LastName = "(LCVS)",
+                OtherPhone = "01205 510888",
+                EmailAddress = "enquiry@lincolnshirecvs.org.uk",
+                AddressLine1 = "Lincolnshire CVS",
+                AddressLine2 = "Room G8 Boston Borough Council Offices",
+                AddressLine3 = "Municipal Building West Street",
+                Locality = "Boston",
+                Postcode = "PE21 8QR"
+            });
         }
 
         public static void AddGroupMapDetails(this EntityTypeBuilder<GroupMapDetails> entity)
@@ -1161,6 +1316,7 @@ namespace GroupService.Repo.Helpers
                 Longitude = -0.02500M,
                 ZoomLevel = 13.8M
             });
+
         }
     }
 }

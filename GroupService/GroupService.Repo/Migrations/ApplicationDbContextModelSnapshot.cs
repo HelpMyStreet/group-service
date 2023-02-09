@@ -1363,6 +1363,174 @@ namespace GroupService.Repo.Migrations
                             ActivityId = 11,
                             CredentialSetId = 3410,
                             DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            ActivityId = 37,
+                            CredentialSetId = 38,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            ActivityId = 36,
+                            CredentialSetId = 38,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            ActivityId = 38,
+                            CredentialSetId = 38,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            ActivityId = 39,
+                            CredentialSetId = 38,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            ActivityId = 25,
+                            CredentialSetId = 38,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            ActivityId = 11,
+                            CredentialSetId = 38,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            ActivityId = 39,
+                            CredentialSetId = 381,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            ActivityId = 36,
+                            CredentialSetId = 3812,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            ActivityId = 37,
+                            CredentialSetId = 39,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            ActivityId = 36,
+                            CredentialSetId = 39,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            ActivityId = 38,
+                            CredentialSetId = 39,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            ActivityId = 39,
+                            CredentialSetId = 39,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            ActivityId = 25,
+                            CredentialSetId = 39,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            ActivityId = 11,
+                            CredentialSetId = 39,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            ActivityId = 39,
+                            CredentialSetId = 391,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            ActivityId = 36,
+                            CredentialSetId = 3912,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            ActivityId = 37,
+                            CredentialSetId = 40,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            ActivityId = 36,
+                            CredentialSetId = 40,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            ActivityId = 38,
+                            CredentialSetId = 40,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            ActivityId = 39,
+                            CredentialSetId = 40,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            ActivityId = 25,
+                            CredentialSetId = 40,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            ActivityId = 11,
+                            CredentialSetId = 40,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            ActivityId = 39,
+                            CredentialSetId = 401,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            ActivityId = 36,
+                            CredentialSetId = 4012,
+                            DisplayOrder = 0
                         });
                 });
 
@@ -1374,8 +1542,8 @@ namespace GroupService.Repo.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(50)")
-                        .HasMaxLength(50)
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100)
                         .IsUnicode(false);
 
                     b.HasKey("Id");
@@ -1437,6 +1605,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 11,
                             Name = "Approved Host"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Health and Safety Training"
                         });
                 });
 
@@ -1553,6 +1726,24 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 38,
+                            GroupId = -38,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 40,
+                            GroupId = -40,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 39,
+                            GroupId = -39,
+                            CredentialId = -1
+                        },
+                        new
+                        {
                             Id = 71,
                             GroupId = -7,
                             CredentialId = 2
@@ -1597,6 +1788,24 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 341,
                             GroupId = -34,
+                            CredentialId = 2
+                        },
+                        new
+                        {
+                            Id = 381,
+                            GroupId = -38,
+                            CredentialId = 2
+                        },
+                        new
+                        {
+                            Id = 391,
+                            GroupId = -39,
+                            CredentialId = 2
+                        },
+                        new
+                        {
+                            Id = 401,
+                            GroupId = -40,
                             CredentialId = 2
                         },
                         new
@@ -1724,6 +1933,24 @@ namespace GroupService.Repo.Migrations
                             Id = 345,
                             GroupId = -34,
                             CredentialId = 5
+                        },
+                        new
+                        {
+                            Id = 3812,
+                            GroupId = -38,
+                            CredentialId = 12
+                        },
+                        new
+                        {
+                            Id = 3912,
+                            GroupId = -39,
+                            CredentialId = 12
+                        },
+                        new
+                        {
+                            Id = 4012,
+                            GroupId = -40,
+                            CredentialId = 12
                         });
                 });
 
@@ -1832,6 +2059,21 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 18,
                             Name = "JobsDueTomorrow"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "TaskAppliedForNotification"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Name = "ImpendingUserDeletion"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "UserDeleted"
                         });
                 });
 
@@ -2336,6 +2578,11 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 33,
                             Name = "UkraineRefugees_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Name = "NHSVRDemo_RequestSubmitter"
                         });
                 });
 
@@ -2604,6 +2851,36 @@ namespace GroupService.Repo.Migrations
                             Id = 34,
                             FriendlyName = "Accommodation",
                             Name = "Accommodation"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            FriendlyName = "Roles",
+                            Name = "AdvertisingRoles"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            FriendlyName = "Steward",
+                            Name = "NHSSteward"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            FriendlyName = "Transport",
+                            Name = "NHSTransport"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            FriendlyName = "NHS check in and chat",
+                            Name = "NHSCheckInAndChat"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            FriendlyName = "NHS check in and chat plus",
+                            Name = "NHSCheckInAndChatPlus"
                         });
                 });
 
@@ -2940,6 +3217,31 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 64,
                             Name = "UKRANIAN_Accommodation"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            Name = "Lincolnshire_AdvertisingRoles"
+                        },
+                        new
+                        {
+                            Id = 66,
+                            Name = "NHSDemo_Transport"
+                        },
+                        new
+                        {
+                            Id = 67,
+                            Name = "NHSDemo_Steward"
+                        },
+                        new
+                        {
+                            Id = 68,
+                            Name = "NHSDemo_CheckInAndChat"
+                        },
+                        new
+                        {
+                            Id = 69,
+                            Name = "NHSDemo_CheckInAndChatPlus"
                         });
                 });
 
@@ -3208,9 +3510,9 @@ namespace GroupService.Repo.Migrations
                             GroupType = (byte)1,
                             HomepageEnabled = true,
                             LinkURL = "/lincolnshirevolunteers",
-                            ShiftsEnabled = true,
+                            ShiftsEnabled = false,
                             ShortName = "Lincs Vols",
-                            TasksEnabled = false
+                            TasksEnabled = true
                         },
                         new
                         {
@@ -3326,6 +3628,66 @@ You will also be expected to make a minimum commitment of six months.",
                             ShiftsEnabled = false,
                             ShortName = "Boston",
                             TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -37,
+                            FriendlyName = "LCVS",
+                            GroupKey = "lincolnshire-lcvs",
+                            GroupName = "LCVS",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            LinkURL = "/lincolnshire-lcvs",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = false,
+                            ShortName = "LCVS",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -36,
+                            FriendlyName = "VCS",
+                            GroupKey = "lincolnshire-vcs",
+                            GroupName = "VCS",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            LinkURL = "/lincolnshire-vcs",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = false,
+                            ShortName = "VCS",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -38,
+                            GroupKey = "nhsvr-demo",
+                            GroupName = "NHSVR Demo",
+                            GroupType = (byte)2,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -39,
+                            GroupKey = "nhsvr-group1",
+                            GroupName = "Nottinghamshire County Council",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -38,
+                            ShiftsEnabled = true,
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -40,
+                            GroupKey = "nhsvr-group2",
+                            GroupName = "NHS Nottingham & Nottinghamshire Integrated Care Board",
+                            GroupType = (byte)1,
+                            HomepageEnabled = false,
+                            ParentGroupId = -38,
+                            ShiftsEnabled = true,
+                            TasksEnabled = true
                         });
                 });
 
@@ -3363,8 +3725,8 @@ You will also be expected to make a minimum commitment of six months.",
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(50)")
-                        .HasMaxLength(50)
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100)
                         .IsUnicode(false);
 
                     b.Property<string>("WhatIsThis")
@@ -3552,6 +3914,42 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -34,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -39,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)1,
@@ -3908,6 +4306,78 @@ You will also be expected to make a minimum commitment of six months.",
                             HowToAchieve_CTA_Destination = "",
                             Name = "DBS Check",
                             WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Here you can enter your own text to let volunteers know how to request and log a DBS check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            CredentialId = 12,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "The **Health, Safety and Infection Prevention and Control** for Volunteers training is a free, online learning module provided by Health Education England (HEE). <a href=\"https://portal.e-lfh.org.uk/Component/Details/556093\" target=\"_blank\">Launch the training module</a> and upload your completion certificate to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Health and Safety Training",
+                            WhatIsThis = "Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training."
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Here you can enter your own text to let volunteers know how to request and log a DBS check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            CredentialId = 12,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "The **Health, Safety and Infection Prevention and Control** for Volunteers training is a free, online learning module provided by Health Education England (HEE). <a href=\"https://portal.e-lfh.org.uk/Component/Details/556093\" target=\"_blank\">Launch the training module</a> and upload your completion certificate to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Health and Safety Training",
+                            WhatIsThis = "Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training."
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Here you can enter your own text to let volunteers know how to request and log a DBS check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            CredentialId = 12,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "The **Health, Safety and Infection Prevention and Control** for Volunteers training is a free, online learning module provided by Health Education England (HEE). <a href=\"https://portal.e-lfh.org.uk/Component/Details/556093\" target=\"_blank\">Launch the training module</a> and upload your completion certificate to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Health and Safety Training",
+                            WhatIsThis = "Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training."
                         });
                 });
 
@@ -4056,6 +4526,36 @@ You will also be expected to make a minimum commitment of six months.",
                             GroupId = -34,
                             CommunicationJobTypeId = (byte)15,
                             Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>For most volunteering opportunities we offer we will need to verify your ID and complete some basic training before you can start helping – this is to make things as safe as possible for you and the people we help. You’ll find all the details of the checks needed when you click to accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"Best wishes,</p><p>The Boston Community\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"false\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p><p>For some roles, we may also require additional checks or training – we will let you know if any additional checks are needed before you accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:contact@helpmystreet.org\\\">contact@helpmystreet.org</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p><p>For some roles, we may also require additional checks or training – we will let you know if any additional checks are needed before you accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:contact@helpmystreet.org\\\">contact@helpmystreet.org</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"GroupContent\",\"Value\":\"<p>Before you start volunteering with us we need to verify your ID – this is to make things as safe as possible for you and the people we help.</p><p>For some roles, we may also require additional checks or training – we will let you know if any additional checks are needed before you accept a request.</p>\"},{\"Key\":\"GroupSignature\",\"Value\":\"\"},{\"Key\":\"GroupPS\",\"Value\":\"Questions? Drop us an email at <a href=\\\"mailto:contact@helpmystreet.org\\\">contact@helpmystreet.org</a>.\"},{\"Key\":\"ShowGroupLogo\",\"Value\":\"true\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"DontSendEmail\",\"Value\":\"true\"}]"
+                        },
+                        new
+                        {
+                            GroupId = -37,
+                            CommunicationJobTypeId = (byte)15,
+                            Configuration = "[{\"Key\":\"DontSendEmail\",\"Value\":\"true\"}]"
                         });
                 });
 
@@ -4149,6 +4649,51 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             GroupId = -32,
                             LocationId = -16
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            LocationId = -15
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            LocationId = -13
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            LocationId = -11
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            LocationId = -15
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            LocationId = -13
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            LocationId = -11
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            LocationId = -15
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            LocationId = -13
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            LocationId = -11
                         });
                 });
 
@@ -4509,6 +5054,42 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             GroupId = -12,
+                            MaxVolunteer = 2147483647,
+                            NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -35,
+                            MaxVolunteer = 0,
+                            NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            MaxVolunteer = 2147483647,
+                            NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            MaxVolunteer = 2147483647,
+                            NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            MaxVolunteer = 2147483647,
+                            NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            MaxVolunteer = 2147483647,
+                            NewRequestNotificationStrategyId = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -37,
                             MaxVolunteer = 2147483647,
                             NewRequestNotificationStrategyId = (byte)1
                         });
@@ -5379,6 +5960,174 @@ You will also be expected to make a minimum commitment of six months.",
                             SupportActivityId = 11,
                             Radius = 20.0,
                             SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            SupportActivityId = 35,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)65
+                        },
+                        new
+                        {
+                            GroupId = -37,
+                            SupportActivityId = 35,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)65
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            SupportActivityId = 35,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)65
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            SupportActivityId = 11,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)65
+                        },
+                        new
+                        {
+                            GroupId = -37,
+                            SupportActivityId = 11,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)65
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            SupportActivityId = 11,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)65
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            SupportActivityId = 37,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)66
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            SupportActivityId = 36,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)67
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            SupportActivityId = 38,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)68
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            SupportActivityId = 39,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)69
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            SupportActivityId = 25,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)33
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            SupportActivityId = 11,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            SupportActivityId = 37,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)66
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            SupportActivityId = 36,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)67
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            SupportActivityId = 38,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)68
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            SupportActivityId = 39,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)69
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            SupportActivityId = 25,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)33
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            SupportActivityId = 11,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)2
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            SupportActivityId = 37,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)66
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            SupportActivityId = 36,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)67
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            SupportActivityId = 38,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)68
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            SupportActivityId = 39,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)69
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            SupportActivityId = 25,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)33
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            SupportActivityId = 11,
+                            Radius = 20.0,
+                            SupportActivityInstructionsId = (short)2
                         });
                 });
 
@@ -6092,10 +6841,10 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             RequestHelpFormVariantId = (byte)10,
-                            SupportActivityId = 24,
+                            SupportActivityId = 35,
                             DisplayOrder = (byte)1,
                             IsPreSelected = true,
-                            Label = "Volunteering to support the COVID-19 vaccination programme (e.g. support staff for local vaccination centres)"
+                            Label = "Longer-term volunteering opportunities"
                         },
                         new
                         {
@@ -6166,7 +6915,7 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestHelpFormVariantId = (byte)10,
                             SupportActivityId = 11,
                             DisplayOrder = (byte)11,
-                            IsPreSelected = false,
+                            IsPreSelected = true,
                             Label = "I may be able to help with other tasks, so please check with me."
                         },
                         new
@@ -7097,8 +7846,8 @@ You will also be expected to make a minimum commitment of six months.",
                             GroupId = -12,
                             Source = "a",
                             AccessRestrictedByRole = true,
-                            RequestHelpFormVariant = (byte)18,
-                            RequestorDefinedByGroup = true,
+                            RequestHelpFormVariant = (byte)32,
+                            RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
@@ -7221,6 +7970,61 @@ You will also be expected to make a minimum commitment of six months.",
                             RequestorDefinedByGroup = false,
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)32,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -37,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)32,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)34,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)34,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)34,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)0
                         });
                 });
@@ -7401,6 +8205,32 @@ You will also be expected to make a minimum commitment of six months.",
                             Locality = "Lincoln",
                             OtherPhone = "07340 066491",
                             Postcode = "LN6 8RN"
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            AddressLine1 = "Lincolnshire VCS",
+                            AddressLine2 = "City Hall",
+                            AddressLine3 = "",
+                            EmailAddress = "volunteering@voluntarycentreservices.org.uk",
+                            FirstName = "Voluntary Centre Services",
+                            LastName = "(VCS)",
+                            Locality = "Lincoln",
+                            OtherPhone = "01522 551683",
+                            Postcode = "LN1 1DF"
+                        },
+                        new
+                        {
+                            GroupId = -37,
+                            AddressLine1 = "Lincolnshire CVS",
+                            AddressLine2 = "Room G8 Boston Borough Council Offices",
+                            AddressLine3 = "Municipal Building West Street",
+                            EmailAddress = "enquiry@lincolnshirecvs.org.uk",
+                            FirstName = "Lincolnshire Community and Voluntary Service",
+                            LastName = "(LCVS)",
+                            Locality = "Boston",
+                            OtherPhone = "01205 510888",
+                            Postcode = "PE21 8QR"
                         });
                 });
 
@@ -7663,6 +8493,31 @@ You will also be expected to make a minimum commitment of six months.",
                         new
                         {
                             SupportActivityId = 34,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 35,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 36,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 37,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 38,
+                            AutoSignUpWhenOtherSelected = true
+                        },
+                        new
+                        {
+                            SupportActivityId = 39,
                             AutoSignUpWhenOtherSelected = true
                         });
                 });
@@ -7974,6 +8829,31 @@ You will also be expected to make a minimum commitment of six months.",
                         {
                             SupportActivityInstructionsId = (short)58,
                             Instructions = "{\"SupportActivityInstructions\":58,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Arrange a visit\",\"Detail\":\"Give them a call to arrange a visit – find a time and a place that suits you both.\"},{\"Heading\":\"Enjoy your visit\",\"Detail\":\"Meet up as agreed and have a good chat. If it’s going well, you could arrange your next visit too!\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you're finished, mark the request as complete in “My Accepted Requests” - this will let us (and anyone else involved with the request) know it's been completed. You’ll still be able to find their contact details in “My Complete Requests” in case you need to get back in touch. If someone else has requested the help on their behalf it may be useful to give them a call to let them know how it went.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)65,
+                            Instructions = "{\"SupportActivityInstructions\":65,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the opportunity is right for you\",\"Detail\":\"Make sure you’ve clicked to ‘view more info’ on the open request to check the opportunity is right for you.\"},{\"Heading\":\"Click to enquire\",\"Detail\":\"We will share your details with the organisation managing the request. They will contact you shortly to discuss the role and take you through the next steps to apply.\"},{\"Heading\":\"Complete application process\",\"Detail\":\"The application process will differ by role, but generally includes some form of training or induction. You’ll need to complete any necessary steps before you can start helping.\"},{\"Heading\":\"Start volunteering\",\"Detail\":\"Once everything is in place you can start volunteering! The request will stay in your “My Requests” view until you have completed or resigned from the volunteer role.\"}],\"Close\":\"In your “My Requests” view you can mark the request as complete or let the requester know you can no longer help by clicking “Can’t Do” so they can’t start looking for a new volunteer.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)66,
+                            Instructions = "{\"SupportActivityInstructions\":66,\"ActivityDetails\":\"Volunteers are needed to transport equipment, supplies or medication between NHS services and sites. Pharmacies may need volunteers to deliver prescribed medication to patients’ homes / alternative sites.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Please read all of the available information by expanding ‘more information’ on the open request before clicking to accept a request. You must have your own transport that is suitable for the journey described in the request (you can cycle or walk if appropriate).\"},{\"Heading\":\"Completing the request\",\"Detail\":\"You’ll receive a reminder email the day before the transportation is required. Make sure to arrive on time and have a copy of the pick-up and drop-off locations to hand.\"},{\"Heading\":\"Marking it as complete\",\"Detail\":\"Once you’ve completed a request don’t forget to mark it as complete in your “My Requests” tab, this will let the requesting organisation know you have completed the task.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)67,
+                            Instructions = "{\"SupportActivityInstructions\":67,\"ActivityDetails\":\"Volunteers are needed to support the safe movement of patients around events / sites. You may be required to monitor patient numbers, ensure safe social distancing, or identify patients requiring additional support. The maximum shift length is 4 hours.\",\"Intro\":null,\"Steps\":[{\"Heading\":\"Check the request details\",\"Detail\":\"Please read all of the available information by expanding ‘more information’ on the open request before clicking to accept a shift.\"},{\"Heading\":\"Attending your shift\",\"Detail\":\"You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab by searching for shifts with the status “Done”\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)68,
+                            Instructions = "{\"SupportActivityInstructions\":68,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)69,
+                            Instructions = "{\"SupportActivityInstructions\":69,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Give them a call\",\"Detail\":\"Be a friendly voice at the end of the phone and have a good chat.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer.\"}"
                         });
                 });
 

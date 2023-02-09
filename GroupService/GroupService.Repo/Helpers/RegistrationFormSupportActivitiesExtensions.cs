@@ -41,6 +41,7 @@ namespace GroupService.Repo.Helpers
                 SupportActivities.BankStaffVaccinator => "Covering bank staff vaccinator shifts (this is a paid role)",
                 SupportActivities.SkillShare => "Giving my time to share my skills and interests with other people who are interested to learn more",
                 SupportActivities.Accommodation => "Providing accommodation",
+                SupportActivities.AdvertisingRoles => "Longer-term volunteering opportunities",
                 _ => throw new ArgumentException(message: $"Unexpected SupportActivity: {activity}", paramName: nameof(activity))
             };
         }
@@ -844,8 +845,8 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new RegistrationFormSupportActivity
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
-                SupportActivityId = (int)SupportActivities.VaccineSupport,
-                Label = "Volunteering to support the COVID-19 vaccination programme (e.g. support staff for local vaccination centres)",
+                SupportActivityId = (int)SupportActivities.AdvertisingRoles,
+                Label = SupportActivities.AdvertisingRoles.GetLabel(),
                 IsPreSelected = true,
                 DisplayOrder = 1
             });
@@ -922,22 +923,12 @@ namespace GroupService.Repo.Helpers
                 DisplayOrder = 9
             });
 
-            //entity.HasData(new RegistrationFormSupportActivity
-            //{
-            //    RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
-            //    SupportActivityId = (int)SupportActivities.EmergencySupport,
-            //    Label = SupportActivities.EmergencySupport.GetLabel(),
-            //    IsPreSelected = false,
-            //    DisplayOrder = 10
-            //});
-
-
             entity.HasData(new RegistrationFormSupportActivity
             {
                 RequestHelpFormVariantId = (byte)RegistrationFormVariant.LincolnshireVolunteers,
                 SupportActivityId = (int)SupportActivities.Other,
                 Label = SupportActivities.Other.GetLabel(),
-                IsPreSelected = false,
+                IsPreSelected = true,
                 DisplayOrder = 11
             });
         }

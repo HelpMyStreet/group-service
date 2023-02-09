@@ -1748,6 +1748,142 @@ namespace GroupService.Repo.Helpers
             };
         }
 
+        private static Instructions GetInstructions_Linc_Advertising_Roles()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Check the opportunity is right for you",
+                        Detail = "Make sure you’ve clicked to ‘view more info’ on the open request to check the opportunity is right for you.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Click to enquire",
+                        Detail = "We will share your details with the organisation managing the request. They will contact you shortly to discuss the role and take you through the next steps to apply.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Complete application process",
+                        Detail = "The application process will differ by role, but generally includes some form of training or induction. You’ll need to complete any necessary steps before you can start helping.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Start volunteering",
+                        Detail =  "Once everything is in place you can start volunteering! The request will stay in your “My Requests” view until you have completed or resigned from the volunteer role."
+                    }
+                },
+                Close = "In your “My Requests” view you can mark the request as complete or let the requester know you can no longer help by clicking “Can’t Do” so they can’t start looking for a new volunteer."
+            };
+        }
+
+        private static Instructions GetInstructions_NHSDemo_Transport()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.NHSDemo_Transport,
+                Intro = null,
+                ActivityDetails = $"Volunteers are needed to transport equipment, supplies or medication between " +
+                $"NHS services and sites. Pharmacies may need volunteers to deliver prescribed medication to patients’ " +
+                $"homes / alternative sites.",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Check the request details",
+                        Detail = "Please read all of the available information by expanding ‘more information’ on the open request before clicking to accept a request. You must have your own transport that is suitable for the journey described in the request (you can cycle or walk if appropriate).",
+                    },
+                    new Step()
+                    {
+                        Heading = "Completing the request",
+                        Detail = "You’ll receive a reminder email the day before the transportation is required. Make sure to arrive on time and have a copy of the pick-up and drop-off locations to hand.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Marking it as complete",
+                        Detail  = "Once you’ve completed a request don’t forget to mark it as complete in your “My Requests” tab, this will let the requesting organisation know you have completed the task."
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer."
+            };
+        }
+
+        private static Instructions GetInstructions_NHSDemo_Steward()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.NHSDemo_Steward,
+                Intro = null,
+                ActivityDetails = $"Volunteers are needed to support the safe movement of patients around " +
+                $"events / sites. You may be required to monitor patient numbers, ensure safe social distancing, " +
+                $"or identify patients requiring additional support. The maximum shift length is 4 hours.",
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Check the request details",
+                        Detail = "Please read all of the available information by expanding ‘more information’ on the open request before clicking to accept a shift.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Attending your shift",
+                        Detail = "You’ll receive a reminder email the day before your shift. Make sure to bring a face covering and appropriate clothing for the weather (e.g. a warm / waterproof coat). Once you’ve completed a shift it will be marked as complete automatically. You’ll still be able to find all the details in the “My Shifts” tab by searching for shifts with the status “Done”",
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer."
+            };
+        }
+
+        private static Instructions GetInstructions_NHSDemo_CheckInAndChat()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.NHSDemo_CheckInAndChat,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Give them a call",
+                        Detail = "Be a friendly voice at the end of the phone and have a good chat.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed.",
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer."
+            };
+        }
+
+        private static Instructions GetInstructions_NHSDemo_CheckInAndChatPlus()
+        {
+            return new Instructions()
+            {
+                SupportActivityInstructions = SupportActivityInstructionsEnum.NHSDemo_CheckInAndChatPlus,
+                Intro = null,
+                Steps = new System.Collections.Generic.List<Step>()
+                {
+                    new Step()
+                    {
+                        Heading = "Give them a call",
+                        Detail = "Be a friendly voice at the end of the phone and have a good chat.",
+                    },
+                    new Step()
+                    {
+                        Heading = "Mark the request as complete",
+                        Detail = "When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed.",
+                    }
+                },
+                Close = "If for any reason you can’t complete the request before it’s due, let us know as soon as possible by updating the accepted request and clicking “Can’t Do” so we can find another volunteer."
+            };
+        }
+
         public static void PopulateSupportActivityInstructions(this EntityTypeBuilder<EntityFramework.Entities.SupportActivityInstructions> entity)
         {
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
@@ -2097,6 +2233,37 @@ namespace GroupService.Repo.Helpers
                 SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKMidMersey_Befriending,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUK_MidMersey_Befriending())
             });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short) SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_Linc_Advertising_Roles())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.NHSDemo_Transport,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_NHSDemo_Transport())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.NHSDemo_Steward,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_NHSDemo_Steward())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.NHSDemo_CheckInAndChat,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_NHSDemo_CheckInAndChat())
+            });
+
+            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
+            {
+                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.NHSDemo_CheckInAndChatPlus,
+                Instructions = JsonConvert.SerializeObject(GetInstructions_NHSDemo_CheckInAndChatPlus())
+            });
+
         }
 
 
@@ -2252,6 +2419,36 @@ namespace GroupService.Repo.Helpers
             Populate(entity, Groups.BostonGNS, SupportActivities.DogWalking, SupportActivityInstructionsEnum.HMS_General, 20);
             Populate(entity, Groups.BostonGNS, SupportActivities.DigitalSupport, SupportActivityInstructionsEnum.HMS_General, 20);
             Populate(entity, Groups.BostonGNS, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+
+            Populate(entity, Groups.LincolnshireVCS, SupportActivities.AdvertisingRoles, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+            Populate(entity, Groups.LincolnshireLCVS, SupportActivities.AdvertisingRoles, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+            Populate(entity, Groups.LincolnshireVolunteers, SupportActivities.AdvertisingRoles, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+
+            Populate(entity, Groups.LincolnshireVCS, SupportActivities.Other, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+            Populate(entity, Groups.LincolnshireLCVS, SupportActivities.Other, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+            Populate(entity, Groups.LincolnshireVolunteers, SupportActivities.Other, SupportActivityInstructionsEnum.Lincolnshire_AdvertisingRoles, 20);
+
+
+            Populate(entity, Groups.NHSVRDemo, SupportActivities.NHSTransport, SupportActivityInstructionsEnum.NHSDemo_Transport, 20);
+            Populate(entity, Groups.NHSVRDemo, SupportActivities.NHSSteward, SupportActivityInstructionsEnum.NHSDemo_Steward, 20);
+            Populate(entity, Groups.NHSVRDemo, SupportActivities.NHSCheckInAndChat, SupportActivityInstructionsEnum.NHSDemo_CheckInAndChat, 20);
+            Populate(entity, Groups.NHSVRDemo, SupportActivities.NHSCheckInAndChatPlus, SupportActivityInstructionsEnum.NHSDemo_CheckInAndChatPlus, 20);
+            Populate(entity, Groups.NHSVRDemo, SupportActivities.EmergencySupport, SupportActivityInstructionsEnum.HMS_EmergencySupport, 20);
+            Populate(entity, Groups.NHSVRDemo, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.NHSTransport, SupportActivityInstructionsEnum.NHSDemo_Transport, 20);
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.NHSSteward, SupportActivityInstructionsEnum.NHSDemo_Steward, 20);
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.NHSCheckInAndChat, SupportActivityInstructionsEnum.NHSDemo_CheckInAndChat, 20);
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.NHSCheckInAndChatPlus, SupportActivityInstructionsEnum.NHSDemo_CheckInAndChatPlus, 20);
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.EmergencySupport, SupportActivityInstructionsEnum.HMS_EmergencySupport, 20);
+            Populate(entity, Groups.NottinghamshireCountyCouncil, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
+
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.NHSTransport, SupportActivityInstructionsEnum.NHSDemo_Transport, 20);
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.NHSSteward, SupportActivityInstructionsEnum.NHSDemo_Steward, 20);
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.NHSCheckInAndChat, SupportActivityInstructionsEnum.NHSDemo_CheckInAndChat, 20);
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.NHSCheckInAndChatPlus, SupportActivityInstructionsEnum.NHSDemo_CheckInAndChatPlus, 20);
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.EmergencySupport, SupportActivityInstructionsEnum.HMS_EmergencySupport, 20);
+            Populate(entity, Groups.NottinghamshireIntegratedCareBoard, SupportActivities.Other, SupportActivityInstructionsEnum.HMS_OtherPurchase, 20);
         }
     }
 }
