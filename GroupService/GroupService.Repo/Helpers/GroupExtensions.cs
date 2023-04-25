@@ -917,7 +917,7 @@ namespace GroupService.Repo.Helpers
                 FirstName = "Age UK",
                 LastName = "Wirral",
                 OtherPhone = "0151 482 3456",
-                EmailAddress = "h&cadminteam@ageukwirral.org.uk",
+                EmailAddress = "practicalsupportteam@ageukwirral.org.uk",
                 AddressLine1 = "Age UK Wirral",
                 AddressLine2 = "Devonshire Resource Centre",
                 AddressLine3 = "141 Park Road North",
