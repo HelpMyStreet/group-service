@@ -797,24 +797,6 @@ namespace GroupService.Repo.Helpers
 
         public static void SetActivityCredentialSet(this EntityTypeBuilder<ActivityCredentialSet> entity)
         {
-            var ageUKFavershamAndSittingbourneActivities = new List<SupportActivities> { SupportActivities.PhoneCalls_Friendly, SupportActivities.Other, SupportActivities.MealsToYourDoor, SupportActivities.VolunteerSupport, SupportActivities.MealtimeCompanion };
-            SetActivityCredentialSet(entity, Groups.AgeUKFavershamAndSittingbourne, ageUKFavershamAndSittingbourneActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKFavershamAndSittingbourne]);
-            SetActivityCredentialSet(entity, Groups.AgeUKFavershamAndSittingbourne, ageUKFavershamAndSittingbourneActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKFavershamAndSittingbourne]);
-
-            var ageUKSouthKentCoastActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Other, SupportActivities.PhoneCalls_Friendly, SupportActivities.MealsToYourDoor, SupportActivities.VolunteerSupport, SupportActivities.MealtimeCompanion };
-            SetActivityCredentialSet(entity, Groups.AgeUKSouthKentCoast, ageUKSouthKentCoastActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKSouthKentCoast]);
-            SetActivityCredentialSet(entity, Groups.AgeUKSouthKentCoast, ageUKSouthKentCoastActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKSouthKentCoast]);
-
-            var ageUKNottsNorthMuskhamActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.PhoneCalls_Friendly, SupportActivities.Other, SupportActivities.DogWalking };
-            SetActivityCredentialSet(entity, Groups.AgeUKNottsNorthMuskham, ageUKNottsNorthMuskhamActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNottsNorthMuskham]);
-
-            var ageUKNorthWestKentActivities = new List<SupportActivities> { SupportActivities.CollectingPrescriptions, SupportActivities.PhoneCalls_Friendly, SupportActivities.Other, SupportActivities.MealsToYourDoor, SupportActivities.VolunteerSupport };
-            SetActivityCredentialSet(entity, Groups.AgeUKNorthWestKent, ageUKNorthWestKentActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNorthWestKent]);
-            SetActivityCredentialSet(entity, Groups.AgeUKNorthWestKent, ageUKNorthWestKentActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKNorthWestKent]);
-
-            var ageUKNottsBaldertonActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.PhoneCalls_Friendly, SupportActivities.Other, SupportActivities.DogWalking };
-            SetActivityCredentialSet(entity, Groups.AgeUKNottsBalderton, ageUKNottsBaldertonActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKNottsBalderton]);
-
             var ageUKWirralActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Other, SupportActivities.ColdWeatherArmy };
             SetActivityCredentialSet(entity, Groups.AgeUKWirral, ageUKWirralActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKWirral]);
             SetActivityCredentialSet(entity, Groups.AgeUKWirral, ageUKWirralActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKWirral]);
@@ -822,77 +804,16 @@ namespace GroupService.Repo.Helpers
             var ruddingtonActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.DogWalking, SupportActivities.MealPreparation, SupportActivities.PhoneCalls_Friendly, SupportActivities.CheckingIn, SupportActivities.Other, SupportActivities.FaceMask };
             SetActivityCredentialSet(entity, Groups.Ruddington, ruddingtonActivities, IDENTITY_CREDENTIAL_SETS[Groups.Ruddington]);
 
-            var ageUKLSLActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.Other, SupportActivities.WellbeingPackage };
-            SetActivityCredentialSet(entity, Groups.AgeUKLSL, ageUKLSLActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKLSL]);
-
-            SetActivityCredentialSet(entity, Groups.FTLOS, new List<SupportActivities> { SupportActivities.FaceMask }, IDENTITY_CREDENTIAL_SETS[Groups.FTLOS]);
-
             SetActivityCredentialSet(entity, Groups.Sandbox, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.VaccineSupport }, IDENTITY_CREDENTIAL_SETS[Groups.Sandbox]);
             SetActivityCredentialSet(entity, Groups.Sandbox, new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly }, DBS_CREDENTIAL_SETS[Groups.Sandbox]);
             SetActivityCredentialSet(entity, Groups.Sandbox, new List<SupportActivities> { SupportActivities.PhoneCalls_Friendly }, SANDBOX_BEFRIENDER_TRAINING_CREDENTIAL_SET);
 
-            var ageConnectsCardiffIdentifyReferencesDBSVolunteerInduction = new List<SupportActivities>
-            {
-                SupportActivities.InPersonBefriending,
-                SupportActivities.Other,
-                SupportActivities.PracticalSupport,
-                SupportActivities.Shopping,
-                SupportActivities.Transport
-            };
-
-            var ageConnectsCardiffIdentifyReferencesVolunteerInduction = new List<SupportActivities>
-            {
-                SupportActivities.CollectingPrescriptions,
-                SupportActivities.PhoneCalls_Friendly,
-                SupportActivities.VolunteerSupport
-            };
-
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesDBSVolunteerInduction, AGECONNECT_CARDIFF_REFERENCES_CREDENTIAL_SET);
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesDBSVolunteerInduction, DBS_CREDENTIAL_SETS[Groups.AgeConnectsCardiff], 1);
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesDBSVolunteerInduction, AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET, 2);
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesVolunteerInduction, AGECONNECT_CARDIFF_REFERENCES_CREDENTIAL_SET);
-            SetActivityCredentialSet(entity, Groups.AgeConnectsCardiff, ageConnectsCardiffIdentifyReferencesVolunteerInduction, AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET, 1);
-
             var defaultActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.MealPreparation, SupportActivities.PhoneCalls_Friendly, SupportActivities.HomeworkSupport, SupportActivities.CheckingIn, SupportActivities.Other, SupportActivities.FaceMask };
             SetActivityCredentialSet(entity, Groups.Generic, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Generic]);
-            SetActivityCredentialSet(entity, Groups.Tankersley, defaultActivities, IDENTITY_CREDENTIAL_SETS[Groups.Tankersley]);
 
             var southwellActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Other };
             SetActivityCredentialSet(entity, Groups.Southwell, southwellActivities, IDENTITY_CREDENTIAL_SETS[Groups.Southwell]);
             SetActivityCredentialSet(entity, Groups.Southwell, southwellActivities, SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET);
-
-            var apexbankpcnActivities = new List<SupportActivities> { SupportActivities.BankStaffVaccinator, SupportActivities.Other };
-            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, IDENTITY_CREDENTIAL_SETS[Groups.ApexBankStaff]);
-            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET, 1);
-            SetActivityCredentialSet(entity, Groups.ApexBankStaff, apexbankpcnActivities, APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET, 2);
-
-            var ageukmidmerseyActivities = new List<SupportActivities> {SupportActivities.Shopping, SupportActivities.CollectingPrescriptions, SupportActivities.Errands, SupportActivities.DogWalking, SupportActivities.PhoneCalls_Friendly, SupportActivities.InPersonBefriending,
-            SupportActivities.CheckingIn, SupportActivities.BinDayAssistance, SupportActivities.PracticalSupport, SupportActivities.Covid19Help,
-            SupportActivities.DigitalSupport, SupportActivities.WellbeingPackage, SupportActivities.Transport, SupportActivities.VolunteerSupport,
-            SupportActivities.EmergencySupport, SupportActivities.SkillShare, SupportActivities.Other, SupportActivities.ColdWeatherArmy};
-
-            SetActivityCredentialSet(entity, Groups.AgeUKMidMersey, ageukmidmerseyActivities, IDENTITY_CREDENTIAL_SETS[Groups.AgeUKMidMersey]);
-            SetActivityCredentialSet(entity, Groups.AgeUKMidMersey, ageukmidmerseyActivities, DBS_CREDENTIAL_SETS[Groups.AgeUKMidMersey]);
-
-            var bostonGNSActivities = new List<SupportActivities> { SupportActivities.Shopping, SupportActivities.PhoneCalls_Friendly, SupportActivities.CollectingPrescriptions, SupportActivities.PracticalSupport, SupportActivities.DogWalking, SupportActivities.DigitalSupport, SupportActivities.Other };
-            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, IDENTITY_CREDENTIAL_SETS[Groups.BostonGNS]);
-            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, DBS_CREDENTIAL_SETS[Groups.BostonGNS]);
-            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_REFERENCES_CREDENTIAL_SET);
-            SetActivityCredentialSet(entity, Groups.BostonGNS, bostonGNSActivities, BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET);
-
-            var nhsvrdemoActivities = new List<SupportActivities> { SupportActivities.NHSTransport, SupportActivities.NHSSteward, SupportActivities.NHSCheckInAndChat, SupportActivities.NHSCheckInAndChatPlus, SupportActivities.EmergencySupport, SupportActivities.Other };
-            SetActivityCredentialSet(entity, Groups.NHSVRDemo, nhsvrdemoActivities, IDENTITY_CREDENTIAL_SETS[Groups.NHSVRDemo]);
-            SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSCheckInAndChatPlus }, DBS_CREDENTIAL_SETS[Groups.NHSVRDemo]);
-            SetActivityCredentialSet(entity, Groups.NHSVRDemo, new List<SupportActivities> { SupportActivities.NHSSteward }, NHSVRDEMO_HEALTH_CREDENTIAL_SET);
-
-            SetActivityCredentialSet(entity, Groups.NottinghamshireCountyCouncil, nhsvrdemoActivities, IDENTITY_CREDENTIAL_SETS[Groups.NottinghamshireCountyCouncil]);
-            SetActivityCredentialSet(entity, Groups.NottinghamshireCountyCouncil, new List<SupportActivities> { SupportActivities.NHSCheckInAndChatPlus }, DBS_CREDENTIAL_SETS[Groups.NottinghamshireCountyCouncil]);
-            SetActivityCredentialSet(entity, Groups.NottinghamshireCountyCouncil, new List<SupportActivities> { SupportActivities.NHSSteward }, NHSVRDEMO_SUBGROUP1_HEALTH_CREDENTIAL_SET);
-
-            SetActivityCredentialSet(entity, Groups.NottinghamshireIntegratedCareBoard, nhsvrdemoActivities, IDENTITY_CREDENTIAL_SETS[Groups.NottinghamshireIntegratedCareBoard]);
-            SetActivityCredentialSet(entity, Groups.NottinghamshireIntegratedCareBoard, new List<SupportActivities> { SupportActivities.NHSCheckInAndChatPlus }, DBS_CREDENTIAL_SETS[Groups.NottinghamshireIntegratedCareBoard]);
-            SetActivityCredentialSet(entity, Groups.NottinghamshireIntegratedCareBoard, new List<SupportActivities> { SupportActivities.NHSSteward }, NHSVRDEMO_SUBGROUP2_HEALTH_CREDENTIAL_SET);
-
         }
 
         private static void SetActivityCredentialSet(EntityTypeBuilder<ActivityCredentialSet> entity, Groups group, List<SupportActivities> activities, int credentialSetId, int displayOrder = 0)
