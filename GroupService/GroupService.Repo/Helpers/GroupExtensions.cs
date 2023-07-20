@@ -931,24 +931,6 @@ namespace GroupService.Repo.Helpers
             entity.HasData(new GroupMapDetails
             {
                 MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.Tankersley,
-                Latitude = 53.498113M,
-                Longitude = -1.488587M,
-                ZoomLevel = 14
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.Tankersley,
-                Latitude = 53.498113M,
-                Longitude = -1.488587M,
-                ZoomLevel = 14
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
                 GroupId = (int)Groups.Ruddington,
                 Latitude = 52.8925M,
                 Longitude = -1.150M,
@@ -962,24 +944,6 @@ namespace GroupService.Repo.Helpers
                 Latitude = 52.8925M,
                 Longitude = -1.150M,
                 ZoomLevel = 14.6M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.AgeUKLSL,
-                Latitude = 53.2304334M,
-                Longitude = -0.5435425M,
-                ZoomLevel = 9M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.AgeUKLSL,
-                Latitude = 52.95M,
-                Longitude = -0.2M,
-                ZoomLevel = 9M
             });
 
             entity.HasData(new GroupMapDetails
@@ -1002,167 +966,12 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new GroupMapDetails
             {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.AgeUKNottsBalderton,
-                Latitude = 53.0561082M,
-                Longitude = -0.8M,
-                ZoomLevel = 12M
-            });
-
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.AgeUKNottsBalderton,
-                Latitude = 53.0561082M,
-                Longitude = -0.8M,
-                ZoomLevel = 13.5M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
-                Latitude = 53.120254M,
-                Longitude = -0.811079M,
-                ZoomLevel = 12M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
-                Latitude = 53.120254M,
-                Longitude = -0.811079M,
-                ZoomLevel = 14M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.AgeUKSouthKentCoast,
-                Latitude = 51.15670694376801M,
-                Longitude = 1.2906096124741184M,
-                ZoomLevel = 12M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.AgeUKSouthKentCoast,
-                Latitude = 51.15670694376801M,
-                Longitude = 1.2906096124741184M,
-                ZoomLevel = 11M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
-                Latitude = 51.32681418199929M,
-                Longitude = 0.8065864663737088M,
-                ZoomLevel = 12M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
-                Latitude = 51.32681418199929M,
-                Longitude = 0.8065864663737088M,
-                ZoomLevel = 12M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.AgeUKNorthWestKent,
-                Latitude = 51.40020276537333M,
-                Longitude = 0.2950217005371014M,
-                ZoomLevel = 11M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.AgeUKNorthWestKent,
-                Latitude = 51.40020276537333M,
-                Longitude = 0.2950217005371014M,
-                ZoomLevel = 12M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.LincolnshireVolunteers,
-                Latitude = 53.196498M,
-                Longitude = -0.574294M,
-                ZoomLevel = 9M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.LincolnshireVolunteers,
-                Latitude = 52.95M,
-                Longitude = -0.2M,
-                ZoomLevel = 9M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                Latitude = 51.5022198M,
-                Longitude = -3.2752615M,
-                ZoomLevel = 11M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                Latitude = 51.5022198M,
-                Longitude = -3.2752615M,
-                ZoomLevel = 11M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
                 MapLocationId = (byte)MapLocation.Landing,
                 GroupId = (int)Groups.Southwell,
                 Latitude = 53.0779128M,
                 Longitude = -0.973649M,
                 ZoomLevel = 13.5M
             });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.AgeUKMidMersey,
-                Latitude = 53.4042239M,
-                Longitude = -2.7936289M,
-                ZoomLevel = 11.8M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.Landing,
-                GroupId = (int)Groups.BostonGNS,
-                Latitude = 52.979M,
-                Longitude = -0.02500M,
-                ZoomLevel = 13.8M
-            });
-
-            entity.HasData(new GroupMapDetails
-            {
-                MapLocationId = (byte)MapLocation.HomePage,
-                GroupId = (int)Groups.BostonGNS,
-                Latitude = 52.979M,
-                Longitude = -0.02500M,
-                ZoomLevel = 13.8M
-            });
-
         }
     }
 }
