@@ -16,91 +16,13 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new SecurityConfiguration
             {
-                GroupId = (int)Groups.AgeUKLSL,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
-                GroupId = (int)Groups.FTLOS,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
-                GroupId = (int)Groups.Tankersley,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
                 GroupId = (int)Groups.AgeUKWirral,
                 AllowAutonomousJoinersAndLeavers = true
             });
 
             entity.HasData(new SecurityConfiguration
             {
-                GroupId = (int)Groups.AgeUKNottsBalderton,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
-                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
-                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
-                GroupId = (int)Groups.AgeUKNorthWestKent,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
-                GroupId = (int)Groups.AgeUKSouthKentCoast,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
-                GroupId = (int)Groups.LincolnshireVolunteers,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
                 GroupId = (int) Groups.Southwell,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
-                GroupId = (int)Groups.ApexBankStaff,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
-                GroupId = (int)Groups.AgeUKMidMersey,
-                AllowAutonomousJoinersAndLeavers = true
-            });
-
-            entity.HasData(new SecurityConfiguration
-            {
-                GroupId = (int)Groups.BostonGNS,
                 AllowAutonomousJoinersAndLeavers = true
             });
         }
