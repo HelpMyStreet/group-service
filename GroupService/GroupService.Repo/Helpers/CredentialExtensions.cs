@@ -1,7 +1,6 @@
 ﻿using GroupService.Repo.EntityFramework.Entities;
 using HelpMyStreet.Utils.Enums;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,16 +15,7 @@ namespace GroupService.Repo.Helpers
         private static Dictionary<Groups, int> IDENTITY_CREDENTIAL_SETS;
         private static Dictionary<Groups, int> DBS_CREDENTIAL_SETS;
         private const int SANDBOX_BEFRIENDER_TRAINING_CREDENTIAL_SET = 142;
-        private const int AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET = 234;
-        private const int AGECONNECT_CARDIFF_REFERENCES_CREDENTIAL_SET = 235;
         private const int SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET = 317;
-        private const int APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET = 328;
-        private const int APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET = 329;
-        private const int BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET = 3410;
-        private const int BOSTONGNS_REFERENCES_CREDENTIAL_SET = 345;
-        private const int NHSVRDEMO_HEALTH_CREDENTIAL_SET = 3812;
-        private const int NHSVRDEMO_SUBGROUP1_HEALTH_CREDENTIAL_SET = 3912;
-        private const int NHSVRDEMO_SUBGROUP2_HEALTH_CREDENTIAL_SET = 4012;
 
         // Credential IDs
         private const int IDENTITY_VERIFIED_BY_YOTI = -1;
@@ -687,7 +677,12 @@ namespace GroupService.Repo.Helpers
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
         {
-            foreach (var group in GROUPS_USING_YOTI)
+            foreach (var group in GROUPS_USING_YOTI.Where
+                (x => x.Equals(Groups.Generic)
+                || x.Equals(Groups.Southwell)
+                || x.Equals(Groups.Ruddington)
+                || x.Equals(Groups.Sandbox)
+                || x.Equals(Groups.AgeUKWirral)))
             {
                 entity.HasData(new CredentialSet
                 {
@@ -697,7 +692,12 @@ namespace GroupService.Repo.Helpers
                 });
             }
 
-            foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS)
+            foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS.Where
+                (x => x.Equals(Groups.Generic)
+                || x.Equals(Groups.Southwell)
+                || x.Equals(Groups.Ruddington)
+                || x.Equals(Groups.Sandbox)
+                || x.Equals(Groups.AgeUKWirral)))
             {
                 entity.HasData(new CredentialSet
                 {
@@ -707,7 +707,13 @@ namespace GroupService.Repo.Helpers
                 });             
             }
 
-            foreach (var group in GROUPS_USING_MANUAL_ID)
+            foreach (var group in GROUPS_USING_MANUAL_ID.Where
+                (x=> x.Equals(Groups.Generic) 
+                || x.Equals(Groups.Southwell) 
+                || x.Equals(Groups.Ruddington) 
+                || x.Equals(Groups.Sandbox) 
+                || x.Equals(Groups.AgeUKWirral)))
+                
             {
                 entity.HasData(new CredentialSet
                 {
@@ -726,72 +732,9 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new CredentialSet
             {
-                Id = AGECONNECT_CARDIFF_TRAINING_CREDENTIAL_SET,
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                CredentialId = VOLUNTEER_INDUCTION,
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = AGECONNECT_CARDIFF_REFERENCES_CREDENTIAL_SET,
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                CredentialId = REFERENCES,
-            });
-
-            entity.HasData(new CredentialSet
-            {
                 Id = SOUTHWELL_PROCEDURES_AND_POLICIES_CREDENTIAL_SET,
                 GroupId = (int)Groups.Southwell,
                 CredentialId = POLICIES_AND_PROCEDURES,
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = APEXBANKSTAFF_VACCINATOR_TRAINING_CREDENTIAL_SET,
-                GroupId = (int)Groups.ApexBankStaff,
-                CredentialId = VACCINATOR_TRAINING,
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = APEXBANKSTAFF_BANK_DETAILS_CREDENTIAL_SET,
-                GroupId = (int)Groups.ApexBankStaff,
-                CredentialId = BANK_DETAILS,
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = BOSTONGNS_SAFEFGUARDING_CREDENTIAL_SET,
-                GroupId = (int)Groups.BostonGNS,
-                CredentialId = SAFEGUARDING_TRAINING,
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = BOSTONGNS_REFERENCES_CREDENTIAL_SET,
-                GroupId = (int)Groups.BostonGNS,
-                CredentialId = REFERENCES,
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = NHSVRDEMO_HEALTH_CREDENTIAL_SET,
-                GroupId = (int)Groups.NHSVRDemo,
-                CredentialId = HEALTH_SAFETY,
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = NHSVRDEMO_SUBGROUP1_HEALTH_CREDENTIAL_SET,
-                GroupId = (int)Groups.NottinghamshireCountyCouncil,
-                CredentialId = HEALTH_SAFETY,
-            });
-
-            entity.HasData(new CredentialSet
-            {
-                Id = NHSVRDEMO_SUBGROUP2_HEALTH_CREDENTIAL_SET,
-                GroupId = (int)Groups.NottinghamshireIntegratedCareBoard,
-                CredentialId = HEALTH_SAFETY,
             });
         }
 
