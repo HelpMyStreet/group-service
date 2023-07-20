@@ -18,34 +18,10 @@ namespace GroupService.Repo.Helpers
 
         public static void SetGroupLocationsConfiguration(this EntityTypeBuilder<GroupLocation> entity)
         {
-			Populate(entity, Groups.EastLindseyPCN, Location.LouthCommunityHospital);
-			Populate(entity, Groups.StamfordPCN, Location.StMarysMedicalPracticeStamford);
-			Populate(entity, Groups.LincolnPCN, Location.RustonsSportsAndSocialClubLincoln);
-			Populate(entity, Groups.Sandbox, Location.RustonsSportsAndSocialClubLincoln);
-			Populate(entity, Groups.ApexBankStaff, Location.RustonsSportsAndSocialClubLincoln);
 			Populate(entity, Groups.Generic, Location.RustonsSportsAndSocialClubLincoln);
-			Populate(entity, Groups.LincolnshireVolunteers, Location.RustonsSportsAndSocialClubLincoln);
 			Populate(entity, Groups.Generic, Location.StMarysMedicalPracticeStamford);
-			Populate(entity, Groups.LincolnshireVolunteers, Location.StMarysMedicalPracticeStamford);
 			Populate(entity, Groups.Generic, Location.LouthCommunityHospital);
-			Populate(entity, Groups.LincolnshireVolunteers, Location.LouthCommunityHospital);
-			Populate(entity, Groups.LincolnPCN, Location.RichmondMedicalCentre);
-			Populate(entity, Groups.LincolnshireVolunteers, Location.RichmondMedicalCentre);
 			Populate(entity, Groups.Generic, Location.RichmondMedicalCentre);
-			Populate(entity, Groups.ApexBankStaff, Location.RichmondMedicalCentre);
-
-			Populate(entity, Groups.NHSVRDemo, Location.ForestRecreationGround);
-			Populate(entity, Groups.NHSVRDemo, Location.RichardHerrodCentre);
-			Populate(entity, Groups.NHSVRDemo, Location.MansfieldWickesSite);
-
-			Populate(entity, Groups.NottinghamshireCountyCouncil, Location.ForestRecreationGround);
-			Populate(entity, Groups.NottinghamshireCountyCouncil, Location.RichardHerrodCentre);
-			Populate(entity, Groups.NottinghamshireCountyCouncil, Location.MansfieldWickesSite);
-
-			Populate(entity, Groups.NottinghamshireIntegratedCareBoard, Location.ForestRecreationGround);
-			Populate(entity, Groups.NottinghamshireIntegratedCareBoard, Location.RichardHerrodCentre);
-			Populate(entity, Groups.NottinghamshireIntegratedCareBoard, Location.MansfieldWickesSite);
-
 		}
 	}
 }
