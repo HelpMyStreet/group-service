@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230721081038_RemoveGroupCredentials")]
+    partial class RemoveGroupCredentials
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -348,8 +350,43 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 4,
+                            Name = "Volunteer Induction"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "References"
+                        },
+                        new
+                        {
                             Id = 7,
                             Name = "Policies & Procedures"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Vaccinator Training"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Bank Details"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Safeguarding Training"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Approved Host"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Health and Safety Training"
                         });
                 });
 
