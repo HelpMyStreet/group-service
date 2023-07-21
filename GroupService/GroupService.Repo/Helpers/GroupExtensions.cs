@@ -391,32 +391,7 @@ namespace GroupService.Repo.Helpers
                 RegistrationFormVariant = (byte)RegistrationFormVariant.FaceMasks,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
-
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.FTLOS,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.FtLOS,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.AgeUKLSL,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKLSL,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
             
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.Tankersley,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.Default,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
             entity.HasData(new RegistrationJourney
             {
                 GroupId = (int)Groups.Ruddington,
@@ -435,89 +410,9 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new RegistrationJourney
             {
-                GroupId = (int)Groups.AgeUKNottsBalderton,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNottsBalderton,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.AgeUKNorthWestKent,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNWK,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.AgeUKNottsNorthMuskham,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKNottsBalderton,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.AgeUKSouthKentCoast,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKSKC,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.AgeUKFavershamAndSittingbourne,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKFandS,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.LincolnshireVolunteers,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.LincolnshireVolunteers,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.AgeConnectsCardiff,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeConnectsCardiff,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
                 GroupId = (int)Groups.Southwell,
                 Source = "",
                 RegistrationFormVariant = (byte)RegistrationFormVariant.Southwell,
-                TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.ApexBankStaff,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.ApexBankStaff,
-                TargetGroups = (byte)TargetGroups.ThisGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.AgeUKMidMersey,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.AgeUKMidMersey,
-                TargetGroups = (byte)TargetGroups.ThisGroup
-            });
-
-            entity.HasData(new RegistrationJourney
-            {
-                GroupId = (int)Groups.BostonGNS,
-                Source = "",
-                RegistrationFormVariant = (byte)RegistrationFormVariant.BostonGNS,
                 TargetGroups = (byte)TargetGroups.ThisGroupAndGenericGroup
             });
         }
