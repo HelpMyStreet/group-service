@@ -22,92 +22,37 @@ namespace GroupService.Repo.Helpers
         private const int MANUALLY_VERIFIED = 1;
         private const int DBS_CHECK = 2;
         private const int SANDBOX_BEFRIENDER_TRAINING = 3;
-        private const int VOLUNTEER_INDUCTION = 4;
-        private const int REFERENCES = 5;
         private const int POLICIES_AND_PROCEDURES = 7;
-        private const int VACCINATOR_TRAINING = 8;
-        private const int BANK_DETAILS = 9;
-        private const int SAFEGUARDING_TRAINING = 10;
-        private const int APPROVED_HOST = 11;
-        private const int HEALTH_SAFETY = 12;
 
         public static void InitialiseCredentialSets()
         {
             IDENTITY_CREDENTIAL_SETS = new Dictionary<Groups, int>
             {
                 { Groups.Generic, 1 },
-                { Groups.FTLOS, 2 },
-                { Groups.AgeUKLSL, 3 },
-                { Groups.Tankersley, 5 },
                 { Groups.Ruddington, 6 },
                 { Groups.AgeUKWirral, 7 },
-                { Groups.AgeUKNottsBalderton, 8 },
-                { Groups.AgeUKNorthWestKent, 9 },
-                { Groups.AgeUKNottsNorthMuskham, 10 },
-                { Groups.AgeUKSouthKentCoast, 11 },
-                { Groups.AgeUKFavershamAndSittingbourne, 13 },
                 { Groups.Sandbox, 14 },
-                { Groups.AgeConnectsCardiff, 23 },
-                { Groups.Southwell, 31 },
-                { Groups.ApexBankStaff, 32 },
-                { Groups.AgeUKMidMersey, 33 },
-                { Groups.BostonGNS, 34 },                
-                { Groups.NHSVRDemo, 38 },
-                { Groups.NottinghamshireCountyCouncil, 39 },
-                { Groups.NottinghamshireIntegratedCareBoard, 40 }
+                { Groups.Southwell, 31 }
             };
             DBS_CREDENTIAL_SETS = new Dictionary<Groups, int>
             {
                 { Groups.AgeUKWirral, 71 },
-                { Groups.AgeUKNorthWestKent, 91 },
-                { Groups.AgeUKSouthKentCoast, 111 },
-                { Groups.AgeUKFavershamAndSittingbourne, 131 },
-                { Groups.Sandbox, 141 },
-                { Groups.AgeConnectsCardiff, 231 },
-                { Groups.AgeUKMidMersey, 331 },
-                { Groups.BostonGNS, 341 },
-                { Groups.NHSVRDemo, 381 },
-                { Groups.NottinghamshireCountyCouncil, 391 },
-                { Groups.NottinghamshireIntegratedCareBoard, 401 }
-
+                { Groups.Sandbox, 141 }
             };
 
             GROUPS_USING_YOTI = new List<Groups> {
                 Groups.Sandbox,
-                Groups.AgeUKFavershamAndSittingbourne,
-                Groups.AgeUKSouthKentCoast,
-                Groups.AgeUKNottsNorthMuskham,
-                Groups.AgeUKNorthWestKent,
-                Groups.AgeUKNottsBalderton,
                 Groups.AgeUKWirral,
                 Groups.Ruddington,
-                Groups.Tankersley,
-                Groups.AgeUKLSL,
-                Groups.FTLOS,
                 Groups.Generic,
-                Groups.Southwell,
-                Groups.AgeUKMidMersey,
-                Groups.BostonGNS,                
-                Groups.NHSVRDemo,
-                Groups.NottinghamshireIntegratedCareBoard,
-                Groups.NottinghamshireCountyCouncil
+                Groups.Southwell
             };
 
             GROUPS_USING_MANUAL_ID = new List<Groups>
             {
                 Groups.AgeUKWirral,
-                Groups.AgeUKLSL,
-                Groups.AgeUKNottsBalderton,
-                Groups.AgeUKNottsNorthMuskham,
-                Groups.AgeUKNorthWestKent,
-                Groups.AgeUKSouthKentCoast,
-                Groups.AgeUKFavershamAndSittingbourne,
                 Groups.Sandbox,
-                Groups.AgeConnectsCardiff,
-                Groups.Southwell,
-                Groups.ApexBankStaff,
-                Groups.AgeUKMidMersey,
-                Groups.BostonGNS               
+                Groups.Southwell,              
             };
         }
 
@@ -146,12 +91,7 @@ namespace GroupService.Repo.Helpers
 
         public static void SetGroupCredentials(this EntityTypeBuilder<GroupCredential> entity)
         {
-            foreach (var group in GROUPS_USING_YOTI.Where
-                (x => x.Equals(Groups.Generic)
-                || x.Equals(Groups.Southwell)
-                || x.Equals(Groups.Ruddington)
-                || x.Equals(Groups.Sandbox)
-                || x.Equals(Groups.AgeUKWirral)))
+            foreach (var group in GROUPS_USING_YOTI)
             {
                 entity.HasData(new GroupCredential
                 {
@@ -261,12 +201,7 @@ namespace GroupService.Repo.Helpers
 
         public static void SetCredentialSet(this EntityTypeBuilder<CredentialSet> entity)
         {
-            foreach (var group in GROUPS_USING_YOTI.Where
-                (x => x.Equals(Groups.Generic)
-                || x.Equals(Groups.Southwell)
-                || x.Equals(Groups.Ruddington)
-                || x.Equals(Groups.Sandbox)
-                || x.Equals(Groups.AgeUKWirral)))
+            foreach (var group in GROUPS_USING_YOTI)
             {
                 entity.HasData(new CredentialSet
                 {
@@ -276,12 +211,7 @@ namespace GroupService.Repo.Helpers
                 });
             }
 
-            foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS.Where
-                (x => x.Equals(Groups.Generic)
-                || x.Equals(Groups.Southwell)
-                || x.Equals(Groups.Ruddington)
-                || x.Equals(Groups.Sandbox)
-                || x.Equals(Groups.AgeUKWirral)))
+            foreach (var dbsCredentialSet in DBS_CREDENTIAL_SETS)
             {
                 entity.HasData(new CredentialSet
                 {
@@ -291,13 +221,7 @@ namespace GroupService.Repo.Helpers
                 });             
             }
 
-            foreach (var group in GROUPS_USING_MANUAL_ID.Where
-                (x=> x.Equals(Groups.Generic) 
-                || x.Equals(Groups.Southwell) 
-                || x.Equals(Groups.Ruddington) 
-                || x.Equals(Groups.Sandbox) 
-                || x.Equals(Groups.AgeUKWirral)))
-                
+            foreach (var group in GROUPS_USING_MANUAL_ID)        
             {
                 entity.HasData(new CredentialSet
                 {
