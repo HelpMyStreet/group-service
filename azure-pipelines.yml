@@ -18,17 +18,10 @@ variables:
 
 steps:
 
-- task: DotNetCoreInstaller@1
-  displayName: 'DotNetCore Installer 3.1.x'
-  inputs:
-    packageType: 'sdk' # 'runtime' | 'sdk'. Required. Package to install. Default: sdk.
-    version: '3.1.x' # string. Required. Version. Default: 2.2.x.
-
-
 - task: UseDotNet@2
   displayName: 'Install .NET Core SDK'
   inputs:
-    version: 3.1.426
+    version: 3.x
     performMultiLevelLookup: true
     includePreviewVersions: true # Required for preview versions
     
@@ -43,11 +36,12 @@ steps:
     feedsToUse: 'select'
     vstsFeed: 'e5c08e0c-1c28-42ca-815f-5ca90021fd46/9ff815b0-abc7-442a-98cb-d2879666c3bb'
 
-- task: DotNetCoreCLI@2
+- task: MSBuild@1
   displayName: DotNetCore build
   inputs:
     command: 'build'
     projects: '**/**/*.AzureFunction.csproj'
+    version: '16.0'
 
 - task: DotNetCoreCLI@2
   displayName: DotNetCore test
