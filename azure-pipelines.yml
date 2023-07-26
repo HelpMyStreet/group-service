@@ -41,7 +41,7 @@ steps:
   inputs:
     command: 'build'
     projects: '**/**/*.AzureFunction.csproj'
-    version: '3.1.0'    
+    version: '3.0.9'    
 
 - task: DotNetCoreCLI@2
   displayName: DotNetCore test
