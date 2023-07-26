@@ -18,6 +18,13 @@ variables:
 
 steps:
 
+- task: DotNetCoreInstaller@1
+  displayName: 'DotNetCore Installer 3.1.x'
+  inputs:
+    packageType: 'sdk' # 'runtime' | 'sdk'. Required. Package to install. Default: sdk.
+    version: '3.1.x' # string. Required. Version. Default: 2.2.x.
+
+
 - task: UseDotNet@2
   displayName: 'Install .NET Core SDK'
   inputs:
