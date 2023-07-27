@@ -24,7 +24,6 @@ steps:
       dotnet tool install --global dotnet-ef --version $(dotnetSdkVersion)
       dotnet --list-sdks
       dotnet --list-tools
-    displayName: 'Install .NET SDK'
 
 - task: NuGetToolInstaller@1
   displayName: NuGet install
