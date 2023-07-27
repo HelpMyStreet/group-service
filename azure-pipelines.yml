@@ -15,15 +15,16 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  dotnetSdkVersion: '3.1.0 '
 
 steps:
 
-- task: UseDotNet@2
-  displayName: 'Install .NET Core SDK'
-  inputs:
-    version: 3.x
-    performMultiLevelLookup: true
-    includePreviewVersions: true # Required for preview versions
+ - script: |
+      # Download and install the desired .NET SDK version
+      dotnet tool install --global dotnet-ef --version $(dotnetSdkVersion)
+      dotnet --list-sdks
+      dotnet --list-tools
+    displayName: 'Install .NET SDK'
 
 - task: NuGetToolInstaller@1
   displayName: NuGet install
