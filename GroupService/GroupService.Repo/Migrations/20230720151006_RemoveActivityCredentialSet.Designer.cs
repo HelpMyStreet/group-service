@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230720151006_RemoveActivityCredentialSet")]
+    partial class RemoveActivityCredentialSet
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -348,8 +350,43 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 4,
+                            Name = "Volunteer Induction"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "References"
+                        },
+                        new
+                        {
                             Id = 7,
                             Name = "Policies & Procedures"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Vaccinator Training"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Bank Details"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Safeguarding Training"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Approved Host"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Health and Safety Training"
                         });
                 });
 
@@ -382,6 +419,36 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 13,
+                            GroupId = -13,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            GroupId = -11,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 10,
+                            GroupId = -10,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            GroupId = -9,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            GroupId = -8,
+                            CredentialId = -1
+                        },
+                        new
+                        {
                             Id = 7,
                             GroupId = -7,
                             CredentialId = -1
@@ -390,6 +457,24 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 6,
                             GroupId = -6,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            GroupId = -5,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            GroupId = -3,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            GroupId = -2,
                             CredentialId = -1
                         },
                         new
@@ -406,8 +491,56 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 33,
+                            GroupId = -33,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 34,
+                            GroupId = -34,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 38,
+                            GroupId = -38,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 40,
+                            GroupId = -40,
+                            CredentialId = -1
+                        },
+                        new
+                        {
+                            Id = 39,
+                            GroupId = -39,
+                            CredentialId = -1
+                        },
+                        new
+                        {
                             Id = 71,
                             GroupId = -7,
+                            CredentialId = 2
+                        },
+                        new
+                        {
+                            Id = 91,
+                            GroupId = -9,
+                            CredentialId = 2
+                        },
+                        new
+                        {
+                            Id = 111,
+                            GroupId = -11,
+                            CredentialId = 2
+                        },
+                        new
+                        {
+                            Id = 131,
+                            GroupId = -13,
                             CredentialId = 2
                         },
                         new
@@ -418,8 +551,80 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 231,
+                            GroupId = -23,
+                            CredentialId = 2
+                        },
+                        new
+                        {
+                            Id = 331,
+                            GroupId = -33,
+                            CredentialId = 2
+                        },
+                        new
+                        {
+                            Id = 341,
+                            GroupId = -34,
+                            CredentialId = 2
+                        },
+                        new
+                        {
+                            Id = 381,
+                            GroupId = -38,
+                            CredentialId = 2
+                        },
+                        new
+                        {
+                            Id = 391,
+                            GroupId = -39,
+                            CredentialId = 2
+                        },
+                        new
+                        {
+                            Id = 401,
+                            GroupId = -40,
+                            CredentialId = 2
+                        },
+                        new
+                        {
                             Id = 7,
                             GroupId = -7,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            GroupId = -3,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            GroupId = -8,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 10,
+                            GroupId = -10,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            GroupId = -9,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            GroupId = -11,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 13,
+                            GroupId = -13,
                             CredentialId = 1
                         },
                         new
@@ -430,8 +635,32 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 23,
+                            GroupId = -23,
+                            CredentialId = 1
+                        },
+                        new
+                        {
                             Id = 31,
                             GroupId = -31,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 32,
+                            GroupId = -32,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 33,
+                            GroupId = -33,
+                            CredentialId = 1
+                        },
+                        new
+                        {
+                            Id = 34,
+                            GroupId = -34,
                             CredentialId = 1
                         },
                         new
@@ -442,9 +671,63 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = 234,
+                            GroupId = -23,
+                            CredentialId = 4
+                        },
+                        new
+                        {
+                            Id = 235,
+                            GroupId = -23,
+                            CredentialId = 5
+                        },
+                        new
+                        {
                             Id = 317,
                             GroupId = -31,
                             CredentialId = 7
+                        },
+                        new
+                        {
+                            Id = 328,
+                            GroupId = -32,
+                            CredentialId = 8
+                        },
+                        new
+                        {
+                            Id = 329,
+                            GroupId = -32,
+                            CredentialId = 9
+                        },
+                        new
+                        {
+                            Id = 3410,
+                            GroupId = -34,
+                            CredentialId = 10
+                        },
+                        new
+                        {
+                            Id = 345,
+                            GroupId = -34,
+                            CredentialId = 5
+                        },
+                        new
+                        {
+                            Id = 3812,
+                            GroupId = -38,
+                            CredentialId = 12
+                        },
+                        new
+                        {
+                            Id = 3912,
+                            GroupId = -39,
+                            CredentialId = 12
+                        },
+                        new
+                        {
+                            Id = 4012,
+                            GroupId = -40,
+                            CredentialId = 12
                         });
                 });
 
@@ -676,8 +959,48 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -15,
+                            Name = "ForestRecreationGround"
+                        },
+                        new
+                        {
+                            Id = -14,
+                            Name = "KingsMeadowCampus"
+                        },
+                        new
+                        {
+                            Id = -13,
+                            Name = "RichardHerrodCentre"
+                        },
+                        new
+                        {
+                            Id = -12,
+                            Name = "GamstonCommunityHall"
+                        },
+                        new
+                        {
+                            Id = -11,
+                            Name = "MansfieldWickesSite"
+                        },
+                        new
+                        {
+                            Id = -10,
+                            Name = "PortlandMedicalPracticeLincoln"
+                        },
+                        new
+                        {
                             Id = -9,
                             Name = "RustonsSportsAndSocialClubLincoln"
+                        },
+                        new
+                        {
+                            Id = -8,
+                            Name = "SidingsMedicalPracticeBoston"
+                        },
+                        new
+                        {
+                            Id = -7,
+                            Name = "FranklinHallSpilsby"
                         },
                         new
                         {
@@ -686,8 +1009,28 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -5,
+                            Name = "WaddingtonBranchSurgerySouthLincoln"
+                        },
+                        new
+                        {
+                            Id = -4,
+                            Name = "TableTennisClubGrantham"
+                        },
+                        new
+                        {
                             Id = -3,
                             Name = "LouthCommunityHospital"
+                        },
+                        new
+                        {
+                            Id = -2,
+                            Name = "PilgramHospitalBolton"
+                        },
+                        new
+                        {
+                            Id = -1,
+                            Name = "LincolnCountyHospital"
                         });
                 });
 
@@ -858,166 +1201,166 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("RequestHelpFormVariant","Lookup");
 
                     b.HasData(
-                       new
-                       {
-                           Id = 1,
-                           Name = "Default"
-                       },
-                       new
-                       {
-                           Id = 2,
-                           Name = "VitalsForVeterans"
-                       },
-                       new
-                       {
-                           Id = 3,
-                           Name = "DIY"
-                       },
-                       new
-                       {
-                           Id = 4,
-                           Name = "FtLOS"
-                       },
-                       new
-                       {
-                           Id = 5,
-                           Name = "FaceMasks"
-                       },
-                       new
-                       {
-                           Id = 7,
-                           Name = "Ruddington"
-                       },
-                       new
-                       {
-                           Id = 8,
-                           Name = "AgeUKWirral"
-                       },
-                       new
-                       {
-                           Id = 9,
-                           Name = "AgeUKNottsBalderton"
-                       },
-                       new
-                       {
-                           Id = 10,
-                           Name = "AgeUKNorthWestKent_Public"
-                       },
-                       new
-                       {
-                           Id = 11,
-                           Name = "AgeUKNorthWestKent_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 12,
-                           Name = "AgeUKNottsNorthMuskham"
-                       },
-                       new
-                       {
-                           Id = 13,
-                           Name = "AgeUKSouthKentCoast_Public"
-                       },
-                       new
-                       {
-                           Id = 14,
-                           Name = "AgeUKSouthKentCoast_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 15,
-                           Name = "AgeUKFavershamAndSittingbourne_Public"
-                       },
-                       new
-                       {
-                           Id = 16,
-                           Name = "AgeUKFavershamAndSittingbourne_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 17,
-                           Name = "LincolnshireVolunteers"
-                       },
-                       new
-                       {
-                           Id = 18,
-                           Name = "ChildGroupSelector"
-                       },
-                       new
-                       {
-                           Id = 19,
-                           Name = "Sandbox_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 20,
-                           Name = "AgeConnectsCardiff_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 21,
-                           Name = "AgeConnectsCardiff_Public"
-                       },
-                       new
-                       {
-                           Id = 22,
-                           Name = "MeadowsCommunityHelpers_Public"
-                       },
-                       new
-                       {
-                           Id = 23,
-                           Name = "MeadowsCommunityHelpers_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 24,
-                           Name = "Mansfield_CVS"
-                       },
-                       new
-                       {
-                           Id = 25,
-                           Name = "Soutwell_Public"
-                       },
-                       new
-                       {
-                           Id = 26,
-                           Name = "ApexBankStaff_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 27,
-                           Name = "AgeUKMidMersey_Public"
-                       },
-                       new
-                       {
-                           Id = 28,
-                           Name = "AgeUKMidMersey_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 29,
-                           Name = "BostonGNS_Public"
-                       },
-                       new
-                       {
-                           Id = 30,
-                           Name = "BostonGNS_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 32,
-                           Name = "LincolnshireVolunteersRequests_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 33,
-                           Name = "UkraineRefugees_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 34,
-                           Name = "NHSVRDemo_RequestSubmitter"
-                       });
+                        new
+                        {
+                            Id = 1,
+                            Name = "Default"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "VitalsForVeterans"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "DIY"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "FtLOS"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "FaceMasks"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Ruddington"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "AgeUKWirral"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "AgeUKNottsBalderton"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "AgeUKNorthWestKent_Public"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "AgeUKNorthWestKent_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "AgeUKNottsNorthMuskham"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "AgeUKSouthKentCoast_Public"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "AgeUKSouthKentCoast_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "AgeUKFavershamAndSittingbourne_Public"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "AgeUKFavershamAndSittingbourne_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Name = "LincolnshireVolunteers"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Name = "ChildGroupSelector"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "Sandbox_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Name = "AgeConnectsCardiff_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "AgeConnectsCardiff_Public"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Name = "MeadowsCommunityHelpers_Public"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Name = "MeadowsCommunityHelpers_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Name = "Mansfield_CVS"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Name = "Soutwell_Public"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Name = "ApexBankStaff_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Name = "AgeUKMidMersey_Public"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Name = "AgeUKMidMersey_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Name = "BostonGNS_Public"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Name = "BostonGNS_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Name = "LincolnshireVolunteersRequests_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Name = "UkraineRefugees_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Name = "NHSVRDemo_RequestSubmitter"
+                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumRole", b =>
@@ -1800,6 +2143,45 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -2,
+                            FriendlyName = "For the Love of Scrubs",
+                            GroupKey = "ftlos",
+                            GroupName = "For the Love of Scrubs",
+                            GroupType = (byte)2,
+                            HomepageEnabled = true,
+                            ShiftsEnabled = false,
+                            ShortName = "FTLOS",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -3,
+                            FriendlyName = "Age UK Lincoln & South Lincolnshire",
+                            GroupKey = "ageuklsl",
+                            GroupName = "Age UK Lincoln & South Lincolnshire",
+                            GroupType = (byte)1,
+                            HomepageEnabled = true,
+                            LinkURL = "/ageuklsl",
+                            ShiftsEnabled = false,
+                            ShortName = "Age UK LSL",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -5,
+                            FriendlyName = "Tankersley & Pilley Community Helpers",
+                            GeographicName = "Tankersley or Pilley",
+                            GroupKey = "tankersley",
+                            GroupName = "Tankersley & Pilley",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/tankersley",
+                            ShiftsEnabled = false,
+                            ShortName = "Tankersley",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
                             Id = -6,
                             FriendlyName = "Ruddington Community Response Team",
                             GeographicName = "Ruddington",
@@ -1827,12 +2209,146 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -8,
+                            FriendlyName = "Balderton Community Support",
+                            GeographicName = "Balderton",
+                            GroupKey = "balderton",
+                            GroupName = "Balderton Community Support",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/balderton",
+                            ShiftsEnabled = false,
+                            ShortName = "Balderton",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -9,
+                            FriendlyName = "Age UK North West Kent",
+                            GeographicName = "North West Kent (Dartford, Swanley or Gravesend)",
+                            GroupKey = "ageuknwkent",
+                            GroupName = "Age UK North West Kent",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/northwestkent",
+                            ShiftsEnabled = false,
+                            ShortName = "Age UK NW Kent",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -10,
+                            FriendlyName = "North Muskham Community Support",
+                            GeographicName = "North Muskham",
+                            GroupKey = "north-muskham",
+                            GroupName = "North Muskham Community Support",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/north-muskham",
+                            ShiftsEnabled = false,
+                            ShortName = "North Muskham",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -11,
+                            FriendlyName = "Age UK South Kent Coast",
+                            GeographicName = "Deal or Folkestone",
+                            GroupKey = "ageuk-southkentcoast",
+                            GroupName = "Age UK South Kent Coast",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/southkentcoast",
+                            ShiftsEnabled = false,
+                            ShortName = "South Kent Coast",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -13,
+                            FriendlyName = "Age UK Faversham & Sittingbourne",
+                            GeographicName = "Faversham or Sittingbourne",
+                            GroupKey = "ageuk-favershamandsittingbourne",
+                            GroupName = "Age UK Faversham & Sittingbourne",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/favershamandsittingbourne",
+                            ShiftsEnabled = false,
+                            ShortName = "Faversham & Sittingbourne",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -12,
+                            FriendlyName = "Lincolnshire Volunteers",
+                            GeographicName = "Lincolnshire Volunteers",
+                            GroupKey = "lincs-volunteers",
+                            GroupName = "Lincolnshire Volunteers",
+                            GroupType = (byte)1,
+                            HomepageEnabled = true,
+                            LinkURL = "/lincolnshirevolunteers",
+                            ShiftsEnabled = false,
+                            ShortName = "Lincs Vols",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -14,
+                            GroupKey = "east-lindsey-pcn",
+                            GroupName = "East Lindsey PCN",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -12,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -17,
+                            GroupKey = "four-counties-pcn",
+                            GroupName = "Four Counties PCN",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -12,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -20,
+                            GroupKey = "apex-pcn-lincoln",
+                            GroupName = "APEX PCN",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -12,
+                            ShiftsEnabled = true,
+                            TasksEnabled = false
+                        },
+                        new
+                        {
                             Id = -22,
                             GroupKey = "hms-sandbox",
                             GroupName = "Sandbox",
                             GroupType = (byte)2,
                             HomepageEnabled = false,
                             ShiftsEnabled = true,
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -23,
+                            FriendlyName = "Age Connects Cardiff & the Vale",
+                            GeographicName = "Cardiff & the Vale",
+                            GroupKey = "ageconnects-cardiff",
+                            GroupName = "Age Connects Cardiff & the Vale",
+                            GroupType = (byte)1,
+                            HomepageEnabled = true,
+                            JoinGroupPopUpDetail = @"Age Connects Cardiff & the Vale require two references, an Induction Session and (in most cases) a DBS check before you can start volunteering.
+
+You will also be expected to make a minimum commitment of six months.",
+                            LinkURL = "/ageconnects-cardiff",
+                            ShiftsEnabled = false,
+                            ShortName = "Age Connects Cardiff",
                             TasksEnabled = true
                         },
                         new
@@ -1847,6 +2363,107 @@ namespace GroupService.Repo.Migrations
                             LinkURL = "/southwell",
                             ShiftsEnabled = false,
                             ShortName = "Southwell",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -32,
+                            FriendlyName = "Apex PCN Bank Staff",
+                            GroupKey = "apex-pcn-bank-staff",
+                            GroupName = "APEX PCN Bank Staff",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/apexpcnbankstaff",
+                            ShiftsEnabled = true,
+                            ShortName = "Apex Bank Staff",
+                            TasksEnabled = false
+                        },
+                        new
+                        {
+                            Id = -33,
+                            FriendlyName = "Age UK Mid Mersey",
+                            GeographicName = "St Helens, Halton, Knowsley and Warrington",
+                            GroupKey = "ageuk-midmersey",
+                            GroupName = "Age UK Mid Mersey",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/ageukmidmersey",
+                            ShiftsEnabled = false,
+                            ShortName = "Age UK MM",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -34,
+                            FriendlyName = "Boston and Surrounding Areas",
+                            GeographicName = "Boston or surrounding areas",
+                            GroupKey = "boston",
+                            GroupName = "Boston and Surrounding Areas",
+                            GroupType = (byte)0,
+                            HomepageEnabled = true,
+                            LinkURL = "/boston",
+                            ShiftsEnabled = false,
+                            ShortName = "Boston",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -37,
+                            FriendlyName = "LCVS",
+                            GroupKey = "lincolnshire-lcvs",
+                            GroupName = "LCVS",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            LinkURL = "/lincolnshire-lcvs",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = false,
+                            ShortName = "LCVS",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -36,
+                            FriendlyName = "VCS",
+                            GroupKey = "lincolnshire-vcs",
+                            GroupName = "VCS",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            LinkURL = "/lincolnshire-vcs",
+                            ParentGroupId = -12,
+                            ShiftsEnabled = false,
+                            ShortName = "VCS",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -38,
+                            GroupKey = "nhsvr-demo",
+                            GroupName = "NHSVR Demo",
+                            GroupType = (byte)2,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -39,
+                            GroupKey = "nhsvr-group1",
+                            GroupName = "Nottinghamshire County Council",
+                            GroupType = (byte)0,
+                            HomepageEnabled = false,
+                            ParentGroupId = -38,
+                            ShiftsEnabled = true,
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -40,
+                            GroupKey = "nhsvr-group2",
+                            GroupName = "NHS Nottingham & Nottinghamshire Integrated Care Board",
+                            GroupType = (byte)1,
+                            HomepageEnabled = false,
+                            ParentGroupId = -38,
+                            ShiftsEnabled = true,
                             TasksEnabled = true
                         });
                 });
@@ -1917,6 +2534,66 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -13,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
                             GroupId = -7,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
@@ -1930,6 +2607,42 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             GroupId = -6,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -2,
                             CredentialId = -1,
                             CredentialTypeId = (byte)1,
                             CredentialVerifiedById = (byte)1,
@@ -1965,6 +2678,66 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -33,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -34,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            CredentialId = -1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)1,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Complete online",
+                            HowToAchieve_CTA_Destination = "/account?next=verify",
+                            Name = "Yoti ID Verification",
+                            WhatIsThis = "Yoti is our trusted digital identity verification provider. Volunteers can follow the instructions in their profile to get verified. Volunteer admins cannot edit this credential."
+                        },
+                        new
+                        {
                             GroupId = -7,
                             CredentialId = 2,
                             CredentialTypeId = (byte)2,
@@ -1983,6 +2756,114 @@ namespace GroupService.Repo.Migrations
                             CredentialVerifiedById = (byte)2,
                             DisplayOrder = 2,
                             HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Wirral to find out how they can check your ID at mailto:volunteers@ageukwirral.org.uk",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Lincoln & South Lincolnshire to find out how they can check your ID at mailto:volunteering@ageuklsl.org.uk",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -8,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Unfortunately manual ID checks are not available right now, please use Yoti to verify you identity and start volunteering.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Please contact North Muskham Community Support to find out more about our manual ID check by emailing mailto:northmuskham@helpmystreet.org",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "Email Age UK North West Kent to request or register your DBS check at mailto:contactus@ageuknorthwestkent.org.uk",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "If you’re unable to verify with Yoti, email Age UK North West Kent to find out how they can check your ID at mailto:contactus@ageuknorthwestkent.org.uk",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "Email Age UK South Kent Coast to request or register your DBS check at mailto:volunteering@ageukskc.org.uk",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "If you’re unable to verify with Yoti, email Age UK South Kent Coast to find out how they can check your ID at mailto:volunteering@ageukskc.org.uk",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "Email Age UK Faversham and Sittingbourne to request or register your DBS check at mailto:volunteering@ageukfaversham.org.uk",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "If you’re unable to verify with Yoti, email Age UK Faversham and Sittingbourne to find out how they can check your ID at mailto:volunteering@ageukfaversham.org.uk",
                             HowToAchieve_CTA_Destination = "",
                             Name = "Manual ID Verification",
                             WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
@@ -2025,6 +2906,54 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -23,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Email our volunteer recruiter at mailto:helen.prior@ageconnectscardiff.org.uk to request a manual ID check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            CredentialId = 5,
+                            CredentialTypeId = (byte)4,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Please complete this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-References-Form.docx) with details of your **two** referees. If it’s been more than two weeks and you haven’t heard anything, please get in touch.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "References",
+                            WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "This activity requires a DBS check, please complete and return this [form](/forms/ageconnect/cardiff/Age-Connects-Cardiff-and-the-Vale-dbs-check-form.docx). If it’s been more than two weeks and you haven’t heard anything, please get in touch.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            CredentialId = 4,
+                            CredentialTypeId = (byte)3,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 4,
+                            HowToAchieve = "If you haven’t done so already, please book your space on one of our Core Induction Training sessions through <a href=\"https://www.eventbrite.co.uk/o/age-connects-cardiff-amp-vale-32377866579\" target=\"_blank\">Eventbrite</a>. If you’ve recently completed your induction please be aware that it may take a couple of days for the system to update.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Volunteer Induction",
+                            WhatIsThis = "Use this credential to record a completed volunteer induction. Volunteer admins should follow internal processes for completing and logging induction training."
+                        },
+                        new
+                        {
                             GroupId = -31,
                             CredentialId = 1,
                             CredentialTypeId = (byte)1,
@@ -2046,6 +2975,186 @@ namespace GroupService.Repo.Migrations
                             HowToAchieve_CTA_Destination = "",
                             Name = "Volunteer Agreement",
                             WhatIsThis = "Use this credential to certify that a volunteer has accepted the Southwell Torpedos Volunteer Agreement. Volunteer admins should follow internal processes for manually verifying this credential."
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 1,
+                            HowToAchieve = "Please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net to request a manual ID check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            CredentialId = 8,
+                            CredentialTypeId = (byte)3,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Please email a copy of the required certificates to Gary Burroughs at mailto:g.burroughs@nhs.net, including your NMC, GMC or GPhC registration, mandated vaccination courses/programmes on immunisation, BLS and anaphylaxis training, and the COVID-19 vaccinator competency toolkit.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Vaccinator Training",
+                            WhatIsThis = "Use this credential to certify that the user meets the essential criteria for a bank staff vaccinator. Once you have certified this credential users will be able to book onto shifts."
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            CredentialId = 9,
+                            CredentialTypeId = (byte)6,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "A member of the team will be in touch to confirm how you will be paid for any shifts you complete. If you haven’t heard from us within two weeks please email Gary Burroughs, PCN Manager at mailto:g.burroughs@nhs.net.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Bank Details",
+                            WhatIsThis = "Use this credential to confirm payment arrangements have been agreed."
+                        },
+                        new
+                        {
+                            GroupId = -33,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "If you’re unable to verify with Yoti, email us at mailto:enquiries@aukmm.org.uk to request a manual ID check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -33,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "This activity requires a DBS check. Email us at mailto:enquiries@aukmm.org.uk to request or register a DBS check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -34,
+                            CredentialId = 1,
+                            CredentialTypeId = (byte)1,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "If you are unable to confirm your ID using Yoti please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about how you can request a manual ID check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Manual ID Verification",
+                            WhatIsThis = "Use this credential to certify that you have verified a volunteer’s identity and are satisfied they are who they claim to be. Volunteer admins should follow internal processes for manually verifying a volunteer’s identity."
+                        },
+                        new
+                        {
+                            GroupId = -34,
+                            CredentialId = 5,
+                            CredentialTypeId = (byte)4,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "We ask all our volunteers to provide a personal reference - this must be someone who is 18 or over, has known you for over a year and is not related to you. Please have a think about who this could be, and check that they are happy for you to share their contact details with us for the purpose of requesting a reference. Please also make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can contact you for their information.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "References",
+                            WhatIsThis = "Use this credential to record a completed reference. Volunteer admins should follow internal processes for logging a personal reference."
+                        },
+                        new
+                        {
+                            GroupId = -34,
+                            CredentialId = 10,
+                            CredentialTypeId = (byte)3,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 4,
+                            HowToAchieve = "Safeguarding how-to text: ‘We ask all our volunteers to complete basic safeguarding training to keep you, and the people we help safe. Please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about this short training session.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Safeguarding training",
+                            WhatIsThis = "Use this credential to certify that the user has completed safeguarding training."
+                        },
+                        new
+                        {
+                            GroupId = -34,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 5,
+                            HowToAchieve = "For some activities we need to our volunteers to be DBS checked. Please make sure you’re a member of our group by clicking ‘Join Our Group’ from our <a href=\"/boston\">landing page</a> whilst you’re logged in to HelpMyStreet so we can get in touch with more information about requesting or registering a DBS check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Here you can enter your own text to let volunteers know how to request and log a DBS check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            CredentialId = 12,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "The **Health, Safety and Infection Prevention and Control** for Volunteers training is a free, online learning module provided by Health Education England (HEE). <a href=\"https://portal.e-lfh.org.uk/Component/Details/556093\" target=\"_blank\">Launch the training module</a> and upload your completion certificate to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Health and Safety Training",
+                            WhatIsThis = "Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training."
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Here you can enter your own text to let volunteers know how to request and log a DBS check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            CredentialId = 12,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "The **Health, Safety and Infection Prevention and Control** for Volunteers training is a free, online learning module provided by Health Education England (HEE). <a href=\"https://portal.e-lfh.org.uk/Component/Details/556093\" target=\"_blank\">Launch the training module</a> and upload your completion certificate to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Health and Safety Training",
+                            WhatIsThis = "Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training."
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            CredentialId = 2,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 2,
+                            HowToAchieve = "Here you can enter your own text to let volunteers know how to request and log a DBS check.",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "DBS Check",
+                            WhatIsThis = "Use this credential to record a completed DBS (Disclosure and Barring Service) check. Volunteer admins should follow internal processes for logging a DBS check."
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            CredentialId = 12,
+                            CredentialTypeId = (byte)2,
+                            CredentialVerifiedById = (byte)2,
+                            DisplayOrder = 3,
+                            HowToAchieve = "The **Health, Safety and Infection Prevention and Control** for Volunteers training is a free, online learning module provided by Health Education England (HEE). <a href=\"https://portal.e-lfh.org.uk/Component/Details/556093\" target=\"_blank\">Launch the training module</a> and upload your completion certificate to continue. (You will need to log-in or sign up for a free account to access this training.)",
+                            HowToAchieve_CTA_Destination = "",
+                            Name = "Health and Safety Training",
+                            WhatIsThis = "Use this credential to certify that the volunteer has completed the relevant training module. Volunteer admins should follow internal processes for manually verifying training."
                         });
                 });
 
@@ -2653,6 +3762,302 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 12,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Supplying reusable homemade face coverings through For the Love of Scrubs"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 13,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Collecting and delivering a pre-prepared wellbeing package"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 8,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 9,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Providing remote support for parents and carers home-schooling their children"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)2,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)12,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 12,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Supplying homemade face coverings"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 13,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Collecting and delivering a pre-prepared wellbeing package"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 8,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 9,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Providing remote support for parents and carers home-schooling their children"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)4,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)12,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 13,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Collecting and delivering a pre-prepared wellbeing package"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 12,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Supplying homemade face coverings"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 8,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Providing support over the phone to someone who may be anxious (relevant experience required e.g. mental health first-aider)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 9,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Providing remote support for parents and carers home-schooling their children"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)12,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)3,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)13,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
                             RequestHelpFormVariantId = (byte)5,
                             SupportActivityId = 1,
                             DisplayOrder = (byte)1,
@@ -2721,6 +4126,302 @@ namespace GroupService.Repo.Migrations
                             SupportActivityId = 11,
                             DisplayOrder = (byte)9,
                             IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Walking a calm dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "A friendly chat on the phone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)6,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 21,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Delivering freshly prepared meal straight to someone’s door"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 16,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Providing transport for essential appointments"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "A friendly chat on the phone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)7,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "A friendly chat on the phone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 23,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Providing company over a mealtime for someone who lives alone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 21,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Delivering a freshly prepared meal straight to someone’s door"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)8,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "A friendly chat on the phone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 23,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Providing company over a mealtime for someone who lives alone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 21,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Delivering a freshly prepared meal straight to someone’s door"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 16,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Providing transport for essential appointments"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)9,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 35,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Longer-term volunteering opportunities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 6,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Preparing and/or delivering a hot / pre-prepared meal"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "A friendly chat on the phone"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 16,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Providing transport for essential appointments"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)10,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = true,
                             Label = "I may be able to help with other tasks, so please check with me."
                         },
                         new
@@ -2829,6 +4530,182 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            RequestHelpFormVariantId = (byte)12,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)12,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)12,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)12,
+                            SupportActivityId = 26,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "In-person befriending (when restrictions allow)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)12,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)12,
+                            SupportActivityId = 25,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Providing help in emergency situations (e.g. extreme weather)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)12,
+                            SupportActivityId = 16,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Providing transport for essential appointments"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)12,
+                            SupportActivityId = 27,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Providing help with everyday practical tasks (e.g. changing a lightbulb, filling in forms etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)12,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)12,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)13,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)13,
+                            SupportActivityId = 12,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Supplying homemade face coverings"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)13,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)13,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)13,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)13,
+                            SupportActivityId = 29,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Providing digital support for people struggling with technology"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)13,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)13,
+                            SupportActivityId = 30,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Taking out the bins on bin day"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)13,
+                            SupportActivityId = 31,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Providing help booking COVID-19 tests or vaccination appointments"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)13,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)13,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)14,
+                            SupportActivityId = 24,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Volunteering to support the COVID-19 vaccination programme (e.g. support staff for local vaccination centres)"
+                        },
+                        new
+                        {
                             RequestHelpFormVariantId = (byte)15,
                             SupportActivityId = 1,
                             DisplayOrder = (byte)1,
@@ -2862,6 +4739,254 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             RequestHelpFormVariantId = (byte)15,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)16,
+                            SupportActivityId = 32,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Covering bank staff vaccinator shifts (this is a paid role)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)16,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Please notify me about any other roles (including unpaid volunteer roles)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 3,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Running essential local errands (e.g. posting mail)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 26,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "In-person befriending (when restrictions allow)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 30,
+                            DisplayOrder = (byte)8,
+                            IsPreSelected = false,
+                            Label = "Taking out the bins on bin day"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 27,
+                            DisplayOrder = (byte)9,
+                            IsPreSelected = false,
+                            Label = "Providing help with everyday practical tasks (e.g. changing a lightbulb, filling in forms etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 31,
+                            DisplayOrder = (byte)10,
+                            IsPreSelected = false,
+                            Label = "Providing help booking COVID-19 tests or vaccination appointments"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 29,
+                            DisplayOrder = (byte)11,
+                            IsPreSelected = false,
+                            Label = "Providing digital support for people struggling with technology"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 13,
+                            DisplayOrder = (byte)12,
+                            IsPreSelected = false,
+                            Label = "Collecting and delivering a pre-prepared wellbeing package"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 16,
+                            DisplayOrder = (byte)13,
+                            IsPreSelected = false,
+                            Label = "Providing transport for essential appointments"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 22,
+                            DisplayOrder = (byte)14,
+                            IsPreSelected = false,
+                            Label = "Helping with events, admin duties or not-for-profit activities"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 25,
+                            DisplayOrder = (byte)15,
+                            IsPreSelected = false,
+                            Label = "Providing help in emergency situations (e.g. extreme weather)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 33,
+                            DisplayOrder = (byte)16,
+                            IsPreSelected = false,
+                            Label = "Giving my time to share my skills and interests with other people who are interested to learn more"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)17,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)17,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)18,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)18,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)18,
+                            SupportActivityId = 2,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Collecting prescriptions from a local pharmacy"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)18,
+                            SupportActivityId = 27,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Providing help with everyday practical tasks (e.g. changing a lightbulb, filling in forms etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)18,
+                            SupportActivityId = 5,
+                            DisplayOrder = (byte)5,
+                            IsPreSelected = false,
+                            Label = "Walking the dog"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)18,
+                            SupportActivityId = 29,
+                            DisplayOrder = (byte)6,
+                            IsPreSelected = false,
+                            Label = "Providing digital support for people struggling with technology"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)18,
+                            SupportActivityId = 11,
+                            DisplayOrder = (byte)7,
+                            IsPreSelected = false,
+                            Label = "I may be able to help with other tasks, so please check with me."
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)19,
+                            SupportActivityId = 34,
+                            DisplayOrder = (byte)1,
+                            IsPreSelected = true,
+                            Label = "Providing accommodation"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)19,
+                            SupportActivityId = 1,
+                            DisplayOrder = (byte)2,
+                            IsPreSelected = false,
+                            Label = "Picking up groceries and other essentials (e.g. food, toiletries, household products etc.)"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)19,
+                            SupportActivityId = 7,
+                            DisplayOrder = (byte)3,
+                            IsPreSelected = false,
+                            Label = "Calling someone in need of a friendly chat"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)19,
+                            SupportActivityId = 10,
+                            DisplayOrder = (byte)4,
+                            IsPreSelected = false,
+                            Label = "Reaching out to people in my area to check-in"
+                        },
+                        new
+                        {
+                            RequestHelpFormVariantId = (byte)19,
                             SupportActivityId = 11,
                             DisplayOrder = (byte)5,
                             IsPreSelected = false,
@@ -2909,6 +5034,27 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -2,
+                            Source = "",
+                            RegistrationFormVariant = (byte)2,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            Source = "",
+                            RegistrationFormVariant = (byte)3,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            Source = "",
+                            RegistrationFormVariant = (byte)0,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
                             GroupId = -6,
                             Source = "",
                             RegistrationFormVariant = (byte)11,
@@ -2923,9 +5069,79 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -8,
+                            Source = "",
+                            RegistrationFormVariant = (byte)6,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            Source = "",
+                            RegistrationFormVariant = (byte)7,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            Source = "",
+                            RegistrationFormVariant = (byte)6,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            Source = "",
+                            RegistrationFormVariant = (byte)8,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            Source = "",
+                            RegistrationFormVariant = (byte)9,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            Source = "",
+                            RegistrationFormVariant = (byte)10,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            Source = "",
+                            RegistrationFormVariant = (byte)12,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
                             GroupId = -31,
                             Source = "",
                             RegistrationFormVariant = (byte)15,
+                            TargetGroups = (byte)5
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            Source = "",
+                            RegistrationFormVariant = (byte)16,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -33,
+                            Source = "",
+                            RegistrationFormVariant = (byte)17,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -34,
+                            Source = "",
+                            RegistrationFormVariant = (byte)18,
                             TargetGroups = (byte)5
                         });
                 });
@@ -2990,6 +5206,39 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -2,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)4,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)1
+                        },
+                        new
+                        {
+                            GroupId = -3,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)2,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -5,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)1,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
                             GroupId = -6,
                             Source = "",
                             AccessRestrictedByRole = false,
@@ -3012,6 +5261,138 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -8,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)9,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)10,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = true,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -9,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)11,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -10,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)12,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)13,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = true,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -11,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)14,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)15,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = true,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -13,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)16,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -12,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)32,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -14,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -17,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -20,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)17,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
                             GroupId = -22,
                             Source = "a",
                             AccessRestrictedByRole = true,
@@ -3023,6 +5404,27 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            GroupId = -23,
+                            Source = "",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)21,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = true,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -23,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)20,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
                             GroupId = -31,
                             Source = "",
                             AccessRestrictedByRole = false,
@@ -3031,6 +5433,105 @@ namespace GroupService.Repo.Migrations
                             RequestsRequireApproval = false,
                             SuppressRecipientPersonalDetails = false,
                             TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -32,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)26,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -33,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)28,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -34,
+                            Source = "",
+                            AccessRestrictedByRole = false,
+                            RequestHelpFormVariant = (byte)29,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -34,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)30,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -36,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)32,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -37,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)32,
+                            RequestorDefinedByGroup = true,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = true,
+                            TargetGroups = (byte)4
+                        },
+                        new
+                        {
+                            GroupId = -38,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)34,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -39,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)34,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)0
+                        },
+                        new
+                        {
+                            GroupId = -40,
+                            Source = "a",
+                            AccessRestrictedByRole = true,
+                            RequestHelpFormVariant = (byte)34,
+                            RequestorDefinedByGroup = false,
+                            RequestsRequireApproval = false,
+                            SuppressRecipientPersonalDetails = false,
+                            TargetGroups = (byte)0
                         });
                 });
 
@@ -3392,6 +5893,11 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            SupportActivityInstructionsId = (short)9,
+                            Instructions = "{\"SupportActivityInstructions\":9,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Lincoln & South Lincolnshire)\",\"Detail\":\"Please contact volunteering@ageuklsl.org.uk to arrange collection of a pre-made wellbeing package from one of our sites. We’ll also give you all the details you need for the delivery.\"},{\"Heading\":\"Deliver the package\",\"Detail\":\"Use the details provided to deliver the package. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. If you have any concerns about the person you visited let us know immediately by emailing volunteering@ageuklsl.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                        },
+                        new
+                        {
                             SupportActivityInstructionsId = (short)10,
                             Instructions = "{\"SupportActivityInstructions\":10,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Go shopping\",\"Detail\":\"Pick up their shopping, you will find their shopping list and any specific instructions in “My Requests”. You’ll need to pay for the shopping on your own card before claiming the money back.\"},{\"Heading\":\"Send us a copy of the receipt\",\"Detail\":\"Write the name of the client on the receipt and email us a photograph to mailto:emergencyvols@ageukwirral.org.uk. We’ll transfer the money as soon as possible via bank transfer.\"},{\"Heading\":\"Drop off the shopping\",\"Detail\":\"Drop off the shopping along with the original copy of the receipt. You’ll find their details in “My Requests”.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:practicalsupportteam@ageukwirral.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
@@ -3419,6 +5925,11 @@ namespace GroupService.Repo.Migrations
                         {
                             SupportActivityInstructionsId = (short)33,
                             Instructions = "{\"SupportActivityInstructions\":33,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the “View more info” link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)40,
+                            Instructions = "{\"SupportActivityInstructions\":40,\"ActivityDetails\":null,\"Intro\":\"We are working on some changes which will make it easier to manage repeat requests, but for now please follow these instructions for providing help and marking a request as complete.\",\"Steps\":[{\"Heading\":\"Check how long the help is needed for\",\"Detail\":\"You can find out more in the ‘More details’ section of the request. Some requests may be for one-off help, while others are for ongoing support.\"},{\"Heading\":\"Take out the bins\",\"Detail\":\"When the help is needed, take out the bins. Make sure you take them out first thing (or the night before) and bring them back in if required.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When the help is no longer needed, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {

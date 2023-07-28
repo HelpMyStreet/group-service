@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230721111437_RemoveGroupsNonParents")]
+    partial class RemoveGroupsNonParents
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -676,8 +678,48 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -15,
+                            Name = "ForestRecreationGround"
+                        },
+                        new
+                        {
+                            Id = -14,
+                            Name = "KingsMeadowCampus"
+                        },
+                        new
+                        {
+                            Id = -13,
+                            Name = "RichardHerrodCentre"
+                        },
+                        new
+                        {
+                            Id = -12,
+                            Name = "GamstonCommunityHall"
+                        },
+                        new
+                        {
+                            Id = -11,
+                            Name = "MansfieldWickesSite"
+                        },
+                        new
+                        {
+                            Id = -10,
+                            Name = "PortlandMedicalPracticeLincoln"
+                        },
+                        new
+                        {
                             Id = -9,
                             Name = "RustonsSportsAndSocialClubLincoln"
+                        },
+                        new
+                        {
+                            Id = -8,
+                            Name = "SidingsMedicalPracticeBoston"
+                        },
+                        new
+                        {
+                            Id = -7,
+                            Name = "FranklinHallSpilsby"
                         },
                         new
                         {
@@ -686,8 +728,28 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -5,
+                            Name = "WaddingtonBranchSurgerySouthLincoln"
+                        },
+                        new
+                        {
+                            Id = -4,
+                            Name = "TableTennisClubGrantham"
+                        },
+                        new
+                        {
                             Id = -3,
                             Name = "LouthCommunityHospital"
+                        },
+                        new
+                        {
+                            Id = -2,
+                            Name = "PilgramHospitalBolton"
+                        },
+                        new
+                        {
+                            Id = -1,
+                            Name = "LincolnCountyHospital"
                         });
                 });
 
@@ -858,166 +920,166 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("RequestHelpFormVariant","Lookup");
 
                     b.HasData(
-                       new
-                       {
-                           Id = 1,
-                           Name = "Default"
-                       },
-                       new
-                       {
-                           Id = 2,
-                           Name = "VitalsForVeterans"
-                       },
-                       new
-                       {
-                           Id = 3,
-                           Name = "DIY"
-                       },
-                       new
-                       {
-                           Id = 4,
-                           Name = "FtLOS"
-                       },
-                       new
-                       {
-                           Id = 5,
-                           Name = "FaceMasks"
-                       },
-                       new
-                       {
-                           Id = 7,
-                           Name = "Ruddington"
-                       },
-                       new
-                       {
-                           Id = 8,
-                           Name = "AgeUKWirral"
-                       },
-                       new
-                       {
-                           Id = 9,
-                           Name = "AgeUKNottsBalderton"
-                       },
-                       new
-                       {
-                           Id = 10,
-                           Name = "AgeUKNorthWestKent_Public"
-                       },
-                       new
-                       {
-                           Id = 11,
-                           Name = "AgeUKNorthWestKent_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 12,
-                           Name = "AgeUKNottsNorthMuskham"
-                       },
-                       new
-                       {
-                           Id = 13,
-                           Name = "AgeUKSouthKentCoast_Public"
-                       },
-                       new
-                       {
-                           Id = 14,
-                           Name = "AgeUKSouthKentCoast_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 15,
-                           Name = "AgeUKFavershamAndSittingbourne_Public"
-                       },
-                       new
-                       {
-                           Id = 16,
-                           Name = "AgeUKFavershamAndSittingbourne_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 17,
-                           Name = "LincolnshireVolunteers"
-                       },
-                       new
-                       {
-                           Id = 18,
-                           Name = "ChildGroupSelector"
-                       },
-                       new
-                       {
-                           Id = 19,
-                           Name = "Sandbox_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 20,
-                           Name = "AgeConnectsCardiff_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 21,
-                           Name = "AgeConnectsCardiff_Public"
-                       },
-                       new
-                       {
-                           Id = 22,
-                           Name = "MeadowsCommunityHelpers_Public"
-                       },
-                       new
-                       {
-                           Id = 23,
-                           Name = "MeadowsCommunityHelpers_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 24,
-                           Name = "Mansfield_CVS"
-                       },
-                       new
-                       {
-                           Id = 25,
-                           Name = "Soutwell_Public"
-                       },
-                       new
-                       {
-                           Id = 26,
-                           Name = "ApexBankStaff_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 27,
-                           Name = "AgeUKMidMersey_Public"
-                       },
-                       new
-                       {
-                           Id = 28,
-                           Name = "AgeUKMidMersey_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 29,
-                           Name = "BostonGNS_Public"
-                       },
-                       new
-                       {
-                           Id = 30,
-                           Name = "BostonGNS_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 32,
-                           Name = "LincolnshireVolunteersRequests_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 33,
-                           Name = "UkraineRefugees_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 34,
-                           Name = "NHSVRDemo_RequestSubmitter"
-                       });
+                        new
+                        {
+                            Id = 1,
+                            Name = "Default"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "VitalsForVeterans"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "DIY"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "FtLOS"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "FaceMasks"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Ruddington"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "AgeUKWirral"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "AgeUKNottsBalderton"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "AgeUKNorthWestKent_Public"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "AgeUKNorthWestKent_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "AgeUKNottsNorthMuskham"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "AgeUKSouthKentCoast_Public"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "AgeUKSouthKentCoast_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "AgeUKFavershamAndSittingbourne_Public"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "AgeUKFavershamAndSittingbourne_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Name = "LincolnshireVolunteers"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Name = "ChildGroupSelector"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "Sandbox_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Name = "AgeConnectsCardiff_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "AgeConnectsCardiff_Public"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Name = "MeadowsCommunityHelpers_Public"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Name = "MeadowsCommunityHelpers_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Name = "Mansfield_CVS"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Name = "Soutwell_Public"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Name = "ApexBankStaff_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Name = "AgeUKMidMersey_Public"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Name = "AgeUKMidMersey_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Name = "BostonGNS_Public"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Name = "BostonGNS_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Name = "LincolnshireVolunteersRequests_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Name = "UkraineRefugees_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Name = "NHSVRDemo_RequestSubmitter"
+                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumRole", b =>
@@ -1827,6 +1889,20 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -12,
+                            FriendlyName = "Lincolnshire Volunteers",
+                            GeographicName = "Lincolnshire Volunteers",
+                            GroupKey = "lincs-volunteers",
+                            GroupName = "Lincolnshire Volunteers",
+                            GroupType = (byte)1,
+                            HomepageEnabled = true,
+                            LinkURL = "/lincolnshirevolunteers",
+                            ShiftsEnabled = false,
+                            ShortName = "Lincs Vols",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
                             Id = -22,
                             GroupKey = "hms-sandbox",
                             GroupName = "Sandbox",
@@ -1847,6 +1923,16 @@ namespace GroupService.Repo.Migrations
                             LinkURL = "/southwell",
                             ShiftsEnabled = false,
                             ShortName = "Southwell",
+                            TasksEnabled = true
+                        },
+                        new
+                        {
+                            Id = -38,
+                            GroupKey = "nhsvr-demo",
+                            GroupName = "NHSVR Demo",
+                            GroupType = (byte)2,
+                            HomepageEnabled = false,
+                            ShiftsEnabled = true,
                             TasksEnabled = true
                         });
                 });
@@ -3392,6 +3478,11 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            SupportActivityInstructionsId = (short)9,
+                            Instructions = "{\"SupportActivityInstructions\":9,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Contact us (Age UK Lincoln & South Lincolnshire)\",\"Detail\":\"Please contact volunteering@ageuklsl.org.uk to arrange collection of a pre-made wellbeing package from one of our sites. We’ll also give you all the details you need for the delivery.\"},{\"Heading\":\"Deliver the package\",\"Detail\":\"Use the details provided to deliver the package. It would be great if you could also stop for a quick chat to say hello and see how they’re getting on.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. If you have any concerns about the person you visited let us know immediately by emailing volunteering@ageuklsl.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                        },
+                        new
+                        {
                             SupportActivityInstructionsId = (short)10,
                             Instructions = "{\"SupportActivityInstructions\":10,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Go shopping\",\"Detail\":\"Pick up their shopping, you will find their shopping list and any specific instructions in “My Requests”. You’ll need to pay for the shopping on your own card before claiming the money back.\"},{\"Heading\":\"Send us a copy of the receipt\",\"Detail\":\"Write the name of the client on the receipt and email us a photograph to mailto:emergencyvols@ageukwirral.org.uk. We’ll transfer the money as soon as possible via bank transfer.\"},{\"Heading\":\"Drop off the shopping\",\"Detail\":\"Drop off the shopping along with the original copy of the receipt. You’ll find their details in “My Requests”.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed. If you have any concerns about the person you visited let us know immediately by emailing mailto:practicalsupportteam@ageukwirral.org.uk.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
@@ -3419,6 +3510,11 @@ namespace GroupService.Repo.Migrations
                         {
                             SupportActivityInstructionsId = (short)33,
                             Instructions = "{\"SupportActivityInstructions\":33,\"ActivityDetails\":null,\"Intro\":null,\"Steps\":[{\"Heading\":\"Find out what help is needed\",\"Detail\":\"Make sure you’ve seen all the details by clicking the “View more info” link. If you’re able to help, click to accept the request.\"},{\"Heading\":\"Provide the help that is needed\",\"Detail\":\"Use the details given to you to carry out the request.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When you’re finished, mark the request as complete in “My Requests”.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
+                        },
+                        new
+                        {
+                            SupportActivityInstructionsId = (short)40,
+                            Instructions = "{\"SupportActivityInstructions\":40,\"ActivityDetails\":null,\"Intro\":\"We are working on some changes which will make it easier to manage repeat requests, but for now please follow these instructions for providing help and marking a request as complete.\",\"Steps\":[{\"Heading\":\"Check how long the help is needed for\",\"Detail\":\"You can find out more in the ‘More details’ section of the request. Some requests may be for one-off help, while others are for ongoing support.\"},{\"Heading\":\"Take out the bins\",\"Detail\":\"When the help is needed, take out the bins. Make sure you take them out first thing (or the night before) and bring them back in if required.\"},{\"Heading\":\"Mark the request as complete\",\"Detail\":\"When the help is no longer needed, mark the request as complete in “My Requests” - this will let us (and anyone else involved with the request) know it’s been completed.\"}],\"Close\":\"If for any reason you can’t complete the request before it’s due, let us know by updating the accepted request and clicking “Can’t Do”.\"}"
                         },
                         new
                         {

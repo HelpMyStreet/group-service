@@ -4,14 +4,16 @@ using GroupService.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroupService.Repo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230727135718_RemoveUnusedSupportActivityInstructions")]
+    partial class RemoveUnusedSupportActivityInstructions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -568,6 +570,16 @@ namespace GroupService.Repo.Migrations
                         {
                             Id = 21,
                             Name = "UserDeleted"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Name = "RequestToHelpApproved"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Name = "RequestToHelpDeclined"
                         });
                 });
 
@@ -676,8 +688,48 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -15,
+                            Name = "ForestRecreationGround"
+                        },
+                        new
+                        {
+                            Id = -14,
+                            Name = "KingsMeadowCampus"
+                        },
+                        new
+                        {
+                            Id = -13,
+                            Name = "RichardHerrodCentre"
+                        },
+                        new
+                        {
+                            Id = -12,
+                            Name = "GamstonCommunityHall"
+                        },
+                        new
+                        {
+                            Id = -11,
+                            Name = "MansfieldWickesSite"
+                        },
+                        new
+                        {
+                            Id = -10,
+                            Name = "PortlandMedicalPracticeLincoln"
+                        },
+                        new
+                        {
                             Id = -9,
                             Name = "RustonsSportsAndSocialClubLincoln"
+                        },
+                        new
+                        {
+                            Id = -8,
+                            Name = "SidingsMedicalPracticeBoston"
+                        },
+                        new
+                        {
+                            Id = -7,
+                            Name = "FranklinHallSpilsby"
                         },
                         new
                         {
@@ -686,8 +738,28 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
+                            Id = -5,
+                            Name = "WaddingtonBranchSurgerySouthLincoln"
+                        },
+                        new
+                        {
+                            Id = -4,
+                            Name = "TableTennisClubGrantham"
+                        },
+                        new
+                        {
                             Id = -3,
                             Name = "LouthCommunityHospital"
+                        },
+                        new
+                        {
+                            Id = -2,
+                            Name = "PilgramHospitalBolton"
+                        },
+                        new
+                        {
+                            Id = -1,
+                            Name = "LincolnCountyHospital"
                         });
                 });
 
@@ -733,16 +805,6 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 2,
-                            Name = "FtLOS"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "AgeUKLSL"
-                        },
-                        new
-                        {
                             Id = 4,
                             Name = "FaceMasks"
                         },
@@ -753,73 +815,13 @@ namespace GroupService.Repo.Migrations
                         },
                         new
                         {
-                            Id = 6,
-                            Name = "AgeUKNottsBalderton"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "AgeUKNWK"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "AgeUKSKC"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "AgeUKFandS"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Name = "LincolnshireVolunteers"
-                        },
-                        new
-                        {
                             Id = 11,
                             Name = "Ruddington"
                         },
                         new
                         {
-                            Id = 12,
-                            Name = "AgeConnectsCardiff"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Name = "MeadowsCommunityHelpers"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Name = "MansfieldCVS"
-                        },
-                        new
-                        {
                             Id = 15,
                             Name = "Southwell"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Name = "ApexBankStaff"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Name = "AgeUKMidMersey"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Name = "BostonGNS"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Name = "UkraineRefugees"
                         });
                 });
 
@@ -858,166 +860,36 @@ namespace GroupService.Repo.Migrations
                     b.ToTable("RequestHelpFormVariant","Lookup");
 
                     b.HasData(
-                       new
-                       {
-                           Id = 1,
-                           Name = "Default"
-                       },
-                       new
-                       {
-                           Id = 2,
-                           Name = "VitalsForVeterans"
-                       },
-                       new
-                       {
-                           Id = 3,
-                           Name = "DIY"
-                       },
-                       new
-                       {
-                           Id = 4,
-                           Name = "FtLOS"
-                       },
-                       new
-                       {
-                           Id = 5,
-                           Name = "FaceMasks"
-                       },
-                       new
-                       {
-                           Id = 7,
-                           Name = "Ruddington"
-                       },
-                       new
-                       {
-                           Id = 8,
-                           Name = "AgeUKWirral"
-                       },
-                       new
-                       {
-                           Id = 9,
-                           Name = "AgeUKNottsBalderton"
-                       },
-                       new
-                       {
-                           Id = 10,
-                           Name = "AgeUKNorthWestKent_Public"
-                       },
-                       new
-                       {
-                           Id = 11,
-                           Name = "AgeUKNorthWestKent_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 12,
-                           Name = "AgeUKNottsNorthMuskham"
-                       },
-                       new
-                       {
-                           Id = 13,
-                           Name = "AgeUKSouthKentCoast_Public"
-                       },
-                       new
-                       {
-                           Id = 14,
-                           Name = "AgeUKSouthKentCoast_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 15,
-                           Name = "AgeUKFavershamAndSittingbourne_Public"
-                       },
-                       new
-                       {
-                           Id = 16,
-                           Name = "AgeUKFavershamAndSittingbourne_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 17,
-                           Name = "LincolnshireVolunteers"
-                       },
-                       new
-                       {
-                           Id = 18,
-                           Name = "ChildGroupSelector"
-                       },
-                       new
-                       {
-                           Id = 19,
-                           Name = "Sandbox_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 20,
-                           Name = "AgeConnectsCardiff_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 21,
-                           Name = "AgeConnectsCardiff_Public"
-                       },
-                       new
-                       {
-                           Id = 22,
-                           Name = "MeadowsCommunityHelpers_Public"
-                       },
-                       new
-                       {
-                           Id = 23,
-                           Name = "MeadowsCommunityHelpers_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 24,
-                           Name = "Mansfield_CVS"
-                       },
-                       new
-                       {
-                           Id = 25,
-                           Name = "Soutwell_Public"
-                       },
-                       new
-                       {
-                           Id = 26,
-                           Name = "ApexBankStaff_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 27,
-                           Name = "AgeUKMidMersey_Public"
-                       },
-                       new
-                       {
-                           Id = 28,
-                           Name = "AgeUKMidMersey_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 29,
-                           Name = "BostonGNS_Public"
-                       },
-                       new
-                       {
-                           Id = 30,
-                           Name = "BostonGNS_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 32,
-                           Name = "LincolnshireVolunteersRequests_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 33,
-                           Name = "UkraineRefugees_RequestSubmitter"
-                       },
-                       new
-                       {
-                           Id = 34,
-                           Name = "NHSVRDemo_RequestSubmitter"
-                       });
+                        new
+                        {
+                            Id = 1,
+                            Name = "Default"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "FaceMasks"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Ruddington"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "AgeUKWirral"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "Sandbox_RequestSubmitter"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Name = "Soutwell_Public"
+                        });
                 });
 
             modelBuilder.Entity("GroupService.Repo.EntityFramework.Entities.EnumRole", b =>
@@ -1295,25 +1167,25 @@ namespace GroupService.Repo.Migrations
                         new
                         {
                             Id = 36,
-                            FriendlyName = "Steward",
+                            FriendlyName = "NHS Steward",
                             Name = "NHSSteward"
                         },
                         new
                         {
                             Id = 37,
-                            FriendlyName = "Transport",
+                            FriendlyName = "NHS Transport",
                             Name = "NHSTransport"
                         },
                         new
                         {
                             Id = 38,
-                            FriendlyName = "NHS check in and chat",
+                            FriendlyName = "NHS Check-In and Chat",
                             Name = "NHSCheckInAndChat"
                         },
                         new
                         {
                             Id = 39,
-                            FriendlyName = "NHS check in and chat plus",
+                            FriendlyName = "NHS Check-In and Chat (PLUS)",
                             Name = "NHSCheckInAndChatPlus"
                         });
                 });
