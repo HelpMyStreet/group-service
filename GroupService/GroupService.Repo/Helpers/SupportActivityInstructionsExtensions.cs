@@ -563,12 +563,6 @@ namespace GroupService.Repo.Helpers
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
-                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKLincoln_V4V,
-                Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKLincoln_V4V())
-            });
-
-            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
-            {
                 SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.AgeUKWirral_Shopping,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_AgeUKWirral_Shopping())
             });
@@ -602,12 +596,6 @@ namespace GroupService.Repo.Helpers
                 SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_EmergencySupport,
                 Instructions = JsonConvert.SerializeObject(GetInstructions_HMS_EmergencySupport())
             }); 
-
-            entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
-            {
-                SupportActivityInstructionsId = (short)SupportActivityInstructionsEnum.HMS_BinDayAssistance,
-                Instructions = JsonConvert.SerializeObject(GetInstructions_HMS_BinDayAssistance())
-            });
 
             entity.HasData(new EntityFramework.Entities.SupportActivityInstructions
             {
